@@ -3,161 +3,148 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Biblioteca Kongzhi — Observatorio Asia-Pacífico</title>
+<title>Biblioteca Nalanda — Club Kongzhi</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zilla+Slab:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Quicksand:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#221d17;
-    --paper:#efe3c8;
-    --paper-2:#e3d3ab;
-    --indigo:#1e3050;
-    --indigo-2:#2c4670;
-    --indigo-deep:#141f34;
-    --vermillion:#a53a2c;
-    --vermillion-2:#c24a37;
-    --brass:#a9813f;
-    --brass-light:#cba361;
-    --jade:#3c6255;
-    --jade-light:#6e9c87;
-    --line: rgba(34,29,23,0.18);
+    --pink:#e8749a;
+    --pink-2:#f0a0bd;
+    --pink-light:#f7cddd;
+    --pink-pale:#fdf1f5;
+    --ink:#231f20;
+    --gold:#c9a227;
+    --white:#ffffff;
+    --line: rgba(35,31,32,0.12);
   }
   *{box-sizing:border-box;}
   body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Zilla Slab', serif;
-    font-size:17px;
-    line-height:1.6;
-    background-image:
-      radial-gradient(circle at 15% 10%, rgba(169,129,63,0.10), transparent 42%),
-      radial-gradient(circle at 90% 70%, rgba(30,48,80,0.07), transparent 45%);
+    margin:0; background:var(--white); color:var(--ink);
+    font-family:'Quicksand', sans-serif; font-size:17px; line-height:1.6;
   }
-  ::selection{background:var(--vermillion); color:var(--paper);}
   a{color:inherit;}
   .eyebrow{
-    font-family:'IBM Plex Mono', monospace;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    font-size:.72rem;
-    color:var(--vermillion);
-    font-weight:500;
+    font-family:'IBM Plex Mono', monospace; letter-spacing:.13em; text-transform:uppercase;
+    font-size:.7rem; color:var(--pink); font-weight:500;
   }
+
+  /* ---------- decorative blobs & clouds ---------- */
+  .blob{position:absolute; border-radius:58% 42% 62% 38% / 45% 55% 45% 55%; z-index:0;}
+  .cloud-motif{position:absolute; opacity:.55; z-index:1; pointer-events:none;}
 
   /* ---------- HEADER ---------- */
   header{
-    background:linear-gradient(180deg, var(--indigo-deep) 0%, var(--indigo) 100%);
-    color:var(--paper);
-    padding:9vh 6vw 7vh;
-    position:relative;
-    overflow:hidden;
+    position:relative; overflow:hidden;
+    padding:8vh 6vw 7vh;
+    background:var(--white);
   }
-  header::before{
-    content:"孔智";
-    position:absolute; right:3vw; top:50%; transform:translateY(-50%);
-    font-family:'Shippori Mincho', serif; font-weight:700;
-    font-size:clamp(5rem, 14vw, 11rem);
-    color:rgba(239,227,200,0.05);
-    writing-mode:vertical-rl;
+  header .blob.b1{
+    width:340px; height:280px; top:-90px; right:-60px;
+    background:linear-gradient(135deg, var(--pink-light), var(--pink-2));
   }
-  .header-inner{position:relative; z-index:1; max-width:820px;}
-  header .eyebrow{color:var(--brass-light); margin-bottom:.8rem; display:block;}
+  header .blob.b2{
+    width:220px; height:190px; bottom:-70px; left:-40px;
+    background:var(--pink-pale); border:2px solid var(--pink-light);
+  }
+  .header-inner{position:relative; z-index:2; max-width:820px;}
+  .logo-row{display:flex; align-items:center; gap:1rem; margin-bottom:1.6rem;}
+  .logo-row img{width:64px; height:64px; object-fit:contain;}
+  .logo-row .lockup{font-family:'Fredoka', sans-serif; font-weight:600; font-size:1rem; color:var(--ink);}
+  .logo-row .lockup span{color:var(--pink);}
   header h1{
-    font-family:'Shippori Mincho', serif; font-weight:700;
-    font-size:clamp(2.1rem, 5vw, 3.4rem);
-    margin:0 0 .8rem;
-    line-height:1.15;
+    font-family:'Fredoka', sans-serif; font-weight:700;
+    font-size:clamp(2.2rem, 5.5vw, 3.6rem);
+    margin:0 0 .8rem; line-height:1.1; color:var(--ink);
   }
-  header p{
-    max-width:600px; color:rgba(239,227,200,0.85);
-    font-size:clamp(1rem,1.6vw,1.15rem); margin:0;
+  header h1 .accent{color:var(--pink);}
+  header p.dek{
+    max-width:600px; color:#4a4142;
+    font-size:clamp(1rem,1.6vw,1.15rem); margin:0; font-weight:500;
   }
   .header-meta{
-    display:flex; gap:2.2rem; margin-top:2.4rem; flex-wrap:wrap;
+    display:flex; gap:2.2rem; margin-top:2.2rem; flex-wrap:wrap;
     font-family:'IBM Plex Mono', monospace; font-size:.74rem;
-    color:rgba(239,227,200,0.6); text-transform:uppercase; letter-spacing:.05em;
+    color:#6b6061; text-transform:uppercase; letter-spacing:.04em;
   }
-  .header-meta span{color:var(--brass-light);}
+  .header-meta span{color:var(--pink); font-weight:600;}
 
   /* ---------- MAIN ---------- */
-  main{max-width:1180px; margin:0 auto; padding:5rem 6vw 6rem;}
+  main{max-width:1180px; margin:0 auto; padding:3rem 6vw 6rem; position:relative;}
 
-  .region-block{margin-bottom:4.2rem;}
+  .region-block{margin-bottom:3.6rem; position:relative;}
   .region-head{
-    display:flex; align-items:baseline; gap:1rem;
-    border-bottom:2px solid var(--ink);
-    padding-bottom:.7rem; margin-bottom:1.6rem;
+    display:flex; align-items:center; gap:.9rem;
+    padding-bottom:.8rem; margin-bottom:1.5rem;
+    border-bottom:2px dashed var(--pink-light);
   }
+  .region-head .sakura{font-size:1.3rem;}
   .region-head h2{
-    font-family:'Shippori Mincho', serif; font-weight:700;
-    font-size:clamp(1.4rem,2.6vw,1.9rem);
-    margin:0;
-  }
-  .region-head .region-kanji{
-    font-family:'Shippori Mincho', serif; font-weight:700;
-    color:var(--vermillion); font-size:1.1rem;
+    font-family:'Fredoka', sans-serif; font-weight:600;
+    font-size:clamp(1.35rem,2.4vw,1.75rem); margin:0; color:var(--ink);
   }
   .region-head .count{
     margin-left:auto; font-family:'IBM Plex Mono', monospace;
-    font-size:.72rem; color:#7a6b4d; text-transform:uppercase;
+    font-size:.7rem; color:#a1969a; text-transform:uppercase;
   }
 
   .card-grid{
     display:grid; grid-template-columns:repeat(auto-fill, minmax(260px,1fr));
-    gap:1.4px; background:var(--line); border:1px solid var(--line);
+    gap:1.2rem;
   }
-
   .card{
-    background:var(--paper); padding:1.7rem;
+    background:var(--white); padding:1.6rem;
+    border:2px solid var(--pink-light); border-radius:20px;
     display:flex; flex-direction:column; min-height:200px;
     text-decoration:none; color:var(--ink);
-    position:relative;
-    transition:background .2s ease;
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
   }
   .card.ready{cursor:pointer;}
-  .card.ready:hover{background:var(--paper-2);}
-  .card.pending{opacity:.55; cursor:default;}
+  .card.ready:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 24px rgba(232,116,154,0.18);
+    border-color:var(--pink);
+  }
+  .card.pending{opacity:.6; border-style:dashed;}
   .card .tag{
-    font-family:'IBM Plex Mono', monospace; font-size:.66rem;
-    text-transform:uppercase; letter-spacing:.07em;
-    padding:.2rem .5rem; border:1px solid currentColor;
+    font-family:'IBM Plex Mono', monospace; font-size:.64rem;
+    text-transform:uppercase; letter-spacing:.06em;
+    padding:.25rem .6rem; border-radius:20px;
     display:inline-block; width:fit-content; margin-bottom:.9rem;
   }
-  .card.ready .tag{color:var(--jade); border-color:var(--jade);}
-  .card.pending .tag{color:var(--brass); border-color:var(--brass);}
+  .card.ready .tag{background:var(--pink-pale); color:var(--pink);}
+  .card.pending .tag{background:#f2ecec; color:#9a8f90;}
   .card h3{
-    font-family:'Shippori Mincho', serif; font-weight:700;
-    font-size:1.15rem; margin:0 0 .5rem;
+    font-family:'Fredoka', sans-serif; font-weight:600;
+    font-size:1.1rem; margin:0 0 .5rem;
   }
-  .card p{
-    font-size:.9rem; color:#4a3f2e; margin:0; flex-grow:1;
-  }
+  .card p{font-size:.9rem; color:#5b5253; margin:0; flex-grow:1;}
   .card .go{
     margin-top:1.1rem; font-family:'IBM Plex Mono', monospace;
-    font-size:.72rem; color:var(--indigo-2);
+    font-size:.72rem; color:var(--pink); font-weight:500;
     display:flex; align-items:center; gap:.4rem;
   }
-  .card.ready .go::after{content:"→"; transition:transform .2s ease;}
+  .card.ready .go::after{content:"→"; transition:transform .18s ease;}
   .card.ready:hover .go::after{transform:translateX(4px);}
-  .card.pending .go{color:#8a7a58;}
+  .card.pending .go{color:#a1969a;}
 
   /* ---------- ABOUT STRIP ---------- */
   .about{
-    margin-top:5rem; padding-top:2.6rem; border-top:1px solid var(--line);
-    display:grid; grid-template-columns:1fr 1fr; gap:3rem;
+    margin-top:4rem; padding:2.4rem; border-radius:24px;
+    background:var(--pink-pale);
+    display:grid; grid-template-columns:1fr 1fr; gap:2.6rem;
+    position:relative; overflow:hidden;
   }
   .about h4{
-    font-family:'Shippori Mincho', serif; margin:0 0 .6rem; font-size:1.05rem;
+    font-family:'Fredoka', sans-serif; font-weight:600; margin:0 0 .5rem; font-size:1.05rem; color:var(--ink);
   }
-  .about p{margin:0; font-size:.92rem; color:#3b3327;}
+  .about p{margin:0; font-size:.92rem; color:#5b5253;}
 
   footer{
-    text-align:center; padding:2.6rem 6vw 3.4rem;
-    font-family:'IBM Plex Mono', monospace; font-size:.75rem; color:#7a6b4d;
-    border-top:1px solid var(--line);
+    text-align:center; padding:2.6rem 6vw 3.2rem;
+    font-family:'IBM Plex Mono', monospace; font-size:.74rem; color:#a1969a;
   }
+  footer .heart{color:var(--pink);}
 
   @media(max-width:720px){
     .about{grid-template-columns:1fr;}
@@ -168,14 +155,25 @@
 <body>
 
 <header>
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <svg class="cloud-motif" style="top:8%; left:58%; width:120px;" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 40 Q5 25 20 25 Q22 12 38 15 Q45 5 58 12 Q72 8 75 22 Q90 22 88 35 Q92 48 78 48 L20 48 Q6 48 10 40Z" fill="none" stroke="var(--gold)" stroke-width="1.4"/>
+  </svg>
+  <svg class="cloud-motif" style="bottom:10%; right:8%; width:80px;" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 40 Q5 25 20 25 Q22 12 38 15 Q45 5 58 12 Q72 8 75 22 Q90 22 88 35 Q92 48 78 48 L20 48 Q6 48 10 40Z" fill="none" stroke="var(--gold)" stroke-width="1.4"/>
+  </svg>
   <div class="header-inner">
-    <span class="eyebrow">Club Kongzhi · UNMSM</span>
-    <h1>Biblioteca del Observatorio Asia-Pacífico</h1>
-    <p>Cuadernos temáticos sobre China, Japón y Corea del Sur — investigación curada, con respaldo de fuentes primarias y académicas, pensada para leerse de forma interactiva.</p>
+    <div class="logo-row">
+      <img src="assets/kongzhi-logo.png" alt="Club Kongzhi">
+      <span class="lockup">Club <span>Kongzhi</span> · UNMSM</span>
+    </div>
+    <h1>Biblioteca <span class="accent">Nalanda</span> 🌸</h1>
+    <p class="dek">Cuadernos temáticos sobre China, Japón y Corea del Sur — investigación curada del club, contada como historia épica en vez de ficha enciclopédica.</p>
     <div class="header-meta">
       <div><span>2</span> temas publicados</div>
       <div><span>3</span> regiones en construcción</div>
-      <div>Parte de la infraestructura <span>Gengis</span></div>
+      <div>Hermana de <span>Gengis</span> (datos y automatización)</div>
     </div>
   </div>
 </header>
@@ -184,7 +182,7 @@
 
   <div class="region-block">
     <div class="region-head">
-      <span class="region-kanji">日本</span>
+      <span class="sakura">🌸</span>
       <h2>Japón</h2>
       <span class="count">2 de N temas</span>
     </div>
@@ -212,7 +210,7 @@
 
   <div class="region-block">
     <div class="region-head">
-      <span class="region-kanji">中国</span>
+      <span class="sakura">🏮</span>
       <h2>China</h2>
       <span class="count">0 de N temas</span>
     </div>
@@ -228,7 +226,7 @@
 
   <div class="region-block">
     <div class="region-head">
-      <span class="region-kanji">한국</span>
+      <span class="sakura">🌺</span>
       <h2>Corea del Sur</h2>
       <span class="count">0 de N temas</span>
     </div>
@@ -245,18 +243,18 @@
   <div class="about">
     <div>
       <h4>¿Qué es este espacio?</h4>
-      <p>Cada cuaderno es una página HTML autocontenida, construida a partir de fuentes académicas y periodísticas verificadas, curadas también en nuestra biblioteca de NotebookLM. No reemplaza el trabajo de investigación del club — le da un formato interactivo y permanente.</p>
+      <p>Cada cuaderno es una página interactiva construida a partir de fuentes académicas y periodísticas verificadas, curadas también en nuestra biblioteca de NotebookLM. No reemplaza el trabajo de investigación del club — le da un formato narrativo y permanente.</p>
     </div>
     <div>
       <h4>¿Cómo se conecta con Gengis?</h4>
-      <p>Esta biblioteca es hermana del Observatorio de datos Gengis (comercio, monitor de 3 dimensiones, perfiles país). Las fuentes curadas aquí alimentan también al asistente de investigación reactivo del club.</p>
+      <p>Nalanda es hermana del Observatorio de datos Gengis (comercio, monitor de 3 dimensiones, perfiles país). Las fuentes curadas aquí alimentan también al asistente de investigación reactivo del club.</p>
     </div>
   </div>
 
 </main>
 
 <footer>
-  Club Kongzhi UNMSM · Observatorio Asia-Pacífico
+  Club Kongzhi UNMSM · Observatorio Asia-Pacífico <span class="heart">♥</span>
 </footer>
 
 </body>
