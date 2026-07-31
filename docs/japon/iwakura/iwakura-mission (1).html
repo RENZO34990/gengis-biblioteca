@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>特命全権大使米欧回覧実記 — La bitácora que reinventó Japón</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zilla+Slab:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#221d17;
+    --paper:#efe3c8;
+    --paper-2:#e3d3ab;
+    --paper-deep:#d8c493;
+    --indigo:#1e3050;
+    --indigo-2:#2c4670;
+    --indigo-deep:#141f34;
+    --vermillion:#a53a2c;
+    --vermillion-2:#c24a37;
+    --brass:#a9813f;
+    --brass-light:#cba361;
+    --line: rgba(34,29,23,0.18);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Zilla Slab', serif;
+    font-size:17px;
+    line-height:1.6;
+    background-image:
+      radial-gradient(circle at 20% 15%, rgba(169,129,63,0.10), transparent 40%),
+      radial-gradient(circle at 85% 60%, rgba(30,48,80,0.06), transparent 45%);
+  }
+  ::selection{background:var(--vermillion); color:var(--paper);}
+  a{color:var(--indigo);}
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    font-size:.72rem;
+    color:var(--vermillion);
+    font-weight:500;
+  }
+
+  /* ---------- HERO ---------- */
+  header.hero{
+    position:relative;
+    min-height:100vh;
+    background:
+      linear-gradient(180deg, var(--indigo-deep) 0%, var(--indigo) 55%, var(--indigo-2) 100%);
+    color:var(--paper);
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:8vh 6vw 10vh;
+  }
+  header.hero .waves{
+    position:absolute; inset:0; opacity:.35; pointer-events:none;
+  }
+  header.hero .grain{
+    position:absolute; inset:0;
+    background-image:radial-gradient(rgba(239,227,200,0.05) 1px, transparent 1px);
+    background-size:3px 3px;
+    pointer-events:none;
+  }
+  .hero-kanji{
+    position:absolute;
+    right:2vw; top:6vh;
+    font-family:'Shippori Mincho', serif;
+    font-size:clamp(4rem, 16vw, 13rem);
+    color:rgba(239,227,200,0.06);
+    writing-mode:vertical-rl;
+    font-weight:700;
+    user-select:none;
+    z-index:0;
+  }
+  .hero-content{position:relative; z-index:2; max-width:900px;}
+  .hero .eyebrow{color:var(--brass-light);}
+  h1.title-jp{
+    font-family:'Shippori Mincho', serif;
+    font-weight:700;
+    font-size:clamp(2.2rem, 5.6vw, 4.4rem);
+    line-height:1.15;
+    margin:.6rem 0 .3rem;
+    color:var(--paper);
+  }
+  .title-romaji{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:clamp(.85rem, 1.6vw, 1.05rem);
+    color:rgba(239,227,200,0.65);
+    letter-spacing:.04em;
+    margin-bottom:1.6rem;
+  }
+  .hero-dek{
+    font-size:clamp(1.05rem, 2vw, 1.3rem);
+    max-width:640px;
+    color:rgba(239,227,200,0.9);
+    font-weight:400;
+  }
+  .hero-stats{
+    display:flex; gap:2.6rem; margin-top:3rem; flex-wrap:wrap;
+  }
+  .hero-stats div{border-left:2px solid var(--vermillion); padding-left:.9rem;}
+  .hero-stats .num{
+    font-family:'Shippori Mincho', serif; font-weight:700;
+    font-size:1.7rem; display:block; color:var(--brass-light);
+  }
+  .hero-stats .lbl{
+    font-family:'IBM Plex Mono', monospace; font-size:.7rem;
+    text-transform:uppercase; letter-spacing:.08em;
+    color:rgba(239,227,200,0.6);
+  }
+  .scroll-cue{
+    position:absolute; bottom:4vh; left:6vw; z-index:2;
+    font-family:'IBM Plex Mono', monospace; font-size:.72rem;
+    color:rgba(239,227,200,0.55); letter-spacing:.1em;
+    display:flex; align-items:center; gap:.6rem;
+  }
+  .scroll-cue .ln{width:34px; height:1px; background:rgba(239,227,200,0.4); display:inline-block; animation:pulse 2s ease-in-out infinite;}
+  @keyframes pulse{0%,100%{opacity:.4;} 50%{opacity:1;}}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:6.5rem 6vw; max-width:1180px; margin:0 auto;}
+  section.wide{max-width:1400px;}
+  h2{
+    font-family:'Shippori Mincho', serif;
+    font-weight:700;
+    font-size:clamp(1.6rem, 3.2vw, 2.5rem);
+    margin:.2rem 0 1.6rem;
+  }
+  .section-head{max-width:680px; margin-bottom:2.6rem;}
+  .lede{font-size:1.12rem; color:#3b3327;}
+
+  /* ---------- ROUTE / TIMELINE ---------- */
+  .route-wrap{position:relative;}
+  .route-line{
+    position:absolute; top:0; bottom:0; left:19px;
+    width:2px;
+    background:repeating-linear-gradient(180deg, var(--brass) 0 8px, transparent 8px 14px);
+  }
+  .stop{
+    position:relative;
+    padding-left:56px;
+    margin-bottom:1.2rem;
+    cursor:pointer;
+  }
+  .stop:last-child{margin-bottom:0;}
+  .stop-dot{
+    position:absolute; left:8px; top:6px;
+    width:24px; height:24px; border-radius:50%;
+    background:var(--paper);
+    border:2px solid var(--indigo);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'IBM Plex Mono', monospace; font-size:.6rem; color:var(--indigo);
+    transition:all .25s ease;
+    z-index:1;
+  }
+  .stop.active .stop-dot{
+    background:var(--vermillion); border-color:var(--vermillion); color:var(--paper);
+    transform:scale(1.15);
+  }
+  .stop-head{
+    display:flex; align-items:baseline; gap:.9rem; flex-wrap:wrap;
+    padding:.55rem 0;
+    border-bottom:1px solid var(--line);
+  }
+  .stop-date{font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--vermillion); white-space:nowrap;}
+  .stop-place{font-family:'Shippori Mincho', serif; font-weight:700; font-size:1.18rem;}
+  .stop-tag{
+    margin-left:auto;
+    font-family:'IBM Plex Mono', monospace; font-size:.68rem;
+    color:#7a6b4d; text-transform:uppercase; letter-spacing:.05em;
+  }
+  .stop-body{
+    max-height:0; overflow:hidden;
+    transition:max-height .38s ease, padding .3s ease, opacity .3s ease;
+    opacity:0;
+  }
+  .stop.active .stop-body{
+    max-height:340px; opacity:1; padding:.9rem 0 1.1rem;
+  }
+  .stop-body p{margin:0; color:#3b3327;}
+  .stop-body .quote{
+    margin-top:.7rem; padding-left:.9rem; border-left:2px solid var(--brass);
+    font-style:italic; color:#55452c; font-size:.96rem;
+  }
+
+  /* ---------- WAKON YOSAI / TENSION SLIDER ---------- */
+  .tension{
+    background:var(--indigo-deep);
+    color:var(--paper);
+    border-radius:2px;
+    padding:3rem 3rem 3.4rem;
+    position:relative;
+    overflow:hidden;
+  }
+  .tension .eyebrow{color:var(--brass-light);}
+  .tension h2{color:var(--paper);}
+  .tension-scale{
+    display:grid; grid-template-columns:1fr 1fr; gap:1px;
+    background:rgba(239,227,200,0.18);
+    margin-top:2rem;
+    border:1px solid rgba(239,227,200,0.18);
+  }
+  .tension-scale > div{
+    background:var(--indigo-deep); padding:1.6rem 1.8rem;
+  }
+  .tension-scale h3{
+    font-family:'IBM Plex Mono', monospace; font-size:.74rem;
+    text-transform:uppercase; letter-spacing:.09em; color:var(--vermillion-2);
+    margin:0 0 .7rem;
+  }
+  .tension-scale ul{margin:0; padding-left:1.1rem; color:rgba(239,227,200,0.85); font-size:.95rem;}
+  .tension-scale li{margin-bottom:.5rem;}
+  .tension-note{
+    margin-top:1.8rem; font-family:'IBM Plex Mono', monospace; font-size:.78rem;
+    color:rgba(239,227,200,0.6); max-width:560px;
+  }
+
+  /* ---------- KUME / DOCUMENT ---------- */
+  .doc-grid{
+    display:grid; grid-template-columns:1.1fr 1fr; gap:3rem; align-items:start;
+  }
+  .doc-card{
+    background:var(--paper-2);
+    border:1px solid var(--line);
+    padding:2rem;
+    position:relative;
+  }
+  .doc-card::before{
+    content:"実記";
+    position:absolute; top:1rem; right:1.2rem;
+    font-family:'Shippori Mincho', serif; font-weight:700;
+    font-size:1.4rem; color:var(--vermillion);
+    border:1.5px solid var(--vermillion);
+    padding:.15rem .4rem;
+    opacity:.8;
+    transform:rotate(4deg);
+  }
+  .doc-card .fig{
+    display:flex; gap:1.6rem; margin-top:1.4rem; flex-wrap:wrap;
+  }
+  .doc-card .fig div{flex:1; min-width:110px;}
+  .doc-card .fig .n{font-family:'Shippori Mincho', serif; font-weight:700; font-size:2rem; color:var(--indigo);}
+  .doc-card .fig .l{font-family:'IBM Plex Mono', monospace; font-size:.68rem; color:#6b5c3e; text-transform:uppercase;}
+
+  .fate-list{list-style:none; margin:0; padding:0;}
+  .fate-list li{
+    display:grid; grid-template-columns:120px 1fr; gap:1rem;
+    padding:.85rem 0; border-bottom:1px solid var(--line);
+    font-size:.96rem;
+  }
+  .fate-list li:last-child{border-bottom:none;}
+  .fate-list .who{font-family:'Shippori Mincho', serif; font-weight:700;}
+  .fate-list .what{color:#3b3327;}
+
+  /* ---------- LEGACY ---------- */
+  .legacy-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:1.6px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .legacy-grid > div{background:var(--paper); padding:1.8rem;}
+  .legacy-grid .eyebrow{margin-bottom:.5rem; display:block;}
+  .legacy-grid h4{margin:.2rem 0 .5rem; font-family:'Shippori Mincho', serif; font-size:1.08rem;}
+  .legacy-grid p{margin:0; font-size:.94rem; color:#3b3327;}
+
+  /* ---------- SOURCES ---------- */
+  .sources{border-top:1px solid var(--line); padding-top:2rem;}
+  .sources ul{list-style:none; margin:0; padding:0; columns:2; column-gap:2.4rem;}
+  .sources li{
+    font-family:'IBM Plex Mono', monospace; font-size:.78rem;
+    padding:.5rem 0; border-bottom:1px dotted var(--line);
+    break-inside:avoid;
+  }
+  .sources a{color:var(--indigo-2); text-decoration:none;}
+  .sources a:hover{text-decoration:underline;}
+
+  footer{
+    text-align:center; padding:3rem 6vw 4rem; font-family:'IBM Plex Mono', monospace;
+    font-size:.76rem; color:#7a6b4d;
+  }
+
+  @media(max-width:820px){
+    .doc-grid{grid-template-columns:1fr;}
+    .tension-scale{grid-template-columns:1fr;}
+    .legacy-grid{grid-template-columns:1fr;}
+    .sources ul{columns:1;}
+    section{padding:4rem 6vw;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .scroll-cue .ln{animation:none;}
+    .stop-body{transition:none;}
+  }
+
+  /* ---------- NAV: volver + anterior/siguiente ---------- */
+  .top-return{
+    position:fixed; top:1.1rem; left:1.1rem; z-index:50;
+    background:rgba(20,31,52,0.55); backdrop-filter:blur(4px);
+    color:var(--paper); border:1px solid rgba(239,227,200,0.3);
+    padding:.5rem .9rem; border-radius:30px;
+    font-family:'IBM Plex Mono', monospace; font-size:.72rem;
+    text-decoration:none; display:inline-flex; align-items:center; gap:.4rem;
+    transition:background .2s ease;
+  }
+  .top-return:hover{background:rgba(20,31,52,0.88);}
+
+  .nav-adjacent{
+    display:grid; grid-template-columns:1fr 1fr; gap:1.4px;
+    background:var(--line); border:1px solid var(--line); margin-top:.5rem;
+  }
+  .nav-adjacent a, .nav-adjacent .empty{
+    background:var(--paper-2); padding:1.6rem 1.8rem; text-decoration:none; color:var(--ink);
+    display:flex; flex-direction:column; transition:background .2s ease;
+  }
+  .nav-adjacent a:hover{background:var(--paper-deep);}
+  .nav-adjacent .dir{
+    font-family:'IBM Plex Mono', monospace; font-size:.68rem; text-transform:uppercase;
+    color:var(--vermillion); margin-bottom:.5rem; letter-spacing:.05em;
+  }
+  .nav-adjacent .ttl{font-family:'Shippori Mincho', serif; font-weight:700; font-size:1.08rem;}
+  .nav-adjacent .next{text-align:right; align-items:flex-end;}
+  .nav-adjacent .empty{
+    color:#9a8f76; justify-content:center; align-items:center; text-align:center;
+    font-family:'IBM Plex Mono', monospace; font-size:.78rem;
+  }
+  @media(max-width:720px){
+    .nav-adjacent{grid-template-columns:1fr;}
+    .nav-adjacent .next{text-align:left; align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+<a class="top-return" href="../../index.html">← Biblioteca Nalanda</a>
+
+<header class="hero">
+  <div class="grain"></div>
+  <div class="hero-kanji">回覧実記</div>
+  <div class="hero-content">
+    <span class="eyebrow">Club Kongzhi UNMSM · Serie Japón</span>
+    <h1 class="title-jp">特命全権大使<br>米欧回覧実記</h1>
+    <div class="title-romaji">Tokumei Zenken Taishi Bei-Ō Kairan Jikki — "Verdadero relato del recorrido de observación del Embajador Extraordinario y Plenipotenciario por Estados Unidos y Europa"</div>
+    <p class="hero-dek">En diciembre de 1871, un grupo de casi 50 líderes del recién nacido gobierno Meiji zarpó de Yokohama para pasar 21 meses recorriendo EE.UU. y Europa. No era turismo: era una nación entera tomando notas para reinventarse. Este es el mapa de ese viaje — y del libro de cinco tomos que salió de él.</p>
+    <div class="hero-stats">
+      <div><span class="num">642</span><span class="lbl">días fuera de Japón</span></div>
+      <div><span class="num">12+</span><span class="lbl">países visitados</span></div>
+      <div><span class="num">100</span><span class="lbl">fascículos del Jikki</span></div>
+      <div><span class="num">5</span><span class="lbl">tomos, publicados en 1878</span></div>
+    </div>
+  </div>
+  <div class="scroll-cue"><span class="ln"></span> Recorrer la ruta</div>
+</header>
+
+<section id="ruta">
+  <div class="section-head">
+    <span class="eyebrow">01 · La ruta</span>
+    <h2>Un gabinete de gobierno entero, embarcado</h2>
+    <p class="lede">Toca cada parada para ver qué observó la misión ahí — y por qué importaba para un Japón que acababa de salir de dos siglos de aislamiento.</p>
+  </div>
+
+  <div class="route-wrap">
+    <div class="route-line"></div>
+    <div class="stop active" data-i="1">
+      <div class="stop-dot">1</div>
+      <div class="stop-head">
+        <span class="stop-date">23 dic 1871</span>
+        <span class="stop-place">Yokohama → San Francisco</span>
+        <span class="stop-tag">Partida</span>
+      </div>
+      <div class="stop-body">
+        <p>Zarpan cerca de 50 funcionarios de alto rango más unos 60 estudiantes y asistentes — más de 100 personas en total, con un costo estimado de un millón de dólares de la época. Entre ellos, cinco niñas quedarían en EE.UU. a estudiar, incluida Tsuda Umeko, de apenas 6 años.</p>
+      </div>
+    </div>
+
+    <div class="stop" data-i="2">
+      <div class="stop-dot">2</div>
+      <div class="stop-head">
+        <span class="stop-date">ene–ago 1872</span>
+        <span class="stop-place">Estados Unidos</span>
+        <span class="stop-tag">8 meses</span>
+      </div>
+      <div class="stop-body">
+        <p>Cruzan el continente en tren — con una parada no planificada en Salt Lake City por el invierno severo de 1872. En Washington D.C. intentan renegociar los tratados desiguales impuestos a Japón. Fracasan: es demasiado pronto para exigir un trato de igual a igual. La lección los marca para el resto del viaje.</p>
+      </div>
+    </div>
+
+    <div class="stop" data-i="3">
+      <div class="stop-dot">3</div>
+      <div class="stop-head">
+        <span class="stop-date">ago–dic 1872</span>
+        <span class="stop-place">Reino Unido</span>
+        <span class="stop-tag">4 meses</span>
+      </div>
+      <div class="stop-body">
+        <p>Llegan a Liverpool el 17 de agosto de 1872. Es la estadía más larga del viaje: recorren minas de carbón, fundiciones, talleres, fábricas de cerveza y galletas. Entienden que la revolución industrial británica tomó apenas cuatro o cinco décadas — no siglos. Este es el país que más espacio ocupa en el Jikki final: 20 de los 100 fascículos.</p>
+        <p class="quote">Del libro completo, EE.UU. y Reino Unido concentran juntos el 40% del contenido — la proporción revela dónde creyeron que estaba el modelo a estudiar con más detalle.</p>
+      </div>
+    </div>
+
+    <div class="stop" data-i="4">
+      <div class="stop-dot">4</div>
+      <div class="stop-head">
+        <span class="stop-date">24–28 oct 1872</span>
+        <span class="stop-place">Bradford y Saltaire</span>
+        <span class="stop-tag">Desvío textil</span>
+      </div>
+      <div class="stop-body">
+        <p>Dentro de su gira británica, la delegación se desvía a Saltaire, el pueblo-modelo textil de Titus Salt cerca de Bradford — entonces todavía inacabado. Los reciben con carteles anunciando su llegada y una escolta encabezada por el propio alcalde. Los interesa la producción textil mecanizada: quieren entender cómo un solo empresario organizó fábrica, vivienda obrera y servicios en un mismo sistema.</p>
+        <p class="quote">La visita a Saltaire solo se documentó en detalle hasta 2024, cuando el Saltaire History Club reconstruyó el itinerario día por día a partir de la prensa local de Bradford de 1872.</p>
+      </div>
+    </div>
+
+    <div class="stop" data-i="5">
+      <div class="stop-dot">5</div>
+      <div class="stop-head">
+        <span class="stop-date">dic 1872–jul 1873</span>
+        <span class="stop-place">Europa continental</span>
+        <span class="stop-tag">7 meses, 10 países</span>
+      </div>
+      <div class="stop-body">
+        <p>Francia, Bélgica, Países Bajos, Alemania (Prusia), Rusia, Dinamarca, Suecia, Italia, Austria-Hungría y Suiza. En Prusia estudian el sistema educativo centralizado y la estructura militar eficiente — piezas que luego aparecerán en las reformas Meiji. En Viena documentan hasta la lisura del empedrado y el número de libros en las bibliotecas. En Francia no logran avanzar en la revisión de tratados, pero se llevan reportes detallados sobre industria — y el derecho francés, incluido el Code Napoléon, terminaría marcando buena parte del futuro código civil japonés.</p>
+      </div>
+    </div>
+
+    <div class="stop" data-i="6">
+      <div class="stop-dot">6</div>
+      <div class="stop-head">
+        <span class="stop-date">jul–sep 1873</span>
+        <span class="stop-place">Suez → Sur y Sudeste Asiático → Hong Kong</span>
+        <span class="stop-tag">Regreso</span>
+      </div>
+      <div class="stop-body">
+        <p>El viaje de vuelta cruza el Canal de Suez hacia el Índico, con paradas breves en puertos del sur de Asia y en los puertos-tratado del sudeste de China y Hong Kong — un contraste directo con lo visto en Europa: territorios asiáticos bajo dominio colonial. Kume compara ahí la estética europea (oro, perlas) con la vermellón china que rodeaba esas construcciones. Ōkubo y Kido regresan antes por asuntos urgentes de gobierno.</p>
+      </div>
+    </div>
+
+    <div class="stop" data-i="7">
+      <div class="stop-dot">7</div>
+      <div class="stop-head">
+        <span class="stop-date">13 sep 1873</span>
+        <span class="stop-place">Regreso a Japón</span>
+        <span class="stop-tag">Cierre</span>
+      </div>
+      <div class="stop-body">
+        <p>Casi dos años después de zarpar, la misión vuelve con algo más valioso que un tratado renegociado: un inventario de cómo funciona un estado industrial moderno, listo para convertirse en política pública.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-head">
+    <span class="eyebrow">02 · El mandato</span>
+    <h2>No viajaban por curiosidad — tenían tres encargos</h2>
+  </div>
+  <div class="legacy-grid">
+    <div>
+      <span class="eyebrow">Encargo 1</span>
+      <h4>Protocolo</h4>
+      <p>Visitar cada país con tratado firmado con Japón, presentar credenciales ante sus jefes de Estado y cumplir el protocolo diplomático correspondiente.</p>
+    </div>
+    <div>
+      <span class="eyebrow">Encargo 2</span>
+      <h4>Renegociar tratados</h4>
+      <p>Abrir negociaciones preliminares para revisar los tratados desiguales heredados del período Tokugawa. Es el encargo que más claramente fracasa.</p>
+    </div>
+    <div>
+      <span class="eyebrow">Encargo 3</span>
+      <h4>Recolectar sistemas</h4>
+      <p>Reunir información sobre instituciones y cultura occidentales, útil para la administración interna tras la abolición de los dominios feudales (han) y la creación de las prefecturas.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wide">
+  <div class="tension">
+    <span class="eyebrow">02 · La tensión central</span>
+    <h2>Wakon Yōsai — espíritu japonés, técnica occidental</h2>
+    <p class="lede" style="color:rgba(239,227,200,0.85); max-width:640px;">Los propios delegados discreparon sobre cuánto adoptar. El Jikki documenta ambos lados del debate que definiría la modernización japonesa.</p>
+    <div class="tension-scale">
+      <div>
+        <h3>Lo que admiraron</h3>
+        <ul>
+          <li>El progreso material y tecnológico occidental — ferrocarriles, industria pesada, telégrafo</li>
+          <li>Sistemas educativos centralizados, como el prusiano</li>
+          <li>La velocidad del cambio: Gran Bretaña industrializó en solo 4-5 décadas</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Lo que les preocupó</h3>
+        <ul>
+          <li>Que adoptar instituciones parlamentarias occidentales diluyera la ética samurái y la autoridad imperial</li>
+          <li>El "lado oscuro" de la civilización occidental, que también documentaron</li>
+          <li>La imitación sin filtro, frente a la adaptación empírica y selectiva</li>
+        </ul>
+      </div>
+    </div>
+    <p class="tension-note">Este debate — cuánto imitar, cuánto preservar — no se cerró con el viaje. Siguió activo en las reformas constitucionales y educativas de las décadas siguientes.</p>
+  </div>
+</section>
+
+<section id="documento">
+  <div class="section-head">
+    <span class="eyebrow">03 · El documento</span>
+    <h2>De cuaderno de viaje a manual de estado</h2>
+  </div>
+  <div class="doc-grid">
+    <div class="doc-card">
+      <p class="lede" style="margin-top:0;">Kume Kunitake, historiador y secretario privado de Iwakura Tomomi, fue el cronista oficial del viaje. Entrevistó a miles de personas locales — con apoyo del intérprete Yoshinari Hatakeyama — y combinó esas entrevistas con estadística, geografía e historia para compilar el reporte, publicado en 1878.</p>
+      <p>La estructura mezcla un diario cronológico de los movimientos de Iwakura con extensos ensayos analíticos intercalados, además de "introducciones generales" y "descripciones generales" por país. Incluye numerosos grabados que le dan, además de valor documental, valor histórico-cultural.</p>
+      <div class="fig">
+        <div><span class="n">100</span><span class="l">Fascículos (kan)</span></div>
+        <div><span class="n">5</span><span class="l">Tomos publicados</span></div>
+        <div><span class="n">~3,500</span><span class="l">Copias impresas hasta 1883</span></div>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-family:'Shippori Mincho',serif; margin-top:0;">¿Qué pasó después con la delegación?</h3>
+      <ul class="fate-list">
+        <li><span class="who">Kido Takayoshi</span><span class="what">Se retira por enfermedad y muere en 1877</span></li>
+        <li><span class="who">Ōkubo Toshimichi</span><span class="what">Asesinado en 1878</span></li>
+        <li><span class="who">Iwakura Tomomi</span><span class="what">Sobrevive a un atentado en 1874; muere en 1883</span></li>
+        <li><span class="who">Itō Hirobumi</span><span class="what">Lidera la modernización institucional; asesinado en 1909</span></li>
+        <li><span class="who">Kume Kunitake</span><span class="what">Profesor en la Universidad Imperial de Tokio; renuncia en 1892 tras una controversia sobre el sintoísmo; continúa enseñando en lo que sería la Universidad Waseda</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="curiosidades">
+  <div class="section-head">
+    <span class="eyebrow">04 · Detalles de campo</span>
+    <h2>Lo que no sale en el resumen ejecutivo</h2>
+    <p class="lede">Cuatro escenas puntuales — sacadas de investigación local y académica — que muestran cómo operaba realmente la misión, más allá de la lista de países.</p>
+  </div>
+  <div class="legacy-grid">
+    <div>
+      <span class="eyebrow">Yorkshire, 24–27 oct 1872</span>
+      <h4>Cuatro días en Saltaire</h4>
+      <p>La delegación se desvió de Londres para visitar Bradford y Saltaire, el pueblo-modelo textil de Titus Salt. Los recibió el propio alcalde de Bradford en la estación; el interés no era turístico sino técnico — estudiar de cerca la producción mecanizada de textiles, uno de los motores de la industrialización británica.</p>
+    </div>
+    <div>
+      <span class="eyebrow">Reportado en el Jikki</span>
+      <h4>Higiene urbana como política de estado</h4>
+      <p>Un análisis académico sobre percepción sanitaria en Asia Oriental identifica que el Jikki propuso explícitamente agua potable moderna, drenaje, árboles en las calles y parques como herramientas para prevenir enfermedades contagiosas — higiene entendida como tarea de gobierno "civilizado", no solo de infraestructura.</p>
+    </div>
+    <div>
+      <span class="eyebrow">Berlín, 11 mar 1873</span>
+      <h4>La ópera y el Noh</h4>
+      <p>En el Teatro Imperial de Berlín asisten a su primera ópera. Kume anota semejanzas entre ese drama musical y el teatro Noh japonés. El cruce cultural no quedó solo en la anotación: investigaciones posteriores conectan esta experiencia con el impulso diplomático que ayudó a revitalizar al Noh como arte de representación oficial en el propio Japón.</p>
+    </div>
+    <div>
+      <span class="eyebrow">Hong Kong, 27 ago 1873</span>
+      <h4>Mirando el colonialismo de cerca</h4>
+      <p>Ya de regreso, Kume compara conscientemente la estética europea —oro y perlas— frente a la estética china tradicional —bermellón— en la arquitectura colonial de Hong Kong. Es de los pocos puntos del viaje donde observan de cerca cómo luce un territorio asiático bajo dominio occidental directo.</p>
+    </div>
+  </div>
+</section>
+
+<section id="legado">
+  <div class="section-head">
+    <span class="eyebrow">05 · El legado</span>
+    <h2>De reporte de viaje a base de datos de una nación</h2>
+  </div>
+  <div class="legacy-grid">
+    <div>
+      <span class="eyebrow">Reforma constitucional</span>
+      <h4>Modelo prusiano</h4>
+      <p>Lo observado sobre el sistema centralizado prusiano influyó en el diseño de la futura Constitución Meiji y en la estructura militar japonesa.</p>
+    </div>
+    <div>
+      <span class="eyebrow">Reforma educativa</span>
+      <h4>Sistemas escolares occidentales</h4>
+      <p>Las visitas a escuelas, universidades y centros industriales en Boston, Nueva York y Washington alimentaron directamente las reformas del Ministerio de Educación japonés.</p>
+    </div>
+    <div>
+      <span class="eyebrow">Uso institucional</span>
+      <h4>Base de datos para modernizar</h4>
+      <p>El Jikki funcionó como banco de información de referencia para funcionarios, además de dar pie a numerosos sub-reportes especializados de los comisionados que participaron del viaje.</p>
+    </div>
+  </div>
+</section>
+
+<section id="fuentes">
+  <div class="sources">
+    <span class="eyebrow">Fuentes consultadas</span>
+    <ul>
+      <li><a href="https://es.wikipedia.org/wiki/Misi%C3%B3n_Iwakura" target="_blank" rel="noopener">Wikipedia (ES) — Misión Iwakura</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Iwakura_Mission" target="_blank" rel="noopener">Wikipedia (EN) — Iwakura Mission</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Kume_Kunitake" target="_blank" rel="noopener">Wikipedia (EN) — Kume Kunitake</a></li>
+      <li><a href="https://www.nippon.com/en/japan-topics/g00680/" target="_blank" rel="noopener">Nippon.com — The Iwakura Mission</a></li>
+      <li><a href="https://jref.com/articles/iwakura-mission.533/" target="_blank" rel="noopener">Japan Reference — Iwakura Mission</a></li>
+      <li><a href="https://www.historyskills.com/classroom/modern-history/iwakura-mission/" target="_blank" rel="noopener">History Skills — The Iwakura Mission</a></li>
+      <li><a href="https://www.keio.ac.jp/en/about/public-relations/mita-hyoron/koenroku/202402-1/" target="_blank" rel="noopener">Keio University — The Iwakura Mission in Victorian Britain</a></li>
+      <li><a href="https://www.historyofjapaneseinny.org/special-exhibit/biographies/iwakura-mission-members/" target="_blank" rel="noopener">Digital Museum of the History of Japanese in NY</a></li>
+      <li><a href="https://www.saltairecollection.org/1872-when-samurai-came-to-saltaire/" target="_blank" rel="noopener">Saltaire Collection — 1872: When Samurai Came to Saltaire</a></li>
+      <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5750341/" target="_blank" rel="noopener">Min &amp; Park (2017) — Urban Hygiene and Public Health, PMC</a></li>
+      <li><a href="https://slub.qucosa.de/id/qucosa:72032" target="_blank" rel="noopener">Itoh (2012) — German Music Culture &amp; the Noh Theater, Qucosa/SLUB</a></li>
+      <li><a href="https://www.historyofjapaneseinny.org/special-exhibit/return-journey/" target="_blank" rel="noopener">Digital Museum of the History of Japanese in NY — Return Journey</a></li>
+      <li><a href="https://www.the-noh.com/en/oversea/04_meijiishin.html" target="_blank" rel="noopener">the-noh.com — Cultural Exchange in Meiji Diplomacy</a></li>
+    </ul>
+  </div>
+  <div class="nav-adjacent">
+    <a href="../meiji/index.html">
+      <span class="dir">‹ Anterior</span>
+      <span class="ttl">1868: La Restauración Meiji</span>
+    </a>
+    <div class="empty">Siguiente cuaderno de Japón — en construcción</div>
+  </div>
+</section>
+
+<footer>
+  Club Kongzhi UNMSM · Observatorio Asia-Pacífico · Serie Japón — construido con respaldo de fuentes primarias y académicas
+</footer>
+
+<script>
+  document.querySelectorAll('.stop').forEach(function(stop){
+    stop.querySelector('.stop-head').addEventListener('click', function(){
+      var wasActive = stop.classList.contains('active');
+      document.querySelectorAll('.stop').forEach(function(s){ s.classList.remove('active'); });
+      if(!wasActive){ stop.classList.add('active'); }
+    });
+  });
+</script>
+
+</body>
+</html>
