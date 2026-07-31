@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>殖産興業 — La Industrialización Meiji</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zilla+Slab:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#221d17;
+    --paper:#efe3c8;
+    --paper-2:#e3d3ab;
+    --paper-deep:#d8c493;
+    --indigo:#1e3050;
+    --indigo-2:#2c4670;
+    --indigo-deep:#141f34;
+    --vermillion:#a53a2c;
+    --vermillion-2:#c24a37;
+    --brass:#a9813f;
+    --brass-light:#cba361;
+    --line: rgba(34,29,23,0.18);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:'Zilla Slab', serif; font-size:17px; line-height:1.6;
+    background-image:
+      radial-gradient(circle at 20% 15%, rgba(169,129,63,0.10), transparent 40%),
+      radial-gradient(circle at 85% 60%, rgba(30,48,80,0.06), transparent 45%);
+  }
+  ::selection{background:var(--vermillion); color:var(--paper);}
+  a{color:var(--indigo-2);}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; letter-spacing:.14em; text-transform:uppercase;
+    font-size:.72rem; color:var(--vermillion); font-weight:500;
+  }
+
+  /* ---------- NAV ---------- */
+  .top-return{
+    position:fixed; top:1.1rem; left:1.1rem; z-index:50;
+    background:rgba(20,31,52,0.55); backdrop-filter:blur(4px);
+    color:var(--paper); border:1px solid rgba(239,227,200,0.3);
+    padding:.5rem .9rem; border-radius:30px;
+    font-family:'IBM Plex Mono', monospace; font-size:.72rem;
+    text-decoration:none; display:inline-flex; align-items:center; gap:.4rem;
+    transition:background .2s ease;
+  }
+  .top-return:hover{background:rgba(20,31,52,0.88);}
+
+  /* ---------- HERO ---------- */
+  header.hero{
+    position:relative; min-height:96vh;
+    background:linear-gradient(180deg, var(--indigo-deep) 0%, var(--indigo) 55%, var(--indigo-2) 100%);
+    color:var(--paper); overflow:hidden;
+    display:flex; flex-direction:column; justify-content:center;
+    padding:8vh 6vw 10vh;
+  }
+  header.hero .grain{
+    position:absolute; inset:0;
+    background-image:radial-gradient(rgba(239,227,200,0.05) 1px, transparent 1px);
+    background-size:3px 3px; pointer-events:none;
+  }
+  .hero-kanji{
+    position:absolute; right:2vw; top:6vh;
+    font-family:'Shippori Mincho', serif; font-size:clamp(3.4rem, 13vw, 10.5rem);
+    color:rgba(239,227,200,0.06); writing-mode:vertical-rl; font-weight:700;
+    user-select:none; z-index:0;
+  }
+  .hero-content{position:relative; z-index:2; max-width:900px;}
+  .hero .eyebrow{color:var(--brass-light);}
+  h1.title-jp{
+    font-family:'Shippori Mincho', serif; font-weight:700;
+    font-size:clamp(2rem, 5.2vw, 4rem); line-height:1.15; margin:.6rem 0 .3rem; color:var(--paper);
+  }
+  .title-romaji{
+    font-family:'IBM Plex Mono', monospace; font-size:clamp(.85rem, 1.6vw, 1.05rem);
+    color:rgba(239,227,200,0.65); letter-spacing:.04em; margin-bottom:1.6rem;
+  }
+  .hero-dek{
+    font-size:clamp(1.05rem, 2vw, 1.3rem); max-width:660px;
+    color:rgba(239,227,200,0.9); font-weight:400;
+  }
+  .hero-stats{display:flex; gap:2.6rem; margin-top:3rem; flex-wrap:wrap;}
+  .hero-stats div{border-left:2px solid var(--vermillion); padding-left:.9rem;}
+  .hero-stats .num{
+    font-family:'Shippori Mincho', serif; font-weight:700; font-size:1.6rem;
+    display:block; color:var(--brass-light);
+  }
+  .hero-stats .lbl{
+    font-family:'IBM Plex Mono', monospace; font-size:.7rem; text-transform:uppercase;
+    letter-spacing:.08em; color:rgba(239,227,200,0.6);
+  }
+  .scroll-cue{
+    position:absolute; bottom:4vh; left:6vw; z-index:2;
+    font-family:'IBM Plex Mono', monospace; font-size:.72rem;
+    color:rgba(239,227,200,0.55); letter-spacing:.1em; display:flex; align-items:center; gap:.6rem;
+  }
+  .scroll-cue .ln{width:34px; height:1px; background:rgba(239,227,200,0.4); display:inline-block; animation:pulse 2s ease-in-out infinite;}
+  @keyframes pulse{0%,100%{opacity:.4;} 50%{opacity:1;}}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:6.5rem 6vw; max-width:1180px; margin:0 auto;}
+  .section-head{max-width:680px; margin-bottom:2.6rem;}
+  h2{font-family:'Shippori Mincho', serif; font-weight:700; font-size:clamp(1.6rem, 3.2vw, 2.5rem); margin:.2rem 0 1.6rem;}
+  .lede{font-size:1.12rem; color:#3b3327;}
+
+  /* ---------- VÍA DEL TIEMPO (scroll-driven) ---------- */
+  .actos-track{position:relative;}
+  .epoch-rail{
+    position:absolute; top:6px; bottom:6px; left:60px; width:3px;
+    background:repeating-linear-gradient(180deg, var(--brass) 0 6px, transparent 6px 12px);
+    z-index:0;
+  }
+  .epoch-fill{
+    position:absolute; top:6px; left:60px; width:3px; height:0%;
+    background:linear-gradient(180deg, var(--brass-light), var(--vermillion));
+    z-index:1; will-change:height;
+  }
+  .epoch-train{
+    position:absolute; left:60px; top:6px; transform:translate(-50%,-50%);
+    width:38px; height:38px; z-index:3; will-change:top;
+    filter:drop-shadow(0 3px 4px rgba(34,29,23,0.35));
+  }
+  .epoch-train svg{width:100%; height:100%; display:block;}
+  .epoch-smoke{
+    position:absolute; left:60px; z-index:2; pointer-events:none;
+    width:6px; height:6px; border-radius:50%;
+    background:var(--brass-light); opacity:0;
+    transition:opacity .4s ease;
+  }
+
+  .acto{
+    position:relative;
+    border-top:1px solid var(--line);
+    padding:2.4rem 0;
+    display:grid; grid-template-columns:140px 1fr; gap:2rem;
+    cursor:pointer;
+  }
+  .acto:last-child{border-bottom:1px solid var(--line);}
+  .acto-num-wrap{display:flex; flex-direction:column; align-items:flex-start; gap:.6rem; position:relative; z-index:4;}
+  .acto-icon{
+    width:34px; height:34px; padding:6px;
+    background:var(--paper); border:1.5px solid var(--brass);
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    transition:border-color .3s ease, background .3s ease;
+  }
+  .acto.active .acto-icon{border-color:var(--vermillion); background:var(--paper-2);}
+  .acto-icon svg{width:100%; height:100%;}
+  .acto-num{
+    font-family:'Shippori Mincho', serif; font-weight:700;
+    font-size:1.5rem; color:var(--indigo); line-height:1;
+  }
+  .acto-label{
+    font-family:'IBM Plex Mono', monospace; font-size:.66rem; text-transform:uppercase;
+    letter-spacing:.07em; color:var(--brass);
+  }
+  .acto-head{display:flex; align-items:baseline; gap:1rem; flex-wrap:wrap;}
+  .acto-title{font-family:'Shippori Mincho', serif; font-weight:700; font-size:1.4rem;}
+  .acto-date{font-family:'IBM Plex Mono', monospace; font-size:.78rem; color:var(--vermillion);}
+  .acto-teaser{color:#4a3f2e; margin:.5rem 0 0; max-width:640px;}
+  .acto-body{
+    max-height:0; overflow:hidden; opacity:0;
+    transition:max-height .4s ease, opacity .3s ease, padding .3s ease;
+  }
+  .acto.active .acto-body{max-height:900px; opacity:1; padding-top:1rem;}
+  .acto-body p{margin:0 0 .8rem; color:#3b3327; max-width:680px;}
+  .acto-body .quote{
+    padding-left:.9rem; border-left:2px solid var(--brass);
+    font-style:italic; color:#55452c; font-size:.96rem; margin-top:1rem; max-width:640px;
+  }
+  .acto-chevron{
+    font-family:'IBM Plex Mono', monospace; font-size:.8rem; color:var(--indigo-2);
+    margin-top:.6rem; display:inline-block; transition:transform .3s ease;
+  }
+  .acto.active .acto-chevron{transform:rotate(90deg);}
+
+  @media(max-width:820px){
+    .acto{grid-template-columns:64px 1fr;}
+    .epoch-rail, .epoch-fill, .epoch-train, .epoch-smoke{left:28px;}
+    .acto-num{font-size:1.15rem;}
+    .acto-icon{width:28px; height:28px;}
+  }
+
+  /* ---------- LEGACY / ECO ---------- */
+  .legacy-grid{
+    display:grid; grid-template-columns:repeat(2, 1fr); gap:1.6px;
+    background:var(--line); border:1px solid var(--line);
+  }
+  .legacy-grid > div{background:var(--paper); padding:1.8rem;}
+  .legacy-grid h4{margin:.2rem 0 .5rem; font-family:'Shippori Mincho', serif; font-size:1.08rem;}
+  .legacy-grid p{margin:0; font-size:.94rem; color:#3b3327;}
+
+  .connect-note{
+    margin-top:2.4rem; padding:1.4rem 1.6rem; border:1px dashed var(--brass);
+    font-family:'IBM Plex Mono', monospace; font-size:.85rem; color:#4a3f2e;
+  }
+  .connect-note a{color:var(--vermillion); font-weight:500;}
+
+  /* ---------- SOURCES ---------- */
+  .sources{border-top:1px solid var(--line); padding-top:2rem;}
+  .sources p{font-size:.95rem; color:#4a3f2e; max-width:720px;}
+
+  /* ---------- NAV ANTERIOR/SIGUIENTE ---------- */
+  .nav-adjacent{
+    display:grid; grid-template-columns:1fr 1fr; gap:1.4px;
+    background:var(--line); border:1px solid var(--line); margin-top:.5rem;
+  }
+  .nav-adjacent a, .nav-adjacent .empty{
+    background:var(--paper-2); padding:1.6rem 1.8rem; text-decoration:none; color:var(--ink);
+    display:flex; flex-direction:column; transition:background .2s ease;
+  }
+  .nav-adjacent a:hover{background:var(--paper-deep);}
+  .nav-adjacent .dir{
+    font-family:'IBM Plex Mono', monospace; font-size:.68rem; text-transform:uppercase;
+    color:var(--vermillion); margin-bottom:.5rem; letter-spacing:.05em;
+  }
+  .nav-adjacent .ttl{font-family:'Shippori Mincho', serif; font-weight:700; font-size:1.08rem;}
+  .nav-adjacent .next{text-align:right; align-items:flex-end;}
+  .nav-adjacent .empty{
+    color:#9a8f76; justify-content:center; align-items:center; text-align:center;
+    font-family:'IBM Plex Mono', monospace; font-size:.78rem;
+  }
+  @media(max-width:720px){
+    .nav-adjacent{grid-template-columns:1fr;}
+    .nav-adjacent .next{text-align:left; align-items:flex-start;}
+  }
+
+  footer{
+    text-align:center; padding:3rem 6vw 4rem;
+    font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:#7a6b4d;
+  }
+  @media(max-width:820px){
+    .legacy-grid{grid-template-columns:1fr;}
+    section{padding:4rem 6vw;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .scroll-cue .ln{animation:none;}
+    .acto-body, .epoch-fill, .epoch-train{transition:none;}
+  }
+</style>
+</head>
+<body>
+<a class="top-return" href="../../index.html">← Biblioteca Nalanda</a>
+
+<header class="hero">
+  <div class="grain"></div>
+  <div class="hero-kanji">興業</div>
+  <div class="hero-content">
+    <span class="eyebrow">Club Kongzhi UNMSM · Serie Japón · Economía 01</span>
+    <h1 class="title-jp">殖産興業</h1>
+    <div class="title-romaji">Shokusan Kōgyō — "Aumentar la producción, promover la industria"</div>
+    <p class="hero-dek">Un país que gravaba el arroz al 40% se convierte, en cuatro décadas, en la primera potencia industrial de Asia. No fue el mercado el que lo logró — fue un Estado que primero construyó las fábricas él mismo, y después aprendió cuándo soltarlas.</p>
+    <div class="hero-stats">
+      <div><span class="num">40%</span><span class="lbl">de la cosecha, impuesto feudal en arroz</span></div>
+      <div><span class="num">3,000+</span><span class="lbl">expertos extranjeros contratados</span></div>
+      <div><span class="num">18 mi</span><span class="lbl">de vía férrea para 1872</span></div>
+      <div><span class="num">1880</span><span class="lbl">el Estado vende sus fábricas</span></div>
+    </div>
+  </div>
+  <div class="scroll-cue"><span class="ln"></span> Seguir la vía — desplázate</div>
+</header>
+
+<section id="actos">
+  <div class="section-head">
+    <span class="eyebrow">Los 5 actos</span>
+    <h2>De la economía del arroz a la nación fábrica</h2>
+    <p class="lede">La locomotora de la izquierda avanza con tu scroll — igual que la vía férrea real que Japón construyó durante estos mismos años. Toca cada acto para expandirlo.</p>
+  </div>
+
+  <div class="actos-track" id="actosTrack">
+    <div class="epoch-rail"></div>
+    <div class="epoch-fill" id="epochFill"></div>
+    <div class="epoch-train" id="epochTrain">
+      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="24" cy="24" r="22" fill="var(--indigo-deep)" stroke="var(--brass-light)" stroke-width="1.5"/>
+        <rect x="12" y="20" width="18" height="10" rx="1.5" fill="var(--vermillion)"/>
+        <rect x="28" y="17" width="6" height="13" rx="1" fill="var(--vermillion-2)"/>
+        <rect x="30" y="12" width="2.6" height="6" fill="var(--brass-light)"/>
+        <circle cx="17" cy="31" r="2.4" fill="var(--paper)"/>
+        <circle cx="25" cy="31" r="2.4" fill="var(--paper)"/>
+        <line x1="8" y1="34" x2="40" y2="34" stroke="var(--brass-light)" stroke-width="1.2"/>
+      </svg>
+    </div>
+
+    <div class="acto active" data-i="1">
+      <div class="acto-num-wrap">
+        <div class="acto-icon">
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 26 L16 14" stroke="var(--indigo)" stroke-width="1.6" fill="none"/>
+            <path d="M16 18 Q10 15 9 8" stroke="var(--indigo)" stroke-width="1.4" fill="none"/>
+            <path d="M16 16 Q22 13 23 6" stroke="var(--indigo)" stroke-width="1.4" fill="none"/>
+            <path d="M6 26 H26" stroke="var(--brass)" stroke-width="1.6"/>
+          </svg>
+        </div>
+        <span class="acto-num">I</span>
+        <span class="acto-label">El mundo antes</span>
+      </div>
+      <div>
+        <div class="acto-head">
+          <span class="acto-title">Una economía de arroz frente a la Revolución Industrial</span>
+          <span class="acto-date">1603 – 1853</span>
+        </div>
+        <p class="acto-teaser">260 años de dictadura militar feudal, impuestos de casi la mitad de cada cosecha, y un país sellado que empieza a mostrar grietas frente al avance colonial.</p>
+        <div class="acto-body">
+          <p>Japón funciona como una dictadura militar feudal desde hace más de 260 años. Una estructura de clases estricta limita la libertad individual y el acceso a la educación: el poder está en manos de la élite samurái, mientras el peso económico recae en un campesinado fuertemente gravado.</p>
+          <p>La economía sigue anclada al arroz como medio oficial de cambio — los campesinos pagan impuestos cercanos al 40% de su cosecha, una presión social insostenible frente a una Revolución Industrial que ya está transformando Occidente. Existe comercio interno y gremios hereditarios, pero el sistema carece de toda flexibilidad moderna.</p>
+          <p class="quote">Dos siglos de sakoku (aislamiento) empiezan a resquebrajarse frente a las potencias coloniales — y con ellos, la ilusión de que Japón podía seguir mirando hacia adentro.</p>
+          <span class="acto-chevron">▶ contraer</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="acto" data-i="2">
+      <div class="acto-num-wrap">
+        <div class="acto-icon">
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 24 L26 24 L23 15 L9 15 Z" fill="none" stroke="var(--indigo)" stroke-width="1.5"/>
+            <line x1="16" y1="15" x2="16" y2="5" stroke="var(--indigo)" stroke-width="1.5"/>
+            <path d="M16 5 L24 10 L16 10 Z" fill="var(--vermillion)"/>
+          </svg>
+        </div>
+        <span class="acto-num">II</span>
+        <span class="acto-label">La grieta</span>
+      </div>
+      <div>
+        <div class="acto-head">
+          <span class="acto-title">Los barcos negros fuerzan la apertura</span>
+          <span class="acto-date">1853 – 1854</span>
+        </div>
+        <p class="acto-teaser">La llegada del comodoro Perry rompe 250 años de sakoku y expone, de golpe, la debilidad militar y tecnológica del shogunato.</p>
+        <div class="acto-body">
+          <p>La expedición del comodoro Matthew Perry obliga a Japón a reabrir su economía tras más de 250 años de aislamiento casi total. La apertura forzada termina en la firma de tratados desiguales que impiden a Japón fijar sus propios aranceles — dejando a sus industrias nacientes sin ninguna protección frente a la competencia extranjera.</p>
+          <p>El evento revela la absoluta debilidad militar y tecnológica del shogunato Tokugawa frente a Occidente. Esa incapacidad para defender la soberanía nacional detona la agitación política que culminará en la Restauración Meiji de 1868 — y, años después, misiones como la de Iwakura confirmarán algo clave: el poder militar occidental nace directamente de su fuerza industrial y comercial.</p>
+          <span class="acto-chevron">▶ contraer</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="acto" data-i="3">
+      <div class="acto-num-wrap">
+        <div class="acto-icon">
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="14" width="16" height="12" fill="none" stroke="var(--indigo)" stroke-width="1.5"/>
+            <rect x="19" y="6" width="4" height="9" fill="none" stroke="var(--indigo)" stroke-width="1.4"/>
+            <circle cx="21" cy="4" r="2" fill="var(--brass)"/>
+          </svg>
+        </div>
+        <span class="acto-num">III</span>
+        <span class="acto-label">El giro</span>
+      </div>
+      <div>
+        <div class="acto-head">
+          <span class="acto-title">De construir fábricas a soltarlas</span>
+          <span class="acto-date">1871 – 1880</span>
+        </div>
+        <p class="acto-teaser">Primero un giro mental en la Misión Iwakura; después uno de política, cuando el Estado vende sus fábricas al sector privado y nacen los zaibatsu.</p>
+        <div class="acto-body">
+          <p><strong>El giro mental (1871).</strong> Durante casi dos años recorriendo EE.UU. y Europa, la élite japonesa observa de cerca las sociedades occidentales y llega a una conclusión irreversible: el poder militar occidental nace de su fuerza industrial. A partir de ahí, Japón deja de intentar simplemente resistir a Occidente para enfocarse en superarlo mediante industrialización acelerada.</p>
+          <p><strong>El giro de modelo (1880).</strong> El gobierno Meiji había intentado liderar la industrialización operando directamente minas, ferrocarriles y fábricas "modelo" — pero la política genera inflación, déficits comerciales y una quiebra inminente. El ministro de Finanzas Matsukata Masayoshi decide vender las fábricas estatales al sector privado. El Estado deja de ser empresario y pasa a ser guía y facilitador, en estrecha colaboración con grandes casas comerciales como Mitsui y Mitsubishi — que se convertirán en los poderosos zaibatsu.</p>
+          <p class="quote">Con la abolición del sistema de clases y una autonomía arancelaria negada hasta 1911, al gobierno no le queda otra salida que intervenir directamente para crear industrias competitivas a nivel mundial.</p>
+          <span class="acto-chevron">▶ contraer</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="acto" data-i="4">
+      <div class="acto-num-wrap">
+        <div class="acto-icon">
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="17" width="14" height="8" rx="1" fill="none" stroke="var(--vermillion)" stroke-width="1.5"/>
+            <rect x="21" y="14" width="4" height="6" fill="none" stroke="var(--indigo)" stroke-width="1.3"/>
+            <circle cx="9" cy="26" r="1.8" fill="var(--indigo)"/>
+            <circle cx="16" cy="26" r="1.8" fill="var(--indigo)"/>
+            <line x1="4" y1="28" x2="27" y2="28" stroke="var(--brass)" stroke-width="1.4"/>
+          </svg>
+        </div>
+        <span class="acto-num">IV</span>
+        <span class="acto-label">La consecuencia inmediata</span>
+      </div>
+      <div>
+        <div class="acto-head">
+          <span class="acto-title">Cinco años, un país entero reconstruido</span>
+          <span class="acto-date">1868 – 1873</span>
+        </div>
+        <p class="acto-teaser">Nuevos ministerios, miles de expertos extranjeros importados, la primera vía férrea del país, y la Misión Iwakura como bisagra estratégica.</p>
+        <div class="acto-body">
+          <p><strong>Reestructuración política.</strong> Cae el shogunato y se funda un gobierno de ley constitucional, con nuevos ministerios de Economía y Finanzas, y de Industria y Comercio, mientras el dominio público de las tierras agrícolas se centraliza.</p>
+          <p><strong>Reformas sociales.</strong> Se abole el sistema de clases: samuráis y sus descendientes pueden por primera vez trabajar en cualquier ocupación, y el talento migra hacia la burocracia y los negocios. Se inaugura un sistema educativo de modelo occidental, y el gobierno contrata a más de 3,000 expertos extranjeros (o-yatoi gaikokujin) para enseñar ciencia, tecnología y lenguas modernas.</p>
+          <p><strong>Infraestructura industrial.</strong> En 1870 nace la primera empresa japonesa moderna, y el gobierno decide construir un sistema ferroviario nacional con ingenieros y un préstamo de un millón de libras esterlinas de Gran Bretaña — para 1872 ya existen las primeras 18 millas de vía. En paralelo, el Estado levanta fábricas modelo con tecnología importada.</p>
+          <p><strong>La Misión Iwakura (1871).</strong> Una delegación de 107 altos funcionarios y estudiosos recorre EE.UU. y Europa por más de un año. Al volver, el gobierno se vuelca por completo hacia la industrialización — mientras el país empieza a abandonar el impuesto sobre el arroz en favor de una economía capitalista de mercado.</p>
+          <span class="acto-chevron">▶ contraer</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="acto" data-i="5">
+      <div class="acto-num-wrap">
+        <div class="acto-icon">
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="16" width="4" height="11" fill="var(--indigo)"/>
+            <rect x="9" y="11" width="4" height="16" fill="var(--indigo-2)"/>
+            <rect x="14" y="18" width="4" height="9" fill="var(--indigo)"/>
+            <rect x="19" y="8" width="4" height="19" fill="var(--indigo-2)"/>
+            <rect x="24" y="14" width="4" height="13" fill="var(--indigo)"/>
+            <circle cx="11" cy="7" r="1.6" fill="var(--brass-light)"/>
+            <circle cx="21" cy="4" r="1.6" fill="var(--brass-light)"/>
+          </svg>
+        </div>
+        <span class="acto-num">V</span>
+        <span class="acto-label">El eco</span>
+      </div>
+      <div>
+        <div class="acto-head">
+          <span class="acto-title">El estado desarrollista que nunca se apagó</span>
+          <span class="acto-date">1880 → hoy</span>
+        </div>
+        <p class="acto-teaser">De los zaibatsu a los keiretsu, del METI a la "Sanaenomics", el molde de 1880 sigue siendo el ADN económico de Japón.</p>
+        <div class="acto-body">
+          <p><strong>El estado desarrollista.</strong> El giro de 1880 —el gobierno pasando de dueño de fábricas a guía y facilitador— definió el ADN económico japonés. Hoy esa visión persiste en el Ministerio de Economía, Comercio e Industria (METI), que sigue formulando "visiones" industriales para coordinar inversión privada en sectores estratégicos como semiconductores e inteligencia artificial. La "Sanaenomics" de la administración Takaichi se lee como un regreso deliberado a esta estrategia de selección de sectores ganadores liderada por el Estado.</p>
+          <p><strong>De zaibatsu a keiretsu.</strong> Las grandes casas comerciales que Meiji favoreció para competir con Occidente —Mitsui, Mitsubishi, Sumitomo— sentaron la base de la estructura corporativa japonesa. Aunque los zaibatsu se desmantelaron tras la guerra, evolucionaron hacia los keiretsu modernos: redes de empresas interconectadas que priorizan estabilidad y relaciones de largo plazo sobre la ganancia trimestral.</p>
+          <p class="quote">La obsesión Meiji por educar para "enriquecer la nación" (Fukoku Kyōhei) sigue viva en los estándares educativos japoneses de hoy — y en el intento del país por transitar hacia la Sociedad 5.0, una sociedad ultra-tecnológica que integra IA en la vida cotidiana.</p>
+          <span class="acto-chevron">▶ contraer</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="legado">
+  <div class="section-head">
+    <span class="eyebrow">Por qué importa hoy</span>
+    <h2>Un país que planifica, no que espera</h2>
+  </div>
+  <div class="legacy-grid">
+    <div>
+      <h4>Procesar e importar para sobrevivir</h4>
+      <p>Sin recursos naturales propios, Meiji grabó en el país la idea de importar materia prima, añadirle valor tecnológico y exportarla. Esa "conciencia de crisis" sigue guiando hoy la apuesta japonesa en robótica y componentes avanzados.</p>
+    </div>
+    <div>
+      <h4>El estado como jugador, no árbitro</h4>
+      <p>Japón no espera a que el mercado dicte su futuro — lo planifica mediante una simbiosis entre Estado y grandes corporaciones. Es la misma herramienta con la que hoy enfrenta el estancamiento y el declive demográfico.</p>
+    </div>
+  </div>
+  <div class="connect-note">
+    Este capítulo nace directamente de <a href="../iwakura/index.html">la Misión Iwakura</a> — el giro mental de 1871 que once años después se convertiría en la decisión de 1880 que fundó a los zaibatsu.
+  </div>
+</section>
+
+<section id="fuentes">
+  <div class="sources">
+    <span class="eyebrow">Sobre esta investigación</span>
+    <p>Contenido curado por el equipo de Club Kongzhi a partir de fuentes académicas reunidas en el cuaderno de NotebookLM dedicado a la Industrialización Meiji, estructurado con el modelo de 5 actos de la biblioteca Nalanda.</p>
+  </div>
+  <div class="nav-adjacent">
+    <a href="../iwakura/index.html">
+      <span class="dir">‹ Anterior</span>
+      <span class="ttl">1872: La misión Iwakura</span>
+    </a>
+    <div class="empty">Siguiente cuaderno de Japón — en construcción</div>
+  </div>
+</section>
+
+<footer>
+  Club Kongzhi UNMSM · Observatorio Asia-Pacífico · Serie Japón — Biblioteca Nalanda
+</footer>
+
+<script>
+  document.querySelectorAll('.acto').forEach(function(acto){
+    acto.addEventListener('click', function(){
+      var wasActive = acto.classList.contains('active');
+      document.querySelectorAll('.acto').forEach(function(a){ a.classList.remove('active'); });
+      if(!wasActive){ acto.classList.add('active'); }
+    });
+  });
+
+  // --- Vía del tiempo: la locomotora avanza con el scroll ---
+  var track = document.getElementById('actosTrack');
+  var fill = document.getElementById('epochFill');
+  var train = document.getElementById('epochTrain');
+
+  function updateEpoch(){
+    var rect = track.getBoundingClientRect();
+    var trackTop = rect.top + window.scrollY;
+    var trackHeight = track.offsetHeight;
+    var viewportCenter = window.scrollY + window.innerHeight * 0.45;
+    var progress = (viewportCenter - trackTop) / trackHeight;
+    progress = Math.max(0, Math.min(1, progress));
+    fill.style.height = (progress * 100) + '%';
+    train.style.top = (progress * trackHeight) + 'px';
+  }
+
+  window.addEventListener('scroll', updateEpoch, { passive: true });
+  window.addEventListener('resize', updateEpoch);
+  updateEpoch();
+</script>
+
+</body>
+</html>
