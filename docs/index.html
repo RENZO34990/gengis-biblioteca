@@ -11,6 +11,8 @@
   :root{
     --pink:#e8749a;
     --pink-text:#b8305e;
+    --topic-politica:#7B87C8;
+    --topic-economia:#C08A3E;
     --pink-2:#f0a0bd;
     --pink-light:#f7cddd;
     --pink-pale:#fdf1f5;
@@ -101,7 +103,7 @@
     background:var(--white); padding:1.6rem;
     border:2px solid var(--pink-light); border-radius:20px;
     display:flex; flex-direction:column; min-height:200px;
-    text-decoration:none; color:var(--ink);
+    text-decoration:none; color:var(--ink); position:relative;
     transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
   }
   .card.ready{cursor:pointer;}
@@ -110,6 +112,20 @@
     box-shadow:0 10px 24px rgba(232,116,154,0.18);
     border-color:var(--pink);
   }
+  .card[data-tema="politica"].ready:hover{border-color:var(--topic-politica); box-shadow:0 10px 24px rgba(123,135,200,0.2);}
+  .card[data-tema="economia"].ready:hover{border-color:var(--topic-economia); box-shadow:0 10px 24px rgba(192,138,62,0.2);}
+  .topic-badge{
+    position:absolute; top:1.2rem; right:1.2rem;
+    font-family:'IBM Plex Mono', monospace; font-size:.72rem;
+    text-transform:uppercase; letter-spacing:.05em;
+    padding:.28rem .6rem; border-radius:20px;
+    opacity:0; transform:translateY(-4px);
+    transition:opacity .22s ease, transform .22s ease;
+    pointer-events:none;
+  }
+  .card[data-tema="politica"] .topic-badge{background:rgba(123,135,200,0.14); color:var(--topic-politica);}
+  .card[data-tema="economia"] .topic-badge{background:rgba(192,138,62,0.16); color:var(--topic-economia);}
+  .card.ready:hover .topic-badge{opacity:1; transform:translateY(0);}
   .card.pending{opacity:.6; border-style:dashed;}
   .card .tag{
     font-family:'IBM Plex Mono', monospace; font-size:.72rem;
@@ -174,7 +190,7 @@
       <span class="lockup">Club <span>Kongzhi</span> · UNMSM</span>
     </div>
     <h1>Biblioteca <span class="accent">Nalanda</span> 🌸</h1>
-    <p class="dek">Nos sumergimos en los dominios de China, Japón y Corea del Sur para rescatar algo más que simples cifras. El club ha destilado años de estudio para transformar la investigación pura en un relato de poder y legado. Hemos dejado atrás la frialdad de las enciclopedias. Lo que vas a encontrar en estas páginas es la crónica de civilizaciones que hoy dictan el ritmo del mundo mientras cargan con el peso de milenios de historia.</p>
+    <p class="dek">Cuadernos temáticos sobre China, Japón y Corea del Sur — investigación curada del club, contada como historia épica en vez de ficha enciclopédica.</p>
     <div class="header-meta">
       <div><span>3</span> temas publicados</div>
       <div><span>3</span> regiones en construcción</div>
@@ -203,22 +219,25 @@
       <span class="count">3 de N temas</span>
     </div>
     <div class="card-grid">
-      <a class="card ready" href="japon/meiji/index.html">
+      <a class="card ready" href="japon/meiji/index.html" data-tema="politica">
+        <span class="topic-badge">Política</span>
         <span class="tag">Publicado</span>
         <h3>1868: La Restauración Meiji</h3>
         <p>Cómo cae un shogunato de 260 años en menos de dos — de un Japón fragmentado e indefenso al lema que aún ordena su política exterior: Fukoku Kyōhei.</p>
         <span class="go">Leer cuaderno</span>
       </a>
-      <a class="card ready" href="japon/iwakura/index.html">
+      <a class="card ready" href="japon/iwakura/index.html" data-tema="politica">
+        <span class="topic-badge">Política</span>
         <span class="tag">Publicado</span>
         <h3>1872: La misión Iwakura</h3>
         <p>El viaje de 21 meses por EE.UU. y Europa que la élite Meiji convirtió en manual de modernización — ruta, tensiones y legado.</p>
         <span class="go">Leer cuaderno</span>
       </a>
-      <a class="card ready" href="japon/industrializacion-meiji/index.html">
+      <a class="card ready" href="japon/industrializacion-meiji/index.html" data-tema="economia">
+        <span class="topic-badge">Economía</span>
         <span class="tag">Publicado</span>
-        <h3>殖産興業: La Industrialización Meiji</h3>
-        <p>De una economía de arroz gravada al 40% a la primera potencia industrial de Asia — con una vía férrea que avanza junto a ti mientras lees.</p>
+        <h3>1880: La Industrialización Meiji</h3>
+        <p>De una economía de arroz gravada al 40% a la primera potencia industrial de Asia — del Estado como dueño de fábricas al nacimiento de los zaibatsu.</p>
         <span class="go">Leer cuaderno</span>
       </a>
       <div class="card pending">
@@ -280,11 +299,11 @@
   <div class="about">
     <div>
       <h4>¿Qué es este espacio?</h4>
-      <p>Cada cuaderno funciona como una página interactiva. Los construimos usando fuentes académicas y periodísticas que nosotros mismos verificamos y organizamos en la biblioteca de NotebookLM. Nuestra intención no es reemplazar la investigación del club, sino darle un sentido narrativo a los datos para que el conocimiento sea estable.</p>
+      <p>Cada cuaderno es una página interactiva construida a partir de fuentes académicas y periodísticas verificadas, curadas también en nuestra biblioteca de NotebookLM. No reemplaza el trabajo de investigación del club — le da un formato narrativo y permanente.</p>
     </div>
     <div>
       <h4>¿Cómo se conecta con Gengis?</h4>
-      <p>Nalanda es el proyecto par del Observatorio de datos Gengis. Gengis se encarga de monitorear el comercio y los perfiles de cada país mediante su monitor de tres dimensiones. La información que curamos en este espacio es la que alimenta al asistente de investigación que usa el club.</p>
+      <p>Nalanda es hermana del Observatorio de datos Gengis (comercio, monitor de 3 dimensiones, perfiles país). Las fuentes curadas aquí alimentan también al asistente de investigación reactivo del club.</p>
     </div>
   </div>
 
