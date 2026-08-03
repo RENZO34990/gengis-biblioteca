@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>十三行 — El Sistema de Cantón</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F2EFE9;
+    --paper-warm:#E9E2D4;
+    --ink:#1A1A1A;
+    --ink-soft:#544F47;
+    --vermillion:#9E2B25;
+    --vermillion-deep:#7A211C;
+    --gold:#C9A63E;
+    --line: rgba(26,26,26,0.14);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:auto;}
+  html.lenis, html.lenis body{height:auto;}
+  html.lenis.lenis-smooth{scroll-behavior:auto !important;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:'Hanken Grotesk', sans-serif; font-weight:400;
+    font-size:17px; line-height:1.7;
+  }
+  ::selection{background:var(--vermillion); color:var(--paper);}
+  a{color:var(--ink);}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; letter-spacing:.1em; text-transform:uppercase;
+    font-size:.72rem; color:var(--vermillion); font-weight:500;
+  }
+
+  .top-return{
+    position:fixed; top:1.4rem; left:1.4rem; z-index:50;
+    background:var(--paper); color:var(--ink-soft);
+    border:1px solid var(--line); padding:.5rem 1rem;
+    font-family:'IBM Plex Mono', monospace; font-size:.72rem;
+    text-decoration:none; display:inline-flex; align-items:center; gap:.5rem;
+    transition:border-color .3s ease, color .3s ease;
+  }
+  .top-return:hover{border-color:var(--gold); color:var(--ink);}
+  .tr-arrow{display:inline-block; transition:transform .3s ease;}
+  .top-return:hover .tr-arrow{transform:translateX(-3px);}
+
+  /* ---------- HERO: gravedad imperial ---------- */
+  header.hero{
+    position:relative; min-height:96vh; overflow:hidden;
+    display:flex; flex-direction:column; justify-content:center;
+    padding:14vh 8vw 12vh;
+    background:linear-gradient(155deg, var(--vermillion-deep) 0%, var(--vermillion) 62%, #8A2620 100%);
+    color:var(--paper);
+  }
+  .hero-kanji{
+    position:absolute; right:5vw; top:50%; transform:translateY(-50%);
+    font-family:'Noto Serif SC', serif; font-weight:700;
+    font-size:clamp(9rem, 24vw, 19rem);
+    color:rgba(242,239,233,0.06); writing-mode:vertical-rl;
+    user-select:none; z-index:0; line-height:1;
+  }
+  .hero-content{position:relative; z-index:2; max-width:660px;}
+  .hero .eyebrow{color:var(--gold);}
+  .hero-rule{width:48px; height:2px; background:var(--gold); margin-bottom:1.6rem;}
+  h1.title-cn{
+    font-family:'Noto Serif SC', serif; font-weight:700;
+    font-size:clamp(2.4rem, 5.4vw, 4rem); line-height:1.25; margin:.4rem 0 .5rem; color:var(--paper);
+  }
+  .title-pinyin{font-family:'IBM Plex Mono', monospace; font-size:.85rem; color:rgba(242,239,233,0.72); letter-spacing:.02em; margin-bottom:2rem;}
+  .hero-dek{font-size:1.08rem; max-width:560px; color:rgba(242,239,233,0.9); font-weight:400; line-height:1.85;}
+  .hero-stats{display:flex; flex-wrap:wrap; margin-top:3.2rem; border-top:1px solid rgba(242,239,233,0.2);}
+  .hero-stats div{padding:1.1rem 3rem 1.6rem 0; margin-right:1.4rem; border-right:1px solid rgba(242,239,233,0.2); min-width:0;}
+  .hero-stats div:last-child{border-right:none; padding-right:0;}
+  .hero-stats .num{font-family:'Noto Serif SC', serif; font-weight:700; font-size:1.5rem; display:block; color:var(--gold);}
+  .hero-stats .lbl{font-family:'IBM Plex Mono', monospace; font-size:.8rem; color:rgba(242,239,233,0.7); display:block; margin-top:.3rem; max-width:150px;}
+
+  section{padding:7vh 8vw; max-width:1080px; margin:0 auto;}
+  .section-head{max-width:580px; margin-bottom:3.4rem;}
+  h2{font-family:'Noto Serif SC', serif; font-weight:700; font-size:clamp(1.6rem, 3vw, 2.2rem); margin:.5rem 0 0; color:var(--ink);}
+  .lede{font-size:1.02rem; color:var(--ink-soft); margin-top:1rem;}
+
+  /* ---------- Divisor huiwen (greca china) ---------- */
+  .divider-motif{display:flex; justify-content:center; padding:2vh 0; opacity:.55;}
+  .divider-motif svg{width:220px; height:16px;}
+
+  /* ---------- ACTOS ---------- */
+  .acto{border-top:1px solid var(--line); padding:2.6rem 0; display:grid; grid-template-columns:100px 1fr; gap:2.4rem; cursor:pointer;}
+  .acto:last-child{border-bottom:1px solid var(--line);}
+  .acto-num{font-family:'Noto Serif SC', serif; font-weight:700; font-size:2.1rem; color:rgba(158,43,37,0.35); line-height:1; transition:color .3s ease;}
+  .acto.active .acto-num{color:var(--vermillion);}
+  .acto-label{font-family:'IBM Plex Mono', monospace; font-size:.75rem; text-transform:uppercase; letter-spacing:.06em; color:var(--gold); display:block; margin-top:.6rem;}
+  .acto-head{display:flex; align-items:baseline; gap:1.1rem; flex-wrap:wrap; justify-content:space-between;}
+  .acto-title{font-family:'Hanken Grotesk', sans-serif; font-weight:600; font-size:1.24rem; color:var(--ink);}
+  .acto-date{font-family:'IBM Plex Mono', monospace; font-size:.8rem; color:var(--ink-soft); white-space:nowrap; font-weight:500;}
+  .acto-toggle{font-family:'IBM Plex Mono', monospace; font-size:.9rem; color:var(--vermillion); flex-shrink:0;}
+  .acto-teaser{color:var(--ink-soft); margin:.7rem 0 0; max-width:620px;}
+  .acto-body{height:0; overflow:hidden; opacity:0;}
+
+  /* ---------- Figuras históricas ---------- */
+  .acto-figure{margin:1.8rem 0; border:1px solid var(--line); max-width:640px; background:var(--ink);}
+  .acto-figure img{width:100%; display:block; filter:sepia(.12) contrast(1.03); opacity:.94;}
+  .acto-figure figcaption{padding:.85rem 1.1rem; font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink-soft); border-top:1px solid var(--line); background:var(--paper);}
+  .acto-figure figcaption .credit{display:block; margin-top:.3rem; color:#8A8478; font-size:.76rem;}
+
+  /* ---------- Gráficos de datos ---------- */
+  .chart-block{margin:1.8rem 0; border-top:1px solid var(--line); padding-top:1.6rem; max-width:640px;}
+  .chart-title{font-family:'IBM Plex Mono', monospace; font-size:.76rem; letter-spacing:.02em; color:var(--gold); margin-bottom:1.4rem;}
+  .chart-bars{display:flex; align-items:flex-end; gap:1.4rem; height:130px;}
+  .chart-col{display:flex; flex-direction:column; align-items:center; flex:1; height:100%; justify-content:flex-end;}
+  .chart-value{font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink); font-weight:600; white-space:nowrap; margin-bottom:.4rem;}
+  .chart-bar{width:100%; background:linear-gradient(180deg, var(--gold), var(--vermillion));}
+  .chart-col-label{margin-top:.7rem; font-family:'IBM Plex Mono', monospace; font-size:.7rem; color:var(--ink-soft); text-align:center;}
+  .chart-note{margin-top:1.2rem; font-size:.86rem; color:var(--ink-soft); max-width:600px;}
+  .acto-body p{margin:0 0 1rem; color:var(--ink); max-width:660px; line-height:1.85;}
+  .acto-body strong{font-weight:700; color:var(--vermillion-deep);}
+  .acto-body .quote{padding-left:1.1rem; border-left:2px solid var(--gold); color:var(--ink-soft); font-size:.98rem; margin-top:1.2rem; max-width:610px; font-style:normal;}
+
+  /* ---------- LEGADO ---------- */
+  .flat-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:0; border-top:1px solid var(--line);}
+  .flat-grid > div{padding:2rem 3rem 2rem 0; border-right:1px solid var(--line);}
+  .flat-grid > div:last-child{border-right:none;}
+  .flat-grid h3{margin:0 0 .8rem; font-family:'Hanken Grotesk', sans-serif; font-weight:600; font-size:1.02rem; color:var(--ink);}
+  .flat-grid h3::before{content:"●"; color:var(--gold); font-size:.5rem; margin-right:.5rem; vertical-align:middle;}
+  .flat-grid p{margin:0; font-size:.92rem; color:var(--ink-soft); line-height:1.75;}
+
+  .connect-note{margin-top:2.6rem; padding-top:1.6rem; border-top:1px solid var(--line); font-family:'IBM Plex Mono', monospace; font-size:.82rem; color:var(--ink-soft);}
+  .connect-note a{color:var(--vermillion); border-bottom:1px solid var(--vermillion); padding-bottom:1px;}
+
+  .sources{border-top:1px solid var(--line); padding-top:2rem;}
+  .sources p{font-size:.92rem; color:var(--ink-soft); max-width:640px;}
+
+  .nav-adjacent{display:grid; grid-template-columns:1fr 1fr; border-top:1px solid var(--line); margin-top:1rem;}
+  .nav-adjacent a, .nav-adjacent .empty{padding:2rem 3rem 2.4rem 0; text-decoration:none; color:var(--ink); display:flex; flex-direction:column; border-right:1px solid var(--line); transition:transform .25s ease;}
+  .nav-adjacent a:hover{transform:translateX(.4rem);}
+  .nav-adjacent .dir{font-family:'IBM Plex Mono', monospace; font-size:.8rem; text-transform:uppercase; color:var(--gold); margin-bottom:.6rem; letter-spacing:.05em;}
+  .nav-adjacent .ttl{font-family:'Noto Serif SC', serif; font-weight:700; font-size:1.08rem; display:inline-flex; align-items:center; gap:.5rem;}
+  .nav-adjacent .empty{color:#6E685C; justify-content:center; align-items:center; text-align:center; font-family:'IBM Plex Mono', monospace; font-size:.78rem; border-right:none;}
+
+  footer{text-align:center; padding:3rem 6vw 4rem; border-top:1px solid var(--line); font-family:'IBM Plex Mono', monospace; font-size:.74rem; color:var(--ink-soft);}
+
+  @media(max-width:820px){
+    .acto{grid-template-columns:56px 1fr; gap:1.2rem;}
+    .acto-num{font-size:1.4rem;}
+    .flat-grid{grid-template-columns:1fr;}
+    .flat-grid > div{border-right:none; border-bottom:1px solid var(--line); padding:1.6rem 0;}
+    .nav-adjacent{grid-template-columns:1fr;}
+    .nav-adjacent a{border-right:none; padding:1.6rem 0;}
+    section{padding:6vh 6vw;}
+  }
+</style>
+</head>
+<body>
+<a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
+
+<header class="hero">
+  <div class="hero-kanji">通商</div>
+  <div class="hero-content">
+    <span class="eyebrow">Kongzhi · China · Economía 01</span>
+    <div class="hero-rule"></div>
+    <h1 class="title-cn">广州十三行</h1>
+    <div class="title-pinyin">Guǎngzhōu Shísān Háng — las Trece Factorías, el Sistema de Cantón</div>
+    <p class="hero-dek">Durante casi un siglo, todo el comercio exterior de China pasó por una sola rendija controlada en Cantón. No era un imperio cerrado por capricho: era un Estado intentando poner orden en una costa que se le escapaba de las manos. Cuando ese orden se rompió, se llevó consigo la idea de que China podía dictar sus propias reglas.</p>
+    <div class="hero-stats">
+      <div><span class="num">1759</span><span class="lbl">se cierra todo menos Cantón</span></div>
+      <div><span class="num">20,000</span><span class="lbl">cofres de opio destruidos por Lin Zexu</span></div>
+      <div><span class="num">5</span><span class="lbl">puertos abiertos por tratado</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="actos">
+  <div class="section-head">
+    <span class="eyebrow">Los 5 actos</span>
+    <h2>Cómo se rompe un monopolio de un siglo</h2>
+    <p class="lede">Toca cada acto para expandirlo.</p>
+  </div>
+
+  <div class="acto active" data-i="1">
+    <div><span class="acto-num">01</span><span class="acto-label">El mundo antes</span></div>
+    <div>
+      <div class="acto-head"><span class="acto-title">Una costa que se le iba de las manos a Pekín</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">1683 – 1759</span>
+      <p class="acto-teaser">No era un imperio cerrado: era un gobierno intentando desesperadamente poner orden en un litoral caótico y una amenaza a su seguridad.</p>
+      <div class="acto-body">
+        <p>Durante décadas, la dinastía Qing lidió con rebeldes como Koxinga, leal a la caída dinastía Ming, que usaba el comercio marítimo para financiar sus ataques. La crisis fue tan grave que el emperador ordenó evacuar a toda la población costera kilómetros hacia el interior para cortarles los suministros. Los puertos reabrieron después de 1683, pero el miedo a que los extranjeros se aliaran con "nativos traidores" nunca desapareció.</p>
+        <p>El modelo de negocio tampoco ayudaba: antes del gremio Cohong, el emperador intentó centralizar el comercio en "Comerciantes del Emperador": uno de ellos pagó 42,000 taels por el puesto sin tener capital ni mercancía para cumplir los pedidos. El resultado fue un sistema de sobornos que se volvió la norma para mover cualquier caja de té o seda.</p>
+        <p class="quote">El punto de quiebre fue el Incidente de James Flint en 1759: un comerciante británico se saltó las prohibiciones para quejarse directamente ante el emperador por la corrupción en Cantón. En vez de escucharlo, lo metieron a la cárcel, y Pekín decidió que el experimento de varios puertos abiertos había fracasado.</p>
+        <figure class="acto-figure">
+          <img src="../../assets/china/canton-factories.jpg" alt="Vista de las factorías de Cantón junto al río Perla, con las banderas de las potencias europeas" loading="lazy">
+          <figcaption>Vista de las factorías de Cantón, atribuida a William Daniell, c. 1805-1806. Cada bandera identifica la sede de una potencia comercial distinta a lo largo del malecón.
+            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+
+  <div class="acto" data-i="2">
+    <div><span class="acto-num">02</span><span class="acto-label">La grieta</span></div>
+    <div>
+      <div class="acto-head"><span class="acto-title">El té que China no necesitaba comprar de vuelta</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">c.1760 – mar 1839</span>
+      <p class="acto-teaser">Durante un siglo la balanza comercial favoreció casi exclusivamente a China, hasta que Gran Bretaña encontró cómo revertirla: opio.</p>
+      <div class="acto-body">
+        <p>Europa estaba obsesionada con el té y la seda, pero China no sentía que necesitara nada de Occidente: exigía el pago exclusivamente en plata. Los británicos, hartos de ver su plata desaparecer, empezaron a meter opio de contrabando desde la India para equilibrar las cuentas. Lo que comenzó como un problema de salud pública y fuga de plata terminó convirtiéndose en un conflicto de soberanía nacional.</p>
+        <p>El emperador, harto de ver a su pueblo volverse adicto, envía a Cantón a un funcionario incorruptible: Lin Zexu, apodado "Lin el Cielo Azul". En marzo de 1839 rodea las factorías extranjeras y deja a 350 personas encerradas durante semanas hasta que le entregan más de 20,000 cofres de opio, que destruye en una ceremonia pública.</p>
+        <figure class="acto-figure">
+          <img src="../../assets/china/destruccion-opio-1839.jpg" alt="Destrucción pública del opio confiscado en Humen, ordenada por Lin Zexu en 1839" loading="lazy">
+          <figcaption>La destrucción del opio en Humen, junio de 1839 — más de 1,150 toneladas mezcladas con cal y arrojadas al mar frente a la población local.
+            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+          </figcaption>
+        </figure>
+        <div class="chart-block">
+          <span class="chart-title">Importaciones de opio a China (cofres/año)</span>
+          <div class="chart-bars">
+            <div class="chart-col"><span class="chart-value">200</span><div class="chart-bar" style="height:6%"></div><div class="chart-col-label">1729</div></div>
+            <div class="chart-col"><span class="chart-value">10,000</span><div class="chart-bar" style="height:25%"></div><div class="chart-col-label">1820–1830</div></div>
+            <div class="chart-col"><span class="chart-value">40,000</span><div class="chart-bar" style="height:100%"></div><div class="chart-col-label">1838</div></div>
+          </div>
+          <p class="chart-note">En apenas un siglo, el volumen de opio que entraba a China creció cerca de 20,000% — la escala del problema que Lin Zexu heredó.</p>
+        </div>
+        <div class="chart-block">
+          <span class="chart-title">Salida de plata desde China (millones de onzas/año)</span>
+          <div class="chart-bars">
+            <div class="chart-col"><span class="chart-value">2 M</span><div class="chart-bar" style="height:22%"></div><div class="chart-col-label">inicios 1820s</div></div>
+            <div class="chart-col"><span class="chart-value">9 M</span><div class="chart-bar" style="height:100%"></div><div class="chart-col-label">inicios 1830s</div></div>
+          </div>
+          <p class="chart-note">Durante siglo y medio la plata había fluido hacia China para pagar té y seda. El opio invirtió esa dirección en menos de una década.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="acto" data-i="3">
+    <div><span class="acto-num">03</span><span class="acto-label">El giro</span></div>
+    <div>
+      <div class="acto-head"><span class="acto-title">Una jugada convierte contrabando en guerra de Estado</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">27 mar – 3 nov 1839</span>
+      <p class="acto-teaser">El superintendente británico Charles Elliot toma una decisión que cambia todo: convierte una disputa contra contrabandistas privados en una deuda del Estado británico.</p>
+      <div class="acto-body">
+        <p>El 27 de marzo de 1839, en vez de dejar que los mercaderes perdieran su mercancía ilegal, Elliot les ordena entregar el opio en nombre de la Corona, prometiendo reembolsarles las pérdidas. Con ese movimiento, lo que era un problema de contrabandistas privados se transforma de golpe en una cuestión de soberanía estatal, obligando a Londres a intervenir militarmente para "cobrar" esa deuda.</p>
+        <p>El primer disparo llega por una situación casi absurda: el 3 de noviembre de 1839, en aguas de Ch'uan-pi, el mercante británico Royal Saxon intenta ignorar el bloqueo de sus propios compatriotas para negociar con los chinos. El buque de guerra HMS Volage le dispara una advertencia a su propio compatriota; la flota china sale a defenderlo, y ahí comienza la batalla que da inicio formal a la Primera Guerra del Opio.</p>
+        <p class="quote">Ya no era solo una grieta comercial: era el choque frontal entre un imperio que se sentía el centro del mundo y una potencia industrial que no aceptaría el sistema de subordinación tributaria de Cantón.</p>
+        <figure class="acto-figure">
+          <img src="../../assets/china/batalla-chuenpi.jpg" alt="Combate naval entre buques británicos y juncos de guerra chinos en la Primera Batalla de Chuenpi, 1839" loading="lazy">
+          <figcaption>La Primera Batalla de Chuenpi, 3 de noviembre de 1839 — el primer intercambio de fuego formal de la Guerra del Opio.
+            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+
+  <div class="acto" data-i="4">
+    <div><span class="acto-num">04</span><span class="acto-label">La consecuencia inmediata</span></div>
+    <div>
+      <div class="acto-head"><span class="acto-title">Cinco puertos, un monopolio disuelto</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">1842 – 1847</span>
+      <p class="acto-teaser">El Tratado de Nanjing reordena en cinco años todo el mapa del poder comercial en Asia, y nadie en Pekín lo había previsto.</p>
+      <div class="acto-body">
+        <p>El tratado abre cinco "puertos de tratado" (Cantón, Amoy, Fuzhou, Ningbo y Shanghái), donde comerciantes extranjeros pueden residir y operar permanentemente. Se disuelve legalmente el gremio Cohong, que había controlado cada gramo de té y seda durante décadas.</p>
+        <figure class="acto-figure">
+          <img src="../../assets/china/tratado-nanjing.jpg" alt="La firma del Tratado de Nanjing a bordo del HMS Cornwallis, agosto de 1842" loading="lazy">
+          <figcaption>La firma del Tratado de Nanjing a bordo del HMS Cornwallis, 29 de agosto de 1842 — el primero de los "tratados desiguales".
+            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+          </figcaption>
+        </figure>
+        <p>Shanghái, mucho más cerca de las zonas productoras de seda del delta del Yangzi, arrebata el trono comercial a Cantón por pura lógica de costos.</p>
+        <div class="chart-block">
+          <span class="chart-title">Exportación de seda desde Shanghái (fardos/año)</span>
+          <div class="chart-bars">
+            <div class="chart-col"><span class="chart-value">6,433</span><div class="chart-bar" style="height:31%"></div><div class="chart-col-label">1845</div></div>
+            <div class="chart-col"><span class="chart-value">21,000</span><div class="chart-bar" style="height:100%"></div><div class="chart-col-label">1847</div></div>
+          </div>
+          <p class="chart-note">En solo dos años, Shanghái multiplica por más de tres su exportación de seda: el nuevo puerto adelanta a Cantón, que había dominado el comercio durante casi un siglo.</p>
+        </div>
+        <p style="color:var(--ink-soft);">China cede Hong Kong a la Corona británica y paga una indemnización de 21 millones de dólares.</p>
+        <p class="quote">Se rompió algo más grande que dinero o barcos: la idea de que el emperador era el centro del universo. Empieza lo que en China se recuerda como el siglo de la humillación.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="acto" data-i="5">
+    <div><span class="acto-num">05</span><span class="acto-label">El eco</span></div>
+    <div>
+      <div class="acto-head"><span class="acto-title">La brújula que todavía mueve a Pekín</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">1979 → hoy</span>
+      <p class="acto-teaser">Lo que pasó en las factorías de Cantón hace dos siglos no se quedó guardado en los libros: es la lógica detrás de las políticas económicas chinas de hoy.</p>
+      <div class="acto-body">
+        <p><strong>Reversión simbólica.</strong> Las Zonas Económicas Especiales creadas en 1979-1980 están, muchas de ellas, construidas sobre antiguos puertos de tratado: una inversión deliberada de la fortuna respecto al periodo de debilidad que empezó en 1842.</p>
+        <p><strong>Guangdong sigue siendo el corazón.</strong> El delta del río Perla, centrado en Shenzhen y Guangzhou, genera más del 23% de las exportaciones nacionales: la misma provincia donde operaba el Sistema de Cantón sigue siendo la rendija por la que China se conecta con el mundo.</p>
+        <p class="quote">La desconfianza histórica hacia la dependencia externa explica por qué el gobierno actual prioriza la seguridad económica sobre el libre mercado: políticas como la "Doble Circulación" y la autosuficiencia tecnológica son la respuesta directa al trauma del siglo de la humillación.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-motif" aria-hidden="true">
+  <svg id="huiwenDivider" viewBox="0 0 220 16" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="var(--vermillion)" stroke-width="1.3" stroke-linecap="square">
+      <path d="M0 8 H8 V0 H16 V16 H24 V0 H32 V16 H40 V0 H48 V16 H56 V0 H64 V16 H72 V0 H80 V16 H88 V0 H96 V16 H104 V0 H112 V16 H120 V0 H128 V16 H136 V0 H144 V16 H152 V0 H160 V16 H168 V0 H176 V16 H184 V0 H192 V16 H200 V0 H208 V16 H216 V0 H220"/>
+    </g>
+  </svg>
+</div>
+
+<section id="legado">
+  <div class="section-head">
+    <span class="eyebrow">Por qué importa hoy</span>
+    <h2>De aduana cerrada a fábrica del mundo</h2>
+  </div>
+  <div class="flat-grid">
+    <div><h3>El Estado como guardián</h3><p>Igual que el emperador controlaba a los mercaderes del Cohong para proteger la estabilidad del imperio, el gobierno actual antepone la seguridad nacional a los beneficios de cualquier empresa privada.</p></div>
+    <div><h3>No depender del exterior</h3><p>Ya no quieren vender solo té y depender de la plata ajena, ahora buscan que el mundo necesite sus baterías y sus coches eléctricos, para no volver a pedir permiso a nadie.</p></div>
+    <div><h3>Guangdong, otra vez</h3><p>La provincia hereda la tradición milenaria de fabricar y exportar, aunque hoy lo que sale de sus puertos sea mucho más complejo que un fardo de seda.</p></div>
+  </div>
+</section>
+
+<section id="fuentes">
+  <div class="sources">
+    <span class="eyebrow">Sobre esta investigación</span>
+    <p>Contenido curado por el equipo de Club Kongzhi a partir de fuentes académicas reunidas en el cuaderno de NotebookLM dedicado al Sistema de Cantón.</p>
+  </div>
+  <div class="nav-adjacent">
+    <div class="empty">Primer cuaderno de la serie China</div>
+    <div class="empty">Siguiente cuaderno — en construcción</div>
+  </div>
+</section>
+
+<footer>Club Kongzhi UNMSM · Observatorio Asia-Pacífico · Biblioteca Nalanda</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if(!reduceMotion && window.Lenis){
+    var lenis = new Lenis({ duration: 1.2, smoothWheel: true });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(function(time){ lenis.raf(time * 1000); });
+    gsap.ticker.lagSmoothing(0);
+  }
+
+  function openActo(acto){
+    acto.querySelector('.acto-toggle').textContent = '－';
+    gsap.to(acto.querySelector('.acto-body'), {
+      height: 'auto', opacity: 1, duration: reduceMotion ? 0 : 0.65, ease: 'power1.inOut',
+      onUpdate: function(){ ScrollTrigger.update(); },
+      onComplete: function(){ ScrollTrigger.refresh(); }
+    });
+    var bars = acto.querySelectorAll('.chart-bar');
+    if(bars.length && !acto.dataset.chartsPlayed){
+      acto.dataset.chartsPlayed = '1';
+      bars.forEach(function(bar){
+        var target = bar.style.height;
+        gsap.fromTo(bar, { height: '0%' }, { height: target, duration: reduceMotion ? 0 : 1, delay: reduceMotion ? 0 : 0.3, ease: 'power1.out' });
+      });
+    }
+  }
+  function closeActo(acto){
+    acto.querySelector('.acto-toggle').textContent = '＋';
+    gsap.to(acto.querySelector('.acto-body'), {
+      height: 0, opacity: 0, duration: reduceMotion ? 0 : 0.5, ease: 'power1.inOut',
+      onUpdate: function(){ ScrollTrigger.update(); },
+      onComplete: function(){ ScrollTrigger.refresh(); }
+    });
+  }
+
+  var actos = document.querySelectorAll('.acto');
+  actos.forEach(function(acto){
+    acto.addEventListener('click', function(){
+      var wasActive = acto.classList.contains('active');
+      document.querySelectorAll('.acto.active').forEach(function(a){ a.classList.remove('active'); closeActo(a); });
+      if(!wasActive){ acto.classList.add('active'); openActo(acto); }
+    });
+  });
+  var firstActive = document.querySelector('.acto.active .acto-body');
+  if(firstActive){
+    gsap.set(firstActive, {height:'auto', opacity:1});
+    document.querySelector('.acto.active .acto-toggle').textContent = '－';
+  }
+
+  if(!reduceMotion){
+    actos.forEach(function(acto){
+      gsap.from(acto, {
+        opacity: 0, y: 24, duration: 0.9, ease: 'power1.out',
+        scrollTrigger: { trigger: acto, start: 'top 90%', toggleActions: 'play none none reverse' }
+      });
+    });
+
+    var heroTl = gsap.timeline({ defaults: { ease: 'power1.out' } });
+    heroTl
+      .from('.top-return', { opacity: 0, y: -8, duration: 0.7 })
+      .from('.hero-rule', { scaleX: 0, transformOrigin: 'left center', duration: 1.1 }, '-=0.3')
+      .from('h1.title-cn', { opacity: 0, y: 16, duration: 1.1 }, '-=0.7')
+      .from('.title-pinyin', { opacity: 0, y: 10, duration: 0.9 }, '-=0.7')
+      .from('.hero-dek', { opacity: 0, y: 14, duration: 1 }, '-=0.6')
+      .from('.hero-stats > div', { opacity: 0, y: 14, duration: 0.8, stagger: 0.15 }, '-=0.5');
+
+    gsap.to('.hero-kanji', {
+      yPercent: 12, ease: 'none',
+      scrollTrigger: { trigger: 'header.hero', start: 'top top', end: 'bottom top', scrub: 1.2 }
+    });
+
+    var hPaths = document.querySelectorAll('#huiwenDivider path');
+    hPaths.forEach(function(p){
+      var len = p.getTotalLength();
+      gsap.set(p, { strokeDasharray: len, strokeDashoffset: len });
+    });
+    gsap.to(hPaths, {
+      strokeDashoffset: 0, duration: 1.6, ease: 'power1.inOut',
+      scrollTrigger: { trigger: '#huiwenDivider', start: 'top 92%', toggleActions: 'play none none reverse' }
+    });
+
+    gsap.from('.flat-grid > div', {
+      opacity: 0, y: 20, duration: 0.8, stagger: 0.12, ease: 'power1.out',
+      scrollTrigger: { trigger: '.flat-grid', start: 'top 85%', toggleActions: 'play none none reverse' }
+    });
+    gsap.from('.nav-adjacent > *', {
+      opacity: 0, y: 16, duration: 0.8, stagger: 0.1, ease: 'power1.out',
+      scrollTrigger: { trigger: '.nav-adjacent', start: 'top 90%', toggleActions: 'play none none reverse' }
+    });
+  }
+
+  window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
+</script>
+
+</body>
+</html>
