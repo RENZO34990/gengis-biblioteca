@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>鎖国 — El Shogunato Tokugawa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Shippori+Mincho:wght@400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F5F1E8;
+    --paper-warm:#EDE6D6;
+    --ink:#2B2A28;
+    --ink-soft:#5A5650;
+    --wood:#8B6F4E;
+    --wood-dark:#6B5439;
+    --stone:#B8B4AC;
+    --vermillion:#A13D2C;
+    --gold:#A8863C;
+    --line: rgba(43,42,40,0.14);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:auto;}
+  html.lenis, html.lenis body{height:auto;}
+  html.lenis.lenis-smooth{scroll-behavior:auto !important;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:'Zen Kaku Gothic New', sans-serif; font-weight:400;
+    font-size:17px; line-height:1.75;
+  }
+  ::selection{background:var(--vermillion); color:var(--paper);}
+  a{color:var(--ink);}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; letter-spacing:.1em; text-transform:uppercase;
+    font-size:.72rem; color:var(--wood-dark); font-weight:500;
+  }
+
+  .top-return{
+    position:fixed; top:1.4rem; left:1.4rem; z-index:50;
+    background:var(--paper); color:var(--ink-soft);
+    border:1px solid var(--line); padding:.5rem 1rem;
+    font-family:'IBM Plex Mono', monospace; font-size:.72rem;
+    text-decoration:none; display:inline-flex; align-items:center; gap:.5rem;
+    transition:border-color .3s ease, color .3s ease, transform 160ms cubic-bezier(0.23,1,0.32,1);
+  }
+  .top-return:hover{border-color:var(--wood); color:var(--ink);}
+  .top-return:active{transform:scale(0.97);}
+  .tr-arrow{display:inline-block; transition:transform .3s ease;}
+  .top-return:hover .tr-arrow{transform:translateX(-3px);}
+
+  header.hero{
+    position:relative; min-height:92vh;
+    display:flex; flex-direction:column; justify-content:center;
+    padding:14vh 8vw 12vh; overflow:hidden;
+    background:radial-gradient(ellipse 60% 50% at 88% 20%, rgba(161,61,44,0.07), transparent 65%),
+                radial-gradient(ellipse 50% 40% at 8% 85%, rgba(168,134,60,0.06), transparent 60%);
+  }
+  .hero-kanji{
+    position:absolute; right:6vw; top:50%; transform:translateY(-50%);
+    font-family:'Shippori Mincho', serif; font-weight:400;
+    font-size:clamp(8rem, 22vw, 18rem);
+    color:rgba(43,42,40,0.045); writing-mode:vertical-rl;
+    user-select:none; z-index:0; line-height:1;
+  }
+  .hero-content{position:relative; z-index:2; max-width:660px;}
+  .hero-rule{width:48px; height:1px; background:var(--wood); margin-bottom:1.6rem;}
+  h1.title-jp{
+    font-family:'Shippori Mincho', serif; font-weight:400;
+    font-size:clamp(2.6rem, 6vw, 4.6rem); line-height:1.2; margin:.4rem 0 .5rem; color:var(--ink);
+  }
+  .title-romaji{font-family:'IBM Plex Mono', monospace; font-size:.85rem; color:var(--ink-soft); letter-spacing:.02em; margin-bottom:2rem; line-height:1.6;}
+  .hero-dek{font-size:1.1rem; max-width:560px; color:var(--ink-soft); font-weight:300; line-height:1.85;}
+  .hero-stats{display:flex; flex-wrap:wrap; margin-top:3.4rem; border-top:1px solid var(--line);}
+  .hero-stats div{padding:1.1rem 3rem 1.6rem 0; margin-right:1.4rem; border-right:1px solid var(--line); min-width:0;}
+  .hero-stats div:last-child{border-right:none; padding-right:0;}
+  .hero-stats .num{font-family:'Shippori Mincho', serif; font-weight:400; font-size:1.5rem; display:block; color:var(--vermillion);}
+  .hero-stats .lbl{font-family:'IBM Plex Mono', monospace; font-size:.78rem; color:var(--ink-soft); display:block; margin-top:.3rem; max-width:150px;}
+
+  section{padding:7vh 8vw; max-width:1080px; margin:0 auto;}
+  .section-head{max-width:580px; margin-bottom:3.4rem;}
+  h2{font-family:'Shippori Mincho', serif; font-weight:400; font-size:clamp(1.6rem, 3vw, 2.2rem); margin:.5rem 0 0; color:var(--ink);}
+  .lede{font-size:1.02rem; color:var(--ink-soft); font-weight:300; margin-top:1rem;}
+
+  .divider-motif{display:flex; justify-content:center; padding:2vh 0; opacity:.5;}
+  .divider-motif svg{width:180px; height:14px;}
+
+  .acto{border-top:1px solid var(--line); padding:2.6rem 0; display:grid; grid-template-columns:100px 1fr; gap:2.4rem; cursor:pointer; transition:transform 160ms cubic-bezier(0.23,1,0.32,1);}
+  .acto:last-child{border-bottom:1px solid var(--line);}
+  .acto:active{transform:scale(0.99);}
+  .acto-num{font-family:'Shippori Mincho', serif; font-weight:400; font-size:2.2rem; color:rgba(161,61,44,0.38); line-height:1; transition:color .3s ease;}
+  .acto.active .acto-num{color:var(--vermillion);}
+  .acto-label{font-family:'IBM Plex Mono', monospace; font-size:.75rem; text-transform:uppercase; letter-spacing:.06em; color:var(--wood-dark); display:block; margin-top:.6rem;}
+  .acto-head{display:flex; align-items:baseline; gap:1.1rem; flex-wrap:wrap; justify-content:space-between;}
+  .acto-title{font-family:'Zen Kaku Gothic New', sans-serif; font-weight:500; font-size:1.24rem; color:var(--ink);}
+  .acto-date{font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--gold); white-space:nowrap; font-weight:500;}
+  .acto-toggle{font-family:'IBM Plex Mono', monospace; font-size:.9rem; color:var(--vermillion); flex-shrink:0;}
+  .acto-teaser{color:var(--ink-soft); margin:.7rem 0 0; max-width:600px; font-weight:300;}
+  .acto-body{height:0; overflow:hidden; opacity:0;}
+  .acto-body p{margin:0 0 1rem; color:var(--ink); max-width:660px; font-weight:300; line-height:1.85;}
+  .acto-body strong{font-weight:500;}
+  .acto-body .quote{padding-left:1.1rem; border-left:2px solid var(--vermillion); color:var(--ink-soft); font-size:.98rem; margin-top:1.2rem; max-width:600px;}
+
+  .acto-figure{margin:1.8rem 0; border:1px solid var(--line); max-width:640px; background:var(--ink);}
+  .acto-figure img{width:100%; display:block; filter:sepia(.12) contrast(1.03); opacity:.94;}
+  .acto-figure figcaption{padding:.85rem 1.1rem; font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink-soft); border-top:1px solid var(--line); background:var(--paper); font-weight:300;}
+  .acto-figure figcaption .credit{display:block; margin-top:.3rem; color:#8A8478; font-size:.76rem;}
+
+  .flat-grid{display:grid; grid-template-columns:repeat(2, 1fr); gap:0; border-top:1px solid var(--line);}
+  .flat-grid > div{padding:2rem 3rem 2rem 0; border-right:1px solid var(--line);}
+  .flat-grid > div:last-child{border-right:none;}
+  .flat-grid h3{margin:0 0 .8rem; font-family:'Zen Kaku Gothic New', sans-serif; font-weight:500; font-size:1.02rem; color:var(--ink);}
+  .flat-grid h3::before{content:"●"; color:var(--gold); font-size:.5rem; margin-right:.5rem; vertical-align:middle;}
+  .flat-grid p{margin:0; font-size:.92rem; color:var(--ink-soft); font-weight:300; line-height:1.75;}
+
+  .connect-note{margin-top:2.6rem; padding-top:1.6rem; border-top:1px solid var(--line); font-family:'IBM Plex Mono', monospace; font-size:.82rem; color:var(--ink-soft);}
+  .connect-note a{color:var(--vermillion); border-bottom:1px solid var(--vermillion); padding-bottom:1px;}
+
+  .sources{border-top:1px solid var(--line); padding-top:2rem;}
+  .sources p{font-size:.92rem; color:var(--ink-soft); max-width:640px; font-weight:300;}
+
+  .nav-adjacent{display:grid; grid-template-columns:1fr 1fr; border-top:1px solid var(--line); margin-top:1rem;}
+  .nav-adjacent a, .nav-adjacent .empty{padding:2rem 3rem 2.4rem 0; text-decoration:none; color:var(--ink); display:flex; flex-direction:column; border-right:1px solid var(--line); transition:transform 160ms cubic-bezier(0.23,1,0.32,1);}
+  .nav-adjacent a:hover{transform:translateX(.4rem);}
+  .nav-adjacent a:active{transform:scale(0.98);}
+  .nav-adjacent .dir{font-family:'IBM Plex Mono', monospace; font-size:.76rem; text-transform:uppercase; color:var(--wood-dark); margin-bottom:.6rem; letter-spacing:.05em;}
+  .nav-adjacent .ttl{font-family:'Shippori Mincho', serif; font-weight:400; font-size:1.1rem; display:inline-flex; align-items:center; gap:.5rem;}
+  .nav-adjacent .ttl-arrow{display:inline-block; opacity:0; transform:translateX(-6px); transition:opacity .3s ease, transform .3s ease; color:var(--vermillion);}
+  .nav-adjacent a:hover .ttl-arrow{opacity:1; transform:translateX(0);}
+  .nav-adjacent .next{text-align:right; align-items:flex-end; border-right:none; padding-right:0; padding-left:1.6rem; border-left:1px solid var(--line);}
+  .nav-adjacent .next .ttl-arrow{order:-1; transform:translateX(6px);}
+  .nav-adjacent .next:hover .ttl-arrow{transform:translateX(0);}
+  .nav-adjacent .empty{color:#6E685C; justify-content:center; align-items:center; text-align:center; font-family:'IBM Plex Mono', monospace; font-size:.78rem; border-right:none;}
+
+  footer{text-align:center; padding:3rem 6vw 4rem; border-top:1px solid var(--line); font-family:'IBM Plex Mono', monospace; font-size:.74rem; color:var(--ink-soft);}
+
+  @media(max-width:820px){
+    .acto{grid-template-columns:56px 1fr; gap:1.2rem;}
+    .acto-num{font-size:1.4rem;}
+    .flat-grid{grid-template-columns:1fr;}
+    .flat-grid > div{border-right:none; border-bottom:1px solid var(--line); padding:1.6rem 0;}
+    .nav-adjacent{grid-template-columns:1fr;}
+    .nav-adjacent a, .nav-adjacent .next{border-right:none; border-left:none; padding:1.6rem 0;}
+    .nav-adjacent .next{text-align:left; align-items:flex-start;}
+    section{padding:6vh 6vw;}
+  }
+</style>
+</head>
+<body>
+<a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
+
+<header class="hero">
+  <div class="hero-kanji">鎖国</div>
+  <div class="hero-content">
+    <span class="eyebrow">Kongzhi · Japón · Política 00</span>
+    <div class="hero-rule"></div>
+    <h1 class="title-jp">鎖国</h1>
+    <div class="title-romaji">Sakoku — el Japón cerrado bajo el shogunato Tokugawa, 1603-1853</div>
+    <p class="hero-dek">Durante 250 años, un país entero decidió mirar hacia adentro. No por aislamiento accidental, sino por una política de Estado deliberada, defendida con decretos y cañones. Esta es la historia de cómo ese muro se construyó, se justificó, y terminó por no poder sostenerse frente al mundo que golpeaba la puerta.</p>
+    <div class="hero-stats">
+      <div><span class="num">1635</span><span class="lbl">Edicto de Sakoku: se cierra el país</span></div>
+      <div><span class="num">1808</span><span class="lbl">el HMS Phaeton amenaza Nagasaki</span></div>
+      <div><span class="num">1853</span><span class="lbl">llegan los barcos negros de Perry</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="actos">
+  <div class="section-head">
+    <span class="eyebrow">Los 5 actos</span>
+    <h2>Cómo se sostiene un muro durante 250 años, y por qué cae</h2>
+    <p class="lede">Toca cada acto para expandirlo.</p>
+  </div>
+
+  <div class="acto active" data-i="1">
+    <div><span class="acto-num">01</span><span class="acto-label">El mundo antes</span></div>
+    <div>
+      <div class="acto-head"><span class="acto-title">Un aislamiento defendido a decreto y cañón</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">1635 – 1840s</span>
+      <p class="acto-teaser">El sakoku no fue un accidente geográfico: fue política de Estado, reforzada durante dos siglos frente a un cerco cada vez más real.</p>
+      <div class="acto-body">
+        <p>Durante más de dos siglos, Japón vive bajo un sistema semi-feudal dominado por el shogunato (bakufu) de la dinastía Tokugawa. Para consolidar su control político y erradicar la influencia cristiana, los Tokugawa implementan desde el siglo XVII una rígida política de aislamiento internacional (sakoku), formalizada en el Edicto de Sakoku de 1635. Los súbditos tienen prohibido salir del archipiélago, y el comercio extranjero queda confinado a Nagasaki, principalmente con holandeses y chinos.</p>
+        <figure class="acto-figure">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/DejimaInNagasakiBay.jpg" alt="Pintura del comercio entre japoneses y holandeses en la isla artificial de Dejima, bahía de Nagasaki, 1820" loading="lazy">
+          <figcaption>Comercio japonés-holandés en Dejima, la isla artificial en la bahía de Nagasaki por donde pasaba todo el contacto autorizado con Occidente, c. 1820.
+            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+          </figcaption>
+        </figure>
+        <p>Hacia finales del XVIII, el sistema empieza a tensionarse: Rusia presiona desde el norte, Gran Bretaña desde el sur. En 1808 el navío británico HMS Phaeton entra a Nagasaki y amenaza con cañonear la ciudad si no se le proveen suministros: la prueba de que el shogunato no tiene cómo defenderse. La respuesta es el Edicto de Expulsión de 1825: disparar de inmediato contra cualquier embarcación occidental sospechosa.</p>
+        <p class="quote">Intelectuales nacionalistas de la escuela de Mito, como Aizawa Seishisai, advierten sobre una "invasión espiritual" occidental: el temor no era solo militar, era que el cristianismo sedujera a un pueblo que ya se sentía alienado de sus señores feudales.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="acto" data-i="2">
+    <div><span class="acto-num">02</span><span class="acto-label">La grieta</span></div>
+    <div>
+      <div class="acto-head"><span class="acto-title">Los barcos negros de Perry</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">jul 1853</span>
+      <p class="acto-teaser">El comodoro Matthew Perry entra a la bahía de Tokio exigiendo apertura, y desnuda la impotencia militar de 250 años de aislamiento.</p>
+      <div class="acto-body">
+        <p>El catalizador definitivo llega en julio de 1853: el comodoro Matthew Perry, al mando de sus "barcos negros" fuertemente artillados, entra en la bahía de Tokio por orden directa del presidente Millard Fillmore, exigiendo a punta de cañón que Japón abra sus puertos al comercio y a la presencia diplomática occidental.</p>
+        <figure class="acto-figure">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Japanese%201854%20print%20Commodore%20Perry.jpg" alt="Grabado japonés de 1854 representando la flota del comodoro Perry" loading="lazy">
+          <figcaption>Grabado japonés de la flota de Perry, 1854, publicado en Edo para saciar la curiosidad pública sobre los extranjeros que acababan de forzar la apertura del país.
+            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+          </figcaption>
+        </figure>
+        <p>Al verse forzado a ceder (lo que conducirá a los tratados desiguales de 1858), el shogunato rompe irreversiblemente su propia política de reclusión. Este fracaso defensivo destruye el principio de autoridad del bakufu, desatando quince años de caos doméstico y violencia política protagonizada por samuráis disidentes.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="acto" data-i="3">
+    <div><span class="acto-num">03</span><span class="acto-label">El giro</span></div>
+    <div>
+      <div class="acto-head"><span class="acto-title">Adoptar Occidente para mantener fuera a Occidente</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">1850s – 1868</span>
+      <p class="acto-teaser">Una paradoja estratégica deliberada: usar las herramientas del enemigo para no terminar colonizado por él.</p>
+      <div class="acto-body">
+        <p>El giro no es solo resistencia militar: es una paradoja estratégica, adoptar métodos occidentales para mantener fuera a Occidente y preservar la esencia nacional. Para defenderse del expansionismo ruso en el norte, el shogunato financia expediciones científicas modernas, como la del explorador Mamiya Rinzō, usando las herramientas cartográficas europeas para fijar límites territoriales reconocibles ante las potencias extranjeras.</p>
+        <p>Se reconoce que la fortaleza espiritual sin poder material era inútil: la élite política empieza a estudiar y traducir leyes, modelos de soberanía y adelantos técnicos occidentales. Esa corriente modernizadora culmina en 1867-1868, cuando jóvenes samuráis de Satsuma y Chōshū deponen definitivamente al bakufu Tokugawa y restituyen el poder político al Emperador.</p>
+        <figure class="acto-figure">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Battle%20of%20Toba%E2%80%93Fushimi.jpg" alt="Representación de la Batalla de Toba-Fushimi, enero de 1868, entre fuerzas imperiales y del shogunato" loading="lazy">
+          <figcaption>La Batalla de Toba-Fushimi, enero de 1868, la derrota decisiva del ejército del shogunato frente a la alianza Satsuma-Chōshū, el punto sin retorno de la Restauración.
+            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+
+  <div class="acto" data-i="4">
+    <div><span class="acto-num">04</span><span class="acto-label">La consecuencia inmediata</span></div>
+    <div>
+      <div class="acto-head"><span class="acto-title">Del bakufu al Estado-nación</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">1868 – 1873</span>
+      <p class="acto-teaser">El sistema de shogunatos termina, se abole el feudalismo, y el Emperador se convierte en símbolo de una identidad nacional unificada.</p>
+      <div class="acto-body">
+        <p>Tras la deposición de Tokugawa Yoshinobu y la proclamación de la Restauración Meiji en 1868, se sientan las bases de un Estado-nación moderno: se abolen los dominios feudales y las distinciones hereditarias de clase, concentrando la administración en un poder ejecutivo central unificado.</p>
+        <figure class="acto-figure">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mutsuhito-Emperor-Meiji-1873.png" alt="Retrato oficial del Emperador Meiji, 1873, fotografiado por Uchida Kuichi" loading="lazy">
+          <figcaption>Retrato oficial del Emperador Meiji, 1873, por Uchida Kuichi, el único fotógrafo autorizado a fotografiar al Emperador, considerado hasta entonces una figura casi invisible para el pueblo.
+            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+          </figcaption>
+        </figure>
+        <p>Se envía la histórica Misión Iwakura (1871-1873) a Europa y Estados Unidos para estudiar los sistemas industriales, legales y constitucionales occidentales como plan maestro de modernización. Para contrarrestar las lealtades locales de antiguos clanes, el gobierno promueve al Emperador como símbolo sagrado e inviolable de la soberanía nacional.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="acto" data-i="5">
+    <div><span class="acto-num">05</span><span class="acto-label">El eco</span></div>
+    <div>
+      <div class="acto-head"><span class="acto-title">Una dialéctica que Japón nunca cerró</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">1868 → hoy</span>
+      <p class="acto-teaser">La tensión entre asimilar Occidente y proteger la identidad nacional sigue siendo el eje de la política exterior japonesa.</p>
+      <div class="acto-body">
+        <p><strong>Occidentalización vs. Kokutai.</strong> La política exterior y de defensa de Japón sigue marcada por el dilema surgido entre 1603 y 1853: la necesidad de asimilar estructuras internacionales, como la alianza de seguridad con EE.UU., mientras se lucha por mantener la esencia tradicional japonesa frente a las dinámicas del poder global.</p>
+        <p><strong>El debate historiográfico.</strong> La narrativa "oficial" de la era Meiji retrató al shogunato como una era de despotismo superada por la "luz" imperial. Pero historiadores herederos del antiguo régimen, como el diplomático Katsu Kaishū, defendieron que las bases del Japón moderno (sus primeras misiones diplomáticas, la modernización militar, 250 años de estabilidad administrativa) fueron un legado directo del orden Tokugawa, no una ruptura súbita de 1868.</p>
+        <p class="quote">Ninguna de las dos lecturas ganó del todo: Japón sigue debatiendo si 1868 fue una ruptura o una continuación, la misma pregunta que se hace cada vez que decide cuánto absorber del exterior y cuánto proteger de sí mismo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="legado">
+  <div class="section-head">
+    <span class="eyebrow">Dos lecturas del mismo pasado</span>
+    <h2>¿Ruptura o continuidad?</h2>
+  </div>
+  <div class="flat-grid">
+    <div><h3>La narrativa Meiji</h3><p>El shogunato como era de despotismo y oscuridad, superada por la restauración imperial: la lectura que consolidó el propio Estado que sucedió a los Tokugawa.</p></div>
+    <div><h3>La lectura revisionista</h3><p>250 años de paz administrativa, las primeras misiones diplomáticas y la modernización militar como legado directo del orden Tokugawa, no como su negación.</p></div>
+  </div>
+  <div class="connect-note">
+    Este capítulo es el origen directo de <a href="../meiji/index.html">la Restauración Meiji</a>: el giro que aquí se gesta durante dos siglos y medio se consuma en 1868.
+  </div>
+</section>
+
+<section id="fuentes">
+  <div class="sources">
+    <span class="eyebrow">Sobre esta investigación</span>
+    <p>Contenido curado por el equipo de Club Kongzhi a partir de fuentes académicas reunidas en el cuaderno de NotebookLM dedicado al Shogunato Tokugawa.</p>
+  </div>
+  <div class="nav-adjacent">
+    <div class="empty">Primer cuaderno de la serie Japón</div>
+    <a class="next" href="../meiji/index.html">
+      <span class="dir">Siguiente</span>
+      <span class="ttl"><span class="ttl-arrow">→</span>1868: La Restauración Meiji</span>
+    </a>
+  </div>
+</section>
+
+<footer>Club Kongzhi UNMSM · Observatorio Asia-Pacífico · Biblioteca Nalanda</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if(!reduceMotion && window.Lenis){
+    var lenis = new Lenis({ duration: 1.2, smoothWheel: true });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(function(time){ lenis.raf(time * 1000); });
+    gsap.ticker.lagSmoothing(0);
+  }
+
+  function openActo(acto){
+    acto.querySelector('.acto-toggle').textContent = '－';
+    gsap.to(acto.querySelector('.acto-body'), {
+      height: 'auto', opacity: 1, duration: reduceMotion ? 0 : 0.65, ease: 'power1.inOut',
+      onUpdate: function(){ ScrollTrigger.update(); },
+      onComplete: function(){ ScrollTrigger.refresh(); }
+    });
+  }
+  function closeActo(acto){
+    acto.querySelector('.acto-toggle').textContent = '＋';
+    gsap.to(acto.querySelector('.acto-body'), {
+      height: 0, opacity: 0, duration: reduceMotion ? 0 : 0.5, ease: 'power1.inOut',
+      onUpdate: function(){ ScrollTrigger.update(); },
+      onComplete: function(){ ScrollTrigger.refresh(); }
+    });
+  }
+
+  var actos = document.querySelectorAll('.acto');
+  actos.forEach(function(acto){
+    acto.addEventListener('click', function(){
+      var wasActive = acto.classList.contains('active');
+      document.querySelectorAll('.acto.active').forEach(function(a){ a.classList.remove('active'); closeActo(a); });
+      if(!wasActive){ acto.classList.add('active'); openActo(acto); }
+    });
+  });
+  var firstActive = document.querySelector('.acto.active .acto-body');
+  if(firstActive){
+    gsap.set(firstActive, {height:'auto', opacity:1});
+    document.querySelector('.acto.active .acto-toggle').textContent = '－';
+  }
+
+  if(!reduceMotion){
+    actos.forEach(function(acto){
+      gsap.from(acto, {
+        opacity: 0, y: 24, duration: 0.9, ease: 'power1.out',
+        scrollTrigger: { trigger: acto, start: 'top 90%', toggleActions: 'play none none reverse' }
+      });
+    });
+
+    var heroTl = gsap.timeline({ defaults: { ease: 'power1.out' } });
+    heroTl
+      .from('.top-return', { opacity: 0, y: -8, duration: 0.7 })
+      .from('.hero-rule', { scaleX: 0, transformOrigin: 'left center', duration: 1.1 }, '-=0.3')
+      .from('h1.title-jp', { opacity: 0, y: 16, duration: 1.1 }, '-=0.7')
+      .from('.title-romaji', { opacity: 0, y: 10, duration: 0.9 }, '-=0.7')
+      .from('.hero-dek', { opacity: 0, y: 14, duration: 1 }, '-=0.6')
+      .from('.hero-stats > div', { opacity: 0, y: 14, duration: 0.8, stagger: 0.15 }, '-=0.5');
+
+    gsap.to('.hero-kanji', {
+      yPercent: 12, ease: 'none',
+      scrollTrigger: { trigger: 'header.hero', start: 'top top', end: 'bottom top', scrub: 1.2 }
+    });
+
+    gsap.from('.flat-grid > div', {
+      opacity: 0, y: 20, duration: 0.8, stagger: 0.12, ease: 'power1.out',
+      scrollTrigger: { trigger: '.flat-grid', start: 'top 85%', toggleActions: 'play none none reverse' }
+    });
+    gsap.from('.nav-adjacent > *', {
+      opacity: 0, y: 16, duration: 0.8, stagger: 0.1, ease: 'power1.out',
+      scrollTrigger: { trigger: '.nav-adjacent', start: 'top 90%', toggleActions: 'play none none reverse' }
+    });
+  }
+
+  window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
+</script>
+
+</body>
+</html>
