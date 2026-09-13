@@ -6,7 +6,7 @@
 <title>Nalanda — Colección Editorial Club Kongzhi</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=Source+Sans+3:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=Source+Sans+3:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Crimson+Pro:wght@400;500;600&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
@@ -24,6 +24,9 @@
     --japan-indigo:#3E4E72; --japan-vermillion:#A13D2C; --japan-rice:#F5F1E8;
     --china-imperial:#9E2B25; --china-gold:#C9A63E; --china-jade:#6E9482;
     --korea-celadon:#7A9E8E; --korea-porcelain:#5C7A96; --korea-granite:#5A574E;
+    /* Kongzhi Design DNA — nivel masterbrand, solo para piezas de nivel club */
+    --kz-teal:#1E8E8A; --kz-navy:#0E2233; --kz-sand:#C9A278; --kz-paper:#F5F0E6;
+    --kz-text-secondary:#5A6B70;
   }
   *{box-sizing:border-box;}
   html.lenis, html.lenis body{height:auto;}
@@ -89,8 +92,8 @@
 
   /* ---------- HEADER ---------- */
   header{position:relative; z-index:2; padding:6vh 8vw 8vh; max-width:1180px; margin:0 auto;}
-  .header-inner{max-width:700px;}
-  .hero-rule{width:56px; height:1px; background:var(--gold); margin-bottom:1.8rem;}
+  .header-inner{max-width:700px; margin:0 auto; text-align:center;}
+  .hero-rule{width:56px; height:1px; background:var(--gold); margin:0 auto 1.8rem;}
   header h1{
     font-family:'Source Serif 4', serif; font-weight:500; font-optical-sizing:auto;
     font-size:clamp(2.6rem, 5.8vw, 4.3rem);
@@ -98,11 +101,11 @@
   }
   header h1 .accent{color:var(--china-imperial); font-style:italic;}
   header p.dek{
-    max-width:610px; color:var(--warm-gray);
-    font-size:clamp(1rem,1.5vw,1.15rem); margin:0; font-weight:300; line-height:1.92;
+    max-width:610px; color:var(--warm-gray); margin:0 auto;
+    font-size:clamp(1rem,1.5vw,1.15rem); font-weight:300; line-height:1.92;
   }
   .header-meta{
-    display:flex; gap:2.4rem; margin-top:3.2rem; flex-wrap:wrap;
+    display:flex; gap:2.4rem; margin-top:3.2rem; flex-wrap:wrap; justify-content:center;
     font-family:'IBM Plex Mono', monospace; font-size:.78rem;
     color:var(--warm-gray); border-top:1px solid var(--line); padding-top:1.6rem;
   }
@@ -168,10 +171,13 @@
   .region-block.china{--region-accent:var(--china-imperial);}
   .region-block.corea{--region-accent:var(--korea-celadon);}
 
-  /* ---------- ABOUT ---------- */
-  .about{margin-top:3rem; padding-top:3.6rem; border-top:1px solid var(--line); display:grid; grid-template-columns:1fr 1fr; gap:3.4rem;}
-  .about h4{font-family:'Source Serif 4', serif; font-weight:500; margin:0 0 .8rem; font-size:1.12rem; color:var(--editorial-black);}
-  .about p{margin:0; font-size:.92rem; color:var(--warm-gray); font-weight:300; line-height:1.82;}
+  /* ---------- KONGZHI NEXUS — cierre de marca al final, antes del footer ---------- */
+  .kz-nexus{background:var(--kz-navy); margin-top:4.2rem; padding:4.4rem 6vw; text-align:center;}
+  .kz-nexus svg{width:64px; height:34px; margin:0 auto 1.6rem; display:block;}
+  .kz-nexus .kz-tag{font-family:'Crimson Pro', serif; font-weight:500; font-size:clamp(1.2rem,2.4vw,1.55rem); color:var(--kz-paper); margin:0 0 3rem; letter-spacing:.01em;}
+  .kz-qa-grid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:2.4rem 2.6rem; max-width:1080px; margin:0 auto; padding-top:2.6rem; border-top:1px solid rgba(201,162,120,0.22); text-align:left;}
+  .kz-qa-grid h5{font-family:'Crimson Pro', serif; font-weight:500; color:var(--kz-sand); font-size:1.02rem; margin:0 0 .75rem;}
+  .kz-qa-grid p{font-family:'Atkinson Hyperlegible', sans-serif; font-size:.88rem; color:#B9C4C8; line-height:1.78; margin:0;}
 
   /* ---------- COLECCIÓN (las 3 líneas) ---------- */
   .collection{margin-top:3.6rem; padding-top:3.6rem; border-top:1px solid var(--line);}
@@ -199,7 +205,7 @@
   .publisher-seal:active{transform:scale(0.98);}
 
   @media(max-width:720px){
-    .about, .collection-grid{grid-template-columns:1fr;}
+    .kz-qa-grid, .collection-grid{grid-template-columns:1fr;}
     .collection-grid > div{border-right:none; border-bottom:1px solid var(--line);}
     .collection-grid > div:last-child{border-bottom:none;}
     .region-head .count{display:none;}
@@ -366,17 +372,6 @@
     </div>
   </div>
 
-  <div class="about">
-    <div>
-      <h4>¿Qué es este sitio?</h4>
-      <p>Cada cuaderno funciona como una página interactiva. Los construimos usando fuentes académicas y periodísticas que nosotros mismos verificamos y organizamos en la biblioteca de NotebookLM. Nuestra intención no es reemplazar la investigación del club, sino darle un sentido narrativo a los datos para que el conocimiento sea estable.</p>
-    </div>
-    <div>
-      <h4>¿Cómo se conecta con Gengis?</h4>
-      <p>Nalanda es el proyecto par del Observatorio de datos Gengis. Gengis se encarga de monitorear el comercio y los perfiles de cada país mediante su monitor de tres dimensiones. La información que curamos en este espacio es la que alimenta al asistente de investigación que usa el club.</p>
-    </div>
-  </div>
-
   <div class="collection">
     <span class="eyebrow">La colección editorial</span>
     <div class="collection-grid">
@@ -397,6 +392,25 @@
         <h5>El alma de Asia</h5>
         <p>Filosofía, religión y tradición cultural detrás de las civilizaciones que estudiamos.</p>
         <span class="status">○ En desarrollo</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="kz-nexus">
+    <svg viewBox="0 0 1200 500" aria-hidden="true"><g fill="none" stroke="#C9A278" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"><path d="M80 110 C250 110 340 155 480 250 C560 304 640 304 720 250 C860 155 950 110 1120 110"/><path d="M80 390 C240 390 345 325 485 230 C560 179 640 179 715 230 C855 325 960 390 1120 390"/><path d="M500 250 L550 200 L600 250 L650 200 L700 250 L650 300 L600 250 L550 300 Z"/></g></svg>
+    <p class="kz-tag">El puente entre el Perú universitario y el pulso de Asia</p>
+    <div class="kz-qa-grid">
+      <div>
+        <h5>¿Qué es este sitio?</h5>
+        <p>Cada cuaderno funciona como una página interactiva. Los construimos usando fuentes académicas y periodísticas que nosotros mismos verificamos y organizamos en la biblioteca de NotebookLM. Nuestra intención no es reemplazar la investigación del club, sino darle un sentido narrativo a los datos para que el conocimiento sea estable.</p>
+      </div>
+      <div>
+        <h5>¿Cómo se conecta con Gengis?</h5>
+        <p>Nalanda es el proyecto par del Observatorio de datos Gengis. Gengis se encarga de monitorear el comercio y los perfiles de cada país mediante su monitor de tres dimensiones. La información que curamos en este espacio es la que alimenta al asistente de investigación que usa el club.</p>
+      </div>
+      <div>
+        <h5>¿Cómo se conecta con Kongzhi?</h5>
+        <p>Nalanda es el Vol. I de la colección editorial de Club Kongzhi. Junto a Gengis y los volúmenes que vendrán, forma parte de un mismo proyecto: convertir años de investigación en un relato que se pueda leer, no en una enciclopedia que solo se consulta.</p>
       </div>
     </div>
   </div>
@@ -458,9 +472,9 @@
       });
     });
 
-    gsap.from('.about', {
-      opacity: 0, y: 20, duration: 0.8, ease: 'power1.out',
-      scrollTrigger: { trigger: '.about', start: 'top 88%', toggleActions: 'play none none reverse' }
+    gsap.from('.kz-qa-grid > div', {
+      opacity: 0, y: 20, duration: 0.8, stagger: 0.12, ease: 'power1.out',
+      scrollTrigger: { trigger: '.kz-nexus', start: 'top 85%', toggleActions: 'play none none reverse' }
     });
     gsap.from('.collection-grid > div', {
       opacity: 0, y: 20, duration: 0.7, stagger: 0.1, ease: 'power1.out',
