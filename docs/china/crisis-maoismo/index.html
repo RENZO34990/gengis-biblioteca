@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>文革 — La Revolución Cultural</title>
+<title>转折 — La Crisis del Maoísmo y la Transición</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -104,6 +104,15 @@
   .loss-item h3{margin:0 0 .4rem; font-family:'Hanken Grotesk', sans-serif; font-weight:600; font-size:1rem; color:var(--vermillion-deep);}
   .loss-item p{margin:0; font-size:.94rem; color:var(--ink-soft);}
 
+  /* ---------- Gráficos de datos ---------- */
+  .chart-block{margin:1.8rem 0; border-top:1px solid var(--line); padding-top:1.6rem; max-width:640px;}
+  .chart-title{font-family:'IBM Plex Mono', monospace; font-size:.76rem; letter-spacing:.02em; color:var(--gold); margin-bottom:1.4rem;}
+  .chart-bars{display:flex; align-items:flex-end; gap:1.4rem; height:130px;}
+  .chart-col{display:flex; flex-direction:column; align-items:center; flex:1; height:100%; justify-content:flex-end;}
+  .chart-value{font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink); font-weight:600; white-space:nowrap; margin-bottom:.4rem;}
+  .chart-bar{width:100%; background:linear-gradient(180deg, var(--gold), var(--vermillion));}
+  .chart-col-label{margin-top:.7rem; font-family:'IBM Plex Mono', monospace; font-size:.7rem; color:var(--ink-soft); text-align:center;}
+  .chart-note{margin-top:1.2rem; font-size:.86rem; color:var(--ink-soft); max-width:600px;}
   .acto-body p{margin:0 0 1rem; color:var(--ink); max-width:660px; line-height:1.85;}
   .acto-body strong{font-weight:700; color:var(--vermillion-deep);}
   .acto-body .quote{padding-left:1.1rem; border-left:2px solid var(--gold); color:var(--ink-soft); font-size:.98rem; margin-top:1.2rem; max-width:610px; font-style:normal;}
@@ -150,17 +159,17 @@
 <a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
 
 <header class="hero">
-  <div class="hero-kanji">文革</div>
+  <div class="hero-kanji">转折</div>
   <div class="hero-content">
-    <span class="eyebrow">Kongzhi · China · Política 06</span>
+    <span class="eyebrow">Kongzhi · China · Política / Economía 06</span>
     <div class="hero-rule"></div>
-    <h1 class="title-cn">文化大革命</h1>
-    <div class="title-pinyin">Wénhuà Dà Gémìng — la Revolución Cultural</div>
-    <p class="hero-dek">Mao destruyó el mismo Partido-Estado que había fundado, usando a millones de adolescentes como arma contra su propia burocracia. Diez años de purgas, destierro rural y caos faccional no solo marcaron a una generación: forjaron, en un adolescente enviado a cavar cuevas en Shaanxi, la convicción de que solo un Partido centralizado puede evitar que algo así vuelva a pasar.</p>
+    <h1 class="title-cn">历史转折</h1>
+    <div class="title-pinyin">Lìshǐ Zhuǎnzhé — la crisis del maoísmo y el giro histórico</div>
+    <p class="hero-dek">En menos de dos años, China sepultó a su fundador, arrestó a su camarilla más radical, coqueteó con un nuevo Gran Salto Adelante disfrazado de modernización, y terminó decidiendo que ya no importaba si una política era roja o blanca: solo importaba si funcionaba. Esa frase, "buscar la verdad en los hechos", inauguró cuatro décadas de crecimiento.</p>
     <div class="hero-stats">
-      <div><span class="num">1966</span><span class="lbl">Circular del 16 de Mayo</span></div>
-      <div><span class="num">10M+</span><span class="lbl">jóvenes urbanos desterrados al campo</span></div>
-      <div><span class="num">1976</span><span class="lbl">muerte de Mao, arresto de la Banda de los Cuatro</span></div>
+      <div><span class="num">1976</span><span class="lbl">muere Mao; cae la Banda de los Cuatro</span></div>
+      <div><span class="num">4,800</span><span class="lbl">proyectos industriales cancelados en 1979</span></div>
+      <div><span class="num">dic 1978</span><span class="lbl">Tercer Pleno: comienza la Reforma y Apertura</span></div>
     </div>
   </div>
 </header>
@@ -168,19 +177,19 @@
 <section id="actos">
   <div class="section-head">
     <span class="eyebrow">Los 5 actos</span>
-    <h2>Cómo un líder vuelve las armas contra su propio Partido</h2>
+    <h2>De la parálisis ideológica al pragmatismo de Estado</h2>
     <p class="lede">Toca cada acto para expandirlo.</p>
   </div>
 
   <div class="acto active" data-i="1">
     <div><span class="acto-num">01</span><span class="acto-label">El mundo antes</span></div>
     <div>
-      <div class="acto-head"><span class="acto-title">Mao desconfía de la burocracia que él mismo construyó</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">1962 – 1965</span>
-      <p class="acto-teaser">Tras el fracaso del Gran Salto, los pragmáticos gestionan el país — y Mao empieza a temer que el Partido se esté "aburguesando".</p>
+      <div class="acto-head"><span class="acto-title">Un país exhausto pierde a tres líderes en nueve meses</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">1976</span>
+      <p class="acto-teaser">Diez años de Revolución Cultural dejan una economía racionada y un Partido paralizado, y 1976 llega con la muerte simultánea de sus fundadores.</p>
       <div class="acto-body">
-        <p>Antes de 1966, tras la consolidación del Estado socialista y el fracaso del Gran Salto Adelante, China estaba gobernada por un aparato de Partido-Estado leninista altamente burocratizado. La gestión cotidiana había quedado en manos de líderes pragmáticos como el presidente Liu Shaoqi y el secretario general Deng Xiaoping.</p>
-        <p class="quote">Mao Zedong comenzó a temer que la burocracia del PCCh se estuviera aburguesando y desviando hacia el "revisionismo" al estilo soviético. Esta fricción alimentó profundas luchas de facciones en la cúpula del poder, siendo un preludio clave la purga en 1962 de Xi Zhongxun (padre de Xi Jinping) por el caso de la biografía de Liu Zhidan.</p>
+        <p>Hacia 1976, China acumulaba una década de convulsión por la Revolución Cultural, que afectó seriamente la planificación económica: el sistema de racionamiento cubría más del 80% de los alimentos e insumos básicos, mientras la producción agrícola apenas mantenía el ritmo del crecimiento demográfico. El Partido-Estado, a su vez, estaba paralizado por las luchas de facciones entre la "Banda de los Cuatro" (Jiang Qing, Zhang Chunqiao, Yao Wenyuan y Wang Hongwen) y los sectores pragmáticos de la vieja guardia.</p>
+        <p>La población llamó a 1976 el año de "desastres naturales y desgracias humanas": en solo nueve meses fallecieron el premier Zhou Enlai (enero), el mariscal Zhu De (julio) y el presidente Mao Zedong (septiembre), mientras en julio un devastador terremoto destruía la ciudad industrial de Tangshan. La muerte de Zhou Enlai desencadenó además el Incidente de Tiananmen de abril de 1976, reprimido duramente y usado como pretexto para purgar a Deng Xiaoping por segunda vez.</p>
       </div>
     </div>
   </div>
@@ -188,12 +197,13 @@
   <div class="acto" data-i="2">
     <div><span class="acto-num">02</span><span class="acto-label">La grieta</span></div>
     <div>
-      <div class="acto-head"><span class="acto-title">"Bombardear los Cuarteles Generales"</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">mayo 1966</span>
-      <p class="acto-teaser">Mao puentea al propio Politburó y moviliza a millones de jóvenes directamente contra la burocracia del Partido.</p>
+      <div class="acto-head"><span class="acto-title">Se arresta a la camarilla radical, se intenta un nuevo Gran Salto</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">oct 1976 – 1977</span>
+      <p class="acto-teaser">Hua Guofeng captura el poder y pone fin al caos faccional, pero su receta económica repite, con otro nombre, los errores de 1958.</p>
       <div class="acto-body">
-        <p>La fractura institucional estalló formalmente en mayo de 1966 cuando Mao, con el apoyo del recién creado Grupo Central de la Revolución Cultural (Chen Boda, Jiang Qing, Kang Sheng y Zhang Chunqiao), emitió la "Circular del 16 de Mayo". Mao llamó a la juventud urbana a "Bombardear los Cuarteles Generales" y rebelarse contra los "autócratas capitalistas" atrincherados en el Partido.</p>
-        <p>Para evitar los canales institucionales del PCCh, Mao puenteó al Politburó y movilizó masivamente a los jóvenes en cuadrillas de Guardias Rojos (Hongweibing). Bajo la consigna de destruir las "Cuatro Viejas" (viejas ideas, cultura, costumbres y hábitos), los Guardias Rojos paralizaron las universidades, asaltaron sedes gubernamentales y desataron una ola de terror e iconoclasia ideológica.</p>
+        <p>El 6 de octubre de 1976, Hua Guofeng, designado sucesor interino por Mao, orquestó un golpe palaciego con el respaldo del mariscal Ye Jianying, Li Xiannian y la Guardia Central de Wang Dongxing, arrestando a la Banda de los Cuatro y poniendo fin formal a la Revolución Cultural.</p>
+        <p>Para consolidar su legitimidad, Hua articuló la doctrina de los "Dos Cualquier": defender cualquier decisión tomada por Mao y seguir cualquier instrucción suya. En lo económico, intentó resolver la parálisis con un "Plan Decenal" (1976-1985), un "Nuevo Gran Salto Adelante", que proyectaba 120 grandes complejos industriales con una inversión calculada en 400,000 millones de dólares, financiada con importación apresurada de plantas completas desde países capitalistas.</p>
+        <p class="quote">La estrategia colapsó rápido: China carecía de reservas de divisas y de capacidad fiscal para sostener semejante volumen de compras externas, generando cuellos de botella severos en las cadenas de suministro.</p>
       </div>
     </div>
   </div>
@@ -201,15 +211,12 @@
   <div class="acto" data-i="3">
     <div><span class="acto-num">03</span><span class="acto-label">El giro</span></div>
     <div>
-      <div class="acto-head"><span class="acto-title">Se destruye el aparato de justicia, se destierra a una generación</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">1967 – 1969</span>
-      <p class="acto-teaser">La vieja guardia revolucionaria es purgada con violencia, y diez millones de jóvenes, entre ellos el futuro Xi Jinping, son enviados al campo.</p>
+      <div class="acto-head"><span class="acto-title">Un debate filosófico decide el rumbo del país</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">jul 1977 – dic 1978</span>
+      <p class="acto-teaser">Deng Xiaoping no derrota a Hua con un golpe, sino con una frase: la práctica es el único criterio de la verdad.</p>
       <div class="acto-body">
-        <div class="loss-list">
-          <div class="loss-item"><h3>Desmantelamiento del aparato judicial</h3><p>Se aprobó la consigna de "destruir el aparato de seguridad pública, la procuraduría y los tribunales" (gong-jian-fa). Los comités locales del PCCh fueron desactivados o reemplazados por Comités Revolucionarios integrados por rebeldes radicales y mandos del EPL.</p></div>
-          <div class="loss-item"><h3>La purga de la vieja guardia</h3><p>Liu Shaoqi fue calificado de "traidor y soplón", expulsado del Partido y dejado morir en prisión en 1969. Deng Xiaoping fue purgado y enviado al destierro laboral. Xi Zhongxun fue encarcelado y sometido a constantes vejaciones.</p></div>
-          <div class="loss-item"><h3>El Movimiento de Rusticación</h3><p>Más de 10 millones de jóvenes urbanos, incluidos hijos de cuadros purgados, fueron enviados a aldeas remotas para ser "reeducados". Xi Jinping fue enviado en 1969 a Liangjiahe, Shaanxi, donde realizó trabajos manuales extenuantes durante siete años.</p></div>
-        </div>
+        <p>Deng Xiaoping, rehabilitado en sus cargos en julio de 1977, inició una ofensiva para erosionar el fundamento doctrinal de Hua Guofeng. En mayo de 1978, junto con Hu Yaobang, impulsó el Debate sobre el Criterio de la Verdad, promoviendo que "la práctica es el único criterio para probar la verdad" y que había que "buscar la verdad en los hechos". Esta formulación desarmó la infalibilidad del pensamiento tardío de Mao y descalificó la consigna de los "Dos Cualquier", ganando a la facción reformista un respaldo abrumador en la élite del partido.</p>
+        <p class="quote">El punto de no retorno se selló en la Tercera Sesión Plenaria del 11º Comité Central del PCCh (18-22 de diciembre de 1978): el Partido aprobó el abandono definitivo de la "lucha de clases" como tarea prioritaria, desplazó el foco estatal hacia la modernización socialista y adoptó formalmente la política de "Reforma y Apertura" (Gaige Kaifang), consolidando a Deng Xiaoping como líder supremo de facto.</p>
       </div>
     </div>
   </div>
@@ -217,13 +224,16 @@
   <div class="acto" data-i="4">
     <div><span class="acto-num">04</span><span class="acto-label">La consecuencia inmediata</span></div>
     <div>
-      <div class="acto-head"><span class="acto-title">El ejército pone orden, una banda de cuatro hereda el caos</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">1969 – oct 1976</span>
-      <p class="acto-teaser">Un sucesor designado muere huyendo en un avión; una camarilla ideológica gobierna hasta que Mao muere y es arrestada semanas después.</p>
+      <div class="acto-head"><span class="acto-title">De Xiaogang a Shenzhen en menos de un año</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">1978 – 1981</span>
+      <p class="acto-teaser">Un pueblo campesino divide clandestinamente la tierra colectiva, y en menos de un año Pekín convierte ese experimento ilegal en política nacional.</p>
       <div class="acto-body">
-        <p>Para frenar los enfrentamientos armados entre facciones de Guardias Rojos (wudou), el EPL asumió el control administrativo. El mariscal Lin Biao fue designado sucesor constitucional de Mao en 1969, pero tras sospechas de un golpe de Estado fallido murió al estrellarse su avión en Mongolia en septiembre de 1971.</p>
-        <p class="quote">Tras la muerte de Lin Biao, el poder ideológico y mediático cayó en manos de la "Banda de los Cuatro" (Jiang Qing, Zhang Chunqiao, Yao Wenyuan y Wang Hongwen), que mantuvo la agitación política hasta la muerte de Mao en septiembre de 1976 y su arresto por el Politburó encabezado por Hua Guofeng, un mes después.</p>
-        <p>La experiencia transformó profundamente a la generación rusticada: a diferencia de quienes se alienaron del sistema, líderes como Xi Jinping reaccionaron volviéndose "más rojos que los rojos", convencidos de que la disciplina del Partido era la única vía para evitar el caos, y forjaron redes de lealtad personal (guanxi) que reaparecerían décadas después.</p>
+        <div class="loss-list">
+          <div class="loss-item"><h3>Se cancela el Plan Decenal de Hua</h3><p>En abril de 1979, el gobierno congeló los proyectos del Plan Decenal, cancelando o suspendiendo más de 4,800 proyectos pesados e ineficientes, reorientando recursos hacia la agricultura y la industria ligera.</p></div>
+          <div class="loss-item"><h3>Xiaogang y las Zonas Económicas Especiales</h3><p>En noviembre de 1978, campesinos de Xiaogang (Anhui) dividieron clandestinamente la tierra colectiva en parcelas familiares; al ver el disparo de las cosechas, la dirigencia legalizó la medida. En julio-agosto de 1979 se crearon las primeras ZEE en Shenzhen, Zhuhai, Shantou y Xiamen.</p></div>
+          <div class="loss-item"><h3>Rehabilitación y Xi Zhongxun en Guangdong</h3><p>El Departamento de Organización exoneró a cientos de miles de víctimas de la Revolución Cultural. Xi Zhongxun, padre de Xi Jinping, fue enviado a Guangdong en 1978 para estabilizar la provincia e idear las primeras Zonas Económicas Especiales frente a Hong Kong.</p></div>
+        </div>
+        <p>Para absorber a más de 6.5 millones de jóvenes que regresaban de las zonas rurales, el Estado legalizó en 1978 los pequeños negocios privados de subsistencia (getihu), permitiendo por primera vez en tres décadas la iniciativa privada individual.</p>
       </div>
     </div>
   </div>
@@ -231,13 +241,13 @@
   <div class="acto" data-i="5">
     <div><span class="acto-num">05</span><span class="acto-label">El eco</span></div>
     <div>
-      <div class="acto-head"><span class="acto-title">Dos lecturas opuestas del mismo trauma</span><span class="acto-toggle">＋</span></div>
+      <div class="acto-head"><span class="acto-title">El pragmatismo se vuelve doctrina de Estado</span><span class="acto-toggle">＋</span></div>
       <span class="acto-date">1978 → hoy</span>
-      <p class="acto-teaser">Deng y Xi aprendieron lecciones distintas de la misma década de caos, y esa diferencia explica buena parte de la política china reciente.</p>
+      <p class="acto-teaser">La frase de 1978 sigue siendo la justificación retórica de cualquier reforma económica china, incluso cuando Pekín recentraliza el poder político.</p>
       <div class="acto-body">
-        <p><strong>La respuesta de Deng: dispersar el poder.</strong> Para evitar la repetición de la dictadura personal y el culto a la personalidad de la Revolución Cultural, Deng Xiaoping instituyó en los años ochenta el liderazgo colectivo, límites de mandato presuntivos, edades de jubilación obligatorias y la separación entre las funciones del Partido y del gobierno.</p>
-        <p><strong>La respuesta de Xi: concentrar el poder.</strong> Xi Jinping interpretó el estancamiento y la corrupción de la era de Hu Jintao como el resultado de un liderazgo colectivo débil que amenazaba con repetir la descomposición del Estado. Usó el recuerdo de la parálisis institucional para restaurar una disciplina leninista férrea, centralizando el poder en sus manos.</p>
-        <p class="quote">A diferencia de Mao, Xi no apela a la movilización violenta de masas desde abajo, sino a la autoridad jerárquica absoluta del centro: la misma memoria del caos produjo, dos generaciones después, la prescripción exactamente opuesta.</p>
+        <p><strong>La "Teoría del Gato" como ideología.</strong> La máxima de Deng, "no importa si el gato es blanco o negro, lo importante es que cace ratones", quedó consagrada como principio orientador: las políticas dejaron de medirse por su pureza ideológica y se evaluaron por su capacidad de desarrollar las fuerzas productivas.</p>
+        <p><strong>Gradualismo experimental.</strong> La estrategia de "cruzar el río tocando las piedras", probar reformas en experimentos locales antes de aplicarlas a nivel nacional, deriva directamente de los éxitos de Xiaogang y Shenzhen en 1978-1979, y sigue siendo el método preferido de reforma económica china.</p>
+        <p class="quote">El trauma del maoísmo tardío llevó a Deng a fijar el liderazgo colectivo y la sucesión ordenada. Xi Jinping reivindica el legado económico de 1978, en el que su propio padre fue pionero en Guangdong, mientras desmantela esa misma descentralización política, recentralizando el poder en la figura del "líder núcleo" para prevenir divisiones en la cúpula del Partido.</p>
       </div>
     </div>
   </div>
@@ -254,23 +264,23 @@
 <section id="legado">
   <div class="section-head">
     <span class="eyebrow">Por qué importa hoy</span>
-    <h2>El trauma que forjó a dos generaciones de líderes</h2>
+    <h2>La frase que sigue justificando cada reforma</h2>
   </div>
   <div class="flat-grid">
-    <div><h3>El miedo al caos lo explica casi todo</h3><p>Cada decisión política china de las últimas décadas, desde los límites de mandato de Deng hasta la recentralización de Xi, se entiende como una respuesta a este mismo trauma de 1966-1976.</p></div>
-    <div><h3>Siete años en una cueva de Shaanxi</h3><p>La experiencia personal de Xi Jinping en Liangjiahe no es anecdótica: es la biografía fundacional que la propaganda del Partido usa para legitimar su ascenso y su visión del poder.</p></div>
-    <div><h3>Dos lecturas, una misma memoria</h3><p>Que Deng dispersara el poder y Xi lo concentrara, citando el mismo trauma, demuestra que la historia no dicta una sola lección: la interpretación política decide cuál prevalece.</p></div>
+    <div><h3>Resultados, no dogma</h3><p>"Buscar la verdad en los hechos" sigue siendo la licencia retórica que Pekín invoca para cualquier ajuste de política, incluso el más alejado de la ortodoxia marxista.</p></div>
+    <div><h3>Probar antes de generalizar</h3><p>El método de las Zonas Económicas Especiales, experimentar en un territorio acotado antes de escalar, es la plantilla que China sigue usando para cada reforma de gran escala.</p></div>
+    <div><h3>Apertura económica, control político</h3><p>Que Xi Jinping defienda el legado de 1978 mientras revierte su descentralización política resume la tensión que define al sistema chino contemporáneo.</p></div>
   </div>
 </section>
 
 <section id="fuentes">
   <div class="sources">
     <span class="eyebrow">Sobre esta investigación</span>
-    <p>Contenido curado por el equipo de Club Kongzhi a partir de fuentes académicas reunidas en el cuaderno de NotebookLM dedicado a la Revolución Cultural.</p>
+    <p>Contenido curado por el equipo de Club Kongzhi a partir de fuentes académicas reunidas en los cuadernos de NotebookLM dedicados a la Crisis del Maoísmo, dimensiones política y económica.</p>
   </div>
   <div class="nav-adjacent">
-    <a href="../gran-salto-adelante/index.html"><span class="dir">← Cuaderno anterior</span><span class="ttl">大跃进 Gran Salto Adelante</span></a>
-    <a href="../crisis-maoismo/index.html"><span class="dir">Siguiente cuaderno</span><span class="ttl">转折 Crisis del Maoísmo →</span></a>
+    <a href="../revolucion-cultural/index.html"><span class="dir">← Cuaderno anterior</span><span class="ttl">文革 Revolución Cultural</span></a>
+    <div class="empty">Siguiente cuaderno — en construcción</div>
   </div>
 </section>
 
