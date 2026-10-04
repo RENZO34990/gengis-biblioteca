@@ -150,12 +150,15 @@
   .card.ready:hover::before{opacity:1; transform:translate(6px,6px);}
   .card-top{display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:1rem;}
   .card-ref{font-family:'IBM Plex Mono', monospace; font-size:.8rem; color:var(--stone); letter-spacing:.04em;}
+  .topic-badges{display:flex; gap:.6rem; flex-wrap:wrap; justify-content:flex-end;}
   .topic-badge{
     font-family:'IBM Plex Mono', monospace; font-size:.7rem; text-transform:uppercase; letter-spacing:.05em;
     opacity:0; transform:translateY(-4px); transition:opacity .22s ease, transform .22s ease; pointer-events:none;
   }
   .card[data-tema="politica"] .topic-badge{color:var(--japan-indigo);}
   .card[data-tema="economia"] .topic-badge{color:var(--gold);}
+  .card[data-tema="politica economia"] .topic-badge:first-child{color:var(--japan-indigo);}
+  .card[data-tema="politica economia"] .topic-badge:last-child{color:var(--gold);}
   .card.ready:hover .topic-badge{opacity:1; transform:translateY(0);}
   .card.pending{opacity:.5;}
   .card .tag{font-family:'IBM Plex Mono', monospace; font-size:.7rem; text-transform:uppercase; letter-spacing:.06em; display:inline-block; width:fit-content; margin-bottom:.9rem; color:var(--region-accent, var(--gold));}
@@ -323,7 +326,7 @@
         <h2>China</h2>
         <span class="region-coord">23.13°N, 113.26°E — Guangzhou</span>
       </div>
-      <span class="count">4 de N temas</span>
+      <span class="count">5 de N temas</span>
     </div>
     <div class="card-grid">
       <a class="card ready" href="china/sistema-canton/index.html" data-tema="economia">
@@ -354,8 +357,15 @@
         <p>De la derrota ante Japón a la abdicación de Puyi: cómo dos mil años de monarquía imperial terminan en dieciséis años, y por qué el PCCh se presenta hoy como quien terminó esa revolución.</p>
         <span class="go">Leer cuaderno</span>
       </a>
+      <a class="card ready" href="china/republica-senores-guerra/index.html" data-tema="politica economia">
+        <div class="card-top"><span class="card-ref">NLD·CN·06</span><div class="topic-badges"><span class="topic-badge">Política</span><span class="topic-badge">Economía</span></div></div>
+        <span class="tag">Publicado</span>
+        <h3>1912–1927: República y la Era de los Señores de la Guerra</h3>
+        <p>Un Estado fragmentado en feudos militares convive con una década dorada para el empresariado privado chino — y una masacre en Shanghái que fija para siempre la subordinación del ejército al Partido.</p>
+        <span class="go">Leer cuaderno</span>
+      </a>
       <div class="card pending">
-        <div class="card-top"><span class="card-ref">NLD·CN·06</span></div>
+        <div class="card-top"><span class="card-ref">NLD·CN·07</span></div>
         <span class="tag">En construcción</span>
         <h3>Próximo tema</h3>
         <p>Espacio reservado para el siguiente cuaderno de la serie China.</p>

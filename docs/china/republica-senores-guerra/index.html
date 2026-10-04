@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>辛亥革命 — El Colapso de la Dinastía Qing</title>
+<title>军阀 — República y la Era de los Señores de la Guerra</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -74,7 +74,7 @@
   .hero-stats div{padding:1.1rem 3rem 1.6rem 0; margin-right:1.4rem; border-right:1px solid rgba(242,239,233,0.2); min-width:0;}
   .hero-stats div:last-child{border-right:none; padding-right:0;}
   .hero-stats .num{font-family:'Noto Serif SC', serif; font-weight:700; font-size:1.5rem; display:block; color:var(--gold);}
-  .hero-stats .lbl{font-family:'IBM Plex Mono', monospace; font-size:.8rem; color:rgba(242,239,233,0.7); display:block; margin-top:.3rem; max-width:160px;}
+  .hero-stats .lbl{font-family:'IBM Plex Mono', monospace; font-size:.8rem; color:rgba(242,239,233,0.7); display:block; margin-top:.3rem; max-width:150px;}
 
   section{padding:7vh 8vw; max-width:1080px; margin:0 auto;}
   .section-head{max-width:580px; margin-bottom:3.4rem;}
@@ -97,15 +97,25 @@
   .acto-toggle{font-family:'IBM Plex Mono', monospace; font-size:.9rem; color:var(--vermillion); flex-shrink:0;}
   .acto-teaser{color:var(--ink-soft); margin:.7rem 0 0; max-width:620px;}
   .acto-body{height:0; overflow:hidden; opacity:0;}
+
+  /* ---------- Listas de ruptura ---------- */
+  .loss-list{margin:1.6rem 0; border-top:1px solid var(--line);}
+  .loss-item{padding:1.4rem 0; border-bottom:1px solid var(--line);}
+  .loss-item h3{margin:0 0 .4rem; font-family:'Hanken Grotesk', sans-serif; font-weight:600; font-size:1rem; color:var(--vermillion-deep);}
+  .loss-item p{margin:0; font-size:.94rem; color:var(--ink-soft);}
+
+  /* ---------- Gráficos de datos ---------- */
+  .chart-block{margin:1.8rem 0; border-top:1px solid var(--line); padding-top:1.6rem; max-width:640px;}
+  .chart-title{font-family:'IBM Plex Mono', monospace; font-size:.76rem; letter-spacing:.02em; color:var(--gold); margin-bottom:1.4rem;}
+  .chart-bars{display:flex; align-items:flex-end; gap:1.4rem; height:130px;}
+  .chart-col{display:flex; flex-direction:column; align-items:center; flex:1; height:100%; justify-content:flex-end;}
+  .chart-value{font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink); font-weight:600; white-space:nowrap; margin-bottom:.4rem;}
+  .chart-bar{width:100%; background:linear-gradient(180deg, var(--gold), var(--vermillion));}
+  .chart-col-label{margin-top:.7rem; font-family:'IBM Plex Mono', monospace; font-size:.7rem; color:var(--ink-soft); text-align:center;}
+  .chart-note{margin-top:1.2rem; font-size:.86rem; color:var(--ink-soft); max-width:600px;}
   .acto-body p{margin:0 0 1rem; color:var(--ink); max-width:660px; line-height:1.85;}
   .acto-body strong{font-weight:700; color:var(--vermillion-deep);}
   .acto-body .quote{padding-left:1.1rem; border-left:2px solid var(--gold); color:var(--ink-soft); font-size:.98rem; margin-top:1.2rem; max-width:610px; font-style:normal;}
-
-  /* ---------- Figuras históricas ---------- */
-  .acto-figure{margin:1.8rem 0; border:1px solid var(--line); max-width:640px; background:var(--ink);}
-  .acto-figure img{width:100%; display:block; filter:sepia(.12) contrast(1.03); opacity:.94;}
-  .acto-figure figcaption{padding:.85rem 1.1rem; font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink-soft); border-top:1px solid var(--line); background:var(--paper);}
-  .acto-figure figcaption .credit{display:block; margin-top:.3rem; color:#8A8478; font-size:.76rem;}
 
   /* ---------- LEGADO ---------- */
   .flat-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:0; border-top:1px solid var(--line);}
@@ -115,6 +125,9 @@
   .flat-grid h3{margin:0 0 .8rem; font-family:'Hanken Grotesk', sans-serif; font-weight:600; font-size:1.02rem; color:var(--ink);}
   .flat-grid h3::before{content:"●"; color:var(--gold); font-size:.5rem; margin-right:.5rem; vertical-align:middle;}
   .flat-grid p{margin:0; font-size:.92rem; color:var(--ink-soft); line-height:1.75;}
+
+  .connect-note{margin-top:2.6rem; padding-top:1.6rem; border-top:1px solid var(--line); font-family:'IBM Plex Mono', monospace; font-size:.82rem; color:var(--ink-soft);}
+  .connect-note a{color:var(--vermillion); border-bottom:1px solid var(--vermillion); padding-bottom:1px;}
 
   .sources{border-top:1px solid var(--line); padding-top:2rem;}
   .sources p{font-size:.92rem; color:var(--ink-soft); max-width:640px;}
@@ -146,17 +159,17 @@
 <a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
 
 <header class="hero">
-  <div class="hero-kanji">革命</div>
+  <div class="hero-kanji">军阀</div>
   <div class="hero-content">
-    <span class="eyebrow">Kongzhi · China · Política 03</span>
+    <span class="eyebrow">Kongzhi · China · Política / Economía 04</span>
     <div class="hero-rule"></div>
-    <h1 class="title-cn">辛亥革命</h1>
-    <div class="title-pinyin">Xīnhài Gémìng — la crisis imperial, el nacionalismo y el colapso de la dinastía Qing</div>
-    <p class="hero-dek">Los Tratados Desiguales le habían quitado a Pekín el control de sus aduanas y sus tribunales. Lo que faltaba por perder era el trono mismo. En apenas dieciséis años, una corte que llevaba dos mil años gobernando bajo el mandato del cielo pasó de intentar reformarse a desaparecer por completo.</p>
+    <h1 class="title-cn">军阀时代</h1>
+    <div class="title-pinyin">Jūnfá Shídài — la República y la Era de los Señores de la Guerra</div>
+    <p class="hero-dek">Sin emperador y sin un poder central capaz de reemplazarlo, China se fragmentó en feudos militares que se peleaban las aduanas y emitían su propia moneda. Y sin embargo, en medio de ese caos político, una guerra lejana en Europa le regaló a los empresarios chinos una década dorada que la historiografía oficial casi nunca cuenta.</p>
     <div class="hero-stats">
-      <div><span class="num">1895</span><span class="lbl">derrota ante Japón que detona la crisis final</span></div>
-      <div><span class="num">1911</span><span class="lbl">estalla la Revolución de Xinhai en Wuchang</span></div>
-      <div><span class="num">2,000+</span><span class="lbl">años de monarquía imperial que terminan en marzo de 1912</span></div>
+      <div><span class="num">1916</span><span class="lbl">muere Yuan Shih-k'ai, estalla la fragmentación</span></div>
+      <div><span class="num">13.8%</span><span class="lbl">crecimiento industrial anual, 1912–1920</span></div>
+      <div><span class="num">1927</span><span class="lbl">masacre de Shanghái, fin del Frente Unido</span></div>
     </div>
   </div>
 </header>
@@ -164,26 +177,19 @@
 <section id="actos">
   <div class="section-head">
     <span class="eyebrow">Los 5 actos</span>
-    <h2>Cómo cae un imperio que se creía eterno</h2>
+    <h2>Un Estado que se desintegra, un mercado que no</h2>
     <p class="lede">Toca cada acto para expandirlo.</p>
   </div>
 
   <div class="acto active" data-i="1">
     <div><span class="acto-num">01</span><span class="acto-label">El mundo antes</span></div>
     <div>
-      <div class="acto-head"><span class="acto-title">Una corte que ya no decidía casi nada, pero actuaba como si decidiera todo</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">1860 – 1894</span>
-      <p class="acto-teaser">Para 1894, China llevaba medio siglo perdiendo soberanía tratado tras tratado. La corte Qing seguía ahí, pero gobernando cada vez menos.</p>
+      <div class="acto-head"><span class="acto-title">Una república que hereda una economía que no controla</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">1911 – 1916</span>
+      <p class="acto-teaser">La Revolución de 1911 derrumba 2,000 años de monarquía, pero la nueva República nace atada a los mismos tratados desiguales que ataban al imperio.</p>
       <div class="acto-body">
-        <p>Desde mediados del siglo XIX, el Estado chino sufría una degradación institucional sostenida por dos frentes a la vez: el imperialismo extranjero, que ya le había arrebatado el control de aduanas, puertos y tribunales, y las fuerzas feudales internas, que seguían operando como si nada hubiera cambiado. Las potencias occidentales y Japón habían reducido al imperio a una condición semicolonial a través de tratado tras tratado desigual.</p>
-        <p>Puertas adentro, la incapacidad de la corte para defender las fronteras o modernizar sus propias estructuras erosionaba una legitimidad que ya venía golpeada. Y mientras eso pasaba, algo nuevo empezaba a crecer en los márgenes: una incipiente burguesía nacional y una clase de intelectuales que había empezado a leer sobre ideas constitucionales y republicanas occidentales, y a preguntarse por qué China no podía tener algo parecido.</p>
-        <p class="quote">La dinastía seguía sentada en el trono. El problema era que cada vez gobernaba un país más pequeño dentro de su propio país.</p>
-        <figure class="acto-figure">
-          <img src="../../assets/china/cixi-emperatriz.jpg" alt="Retrato de la emperatriz viuda Cixi, regente de facto de la dinastía Qing" loading="lazy">
-          <figcaption>La emperatriz viuda Cixi, c. 1890 — la figura que concentró el poder real de la corte Qing durante las últimas décadas de la dinastía.
-            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
-          </figcaption>
-        </figure>
+        <p>La Revolución de Wuchang en octubre de 1911 y la abdicación de la dinastía Manchu Qing en febrero de 1912 dieron paso a la proclamación de la República de China, poniendo fin a más de 2,000 años de autocracia monárquica feudal. Pero la nueva república heredó una estructura económica lastrada por un siglo de concesiones e intervenciones extranjeras: un Estado "semicolonial" donde la banca, la navegación, los ferrocarriles y la minería seguían fuertemente controlados por capitales occidentales y japoneses al amparo de los tratados desiguales.</p>
+        <p>La burguesía nacional naciente y las fuerzas campesinas carecían de la fuerza organizativa para consolidar un sistema democrático liberal independiente. Tras la brevedad de Sun Yat-sen en la presidencia provisional, el mando ejecutivo recayó en Yuan Shih-k'ai, cuya deriva autocrática —reprimió a la oposición del Kuomintang, financió su régimen con préstamos extranjeros no autorizados por el parlamento y finalmente intentó autoproclamarse emperador— desmanteló el frágil orden institucional republicano antes de que pudiera echar raíces.</p>
       </div>
     </div>
   </div>
@@ -191,19 +197,26 @@
   <div class="acto" data-i="2">
     <div><span class="acto-num">02</span><span class="acto-label">La grieta</span></div>
     <div>
-      <div class="acto-head"><span class="acto-title">Una reforma de cien días que no llegó a los cien días</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">1894 – 1898</span>
-      <p class="acto-teaser">La derrota ante Japón en 1895 fue la humillación que nadie en Pekín esperaba. El intento de reforma que siguió duró menos de lo que tardó en fracasar.</p>
+      <div class="acto-head"><span class="acto-title">El Estado se fragmenta mientras el mercado despega</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">1916 – 1921</span>
+      <p class="acto-teaser">La muerte de Yuan abre la era de los señores de la guerra — y, en paradoja total, una guerra mundial lejana enciende una década dorada para la industria privada china.</p>
       <div class="acto-body">
-        <p>La crisis política se aceleró de golpe tras la derrota en la Primera Guerra Sino-Japonesa (1894-1895). Que China —que siempre se había visto a sí misma como el centro civilizador de Asia— perdiera frente a un Japón que apenas unas décadas antes era un imperio feudal más pequeño, fue un golpe que ninguna otra derrota anterior había logrado asestar del mismo modo.</p>
-        <p>De ahí salió, en 1898, la Reforma de los Cien Días (Wuxu bianfa): un intento real de modernizar el aparato imperial, liderado por intelectuales como Kang Youwei y Liang Qichao. No llegó lejos. La facción conservadora de la corte, encabezada por la emperatriz viuda Cixi, lo sofocó violentamente antes de que pudiera asentarse.</p>
-        <p class="quote">La corte tuvo, literalmente, cien días para decidir si se reformaba o se quedaba igual. Eligió quedarse igual, y esa elección le costaría trece años más de vida.</p>
-        <figure class="acto-figure">
-          <img src="../../assets/china/reforma-cien-dias.jpg" alt="Kang Youwei, intelectual reformista que lideró la Reforma de los Cien Días de 1898" loading="lazy">
-          <figcaption>Kang Youwei, uno de los principales impulsores de la Reforma de los Cien Días de 1898, sofocada por la facción conservadora de la corte.
-            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
-          </figcaption>
-        </figure>
+        <p>La muerte de Yuan Shih-k'ai en junio de 1916 dejó un vacío de poder central irreversible que hizo estallar la era de la fragmentación política y los señores de la guerra. Las fuerzas de la antigua facción de Peiyang se dividieron en feudos regionales y clanes militares rivales (Zhihli, Anhui, Fengtien) que lucharon de forma encarnizada por el control del gobierno central en Pekín.</p>
+        <div class="loss-list">
+          <div class="loss-item"><h3>Predación fiscal y fragmentación</h3><p>Los caudillos militares incautaron los ingresos de aduanas y ferrocarriles, impusieron gravámenes internos arbitrarios y forzaron el cultivo del opio para financiar sus ejércitos privados.</p></div>
+          <div class="loss-item"><h3>Emisión monetaria espuria</h3><p>Muchos señores de la guerra crearon bancos locales para emitir papel moneda sin respaldo de plata, provocando inflación regional y destruyendo el crédito local.</p></div>
+          <div class="loss-item"><h3>Préstamos leoninos</h3><p>Pekín contrató créditos ruinosos con potencias extranjeras — como los Préstamos de Nishihara (145 millones de yenes) negociados con Japón en 1918 — a cambio de financiamiento militar interno.</p></div>
+        </div>
+        <p>Pero en medio de ese colapso estatal, el estallido de la Primera Guerra Mundial (1914–1918) abrió una grieta imprevista en el dominio mercantil extranjero: la reorientación industrial europea hacia el frente redujo las importaciones a China, y el precio mundial de la plata se duplicó entre 1914 y 1919, abaratando la maquinaria importada para las firmas locales.</p>
+        <div class="chart-block">
+          <span class="chart-title">Crecimiento del sector industrial moderno chino (% anual)</span>
+          <div class="chart-bars">
+            <div class="chart-col"><span class="chart-value">9.2%</span><div class="chart-bar" style="height:67%"></div><div class="chart-col-label">promedio 1912–1936</div></div>
+            <div class="chart-col"><span class="chart-value">13.8%</span><div class="chart-bar" style="height:100%"></div><div class="chart-col-label">pico 1912–1920</div></div>
+          </div>
+          <p class="chart-note">La "edad de oro" del empresariado privado chino alcanzó su ritmo más alto justo cuando el Estado central estaba más fragmentado — una paradoja que la historiografía tradicional tardó décadas en reconocer.</p>
+        </div>
+        <p class="quote">Empresas privadas chinas ganaron cuota de mercado frente a firmas extranjeras en hilados de algodón, molinos de harina, tabaco y fósforos, mientras los bancos nativos (ch'ien-chuang) convivían con una nueva banca comercial moderna, reduciendo el efectivo metálico del 65% a menos del 16% de la masa monetaria en circulación.</p>
       </div>
     </div>
   </div>
@@ -211,19 +224,13 @@
   <div class="acto" data-i="3">
     <div><span class="acto-num">03</span><span class="acto-label">El giro</span></div>
     <div>
-      <div class="acto-head"><span class="acto-title">Un "gabinete de reforma" que terminó de convencer a todos de que la corte no iba a cambiar</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">1908 – 1912</span>
-      <p class="acto-teaser">Entre 1908 y 1911, la corte Qing intentó su última maniobra de supervivencia. La ejecutó tan mal que aceleró exactamente lo que quería evitar.</p>
+      <div class="acto-head"><span class="acto-title">Un frente único marcha contra los caudillos — y se traiciona a sí mismo</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">1919 – abr 1927</span>
+      <p class="acto-teaser">La indignación de 1919 funda un partido comunista y reorganiza al Kuomintang; la alianza entre ambos termina en una masacre que define el siglo.</p>
       <div class="acto-body">
-        <p>Desesperada por contener la marea revolucionaria, la corte promulgó los Principios de la Constitución y formó, en mayo de 1911, un gabinete imperial encabezado por el Príncipe Qing. El problema fue de diseño: el "Gabinete de los Príncipes" estaba dominado por la nobleza manchú —siete de sus trece miembros pertenecían al clan imperial—, lo que alienó por completo a las élites Han y confirmó ante la opinión pública que las reformas eran una fachada para perpetuar la autocracia de siempre.</p>
-        <p>El punto de quiebre irreversible llegó en noviembre de 1911 con el Levantamiento de Wuchang, que desencadenó la Revolución de Xinhai, coordinada por las fuerzas nacionalistas y republicanas de Sun Yat-sen. Incapaz de contener la insurrección, la corte recurrió al general Yuan Shikai, comandante del poderoso Ejército de Beiyang, nombrándolo primer ministro. Yuan negoció directamente con los revolucionarios y con la emperatriz viuda Longyu la abdicación oficial del último emperador, Puyi, en marzo de 1912.</p>
-        <p class="quote">Más de dos mil años de monarquía imperial autocrática terminaron no en una gran batalla final, sino en una negociación firmada por el mismo general al que la corte había recurrido para salvarse.</p>
-        <figure class="acto-figure">
-          <img src="../../assets/china/revolucion-xinhai-1911.jpg" alt="Soldados revolucionarios durante la Revolución de Xinhai, noviembre de 1911" loading="lazy">
-          <figcaption>Fuerzas revolucionarias durante la Revolución de Xinhai, 1911 — el levantamiento que forzó la abdicación imperial cuatro meses después.
-            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
-          </figcaption>
-        </figure>
+        <p>La indignación nacionalista por la Decisión de la Conferencia de Paz de París de entregar las concesiones de Shandong a Japón detonó el Movimiento del 4 de Mayo de 1919: estudiantes, empresarios y obreros urbanos —ya entre 2 y 3 millones hacia 1919, producto del propio boom industrial— se unieron en huelgas bajo la consigna de "salvar la patria". Esa efervescencia aceleró la integración del marxismo con el movimiento obrero, llevando a la fundación del Partido Comunista de China en 1921.</p>
+        <p>Entre 1923 y 1927, el Primer Frente Unido entre el PCCh y el Kuomintang, bajo el liderazgo de Sun Yat-sen y el respaldo de la Internacional Comunista, lanzó la Expedición al Norte para erradicar militarmente a las facciones de señores de la guerra, derrotando a caudillos como Wu Peifu y Sun Chuanfang.</p>
+        <p class="quote">A medida que la marcha avanzaba, el generalísimo Chiang Kai-shek monopolizó el mando político y militar. El 12 de abril de 1927 ejecutó en Shanghái un golpe y una masacre que rompió la alianza revolucionaria, exterminó a miles de comunistas y líderes sindicales, e instauró un régimen autoritario de derecha con base en Nanjing.</p>
       </div>
     </div>
   </div>
@@ -231,19 +238,13 @@
   <div class="acto" data-i="4">
     <div><span class="acto-num">04</span><span class="acto-label">La consecuencia inmediata</span></div>
     <div>
-      <div class="acto-head"><span class="acto-title">La república nace y el poder real se va con los militares</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">1912 – 1916</span>
-      <p class="acto-teaser">Cayó la dinastía, pero el vacío que dejó no lo llenó ni la burguesía nacional ni los revolucionarios republicanos: lo llenaron los generales.</p>
+      <div class="acto-head"><span class="acto-title">Un país "unificado" en el papel, partido en dos economías</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">1927 – 1930</span>
+      <p class="acto-teaser">Nanjing capta el Estado, el PCCh funda el Ejército Rojo en la montaña, y la costa próspera convive con un campo exprimido por años de guerra civil.</p>
       <div class="acto-body">
-        <p>La joven República de China, proclamada en 1912, carecía de instituciones consolidadas y de un ejército central unificado. El poder real pasó a manos de los militares de Beiyang encabezados por Yuan Shikai, quien asumió la presidencia y el primer ministerio instaurando, de facto, una dictadura militar fragmentada.</p>
-        <p>La nobleza manchú perdió sus privilegios dinásticos de la noche a la mañana, reemplazada por una alianza inestable entre caudillos militares regionales y la burguesía nacional. Y las potencias imperialistas, lejos de retirarse ante el cambio de régimen, mantuvieron sus privilegios y concesiones aduaneras negociando directamente con los señores de la guerra locales —lo que impidió cualquier reunificación efectiva del país y lo dividió en facciones militares.</p>
-        <p class="quote">China dejó de tener emperador. No por eso dejó de tener amos: solo cambiaron de uniforme.</p>
-        <figure class="acto-figure">
-          <img src="../../assets/china/puyi-abdicacion.jpg" alt="El emperador Puyi, niño en el trono, poco antes de la abdicación de marzo de 1912" loading="lazy">
-          <figcaption>Puyi, el último emperador de China, en los años previos a su abdicación forzada en marzo de 1912.
-            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
-          </figcaption>
-        </figure>
+        <p>El régimen de Nanjing sustituyó la hegemonía de los antiguos caudillos del Norte, reestructurando el poder bajo la dictadura de los grandes terratenientes y la burguesía compradora, mientras los privilegios aduaneros y territoriales de las potencias extranjeras continuaban bajo su tutela negociada.</p>
+        <p>El PCCh, severamente purgado, asumió la resistencia armada independiente mediante la Insurrección de Nanchang (1 de agosto de 1927) y el Levantamiento de la Cosecha de Otoño liderado por Mao Zedong, estableciendo las primeras fuerzas del Ejército Rojo y la base revolucionaria rural en los montes Jinggang.</p>
+        <p class="quote">La "edad de oro" industrial dejó un dualismo económico estructural: un sector urbano costero dinámico y monetizado frente a un sector rural agrario abandonado, golpeado por la extracción de los señores de la guerra y la explotación de los arrendamientos de tierra — la brecha campo-ciudad que China administra hasta hoy.</p>
       </div>
     </div>
   </div>
@@ -251,13 +252,13 @@
   <div class="acto" data-i="5">
     <div><span class="acto-num">05</span><span class="acto-label">El eco</span></div>
     <div>
-      <div class="acto-head"><span class="acto-title">Una revolución que Pekín dice haber terminado ella sola</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">1921 → hoy</span>
-      <p class="acto-teaser">La caída de los Qing no se quedó como un capítulo cerrado de historia imperial: el PCCh la convirtió en el prólogo de su propia historia de origen.</p>
+      <div class="acto-head"><span class="acto-title">El poder nace del fusil, el mercado nace del caos</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">1927 → hoy</span>
+      <p class="acto-teaser">La traición de 1927 y la vitalidad privada de los años 1910 legaron dos lecciones que siguen gobernando a China: una política, otra económica.</p>
       <div class="acto-body">
-        <p><strong>La "revolución inconclusa".</strong> La historiografía oficial del Partido Comunista de China interpreta la Revolución de 1911 como un paso histórico necesario, pero incompleto. Sostiene que ni la burguesía ni los señores de la guerra pudieron liberar a China del imperialismo ni del feudalismo —una lectura que convenientemente deja la misión de terminar ese trabajo en manos del propio PCCh.</p>
-        <p><strong>Sun Yat-sen como puente, no como bandera de un solo bando.</strong> La figura de Sun Yat-sen y el legado de la Revolución de 1911 se conmemoran oficialmente tanto en la República Popular China como en Taiwán, constituyendo uno de los pocos puentes históricos e ideológicos que ambas orillas del Estrecho todavía comparten.</p>
-        <p class="quote">El colapso Qing fijó, para la narrativa oficial china, el "punto cero" de la búsqueda moderna de soberanía. Todo lo que vino después —incluida la obsesión actual por la unidad territorial— se cuenta hacia atrás desde ese punto.</p>
+        <p><strong>El poder nace del fusil.</strong> Tras la traición de 1927, Mao Zedong formuló en la Reunión de Emergencia del 7 de Agosto la máxima de que "el poder político nace del cañón de un fusil". Este principio fijó la subordinación institucional absoluta del Ejército Popular de Liberación al Partido Comunista, un pilar que rige la estructura del Estado chino en el presente, y refuerza el imperativo de Xi Jinping de eliminar cualquier faccionalismo o amenaza de secesión regional.</p>
+        <p><strong>La revisión económica de Thomas Rawski.</strong> La historiografía económica contemporánea ha desmentido la tesis tradicional del estancamiento absoluto durante la era republicana temprana: las fuerzas del mercado, el espíritu empresarial privado y el sistema bancario chino poseían vitalidad propia incluso sin un Estado central fuerte. Las redes comerciales y financieras surgidas entre 1912 y 1927 sentaron la base sobre la cual el Gobierno Nacionalista de Nankín pudo implementar sus reformas monetarias de los años treinta.</p>
+        <p class="quote">La lección que ambas dimensiones comparten: la fragmentación política erosiona la soberanía, pero el sector privado chino puede experimentar transformaciones competitivas aceleradas cuando se abren espacios de mercado — y esa es la memoria que hoy legitima tanto el control centralizado del PCCh como su tolerancia calculada al capital privado.</p>
       </div>
     </div>
   </div>
@@ -274,23 +275,23 @@
 <section id="legado">
   <div class="section-head">
     <span class="eyebrow">Por qué importa hoy</span>
-    <h2>De revolución inconclusa a fuente de legitimidad</h2>
+    <h2>Del caudillismo a la desconfianza estructural hacia la fragmentación</h2>
   </div>
   <div class="flat-grid">
-    <div><h3>La revolución inconclusa</h3><p>El PCCh se presenta como quien terminó lo que 1911 dejó a medias: liberar a China del imperialismo y el feudalismo que ni la burguesía ni los señores de la guerra lograron erradicar.</p></div>
-    <div><h3>El puente con Taiwán</h3><p>Sun Yat-sen sigue siendo uno de los pocos símbolos que Pekín y Taipéi conmemoran por igual, un recordatorio de que ambas orillas comparten un mismo origen republicano.</p></div>
-    <div><h3>El miedo a la fragmentación</h3><p>La memoria de los señores de la guerra que llenaron el vacío de 1912 explica por qué la unidad territorial no es, para Pekín, una política más: es una obsesión de Estado.</p></div>
+    <div><h3>El fusil manda sobre el partido</h3><p>Desde 1927, el control absoluto del Partido sobre el ejército —y no al revés— es una regla constitucional no negociable, heredada directamente de la masacre de Shanghái.</p></div>
+    <div><h3>El mercado no espera al Estado</h3><p>La "edad de oro" de 1912-1920 demostró que el empresariado chino puede crecer incluso sin un poder central fuerte — una lección que hoy convive, tensa, con el control del Partido-Estado sobre la economía.</p></div>
+    <div><h3>El miedo a la fragmentación</h3><p>El trauma de los señores de la guerra explica por qué Pekín trata cualquier atisbo de autonomía regional o faccionalismo interno como una amenaza existencial.</p></div>
   </div>
 </section>
 
 <section id="fuentes">
   <div class="sources">
     <span class="eyebrow">Sobre esta investigación</span>
-    <p>Contenido curado por el equipo de Club Kongzhi a partir de fuentes académicas reunidas en el cuaderno de NotebookLM dedicado a la crisis imperial y el colapso de la dinastía Qing.</p>
+    <p>Contenido curado por el equipo de Club Kongzhi a partir de fuentes académicas reunidas en los cuadernos de NotebookLM dedicados a la República y la Era de los Señores de la Guerra, dimensiones política y económica.</p>
   </div>
   <div class="nav-adjacent">
-    <a href="../autofortalecimiento/index.html"><span class="dir">← Cuaderno anterior</span><span class="ttl">洋务运动 Autofortalecimiento</span></a>
-    <a href="../republica-senores-guerra/index.html"><span class="dir">Siguiente cuaderno</span><span class="ttl">军阀时代 República / Señores de la Guerra →</span></a>
+    <a href="../colapso-qing/index.html"><span class="dir">← Cuaderno anterior</span><span class="ttl">辛亥革命 Colapso Qing</span></a>
+    <div class="empty">Siguiente cuaderno — en construcción</div>
   </div>
 </section>
 
@@ -317,6 +318,14 @@
       onUpdate: function(){ ScrollTrigger.update(); },
       onComplete: function(){ ScrollTrigger.refresh(); }
     });
+    var bars = acto.querySelectorAll('.chart-bar');
+    if(bars.length && !acto.dataset.chartsPlayed){
+      acto.dataset.chartsPlayed = '1';
+      bars.forEach(function(bar){
+        var target = bar.style.height;
+        gsap.fromTo(bar, { height: '0%' }, { height: target, duration: reduceMotion ? 0 : 1, delay: reduceMotion ? 0 : 0.3, ease: 'power1.out' });
+      });
+    }
   }
   function closeActo(acto){
     acto.querySelector('.acto-toggle').textContent = '＋';
