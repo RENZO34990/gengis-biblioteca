@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>辛亥革命 — El Colapso de la Dinastía Qing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F2EFE9;
+    --paper-warm:#E9E2D4;
+    --ink:#1A1A1A;
+    --ink-soft:#544F47;
+    --vermillion:#9E2B25;
+    --vermillion-deep:#7A211C;
+    --gold:#C9A63E;
+    --line: rgba(26,26,26,0.14);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:auto;}
+  html.lenis, html.lenis body{height:auto;}
+  html.lenis.lenis-smooth{scroll-behavior:auto !important;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:'Hanken Grotesk', sans-serif; font-weight:400;
+    font-size:17px; line-height:1.7;
+  }
+  ::selection{background:var(--vermillion); color:var(--paper);}
+  a{color:var(--ink);}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; letter-spacing:.1em; text-transform:uppercase;
+    font-size:.72rem; color:var(--vermillion); font-weight:500;
+  }
+
+  .top-return{
+    position:fixed; top:1.4rem; left:1.4rem; z-index:50;
+    background:var(--paper); color:var(--ink-soft);
+    border:1px solid var(--line); padding:.5rem 1rem;
+    font-family:'IBM Plex Mono', monospace; font-size:.72rem;
+    text-decoration:none; display:inline-flex; align-items:center; gap:.5rem;
+    transition:border-color .3s ease, color .3s ease;
+  }
+  .top-return:hover{border-color:var(--gold); color:var(--ink);}
+  .tr-arrow{display:inline-block; transition:transform .3s ease;}
+  .top-return:hover .tr-arrow{transform:translateX(-3px);}
+
+  /* ---------- HERO: gravedad imperial ---------- */
+  header.hero{
+    position:relative; min-height:96vh; overflow:hidden;
+    display:flex; flex-direction:column; justify-content:center;
+    padding:14vh 8vw 12vh;
+    background:linear-gradient(155deg, var(--vermillion-deep) 0%, var(--vermillion) 62%, #8A2620 100%);
+    color:var(--paper);
+  }
+  .hero-kanji{
+    position:absolute; right:5vw; top:50%; transform:translateY(-50%);
+    font-family:'Noto Serif SC', serif; font-weight:700;
+    font-size:clamp(9rem, 24vw, 19rem);
+    color:rgba(242,239,233,0.06); writing-mode:vertical-rl;
+    user-select:none; z-index:0; line-height:1;
+  }
+  .hero-content{position:relative; z-index:2; max-width:660px;}
+  .hero .eyebrow{color:var(--gold);}
+  .hero-rule{width:48px; height:2px; background:var(--gold); margin-bottom:1.6rem;}
+  h1.title-cn{
+    font-family:'Noto Serif SC', serif; font-weight:700;
+    font-size:clamp(2.4rem, 5.4vw, 4rem); line-height:1.25; margin:.4rem 0 .5rem; color:var(--paper);
+  }
+  .title-pinyin{font-family:'IBM Plex Mono', monospace; font-size:.85rem; color:rgba(242,239,233,0.72); letter-spacing:.02em; margin-bottom:2rem;}
+  .hero-dek{font-size:1.08rem; max-width:560px; color:rgba(242,239,233,0.9); font-weight:400; line-height:1.85;}
+  .hero-stats{display:flex; flex-wrap:wrap; margin-top:3.2rem; border-top:1px solid rgba(242,239,233,0.2);}
+  .hero-stats div{padding:1.1rem 3rem 1.6rem 0; margin-right:1.4rem; border-right:1px solid rgba(242,239,233,0.2); min-width:0;}
+  .hero-stats div:last-child{border-right:none; padding-right:0;}
+  .hero-stats .num{font-family:'Noto Serif SC', serif; font-weight:700; font-size:1.5rem; display:block; color:var(--gold);}
+  .hero-stats .lbl{font-family:'IBM Plex Mono', monospace; font-size:.8rem; color:rgba(242,239,233,0.7); display:block; margin-top:.3rem; max-width:160px;}
+
+  section{padding:7vh 8vw; max-width:1080px; margin:0 auto;}
+  .section-head{max-width:580px; margin-bottom:3.4rem;}
+  h2{font-family:'Noto Serif SC', serif; font-weight:700; font-size:clamp(1.6rem, 3vw, 2.2rem); margin:.5rem 0 0; color:var(--ink);}
+  .lede{font-size:1.02rem; color:var(--ink-soft); margin-top:1rem;}
+
+  /* ---------- Divisor huiwen (greca china) ---------- */
+  .divider-motif{display:flex; justify-content:center; padding:2vh 0; opacity:.55;}
+  .divider-motif svg{width:220px; height:16px;}
+
+  /* ---------- ACTOS ---------- */
+  .acto{border-top:1px solid var(--line); padding:2.6rem 0; display:grid; grid-template-columns:100px 1fr; gap:2.4rem; cursor:pointer;}
+  .acto:last-child{border-bottom:1px solid var(--line);}
+  .acto-num{font-family:'Noto Serif SC', serif; font-weight:700; font-size:2.1rem; color:rgba(158,43,37,0.35); line-height:1; transition:color .3s ease;}
+  .acto.active .acto-num{color:var(--vermillion);}
+  .acto-label{font-family:'IBM Plex Mono', monospace; font-size:.75rem; text-transform:uppercase; letter-spacing:.06em; color:var(--gold); display:block; margin-top:.6rem;}
+  .acto-head{display:flex; align-items:baseline; gap:1.1rem; flex-wrap:wrap; justify-content:space-between;}
+  .acto-title{font-family:'Hanken Grotesk', sans-serif; font-weight:600; font-size:1.24rem; color:var(--ink);}
+  .acto-date{font-family:'IBM Plex Mono', monospace; font-size:.8rem; color:var(--ink-soft); white-space:nowrap; font-weight:500;}
+  .acto-toggle{font-family:'IBM Plex Mono', monospace; font-size:.9rem; color:var(--vermillion); flex-shrink:0;}
+  .acto-teaser{color:var(--ink-soft); margin:.7rem 0 0; max-width:620px;}
+  .acto-body{height:0; overflow:hidden; opacity:0;}
+  .acto-body p{margin:0 0 1rem; color:var(--ink); max-width:660px; line-height:1.85;}
+  .acto-body strong{font-weight:700; color:var(--vermillion-deep);}
+  .acto-body .quote{padding-left:1.1rem; border-left:2px solid var(--gold); color:var(--ink-soft); font-size:.98rem; margin-top:1.2rem; max-width:610px; font-style:normal;}
+
+  /* ---------- Figuras históricas ---------- */
+  .acto-figure{margin:1.8rem 0; border:1px solid var(--line); max-width:640px; background:var(--ink);}
+  .acto-figure img{width:100%; display:block; filter:sepia(.12) contrast(1.03); opacity:.94;}
+  .acto-figure figcaption{padding:.85rem 1.1rem; font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink-soft); border-top:1px solid var(--line); background:var(--paper);}
+  .acto-figure figcaption .credit{display:block; margin-top:.3rem; color:#8A8478; font-size:.76rem;}
+
+  /* ---------- LEGADO ---------- */
+  .flat-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:0; border-top:1px solid var(--line);}
+  .flat-grid > div{padding:2rem 3rem 2rem 0; border-right:1px solid var(--line);}
+  .flat-grid > div:not(:first-child){padding-left:3rem;}
+  .flat-grid > div:last-child{border-right:none;}
+  .flat-grid h3{margin:0 0 .8rem; font-family:'Hanken Grotesk', sans-serif; font-weight:600; font-size:1.02rem; color:var(--ink);}
+  .flat-grid h3::before{content:"●"; color:var(--gold); font-size:.5rem; margin-right:.5rem; vertical-align:middle;}
+  .flat-grid p{margin:0; font-size:.92rem; color:var(--ink-soft); line-height:1.75;}
+
+  .sources{border-top:1px solid var(--line); padding-top:2rem;}
+  .sources p{font-size:.92rem; color:var(--ink-soft); max-width:640px;}
+
+  .nav-adjacent{display:grid; grid-template-columns:1fr 1fr; border-top:1px solid var(--line); margin-top:1rem;}
+  .nav-adjacent a, .nav-adjacent .empty{padding:2rem 3rem 2.4rem 0; text-decoration:none; color:var(--ink); display:flex; flex-direction:column; border-right:1px solid var(--line); transition:transform .25s ease;}
+  .nav-adjacent > *:not(:first-child){padding-left:3rem;}
+  .nav-adjacent a:hover{transform:translateX(.4rem);}
+  .nav-adjacent .dir{font-family:'IBM Plex Mono', monospace; font-size:.8rem; text-transform:uppercase; color:var(--gold); margin-bottom:.6rem; letter-spacing:.05em;}
+  .nav-adjacent .ttl{font-family:'Noto Serif SC', serif; font-weight:700; font-size:1.08rem; display:inline-flex; align-items:center; gap:.5rem;}
+  .nav-adjacent .empty{color:#6E685C; justify-content:center; align-items:center; text-align:center; font-family:'IBM Plex Mono', monospace; font-size:.78rem; border-right:none;}
+
+  footer{text-align:center; padding:3rem 6vw 4rem; border-top:1px solid var(--line); font-family:'IBM Plex Mono', monospace; font-size:.74rem; color:var(--ink-soft);}
+
+  @media(max-width:820px){
+    .acto{grid-template-columns:56px 1fr; gap:1.2rem;}
+    .acto-num{font-size:1.4rem;}
+    .flat-grid{grid-template-columns:1fr;}
+    .flat-grid > div{border-right:none; border-bottom:1px solid var(--line); padding:1.6rem 0;}
+    .flat-grid > div:not(:first-child){padding-left:0;}
+    .nav-adjacent{grid-template-columns:1fr;}
+    .nav-adjacent a{border-right:none; padding:1.6rem 0;}
+    .nav-adjacent > *:not(:first-child){padding-left:0;}
+    section{padding:6vh 6vw;}
+  }
+</style>
+</head>
+<body>
+<a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
+
+<header class="hero">
+  <div class="hero-kanji">革命</div>
+  <div class="hero-content">
+    <span class="eyebrow">Kongzhi · China · Política 03</span>
+    <div class="hero-rule"></div>
+    <h1 class="title-cn">辛亥革命</h1>
+    <div class="title-pinyin">Xīnhài Gémìng — la crisis imperial, el nacionalismo y el colapso de la dinastía Qing</div>
+    <p class="hero-dek">Los Tratados Desiguales le habían quitado a Pekín el control de sus aduanas y sus tribunales. Lo que faltaba por perder era el trono mismo. En apenas dieciséis años, una corte que llevaba dos mil años gobernando bajo el mandato del cielo pasó de intentar reformarse a desaparecer por completo.</p>
+    <div class="hero-stats">
+      <div><span class="num">1895</span><span class="lbl">derrota ante Japón que detona la crisis final</span></div>
+      <div><span class="num">1911</span><span class="lbl">estalla la Revolución de Xinhai en Wuchang</span></div>
+      <div><span class="num">2,000+</span><span class="lbl">años de monarquía imperial que terminan en marzo de 1912</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="actos">
+  <div class="section-head">
+    <span class="eyebrow">Los 5 actos</span>
+    <h2>Cómo cae un imperio que se creía eterno</h2>
+    <p class="lede">Toca cada acto para expandirlo.</p>
+  </div>
+
+  <div class="acto active" data-i="1">
+    <div><span class="acto-num">01</span><span class="acto-label">El mundo antes</span></div>
+    <div>
+      <div class="acto-head"><span class="acto-title">Una corte que ya no decidía casi nada, pero actuaba como si decidiera todo</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">1860 – 1894</span>
+      <p class="acto-teaser">Para 1894, China llevaba medio siglo perdiendo soberanía tratado tras tratado. La corte Qing seguía ahí, pero gobernando cada vez menos.</p>
+      <div class="acto-body">
+        <p>Desde mediados del siglo XIX, el Estado chino sufría una degradación institucional sostenida por dos frentes a la vez: el imperialismo extranjero, que ya le había arrebatado el control de aduanas, puertos y tribunales, y las fuerzas feudales internas, que seguían operando como si nada hubiera cambiado. Las potencias occidentales y Japón habían reducido al imperio a una condición semicolonial a través de tratado tras tratado desigual.</p>
+        <p>Puertas adentro, la incapacidad de la corte para defender las fronteras o modernizar sus propias estructuras erosionaba una legitimidad que ya venía golpeada. Y mientras eso pasaba, algo nuevo empezaba a crecer en los márgenes: una incipiente burguesía nacional y una clase de intelectuales que había empezado a leer sobre ideas constitucionales y republicanas occidentales, y a preguntarse por qué China no podía tener algo parecido.</p>
+        <p class="quote">La dinastía seguía sentada en el trono. El problema era que cada vez gobernaba un país más pequeño dentro de su propio país.</p>
+        <figure class="acto-figure">
+          <img src="../../assets/china/cixi-emperatriz.jpg" alt="Retrato de la emperatriz viuda Cixi, regente de facto de la dinastía Qing" loading="lazy">
+          <figcaption>La emperatriz viuda Cixi, c. 1890 — la figura que concentró el poder real de la corte Qing durante las últimas décadas de la dinastía.
+            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+
+  <div class="acto" data-i="2">
+    <div><span class="acto-num">02</span><span class="acto-label">La grieta</span></div>
+    <div>
+      <div class="acto-head"><span class="acto-title">Una reforma de cien días que no llegó a los cien días</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">1894 – 1898</span>
+      <p class="acto-teaser">La derrota ante Japón en 1895 fue la humillación que nadie en Pekín esperaba. El intento de reforma que siguió duró menos de lo que tardó en fracasar.</p>
+      <div class="acto-body">
+        <p>La crisis política se aceleró de golpe tras la derrota en la Primera Guerra Sino-Japonesa (1894-1895). Que China —que siempre se había visto a sí misma como el centro civilizador de Asia— perdiera frente a un Japón que apenas unas décadas antes era un imperio feudal más pequeño, fue un golpe que ninguna otra derrota anterior había logrado asestar del mismo modo.</p>
+        <p>De ahí salió, en 1898, la Reforma de los Cien Días (Wuxu bianfa): un intento real de modernizar el aparato imperial, liderado por intelectuales como Kang Youwei y Liang Qichao. No llegó lejos. La facción conservadora de la corte, encabezada por la emperatriz viuda Cixi, lo sofocó violentamente antes de que pudiera asentarse.</p>
+        <p class="quote">La corte tuvo, literalmente, cien días para decidir si se reformaba o se quedaba igual. Eligió quedarse igual, y esa elección le costaría trece años más de vida.</p>
+        <figure class="acto-figure">
+          <img src="../../assets/china/reforma-cien-dias.jpg" alt="Kang Youwei, intelectual reformista que lideró la Reforma de los Cien Días de 1898" loading="lazy">
+          <figcaption>Kang Youwei, uno de los principales impulsores de la Reforma de los Cien Días de 1898, sofocada por la facción conservadora de la corte.
+            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+
+  <div class="acto" data-i="3">
+    <div><span class="acto-num">03</span><span class="acto-label">El giro</span></div>
+    <div>
+      <div class="acto-head"><span class="acto-title">Un "gabinete de reforma" que terminó de convencer a todos de que la corte no iba a cambiar</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">1908 – 1912</span>
+      <p class="acto-teaser">Entre 1908 y 1911, la corte Qing intentó su última maniobra de supervivencia. La ejecutó tan mal que aceleró exactamente lo que quería evitar.</p>
+      <div class="acto-body">
+        <p>Desesperada por contener la marea revolucionaria, la corte promulgó los Principios de la Constitución y formó, en mayo de 1911, un gabinete imperial encabezado por el Príncipe Qing. El problema fue de diseño: el "Gabinete de los Príncipes" estaba dominado por la nobleza manchú —siete de sus trece miembros pertenecían al clan imperial—, lo que alienó por completo a las élites Han y confirmó ante la opinión pública que las reformas eran una fachada para perpetuar la autocracia de siempre.</p>
+        <p>El punto de quiebre irreversible llegó en noviembre de 1911 con el Levantamiento de Wuchang, que desencadenó la Revolución de Xinhai, coordinada por las fuerzas nacionalistas y republicanas de Sun Yat-sen. Incapaz de contener la insurrección, la corte recurrió al general Yuan Shikai, comandante del poderoso Ejército de Beiyang, nombrándolo primer ministro. Yuan negoció directamente con los revolucionarios y con la emperatriz viuda Longyu la abdicación oficial del último emperador, Puyi, en marzo de 1912.</p>
+        <p class="quote">Más de dos mil años de monarquía imperial autocrática terminaron no en una gran batalla final, sino en una negociación firmada por el mismo general al que la corte había recurrido para salvarse.</p>
+        <figure class="acto-figure">
+          <img src="../../assets/china/revolucion-xinhai-1911.jpg" alt="Soldados revolucionarios durante la Revolución de Xinhai, noviembre de 1911" loading="lazy">
+          <figcaption>Fuerzas revolucionarias durante la Revolución de Xinhai, 1911 — el levantamiento que forzó la abdicación imperial cuatro meses después.
+            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+
+  <div class="acto" data-i="4">
+    <div><span class="acto-num">04</span><span class="acto-label">La consecuencia inmediata</span></div>
+    <div>
+      <div class="acto-head"><span class="acto-title">La república nace y el poder real se va con los militares</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">1912 – 1916</span>
+      <p class="acto-teaser">Cayó la dinastía, pero el vacío que dejó no lo llenó ni la burguesía nacional ni los revolucionarios republicanos: lo llenaron los generales.</p>
+      <div class="acto-body">
+        <p>La joven República de China, proclamada en 1912, carecía de instituciones consolidadas y de un ejército central unificado. El poder real pasó a manos de los militares de Beiyang encabezados por Yuan Shikai, quien asumió la presidencia y el primer ministerio instaurando, de facto, una dictadura militar fragmentada.</p>
+        <p>La nobleza manchú perdió sus privilegios dinásticos de la noche a la mañana, reemplazada por una alianza inestable entre caudillos militares regionales y la burguesía nacional. Y las potencias imperialistas, lejos de retirarse ante el cambio de régimen, mantuvieron sus privilegios y concesiones aduaneras negociando directamente con los señores de la guerra locales —lo que impidió cualquier reunificación efectiva del país y lo dividió en facciones militares.</p>
+        <p class="quote">China dejó de tener emperador. No por eso dejó de tener amos: solo cambiaron de uniforme.</p>
+        <figure class="acto-figure">
+          <img src="../../assets/china/puyi-abdicacion.jpg" alt="El emperador Puyi, niño en el trono, poco antes de la abdicación de marzo de 1912" loading="lazy">
+          <figcaption>Puyi, el último emperador de China, en los años previos a su abdicación forzada en marzo de 1912.
+            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+
+  <div class="acto" data-i="5">
+    <div><span class="acto-num">05</span><span class="acto-label">El eco</span></div>
+    <div>
+      <div class="acto-head"><span class="acto-title">Una revolución que Pekín dice haber terminado ella sola</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">1921 → hoy</span>
+      <p class="acto-teaser">La caída de los Qing no se quedó como un capítulo cerrado de historia imperial: el PCCh la convirtió en el prólogo de su propia historia de origen.</p>
+      <div class="acto-body">
+        <p><strong>La "revolución inconclusa".</strong> La historiografía oficial del Partido Comunista de China interpreta la Revolución de 1911 como un paso histórico necesario, pero incompleto. Sostiene que ni la burguesía ni los señores de la guerra pudieron liberar a China del imperialismo ni del feudalismo —una lectura que convenientemente deja la misión de terminar ese trabajo en manos del propio PCCh.</p>
+        <p><strong>Sun Yat-sen como puente, no como bandera de un solo bando.</strong> La figura de Sun Yat-sen y el legado de la Revolución de 1911 se conmemoran oficialmente tanto en la República Popular China como en Taiwán, constituyendo uno de los pocos puentes históricos e ideológicos que ambas orillas del Estrecho todavía comparten.</p>
+        <p class="quote">El colapso Qing fijó, para la narrativa oficial china, el "punto cero" de la búsqueda moderna de soberanía. Todo lo que vino después —incluida la obsesión actual por la unidad territorial— se cuenta hacia atrás desde ese punto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-motif" aria-hidden="true">
+  <svg id="huiwenDivider" viewBox="0 0 220 16" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="var(--vermillion)" stroke-width="1.3" stroke-linecap="square">
+      <path d="M0 8 H8 V0 H16 V16 H24 V0 H32 V16 H40 V0 H48 V16 H56 V0 H64 V16 H72 V0 H80 V16 H88 V0 H96 V16 H104 V0 H112 V16 H120 V0 H128 V16 H136 V0 H144 V16 H152 V0 H160 V16 H168 V0 H176 V16 H184 V0 H192 V16 H200 V0 H208 V16 H216 V0 H220"/>
+    </g>
+  </svg>
+</div>
+
+<section id="legado">
+  <div class="section-head">
+    <span class="eyebrow">Por qué importa hoy</span>
+    <h2>De revolución inconclusa a fuente de legitimidad</h2>
+  </div>
+  <div class="flat-grid">
+    <div><h3>La revolución inconclusa</h3><p>El PCCh se presenta como quien terminó lo que 1911 dejó a medias: liberar a China del imperialismo y el feudalismo que ni la burguesía ni los señores de la guerra lograron erradicar.</p></div>
+    <div><h3>El puente con Taiwán</h3><p>Sun Yat-sen sigue siendo uno de los pocos símbolos que Pekín y Taipéi conmemoran por igual, un recordatorio de que ambas orillas comparten un mismo origen republicano.</p></div>
+    <div><h3>El miedo a la fragmentación</h3><p>La memoria de los señores de la guerra que llenaron el vacío de 1912 explica por qué la unidad territorial no es, para Pekín, una política más: es una obsesión de Estado.</p></div>
+  </div>
+</section>
+
+<section id="fuentes">
+  <div class="sources">
+    <span class="eyebrow">Sobre esta investigación</span>
+    <p>Contenido curado por el equipo de Club Kongzhi a partir de fuentes académicas reunidas en el cuaderno de NotebookLM dedicado a la crisis imperial y el colapso de la dinastía Qing.</p>
+  </div>
+  <div class="nav-adjacent">
+    <a href="../guerras-opio/index.html"><span class="dir">← Cuaderno anterior</span><span class="ttl">鸦片战争 Guerras del Opio</span></a>
+    <div class="empty">Siguiente cuaderno — en construcción</div>
+  </div>
+</section>
+
+<footer>Club Kongzhi UNMSM · Observatorio Asia-Pacífico · Biblioteca Nalanda</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if(!reduceMotion && window.Lenis){
+    var lenis = new Lenis({ duration: 1.2, smoothWheel: true });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(function(time){ lenis.raf(time * 1000); });
+    gsap.ticker.lagSmoothing(0);
+  }
+
+  function openActo(acto){
+    acto.querySelector('.acto-toggle').textContent = '－';
+    gsap.to(acto.querySelector('.acto-body'), {
+      height: 'auto', opacity: 1, duration: reduceMotion ? 0 : 0.65, ease: 'power1.inOut',
+      onUpdate: function(){ ScrollTrigger.update(); },
+      onComplete: function(){ ScrollTrigger.refresh(); }
+    });
+  }
+  function closeActo(acto){
+    acto.querySelector('.acto-toggle').textContent = '＋';
+    gsap.to(acto.querySelector('.acto-body'), {
+      height: 0, opacity: 0, duration: reduceMotion ? 0 : 0.5, ease: 'power1.inOut',
+      onUpdate: function(){ ScrollTrigger.update(); },
+      onComplete: function(){ ScrollTrigger.refresh(); }
+    });
+  }
+
+  var actos = document.querySelectorAll('.acto');
+  actos.forEach(function(acto){
+    acto.addEventListener('click', function(){
+      var wasActive = acto.classList.contains('active');
+      document.querySelectorAll('.acto.active').forEach(function(a){ a.classList.remove('active'); closeActo(a); });
+      if(!wasActive){ acto.classList.add('active'); openActo(acto); }
+    });
+  });
+  var firstActive = document.querySelector('.acto.active .acto-body');
+  if(firstActive){
+    gsap.set(firstActive, {height:'auto', opacity:1});
+    document.querySelector('.acto.active .acto-toggle').textContent = '－';
+  }
+
+  if(!reduceMotion){
+    actos.forEach(function(acto){
+      gsap.from(acto, {
+        opacity: 0, y: 24, duration: 0.9, ease: 'power1.out',
+        scrollTrigger: { trigger: acto, start: 'top 90%', toggleActions: 'play none none reverse' }
+      });
+    });
+
+    var heroTl = gsap.timeline({ defaults: { ease: 'power1.out' } });
+    heroTl
+      .from('.top-return', { opacity: 0, y: -8, duration: 0.7 })
+      .from('.hero-rule', { scaleX: 0, transformOrigin: 'left center', duration: 1.1 }, '-=0.3')
+      .from('h1.title-cn', { opacity: 0, y: 16, duration: 1.1 }, '-=0.7')
+      .from('.title-pinyin', { opacity: 0, y: 10, duration: 0.9 }, '-=0.7')
+      .from('.hero-dek', { opacity: 0, y: 14, duration: 1 }, '-=0.6')
+      .from('.hero-stats > div', { opacity: 0, y: 14, duration: 0.8, stagger: 0.15 }, '-=0.5');
+
+    gsap.to('.hero-kanji', {
+      yPercent: 12, ease: 'none',
+      scrollTrigger: { trigger: 'header.hero', start: 'top top', end: 'bottom top', scrub: 1.2 }
+    });
+
+    var hPaths = document.querySelectorAll('#huiwenDivider path');
+    hPaths.forEach(function(p){
+      var len = p.getTotalLength();
+      gsap.set(p, { strokeDasharray: len, strokeDashoffset: len });
+    });
+    gsap.to(hPaths, {
+      strokeDashoffset: 0, duration: 1.6, ease: 'power1.inOut',
+      scrollTrigger: { trigger: '#huiwenDivider', start: 'top 92%', toggleActions: 'play none none reverse' }
+    });
+
+    gsap.from('.flat-grid > div', {
+      opacity: 0, y: 20, duration: 0.8, stagger: 0.12, ease: 'power1.out',
+      scrollTrigger: { trigger: '.flat-grid', start: 'top 85%', toggleActions: 'play none none reverse' }
+    });
+    gsap.from('.nav-adjacent > *', {
+      opacity: 0, y: 16, duration: 0.8, stagger: 0.1, ease: 'power1.out',
+      scrollTrigger: { trigger: '.nav-adjacent', start: 'top 90%', toggleActions: 'play none none reverse' }
+    });
+  }
+
+  window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
+</script>
+
+</body>
+</html>
