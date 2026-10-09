@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>政界再編 — Fragmentación Política</title>
+<title>アベノミクス — Abenomics</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Shippori+Mincho:wght@400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -98,6 +98,15 @@
   .acto-body strong{font-weight:500;}
   .acto-body .quote{padding-left:1.1rem; border-left:2px solid var(--vermillion); color:var(--ink-soft); font-size:.98rem; margin-top:1.2rem; max-width:600px;}
 
+  .chart-block{margin:1.8rem 0; border-top:1px solid var(--line); padding-top:1.6rem; max-width:640px;}
+  .chart-title{font-family:'IBM Plex Mono', monospace; font-size:.76rem; letter-spacing:.02em; color:var(--gold); margin-bottom:1.4rem;}
+  .chart-bars{display:flex; align-items:flex-end; gap:1.4rem; height:130px;}
+  .chart-col{display:flex; flex-direction:column; align-items:center; flex:1; height:100%; justify-content:flex-end;}
+  .chart-value{font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink); font-weight:600; white-space:nowrap; margin-bottom:.4rem;}
+  .chart-bar{width:100%; background:linear-gradient(180deg, var(--gold), var(--vermillion));}
+  .chart-col-label{margin-top:.7rem; font-family:'IBM Plex Mono', monospace; font-size:.7rem; color:var(--ink-soft); text-align:center;}
+  .chart-note{margin-top:1.2rem; font-size:.86rem; color:var(--ink-soft); max-width:600px;}
+
   .flat-grid{display:grid; grid-template-columns:repeat(2, 1fr); gap:0; border-top:1px solid var(--line);}
   .flat-grid.cols-3{grid-template-columns:repeat(3, 1fr);}
   .flat-grid.cols-4{grid-template-columns:repeat(4, 1fr);}
@@ -145,17 +154,17 @@
 <a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
 
 <header class="hero">
-  <div class="hero-kanji">政界再編</div>
+  <div class="hero-kanji">アベノミクス</div>
   <div class="hero-content">
-    <span class="eyebrow">Kongzhi · Japón · Política 14</span>
+    <span class="eyebrow">Kongzhi · Japón · Economía 04</span>
     <div class="hero-rule"></div>
-    <h1 class="title-jp">政界再編</h1>
-    <div class="title-romaji">Seikai saihen — reformas electorales y fragmentación del sistema de partidos, 1993-2012</div>
-    <p class="hero-dek">En 1993, un solo político escindido rompió 38 años de dominio ininterrumpido. La reforma que siguió prometía un bipartidismo a la británica. Lo que produjo, dos décadas después, fue algo distinto: un LDP más resiliente que nunca, una oposición permanentemente fragmentada, y una nueva generación de políticos hereditarios heredando distritos como quien hereda un negocio familiar.</p>
+    <h1 class="title-jp">アベノミクス</h1>
+    <div class="title-romaji">Abenomikusu — política monetaria expansiva y reinvención económica, 2012-2020</div>
+    <p class="hero-dek">Veinte años de deflación habían convencido al país entero de que los precios solo podían bajar. Un primer ministro de vuelta en el poder apostó todo a lo contrario: tres flechas disparadas a la vez, un banco central que compró deuda como nunca nadie lo había hecho, y un experimento que terminó por resolver el problema equivocándose de bando — Japón dejó de tener poca demanda y empezó a tener pocos trabajadores.</p>
     <div class="hero-stats">
-      <div><span class="num">1993</span><span class="lbl">Ozawa rompe el LDP, cae el Sistema de 1955</span></div>
-      <div><span class="num">1994</span><span class="lbl">reforma electoral: distritos mixtos SMD/PR</span></div>
-      <div><span class="num">2009</span><span class="lbl">el DPJ gana 308 de 480 escaños</span></div>
+      <div><span class="num">2013</span><span class="lbl">Kuroda lanza el QQE en el BOJ</span></div>
+      <div><span class="num">2015</span><span class="lbl">Nikkei supera los 20,000 puntos</span></div>
+      <div><span class="num">5.4M</span><span class="lbl">empleos nuevos creados</span></div>
     </div>
   </div>
 </header>
@@ -163,19 +172,19 @@
 <section id="actos">
   <div class="section-head">
     <span class="eyebrow">Los 5 actos</span>
-    <h2>Cómo una reforma para acabar con el clientelismo terminó reforzándolo de otra forma</h2>
+    <h2>Cómo tres flechas sacaron a Japón de la trampa deflacionaria</h2>
     <p class="lede">Toca cada acto para expandirlo.</p>
   </div>
 
   <div class="acto active" data-i="1">
     <div><span class="acto-num">01</span><span class="acto-label">El mundo antes</span></div>
     <div>
-      <div class="acto-head"><span class="acto-title">Un sistema electoral que obliga a competir contra el propio partido</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">1955 – 1993</span>
-      <p class="acto-teaser">El voto único no transferible en distritos multimedios fuerza al LDP a postular varios candidatos propios por distrito: la semilla de un clientelismo cada vez más caro y corrupto.</p>
+      <div class="acto-head"><span class="acto-title">Una trampa de liquidez, y un yen insostenible</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">1991 – 2012</span>
+      <p class="acto-teaser">Dos décadas de deflación, un yen apreciado a niveles récord y las secuelas de Fukushima dejan a Japón atrapado en el límite inferior de cero sin herramientas convencionales.</p>
       <div class="acto-body">
-        <p>El marco de gobernanza japonés de posguerra está dominado por el "Sistema de 1955": el LDP retiene el control del gobierno de manera casi ininterrumpida durante 38 años. Bajo el sistema de Voto Único No Transferible en distritos multimedios (SNTV/MMD), cada circunscripción elige a múltiples representantes pero el ciudadano emite un solo voto. Para asegurar mayoría parlamentaria, el LDP se ve obligado a postular a varios candidatos propios en el mismo distrito, generando una competencia caníbal entre correligionarios.</p>
-        <p>Para sobrevivir a esa competencia interna, los candidatos se agrupan en facciones (habatsu) que negocian a puerta cerrada financiamiento y cargos, y centran sus campañas en el carisma personal y las koenkai (redes de apoyo local) en vez de en plataformas ideológicas. Hacia 1991, el colapso de la burbuja económica y escándalos como Recruit (1988) y Sagawa Kyūbin (1992) destruyen la confianza de la sociedad civil en la legitimidad del parlamento.</p>
+        <p>A finales de 2012, Japón sufría una espiral deflacionaria y de estancamiento extendida casi dos décadas. El PIB real se situaba un 2% por debajo del potencial. Bajo la administración del Partido Democrático de Japón, el yen se había apreciado hasta el rango récord de los 70 yenes por dólar, provocando el vaciamiento y la deslocalización acelerada de la industria manufacturera.</p>
+        <p>La economía arrastraba además las secuelas de la crisis financiera global de 2008 y del terremoto y tsunami de Tōhoku de marzo de 2011: el cierre de las plantas nucleares obligó a importar masivamente gas y petróleo, deteriorando la balanza comercial. La política monetaria había quedado atrapada en el límite inferior de cero: una tasa nominal del 0% se convertía en una tasa real positiva por la deflación, incentivando a acumular efectivo en vez de invertir.</p>
       </div>
     </div>
   </div>
@@ -183,12 +192,12 @@
   <div class="acto" data-i="2">
     <div><span class="acto-num">02</span><span class="acto-label">La grieta</span></div>
     <div>
-      <div class="acto-head"><span class="acto-title">Ozawa rompe el partido, y el LDP cae por primera vez</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">1993</span>
-      <p class="acto-teaser">Tras el fracaso de una reforma interna, un grupo de legisladores liderado por Ozawa Ichirō se escinde del LDP: el oficialismo pierde su mayoría por primera vez desde 1955.</p>
+      <div class="acto-head"><span class="acto-title">El retorno de Abe, y la meta del 2%</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">dic 2012 – abr 2013</span>
+      <p class="acto-teaser">Shinzo Abe vuelve al poder prometiendo erradicar la deflación. El BOJ y el gobierno fijan por primera vez una meta de inflación formal, y Kuroda llega al banco central a romper la ortodoxia.</p>
       <div class="acto-body">
-        <p>Tras el fracaso del gabinete del LDP en aprobar reformas políticas que subsanaran la indignación popular por los escándalos de corrupción, un grupo de legisladores reformistas liderado por Ozawa Ichirō y Hata Tsutomu decide escindirse del partido oficialista y fundar el Partido de la Renovación (Shinseitō) con 44 partidarios.</p>
-        <p class="quote">Este cisma provoca que el LDP pierda su mayoría absoluta en las elecciones generales de 1993. Por primera vez desde su fundación, el LDP es desplazado del poder: una coalición heterogénea de ocho partidos de oposición forma gobierno bajo el primer ministro Morihiro Hosokawa.</p>
+        <p>La aplastante victoria electoral del Partido Liberal Demócrata en diciembre de 2012 lleva a Shinzo Abe por segunda vez a la jefatura de gobierno, con el compromiso explícito de erradicar la deflación mediante una estrategia macroeconómica agresiva. En enero de 2013, el gobierno y el Banco de Japón firman una declaración conjunta histórica estableciendo formalmente una meta de inflación del 2% interanual.</p>
+        <p class="quote">El nombramiento de Haruhiko Kuroda al frente del BOJ en abril de 2013 marca el quiebre operativo con la ortodoxia previa: anuncia de inmediato la compra masiva de bonos gubernamentales de largo plazo para duplicar la base monetaria.</p>
       </div>
     </div>
   </div>
@@ -196,12 +205,13 @@
   <div class="acto" data-i="3">
     <div><span class="acto-num">03</span><span class="acto-label">El giro</span></div>
     <div>
-      <div class="acto-head"><span class="acto-title">La reforma electoral del 29 de enero de 1994</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">29 ene 1994</span>
-      <p class="acto-teaser">El gabinete de coalición reemplaza el sistema SNTV/MMD por uno mixto, pensado para forzar un bipartidismo a la británica y abaratar las campañas.</p>
+      <div class="acto-head"><span class="acto-title">Las Tres Flechas</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">2013 – 2016</span>
+      <p class="acto-teaser">Política monetaria agresiva, estímulo fiscal flexible y reformas estructurales disparadas a la vez: Abenomics no es una medida, es una estrategia integral.</p>
       <div class="acto-body">
-        <p>El gabinete de coalición de Hosokawa asume la reforma del sistema político como su principal razón de ser. Tras intensas negociaciones, el 29 de enero de 1994 se aprueba la ley de reforma electoral: reemplaza por completo el sistema SNTV/MMD por uno mixto en la Cámara de Representantes, dividido en 300 escaños de distritos uninominales (SMD, elegidos por mayoría simple) y 200 escaños —luego reducidos a 180— de representación proporcional regional (PR).</p>
-        <p>El propósito explícito es forzar la consolidación de un sistema bipartidista que permita la alternancia en el poder, abaratar las campañas electorales y transicionar la competencia de una lucha personalista de prebendas locales a campañas nacionales centradas en las marcas partidarias.</p>
+        <p><strong>Primera flecha — política monetaria agresiva:</strong> el BOJ ejecuta la Flexibilización Monetaria Cuantitativa y Cualitativa (QQE) desde abril de 2013, expandiendo la base monetaria mediante compra masiva de bonos, e introduce en 2016 una tasa de interés negativa de -0.1%.</p>
+        <p><strong>Segunda flecha — política fiscal flexible:</strong> gasto público de estímulo a corto plazo combinado con un plan de consolidación a mediano plazo, que incluyó elevar el impuesto al consumo del 5% al 8% en abril de 2014.</p>
+        <p><strong>Tercera flecha — reformas estructurales:</strong> Womenomics para incorporar a más mujeres a la fuerza laboral, reformas de gobernanza corporativa para forzar directores independientes, apertura comercial (CPTPP, acuerdo UE-Japón) y la estrategia Society 5.0 para integrar robótica e IA ante el colapso demográfico.</p>
       </div>
     </div>
   </div>
@@ -209,13 +219,19 @@
   <div class="acto" data-i="4">
     <div><span class="acto-num">04</span><span class="acto-label">La consecuencia inmediata</span></div>
     <div>
-      <div class="acto-head"><span class="acto-title">El LDP regresa en 10 meses, y Koizumi aprende a usar las nuevas reglas</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">1994 – 2009</span>
-      <p class="acto-teaser">El LDP vuelve al poder mediante coaliciones pragmáticas; Koizumi centraliza el mando enviando "candidatos asesinos" contra sus propios disidentes; el DPJ gana en 2009 con 308 de 480 escaños.</p>
+      <div class="acto-head"><span class="acto-title">El yen se devalúa, el Nikkei se dispara, y 5.4 millones de empleos nuevos</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">2013 – 2017</span>
+      <p class="acto-teaser">La economía sale de la contracción prolongada. Pero los salarios reales tardan en reaccionar: el pleno empleo llega antes que el aumento de sueldos.</p>
       <div class="acto-body">
-        <p>El LDP demuestra una asombrosa resiliencia táctica y regresa al poder a los diez meses (1994) mediante una coalición con su histórico archienemigo, el Partido Socialista de Japón, y el Partido Sakigake. Las primeras elecciones bajo el nuevo sistema, en 1996, demuestran que el LDP ya no puede gobernar en solitario: la necesidad de alianzas estables da origen a la coalición con el partido budista Komeito en 1999.</p>
-        <p>Al eliminar la competencia intrapartidista —solo se permite un candidato por partido y distrito—, el poder de nominación se concentra en la dirigencia nacional. El primer ministro <strong>Jun'ichirō Koizumi</strong> (2001-2006) explota de manera radical este incentivo: ignora los procesos deliberativos internos, centraliza las decisiones en la Oficina del Gabinete y, en 2005, niega la nominación oficial a todos los legisladores que votaron contra la privatización del servicio postal, enviando candidatos "asesinos" a sus propios distritos.</p>
-        <p>El sistema uninominal fuerza, a la vez, la consolidación de la oposición en un bloque unificado: en 2009 el Partido Democrático de Japón (DPJ) logra una victoria aplastante —308 de 480 escaños— y obliga al LDP a la oposición por segunda vez, consumando de manera temporal la alternancia bipartidista.</p>
+        <div class="chart-block">
+          <div class="chart-title">Índice Nikkei 225, puntos</div>
+          <div class="chart-bars">
+            <div class="chart-col"><span class="chart-value">9,000</span><div class="chart-bar" style="height:45%"></div><div class="chart-col-label">2012</div></div>
+            <div class="chart-col"><span class="chart-value">20,000</span><div class="chart-bar" style="height:100%"></div><div class="chart-col-label">mayo 2015</div></div>
+          </div>
+          <p class="chart-note">El yen se devalúa desde los 70 yenes por dólar hasta niveles superiores a los 100-120, disparando las ganancias de las grandes corporaciones exportadoras.</p>
+        </div>
+        <p>Las corporaciones registran utilidades históricas. Se crean 5.4 millones de empleos adicionales, incluidos más de 2 millones de puestos regulares; la tasa de desempleo desciende a mínimos históricos cercanos al 2.8%-3%. Sin embargo, los salarios reales tardan en reaccionar e incluso sufren caídas por el impacto de los precios importados y la subida del impuesto al consumo.</p>
       </div>
     </div>
   </div>
@@ -223,13 +239,12 @@
   <div class="acto" data-i="5">
     <div><span class="acto-num">05</span><span class="acto-label">El eco</span></div>
     <div>
-      <div class="acto-head"><span class="acto-title">El bipartidismo fracasa, y la oposición queda atomizada</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">2011 → hoy</span>
-      <p class="acto-teaser">Fukushima hunde al DPJ, las facciones del LDP se disuelven por escándalo en 2024, y los políticos hereditarios se multiplican precisamente en los distritos que la reforma quiso volver meritocráticos.</p>
+      <div class="acto-head"><span class="acto-title">De la trampa de demanda a la escasez de oferta</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">2024 → hoy</span>
+      <p class="acto-teaser">Abenomics logra lo que se proponía: erradicar la mentalidad deflacionaria. Pero el problema que deja atrás ya no es de demanda, sino de escasez estructural de trabajadores.</p>
       <div class="acto-body">
-        <p>El accidentado paso del DPJ por el gobierno (2009-2012) —marcado por luchas internas y el deficiente manejo del terremoto y desastre nuclear de Fukushima de 2011— desilusiona profundamente a los votantes. Su derrota en 2012 ante el LDP de Shinzō Abe pone fin de manera definitiva al ideal bipartidista: la oposición queda permanentemente fragmentada en partidos pequeños, facilitando que el LDP retenga el gobierno mediante coaliciones adaptativas.</p>
-        <p>Lejos de mermar como esperaba la reforma de 1994, los políticos hereditarios aumentan de manera significativa en los distritos uninominales: ante la alta competencia por un escaño único, los partidos prefieren postular a familiares directos capaces de heredar intacta la maquinaria electoral, el nombre y los recursos de sus antecesores.</p>
-        <p class="quote">Los vacíos de la ley de 1994 permitieron que las facciones siguieran recaudando de forma informal mediante venta de boletos para eventos, hasta estallar en el escándalo de fondos ilícitos de 2023-2024: la presión forzó al primer ministro Fumio Kishida a disolver casi todas las facciones históricas del LDP, dejando solo una en pie.</p>
+        <p>Japón logra erradicar la mentalidad deflacionaria arraigada y pasa de ser una economía con déficit de demanda a una caracterizada por restricciones de oferta y falta estructural de trabajadores. El éxito en anclar las expectativas inflacionarias cerca del 2% permite al Banco de Japón finalizar la política de tasas negativas en marzo de 2024 y avanzar hacia aumentos de tasas, alcanzando el 1% en junio de 2026: la normalización monetaria más larga de su historia reciente.</p>
+        <p class="quote">Bajo la administración de Sanae Takaichi, las reformas de demanda de Abe evolucionan hacia una política industrial directa basada en la Economía de Oferta Moderna: el gobierno canaliza inversiones estratégicas hacia 17 sectores prioritarios —semiconductores, IA, fusión nuclear, robótica, defensa— para aumentar la capacidad productiva del país, no su demanda.</p>
       </div>
     </div>
   </div>
@@ -241,36 +256,36 @@
     <h2>Quién quería qué, y con qué poder</h2>
   </div>
   <div class="flat-grid cols-4">
-    <div><span class="role">El "shogun en las sombras"</span><h3>Ozawa Ichirō</h3><p>Quería desmantelar el Sistema de 1955 e implantar un bipartidismo estable al estilo británico. Tenía capital organizativo propio y bloques de legisladores leales. Rompió el LDP en 1993, co-diseñó la reforma de 1994 y después saboteó al propio DPJ en 2012.</p></div>
-    <div><span class="role">El gran superviviente</span><h3>El LDP</h3><p>Quería retener la hegemonía y resistir la unificación opositora. Contaba con las koenkai rurales y el apoyo de Keidanren. Concertó la reforma, pactó coaliciones de supervivencia y centralizó el mando bajo Koizumi hasta recuperar el poder absoluto en 2012.</p></div>
-    <div><span class="role">La alternancia fallida</span><h3>El DPJ</h3><p>Quería romper el dominio del LDP y someter a la burocracia a control civil. Tenía el respaldo de votantes urbanos desafiliados y redes sindicales. Ganó en 2009, pero su inexperiencia técnica y Fukushima provocaron su desplome hacia 2012.</p></div>
-    <div><span class="role">El poder que no se mueve</span><h3>La burocracia de Kasumigaseki</h3><p>Quería resguardar su influencia sobre la política pública frente al control parlamentario. Monopolizaba la información técnica y la redacción de leyes. Se resistió a los intentos de control civil del DPJ y retuvo su poder fáctico.</p></div>
+    <div><span class="role">El arquitecto político</span><h3>Shinzo Abe y el PLD</h3><p>Quería erradicar la deflación y relanzar la competitividad japonesa. Diseñó las Tres Flechas, integrando flexibilización monetaria, gasto fiscal y reformas estructurales en una sola estrategia.</p></div>
+    <div><span class="role">El banquero rupturista</span><h3>Haruhiko Kuroda (BOJ)</h3><p>Quería romper la ortodoxia monetaria previa. Ejecutó el QQE y las tasas negativas, duplicando la base monetaria para alterar las expectativas de inflación del país entero.</p></div>
+    <div><span class="role">Las ganadoras inmediatas</span><h3>Grandes exportadoras</h3><p>Querían un yen débil para recuperar competitividad. Sony, Toyota y Mitsubishi registraron utilidades récord gracias a la devaluación cambiaria.</p></div>
+    <div><span class="role">Quienes llenaron el vacío</span><h3>Mujeres y adultos mayores</h3><p>Representaban la fuerza de trabajo inactiva que el país necesitaba. Incrementaron su tasa de ocupación de forma masiva para cubrir la brecha generada por el envejecimiento demográfico.</p></div>
   </div>
 </section>
 
 <section id="comparacion">
   <div class="section-head">
     <span class="eyebrow">Comparación regional</span>
-    <h2>Por qué Japón no terminó como Corea del Sur</h2>
+    <h2>Un experimento sin precedente en Asia</h2>
   </div>
   <div class="flat-grid">
-    <div><h3>Reformas paralelas, mismo origen</h3><p>Japón y Corea del Sur implementaron reformas políticas de calado en los años 90 para subsanar crisis de legitimidad y debilidad económica, en ambos casos tras décadas de dominio de partido único o cuasi-único.</p></div>
-    <div><h3>Trayectorias divergentes</h3><p>En Corea, los partidos son personalistas y efímeros, creándose y disolviéndose en torno a figuras presidenciales de turno. En Japón, la reforma de 1994 consolidó la resiliencia del LDP y la burocracia de Kasumigaseki, permitiendo que las instituciones sobrevivieran a dos alternancias (1993 y 2009) sin fragmentarse de forma permanente.</p></div>
+    <div><h3>China y Corea del Sur</h3><p>China basó su crecimiento en la acumulación de infraestructura y crédito estatal masivo; Corea del Sur, en el dinamismo exportador agresivo de sus chaebols, sin enfrentar una deflación previa comparable.</p></div>
+    <div><h3>La anomalía japonesa</h3><p>Japón debió aplicar un experimento monetario no convencional sin precedentes (QQE) para romper una trampa de liquidez madura y reestructurar su mercado de trabajo frente a un envejecimiento demográfico pionero a nivel mundial — un problema que ni China ni Corea habían enfrentado todavía en esa escala.</p></div>
   </div>
   <div class="connect-note">
-    Este capítulo se conecta con <a href="../hegemonia-ldp/index.html">la Hegemonía del LDP</a>: la reforma de 1994 fue, literalmente, el intento de desmontar el Triángulo de Hierro que ese capítulo describe — y su éxito solo fue parcial.
+    Este capítulo se conecta con <a href="../reconfiguracion-estrategica/index.html">la Reconfiguración estratégica</a>: la transición de Abenomics hacia una política industrial de Estado directa es, literalmente, el punto de partida de ese siguiente giro.
   </div>
 </section>
 
 <section id="fuentes">
   <div class="sources">
     <span class="eyebrow">Sobre esta investigación</span>
-    <p>Contenido curado por el equipo de Club Kongzhi a partir de fuentes académicas reunidas en el cuaderno de NotebookLM dedicado a la fragmentación política y las reformas electorales de 1993-2012.</p>
+    <p>Contenido curado por el equipo de Club Kongzhi a partir de fuentes académicas reunidas en el cuaderno de NotebookLM dedicado a Abenomics, 2012-2020.</p>
   </div>
   <div class="nav-adjacent">
-    <a href="../hegemonia-ldp/index.html">
+    <a href="../deflacion-decadas-perdidas/index.html">
       <span class="dir">‹ Anterior</span>
-      <span class="ttl"><span class="ttl-arrow">←</span>1955: Hegemonía del LDP</span>
+      <span class="ttl"><span class="ttl-arrow">←</span>1991: Deflación y Décadas Perdidas</span>
     </a>
     <a class="next" href="../reconfiguracion-estrategica/index.html">
       <span class="dir">Siguiente</span>
@@ -302,6 +317,14 @@
       onUpdate: function(){ ScrollTrigger.update(); },
       onComplete: function(){ ScrollTrigger.refresh(); }
     });
+    var bars = acto.querySelectorAll('.chart-bar');
+    if(bars.length && !acto.dataset.chartsPlayed){
+      acto.dataset.chartsPlayed = '1';
+      bars.forEach(function(bar){
+        var target = bar.style.height;
+        gsap.fromTo(bar, { height: '0%' }, { height: target, duration: reduceMotion ? 0 : 1, delay: reduceMotion ? 0 : 0.3, ease: 'power1.out' });
+      });
+    }
   }
   function closeActo(acto){
     acto.querySelector('.acto-toggle').textContent = '＋';
