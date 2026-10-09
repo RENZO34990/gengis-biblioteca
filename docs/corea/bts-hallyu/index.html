@@ -15,8 +15,8 @@
     --ink-soft:#56534C;
     --celadon:#7A9E8E;
     --celadon-deep:#4F6E60;
-    --terracota:#B5623B;
-    --terracota-deep:#8E4B2C;
+    --terracota:#7C4FA3;
+    --terracota-deep:#55356F;
     --line: rgba(28,28,28,0.14);
   }
   *{box-sizing:border-box;}
@@ -52,8 +52,8 @@
     position:relative; min-height:92vh;
     display:flex; flex-direction:column; justify-content:center;
     padding:14vh 8vw 12vh; overflow:hidden;
-    background:radial-gradient(ellipse 60% 50% at 88% 20%, rgba(181,98,59,0.07), transparent 65%),
-                radial-gradient(ellipse 50% 40% at 8% 85%, rgba(122,158,142,0.08), transparent 60%);
+    background:radial-gradient(ellipse 60% 50% at 88% 20%, rgba(124,79,163,0.08), transparent 65%),
+                radial-gradient(ellipse 50% 40% at 8% 85%, rgba(122,158,142,0.07), transparent 60%);
   }
   .hero-kanji{
     position:absolute; right:6vw; top:50%; transform:translateY(-50%);
@@ -84,7 +84,7 @@
   .acto{border-top:1px solid var(--line); padding:2.6rem 0; display:grid; grid-template-columns:100px 1fr; gap:2.4rem; cursor:pointer; transition:transform 160ms cubic-bezier(0.23,1,0.32,1);}
   .acto:last-child{border-bottom:1px solid var(--line);}
   .acto:active{transform:scale(0.99);}
-  .acto-num{font-family:'Noto Serif KR', serif; font-weight:600; font-size:2.2rem; color:rgba(181,98,59,0.35); line-height:1; transition:color .3s ease;}
+  .acto-num{font-family:'Noto Serif KR', serif; font-weight:600; font-size:2.2rem; color:rgba(124,79,163,0.35); line-height:1; transition:color .3s ease;}
   .acto.active .acto-num{color:var(--terracota);}
   .acto-label{font-family:'IBM Plex Mono', monospace; font-size:.75rem; text-transform:uppercase; letter-spacing:.06em; color:var(--celadon-deep); display:block; margin-top:.6rem;}
   .acto-head{display:flex; align-items:baseline; gap:1.1rem; flex-wrap:wrap; justify-content:space-between;}
@@ -96,6 +96,11 @@
   .acto-body p{margin:0 0 1rem; color:var(--ink); max-width:660px; font-weight:300; line-height:1.85;}
   .acto-body strong{font-weight:600;}
   .acto-body .quote{padding-left:1.1rem; border-left:2px solid var(--terracota); color:var(--ink-soft); font-size:.98rem; margin-top:1.2rem; max-width:600px;}
+
+  .acto-figure{margin:1.8rem 0; border:1px solid var(--line); max-width:640px; background:var(--ink);}
+  .acto-figure img{width:100%; display:block; filter:saturate(1.05) contrast(1.02); opacity:.95;}
+  .acto-figure figcaption{padding:.85rem 1.1rem; font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink-soft); border-top:1px solid var(--line); background:var(--paper); font-weight:300;}
+  .acto-figure figcaption .credit{display:block; margin-top:.3rem; color:#8A8478; font-size:.76rem;}
 
   .chart-block{margin:1.8rem 0; border-top:1px solid var(--line); padding-top:1.6rem; max-width:640px;}
   .chart-title{font-family:'IBM Plex Mono', monospace; font-size:.76rem; letter-spacing:.02em; color:var(--celadon-deep); margin-bottom:1.4rem;}
@@ -155,7 +160,7 @@
 <header class="hero">
   <div class="hero-kanji">방탄소년단</div>
   <div class="hero-content">
-    <span class="eyebrow">Kongzhi · Corea del Sur · Economía 06</span>
+    <span class="eyebrow">Kongzhi · Corea del Sur · 보라해</span>
     <div class="hero-rule"></div>
     <h1 class="title-kr">방탄소년단</h1>
     <div class="title-rr">Bangtan Sonyeondan — cómo se construyó el impacto económico de BTS y la Ola Coreana, 1980-2026</div>
@@ -234,6 +239,7 @@
           <p class="chart-note">En 2017, BTS fue responsable directa e indirectamente del 1.7% de todas las exportaciones de bienes de consumo de Corea del Sur.</p>
         </div>
         <p>HYBE cotizó en la bolsa de Seúl como la empresa de entretenimiento más valiosa por capitalización bursátil; entre 2020 y 2021, BTS generó entre el 70% y el 92% de sus ingresos totales. El Instituto de Investigación Hyundai estimó que 1 de cada 13 turistas internacionales que visitaron Corea en 2017 (cerca de 800,000 personas) lo hizo motivado directamente por BTS, y su concierto en Busan en 2022 atrajo a más de 503,000 visitantes en diez días, con un impacto local estimado en más de $760 millones de dólares. El presidente Moon Jae-in nombró a sus miembros Enviados Especiales Presidenciales para las Generaciones Futuras y la Cultura, con intervenciones ante la Asamblea General de la ONU y un encuentro en la Casa Blanca con el presidente Joe Biden.</p>
+        <p class="quote">보라해 — "Borahae": en un fan meeting de diciembre de 2016, el miembro V acuñó la frase ("te voy a poner morado", del coreano 보라색/morado + 사랑해/te amo) para describir una confianza que dura "tanto como el color morado, el último del arcoíris". El morado se convirtió en el color no oficial de BTS y ARMY: lightsticks, portadas de álbum y monumentos como la Torre de Seúl se iluminan de violeta en cada aniversario del grupo.</p>
       </div>
     </div>
   </div>
