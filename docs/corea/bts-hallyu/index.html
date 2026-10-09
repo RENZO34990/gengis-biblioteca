@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>방탄소년단 — Cómo se construyó el impacto BTS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Figtree:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F5F3EE;
+    --paper-warm:#ECE5D6;
+    --ink:#1C1C1C;
+    --ink-soft:#56534C;
+    --celadon:#7A9E8E;
+    --celadon-deep:#4F6E60;
+    --terracota:#B5623B;
+    --terracota-deep:#8E4B2C;
+    --line: rgba(28,28,28,0.14);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:auto;}
+  html.lenis, html.lenis body{height:auto;}
+  html.lenis.lenis-smooth{scroll-behavior:auto !important;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:'Figtree', sans-serif; font-weight:400;
+    font-size:17px; line-height:1.7;
+  }
+  ::selection{background:var(--terracota); color:var(--paper);}
+  a{color:var(--ink);}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; letter-spacing:.1em; text-transform:uppercase;
+    font-size:.72rem; color:var(--celadon-deep); font-weight:500;
+  }
+
+  .top-return{
+    position:fixed; top:1.4rem; left:1.4rem; z-index:50;
+    background:var(--paper); color:var(--ink-soft);
+    border:1px solid var(--line); padding:.5rem 1rem;
+    font-family:'IBM Plex Mono', monospace; font-size:.72rem;
+    text-decoration:none; display:inline-flex; align-items:center; gap:.5rem;
+    transition:border-color .3s ease, color .3s ease, transform 160ms cubic-bezier(0.23,1,0.32,1);
+  }
+  .top-return:hover{border-color:var(--celadon); color:var(--ink);}
+  .top-return:active{transform:scale(0.97);}
+  .tr-arrow{display:inline-block; transition:transform .3s ease;}
+  .top-return:hover .tr-arrow{transform:translateX(-3px);}
+
+  header.hero{
+    position:relative; min-height:92vh;
+    display:flex; flex-direction:column; justify-content:center;
+    padding:14vh 8vw 12vh; overflow:hidden;
+    background:radial-gradient(ellipse 60% 50% at 88% 20%, rgba(181,98,59,0.07), transparent 65%),
+                radial-gradient(ellipse 50% 40% at 8% 85%, rgba(122,158,142,0.08), transparent 60%);
+  }
+  .hero-kanji{
+    position:absolute; right:6vw; top:50%; transform:translateY(-50%);
+    font-family:'Noto Serif KR', serif; font-weight:600;
+    font-size:clamp(5.4rem, 15vw, 12rem);
+    color:rgba(28,28,28,0.045); writing-mode:vertical-rl;
+    user-select:none; z-index:0; line-height:1;
+  }
+  .hero-content{position:relative; z-index:2; max-width:660px;}
+  .hero-rule{width:48px; height:1px; background:var(--celadon); margin-bottom:1.6rem;}
+  h1.title-kr{
+    font-family:'Noto Serif KR', serif; font-weight:600;
+    font-size:clamp(2.1rem, 4.6vw, 3.4rem); line-height:1.3; margin:.4rem 0 .5rem; color:var(--ink);
+  }
+  .title-rr{font-family:'IBM Plex Mono', monospace; font-size:.82rem; color:var(--ink-soft); letter-spacing:.02em; margin-bottom:2rem; line-height:1.6;}
+  .hero-dek{font-size:1.1rem; max-width:560px; color:var(--ink-soft); font-weight:300; line-height:1.85;}
+  .hero-stats{display:flex; flex-wrap:wrap; margin-top:3.4rem; border-top:1px solid var(--line);}
+  .hero-stats div{padding:1.1rem 3rem 1.6rem 0; margin-right:1.4rem; border-right:1px solid var(--line); min-width:0;}
+  .hero-stats div:last-child{border-right:none; padding-right:0;}
+  .hero-stats .num{font-family:'Noto Serif KR', serif; font-weight:600; font-size:1.5rem; display:block; color:var(--terracota);}
+  .hero-stats .lbl{font-family:'IBM Plex Mono', monospace; font-size:.78rem; color:var(--ink-soft); display:block; margin-top:.3rem; max-width:150px;}
+
+  section{padding:7vh 8vw; max-width:1080px; margin:0 auto;}
+  .section-head{max-width:580px; margin-bottom:3.4rem;}
+  h2{font-family:'Noto Serif KR', serif; font-weight:600; font-size:clamp(1.6rem, 3vw, 2.2rem); margin:.5rem 0 0; color:var(--ink);}
+  .lede{font-size:1.02rem; color:var(--ink-soft); font-weight:300; margin-top:1rem;}
+
+  .acto{border-top:1px solid var(--line); padding:2.6rem 0; display:grid; grid-template-columns:100px 1fr; gap:2.4rem; cursor:pointer; transition:transform 160ms cubic-bezier(0.23,1,0.32,1);}
+  .acto:last-child{border-bottom:1px solid var(--line);}
+  .acto:active{transform:scale(0.99);}
+  .acto-num{font-family:'Noto Serif KR', serif; font-weight:600; font-size:2.2rem; color:rgba(181,98,59,0.35); line-height:1; transition:color .3s ease;}
+  .acto.active .acto-num{color:var(--terracota);}
+  .acto-label{font-family:'IBM Plex Mono', monospace; font-size:.75rem; text-transform:uppercase; letter-spacing:.06em; color:var(--celadon-deep); display:block; margin-top:.6rem;}
+  .acto-head{display:flex; align-items:baseline; gap:1.1rem; flex-wrap:wrap; justify-content:space-between;}
+  .acto-title{font-family:'Figtree', sans-serif; font-weight:600; font-size:1.24rem; color:var(--ink);}
+  .acto-date{font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--celadon-deep); white-space:nowrap; font-weight:500;}
+  .acto-toggle{font-family:'IBM Plex Mono', monospace; font-size:.9rem; color:var(--terracota); flex-shrink:0;}
+  .acto-teaser{color:var(--ink-soft); margin:.7rem 0 0; max-width:600px; font-weight:300;}
+  .acto-body{height:0; overflow:hidden; opacity:0;}
+  .acto-body p{margin:0 0 1rem; color:var(--ink); max-width:660px; font-weight:300; line-height:1.85;}
+  .acto-body strong{font-weight:600;}
+  .acto-body .quote{padding-left:1.1rem; border-left:2px solid var(--terracota); color:var(--ink-soft); font-size:.98rem; margin-top:1.2rem; max-width:600px;}
+
+  .chart-block{margin:1.8rem 0; border-top:1px solid var(--line); padding-top:1.6rem; max-width:640px;}
+  .chart-title{font-family:'IBM Plex Mono', monospace; font-size:.76rem; letter-spacing:.02em; color:var(--celadon-deep); margin-bottom:1.4rem;}
+  .chart-bars{display:flex; align-items:flex-end; gap:1.4rem; height:130px;}
+  .chart-col{display:flex; flex-direction:column; align-items:center; flex:1; height:100%; justify-content:flex-end;}
+  .chart-value{font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink); font-weight:600; white-space:nowrap; margin-bottom:.4rem;}
+  .chart-bar{width:100%; background:linear-gradient(180deg, var(--celadon), var(--terracota));}
+  .chart-col-label{margin-top:.7rem; font-family:'IBM Plex Mono', monospace; font-size:.7rem; color:var(--ink-soft); text-align:center;}
+  .chart-note{margin-top:1.2rem; font-size:.86rem; color:var(--ink-soft); max-width:600px;}
+
+  .flat-grid{display:grid; grid-template-columns:repeat(2, 1fr); gap:0; border-top:1px solid var(--line);}
+  .flat-grid.cols-3{grid-template-columns:repeat(3, 1fr);}
+  .flat-grid.cols-4{grid-template-columns:repeat(4, 1fr);}
+  .flat-grid > div{padding:2rem 3rem 2rem 0; border-right:1px solid var(--line);}
+  .flat-grid > div:last-child{border-right:none;}
+  .flat-grid h3{margin:0 0 .8rem; font-family:'Figtree', sans-serif; font-weight:600; font-size:1.02rem; color:var(--ink);}
+  .flat-grid h3::before{content:"●"; color:var(--celadon); font-size:.5rem; margin-right:.5rem; vertical-align:middle;}
+  .flat-grid p{margin:0; font-size:.92rem; color:var(--ink-soft); font-weight:300; line-height:1.75;}
+  .flat-grid .role{font-family:'IBM Plex Mono', monospace; font-size:.7rem; color:var(--celadon-deep); text-transform:uppercase; letter-spacing:.04em; display:block; margin-bottom:.6rem;}
+
+  .connect-note{margin-top:2.6rem; padding-top:1.6rem; border-top:1px solid var(--line); font-family:'IBM Plex Mono', monospace; font-size:.82rem; color:var(--ink-soft);}
+  .connect-note a{color:var(--terracota); border-bottom:1px solid var(--terracota); padding-bottom:1px;}
+
+  .sources{border-top:1px solid var(--line); padding-top:2rem;}
+  .sources p{font-size:.92rem; color:var(--ink-soft); max-width:640px; font-weight:300;}
+
+  .nav-adjacent{display:grid; grid-template-columns:1fr 1fr; border-top:1px solid var(--line); margin-top:1rem;}
+  .nav-adjacent a, .nav-adjacent .empty{padding:2rem 3rem 2.4rem 0; text-decoration:none; color:var(--ink); display:flex; flex-direction:column; border-right:1px solid var(--line); transition:transform 160ms cubic-bezier(0.23,1,0.32,1);}
+  .nav-adjacent a:hover{transform:translateX(.4rem);}
+  .nav-adjacent a:active{transform:scale(0.98);}
+  .nav-adjacent .dir{font-family:'IBM Plex Mono', monospace; font-size:.76rem; text-transform:uppercase; color:var(--celadon-deep); margin-bottom:.6rem; letter-spacing:.05em;}
+  .nav-adjacent .ttl{font-family:'Noto Serif KR', serif; font-weight:600; font-size:1.1rem; display:inline-flex; align-items:center; gap:.5rem;}
+  .nav-adjacent .ttl-arrow{display:inline-block; opacity:0; transform:translateX(-6px); transition:opacity .3s ease, transform .3s ease; color:var(--terracota);}
+  .nav-adjacent a:hover .ttl-arrow{opacity:1; transform:translateX(0);}
+  .nav-adjacent .next{text-align:right; align-items:flex-end; border-right:none; padding-right:0; padding-left:1.6rem; border-left:1px solid var(--line);}
+  .nav-adjacent .next .ttl-arrow{order:-1; transform:translateX(6px);}
+  .nav-adjacent .next:hover .ttl-arrow{transform:translateX(0);}
+  .nav-adjacent .empty{color:var(--ink-soft); justify-content:center; align-items:center; text-align:center; font-family:'IBM Plex Mono', monospace; font-size:.78rem; border-right:none;}
+
+  footer{text-align:center; padding:3rem 6vw 4rem; border-top:1px solid var(--line); font-family:'IBM Plex Mono', monospace; font-size:.74rem; color:var(--ink-soft);}
+
+  @media(max-width:820px){
+    .acto{grid-template-columns:56px 1fr; gap:1.2rem;}
+    .acto-num{font-size:1.4rem;}
+    .flat-grid, .flat-grid.cols-3, .flat-grid.cols-4{grid-template-columns:1fr;}
+    .flat-grid > div{border-right:none; border-bottom:1px solid var(--line); padding:1.6rem 0;}
+    .nav-adjacent{grid-template-columns:1fr;}
+    .nav-adjacent a, .nav-adjacent .next{border-right:none; border-left:none; padding:1.6rem 0;}
+    .nav-adjacent .next{text-align:left; align-items:flex-start;}
+    section{padding:6vh 6vw;}
+  }
+</style>
+</head>
+<body>
+<a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
+
+<header class="hero">
+  <div class="hero-kanji">방탄소년단</div>
+  <div class="hero-content">
+    <span class="eyebrow">Kongzhi · Corea del Sur · Economía 06</span>
+    <div class="hero-rule"></div>
+    <h1 class="title-kr">방탄소년단</h1>
+    <div class="title-rr">Bangtan Sonyeondan — cómo se construyó el impacto económico de BTS y la Ola Coreana, 1980-2026</div>
+    <p class="hero-dek">Un informe sobre una película de dinosaurios y el colapso financiero de 1997 convencieron al Estado surcoreano de que la cultura también podía exportarse. Veinte años después, una agencia nacida fuera de las tres grandes discográficas usó esa infraestructura para construir, desde Internet y sin las reglas del K-pop clásico, un activo macroeconómico del tamaño de una aerolínea nacional.</p>
+    <div class="hero-stats">
+      <div><span class="num">1994</span><span class="lbl">el informe "Jurassic Park" cambia la política cultural</span></div>
+      <div><span class="num">$4.65B</span><span class="lbl">impacto económico anual de BTS, 0.3% del PIB</span></div>
+      <div><span class="num">7.6%</span><span class="lbl">del turismo internacional en 2017 motivado por BTS</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="actos">
+  <div class="section-head">
+    <span class="eyebrow">Los 5 actos</span>
+    <h2>Cómo una industria censurada se volvió un pilar del PIB</h2>
+    <p class="lede">Toca cada acto para expandirlo.</p>
+  </div>
+
+  <div class="acto active" data-i="1">
+    <div><span class="acto-num">01</span><span class="acto-label">El mundo antes</span></div>
+    <div>
+      <div class="acto-head"><span class="acto-title">Chaebols, manufactura pesada, y una cultura bajo censura</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">1980 – inicios de 1990s</span>
+      <p class="acto-teaser">El Estado desarrollista surcoreano exportaba automóviles y acero a través de los grandes conglomerados familiares. La producción cultural, en cambio, era vista como patrimonio o herramienta de control político, no como industria.</p>
+      <div class="acto-body">
+        <p>Entre 1980 y principios de la década de 1990, la economía de Corea del Sur funcionaba bajo el modelo del Estado desarrollista: industrialización dirigida y crecimiento liderado por exportaciones de manufactura pesada. La estructura productiva dependía casi exclusivamente de los Chaebols —Samsung, Hyundai, LG, Daewoo— concentrados en automóviles, petroquímica, astilleros y electrónica de consumo.</p>
+        <p>La cultura popular no era un sector exportador: existían sistemas de calificación previa y censura estatal sobre música, cine y televisión, un estricto sistema de cuotas de pantalla vigente desde 1967 para proteger el cine nacional, y severas restricciones a la importación de contenidos extranjeros, en particular de Japón y Estados Unidos. Las industrias creativas estaban fragmentadas en pequeñas empresas con escaso capital, dependientes por completo del consumo interno.</p>
+        <p class="quote">A inicios de los noventa, el modelo manufacturero mostraba señales de agotamiento: costos laborales en alza, competencia de otros países en industrialización y presiones de liberalización comercial de EE. UU. y el GATT. Corea necesitaba una transición hacia industrias de alto valor agregado, pero carecía de infraestructura institucional para monetizar el software cultural.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="acto" data-i="2">
+    <div><span class="acto-num">02</span><span class="acto-label">La grieta</span></div>
+    <div>
+      <div class="acto-head"><span class="acto-title">Un dinosaurio de Hollywood, y el colapso del FMI</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">1994 – 1998</span>
+      <p class="acto-teaser">Un informe presidencial compara la taquilla de Jurassic Park con 1.5 millones de autos Hyundai exportados. Tres años después, la Crisis Asiática destruye a los conglomerados que sostenían el modelo anterior.</p>
+      <div class="acto-body">
+        <p><strong>El "Shock de Jurassic Park" (1994):</strong> en mayo de 1994, el Consejo Asesor Presidencial sobre Ciencia y Tecnología presentó un informe decisivo al presidente Kim Young-sam. El estudio reveló que los ingresos globales de taquilla de una sola película de Hollywood equivalían a las ventas de exportación de 1.5 millones de automóviles Hyundai —el llamado "Efecto Sonata"—, demostrando ante los burócratas económicos la inmensa rentabilidad del contenido cultural frente a la manufactura pesada tradicional.</p>
+        <p><strong>La Crisis Financiera Asiática (1997-1998):</strong> la devastadora crisis del FMI provocó la quiebra de múltiples conglomerados industriales, una severa restricción crediticia y desempleo masivo. Dejó en evidencia la fragilidad de basar la economía en un pequeño grupo de Chaebols manufactureros altamente endeudados, y obligó al Estado a buscar desesperadamente nuevos motores de crecimiento e ingresos de divisas.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="acto" data-i="3">
+    <div><span class="acto-num">03</span><span class="acto-label">El giro</span></div>
+    <div>
+      <div class="acto-head"><span class="acto-title">El Estado construye la infraestructura, Big Hit rompe las reglas</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">1994 – 2013</span>
+      <p class="acto-teaser">Mientras el Estado reclasifica la cultura como industria exportadora y crea agencias y fondos para financiarla, una agencia fuera de las Big 3 apuesta por la autenticidad, la narrativa transmedia y la distribución digital directa.</p>
+      <div class="acto-body">
+        <p><strong>Reclasificación industrial (1994):</strong> bajo Kim Young-sam, el recién creado Buró de la Industria Cultural reclasificó la producción audiovisual como industria manufacturera, otorgándole acceso a incentivos fiscales, subsidios crediticios y exenciones antes reservados a las fábricas.</p>
+        <p><strong>Marco legal y presupuesto (1998-1999):</strong> el presidente Kim Dae-jung promulgó la Ley Básica para la Promoción de las Industrias Culturales en 1999 y asignó formalmente más del 1% del presupuesto federal total al Ministerio de Cultura. Se fundó la Agencia de Contenido Creativo de Corea (KOCCA) en 2009, se fortaleció la red de Centros Culturales Coreanos e Institutos King Sejong, y se introdujeron el Fund of Funds (2005) y las Sociedades de Propósito Especial (2006) para canalizar capital semilla público hacia proyectos culturales sin intervenir en las decisiones artísticas.</p>
+        <p class="quote">Mientras el Estado pavimentaba el terreno legal y financiero, Big Hit Entertainment (hoy HYBE), fundada por el compositor Bang Si-hyuk, desafió a las Big 3 (SM, JYP, YG) con el Universo BTS: letras sobre salud mental, precariedad juvenil y crítica al sistema educativo, distribuidas desde el debut de 2013 en plataformas de acceso libre —YouTube, Twitter/X, Weverse— para construir una relación directa con el fandom ARMY.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="acto" data-i="4">
+    <div><span class="acto-num">04</span><span class="acto-label">La consecuencia inmediata</span></div>
+    <div>
+      <div class="acto-head"><span class="acto-title">Un activo macroeconómico del tamaño de 26 empresas medianas</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">2013 – 2021</span>
+      <p class="acto-teaser">BTS genera miles de millones de dólares anuales, arrastra las exportaciones de cosméticos y alimentos, atrae turismo masivo y convierte a sus miembros en enviados diplomáticos presidenciales.</p>
+      <div class="acto-body">
+        <p>El Instituto de Investigación Hyundai (HRI) estimó un impacto económico anual de entre $3,630 y $4,650 millones de dólares —0.3% del PIB surcoreano—, equiparable a la contribución de la aerolínea Korean Air o de 26 empresas medianas. El valor acumulado entre 2014 y 2023 alcanzaría los $49,800 millones de dólares, superando el impacto total de los Juegos Olímpicos de Invierno de PyeongChang 2018.</p>
+        <div class="chart-block">
+          <div class="chart-title">Efecto arrastre: aumento de exportaciones por cada 1% más de búsquedas globales sobre BTS</div>
+          <div class="chart-bars">
+            <div class="chart-col"><span class="chart-value">+0.18%</span><div class="chart-bar" style="height:25%"></div><div class="chart-col-label">Ropa</div></div>
+            <div class="chart-col"><span class="chart-value">+0.72%</span><div class="chart-bar" style="height:100%"></div><div class="chart-col-label">Cosméticos (K-Beauty)</div></div>
+            <div class="chart-col"><span class="chart-value">+0.45%</span><div class="chart-bar" style="height:63%"></div><div class="chart-col-label">Alimentos (K-Food)</div></div>
+          </div>
+          <p class="chart-note">En 2017, BTS fue responsable directa e indirectamente del 1.7% de todas las exportaciones de bienes de consumo de Corea del Sur.</p>
+        </div>
+        <p>HYBE cotizó en la bolsa de Seúl como la empresa de entretenimiento más valiosa por capitalización bursátil; entre 2020 y 2021, BTS generó entre el 70% y el 92% de sus ingresos totales. El Instituto de Investigación Hyundai estimó que 1 de cada 13 turistas internacionales que visitaron Corea en 2017 (cerca de 800,000 personas) lo hizo motivado directamente por BTS, y su concierto en Busan en 2022 atrajo a más de 503,000 visitantes en diez días, con un impacto local estimado en más de $760 millones de dólares. El presidente Moon Jae-in nombró a sus miembros Enviados Especiales Presidenciales para las Generaciones Futuras y la Cultura, con intervenciones ante la Asamblea General de la ONU y un encuentro en la Casa Blanca con el presidente Joe Biden.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="acto" data-i="5">
+    <div><span class="acto-num">05</span><span class="acto-label">El eco</span></div>
+    <div>
+      <div class="acto-head"><span class="acto-title">"ARMY-nomics": de fenómeno viral a estabilizador estructural</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">2022 – 2026</span>
+      <p class="acto-teaser">El servicio militar obligatorio hunde la capitalización de HYBE en un día, pero el ecosistema no colapsa. En 2026, con el regreso del grupo, los análisis empiezan a tratar al fandom maduro como un activo macroeconómico de largo plazo.</p>
+      <div class="acto-body">
+        <p>Cuando HYBE anunció en junio de 2022 la suspensión temporal de actividades grupales para cumplir con el servicio militar obligatorio, su capitalización bursátil cayó un 25% en un solo día —unos $1,300 millones de dólares—. La diversificación hacia proyectos solistas y la fortaleza del ecosistema de fans evitaron el colapso del sector.</p>
+        <p class="quote">NH Investment & Securities (2026) documentó que el 84% de los fans globales que eran adolescentes o jóvenes en la década anterior están ingresando a sus 30s y 40s con mayor capacidad adquisitiva: "ARMY-nomics" proyecta un flujo adicional de 4.3 millones de turistas anuales hacia 2040, con ingresos turísticos de entre $3,300 y $13,400 millones de dólares y un aporte continuo de entre 0.1% y 0.35% al PIB surcoreano.</p>
+        <p>Tras la finalización del servicio militar de todos sus miembros, las acciones de HYBE repuntaron a máximos de cuatro años (₩398,500) en enero de 2026. La gira mundial Arirang World Tour de 2026, con más de 4 millones de asistentes proyectados, estima un impacto de entre $1,300 y $1,870 millones de dólares, rivalizando en eficiencia por espectáculo con la Eras Tour de Taylor Swift. Las sedes del Instituto King Sejong se expandieron a 256 campus en 88 países con más de 210,000 estudiantes, y los exámenes oficiales de lengua coreana (TOPIK) se multiplicaron por 108 desde el despegue de Hallyu.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="actores">
+  <div class="section-head">
+    <span class="eyebrow">Actores en tensión</span>
+    <h2>Quién quería qué, y con qué poder</h2>
+  </div>
+  <div class="flat-grid cols-4">
+    <div><span class="role">El Estado facilitador</span><h3>MCST, KOCCA, KOFICE</h3><p>Quería diversificar la economía y proyectar poder blando sin intervenir en la creación. Construyó la Ley de 1999, abolió la censura y creó fondos de coinversión (FoFs) que atrajeron capital privado sin dictar contenidos.</p></div>
+    <div><span class="role">La agencia disidente</span><h3>Big Hit Entertainment / HYBE</h3><p>Quería superar el monopolio de las Big 3 (SM, JYP, YG) y lograr rentabilidad global. Apostó por autenticidad temática, narrativa transmedia y distribución digital directa, sin pasar por las reglas clásicas del K-pop.</p></div>
+    <div><span class="role">La agrupación</span><h3>BTS: RM, Jin, Suga, J-Hope, Jimin, V, Jungkook</h3><p>Buscaba expresión artística y conexión transnacional genuina. Publicó contenido gratuito, abordó problemáticas sociales complejas y terminó convertida en embajadores diplomáticos de la República de Corea.</p></div>
+    <div><span class="role">El fandom convertido</span><h3>Comunidad Global ARMY</h3><p>Pertenencia afectiva y consumo de comunidad. Su capital de movilización en redes, traducción y difusión convirtió a consumidores pasivos en co-productores culturales y un pilar de consumo inelástico.</p></div>
+  </div>
+</section>
+
+<section id="comparacion">
+  <div class="section-head">
+    <span class="eyebrow">Comparación regional</span>
+    <h2>Por qué solo Corea exportó su cultura pop al mundo</h2>
+  </div>
+  <div class="flat-grid">
+    <div><h3>China y Japón</h3><p>China desarrolló un mercado interno masivo bajo estricta regulación y censura, sin necesidad de proyectarse afuera. Japón proyectó su cultura pop (Cool Japan) apoyada en un mercado doméstico autosuficiente, con apoyo institucional tardío y fragmentado frente a la digitalización exterior.</p></div>
+    <div><h3>La apuesta surcoreana</h3><p>El tamaño reducido del mercado interno coreano desincentivaba cualquier estrategia de autosuficiencia: obligó a exportar globalmente desde el primer día, apalancado por un Estado que construyó infraestructura legal y financiera sin dictar el contenido, y por agencias privadas con visión de mercado y ecosistemas de fans desde el diseño.</p></div>
+  </div>
+  <div class="connect-note">
+    Este es el primer cuaderno publicado de la colección Corea del Sur — una pieza especial fuera de la secuencia cronológica de los 11 temas de la hoja de ruta (1910-2026), construida para probar la metodología Nalanda sobre un tercer país. Los temas 1 al 11, desde el colonialismo japonés hasta los semiconductores, llegarán en orden a partir de aquí.
+  </div>
+</section>
+
+<section id="fuentes">
+  <div class="sources">
+    <span class="eyebrow">Sobre esta investigación</span>
+    <p>Contenido curado por el equipo de Club Kongzhi a partir de fuentes académicas y de instituciones financieras reunidas en el cuaderno de NotebookLM dedicado al impacto económico de BTS y la Ola Coreana, 1980-2026: Hyundai Research Institute, NH Investment & Securities, Korea Culture and Tourism Institute, el Ministerio de Cultura, Deportes y Turismo (MCST/KOFICE) y estudios académicos en International Journal of Communication, Journal of Law, Social Justice & Global Development (Univ. de Warwick) y Simon Fraser University.</p>
+  </div>
+  <div class="nav-adjacent">
+    <div class="empty">En construcción — Tema 1: Colonialismo japonés</div>
+    <div class="empty next">En construcción — Tema 2: Liberación y división</div>
+  </div>
+</section>
+
+<footer>Club Kongzhi UNMSM · Observatorio Asia-Pacífico · Biblioteca Nalanda</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if(!reduceMotion && window.Lenis){
+    var lenis = new Lenis({ duration: 1.2, smoothWheel: true });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(function(time){ lenis.raf(time * 1000); });
+    gsap.ticker.lagSmoothing(0);
+  }
+
+  function openActo(acto){
+    acto.querySelector('.acto-toggle').textContent = '－';
+    gsap.to(acto.querySelector('.acto-body'), {
+      height: 'auto', opacity: 1, duration: reduceMotion ? 0 : 0.65, ease: 'power1.inOut',
+      onUpdate: function(){ ScrollTrigger.update(); },
+      onComplete: function(){ ScrollTrigger.refresh(); }
+    });
+    var bars = acto.querySelectorAll('.chart-bar');
+    if(bars.length && !acto.dataset.chartsPlayed){
+      acto.dataset.chartsPlayed = '1';
+      bars.forEach(function(bar){
+        var target = bar.style.height;
+        gsap.fromTo(bar, { height: '0%' }, { height: target, duration: reduceMotion ? 0 : 1, delay: reduceMotion ? 0 : 0.3, ease: 'power1.out' });
+      });
+    }
+  }
+  function closeActo(acto){
+    acto.querySelector('.acto-toggle').textContent = '＋';
+    gsap.to(acto.querySelector('.acto-body'), {
+      height: 0, opacity: 0, duration: reduceMotion ? 0 : 0.5, ease: 'power1.inOut',
+      onUpdate: function(){ ScrollTrigger.update(); },
+      onComplete: function(){ ScrollTrigger.refresh(); }
+    });
+  }
+
+  var actos = document.querySelectorAll('.acto');
+  actos.forEach(function(acto){
+    acto.addEventListener('click', function(){
+      var wasActive = acto.classList.contains('active');
+      document.querySelectorAll('.acto.active').forEach(function(a){ a.classList.remove('active'); closeActo(a); });
+      if(!wasActive){ acto.classList.add('active'); openActo(acto); }
+    });
+  });
+  var firstActive = document.querySelector('.acto.active .acto-body');
+  if(firstActive){
+    gsap.set(firstActive, {height:'auto', opacity:1});
+    document.querySelector('.acto.active .acto-toggle').textContent = '－';
+  }
+
+  if(!reduceMotion){
+    actos.forEach(function(acto){
+      gsap.from(acto, {
+        opacity: 0, y: 24, duration: 0.9, ease: 'power1.out',
+        scrollTrigger: { trigger: acto, start: 'top 90%', toggleActions: 'play none none reverse' }
+      });
+    });
+
+    var heroTl = gsap.timeline({ defaults: { ease: 'power1.out' } });
+    heroTl
+      .from('.top-return', { opacity: 0, y: -8, duration: 0.7 })
+      .from('.hero-rule', { scaleX: 0, transformOrigin: 'left center', duration: 1.1 }, '-=0.3')
+      .from('h1.title-kr', { opacity: 0, y: 16, duration: 1.1 }, '-=0.7')
+      .from('.title-rr', { opacity: 0, y: 10, duration: 0.9 }, '-=0.7')
+      .from('.hero-dek', { opacity: 0, y: 14, duration: 1 }, '-=0.6')
+      .from('.hero-stats > div', { opacity: 0, y: 14, duration: 0.8, stagger: 0.15 }, '-=0.5');
+
+    gsap.to('.hero-kanji', {
+      yPercent: 12, ease: 'none',
+      scrollTrigger: { trigger: 'header.hero', start: 'top top', end: 'bottom top', scrub: 1.2 }
+    });
+
+    document.querySelectorAll('.flat-grid').forEach(function(grid){
+      gsap.from(grid.children, {
+        opacity: 0, y: 20, duration: 0.8, stagger: 0.1, ease: 'power1.out',
+        scrollTrigger: { trigger: grid, start: 'top 85%', toggleActions: 'play none none reverse' }
+      });
+    });
+    gsap.from('.nav-adjacent > *', {
+      opacity: 0, y: 16, duration: 0.8, stagger: 0.1, ease: 'power1.out',
+      scrollTrigger: { trigger: '.nav-adjacent', start: 'top 90%', toggleActions: 'play none none reverse' }
+    });
+  }
+
+  window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
+</script>
+
+</body>
+</html>
