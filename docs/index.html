@@ -174,6 +174,20 @@
   .region-block.china{--region-accent:var(--china-imperial);}
   .region-block.corea{--region-accent:var(--korea-celadon);}
 
+  /* ---------- Tarjeta especial (cierre de roadmap) — inversión cromática al hover ---------- */
+  .card.card-special{transition:background .3s ease, box-shadow .25s ease, transform .25s ease, border-color .25s ease;}
+  .card.card-special:hover{
+    background:#9E2B25; border-color:#9E2B25;
+    box-shadow:0 12px 28px rgba(122,33,28,0.35); transform:translate(-2px,-2px);
+  }
+  .card.card-special:hover .card-ref,
+  .card.card-special:hover .tag,
+  .card.card-special:hover h3,
+  .card.card-special:hover p,
+  .card.card-special:hover .go{color:#F2EFE9; transition:color .3s ease;}
+  .card.card-special .card-ref, .card.card-special .tag, .card.card-special h3, .card.card-special p, .card.card-special .go{transition:color .3s ease;}
+  .card.card-special:hover .topic-badge{color:#F2EFE9 !important;}
+
   /* ---------- KONGZHI NEXUS — cierre de marca al final, antes del footer ---------- */
   .kz-nexus{background:var(--kz-navy); margin-top:4.2rem; padding:4.4rem 6vw; text-align:center;}
   .kz-nexus svg{width:64px; height:34px; margin:0 auto 1.6rem; display:block;}
@@ -504,7 +518,7 @@
         <p>Cuando el ladrillo dejó de poder cargar a la economía china, Pekín reasignó: hoy controla el 70% de las baterías de litio y el 80% de los paneles solares del mundo.</p>
         <span class="go">Leer cuaderno</span>
       </a>
-      <a class="card ready" href="china/15-plan-quinquenal/index.html" data-tema="economia" style="--region-accent:#9E2B25;">
+      <a class="card ready card-special" href="china/15-plan-quinquenal/index.html" data-tema="economia" style="--region-accent:#9E2B25;">
         <div class="card-top"><span class="card-ref">NLD·CN·18</span><span class="topic-badge">Economía</span></div>
         <span class="tag">Publicado · especial</span>
         <h3>2026–2030: El 15º Plan Quinquenal</h3>
