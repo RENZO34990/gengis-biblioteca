@@ -174,15 +174,16 @@
   .region-block.china{--region-accent:var(--china-imperial);}
   .region-block.corea{--region-accent:var(--korea-celadon);}
 
-  /* ---------- Tarjeta especial (cierre de roadmap) — texto a bermellón al hover ---------- */
-  .card.card-special:hover{box-shadow:0 12px 28px rgba(158,43,37,0.22); border-color:#9E2B25; transform:translate(-2px,-2px);}
+  /* ---------- Tarjeta especial (cierre de roadmap / bonus) — texto al color especial al hover ---------- */
+  .card.card-special{--special-accent:#9E2B25;}
+  .card.card-special:hover{box-shadow:0 12px 28px color-mix(in srgb, var(--special-accent) 22%, transparent); border-color:var(--special-accent); transform:translate(-2px,-2px);}
   .card.card-special .card-ref, .card.card-special .tag, .card.card-special h3, .card.card-special p, .card.card-special .go{transition:color .3s ease;}
   .card.card-special:hover .card-ref,
   .card.card-special:hover .tag,
   .card.card-special:hover h3,
   .card.card-special:hover p,
-  .card.card-special:hover .go{color:#9E2B25;}
-  .card.card-special:hover .topic-badge{color:#9E2B25 !important;}
+  .card.card-special:hover .go{color:var(--special-accent);}
+  .card.card-special:hover .topic-badge{color:var(--special-accent) !important;}
 
   /* ---------- KONGZHI NEXUS — cierre de marca al final, antes del footer ---------- */
   .kz-nexus{background:var(--kz-navy); margin-top:4.2rem; padding:4.4rem 6vw; text-align:center;}
@@ -514,7 +515,7 @@
         <p>Cuando el ladrillo dejó de poder cargar a la economía china, Pekín reasignó: hoy controla el 70% de las baterías de litio y el 80% de los paneles solares del mundo.</p>
         <span class="go">Leer cuaderno</span>
       </a>
-      <a class="card ready card-special" href="china/15-plan-quinquenal/index.html" data-tema="economia" style="--region-accent:#9E2B25;">
+      <a class="card ready card-special" href="china/15-plan-quinquenal/index.html" data-tema="economia" style="--region-accent:#9E2B25; --special-accent:#9E2B25;">
         <div class="card-top"><span class="card-ref">NLD·CN·18</span><span class="topic-badge">Economía</span></div>
         <span class="tag">Publicado · especial</span>
         <h3>2026–2030: El 15º Plan Quinquenal</h3>
@@ -543,7 +544,7 @@
       <span class="count">1 de 12 temas</span>
     </div>
     <div class="card-grid">
-      <a class="card ready card-special" href="corea/bts-hallyu/index.html" data-tema="economia" style="--region-accent:#7C4FA3;">
+      <a class="card ready card-special" href="corea/bts-hallyu/index.html" data-tema="economia" style="--region-accent:#7C4FA3; --special-accent:#7C4FA3;">
         <div class="card-top"><span class="card-ref">NLD·KR·01</span><span class="topic-badge">Economía</span></div>
         <span class="tag">Publicado · especial</span>
         <h3>1980–2026: Cómo se Construyó el Impacto BTS</h3>
