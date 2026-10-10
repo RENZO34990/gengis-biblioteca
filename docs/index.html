@@ -174,19 +174,15 @@
   .region-block.china{--region-accent:var(--china-imperial);}
   .region-block.corea{--region-accent:var(--korea-celadon);}
 
-  /* ---------- Tarjeta especial (cierre de roadmap) — inversión cromática al hover ---------- */
-  .card.card-special{transition:background .3s ease, box-shadow .25s ease, transform .25s ease, border-color .25s ease;}
-  .card.card-special:hover{
-    background:#9E2B25; border-color:#9E2B25;
-    box-shadow:0 12px 28px rgba(122,33,28,0.35); transform:translate(-2px,-2px);
-  }
+  /* ---------- Tarjeta especial (cierre de roadmap) — texto a bermellón al hover ---------- */
+  .card.card-special:hover{box-shadow:0 12px 28px rgba(158,43,37,0.22); border-color:#9E2B25; transform:translate(-2px,-2px);}
+  .card.card-special .card-ref, .card.card-special .tag, .card.card-special h3, .card.card-special p, .card.card-special .go{transition:color .3s ease;}
   .card.card-special:hover .card-ref,
   .card.card-special:hover .tag,
   .card.card-special:hover h3,
   .card.card-special:hover p,
-  .card.card-special:hover .go{color:#F2EFE9; transition:color .3s ease;}
-  .card.card-special .card-ref, .card.card-special .tag, .card.card-special h3, .card.card-special p, .card.card-special .go{transition:color .3s ease;}
-  .card.card-special:hover .topic-badge{color:#F2EFE9 !important;}
+  .card.card-special:hover .go{color:#9E2B25;}
+  .card.card-special:hover .topic-badge{color:#9E2B25 !important;}
 
   /* ---------- KONGZHI NEXUS — cierre de marca al final, antes del footer ---------- */
   .kz-nexus{background:var(--kz-navy); margin-top:4.2rem; padding:4.4rem 6vw; text-align:center;}
