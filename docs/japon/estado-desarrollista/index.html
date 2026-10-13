@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>護送船団 — El Estado Desarrollista</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Shippori+Mincho:wght@400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F5F1E8;
+    --paper-warm:#EDE6D6;
+    --ink:#2B2A28;
+    --ink-soft:#5A5650;
+    --wood:#8B6F4E;
+    --wood-dark:#6B5439;
+    --stone:#B8B4AC;
+    --vermillion:#A13D2C;
+    --gold:#A8863C;
+    --line: rgba(43,42,40,0.14);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:auto;}
+  html.lenis, html.lenis body{height:auto;}
+  html.lenis.lenis-smooth{scroll-behavior:auto !important;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:'Zen Kaku Gothic New', sans-serif; font-weight:400;
+    font-size:17px; line-height:1.75;
+  }
+  ::selection{background:var(--vermillion); color:var(--paper);}
+  a{color:var(--ink);}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; letter-spacing:.1em; text-transform:uppercase;
+    font-size:.72rem; color:var(--wood-dark); font-weight:500;
+  }
+
+  .top-return{
+    position:fixed; top:1.4rem; left:1.4rem; z-index:50;
+    background:var(--paper); color:var(--ink-soft);
+    border:1px solid var(--line); padding:.5rem 1rem;
+    font-family:'IBM Plex Mono', monospace; font-size:.72rem;
+    text-decoration:none; display:inline-flex; align-items:center; gap:.5rem;
+    transition:border-color .3s ease, color .3s ease, transform 160ms cubic-bezier(0.23,1,0.32,1);
+  }
+  .top-return:hover{border-color:var(--wood); color:var(--ink);}
+  .top-return:active{transform:scale(0.97);}
+  .tr-arrow{display:inline-block; transition:transform .3s ease;}
+  .top-return:hover .tr-arrow{transform:translateX(-3px);}
+
+  header.hero{
+    position:relative; min-height:92vh;
+    display:flex; flex-direction:column; justify-content:center;
+    padding:14vh 8vw 12vh; overflow:hidden;
+    background:radial-gradient(ellipse 60% 50% at 88% 20%, rgba(161,61,44,0.07), transparent 65%),
+                radial-gradient(ellipse 50% 40% at 8% 85%, rgba(168,134,60,0.06), transparent 60%);
+  }
+  .hero-kanji{
+    position:absolute; right:6vw; top:50%; transform:translateY(-50%);
+    font-family:'Shippori Mincho', serif; font-weight:400;
+    font-size:clamp(6rem, 17vw, 14rem);
+    color:rgba(43,42,40,0.045); writing-mode:vertical-rl;
+    user-select:none; z-index:0; line-height:1;
+  }
+  .hero-content{position:relative; z-index:2; max-width:660px;}
+  .hero-rule{width:48px; height:1px; background:var(--wood); margin-bottom:1.6rem;}
+  h1.title-jp{
+    font-family:'Shippori Mincho', serif; font-weight:400;
+    font-size:clamp(2.1rem, 4.6vw, 3.4rem); line-height:1.25; margin:.4rem 0 .5rem; color:var(--ink);
+  }
+  .title-romaji{font-family:'IBM Plex Mono', monospace; font-size:.82rem; color:var(--ink-soft); letter-spacing:.02em; margin-bottom:2rem; line-height:1.6;}
+  .hero-dek{font-size:1.1rem; max-width:560px; color:var(--ink-soft); font-weight:300; line-height:1.85;}
+  .hero-stats{display:flex; flex-wrap:wrap; margin-top:3.4rem; border-top:1px solid var(--line);}
+  .hero-stats div{padding:1.1rem 3rem 1.6rem 0; margin-right:1.4rem; border-right:1px solid var(--line); min-width:0;}
+  .hero-stats div:last-child{border-right:none; padding-right:0;}
+  .hero-stats .num{font-family:'Shippori Mincho', serif; font-weight:400; font-size:1.5rem; display:block; color:var(--vermillion);}
+  .hero-stats .lbl{font-family:'IBM Plex Mono', monospace; font-size:.78rem; color:var(--ink-soft); display:block; margin-top:.3rem; max-width:150px;}
+
+  section{padding:7vh 8vw; max-width:1080px; margin:0 auto;}
+  .section-head{max-width:580px; margin-bottom:3.4rem;}
+  h2{font-family:'Shippori Mincho', serif; font-weight:400; font-size:clamp(1.6rem, 3vw, 2.2rem); margin:.5rem 0 0; color:var(--ink);}
+  .lede{font-size:1.02rem; color:var(--ink-soft); font-weight:300; margin-top:1rem;}
+
+  .acto{border-top:1px solid var(--line); padding:2.6rem 0; display:grid; grid-template-columns:100px 1fr; gap:2.4rem; cursor:pointer; transition:transform 160ms cubic-bezier(0.23,1,0.32,1);}
+  .acto:last-child{border-bottom:1px solid var(--line);}
+  .acto:active{transform:scale(0.99);}
+  .acto-num{font-family:'Shippori Mincho', serif; font-weight:400; font-size:2.2rem; color:rgba(161,61,44,0.38); line-height:1; transition:color .3s ease;}
+  .acto.active .acto-num{color:var(--vermillion);}
+  .acto-label{font-family:'IBM Plex Mono', monospace; font-size:.75rem; text-transform:uppercase; letter-spacing:.06em; color:var(--wood-dark); display:block; margin-top:.6rem;}
+  .acto-head{display:flex; align-items:baseline; gap:1.1rem; flex-wrap:wrap; justify-content:space-between;}
+  .acto-title{font-family:'Zen Kaku Gothic New', sans-serif; font-weight:500; font-size:1.24rem; color:var(--ink);}
+  .acto-date{font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--gold); white-space:nowrap; font-weight:500;}
+  .acto-toggle{font-family:'IBM Plex Mono', monospace; font-size:.9rem; color:var(--vermillion); flex-shrink:0;}
+  .acto-teaser{color:var(--ink-soft); margin:.7rem 0 0; max-width:600px; font-weight:300;}
+  .acto-body{height:0; overflow:hidden; opacity:0;}
+  .acto-body p{margin:0 0 1rem; color:var(--ink); max-width:660px; font-weight:300; line-height:1.85;}
+  .acto-body strong{font-weight:500;}
+  .acto-body .quote{padding-left:1.1rem; border-left:2px solid var(--vermillion); color:var(--ink-soft); font-size:.98rem; margin-top:1.2rem; max-width:600px;}
+
+  .acto-figure{margin:1.8rem 0; border:1px solid var(--line); max-width:640px; background:var(--ink);}
+  .acto-figure img{width:100%; display:block; filter:sepia(.12) contrast(1.03); opacity:.94;}
+  .acto-figure figcaption{padding:.85rem 1.1rem; font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink-soft); border-top:1px solid var(--line); background:var(--paper); font-weight:300;}
+  .acto-figure figcaption .credit{display:block; margin-top:.3rem; color:#8A8478; font-size:.76rem;}
+
+  .flat-grid{display:grid; grid-template-columns:repeat(2, 1fr); gap:0; border-top:1px solid var(--line);}
+  .flat-grid.cols-3{grid-template-columns:repeat(3, 1fr);}
+  .flat-grid.cols-4{grid-template-columns:repeat(4, 1fr);}
+  .flat-grid > div{padding:2rem 3rem 2rem 0; border-right:1px solid var(--line);}
+  .flat-grid > div:last-child{border-right:none;}
+  .flat-grid h3{margin:0 0 .8rem; font-family:'Zen Kaku Gothic New', sans-serif; font-weight:500; font-size:1.02rem; color:var(--ink);}
+  .flat-grid h3::before{content:"●"; color:var(--gold); font-size:.5rem; margin-right:.5rem; vertical-align:middle;}
+  .flat-grid p{margin:0; font-size:.92rem; color:var(--ink-soft); font-weight:300; line-height:1.75;}
+  .flat-grid .role{font-family:'IBM Plex Mono', monospace; font-size:.7rem; color:var(--wood-dark); text-transform:uppercase; letter-spacing:.04em; display:block; margin-bottom:.6rem;}
+
+  .connect-note{margin-top:2.6rem; padding-top:1.6rem; border-top:1px solid var(--line); font-family:'IBM Plex Mono', monospace; font-size:.82rem; color:var(--ink-soft);}
+  .connect-note a{color:var(--vermillion); border-bottom:1px solid var(--vermillion); padding-bottom:1px;}
+
+  .sources{border-top:1px solid var(--line); padding-top:2rem;}
+  .sources p{font-size:.92rem; color:var(--ink-soft); max-width:640px; font-weight:300;}
+
+  .nav-adjacent{display:grid; grid-template-columns:1fr 1fr; border-top:1px solid var(--line); margin-top:1rem;}
+  .nav-adjacent a, .nav-adjacent .empty{padding:2rem 3rem 2.4rem 0; text-decoration:none; color:var(--ink); display:flex; flex-direction:column; border-right:1px solid var(--line); transition:transform 160ms cubic-bezier(0.23,1,0.32,1);}
+  .nav-adjacent a:hover{transform:translateX(.4rem);}
+  .nav-adjacent a:active{transform:scale(0.98);}
+  .nav-adjacent .dir{font-family:'IBM Plex Mono', monospace; font-size:.76rem; text-transform:uppercase; color:var(--wood-dark); margin-bottom:.6rem; letter-spacing:.05em;}
+  .nav-adjacent .ttl{font-family:'Shippori Mincho', serif; font-weight:400; font-size:1.1rem; display:inline-flex; align-items:center; gap:.5rem;}
+  .nav-adjacent .ttl-arrow{display:inline-block; opacity:0; transform:translateX(-6px); transition:opacity .3s ease, transform .3s ease; color:var(--vermillion);}
+  .nav-adjacent a:hover .ttl-arrow{opacity:1; transform:translateX(0);}
+  .nav-adjacent .next{text-align:right; align-items:flex-end; border-right:none; padding-right:0; padding-left:1.6rem; border-left:1px solid var(--line);}
+  .nav-adjacent .next .ttl-arrow{order:-1; transform:translateX(6px);}
+  .nav-adjacent .next:hover .ttl-arrow{transform:translateX(0);}
+  .nav-adjacent .empty{color:#6E685C; justify-content:center; align-items:center; text-align:center; font-family:'IBM Plex Mono', monospace; font-size:.78rem; border-right:none;}
+
+  footer{text-align:center; padding:3rem 6vw 4rem; border-top:1px solid var(--line); font-family:'IBM Plex Mono', monospace; font-size:.74rem; color:var(--ink-soft);}
+
+  @media(max-width:820px){
+    .acto{grid-template-columns:56px 1fr; gap:1.2rem;}
+    .acto-num{font-size:1.4rem;}
+    .flat-grid, .flat-grid.cols-3, .flat-grid.cols-4{grid-template-columns:1fr;}
+    .flat-grid > div{border-right:none; border-bottom:1px solid var(--line); padding:1.6rem 0;}
+    .nav-adjacent{grid-template-columns:1fr;}
+    .nav-adjacent a, .nav-adjacent .next{border-right:none; border-left:none; padding:1.6rem 0;}
+    .nav-adjacent .next{text-align:left; align-items:flex-start;}
+    section{padding:6vh 6vw;}
+  }
+</style>
+</head>
+<body>
+<a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
+
+<header class="hero">
+  <div class="hero-kanji">護送船団</div>
+  <div class="hero-content">
+    <span class="eyebrow">Kongzhi · Japón · Economía 05</span>
+    <div class="hero-rule"></div>
+    <h1 class="title-jp">護送船団方式</h1>
+    <div class="title-romaji">Gososendan Hōshiki — el Estado Desarrollista, el MITI y el milagro económico japonés, 1955-1973</div>
+    <p class="hero-dek">Un país que importaba hasta la comida que comía logró, en quince años, convertirse en la segunda economía del mundo no comunista. No lo hizo el mercado solo ni lo hizo el Estado solo: lo hizo una burocracia que decidió escoger ganadores, y una flota de empresas que aceptó navegar en convoy, al ritmo del barco más lento, para no hundirse ninguna.</p>
+    <div class="hero-stats">
+      <div><span class="num">10.8%</span><span class="lbl">crecimiento anual promedio del PIB, 1960-1965</span></div>
+      <div><span class="num">1960</span><span class="lbl">Plan de Duplicación de Ingresos de Hayato Ikeda</span></div>
+      <div><span class="num">1968</span><span class="lbl">Japón supera a Alemania Occidental en PIB</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="actos">
+  <div class="section-head">
+    <span class="eyebrow">Los 5 actos</span>
+    <h2>Cómo un país sin recursos se fabricó una economía de clase mundial</h2>
+    <p class="lede">Toca cada acto para expandirlo.</p>
+  </div>
+
+  <div class="acto active" data-i="1">
+    <div><span class="acto-num">01</span><span class="acto-label">El mundo antes</span></div>
+    <div>
+      <div class="acto-head"><span class="acto-title">Un país reconstruido pero atrapado en lo barato</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">1945 – 1955</span>
+      <p class="acto-teaser">Japón sale de la guerra con el 40% de sus plantas destruidas, 4 de cada 10 trabajadores todavía en el campo y un déficit comercial crónico que lo obliga a vender textiles baratos para pagar importaciones vitales.</p>
+      <div class="acto-body">
+        <p>En la década de posguerra previa a 1955, Japón salía apenas de la prostración absoluta dejada por la Segunda Guerra Mundial, la cual había destruido cerca del 40% de sus plantas industriales e infraestructura. La fuerza laboral se concentraba masivamente en actividades tradicionales y de bajo valor agregado: en 1955, entre el 40% y el 42% de la población activa dependía todavía directamente de la agricultura y la silvicultura, y los sectores industriales predominantes eran industrias "clásicas" como los textiles, el carbón y los fertilizantes.</p>
+        <p>Aunque la producción industrial logró igualar los niveles de preguerra hacia mediados de la década de 1950, la economía enfrentaba un déficit comercial crónico y problemas constantes de balanza de pagos. Al carecer casi por completo de recursos naturales, el país se vio obligado a importar grandes cantidades de alimentos, energía y materias primas para sostener a su población, financiando esas importaciones mediante un modelo de comercio de procesamiento: importar materia prima, procesarla con mano de obra disponible y exportarla con valor agregado. Sin embargo, en esta época los productos japoneses aún cargaban con el estereotipo internacional de ser copias baratas o de baja calidad.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="acto" data-i="2">
+    <div><span class="acto-num">02</span><span class="acto-label">La grieta</span></div>
+    <div>
+      <div class="acto-head"><span class="acto-title">La liberalización que amenazaba con arrasar la industria naciente</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">1955 – 1960</span>
+      <p class="acto-teaser">El PLD consolida el poder y Occidente presiona por abrir el mercado japonés al Artículo 8 del FMI — una apertura que, sin reestructuración previa, habría expuesto a industrias jóvenes e ineficientes frente a multinacionales mucho más avanzadas.</p>
+      <div class="acto-body">
+        <p>La transición del período de reconstrucción hacia la integración global acelerada expuso a Japón a presiones externas e internas que resquebrajaron el esquema de aislamiento arancelario de posguerra. En 1955, el panorama político japonés se estabilizó de forma decisiva con la unificación y el ascenso continuo del Partido Liberal Demócrata (PLD), lo que consolidó una estrecha alianza de poder e intereses compartidos entre las grandes corporaciones, el sector bancario y la élite burocrática del Estado.</p>
+        <p class="quote">Hacia finales de la década de 1950, especialmente a partir de 1959, el gobierno comenzó a promover la liberalización del comercio exterior para alinearse con las tendencias globales y responder a las exigencias de Estados Unidos. La inminente transición hacia una economía de "puertas abiertas" —que culminaría con el ingreso de Japón al Artículo 8 del FMI en los años sesenta— amenazaba con exponer a las jóvenes e ineficientes industrias locales a la competencia extranjera. El Estado y el sector privado comprendieron que el modelo de protección pasiva ya no era viable: se necesitaba una reestructuración industrial ofensiva y de gran escala para sobrevivir en el mercado global.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="acto" data-i="3">
+    <div><span class="acto-num">03</span><span class="acto-label">El giro</span></div>
+    <div>
+      <div class="acto-head"><span class="acto-title">Ikeda, el MITI y el convoy de los keiretsu</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">1960</span>
+      <p class="acto-teaser">El Plan de Duplicación de Ingresos de Ikeda y el "Estado Desarrollista" liderado por el MITI orientan —sin estatizar— la inversión hacia la industria pesada, mientras los keiretsu reemplazan a los zaibatsu con una lógica de largo plazo.</p>
+      <div class="acto-body">
+        <figure class="acto-figure">
+          <img src="../../assets/japon/estado-desarrollista/hayato-ikeda.jpg" alt="Retrato de Hayato Ikeda, primer ministro de Japón y autor del Plan de Duplicación de Ingresos de 1960." loading="lazy">
+          <figcaption>Hayato Ikeda, primer ministro de Japón: su Plan de Duplicación de Ingresos de 1960 desvió el enfoque nacional de la agitación política hacia el consenso de crecimiento material.
+            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+          </figcaption>
+        </figure>
+        <p>La trayectoria de la economía japonesa cambió de manera radical mediante una combinación de planificación estatal audaz, una alianza corporativa de largo plazo y un entorno geopolítico favorable. Bajo el liderazgo del Primer Ministro Hayato Ikeda, el gobierno lanzó en 1960 el Plan de Duplicación de Ingresos, un plan masivo para estimular la demanda interna mediante la inversión corporativa privada, reducciones impositivas y el desarrollo acelerado de la industria pesada y química.</p>
+        <p>Siguiendo la "Doctrina Yoshida" de priorizar la economía sobre el gasto militar, el Ministerio de Comercio Internacional e Industria (MITI) asumió un rol puramente desarrollista: no estatizó la producción, sino que operó como "guía" del sector privado. A través de la orientación administrativa (<em>gyōsei seidō</em>), el MITI protegió sectores estratégicos —acero, petroquímica, astilleros, automóviles y electrónica—, coordinó la adquisición de patentes extranjeras y autorizó fusiones e incluso "carteles administrativos" de racionalización para evitar la competencia autodestructiva (<em>katō kyōsō</em>). Tras la disolución de los antiguos zaibatsu familiares durante la ocupación, las corporaciones se reorganizaron en redes horizontales y verticales llamadas keiretsu: interconectadas mediante participaciones accionarias cruzadas y coordinadas alrededor de un banco principal, se protegieron de accionistas que buscaban dividendos rápidos, lo que facilitó una mentalidad de negocios a largo plazo enfocada en ganar cuota de mercado global.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="acto" data-i="4">
+    <div><span class="acto-num">04</span><span class="acto-label">La consecuencia inmediata</span></div>
+    <div>
+      <div class="acto-head"><span class="acto-title">10% de crecimiento anual y los "Tres Tesoros" en cada hogar</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">1960s</span>
+      <p class="acto-teaser">El PIB crece 12.8% anual entre 1965 y 1970, las exportaciones se transforman de textiles a maquinaria pesada, y la nueva clase media urbana adopta la lavadora, el refrigerador y el televisor.</p>
+      <div class="acto-body">
+        <figure class="acto-figure">
+          <img src="../../assets/japon/estado-desarrollista/fabrica-electronica-1960s.jpg" alt="Fotografía de una línea de ensamblaje de productos electrónicos en una fábrica japonesa de la década de 1960." loading="lazy">
+          <figcaption>Una línea de producción electrónica japonesa de los años sesenta, el rostro visible del giro exportador hacia la maquinaria y la tecnología de alto valor.
+            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+          </figcaption>
+        </figure>
+        <p>En el corto plazo, particularmente durante la década de 1960, las reformas institucionales y el nuevo modelo económico desataron un crecimiento sin precedentes: la tasa de crecimiento real del PIB promedió más de un 10% anual en la década posterior a 1955, alcanzando 10.8% en la primera mitad de los sesenta y un extraordinario 12.8% entre 1965 y 1970. En 1968, Japón superó nominalmente a Alemania Occidental para convertirse en la segunda mayor economía del mundo no comunista.</p>
+        <p>La composición de las exportaciones cambió por completo: la industria textil y ligera pasó del 80% de las exportaciones en la preguerra a apenas el 8% a inicios de los sesenta, mientras la maquinaria pesada, el acero, la construcción naval, los automóviles y los productos electrónicos pasaron a representar más del 50% de las ventas externas, creciendo 15% anual desde 1960. Las empresas firmaron miles de contratos para importar tecnología extranjera —Sony adquirió la licencia del transistor a Western Electric por solo 25,000 dólares en 1953, cimiento de toda su industria microelectrónica— y no solo la asimilaron, sino que la hicieron un 20% más eficiente. Para 1965 Japón revirtió su déficit comercial crónico; el empleo agrícola cayó del 42% al 17% entre 1955 y 1970, los salarios reales crecieron más de 7% anual, y para 1962 el 79.4% de los hogares urbanos ya tenía televisión.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="acto" data-i="5">
+    <div><span class="acto-num">05</span><span class="acto-label">El eco</span></div>
+    <div>
+      <div class="acto-head"><span class="acto-title">De "picking winners" en 1960 a "Sanaenomics" en 2025</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">1973 → hoy</span>
+      <p class="acto-teaser">El METI, los keiretsu y el Monozukuri heredan la lógica del MITI; pero la deuda pública supera el 200% del PIB, el empleo dual y la crisis demográfica son el lastre del mismo modelo que produjo el milagro.</p>
+      <div class="acto-body">
+        <p>La arquitectura del Estado desarrollista y las dinámicas industriales forjadas durante el milagro económico continúan definiendo la estructura socioeconómica de Japón en el siglo XXI. La idea de que el gobierno debe proveer visiones industriales coordinadas a largo plazo sigue guiando al Ministerio de Economía, Comercio e Industria (METI) ante desafíos como la digitalización, la descarbonización y la seguridad económica. La política económica de la administración de Sanae Takaichi —apodada "Sanaenomics"— representa un retorno directo a la estrategia de "picking winners" de la era Meiji y del Milagro Económico: a través de su Cuartel General de Estrategia de Crecimiento, el Estado seleccionó 17 sectores estratégicos (semiconductores, inteligencia artificial, fusión nuclear, defensa, astilleros) para concentrar inversión pública y privada.</p>
+        <p class="quote">Pero la priorización absoluta del crecimiento corporativo y la rigidez de esas instituciones dejaron lastres persistentes: la deuda pública supera el 200% del PIB, la carga fiscal más alta del planeta; los empleados temporales y sin seguridad laboral representan más de un tercio de la fuerza laboral tras la erosión del empleo de por vida; y la baja natalidad y el envejecimiento acelerado han creado una escasez crónica de mano de obra que amenaza el crecimiento potencial del país. El mismo Estado que fabricó el milagro hoy administra sus costos de largo plazo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="actores">
+  <div class="section-head">
+    <span class="eyebrow">Actores en tensión</span>
+    <h2>Quién dirigía, quién financiaba, quién producía</h2>
+  </div>
+  <div class="flat-grid cols-4">
+    <div><span class="role">El piloto burocrático</span><h3>MITI</h3><p>Quería industrializar al país sin exponerlo a la competencia global prematura. Contaba con orientación administrativa, control de divisas y licencias tecnológicas. Protegió sectores estratégicos sin nacionalizarlos, guiando al sector privado hacia la industria pesada y química.</p></div>
+    <div><span class="role">El crédito dirigido</span><h3>El Banco de Japón</h3><p>Quería canalizar ahorro nacional hacia la inversión productiva. Contaba con control riguroso de tasas de interés y suministro monetario. Aseguró "dinero barato" para las corporaciones que invertían en capital físico, revirtiendo el déficit comercial para 1965.</p></div>
+    <div><span class="role">El convoy corporativo</span><h3>Los Keiretsu</h3><p>Querían ganar cuota de mercado global a largo plazo, no dividendos inmediatos. Contaban con participaciones cruzadas y un banco principal que los blindaba de accionistas impacientes. Reinvirtieron constantemente en modernización técnica, desplazando a los viejos zaibatsu.</p></div>
+    <div><span class="role">El aliado geopolítico</span><h3>Estados Unidos</h3><p>Quería un bastión anticomunista próspero en Asia Oriental. Contaba con un mercado doméstico abierto y asistencia financiera y tecnológica. Toleró las barreras proteccionistas japonesas a cambio de estabilidad regional durante la Guerra Fría.</p></div>
+  </div>
+</section>
+
+<section id="fuentes">
+  <div class="sources">
+    <span class="eyebrow">Sobre esta investigación</span>
+    <p>Contenido curado por el equipo de Club Kongzhi a partir de fuentes académicas reunidas en el cuaderno de NotebookLM dedicado al Estado desarrollista, la política industrial y el milagro económico japonés.</p>
+  </div>
+  <div class="nav-adjacent">
+    <a href="../industrializacion-meiji/index.html">
+      <span class="dir">‹ Anterior</span>
+      <span class="ttl"><span class="ttl-arrow">←</span>1880: La Industrialización Meiji</span>
+    </a>
+    <a class="next" href="../acuerdo-del-plaza/index.html">
+      <span class="dir">Siguiente</span>
+      <span class="ttl"><span class="ttl-arrow">→</span>1985: El Acuerdo del Plaza</span>
+    </a>
+  </div>
+</section>
+
+<footer>Club Kongzhi UNMSM · Observatorio Asia-Pacífico · Biblioteca Nalanda</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if(!reduceMotion && window.Lenis){
+    var lenis = new Lenis({ duration: 1.2, smoothWheel: true });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(function(time){ lenis.raf(time * 1000); });
+    gsap.ticker.lagSmoothing(0);
+  }
+
+  function openActo(acto){
+    acto.querySelector('.acto-toggle').textContent = '－';
+    gsap.to(acto.querySelector('.acto-body'), {
+      height: 'auto', opacity: 1, duration: reduceMotion ? 0 : 0.65, ease: 'power1.inOut',
+      onUpdate: function(){ ScrollTrigger.update(); },
+      onComplete: function(){ ScrollTrigger.refresh(); }
+    });
+  }
+  function closeActo(acto){
+    acto.querySelector('.acto-toggle').textContent = '＋';
+    gsap.to(acto.querySelector('.acto-body'), {
+      height: 0, opacity: 0, duration: reduceMotion ? 0 : 0.5, ease: 'power1.inOut',
+      onUpdate: function(){ ScrollTrigger.update(); },
+      onComplete: function(){ ScrollTrigger.refresh(); }
+    });
+  }
+
+  var actos = document.querySelectorAll('.acto');
+  actos.forEach(function(acto){
+    acto.addEventListener('click', function(){
+      var wasActive = acto.classList.contains('active');
+      document.querySelectorAll('.acto.active').forEach(function(a){ a.classList.remove('active'); closeActo(a); });
+      if(!wasActive){ acto.classList.add('active'); openActo(acto); }
+    });
+  });
+  var firstActive = document.querySelector('.acto.active .acto-body');
+  if(firstActive){
+    gsap.set(firstActive, {height:'auto', opacity:1});
+    document.querySelector('.acto.active .acto-toggle').textContent = '－';
+  }
+
+  if(!reduceMotion){
+    actos.forEach(function(acto){
+      gsap.from(acto, {
+        opacity: 0, y: 24, duration: 0.9, ease: 'power1.out',
+        scrollTrigger: { trigger: acto, start: 'top 90%', toggleActions: 'play none none reverse' }
+      });
+    });
+
+    var heroTl = gsap.timeline({ defaults: { ease: 'power1.out' } });
+    heroTl
+      .from('.top-return', { opacity: 0, y: -8, duration: 0.7 })
+      .from('.hero-rule', { scaleX: 0, transformOrigin: 'left center', duration: 1.1 }, '-=0.3')
+      .from('h1.title-jp', { opacity: 0, y: 16, duration: 1.1 }, '-=0.7')
+      .from('.title-romaji', { opacity: 0, y: 10, duration: 0.9 }, '-=0.7')
+      .from('.hero-dek', { opacity: 0, y: 14, duration: 1 }, '-=0.6')
+      .from('.hero-stats > div', { opacity: 0, y: 14, duration: 0.8, stagger: 0.15 }, '-=0.5');
+
+    gsap.to('.hero-kanji', {
+      yPercent: 12, ease: 'none',
+      scrollTrigger: { trigger: 'header.hero', start: 'top top', end: 'bottom top', scrub: 1.2 }
+    });
+
+    document.querySelectorAll('.flat-grid').forEach(function(grid){
+      gsap.from(grid.children, {
+        opacity: 0, y: 20, duration: 0.8, stagger: 0.1, ease: 'power1.out',
+        scrollTrigger: { trigger: grid, start: 'top 85%', toggleActions: 'play none none reverse' }
+      });
+    });
+    gsap.from('.nav-adjacent > *', {
+      opacity: 0, y: 16, duration: 0.8, stagger: 0.1, ease: 'power1.out',
+      scrollTrigger: { trigger: '.nav-adjacent', start: 'top 90%', toggleActions: 'play none none reverse' }
+    });
+  }
+
+  window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
+</script>
+
+</body>
+</html>
