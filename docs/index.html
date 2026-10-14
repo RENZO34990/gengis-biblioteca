@@ -174,6 +174,17 @@
   .region-block.china{--region-accent:var(--china-imperial);}
   .region-block.corea{--region-accent:var(--korea-celadon);}
 
+  /* ---------- Acto dividers: subdivisión narrativa dentro de un card-grid ---------- */
+  .acto-divider{
+    grid-column:1/-1; display:flex; align-items:baseline; flex-wrap:wrap; column-gap:1rem; row-gap:.2rem;
+    padding:1.7rem 0 1rem; margin-top:.2rem; border-top:1px solid var(--line);
+  }
+  .acto-divider:first-child{border-top:none; padding-top:0; margin-top:0;}
+  .acto-num{font-family:'Source Serif 4', serif; font-style:italic; font-weight:500; font-size:1.22rem; color:var(--region-accent, var(--gold));}
+  .acto-title{font-family:'Source Serif 4', serif; font-weight:500; font-size:1.02rem; color:var(--editorial-black);}
+  .acto-years{font-family:'IBM Plex Mono', monospace; font-size:.72rem; color:var(--stone); letter-spacing:.04em; margin-left:auto;}
+  .acto-blurb{flex-basis:100%; font-size:.87rem; color:var(--warm-gray); font-weight:300; font-style:italic; line-height:1.62; margin:.3rem 0 0; max-width:62ch;}
+
   /* ---------- Tarjeta especial (cierre de roadmap / bonus) — texto al color especial al hover ---------- */
   .card.card-special{--special-accent:#9E2B25;}
   .card.card-special:hover{box-shadow:0 12px 28px color-mix(in srgb, var(--special-accent) 22%, transparent); border-color:var(--special-accent); transform:translate(-2px,-2px);}
@@ -294,6 +305,12 @@
       <span class="count">15 de N temas</span>
     </div>
     <div class="card-grid">
+      <div class="acto-divider">
+        <span class="acto-num">Acto I</span>
+        <span class="acto-title">Del orden feudal a la modernización</span>
+        <span class="acto-years">1603–1873</span>
+        <p class="acto-blurb">Un país que se cierra al mundo durante 250 años y lo abre a cañonazos — y que aprende, en apenas dos décadas, el oficio de las potencias que lo doblegaron.</p>
+      </div>
       <a class="card ready" href="japon/shogunato-tokugawa/index.html" data-tema="politica economia">
         <div class="card-top"><span class="card-ref">NLD·JP·00</span><div class="topic-badges"><span class="topic-badge">Política</span><span class="topic-badge">Economía</span></div></div>
         <span class="tag">Publicado</span>
@@ -322,6 +339,12 @@
         <p>El viaje de 21 meses por EE.UU. y Europa que la élite Meiji convirtió en manual de modernización, ruta, tensiones y legado.</p>
         <span class="go">Leer cuaderno</span>
       </a>
+      <div class="acto-divider">
+        <span class="acto-num">Acto II</span>
+        <span class="acto-title">La construcción de una potencia industrial</span>
+        <span class="acto-years">1870s–1930s</span>
+        <p class="acto-blurb">De los telares importados a los acorazados propios: la élite Meiji levanta un Estado industrial y, sin proponérselo del todo, el ejército que terminaría gobernándolo.</p>
+      </div>
       <a class="card ready" href="japon/industrializacion-meiji/index.html" data-tema="economia">
         <div class="card-top"><span class="card-ref">NLD·JP·04</span><span class="topic-badge">Economía</span></div>
         <span class="tag">Publicado</span>
@@ -343,6 +366,12 @@
         <p>Un vacío constitucional sobre el mando militar y el Incidente de Mukden bastan para que el ejército imponga su propia política exterior: la economía civil se militariza y Japón entra en la senda hacia la guerra total.</p>
         <span class="go">Leer cuaderno</span>
       </a>
+      <div class="acto-divider">
+        <span class="acto-num">Acto III</span>
+        <span class="acto-title">De la derrota a la potencia económica</span>
+        <span class="acto-years">1945–1993</span>
+        <p class="acto-blurb">Un imperio derrotado se reinventa bajo ocupación extranjera y emerge, treinta años después, como la segunda economía del mundo — sin disparar un solo tiro.</p>
+      </div>
       <a class="card ready" href="japon/ocupacion-estadounidense/index.html" data-tema="politica economia">
         <div class="card-top"><span class="card-ref">NLD·JP·07</span><div class="topic-badges"><span class="topic-badge">Política</span><span class="topic-badge">Economía</span></div></div>
         <span class="tag">Publicado</span>
@@ -364,6 +393,12 @@
         <p>38 años de un solo partido en el poder: cómo políticos, burócratas de élite y conglomerados construyeron el "Triángulo de Hierro" que sostuvo el Sistema de 1955.</p>
         <span class="go">Leer cuaderno</span>
       </a>
+      <div class="acto-divider">
+        <span class="acto-num">Acto IV</span>
+        <span class="acto-title">La crisis del modelo japonés</span>
+        <span class="acto-years">1985–2012</span>
+        <p class="acto-blurb">El milagro que se creía eterno choca con su propia burbuja: dos décadas administrando un estancamiento que durante mucho tiempo nadie se atrevió a nombrar.</p>
+      </div>
       <a class="card ready" href="japon/acuerdo-del-plaza/index.html" data-tema="economia">
         <div class="card-top"><span class="card-ref">NLD·JP·10</span><span class="topic-badge">Economía</span></div>
         <span class="tag">Publicado</span>
@@ -385,6 +420,12 @@
         <p>La reforma electoral que prometía bipartidismo a la británica y terminó produciendo una oposición permanentemente atomizada y una nueva dinastía de políticos hereditarios.</p>
         <span class="go">Leer cuaderno</span>
       </a>
+      <div class="acto-divider">
+        <span class="acto-num">Acto V</span>
+        <span class="acto-title">Japón ante el siglo XXI</span>
+        <span class="acto-years">2012–2026</span>
+        <p class="acto-blurb">Entre la receta monetaria para revivir el crecimiento y la carrera por no depender del vecino, Japón vuelve a decidir qué clase de potencia quiere ser.</p>
+      </div>
       <a class="card ready" href="japon/abenomics/index.html" data-tema="economia">
         <div class="card-top"><span class="card-ref">NLD·JP·13</span><span class="topic-badge">Economía</span></div>
         <span class="tag">Publicado</span>
