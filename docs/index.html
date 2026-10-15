@@ -194,10 +194,12 @@
   }
   .acto-divider:hover .acto-years{letter-spacing:.09em; color:var(--region-accent, var(--gold));}
   .acto-blurb{
-    flex-basis:100%; font-size:.87rem; color:var(--warm-gray); font-weight:300; font-style:italic; line-height:1.62;
-    margin:.3rem 0 0; max-width:62ch; transition:color .4s ease;
+    flex-basis:100%; font-size:.87rem; color:var(--ink); font-weight:300; font-style:italic; line-height:1.62;
+    margin:.3rem 0 0; max-width:62ch;
+    opacity:0; transform:translateY(-3px); pointer-events:none;
+    transition:opacity .4s ease, transform .4s var(--ease-out);
   }
-  .acto-divider:hover .acto-blurb{color:var(--ink);}
+  .acto-divider:hover .acto-blurb{opacity:1; transform:translateY(0); pointer-events:auto;}
 
   /* ---------- Tarjeta especial (cierre de roadmap / bonus) — texto al color especial al hover ---------- */
   .card.card-special{--special-accent:#9E2B25;}
