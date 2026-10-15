@@ -174,33 +174,58 @@
   .region-block.china{--region-accent:var(--china-imperial);}
   .region-block.corea{--region-accent:var(--korea-celadon);}
 
-  /* ---------- Acto dividers: subdivisión narrativa dentro de un card-grid ---------- */
+  /* ---------- Actos plegables: cada Acto es un botón que revela sus cuadernos ---------- */
+  .acto-list{padding-bottom:.4rem;}
+  .acto + .acto{border-top:1px solid var(--line);}
   .acto-divider{
-    grid-column:1/-1; display:flex; align-items:baseline; flex-wrap:wrap; column-gap:1rem; row-gap:.2rem;
-    padding:1.7rem 0 1rem; margin-top:.2rem; border-top:1px solid var(--line);
-    transition:border-color .5s ease;
+    all:unset; box-sizing:border-box; width:100%; cursor:pointer;
+    display:flex; align-items:baseline; flex-wrap:wrap; column-gap:1rem; row-gap:.2rem;
+    padding:1.35rem 0 1.1rem;
   }
-  .acto-divider:first-child{border-top:none; padding-top:0; margin-top:0;}
-  .acto-divider:hover{border-color:color-mix(in srgb, var(--region-accent, var(--gold)) 45%, var(--line));}
+  .acto-divider:focus-visible{outline:2px solid var(--region-accent, var(--gold)); outline-offset:4px;}
   .acto-num{
     font-family:'Source Serif 4', serif; font-style:italic; font-weight:500; font-size:1.22rem; color:var(--region-accent, var(--gold));
     display:inline-block; transition:transform .4s var(--ease-out);
   }
-  .acto-divider:hover .acto-num{transform:translateX(3px);}
+  .acto-divider:hover .acto-num, .acto.open .acto-num{transform:translateX(3px);}
   .acto-title{font-family:'Source Serif 4', serif; font-weight:500; font-size:1.02rem; color:var(--editorial-black);}
   .acto-years{
     font-family:'IBM Plex Mono', monospace; font-size:.72rem; color:var(--stone); letter-spacing:.04em; margin-left:auto;
     opacity:0; transform:translateY(-3px); pointer-events:none;
     transition:opacity .4s ease, transform .4s var(--ease-out), letter-spacing .4s ease, color .4s ease;
   }
-  .acto-divider:hover .acto-years{opacity:1; transform:translateY(0); pointer-events:auto; letter-spacing:.09em; color:var(--region-accent, var(--gold));}
+  .acto-meta{display:inline-flex; align-items:center; gap:.7rem; font-family:'IBM Plex Mono', monospace; font-size:.7rem; color:var(--warm-gray); text-transform:uppercase; letter-spacing:.05em;}
+  .acto-dots{display:inline-flex; gap:.3rem;}
+  .acto-dots i{width:7px; height:7px; border-radius:50%; display:block;}
+  .acto-dots .d-pol{background:var(--japan-indigo);}
+  .acto-dots .d-eco{background:var(--gold);}
+  .acto-chev{width:9px; height:9px; border-right:1.5px solid var(--region-accent, var(--gold)); border-bottom:1.5px solid var(--region-accent, var(--gold)); transform:rotate(45deg) translate(-2px,-2px); transition:transform .4s var(--ease-out);}
+  .acto.open .acto-chev{transform:rotate(225deg) translate(-2px,-2px);}
   .acto-blurb{
-    flex-basis:100%; font-size:.87rem; color:var(--ink); font-weight:300; font-style:italic; line-height:1.62;
+    display:block; flex-basis:100%; font-size:.87rem; color:var(--ink); font-weight:300; font-style:italic; line-height:1.62;
     margin:.3rem 0 0; max-width:62ch;
-    opacity:0; transform:translateY(-3px); pointer-events:none;
+    opacity:0; transform:translateY(-3px);
     transition:opacity .4s ease, transform .4s var(--ease-out);
   }
-  .acto-divider:hover .acto-blurb{opacity:1; transform:translateY(0); pointer-events:auto;}
+  .acto{position:relative;}
+  /* cerrado: la bajada flota sobre el contenido (sin reservar espacio); abierto: queda en el flujo */
+  .acto:not(.open) .acto-blurb{
+    position:absolute; left:0; top:calc(100% - .6rem); z-index:5; pointer-events:none;
+    width:min(62ch, 100%); background:var(--ivory); border:1px solid var(--line);
+    box-shadow:0 10px 24px rgba(22,19,16,0.09); padding:.7rem 1rem .8rem; margin:0;
+  }
+  .acto-divider:hover .acto-years, .acto-divider:focus-visible .acto-years, .acto.open .acto-years{opacity:1; transform:translateY(0); letter-spacing:.09em; color:var(--region-accent, var(--gold));}
+  .acto-divider:hover .acto-blurb, .acto-divider:focus-visible .acto-blurb, .acto.open .acto-blurb{opacity:1; transform:translateY(0);}
+  @media (hover:none){ .acto-years{opacity:1; transform:none; pointer-events:auto;} }
+
+  .acto-panel{display:grid; grid-template-rows:1fr;}
+  .acto-cards{min-height:0; overflow:hidden; padding:.6rem 12px 1.8rem 4px; margin:0 -12px 0 -4px;}
+  .js .acto:not(.open) .acto-cards{padding-top:0; padding-bottom:0;}
+  .acto-cards{transition:padding .55s var(--ease-in-out);}
+  .js .acto-panel{grid-template-rows:0fr; visibility:hidden; transition:grid-template-rows .55s var(--ease-in-out), visibility 0s linear .55s;}
+  .js .acto.open .acto-panel{grid-template-rows:1fr; visibility:visible; transition:grid-template-rows .55s var(--ease-in-out), visibility 0s;}
+  @media (prefers-reduced-motion:reduce){ .js .acto-panel{transition:none;} .acto-num,.acto-years,.acto-blurb,.acto-chev{transition:none;} }
+  .acto-pending{margin-top:1.7rem;}
 
   /* ---------- Tarjeta especial (cierre de roadmap / bonus) — texto al color especial al hover ---------- */
   .card.card-special{--special-accent:#9E2B25;}
@@ -257,6 +282,7 @@
     main{padding:1rem 6vw 5rem;}
   }
 </style>
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 
@@ -321,13 +347,17 @@
       </div>
       <span class="count">15 de N temas</span>
     </div>
-    <div class="card-grid">
-      <div class="acto-divider">
-        <span class="acto-num">Acto I</span>
-        <span class="acto-title">Del orden feudal a la modernización</span>
-        <span class="acto-years">1603–1873</span>
-        <p class="acto-blurb">Un país que se cierra al mundo durante 250 años y lo abre a cañonazos — y que aprende, en apenas dos décadas, el oficio de las potencias que lo doblegaron.</p>
-      </div>
+    <div class="acto-list">
+      <div class="acto" id="acto-jp-1-wrap">
+        <button type="button" class="acto-divider" id="acto-jp-1-btn" aria-expanded="false" aria-controls="acto-jp-1">
+          <span class="acto-num">Acto I</span>
+          <span class="acto-title">Del orden feudal a la modernización</span>
+          <span class="acto-years">1603–1873</span>
+          <span class="acto-meta"><span class="acto-dots" aria-hidden="true"><i class="d-pol"></i><i class="d-eco"></i></span><span class="acto-count">4 cuadernos</span><span class="acto-chev" aria-hidden="true"></span></span>
+          <span class="acto-blurb">Un país que se cierra al mundo durante 250 años y lo abre a cañonazos — y que aprende, en apenas dos décadas, el oficio de las potencias que lo doblegaron.</span>
+        </button>
+        <div class="acto-panel" id="acto-jp-1" role="region" aria-labelledby="acto-jp-1-btn" inert>
+          <div class="acto-cards card-grid">
       <a class="card ready" href="japon/shogunato-tokugawa/index.html" data-tema="politica economia">
         <div class="card-top"><span class="card-ref">NLD·JP·00</span><div class="topic-badges"><span class="topic-badge">Política</span><span class="topic-badge">Economía</span></div></div>
         <span class="tag">Publicado</span>
@@ -356,12 +386,19 @@
         <p>El viaje de 21 meses por EE.UU. y Europa que la élite Meiji convirtió en manual de modernización, ruta, tensiones y legado.</p>
         <span class="go">Leer cuaderno</span>
       </a>
-      <div class="acto-divider">
-        <span class="acto-num">Acto II</span>
-        <span class="acto-title">La construcción de una potencia industrial</span>
-        <span class="acto-years">1870s–1930s</span>
-        <p class="acto-blurb">De los telares importados a los acorazados propios: la élite Meiji levanta un Estado industrial y, sin proponérselo del todo, el ejército que terminaría gobernándolo.</p>
+          </div>
+        </div>
       </div>
+      <div class="acto" id="acto-jp-2-wrap">
+        <button type="button" class="acto-divider" id="acto-jp-2-btn" aria-expanded="false" aria-controls="acto-jp-2">
+          <span class="acto-num">Acto II</span>
+          <span class="acto-title">La construcción de una potencia industrial</span>
+          <span class="acto-years">1870s–1930s</span>
+          <span class="acto-meta"><span class="acto-dots" aria-hidden="true"><i class="d-pol"></i><i class="d-eco"></i></span><span class="acto-count">3 cuadernos</span><span class="acto-chev" aria-hidden="true"></span></span>
+          <span class="acto-blurb">De los telares importados a los acorazados propios: la élite Meiji levanta un Estado industrial y, sin proponérselo del todo, el ejército que terminaría gobernándolo.</span>
+        </button>
+        <div class="acto-panel" id="acto-jp-2" role="region" aria-labelledby="acto-jp-2-btn" inert>
+          <div class="acto-cards card-grid">
       <a class="card ready" href="japon/industrializacion-meiji/index.html" data-tema="economia">
         <div class="card-top"><span class="card-ref">NLD·JP·04</span><span class="topic-badge">Economía</span></div>
         <span class="tag">Publicado</span>
@@ -383,12 +420,19 @@
         <p>Un vacío constitucional sobre el mando militar y el Incidente de Mukden bastan para que el ejército imponga su propia política exterior: la economía civil se militariza y Japón entra en la senda hacia la guerra total.</p>
         <span class="go">Leer cuaderno</span>
       </a>
-      <div class="acto-divider">
-        <span class="acto-num">Acto III</span>
-        <span class="acto-title">De la derrota a la potencia económica</span>
-        <span class="acto-years">1945–1993</span>
-        <p class="acto-blurb">Un imperio derrotado se reinventa bajo ocupación extranjera y emerge, treinta años después, como la segunda economía del mundo — sin disparar un solo tiro.</p>
+          </div>
+        </div>
       </div>
+      <div class="acto" id="acto-jp-3-wrap">
+        <button type="button" class="acto-divider" id="acto-jp-3-btn" aria-expanded="false" aria-controls="acto-jp-3">
+          <span class="acto-num">Acto III</span>
+          <span class="acto-title">De la derrota a la potencia económica</span>
+          <span class="acto-years">1945–1993</span>
+          <span class="acto-meta"><span class="acto-dots" aria-hidden="true"><i class="d-pol"></i><i class="d-eco"></i></span><span class="acto-count">3 cuadernos</span><span class="acto-chev" aria-hidden="true"></span></span>
+          <span class="acto-blurb">Un imperio derrotado se reinventa bajo ocupación extranjera y emerge, treinta años después, como la segunda economía del mundo — sin disparar un solo tiro.</span>
+        </button>
+        <div class="acto-panel" id="acto-jp-3" role="region" aria-labelledby="acto-jp-3-btn" inert>
+          <div class="acto-cards card-grid">
       <a class="card ready" href="japon/ocupacion-estadounidense/index.html" data-tema="politica economia">
         <div class="card-top"><span class="card-ref">NLD·JP·07</span><div class="topic-badges"><span class="topic-badge">Política</span><span class="topic-badge">Economía</span></div></div>
         <span class="tag">Publicado</span>
@@ -410,12 +454,19 @@
         <p>38 años de un solo partido en el poder: cómo políticos, burócratas de élite y conglomerados construyeron el "Triángulo de Hierro" que sostuvo el Sistema de 1955.</p>
         <span class="go">Leer cuaderno</span>
       </a>
-      <div class="acto-divider">
-        <span class="acto-num">Acto IV</span>
-        <span class="acto-title">La crisis del modelo japonés</span>
-        <span class="acto-years">1985–2012</span>
-        <p class="acto-blurb">El milagro que se creía eterno choca con su propia burbuja: dos décadas administrando un estancamiento que durante mucho tiempo nadie se atrevió a nombrar.</p>
+          </div>
+        </div>
       </div>
+      <div class="acto" id="acto-jp-4-wrap">
+        <button type="button" class="acto-divider" id="acto-jp-4-btn" aria-expanded="false" aria-controls="acto-jp-4">
+          <span class="acto-num">Acto IV</span>
+          <span class="acto-title">La crisis del modelo japonés</span>
+          <span class="acto-years">1985–2012</span>
+          <span class="acto-meta"><span class="acto-dots" aria-hidden="true"><i class="d-pol"></i><i class="d-eco"></i></span><span class="acto-count">3 cuadernos</span><span class="acto-chev" aria-hidden="true"></span></span>
+          <span class="acto-blurb">El milagro que se creía eterno choca con su propia burbuja: dos décadas administrando un estancamiento que durante mucho tiempo nadie se atrevió a nombrar.</span>
+        </button>
+        <div class="acto-panel" id="acto-jp-4" role="region" aria-labelledby="acto-jp-4-btn" inert>
+          <div class="acto-cards card-grid">
       <a class="card ready" href="japon/acuerdo-del-plaza/index.html" data-tema="economia">
         <div class="card-top"><span class="card-ref">NLD·JP·10</span><span class="topic-badge">Economía</span></div>
         <span class="tag">Publicado</span>
@@ -437,12 +488,19 @@
         <p>La reforma electoral que prometía bipartidismo a la británica y terminó produciendo una oposición permanentemente atomizada y una nueva dinastía de políticos hereditarios.</p>
         <span class="go">Leer cuaderno</span>
       </a>
-      <div class="acto-divider">
-        <span class="acto-num">Acto V</span>
-        <span class="acto-title">Japón ante el siglo XXI</span>
-        <span class="acto-years">2012–2026</span>
-        <p class="acto-blurb">Entre la receta monetaria para revivir el crecimiento y la carrera por no depender del vecino, Japón vuelve a decidir qué clase de potencia quiere ser.</p>
+          </div>
+        </div>
       </div>
+      <div class="acto" id="acto-jp-5-wrap">
+        <button type="button" class="acto-divider" id="acto-jp-5-btn" aria-expanded="false" aria-controls="acto-jp-5">
+          <span class="acto-num">Acto V</span>
+          <span class="acto-title">Japón ante el siglo XXI</span>
+          <span class="acto-years">2012–2026</span>
+          <span class="acto-meta"><span class="acto-dots" aria-hidden="true"><i class="d-pol"></i><i class="d-eco"></i></span><span class="acto-count">2 cuadernos</span><span class="acto-chev" aria-hidden="true"></span></span>
+          <span class="acto-blurb">Entre la receta monetaria para revivir el crecimiento y la carrera por no depender del vecino, Japón vuelve a decidir qué clase de potencia quiere ser.</span>
+        </button>
+        <div class="acto-panel" id="acto-jp-5" role="region" aria-labelledby="acto-jp-5-btn" inert>
+          <div class="acto-cards card-grid">
       <a class="card ready" href="japon/abenomics/index.html" data-tema="economia">
         <div class="card-top"><span class="card-ref">NLD·JP·13</span><span class="topic-badge">Economía</span></div>
         <span class="tag">Publicado</span>
@@ -457,6 +515,11 @@
         <p>De la coerción tecnológica contra Corea del Sur a una primera ministra nacionalista con supermayoría: cómo la seguridad económica se volvió el eje que reorganiza la política y la industria japonesas.</p>
         <span class="go">Leer cuaderno</span>
       </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-grid acto-pending">
       <div class="card pending">
         <div class="card-top"><span class="card-ref">NLD·JP·15</span></div>
         <span class="tag">En construcción</span>
@@ -481,13 +544,17 @@
       </div>
       <span class="count">17 de N temas</span>
     </div>
-    <div class="card-grid">
-      <div class="acto-divider">
-        <span class="acto-num">Acto I</span>
-        <span class="acto-title">El colapso del orden imperial</span>
-        <span class="acto-years">1750s–1911</span>
-        <p class="acto-blurb">Un imperio que se creía centro del mundo comercia bajo sus propias reglas, pierde ese control a cañonazos y termina viendo caer, en menos de siglo y medio, una dinastía de 267 años.</p>
-      </div>
+    <div class="acto-list">
+      <div class="acto" id="acto-cn-1-wrap">
+        <button type="button" class="acto-divider" id="acto-cn-1-btn" aria-expanded="false" aria-controls="acto-cn-1">
+          <span class="acto-num">Acto I</span>
+          <span class="acto-title">El colapso del orden imperial</span>
+          <span class="acto-years">1750s–1911</span>
+          <span class="acto-meta"><span class="acto-dots" aria-hidden="true"><i class="d-pol"></i><i class="d-eco"></i></span><span class="acto-count">4 cuadernos</span><span class="acto-chev" aria-hidden="true"></span></span>
+          <span class="acto-blurb">Un imperio que se creía centro del mundo comercia bajo sus propias reglas, pierde ese control a cañonazos y termina viendo caer, en menos de siglo y medio, una dinastía de 267 años.</span>
+        </button>
+        <div class="acto-panel" id="acto-cn-1" role="region" aria-labelledby="acto-cn-1-btn" inert>
+          <div class="acto-cards card-grid">
       <a class="card ready" href="china/sistema-canton/index.html" data-tema="economia">
         <div class="card-top"><span class="card-ref">NLD·CN·01</span><span class="topic-badge">Economía</span></div>
         <span class="tag">Publicado</span>
@@ -516,12 +583,19 @@
         <p>De la derrota ante Japón a la abdicación de Puyi: cómo dos mil años de monarquía imperial terminan en dieciséis años, y por qué el PCCh se presenta hoy como quien terminó esa revolución.</p>
         <span class="go">Leer cuaderno</span>
       </a>
-      <div class="acto-divider">
-        <span class="acto-num">Acto II</span>
-        <span class="acto-title">La búsqueda de un nuevo Estado</span>
-        <span class="acto-years">1912–1957</span>
-        <p class="acto-blurb">Sin emperador y sin un poder que lo reemplace, China ensaya repúblicas, caudillos y guerras hasta que un partido logra lo que nadie antes: volver a gobernar todo el territorio.</p>
+          </div>
+        </div>
       </div>
+      <div class="acto" id="acto-cn-2-wrap">
+        <button type="button" class="acto-divider" id="acto-cn-2-btn" aria-expanded="false" aria-controls="acto-cn-2">
+          <span class="acto-num">Acto II</span>
+          <span class="acto-title">La búsqueda de un nuevo Estado</span>
+          <span class="acto-years">1912–1957</span>
+          <span class="acto-meta"><span class="acto-dots" aria-hidden="true"><i class="d-pol"></i><i class="d-eco"></i></span><span class="acto-count">3 cuadernos</span><span class="acto-chev" aria-hidden="true"></span></span>
+          <span class="acto-blurb">Sin emperador y sin un poder que lo reemplace, China ensaya repúblicas, caudillos y guerras hasta que un partido logra lo que nadie antes: volver a gobernar todo el territorio.</span>
+        </button>
+        <div class="acto-panel" id="acto-cn-2" role="region" aria-labelledby="acto-cn-2-btn" inert>
+          <div class="acto-cards card-grid">
       <a class="card ready" href="china/republica-senores-guerra/index.html" data-tema="politica economia">
         <div class="card-top"><span class="card-ref">NLD·CN·05</span><div class="topic-badges"><span class="topic-badge">Política</span><span class="topic-badge">Economía</span></div></div>
         <span class="tag">Publicado</span>
@@ -543,12 +617,19 @@
         <p>De la hiperinflación y la devastación de la guerra al Primer Plan Quinquenal: cómo se construyó en ocho años el molde institucional —Constitución, Nomenklatura, Hukou, SOE— que China todavía opera.</p>
         <span class="go">Leer cuaderno</span>
       </a>
-      <div class="acto-divider">
-        <span class="acto-num">Acto III</span>
-        <span class="acto-title">La radicalización del proyecto socialista</span>
-        <span class="acto-years">1958–1978</span>
-        <p class="acto-blurb">La promesa de alcanzar a las potencias en una generación se vuelve experimento, hambruna y purga, hasta que el propio sistema empieza a preguntarse si el camino era el correcto.</p>
+          </div>
+        </div>
       </div>
+      <div class="acto" id="acto-cn-3-wrap">
+        <button type="button" class="acto-divider" id="acto-cn-3-btn" aria-expanded="false" aria-controls="acto-cn-3">
+          <span class="acto-num">Acto III</span>
+          <span class="acto-title">La radicalización del proyecto socialista</span>
+          <span class="acto-years">1958–1978</span>
+          <span class="acto-meta"><span class="acto-dots" aria-hidden="true"><i class="d-pol"></i><i class="d-eco"></i></span><span class="acto-count">3 cuadernos</span><span class="acto-chev" aria-hidden="true"></span></span>
+          <span class="acto-blurb">La promesa de alcanzar a las potencias en una generación se vuelve experimento, hambruna y purga, hasta que el propio sistema empieza a preguntarse si el camino era el correcto.</span>
+        </button>
+        <div class="acto-panel" id="acto-cn-3" role="region" aria-labelledby="acto-cn-3-btn" inert>
+          <div class="acto-cards card-grid">
       <a class="card ready" href="china/gran-salto-adelante/index.html" data-tema="economia">
         <div class="card-top"><span class="card-ref">NLD·CN·08</span><span class="topic-badge">Economía</span></div>
         <span class="tag">Publicado</span>
@@ -570,12 +651,19 @@
         <p>De la muerte de Mao y el arresto de la Banda de los Cuatro al Tercer Pleno de 1978: cómo un debate sobre "el criterio de la verdad" inauguró cuatro décadas de Reforma y Apertura.</p>
         <span class="go">Leer cuaderno</span>
       </a>
-      <div class="acto-divider">
-        <span class="acto-num">Acto IV</span>
-        <span class="acto-title">La reinvención económica</span>
-        <span class="acto-years">1978–2001</span>
-        <p class="acto-blurb">Cruzar el río tanteando las piedras: un país abre sus puertas por zonas, aprende el mercado sin renunciar al Partido y se prepara para entrar al club del comercio mundial.</p>
+          </div>
+        </div>
       </div>
+      <div class="acto" id="acto-cn-4-wrap">
+        <button type="button" class="acto-divider" id="acto-cn-4-btn" aria-expanded="false" aria-controls="acto-cn-4">
+          <span class="acto-num">Acto IV</span>
+          <span class="acto-title">La reinvención económica</span>
+          <span class="acto-years">1978–2001</span>
+          <span class="acto-meta"><span class="acto-dots" aria-hidden="true"><i class="d-pol"></i><i class="d-eco"></i></span><span class="acto-count">3 cuadernos</span><span class="acto-chev" aria-hidden="true"></span></span>
+          <span class="acto-blurb">Cruzar el río tanteando las piedras: un país abre sus puertas por zonas, aprende el mercado sin renunciar al Partido y se prepara para entrar al club del comercio mundial.</span>
+        </button>
+        <div class="acto-panel" id="acto-cn-4" role="region" aria-labelledby="acto-cn-4-btn" inert>
+          <div class="acto-cards card-grid">
       <a class="card ready" href="china/reforma-apertura/index.html" data-tema="economia">
         <div class="card-top"><span class="card-ref">NLD·CN·11</span><span class="topic-badge">Economía</span></div>
         <span class="tag">Publicado</span>
@@ -597,12 +685,19 @@
         <p>De la Gira del Sur de Deng a la entrada a la OMC: la reforma fiscal de 1994, el despido de 21 millones de trabajadores estatales y la construcción de la "fábrica del mundo".</p>
         <span class="go">Leer cuaderno</span>
       </a>
-      <div class="acto-divider">
-        <span class="acto-num">Acto V</span>
-        <span class="acto-title">China como potencia global</span>
-        <span class="acto-years">2001–2030</span>
-        <p class="acto-blurb">De fábrica del mundo a laboratorio tecnológico: la potencia que exporta manufacturas ahora disputa la frontera industrial y planifica, otra vez, a cinco años.</p>
+          </div>
+        </div>
       </div>
+      <div class="acto" id="acto-cn-5-wrap">
+        <button type="button" class="acto-divider" id="acto-cn-5-btn" aria-expanded="false" aria-controls="acto-cn-5">
+          <span class="acto-num">Acto V</span>
+          <span class="acto-title">China como potencia global</span>
+          <span class="acto-years">2001–2030</span>
+          <span class="acto-meta"><span class="acto-dots" aria-hidden="true"><i class="d-pol"></i><i class="d-eco"></i></span><span class="acto-count">3 cuadernos</span><span class="acto-chev" aria-hidden="true"></span></span>
+          <span class="acto-blurb">De fábrica del mundo a laboratorio tecnológico: la potencia que exporta manufacturas ahora disputa la frontera industrial y planifica, otra vez, a cinco años.</span>
+        </button>
+        <div class="acto-panel" id="acto-cn-5" role="region" aria-labelledby="acto-cn-5-btn" inert>
+          <div class="acto-cards card-grid">
       <a class="card ready" href="china/omc-potencia-manufacturera/index.html" data-tema="economia">
         <div class="card-top"><span class="card-ref">NLD·CN·14</span><span class="topic-badge">Economía</span></div>
         <span class="tag">Publicado</span>
@@ -631,6 +726,9 @@
         <p>El 12 de marzo de 2026, Pekín dejó de perseguir una cifra de crecimiento y empezó a perseguir su propia seguridad. Cierra el roadmap original de 16 temas de la serie China.</p>
         <span class="go">Leer cuaderno</span>
       </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -730,6 +828,27 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
 <script>
+  // Actos plegables
+  (function(){
+    function setOpen(wrap, open){
+      var btn=wrap.querySelector('.acto-divider'), panel=wrap.querySelector('.acto-panel');
+      wrap.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if(open){ panel.removeAttribute('inert'); } else { panel.setAttribute('inert',''); }
+    }
+    document.querySelectorAll('.acto').forEach(function(wrap){
+      wrap.querySelector('.acto-divider').addEventListener('click', function(){
+        setOpen(wrap, !wrap.classList.contains('open'));
+      });
+      wrap.querySelector('.acto-panel').addEventListener('transitionend', function(e){
+        if(e.propertyName==='grid-template-rows' && window.ScrollTrigger){ ScrollTrigger.refresh(); }
+      });
+    });
+    var h=location.hash && document.querySelector(location.hash+'-wrap');
+    if(h && h.classList.contains('acto')) setOpen(h,true);
+  })();
+</script>
+<script>
   gsap.registerPlugin(ScrollTrigger);
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var lenis;
@@ -766,7 +885,7 @@
       });
       gsap.from(region.querySelectorAll('.card'), {
         opacity: 0, y: 20, duration: 0.6, stagger: 0.08, ease: 'power1.out',
-        scrollTrigger: { trigger: region.querySelector('.card-grid'), start: 'top 88%', toggleActions: 'play none none reverse' }
+        scrollTrigger: { trigger: region.querySelector('.acto-list, .card-grid'), start: 'top 88%', toggleActions: 'play none none reverse' }
       });
     });
 
@@ -788,6 +907,7 @@
 
     window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
   }
+
 
   // ---------- Ceremonia de apertura: solo en la primera visita ----------
   (function(){
