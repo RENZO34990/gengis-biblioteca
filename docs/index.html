@@ -190,9 +190,10 @@
   .acto-title{font-family:'Source Serif 4', serif; font-weight:500; font-size:1.02rem; color:var(--editorial-black);}
   .acto-years{
     font-family:'IBM Plex Mono', monospace; font-size:.72rem; color:var(--stone); letter-spacing:.04em; margin-left:auto;
-    transition:letter-spacing .4s ease, color .4s ease;
+    opacity:0; transform:translateY(-3px); pointer-events:none;
+    transition:opacity .4s ease, transform .4s var(--ease-out), letter-spacing .4s ease, color .4s ease;
   }
-  .acto-divider:hover .acto-years{letter-spacing:.09em; color:var(--region-accent, var(--gold));}
+  .acto-divider:hover .acto-years{opacity:1; transform:translateY(0); pointer-events:auto; letter-spacing:.09em; color:var(--region-accent, var(--gold));}
   .acto-blurb{
     flex-basis:100%; font-size:.87rem; color:var(--ink); font-weight:300; font-style:italic; line-height:1.62;
     margin:.3rem 0 0; max-width:62ch;
