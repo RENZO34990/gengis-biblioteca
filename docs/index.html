@@ -54,14 +54,10 @@
     display:flex; flex-direction:column; align-items:center; justify-content:center;
     cursor:pointer; overflow:hidden;
   }
-  .ceremony-drop{
-    position:absolute; width:10px; height:10px; border-radius:50%;
-    background:var(--editorial-black); filter:blur(5px); opacity:0;
-  }
   .ceremony-word{
-    font-family:'Source Serif 4', serif; font-style:italic; font-weight:500;
-    font-size:clamp(2.8rem, 9vw, 6.4rem); color:var(--editorial-black);
-    margin:0; letter-spacing:.01em;
+    font-family:'Source Serif 4', serif; font-style:normal; font-weight:500; text-transform:uppercase;
+    font-size:clamp(2.4rem, 8.5vw, 5.8rem); color:var(--editorial-black);
+    margin:0; letter-spacing:.2em; padding-left:.2em;
     clip-path:inset(0 100% 0 0);
     filter:blur(0px);
   }
@@ -290,7 +286,6 @@
 <body>
 
 <div class="ceremony" id="ceremony">
-  <div class="ceremony-drop" id="ceremonyDrop"></div>
   <h1 class="ceremony-word" id="ceremonyWord">Nalanda</h1>
   <div class="ceremony-sub" id="ceremonySub">
     <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1106,24 +1101,15 @@
 
     document.body.style.overflow = 'hidden';
     var word = document.getElementById('ceremonyWord');
-    var drop = document.getElementById('ceremonyDrop');
     var sub = document.getElementById('ceremonySub');
     var skip = document.querySelector('.ceremony-skip');
     var finished = false;
-
-    // Posicionar la gota de tinta justo donde empieza la palabra
-    var wordRect = word.getBoundingClientRect();
-    drop.style.left = (wordRect.left - 6) + 'px';
-    drop.style.top = (wordRect.top + wordRect.height / 2 - 5) + 'px';
 
     // Secuencia principal — con más silencio, no apurada
     var tl = gsap.timeline();
     tl
       .to({}, { duration: 0.8 })                                                  // 1. pantalla casi vacía, silencio
-      .to(drop, { opacity: 1, scale: 2.2, duration: 0.7, ease: 'power1.out' })     // 2. cae la gota
-      .to({}, { duration: 0.35 })                                                  // pausa antes de escribir
-      .to(word, { clipPath: 'inset(0 0% 0 0)', duration: 2.1, ease: 'power2.inOut' }, '-=0.1') // 3. se escribe, despacio
-      .to(drop, { opacity: 0.5, scale: 1.4, duration: 0.9, ease: 'power1.inOut' }, '-=1.6')   // la tinta empieza a asentarse
+      .to(word, { clipPath: 'inset(0 0% 0 0)', duration: 2.1, ease: 'power2.inOut' })          // 2. se escribe NALANDA, despacio
       .to({}, { duration: 0.5 })
       .to(sub, { opacity: 1, duration: 0.8, ease: 'power1.out' })                  // 4. "by Club Kongzhi" + sello
       .to({}, { duration: 1.8 });                                                  // se queda un momento, sin apuro
@@ -1149,13 +1135,8 @@
 
       gsap.set(word, { position: 'fixed', left: fromRect.left, top: fromRect.top, margin: 0, zIndex: 1000 });
 
-      var dropFromRect = drop.getBoundingClientRect();
-      var dropDeltaX = (toRect.left - 26) - dropFromRect.left;
-      var dropDeltaY = (toRect.top - 4) - dropFromRect.top;
-
       var exit = gsap.timeline({
         onComplete: function(){
-          document.body.appendChild(drop);
           ceremony.style.display = 'none';
           word.removeAttribute('style');
           document.body.style.overflow = '';
@@ -1166,8 +1147,6 @@
         .to(ceremony, { backgroundColor: 'rgba(246,241,230,0)', duration: 1, ease: 'power1.inOut' }, 0)
         .to(skip, { opacity: 0, duration: 0.35 }, 0)
         .to(sub, { opacity: 0, y: -6, duration: 0.4 }, 0)
-        // la tinta no desaparece: se desplaza junto al título y se asienta ahí, permanente
-        .to(drop, { x: dropDeltaX, y: dropDeltaY, opacity: 0.13, scale: 0.55, duration: 1.1, ease: 'power1.inOut' }, 0)
         .to(word, {
           x: deltaX, y: deltaY, scale: scaleRatio, color: accentColor,
           duration: 1.05, ease: 'power2.inOut'
