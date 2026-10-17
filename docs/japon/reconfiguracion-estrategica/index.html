@@ -64,14 +64,14 @@
     user-select:none; z-index:0; line-height:1;
   }
   .hero-content{position:relative; z-index:2; max-width:660px;}
-  .hero-rule{width:48px; height:1px; background:var(--wood); margin-bottom:1.6rem;}
+  .hero-rule{width:48px; height:2px; background:var(--wood); margin-bottom:1.6rem;}
   h1.title-jp{
     font-family:'Shippori Mincho', serif; font-weight:400;
     font-size:clamp(1.8rem, 4vw, 2.9rem); line-height:1.3; margin:.4rem 0 .5rem; color:var(--ink);
   }
   .title-romaji{font-family:'IBM Plex Mono', monospace; font-size:.82rem; color:var(--ink-soft); letter-spacing:.02em; margin-bottom:2rem; line-height:1.6;}
   .hero-dek{font-size:1.1rem; max-width:560px; color:var(--ink-soft); font-weight:300; line-height:1.85;}
-  .hero-stats{display:flex; flex-wrap:wrap; margin-top:3.4rem; border-top:1px solid var(--line);}
+  .hero-stats{display:flex; flex-wrap:wrap; margin-top:3.2rem; border-top:1px solid var(--line);}
   .hero-stats div{padding:1.1rem 3rem 1.6rem 0; margin-right:1.4rem; border-right:1px solid var(--line); min-width:0;}
   .hero-stats div:last-child{border-right:none; padding-right:0;}
   .hero-stats .num{font-family:'Shippori Mincho', serif; font-weight:400; font-size:1.5rem; display:block; color:var(--vermillion);}
@@ -92,11 +92,11 @@
   .acto-title{font-family:'Zen Kaku Gothic New', sans-serif; font-weight:500; font-size:1.24rem; color:var(--ink);}
   .acto-date{font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--gold); white-space:nowrap; font-weight:500;}
   .acto-toggle{font-family:'IBM Plex Mono', monospace; font-size:.9rem; color:var(--vermillion); flex-shrink:0;}
-  .acto-teaser{color:var(--ink-soft); margin:.7rem 0 0; max-width:600px; font-weight:300;}
+  .acto-teaser{color:var(--ink-soft); margin:.7rem 0 0; max-width:620px; font-weight:300;}
   .acto-body{height:0; overflow:hidden; opacity:0;}
   .acto-body p{margin:0 0 1rem; color:var(--ink); max-width:660px; font-weight:300; line-height:1.85;}
   .acto-body strong{font-weight:500;}
-  .acto-body .quote{padding-left:1.1rem; border-left:2px solid var(--vermillion); color:var(--ink-soft); font-size:.98rem; margin-top:1.2rem; max-width:600px;}
+  .acto-body .quote{padding-left:1.1rem; border-left:2px solid var(--vermillion); color:var(--ink-soft); font-size:.98rem; margin-top:1.2rem; max-width:610px;}
 
   .flat-grid{display:grid; grid-template-columns:repeat(2, 1fr); gap:0; border-top:1px solid var(--line);}
   .flat-grid.cols-3{grid-template-columns:repeat(3, 1fr);}
@@ -139,6 +139,11 @@
     .nav-adjacent .next{text-align:left; align-items:flex-start;}
     section{padding:6vh 6vw;}
   }
+  .acto-figure[hidden]{display:none;}
+  .acto-figure{margin:1.8rem 0; border:1px solid var(--line); max-width:640px; background:var(--ink);}
+  .acto-figure img{width:100%; display:block; filter:sepia(.12) contrast(1.03); opacity:.94;}
+  .acto-figure figcaption{padding:.85rem 1.1rem; font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink-soft); border-top:1px solid var(--line); background:var(--paper);}
+  .acto-figure figcaption .credit{display:block; margin-top:.3rem; color:#8A8478; font-size:.76rem;}
 </style>
 </head>
 <body>
@@ -200,6 +205,12 @@
       <span class="acto-date">2014 – 2026</span>
       <p class="acto-teaser">La reinterpretación del Artículo 9, un nuevo Ministerio de Seguridad Económica, y la primera mujer en la historia como primera ministra con supermayoría parlamentaria.</p>
       <div class="acto-body">
+        <figure class="acto-figure">
+          <img src="../../assets/japon/reconfiguracion-estrategica/kantei.jpg" alt="Edificio del Kantei, residencia oficial del primer ministro de Japón." loading="lazy" onerror="this.closest('figure').hidden=true">
+          <figcaption>El Kantei, sede del gabinete, donde se centralizó la política de seguridad económica desde 2014.
+            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+          </figcaption>
+        </figure>
         <p>Bajo Shinzo Abe, el gabinete aprueba en 2014-2015 la reconfiguración legal de las leyes de seguridad para permitir el ejercicio de la defensa colectiva. Entre 2021 y 2025, el gobierno crea la cartera del Ministerio de Estado para la Seguridad Económica y reestructura METI para albergar el nuevo Buro de Comercio y Seguridad Económica, fusionando política industrial, seguridad nacional y control de exportaciones de alta tecnología.</p>
         <p>Tras el colapso del acuerdo de gobierno con el partido budista Komeito, <strong>Sanae Takaichi hace historia</strong> al convertirse en la primera mujer en asumir el cargo de primera ministra de Japón el 21 de octubre de 2025. Forma una nueva coalición con el Japan Innovation Party, disuelve la Dieta en enero de 2026 y obtiene una supermayoría de <strong>316 escaños</strong> en las elecciones de febrero de 2026: legitimidad suficiente para acelerar la reforma constitucional y la militarización tecnológica del país.</p>
       </div>
@@ -213,6 +224,12 @@
       <span class="acto-date">2022 – 2026</span>
       <p class="acto-teaser">El Estado vuelve a elegir sectores ganadores: semiconductores, IA, fusión nuclear, defensa. Rapidus, JASM y Mitsubishi Electric reciben miles de millones en subsidios.</p>
       <div class="acto-body">
+        <figure class="acto-figure">
+          <img src="../../assets/japon/reconfiguracion-estrategica/semiconductores-japon.jpg" alt="Planta de semiconductores TSMC–JASM en Kumamoto, Japón." loading="lazy" onerror="this.closest('figure').hidden=true">
+          <figcaption>La planta de semiconductores en Kumamoto (TSMC–JASM): el tipo de proyecto que Japón subsidia para no depender de una sola cadena.
+            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+          </figcaption>
+        </figure>
         <p>El Cuartel General de Estrategia de Crecimiento de Takaichi fija 17 industrias prioritarias para inversión masiva pública y privada: inteligencia artificial, semiconductores de próxima generación, energía nuclear y de fusión, computación cuántica, construcción naval y defensa. Para sectores de ciclo ultra-largo, el Estado establece planes de compras plurianuales y hojas de ruta de inversión a diez años; en diciembre de 2023, METI aprueba deducciones tributarias de hasta un 20% sobre producción y ventas en sectores estratégicos.</p>
         <p>La empresa estatal-privada Rapidus, en alianza con IBM, avanza hacia chips de 2 nanómetros; la megafábrica JASM en Kumamoto (TSMC, Sony, Denso) recibe más de $3,500 millones en subsidios estatales, reactivando clusters industriales en más de 25 prefecturas. Políticamente, la disolución de las facciones y el triunfo electoral de Takaichi concentran el control en la Oficina del Primer Ministro (Kantei), debilitando la antigua descentralización consensual del LDP, mientras Keidanren reconfigura su agenda para marchar en sintonía con las prioridades gubernamentales.</p>
       </div>

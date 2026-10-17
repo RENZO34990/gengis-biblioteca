@@ -74,7 +74,7 @@
   .hero-stats div{padding:1.1rem 3rem 1.6rem 0; margin-right:1.4rem; border-right:1px solid rgba(242,239,233,0.2); min-width:0;}
   .hero-stats div:last-child{border-right:none; padding-right:0;}
   .hero-stats .num{font-family:'Noto Serif SC', serif; font-weight:700; font-size:1.5rem; display:block; color:var(--gold);}
-  .hero-stats .lbl{font-family:'IBM Plex Mono', monospace; font-size:.8rem; color:rgba(242,239,233,0.7); display:block; margin-top:.3rem; max-width:160px;}
+  .hero-stats .lbl{font-family:'IBM Plex Mono', monospace; font-size:.8rem; color:rgba(242,239,233,0.7); display:block; margin-top:.3rem; max-width:150px;}
 
   section{padding:7vh 8vw; max-width:1080px; margin:0 auto;}
   .section-head{max-width:580px; margin-bottom:3.4rem;}
@@ -104,10 +104,10 @@
   /* ---------- Lista de competencias perdidas (acto 3) ---------- */
   .loss-list{margin:1.8rem 0; border-top:1px solid var(--line); padding-top:1.6rem; max-width:660px;}
   .loss-list-title{font-family:'IBM Plex Mono', monospace; font-size:.76rem; letter-spacing:.02em; color:var(--gold); margin-bottom:1.2rem; display:block;}
-  .loss-item{display:grid; grid-template-columns:28px 1fr; gap:1rem; padding:.9rem 0; border-top:1px solid var(--line);}
+  .loss-item{display:grid; grid-template-columns:28px 1fr; gap:1rem; padding:1.4rem 0; border-top:1px solid var(--line);}
   .loss-item:first-of-type{border-top:none;}
   .loss-mark{font-family:'Noto Serif SC', serif; font-weight:700; color:var(--vermillion);}
-  .loss-item h3{margin:0 0 .3rem; font-family:'Hanken Grotesk', sans-serif; font-weight:600; font-size:.98rem; color:var(--ink);}
+  .loss-item h3{margin:0 0 .4rem; font-family:'Hanken Grotesk', sans-serif; font-weight:600; font-size:.98rem; color:var(--ink);}
   .loss-item p{margin:0; font-size:.88rem; color:var(--ink-soft); line-height:1.65;}
 
   /* ---------- LEGADO ---------- */
@@ -144,6 +144,11 @@
     .loss-item{grid-template-columns:22px 1fr;}
     section{padding:6vh 6vw;}
   }
+  .acto-figure[hidden]{display:none;}
+  .acto-figure{margin:1.8rem 0; border:1px solid var(--line); max-width:640px; background:var(--ink);}
+  .acto-figure img{width:100%; display:block; filter:sepia(.12) contrast(1.03); opacity:.94;}
+  .acto-figure figcaption{padding:.85rem 1.1rem; font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink-soft); border-top:1px solid var(--line); background:var(--paper);}
+  .acto-figure figcaption .credit{display:block; margin-top:.3rem; color:#8A8478; font-size:.76rem;}
 </style>
 </head>
 <body>
@@ -193,6 +198,12 @@
       <span class="acto-date">1839 – 1860</span>
       <p class="acto-teaser">Gran Bretaña desencadena la Primera Guerra del Opio en 1840. Dos décadas de agresiones militares multilaterales después, quedó claro que el imperio no podía defender ni sus fronteras ni su autoridad.</p>
       <div class="acto-body">
+        <figure class="acto-figure">
+          <img src="../../assets/china/guerras-opio/nemesis-1841.jpg" alt="Pintura de la batalla de Chuenpi, con el vapor Nemesis destruyendo juncos chinos, 1841." loading="lazy" onerror="this.closest('figure').hidden=true">
+          <figcaption>El vapor Nemesis destruyendo juncos de guerra chinos en 1841: la tecnología de la Revolución Industrial frente a una flota de madera.
+            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+          </figcaption>
+        </figure>
         <p>La chispa de 1839 que ya conocemos por el Sistema de Cantón —Lin Zexu destruyendo los cofres de opio en Humen— se convirtió en 1840 en una guerra abierta. Gran Bretaña no entró a negociar: entró a combatir. Y lo que siguió hasta 1860, con nuevas rondas de agresión militar de varias potencias occidentales, dejó algo mucho más incómodo al descubierto que la pérdida de un puerto: la monarquía autocrática Qing, con su aparato militar feudal, sencillamente no podía defender el territorio imperial frente a ejércitos industriales.</p>
         <p>No fue una sola guerra ni una sola derrota. Fue una exhibición prolongada de vulnerabilidad institucional, repetida las veces suficientes como para que ninguna potencia extranjera dudara ya de que China podía ser presionada, una y otra vez, hasta obtener lo que quisieran por escrito.</p>
         <p class="quote">El problema ya no era el opio. Era que la corte Qing no tenía forma de decir que no.</p>
@@ -207,6 +218,12 @@
       <span class="acto-date">1842 – 1860</span>
       <p class="acto-teaser">Los Tratados Desiguales no solo cedieron puertos: desmontaron, cláusula por cláusula, la capacidad del Estado chino para gobernarse a sí mismo.</p>
       <div class="acto-body">
+        <figure class="acto-figure">
+          <img src="../../assets/china/guerras-opio/tratado-nankin.jpg" alt="Firma del Tratado de Nankín a bordo del HMS Cornwallis, 29 de agosto de 1842." loading="lazy" onerror="this.closest('figure').hidden=true">
+          <figcaption>La firma del Tratado de Nankín a bordo del HMS Cornwallis, el 29 de agosto de 1842: el primero de los "tratados desiguales".
+            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+          </figcaption>
+        </figure>
         <p>La derrota militar fue el punto de quiebre, pero el daño real quedó firmado en los tratados que las potencias impusieron entre el de Nanjing (1842) y las convenciones de 1858-1860. Ahí es donde China pierde, una por una, las competencias que definen a un Estado soberano.</p>
         <div class="loss-list">
           <span class="loss-list-title">Lo que el Estado Qing dejó de controlar</span>

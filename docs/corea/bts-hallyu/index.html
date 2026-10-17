@@ -63,14 +63,14 @@
     user-select:none; z-index:0; line-height:1;
   }
   .hero-content{position:relative; z-index:2; max-width:660px;}
-  .hero-rule{width:48px; height:1px; background:var(--celadon); margin-bottom:1.6rem;}
+  .hero-rule{width:48px; height:2px; background:var(--celadon); margin-bottom:1.6rem;}
   h1.title-kr{
     font-family:'Noto Serif KR', serif; font-weight:600;
     font-size:clamp(2.1rem, 4.6vw, 3.4rem); line-height:1.3; margin:.4rem 0 .5rem; color:var(--ink);
   }
   .title-rr{font-family:'IBM Plex Mono', monospace; font-size:.82rem; color:var(--ink-soft); letter-spacing:.02em; margin-bottom:2rem; line-height:1.6;}
   .hero-dek{font-size:1.1rem; max-width:560px; color:var(--ink-soft); font-weight:300; line-height:1.85;}
-  .hero-stats{display:flex; flex-wrap:wrap; margin-top:3.4rem; border-top:1px solid var(--line);}
+  .hero-stats{display:flex; flex-wrap:wrap; margin-top:3.2rem; border-top:1px solid var(--line);}
   .hero-stats div{padding:1.1rem 3rem 1.6rem 0; margin-right:1.4rem; border-right:1px solid var(--line); min-width:0;}
   .hero-stats div:last-child{border-right:none; padding-right:0;}
   .hero-stats .num{font-family:'Noto Serif KR', serif; font-weight:600; font-size:1.5rem; display:block; color:var(--terracota);}
@@ -91,12 +91,13 @@
   .acto-title{font-family:'Figtree', sans-serif; font-weight:600; font-size:1.24rem; color:var(--ink);}
   .acto-date{font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--celadon-deep); white-space:nowrap; font-weight:500;}
   .acto-toggle{font-family:'IBM Plex Mono', monospace; font-size:.9rem; color:var(--terracota); flex-shrink:0;}
-  .acto-teaser{color:var(--ink-soft); margin:.7rem 0 0; max-width:600px; font-weight:300;}
+  .acto-teaser{color:var(--ink-soft); margin:.7rem 0 0; max-width:620px; font-weight:300;}
   .acto-body{height:0; overflow:hidden; opacity:0;}
   .acto-body p{margin:0 0 1rem; color:var(--ink); max-width:660px; font-weight:300; line-height:1.85;}
   .acto-body strong{font-weight:600;}
-  .acto-body .quote{padding-left:1.1rem; border-left:2px solid var(--terracota); color:var(--ink-soft); font-size:.98rem; margin-top:1.2rem; max-width:600px;}
+  .acto-body .quote{padding-left:1.1rem; border-left:2px solid var(--terracota); color:var(--ink-soft); font-size:.98rem; margin-top:1.2rem; max-width:610px;}
 
+  .acto-figure[hidden]{display:none;}
   .acto-figure{margin:1.8rem 0; border:1px solid var(--line); max-width:640px; background:var(--ink);}
   .acto-figure img{width:100%; display:block; filter:saturate(1.05) contrast(1.02); opacity:.95;}
   .acto-figure figcaption{padding:.85rem 1.1rem; font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink-soft); border-top:1px solid var(--line); background:var(--paper); font-weight:300;}
@@ -215,7 +216,7 @@
       <p class="acto-teaser">Mientras el Estado reclasifica la cultura como industria exportadora y crea agencias y fondos para financiarla, una agencia fuera de las Big 3 apuesta por la autenticidad, la narrativa transmedia y la distribución digital directa.</p>
       <div class="acto-body">
         <figure class="acto-figure">
-          <img src="../../assets/corea/bts-hallyu/bts-2cool4skool-2013.jpg" alt="Portada del álbum debut de BTS, 2 Cool 4 Skool, 2013" loading="lazy">
+          <img src="../../assets/corea/bts-hallyu/bts-2cool4skool-2013.jpg" alt="Portada del álbum debut de BTS, 2 Cool 4 Skool, 2013" loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>2 Cool 4 Skool, el álbum debut de junio de 2013: estética hip-hop crítica del sistema educativo, el punto de partida de Big Hit fuera de las reglas de las Big 3.</figcaption>
         </figure>
         <p><strong>Reclasificación industrial (1994):</strong> bajo Kim Young-sam, el recién creado Buró de la Industria Cultural reclasificó la producción audiovisual como industria manufacturera, otorgándole acceso a incentivos fiscales, subsidios crediticios y exenciones antes reservados a las fábricas.</p>
@@ -243,7 +244,7 @@
           <p class="chart-note">En 2017, BTS fue responsable directa e indirectamente del 1.7% de todas las exportaciones de bienes de consumo de Corea del Sur.</p>
         </div>
         <figure class="acto-figure">
-          <img src="../../assets/corea/bts-hallyu/bts-onu-2021.jpg" alt="BTS en la Asamblea General de las Naciones Unidas, septiembre de 2021" loading="lazy">
+          <img src="../../assets/corea/bts-hallyu/bts-onu-2021.jpg" alt="BTS en la Asamblea General de las Naciones Unidas, septiembre de 2021" loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>BTS ante la Asamblea General de la ONU, septiembre de 2021, como Enviados Especiales Presidenciales para las Generaciones Futuras y la Cultura.</figcaption>
         </figure>
         <p>HYBE cotizó en la bolsa de Seúl como la empresa de entretenimiento más valiosa por capitalización bursátil; entre 2020 y 2021, BTS generó entre el 70% y el 92% de sus ingresos totales. El Instituto de Investigación Hyundai estimó que 1 de cada 13 turistas internacionales que visitaron Corea en 2017 (cerca de 800,000 personas) lo hizo motivado directamente por BTS, y su concierto en Busan en 2022 atrajo a más de 503,000 visitantes en diez días, con un impacto local estimado en más de $760 millones de dólares. El presidente Moon Jae-in nombró a sus miembros Enviados Especiales Presidenciales para las Generaciones Futuras y la Cultura, con intervenciones ante la Asamblea General de la ONU y un encuentro en la Casa Blanca con el presidente Joe Biden.</p>
@@ -262,7 +263,7 @@
         <p>Cuando HYBE anunció en junio de 2022 la suspensión temporal de actividades grupales para cumplir con el servicio militar obligatorio, su capitalización bursátil cayó un 25% en un solo día —unos $1,300 millones de dólares—. La diversificación hacia proyectos solistas y la fortaleza del ecosistema de fans evitaron el colapso del sector.</p>
         <p class="quote">NH Investment & Securities (2026) documentó que el 84% de los fans globales que eran adolescentes o jóvenes en la década anterior están ingresando a sus 30s y 40s con mayor capacidad adquisitiva: "ARMY-nomics" proyecta un flujo adicional de 4.3 millones de turistas anuales hacia 2040, con ingresos turísticos de entre $3,300 y $13,400 millones de dólares y un aporte continuo de entre 0.1% y 0.35% al PIB surcoreano.</p>
         <figure class="acto-figure">
-          <img src="../../assets/corea/bts-hallyu/arirang-tour-lima-2026.jpg" alt="Afiche promocional del Arirang World Tour de BTS en Lima, Estadio San Marcos, octubre de 2026" loading="lazy">
+          <img src="../../assets/corea/bts-hallyu/arirang-tour-lima-2026.jpg" alt="Afiche promocional del Arirang World Tour de BTS en Lima, Estadio San Marcos, octubre de 2026" loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Arirang World Tour, Lima: tres fechas agotadas en el Estadio San Marcos en octubre de 2026 — el eco del fenómeno llega literalmente al campus de la UNMSM.</figcaption>
         </figure>
         <p>Tras la finalización del servicio militar de todos sus miembros, las acciones de HYBE repuntaron a máximos de cuatro años (₩398,500) en enero de 2026. La gira mundial Arirang World Tour de 2026, con más de 4 millones de asistentes proyectados, estima un impacto de entre $1,300 y $1,870 millones de dólares, rivalizando en eficiencia por espectáculo con la Eras Tour de Taylor Swift. Las sedes del Instituto King Sejong se expandieron a 256 campus en 88 países con más de 210,000 estudiantes, y los exámenes oficiales de lengua coreana (TOPIK) se multiplicaron por 108 desde el despegue de Hallyu.</p>

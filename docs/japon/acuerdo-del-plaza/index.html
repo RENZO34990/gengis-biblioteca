@@ -64,14 +64,14 @@
     user-select:none; z-index:0; line-height:1;
   }
   .hero-content{position:relative; z-index:2; max-width:660px;}
-  .hero-rule{width:48px; height:1px; background:var(--wood); margin-bottom:1.6rem;}
+  .hero-rule{width:48px; height:2px; background:var(--wood); margin-bottom:1.6rem;}
   h1.title-jp{
     font-family:'Shippori Mincho', serif; font-weight:400;
     font-size:clamp(2.1rem, 4.6vw, 3.4rem); line-height:1.25; margin:.4rem 0 .5rem; color:var(--ink);
   }
   .title-romaji{font-family:'IBM Plex Mono', monospace; font-size:.82rem; color:var(--ink-soft); letter-spacing:.02em; margin-bottom:2rem; line-height:1.6;}
   .hero-dek{font-size:1.1rem; max-width:560px; color:var(--ink-soft); font-weight:300; line-height:1.85;}
-  .hero-stats{display:flex; flex-wrap:wrap; margin-top:3.4rem; border-top:1px solid var(--line);}
+  .hero-stats{display:flex; flex-wrap:wrap; margin-top:3.2rem; border-top:1px solid var(--line);}
   .hero-stats div{padding:1.1rem 3rem 1.6rem 0; margin-right:1.4rem; border-right:1px solid var(--line); min-width:0;}
   .hero-stats div:last-child{border-right:none; padding-right:0;}
   .hero-stats .num{font-family:'Shippori Mincho', serif; font-weight:400; font-size:1.5rem; display:block; color:var(--vermillion);}
@@ -92,11 +92,11 @@
   .acto-title{font-family:'Zen Kaku Gothic New', sans-serif; font-weight:500; font-size:1.24rem; color:var(--ink);}
   .acto-date{font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--gold); white-space:nowrap; font-weight:500;}
   .acto-toggle{font-family:'IBM Plex Mono', monospace; font-size:.9rem; color:var(--vermillion); flex-shrink:0;}
-  .acto-teaser{color:var(--ink-soft); margin:.7rem 0 0; max-width:600px; font-weight:300;}
+  .acto-teaser{color:var(--ink-soft); margin:.7rem 0 0; max-width:620px; font-weight:300;}
   .acto-body{height:0; overflow:hidden; opacity:0;}
   .acto-body p{margin:0 0 1rem; color:var(--ink); max-width:660px; font-weight:300; line-height:1.85;}
   .acto-body strong{font-weight:500;}
-  .acto-body .quote{padding-left:1.1rem; border-left:2px solid var(--vermillion); color:var(--ink-soft); font-size:.98rem; margin-top:1.2rem; max-width:600px;}
+  .acto-body .quote{padding-left:1.1rem; border-left:2px solid var(--vermillion); color:var(--ink-soft); font-size:.98rem; margin-top:1.2rem; max-width:610px;}
 
   .chart-block{margin:1.8rem 0; border-top:1px solid var(--line); padding-top:1.6rem; max-width:640px;}
   .chart-title{font-family:'IBM Plex Mono', monospace; font-size:.76rem; letter-spacing:.02em; color:var(--gold); margin-bottom:1.4rem;}
@@ -148,6 +148,11 @@
     .nav-adjacent .next{text-align:left; align-items:flex-start;}
     section{padding:6vh 6vw;}
   }
+  .acto-figure[hidden]{display:none;}
+  .acto-figure{margin:1.8rem 0; border:1px solid var(--line); max-width:640px; background:var(--ink);}
+  .acto-figure img{width:100%; display:block; filter:sepia(.12) contrast(1.03); opacity:.94;}
+  .acto-figure figcaption{padding:.85rem 1.1rem; font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink-soft); border-top:1px solid var(--line); background:var(--paper);}
+  .acto-figure figcaption .credit{display:block; margin-top:.3rem; color:#8A8478; font-size:.76rem;}
 </style>
 </head>
 <body>
@@ -196,6 +201,12 @@
       <span class="acto-date">sep 1985 – 1987</span>
       <p class="acto-teaser">Cinco potencias pactan devaluar el dólar frente al yen. La apreciación resultante es tan violenta que hunde a la industria exportadora en una recesión inmediata.</p>
       <div class="acto-body">
+        <figure class="acto-figure">
+          <img src="../../assets/japon/acuerdo-del-plaza/hotel-plaza-1985.jpg" alt="El hotel Plaza en Nueva York, sede del acuerdo de septiembre de 1985." loading="lazy" onerror="this.closest('figure').hidden=true">
+          <figcaption>El hotel Plaza de Nueva York, donde el G5 firmó el 22 de septiembre de 1985 el acuerdo que duplicó el valor del yen en tres años.
+            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+          </figcaption>
+        </figure>
         <p>Presionados por la amenaza de restricciones comerciales en EE. UU., los ministros de finanzas de EE. UU., Japón, Alemania Occidental, Francia y el Reino Unido firman el 22 de septiembre de 1985 un pacto en el Hotel Plaza de Nueva York: el dólar debía depreciarse frente al yen mediante intervenciones coordinadas en los mercados cambiarios.</p>
         <div class="chart-block">
           <div class="chart-title">Yenes por dólar, 1985-1987</div>
@@ -230,6 +241,12 @@
       <span class="acto-date">1989 – 1991</span>
       <p class="acto-teaser">El Nikkei toca los 38,915 puntos en diciembre de 1989. Nueve meses después, el BOJ sube las tasas al 6% y la burbuja revienta en cadena.</p>
       <div class="acto-body">
+        <figure class="acto-figure">
+          <img src="../../assets/japon/acuerdo-del-plaza/tokio-burbuja.jpg" alt="Distrito financiero de Marunouchi, Tokio, finales de los años 80." loading="lazy" onerror="this.closest('figure').hidden=true">
+          <figcaption>Tokio en la cima de la burbuja: en 1989 los terrenos del Palacio Imperial valían, según se decía, más que toda California.
+            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+          </figcaption>
+        </figure>
         <p>Los precios de la tierra en Tokio suben un 122% en zonas comerciales en un solo año (1986); para 1989, el metro cuadrado en Ginza alcanza los 30 millones de yenes, y los 1.15 km² del Palacio Imperial llegan a valorarse más que todo el estado de California.</p>
         <div class="chart-block">
           <div class="chart-title">Índice Nikkei 225, puntos</div>

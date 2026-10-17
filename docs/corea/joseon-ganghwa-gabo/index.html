@@ -75,8 +75,8 @@
   .title-romaja{font-family:'IBM Plex Mono', monospace; font-size:.82rem; color:rgba(245,243,238,0.72); letter-spacing:.02em; margin-bottom:2rem; line-height:1.6;}
   .hero-dek{font-size:1.06rem; max-width:560px; color:rgba(245,243,238,0.9); font-weight:400; line-height:1.85;}
   .hero-stats{display:flex; flex-wrap:wrap; margin-top:3.2rem; border-top:1px solid rgba(245,243,238,0.2);}
-  .hero-stats div{padding:1.1rem 1.8rem 1.6rem 0; margin-right:1rem; border-right:1px solid rgba(245,243,238,0.2);}
-  .hero-stats div:last-child{border-right:none;}
+  .hero-stats div{padding:1.1rem 3rem 1.6rem 0; margin-right:1.4rem; border-right:1px solid rgba(245,243,238,0.2);}
+  .hero-stats div:last-child{border-right:none; padding-right:0;}
   .hero-stats .num{font-family:'Gothic A1', sans-serif; font-weight:700; font-size:1.5rem; display:block; color:var(--terracota-light);}
   .hero-stats .lbl{font-family:'IBM Plex Mono', monospace; font-size:.78rem; color:rgba(245,243,238,0.7); display:block; margin-top:.3rem; max-width:150px;}
 
@@ -87,7 +87,7 @@
 
   /* ---------- Divisor Cheonjiin (círculo + línea + línea) ---------- */
   .divider-motif{display:flex; justify-content:center; align-items:center; gap:1.4rem; padding:3vh 0; opacity:.5;}
-  .divider-motif svg{display:block;}
+  .divider-motif svg{display:block; width:220px; height:16px;}
 
   /* ---------- ACTOS ---------- */
   .acto{border-top:1px solid var(--line); padding:2.6rem 0; display:grid; grid-template-columns:100px 1fr; gap:2.4rem; cursor:pointer; transition:transform 160ms cubic-bezier(0.23,1,0.32,1);}
@@ -108,7 +108,7 @@
 
   /* ---------- Listas de ruptura / de reformas ---------- */
   .loss-list{margin:1.6rem 0; border-top:1px solid var(--line); max-width:640px;}
-  .loss-item{padding:1.3rem 0; border-bottom:1px solid var(--line);}
+  .loss-item{padding:1.4rem 0; border-bottom:1px solid var(--line);}
   .loss-item h3{margin:0 0 .4rem; font-family:'Gothic A1', sans-serif; font-weight:600; font-size:1rem; color:var(--celadon-deep);}
   .loss-item h3 .when{font-family:'IBM Plex Mono', monospace; font-weight:500; font-size:.76rem; color:var(--terracota-deep); margin-right:.7rem; letter-spacing:.02em;}
   .loss-item p{margin:0; font-size:.94rem; color:var(--ink-soft); line-height:1.75;}
@@ -151,6 +151,11 @@
     .nav-adjacent .next{text-align:left; align-items:flex-start;}
     section{padding:6vh 6vw;}
   }
+  .acto-figure[hidden]{display:none;}
+  .acto-figure{margin:1.8rem 0; border:1px solid var(--line); max-width:640px; background:var(--ink);}
+  .acto-figure img{width:100%; display:block; filter:sepia(.12) contrast(1.03); opacity:.94;}
+  .acto-figure figcaption{padding:.85rem 1.1rem; font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink-soft); border-top:1px solid var(--line); background:var(--paper);}
+  .acto-figure figcaption .credit{display:block; margin-top:.3rem; color:#8A8478; font-size:.76rem;}
 </style>
 </head>
 <body>
@@ -200,6 +205,12 @@
       <span class="acto-date">1875 – 1876</span>
       <p class="acto-teaser">Tras el incidente del buque Un'yō, Japón impone a Joseon el primer tratado desigual de su historia: lo declara "independiente" de China y le abre los puertos.</p>
       <div class="acto-body">
+        <figure class="acto-figure">
+          <img src="../../assets/corea/joseon-ganghwa-gabo/tratado-ganghwa.jpg" alt="Escena de la firma del Tratado de Ganghwa en 1876." loading="lazy" onerror="this.closest('figure').hidden=true">
+          <figcaption>Las delegaciones de Corea y Japón en la isla de Ganghwa en febrero de 1876: el tratado que abrió tres puertos y redefinió el país.
+            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+          </figcaption>
+        </figure>
         <p>En febrero de 1876, la Armada del Imperio del Japón obligó a Joseon a firmar el Tratado de Ganghwa mediante la llamada "diplomacia de cañoneras", tras el incidente del buque Un'yō de 1875. Fue el primer tratado desigual impuesto a Corea. Su cláusula más sutil era diplomática: declaraba a Joseon "Estado independiente", un título pensado para romper el vasallaje tributario con la China Qing.</p>
         <div class="loss-list">
           <div class="loss-item"><h3>Tres puertos abiertos</h3><p>Busan, Incheon y Wonsan quedaron abiertos al comercio japonés, que además obtuvo exenciones aduaneras temporales y derechos de navegación costera.</p></div>
@@ -218,6 +229,12 @@
       <span class="acto-date">1894 – 1897</span>
       <p class="acto-teaser">Una revuelta campesina, una guerra entre China y Japón y un gabinete modernizador producen el paquete de reformas más drástico que intentó Corea: el fin del orden yangban y el nacimiento de una economía monetaria.</p>
       <div class="acto-body">
+        <figure class="acto-figure">
+          <img src="../../assets/corea/joseon-ganghwa-gabo/gojong.jpg" alt="Retrato del rey Gojong de Corea, hacia 1900." loading="lazy" onerror="this.closest('figure').hidden=true">
+          <figcaption>El rey Gojong, que en 1897 proclamó el Imperio Coreano buscando equilibrar entre Japón, Rusia y China.
+            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+          </figcaption>
+        </figure>
         <p>Las Reformas Gabo (1894–1896) surgieron en el cruce de dos choques. Por un lado, la Revolución Campesina Donghak, una insurrección antifeudal y antiimperialista cuya represión provocó en 1894 la intervención armada de China y Japón. Por otro, la victoria japonesa en la Primera Guerra Sino-Japonesa. Con Japón supervisando e influyendo, un gabinete de reformistas, los Gaehwapa, inspirados en la Restauración Meiji y en modelos occidentales, promulgó el paquete.</p>
         <div class="loss-list">
           <div class="loss-item"><h3>Fin del orden yangban</h3><p>Se abolieron legalmente el estatus aristocrático, la servidumbre feudal y la esclavitud, y terminó el sistema de exámenes confucianos.</p></div>

@@ -64,14 +64,14 @@
     user-select:none; z-index:0; line-height:1;
   }
   .hero-content{position:relative; z-index:2; max-width:660px;}
-  .hero-rule{width:48px; height:1px; background:var(--wood); margin-bottom:1.6rem;}
+  .hero-rule{width:48px; height:2px; background:var(--wood); margin-bottom:1.6rem;}
   h1.title-jp{
     font-family:'Shippori Mincho', serif; font-weight:400;
     font-size:clamp(2.1rem, 4.6vw, 3.4rem); line-height:1.25; margin:.4rem 0 .5rem; color:var(--ink);
   }
   .title-romaji{font-family:'IBM Plex Mono', monospace; font-size:.82rem; color:var(--ink-soft); letter-spacing:.02em; margin-bottom:2rem; line-height:1.6;}
   .hero-dek{font-size:1.1rem; max-width:560px; color:var(--ink-soft); font-weight:300; line-height:1.85;}
-  .hero-stats{display:flex; flex-wrap:wrap; margin-top:3.4rem; border-top:1px solid var(--line);}
+  .hero-stats{display:flex; flex-wrap:wrap; margin-top:3.2rem; border-top:1px solid var(--line);}
   .hero-stats div{padding:1.1rem 3rem 1.6rem 0; margin-right:1.4rem; border-right:1px solid var(--line); min-width:0;}
   .hero-stats div:last-child{border-right:none; padding-right:0;}
   .hero-stats .num{font-family:'Shippori Mincho', serif; font-weight:400; font-size:1.5rem; display:block; color:var(--vermillion);}
@@ -92,11 +92,11 @@
   .acto-title{font-family:'Zen Kaku Gothic New', sans-serif; font-weight:500; font-size:1.24rem; color:var(--ink);}
   .acto-date{font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--gold); white-space:nowrap; font-weight:500;}
   .acto-toggle{font-family:'IBM Plex Mono', monospace; font-size:.9rem; color:var(--vermillion); flex-shrink:0;}
-  .acto-teaser{color:var(--ink-soft); margin:.7rem 0 0; max-width:600px; font-weight:300;}
+  .acto-teaser{color:var(--ink-soft); margin:.7rem 0 0; max-width:620px; font-weight:300;}
   .acto-body{height:0; overflow:hidden; opacity:0;}
   .acto-body p{margin:0 0 1rem; color:var(--ink); max-width:660px; font-weight:300; line-height:1.85;}
   .acto-body strong{font-weight:500;}
-  .acto-body .quote{padding-left:1.1rem; border-left:2px solid var(--vermillion); color:var(--ink-soft); font-size:.98rem; margin-top:1.2rem; max-width:600px;}
+  .acto-body .quote{padding-left:1.1rem; border-left:2px solid var(--vermillion); color:var(--ink-soft); font-size:.98rem; margin-top:1.2rem; max-width:610px;}
 
   .flat-grid{display:grid; grid-template-columns:repeat(2, 1fr); gap:0; border-top:1px solid var(--line);}
   .flat-grid.cols-3{grid-template-columns:repeat(3, 1fr);}
@@ -139,6 +139,11 @@
     .nav-adjacent .next{text-align:left; align-items:flex-start;}
     section{padding:6vh 6vw;}
   }
+  .acto-figure[hidden]{display:none;}
+  .acto-figure{margin:1.8rem 0; border:1px solid var(--line); max-width:640px; background:var(--ink);}
+  .acto-figure img{width:100%; display:block; filter:sepia(.12) contrast(1.03); opacity:.94;}
+  .acto-figure figcaption{padding:.85rem 1.1rem; font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink-soft); border-top:1px solid var(--line); background:var(--paper);}
+  .acto-figure figcaption .credit{display:block; margin-top:.3rem; color:#8A8478; font-size:.76rem;}
 </style>
 </head>
 <body>
@@ -187,6 +192,12 @@
       <span class="acto-date">1993</span>
       <p class="acto-teaser">Tras el fracaso de una reforma interna, un grupo de legisladores liderado por Ozawa Ichirō se escinde del LDP: el oficialismo pierde su mayoría por primera vez desde 1955.</p>
       <div class="acto-body">
+        <figure class="acto-figure">
+          <img src="../../assets/japon/fragmentacion-politica/ozawa-1993.jpg" alt="Ozawa Ichirō en 1993, año en que rompió con el LDP." loading="lazy" onerror="this.closest('figure').hidden=true">
+          <figcaption>Ozawa Ichirō, el arquitecto de la ruptura de 1993 que terminó con 38 años de gobierno del LDP.
+            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+          </figcaption>
+        </figure>
         <p>Tras el fracaso del gabinete del LDP en aprobar reformas políticas que subsanaran la indignación popular por los escándalos de corrupción, un grupo de legisladores reformistas liderado por Ozawa Ichirō y Hata Tsutomu decide escindirse del partido oficialista y fundar el Partido de la Renovación (Shinseitō) con 44 partidarios.</p>
         <p class="quote">Este cisma provoca que el LDP pierda su mayoría absoluta en las elecciones generales de 1993. Por primera vez desde su fundación, el LDP es desplazado del poder: una coalición heterogénea de ocho partidos de oposición forma gobierno bajo el primer ministro Morihiro Hosokawa.</p>
       </div>
@@ -200,6 +211,12 @@
       <span class="acto-date">29 ene 1994</span>
       <p class="acto-teaser">El gabinete de coalición reemplaza el sistema SNTV/MMD por uno mixto, pensado para forzar un bipartidismo a la británica y abaratar las campañas.</p>
       <div class="acto-body">
+        <figure class="acto-figure">
+          <img src="../../assets/japon/fragmentacion-politica/dieta-nacional.jpg" alt="Edificio de la Dieta Nacional de Japón, Tokio." loading="lazy" onerror="this.closest('figure').hidden=true">
+          <figcaption>La Dieta Nacional, donde el 29 de enero de 1994 se aprobó la reforma electoral que cambió las reglas de la competencia.
+            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+          </figcaption>
+        </figure>
         <p>El gabinete de coalición de Hosokawa asume la reforma del sistema político como su principal razón de ser. Tras intensas negociaciones, el 29 de enero de 1994 se aprueba la ley de reforma electoral: reemplaza por completo el sistema SNTV/MMD por uno mixto en la Cámara de Representantes, dividido en 300 escaños de distritos uninominales (SMD, elegidos por mayoría simple) y 200 escaños —luego reducidos a 180— de representación proporcional regional (PR).</p>
         <p>El propósito explícito es forzar la consolidación de un sistema bipartidista que permita la alternancia en el poder, abaratar las campañas electorales y transicionar la competencia de una lucha personalista de prebendas locales a campañas nacionales centradas en las marcas partidarias.</p>
       </div>

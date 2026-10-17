@@ -74,7 +74,7 @@
   .hero-stats div{padding:1.1rem 3rem 1.6rem 0; margin-right:1.4rem; border-right:1px solid rgba(242,239,233,0.2); min-width:0;}
   .hero-stats div:last-child{border-right:none; padding-right:0;}
   .hero-stats .num{font-family:'Noto Serif SC', serif; font-weight:700; font-size:1.5rem; display:block; color:var(--gold);}
-  .hero-stats .lbl{font-family:'IBM Plex Mono', monospace; font-size:.8rem; color:rgba(242,239,233,0.7); display:block; margin-top:.3rem; max-width:160px;}
+  .hero-stats .lbl{font-family:'IBM Plex Mono', monospace; font-size:.8rem; color:rgba(242,239,233,0.7); display:block; margin-top:.3rem; max-width:150px;}
 
   section{padding:7vh 8vw; max-width:1080px; margin:0 auto;}
   .section-head{max-width:580px; margin-bottom:3.4rem;}
@@ -102,6 +102,7 @@
   .acto-body .quote{padding-left:1.1rem; border-left:2px solid var(--gold); color:var(--ink-soft); font-size:.98rem; margin-top:1.2rem; max-width:610px; font-style:normal;}
 
   /* ---------- Figuras históricas ---------- */
+  .acto-figure[hidden]{display:none;}
   .acto-figure{margin:1.8rem 0; border:1px solid var(--line); max-width:640px; background:var(--ink);}
   .acto-figure img{width:100%; display:block; filter:sepia(.12) contrast(1.03); opacity:.94;}
   .acto-figure figcaption{padding:.85rem 1.1rem; font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink-soft); border-top:1px solid var(--line); background:var(--paper);}
@@ -179,7 +180,7 @@
         <p>Puertas adentro, la incapacidad de la corte para defender las fronteras o modernizar sus propias estructuras erosionaba una legitimidad que ya venía golpeada. Y mientras eso pasaba, algo nuevo empezaba a crecer en los márgenes: una incipiente burguesía nacional y una clase de intelectuales que había empezado a leer sobre ideas constitucionales y republicanas occidentales, y a preguntarse por qué China no podía tener algo parecido.</p>
         <p class="quote">La dinastía seguía sentada en el trono. El problema era que cada vez gobernaba un país más pequeño dentro de su propio país.</p>
         <figure class="acto-figure">
-          <img src="../../assets/china/cixi-emperatriz.jpg" alt="Retrato de la emperatriz viuda Cixi, regente de facto de la dinastía Qing" loading="lazy">
+          <img src="../../assets/china/cixi-emperatriz.jpg" alt="Retrato de la emperatriz viuda Cixi, regente de facto de la dinastía Qing" loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>La emperatriz viuda Cixi, c. 1890 — la figura que concentró el poder real de la corte Qing durante las últimas décadas de la dinastía.
             <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
           </figcaption>
@@ -199,7 +200,7 @@
         <p>De ahí salió, en 1898, la Reforma de los Cien Días (Wuxu bianfa): un intento real de modernizar el aparato imperial, liderado por intelectuales como Kang Youwei y Liang Qichao. No llegó lejos. La facción conservadora de la corte, encabezada por la emperatriz viuda Cixi, lo sofocó violentamente antes de que pudiera asentarse.</p>
         <p class="quote">La corte tuvo, literalmente, cien días para decidir si se reformaba o se quedaba igual. Eligió quedarse igual, y esa elección le costaría trece años más de vida.</p>
         <figure class="acto-figure">
-          <img src="../../assets/china/reforma-cien-dias.jpg" alt="Kang Youwei, intelectual reformista que lideró la Reforma de los Cien Días de 1898" loading="lazy">
+          <img src="../../assets/china/reforma-cien-dias.jpg" alt="Kang Youwei, intelectual reformista que lideró la Reforma de los Cien Días de 1898" loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Kang Youwei, uno de los principales impulsores de la Reforma de los Cien Días de 1898, sofocada por la facción conservadora de la corte.
             <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
           </figcaption>
@@ -219,7 +220,7 @@
         <p>El punto de quiebre irreversible llegó en noviembre de 1911 con el Levantamiento de Wuchang, que desencadenó la Revolución de Xinhai, coordinada por las fuerzas nacionalistas y republicanas de Sun Yat-sen. Incapaz de contener la insurrección, la corte recurrió al general Yuan Shikai, comandante del poderoso Ejército de Beiyang, nombrándolo primer ministro. Yuan negoció directamente con los revolucionarios y con la emperatriz viuda Longyu la abdicación oficial del último emperador, Puyi, en marzo de 1912.</p>
         <p class="quote">Más de dos mil años de monarquía imperial autocrática terminaron no en una gran batalla final, sino en una negociación firmada por el mismo general al que la corte había recurrido para salvarse.</p>
         <figure class="acto-figure">
-          <img src="../../assets/china/revolucion-xinhai-1911.jpg" alt="Soldados revolucionarios durante la Revolución de Xinhai, noviembre de 1911" loading="lazy">
+          <img src="../../assets/china/revolucion-xinhai-1911.jpg" alt="Soldados revolucionarios durante la Revolución de Xinhai, noviembre de 1911" loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Fuerzas revolucionarias durante la Revolución de Xinhai, 1911 — el levantamiento que forzó la abdicación imperial cuatro meses después.
             <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
           </figcaption>
@@ -239,7 +240,7 @@
         <p>La nobleza manchú perdió sus privilegios dinásticos de la noche a la mañana, reemplazada por una alianza inestable entre caudillos militares regionales y la burguesía nacional. Y las potencias imperialistas, lejos de retirarse ante el cambio de régimen, mantuvieron sus privilegios y concesiones aduaneras negociando directamente con los señores de la guerra locales —lo que impidió cualquier reunificación efectiva del país y lo dividió en facciones militares.</p>
         <p class="quote">China dejó de tener emperador. No por eso dejó de tener amos: solo cambiaron de uniforme.</p>
         <figure class="acto-figure">
-          <img src="../../assets/china/puyi-abdicacion.jpg" alt="El emperador Puyi, niño en el trono, poco antes de la abdicación de marzo de 1912" loading="lazy">
+          <img src="../../assets/china/puyi-abdicacion.jpg" alt="El emperador Puyi, niño en el trono, poco antes de la abdicación de marzo de 1912" loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Puyi, el último emperador de China, en los años previos a su abdicación forzada en marzo de 1912.
             <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
           </figcaption>

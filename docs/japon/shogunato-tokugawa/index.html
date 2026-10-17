@@ -64,14 +64,14 @@
     user-select:none; z-index:0; line-height:1;
   }
   .hero-content{position:relative; z-index:2; max-width:660px;}
-  .hero-rule{width:48px; height:1px; background:var(--wood); margin-bottom:1.6rem;}
+  .hero-rule{width:48px; height:2px; background:var(--wood); margin-bottom:1.6rem;}
   h1.title-jp{
     font-family:'Shippori Mincho', serif; font-weight:400;
     font-size:clamp(2.6rem, 6vw, 4.6rem); line-height:1.2; margin:.4rem 0 .5rem; color:var(--ink);
   }
   .title-romaji{font-family:'IBM Plex Mono', monospace; font-size:.85rem; color:var(--ink-soft); letter-spacing:.02em; margin-bottom:2rem; line-height:1.6;}
   .hero-dek{font-size:1.1rem; max-width:560px; color:var(--ink-soft); font-weight:300; line-height:1.85;}
-  .hero-stats{display:flex; flex-wrap:wrap; margin-top:3.4rem; border-top:1px solid var(--line);}
+  .hero-stats{display:flex; flex-wrap:wrap; margin-top:3.2rem; border-top:1px solid var(--line);}
   .hero-stats div{padding:1.1rem 3rem 1.6rem 0; margin-right:1.4rem; border-right:1px solid var(--line); min-width:0;}
   .hero-stats div:last-child{border-right:none; padding-right:0;}
   .hero-stats .num{font-family:'Shippori Mincho', serif; font-weight:400; font-size:1.5rem; display:block; color:var(--vermillion);}
@@ -83,7 +83,7 @@
   .lede{font-size:1.02rem; color:var(--ink-soft); font-weight:300; margin-top:1rem;}
 
   .divider-motif{display:flex; justify-content:center; padding:2vh 0; opacity:.5;}
-  .divider-motif svg{width:180px; height:14px;}
+  .divider-motif svg{width:220px; height:16px;}
 
   .acto{border-top:1px solid var(--line); padding:2.6rem 0; display:grid; grid-template-columns:100px 1fr; gap:2.4rem; cursor:pointer; transition:transform 160ms cubic-bezier(0.23,1,0.32,1);}
   .acto:last-child{border-bottom:1px solid var(--line);}
@@ -95,12 +95,13 @@
   .acto-title{font-family:'Zen Kaku Gothic New', sans-serif; font-weight:500; font-size:1.24rem; color:var(--ink);}
   .acto-date{font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--gold); white-space:nowrap; font-weight:500;}
   .acto-toggle{font-family:'IBM Plex Mono', monospace; font-size:.9rem; color:var(--vermillion); flex-shrink:0;}
-  .acto-teaser{color:var(--ink-soft); margin:.7rem 0 0; max-width:600px; font-weight:300;}
+  .acto-teaser{color:var(--ink-soft); margin:.7rem 0 0; max-width:620px; font-weight:300;}
   .acto-body{height:0; overflow:hidden; opacity:0;}
   .acto-body p{margin:0 0 1rem; color:var(--ink); max-width:660px; font-weight:300; line-height:1.85;}
   .acto-body strong{font-weight:500;}
-  .acto-body .quote{padding-left:1.1rem; border-left:2px solid var(--vermillion); color:var(--ink-soft); font-size:.98rem; margin-top:1.2rem; max-width:600px;}
+  .acto-body .quote{padding-left:1.1rem; border-left:2px solid var(--vermillion); color:var(--ink-soft); font-size:.98rem; margin-top:1.2rem; max-width:610px;}
 
+  .acto-figure[hidden]{display:none;}
   .acto-figure{margin:1.8rem 0; border:1px solid var(--line); max-width:640px; background:var(--ink);}
   .acto-figure img{width:100%; display:block; filter:sepia(.12) contrast(1.03); opacity:.94;}
   .acto-figure figcaption{padding:.85rem 1.1rem; font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink-soft); border-top:1px solid var(--line); background:var(--paper); font-weight:300;}
@@ -181,7 +182,7 @@
       <div class="acto-body">
         <p>Durante más de dos siglos, Japón vive bajo un sistema semi-feudal dominado por el shogunato (bakufu) de la dinastía Tokugawa. Para consolidar su control político y erradicar la influencia cristiana, los Tokugawa implementan desde el siglo XVII una rígida política de aislamiento internacional (sakoku), formalizada en el Edicto de Sakoku de 1635. Los súbditos tienen prohibido salir del archipiélago, y el comercio extranjero queda confinado a Nagasaki, principalmente con holandeses y chinos.</p>
         <figure class="acto-figure">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/DejimaInNagasakiBay.jpg" alt="Pintura del comercio entre japoneses y holandeses en la isla artificial de Dejima, bahía de Nagasaki, 1820" loading="lazy">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/DejimaInNagasakiBay.jpg" alt="Pintura del comercio entre japoneses y holandeses en la isla artificial de Dejima, bahía de Nagasaki, 1820" loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Comercio japonés-holandés en Dejima, la isla artificial en la bahía de Nagasaki por donde pasaba todo el contacto autorizado con Occidente, c. 1820.
             <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
           </figcaption>
@@ -201,7 +202,7 @@
       <div class="acto-body">
         <p>El catalizador definitivo llega en julio de 1853: el comodoro Matthew Perry, al mando de sus "barcos negros" fuertemente artillados, entra en la bahía de Tokio por orden directa del presidente Millard Fillmore, exigiendo a punta de cañón que Japón abra sus puertos al comercio y a la presencia diplomática occidental.</p>
         <figure class="acto-figure">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Japanese%201854%20print%20Commodore%20Perry.jpg" alt="Grabado japonés de 1854 representando la flota del comodoro Perry" loading="lazy">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Japanese%201854%20print%20Commodore%20Perry.jpg" alt="Grabado japonés de 1854 representando la flota del comodoro Perry" loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Grabado japonés de la flota de Perry, 1854, publicado en Edo para saciar la curiosidad pública sobre los extranjeros que acababan de forzar la apertura del país.
             <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
           </figcaption>
@@ -221,7 +222,7 @@
         <p>El giro no es solo resistencia militar: es una paradoja estratégica, adoptar métodos occidentales para mantener fuera a Occidente y preservar la esencia nacional. Para defenderse del expansionismo ruso en el norte, el shogunato financia expediciones científicas modernas, como la del explorador Mamiya Rinzō, usando las herramientas cartográficas europeas para fijar límites territoriales reconocibles ante las potencias extranjeras.</p>
         <p>Se reconoce que la fortaleza espiritual sin poder material era inútil: la élite política empieza a estudiar y traducir leyes, modelos de soberanía y adelantos técnicos occidentales. Esa corriente modernizadora culmina en 1867-1868, cuando jóvenes samuráis de Satsuma y Chōshū deponen definitivamente al bakufu Tokugawa y restituyen el poder político al Emperador.</p>
         <figure class="acto-figure">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Battle%20of%20Toba%E2%80%93Fushimi.jpg" alt="Representación de la Batalla de Toba-Fushimi, enero de 1868, entre fuerzas imperiales y del shogunato" loading="lazy">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Battle%20of%20Toba%E2%80%93Fushimi.jpg" alt="Representación de la Batalla de Toba-Fushimi, enero de 1868, entre fuerzas imperiales y del shogunato" loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>La Batalla de Toba-Fushimi, enero de 1868, la derrota decisiva del ejército del shogunato frente a la alianza Satsuma-Chōshū, el punto sin retorno de la Restauración.
             <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
           </figcaption>
@@ -239,7 +240,7 @@
       <div class="acto-body">
         <p>Tras la deposición de Tokugawa Yoshinobu y la proclamación de la Restauración Meiji en 1868, se sientan las bases de un Estado-nación moderno: se abolen los dominios feudales y las distinciones hereditarias de clase, concentrando la administración en un poder ejecutivo central unificado.</p>
         <figure class="acto-figure">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mutsuhito-Emperor-Meiji-1873.png" alt="Retrato oficial del Emperador Meiji, 1873, fotografiado por Uchida Kuichi" loading="lazy">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mutsuhito-Emperor-Meiji-1873.png" alt="Retrato oficial del Emperador Meiji, 1873, fotografiado por Uchida Kuichi" loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Retrato oficial del Emperador Meiji, 1873, por Uchida Kuichi, el único fotógrafo autorizado a fotografiar al Emperador, considerado hasta entonces una figura casi invisible para el pueblo.
             <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
           </figcaption>

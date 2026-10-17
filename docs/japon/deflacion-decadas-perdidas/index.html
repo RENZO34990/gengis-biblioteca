@@ -64,14 +64,14 @@
     user-select:none; z-index:0; line-height:1;
   }
   .hero-content{position:relative; z-index:2; max-width:660px;}
-  .hero-rule{width:48px; height:1px; background:var(--wood); margin-bottom:1.6rem;}
+  .hero-rule{width:48px; height:2px; background:var(--wood); margin-bottom:1.6rem;}
   h1.title-jp{
     font-family:'Shippori Mincho', serif; font-weight:400;
     font-size:clamp(2.1rem, 4.6vw, 3.4rem); line-height:1.25; margin:.4rem 0 .5rem; color:var(--ink);
   }
   .title-romaji{font-family:'IBM Plex Mono', monospace; font-size:.82rem; color:var(--ink-soft); letter-spacing:.02em; margin-bottom:2rem; line-height:1.6;}
   .hero-dek{font-size:1.1rem; max-width:560px; color:var(--ink-soft); font-weight:300; line-height:1.85;}
-  .hero-stats{display:flex; flex-wrap:wrap; margin-top:3.4rem; border-top:1px solid var(--line);}
+  .hero-stats{display:flex; flex-wrap:wrap; margin-top:3.2rem; border-top:1px solid var(--line);}
   .hero-stats div{padding:1.1rem 3rem 1.6rem 0; margin-right:1.4rem; border-right:1px solid var(--line); min-width:0;}
   .hero-stats div:last-child{border-right:none; padding-right:0;}
   .hero-stats .num{font-family:'Shippori Mincho', serif; font-weight:400; font-size:1.5rem; display:block; color:var(--vermillion);}
@@ -92,11 +92,11 @@
   .acto-title{font-family:'Zen Kaku Gothic New', sans-serif; font-weight:500; font-size:1.24rem; color:var(--ink);}
   .acto-date{font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--gold); white-space:nowrap; font-weight:500;}
   .acto-toggle{font-family:'IBM Plex Mono', monospace; font-size:.9rem; color:var(--vermillion); flex-shrink:0;}
-  .acto-teaser{color:var(--ink-soft); margin:.7rem 0 0; max-width:600px; font-weight:300;}
+  .acto-teaser{color:var(--ink-soft); margin:.7rem 0 0; max-width:620px; font-weight:300;}
   .acto-body{height:0; overflow:hidden; opacity:0;}
   .acto-body p{margin:0 0 1rem; color:var(--ink); max-width:660px; font-weight:300; line-height:1.85;}
   .acto-body strong{font-weight:500;}
-  .acto-body .quote{padding-left:1.1rem; border-left:2px solid var(--vermillion); color:var(--ink-soft); font-size:.98rem; margin-top:1.2rem; max-width:600px;}
+  .acto-body .quote{padding-left:1.1rem; border-left:2px solid var(--vermillion); color:var(--ink-soft); font-size:.98rem; margin-top:1.2rem; max-width:610px;}
 
   .chart-block{margin:1.8rem 0; border-top:1px solid var(--line); padding-top:1.6rem; max-width:640px;}
   .chart-title{font-family:'IBM Plex Mono', monospace; font-size:.76rem; letter-spacing:.02em; color:var(--gold); margin-bottom:1.4rem;}
@@ -148,6 +148,11 @@
     .nav-adjacent .next{text-align:left; align-items:flex-start;}
     section{padding:6vh 6vw;}
   }
+  .acto-figure[hidden]{display:none;}
+  .acto-figure{margin:1.8rem 0; border:1px solid var(--line); max-width:640px; background:var(--ink);}
+  .acto-figure img{width:100%; display:block; filter:sepia(.12) contrast(1.03); opacity:.94;}
+  .acto-figure figcaption{padding:.85rem 1.1rem; font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink-soft); border-top:1px solid var(--line); background:var(--paper);}
+  .acto-figure figcaption .credit{display:block; margin-top:.3rem; color:#8A8478; font-size:.76rem;}
 </style>
 </head>
 <body>
@@ -196,6 +201,12 @@
       <span class="acto-date">1989 – 1991</span>
       <p class="acto-teaser">El Banco de Japón sube las tasas del 2.5% al 6% para frenar la especulación. El mercado bursátil e inmobiliario colapsa de inmediato, y con él, el valor de las garantías bancarias.</p>
       <div class="acto-body">
+        <figure class="acto-figure">
+          <img src="../../assets/japon/deflacion-decadas-perdidas/boj-sede.jpg" alt="Sede del Banco de Japón en Nihonbashi, Tokio." loading="lazy" onerror="this.closest('figure').hidden=true">
+          <figcaption>La sede del Banco de Japón, desde donde las alzas de tasas de 1989–1990 pincharon la burbuja.
+            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+          </figcaption>
+        </figure>
         <div class="chart-block">
           <div class="chart-title">Índice Nikkei 225, puntos</div>
           <div class="chart-bars">
@@ -231,6 +242,12 @@
       <span class="acto-date">1992 – 2002</span>
       <p class="acto-teaser">El retraso en resolver la deuda incobrable termina provocando lo que se quería evitar: el colapso de firmas financieras centenarias, y una generación entera de graduados sin empleo estable.</p>
       <div class="acto-body">
+        <figure class="acto-figure">
+          <img src="../../assets/japon/deflacion-decadas-perdidas/yamaichi-quiebra.jpg" alt="Directivo de Yamaichi Securities llorando en la conferencia de prensa del cierre, 1997." loading="lazy" onerror="this.closest('figure').hidden=true">
+          <figcaption>La quiebra de Yamaichi Securities en 1997: la imagen del colapso bancario de los años 90.
+            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+          </figcaption>
+        </figure>
         <p>El crecimiento real promedio del PIB, que superaba el 4% en la preguerra, cae a un anémico 1.14% anual entre 1991 y 2003. En noviembre de 1997 quiebran sucesivamente Sanyo Securities, el banco regional Hokkaido Takushoku Bank y la centenaria firma bursátil Yamaichi Securities, seguidos por la nacionalización del Long-Term Credit Bank of Japan en 1998.</p>
         <p>Debido al desplome de los presupuestos de I+D y a la falta de inversión de capital interno, las grandes corporaciones de electrónica de consumo e informática —Sony, Panasonic, Toshiba, Sharp— comienzan a perder su liderazgo global ante competidores más dinámicos de Corea del Sur, Taiwán y China. El desempleo, históricamente marginal en Japón, escala hasta su máximo histórico del 5.4% en 2002: los jóvenes graduados universitarios de los noventa viven la época del "Glaciar del Empleo", sin poder acceder a empleos regulares estables.</p>
       </div>
