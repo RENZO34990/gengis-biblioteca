@@ -167,6 +167,8 @@
     section{padding:6vh 6vw;}
   }
 </style>
+<!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
+<style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(201,166,62,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Noto Serif SC', serif; --v-body:'Hanken Grotesk', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
 </head>
 <body>
 <a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
@@ -202,7 +204,19 @@
       <span class="acto-date">antes de 2026</span>
       <p class="acto-teaser">Deuda inmobiliaria, plataformas de financiamiento local opacas y un mundo cada vez más proteccionista agotan el viejo manual de crecimiento.</p>
       <div class="acto-body">
-        <p>En los años previos al 15º Plan Quinquenal, la economía china enfrentaba una desaceleración estructural tras décadas de crecimiento impulsado por el sector inmobiliario y la inversión pesada. El país acumulaba desequilibrios internos complejos: la prolongada crisis del mercado inmobiliario, el endeudamiento opaco de las Plataformas de Financiamiento de los Gobiernos Locales (LGFV) y la fragilidad de instituciones financieras pequeñas e intermedias, junto con presión sobre el desempleo juvenil urbano y un consumo doméstico rezagado frente a la capacidad instalada de producción.</p>
+        <!--vis--><div class="vis" data-vis="flow">
+          <p class="vis-one"><small>En una frase</small>El crecimiento de antes ya no alcanzaba: había desequilibrios adentro y bloqueos afuera.</p>
+          <div class="vis-card">
+            <div class="v-flow">
+              <div class="v-node"><span class="v-k">Adentro</span><h4>Crisis inmobiliaria</h4><p>Deuda opaca de los gobiernos locales y consumo rezagado.</p></div>
+              <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-node"><span class="v-k">Adentro</span><h4>Empleo juvenil</h4><p>Presión sobre el desempleo urbano.</p></div>
+              <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-node"><span class="v-k">Afuera</span><h4>Contención tecnológica</h4><p>Proteccionismo y límites a los semiconductores.</p></div>
+            </div>
+          </div>
+        </div><!--/vis-->
+        <p>En los años previos al 15º Plan Quinquenal, la economía china enfrentaba una desaceleración estructural tras décadas de crecimiento impulsado por el sector inmobiliario y la inversión pesada. El país acumulaba desequilibrios internos complejos: la prolongada crisis del mercado inmobiliario, el endeudamiento opaco de las Plataformas de Financiamiento de los Gobiernos Locales (<span class="gl" tabindex="0">LGFV<span class="gl-def" role="note">Plataformas de Financiamiento de los Gobiernos Locales: vehículos con deuda opaca.</span></span>) y la fragilidad de instituciones financieras pequeñas e intermedias, junto con presión sobre el desempleo juvenil urbano y un consumo doméstico rezagado frente a la capacidad instalada de producción.</p>
         <p class="quote">En el frente internacional, el auge del unilateralismo y el proteccionismo en Occidente, junto a la contención tecnológica sobre eslabones críticos como los semiconductores, demostró que el crecimiento externo ya no bastaba para contrarrestar los riesgos acumulados en el interior.</p>
       </div>
     </div>
@@ -215,9 +229,19 @@
       <span class="acto-date">12 de marzo de 2026</span>
       <p class="acto-teaser">La Asamblea Popular Nacional aprueba el 15º Plan Quinquenal reconociendo que las oportunidades estratégicas coexisten con amenazas de alta impredecibilidad.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="versus">
+          <p class="vis-one"><small>En una frase</small>Del volumen de producción a la resiliencia: así cambió el plan.</p>
+          <div class="vis-card">
+            <div class="v-versus">
+              <div class="v-col before"><h4>Antes</h4><ul><li>Meta de crecimiento rígida</li><li>Enfoque en el volumen bruto</li></ul></div>
+              <svg class="v-vs" viewBox="0 0 34 24" aria-hidden="true"><path d="M2 12h26M20 4l10 8-10 8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-col after"><h4>Desde las Dos Sesiones, 12 mar 2026</h4><ul><li>Meta flexible de 4.5%–5%</li><li>Resiliencia, soberanía tecnológica y control de riesgos</li></ul></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <figure class="acto-figure">
           <img src="../../assets/china/15-plan-quinquenal/npc-sesion.jpg" alt="Sesión plenaria de la Asamblea Popular Nacional en el Gran Salón del Pueblo, Beijing." loading="lazy" onerror="this.closest('figure').hidden=true">
-          <figcaption>El 12 de marzo de 2026, la Asamblea Popular Nacional aprobó formalmente el 15º Plan Quinquenal durante las "Dos Sesiones" anuales en el Gran Salón del Pueblo.
+          <figcaption>El 12 de marzo de 2026, la Asamblea Popular Nacional aprobó formalmente el 15º Plan Quinquenal durante las "<span class="gl" tabindex="0">Dos Sesiones<span class="gl-def" role="note">Reuniones anuales de marzo de la Asamblea Popular Nacional y su órgano consultivo.</span></span>" anuales en el Gran Salón del Pueblo.
             <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
           </figcaption>
         </figure>
@@ -234,6 +258,16 @@
       <span class="acto-date">2026</span>
       <p class="acto-teaser">Meta de PIB flexible, I+D por encima del 7% anual, alerta temprana de riesgos y una política activa para "impulsar con fuerza el consumo".</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="stats">
+          <p class="vis-one"><small>En una frase</small>Menos PIB, más laboratorio.</p>
+          <div class="vis-card">
+            <div class="v-stats" style="--n:3">
+              <div class="v-stat"><span class="v-num">4.5–5%</span><span class="v-lbl">objetivo de crecimiento anual, por debajo del 5% anterior</span></div>
+              <div class="v-stat"><span class="v-num">>7%</span><span class="v-lbl">de I+D anual como meta central</span></div>
+              <div class="v-stat"><span class="v-num">1.3 billones</span><span class="v-lbl">de yuanes en bonos especiales del tesoro a ultra largo plazo</span></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <figure class="acto-figure">
           <img src="../../assets/china/15-plan-quinquenal/tsmc-fab.jpg" alt="Sala limpia de una planta de fabricación de semiconductores de 300mm." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>El interior de una sala limpia de una fábrica de semiconductores de 300mm: la soberanía de cadenas de suministro críticas es uno de los cinco pilares del nuevo plan.
@@ -242,7 +276,7 @@
         </figure>
         <div class="loss-list">
           <div class="loss-item"><h3>Moderación y flexibilidad del PIB (4.5%–5%)</h3><p>Se redujo el objetivo de crecimiento anual frente al 5% del plan anterior, liberando a las autoridades de desplegar estímulos monetarios o inmobiliarios de corto plazo para cumplir una cifra.</p></div>
-          <div class="loss-item"><h3>Nuevas Fuerzas Productivas de Calidad (NQPF)</h3><p>Meta central de ruptura científica para elevar la Productividad Total de los Factores: I+D superior al 7% anual y expansión masiva de la política "AI Plus" — inteligencia multimodal, computación cuántica, biotecnología, nuevas energías.</p></div>
+          <div class="loss-item"><h3><span class="gl" tabindex="0">Nuevas Fuerzas Productivas de Calidad<span class="gl-def" role="note">Meta de ruptura científica para elevar la productividad, con I+D y política &quot;AI Plus&quot;.</span></span> (NQPF)</h3><p>Meta central de ruptura científica para elevar la Productividad Total de los Factores: I+D superior al 7% anual y expansión masiva de la política "AI Plus" — inteligencia multimodal, computación cuántica, biotecnología, nuevas energías.</p></div>
           <div class="loss-item"><h3>Aparato de Alerta Temprana</h3><p>Sistemas transversales de monitoreo predictivo sobre riesgos inmobiliarios, deuda local, flujos de capital transfronterizos, capacidad productiva industrial y suministro de minerales estratégicos.</p></div>
         </div>
         <p class="quote">Para cubrir los eslabones débiles de la industria, el plan estableció universidades de investigación especializada, un sistema de inmigración para talento de alta tecnología y, bajo el lema "大力提振消费" ("impulsar con fuerza el consumo"), la emisión continua de bonos especiales del tesoro a ultra largo plazo para sostener el ingreso disponible.</p>
@@ -257,6 +291,16 @@
       <span class="acto-date">2026 – 2030</span>
       <p class="acto-teaser">30% de electricidad limpia, 725 millones de toneladas de grano garantizadas, y las SOE como directores de una cadena de más de 14,600 "Pequeños Gigantes".</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="stats">
+          <p class="vis-one"><small>En una frase</small>El capital migra de los ladrillos a los laboratorios.</p>
+          <div class="vis-card">
+            <div class="v-stats" style="--n:3">
+              <div class="v-stat"><span class="v-num" data-to="30" data-dec="0" data-pre="" data-suf="%">30%</span><span class="v-lbl">del consumo eléctrico, de energías limpias, en 2030</span></div>
+              <div class="v-stat"><span class="v-num">725 M t</span><span class="v-lbl">de capacidad anual de producción de grano</span></div>
+              <div class="v-stat"><span class="v-num">14,600+</span><span class="v-lbl">PYMEs "Pequeños Gigantes" especializadas</span></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <div class="chart-block">
           <span class="chart-title">Metas de seguridad energética y alimentaria para 2030</span>
           <div class="chart-bars">
@@ -265,8 +309,8 @@
           </div>
           <p class="chart-note">La capacidad instalada renovable buscada es de 3.5 mil millones de kW, generando 6 billones de kWh al cierre del plan en 2030.</p>
         </div>
-        <p>El capital estatal y los incentivos fiscales se desplazan desde la construcción tradicional hacia polos de innovación en IA multimodal, robótica humanoide, 6G y semiconductores. Las SOE, coordinadas por la SASAC, asumen el rol de directores de cadena de suministro e infraestructura estratégica, mientras se expande el ecosistema de más de 14,600 PYMEs "Pequeños Gigantes" especializadas en tecnologías de nicho.</p>
-        <p class="quote">En el frente externo, el plan fortalece el control y las reservas de minerales críticos y energía —incluyendo proyectos como el gasoducto Power of Siberia 2— y reorienta el comercio y la inversión en infraestructura digital y renovable hacia los países miembros de la Franja y la Ruta, mientras se institucionaliza la emisión de bonos especiales del tesoro a ultra largo plazo por 1.3 billones de yuanes.</p>
+        <p>El capital estatal y los incentivos fiscales se desplazan desde la construcción tradicional hacia polos de innovación en IA multimodal, robótica humanoide, 6G y semiconductores. Las SOE, coordinadas por la <span class="gl" tabindex="0">SASAC<span class="gl-def" role="note">Organismo que supervisa a las empresas estatales (SOE).</span></span>, asumen el rol de directores de cadena de suministro e infraestructura estratégica, mientras se expande el ecosistema de más de 14,600 PYMEs "Pequeños Gigantes" especializadas en tecnologías de nicho.</p>
+        <p class="quote">En el frente externo, el plan fortalece el control y las reservas de minerales críticos y energía —incluyendo proyectos como el gasoducto Power of Siberia 2— y reorienta el comercio y la inversión en infraestructura digital y renovable hacia los países miembros de la <span class="gl" tabindex="0">Franja y la Ruta<span class="gl-def" role="note">Iniciativa china de infraestructura y comercio hacia otros países.</span></span>, mientras se institucionaliza la emisión de bonos especiales del tesoro a ultra largo plazo por 1.3 billones de yuanes.</p>
       </div>
     </div>
   </div>
@@ -278,6 +322,17 @@
       <span class="acto-date">2030 → 2035</span>
       <p class="acto-teaser">El quinquenio decisivo para duplicar la economía entre 2020 y 2035 y consolidar a China como la potencia hegemónica de la tecnología limpia global.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="timeline">
+          <p class="vis-one"><small>En una frase</small>El quinquenio 2026–2030 es la plataforma para el objetivo de 2035.</p>
+          <div class="vis-card">
+            <div class="v-tline" style="--n:3">
+              <div class="v-tline-rail"><div class="v-tline-fill"></div></div>
+              <div class="v-tl"><span class="v-tl-yr">2020</span><p>Punto de partida: duplicar la economía.</p></div>
+              <div class="v-tl"><span class="v-tl-yr">2026–2030</span><p>El 15º Plan, con la seguridad como eje ordenador.</p></div>
+              <div class="v-tl"><span class="v-tl-yr">2035</span><p>Meta de Xi: país moderadamente desarrollado.</p></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <figure class="acto-figure">
           <img src="../../assets/china/15-plan-quinquenal/parque-solar.jpg" alt="Un parque solar fotovoltaico a gran escala, parte de la meta renovable del 15º Plan Quinquenal." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Un parque fotovoltaico a gran escala: la meta de 3.5 mil millones de kW de capacidad renovable instalada busca que las energías limpias generen el 30% del consumo eléctrico de China hacia 2030.
@@ -344,8 +399,9 @@
     gsap.to(acto.querySelector('.acto-body'), {
       height: 'auto', opacity: 1, duration: reduceMotion ? 0 : 0.65, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
-      onComplete: function(){ ScrollTrigger.refresh(); }
+      onComplete: function(){ acto.querySelector('.acto-body').style.overflow = 'visible'; ScrollTrigger.refresh(); }
     });
+    if(window.playVis) setTimeout(function(){ window.playVis(acto); }, reduceMotion ? 0 : 60);
     var bars = acto.querySelectorAll('.chart-bar');
     if(bars.length && !acto.dataset.chartsPlayed){
       acto.dataset.chartsPlayed = '1';
@@ -357,6 +413,7 @@
   }
   function closeActo(acto){
     acto.querySelector('.acto-toggle').textContent = '＋';
+    acto.querySelector('.acto-body').style.overflow = 'hidden';
     gsap.to(acto.querySelector('.acto-body'), {
       height: 0, opacity: 0, duration: reduceMotion ? 0 : 0.5, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
@@ -366,7 +423,8 @@
 
   var actos = document.querySelectorAll('.acto');
   actos.forEach(function(acto){
-    acto.addEventListener('click', function(){
+    acto.addEventListener('click', function(e){
+      if(e.target.closest('.acto-body')) return;
       var wasActive = acto.classList.contains('active');
       document.querySelectorAll('.acto.active').forEach(function(a){ a.classList.remove('active'); closeActo(a); });
       if(!wasActive){ acto.classList.add('active'); openActo(acto); }
@@ -374,7 +432,7 @@
   });
   var firstActive = document.querySelector('.acto.active .acto-body');
   if(firstActive){
-    gsap.set(firstActive, {height:'auto', opacity:1});
+    gsap.set(firstActive, {height:'auto', opacity:1, overflow:'visible'});
     document.querySelector('.acto.active .acto-toggle').textContent = '－';
   }
 
@@ -424,5 +482,6 @@
   window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
 </script>
 
+<!--vis-js--><script src="../../assets/vis.js"></script><!--/vis-js-->
 </body>
 </html>

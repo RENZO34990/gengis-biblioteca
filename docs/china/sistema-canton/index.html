@@ -155,6 +155,8 @@
     section{padding:6vh 6vw;}
   }
 </style>
+<!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
+<style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(201,166,62,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Noto Serif SC', serif; --v-body:'Hanken Grotesk', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
 </head>
 <body>
 <a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
@@ -189,8 +191,20 @@
       <span class="acto-date">1683 – 1759</span>
       <p class="acto-teaser">No era un imperio cerrado: era un gobierno intentando desesperadamente poner orden en un litoral caótico y una amenaza a su seguridad.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="steps">
+          <p class="vis-one"><small>En una frase</small>Pekín quiso ordenar una costa caótica; un solo incidente le hizo cerrarla a casi todos.</p>
+          <div class="vis-card">
+            <div class="v-steps" role="list">
+              <div class="v-rail"><div class="v-fill"></div></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">Siglo XVII</span><h4>Koxinga y la costa evacuada</h4><p>Un rebelde leal a los Ming financia sus ataques con comercio marítimo; el emperador manda evacuar a la población costera.</p></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">1683</span><h4>Los puertos reabren</h4><p>Pero el miedo a que los extranjeros se aliaran con "nativos traidores" nunca desapareció.</p></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">Antes del Cohong</span><h4>Comerciantes del Emperador</h4><p>Uno pagó 42,000 taels por el puesto sin capital ni mercancía: los sobornos se volvieron la norma.</p></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">1759</span><h4>Incidente de James Flint</h4><p>Un comerciante británico se queja ante el emperador y termina preso: Pekín da por fracasado el experimento.</p></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <p>Durante décadas, la dinastía Qing lidió con rebeldes como Koxinga, leal a la caída dinastía Ming, que usaba el comercio marítimo para financiar sus ataques. La crisis fue tan grave que el emperador ordenó evacuar a toda la población costera kilómetros hacia el interior para cortarles los suministros. Los puertos reabrieron después de 1683, pero el miedo a que los extranjeros se aliaran con "nativos traidores" nunca desapareció.</p>
-        <p>El modelo de negocio tampoco ayudaba: antes del gremio Cohong, el emperador intentó centralizar el comercio en "Comerciantes del Emperador": uno de ellos pagó 42,000 taels por el puesto sin tener capital ni mercancía para cumplir los pedidos. El resultado fue un sistema de sobornos que se volvió la norma para mover cualquier caja de té o seda.</p>
+        <p>El modelo de negocio tampoco ayudaba: antes del gremio <span class="gl" tabindex="0">Cohong<span class="gl-def" role="note">Gremio de comerciantes chinos que controlaba el comercio de té y seda con los extranjeros en Cantón.</span></span>, el emperador intentó centralizar el comercio en "Comerciantes del Emperador": uno de ellos pagó 42,000 taels por el puesto sin tener capital ni mercancía para cumplir los pedidos. El resultado fue un sistema de sobornos que se volvió la norma para mover cualquier caja de té o seda.</p>
         <p class="quote">El punto de quiebre fue el Incidente de James Flint en 1759: un comerciante británico se saltó las prohibiciones para quejarse directamente ante el emperador por la corrupción en Cantón. En vez de escucharlo, lo metieron a la cárcel, y Pekín decidió que el experimento de varios puertos abiertos había fracasado.</p>
         <figure class="acto-figure">
           <img src="../../assets/china/canton-factories.jpg" alt="Vista de las factorías de Cantón junto al río Perla, con las banderas de las potencias europeas" loading="lazy" onerror="this.closest('figure').hidden=true">
@@ -209,8 +223,22 @@
       <span class="acto-date">c.1760 – mar 1839</span>
       <p class="acto-teaser">Durante un siglo la balanza comercial favoreció casi exclusivamente a China, hasta que Gran Bretaña encontró cómo revertirla: opio.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="flow">
+          <p class="vis-one"><small>En una frase</small>Un comercio de un solo sentido, un contrabando para equilibrarlo y un funcionario que dijo basta.</p>
+          <div class="vis-card">
+            <div class="v-flow">
+              <div class="v-node"><span class="v-k">1</span><h4>Té y seda</h4><p>Europa los quiere; China no necesita nada de vuelta.</p></div>
+              <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-node"><span class="v-k">2</span><h4>Solo plata</h4><p>China exige que se le pague únicamente en plata.</p></div>
+              <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-node"><span class="v-k">3</span><h4>Opio de contrabando</h4><p>Los británicos lo meten desde la India para equilibrar las cuentas.</p></div>
+              <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-node"><span class="v-k">4</span><h4>Lin Zexu, 1839</h4><p>Encierra a 350 personas y destruye más de 20,000 cofres.</p></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <p>Europa estaba obsesionada con el té y la seda, pero China no sentía que necesitara nada de Occidente: exigía el pago exclusivamente en plata. Los británicos, hartos de ver su plata desaparecer, empezaron a meter opio de contrabando desde la India para equilibrar las cuentas. Lo que comenzó como un problema de salud pública y fuga de plata terminó convirtiéndose en un conflicto de soberanía nacional.</p>
-        <p>El emperador, harto de ver a su pueblo volverse adicto, envía a Cantón a un funcionario incorruptible: Lin Zexu, apodado "Lin el Cielo Azul". En marzo de 1839 rodea las factorías extranjeras y deja a 350 personas encerradas durante semanas hasta que le entregan más de 20,000 cofres de opio, que destruye en una ceremonia pública.</p>
+        <p>El emperador, harto de ver a su pueblo volverse adicto, envía a Cantón a un funcionario incorruptible: <span class="gl" tabindex="0">Lin Zexu<span class="gl-def" role="note">Funcionario enviado por el emperador a Cantón en 1839 para frenar el opio; apodado &quot;Lin el Cielo Azul&quot;.</span></span>, apodado "Lin el Cielo Azul". En marzo de 1839 rodea las factorías extranjeras y deja a 350 personas encerradas durante semanas hasta que le entregan más de 20,000 cofres de opio, que destruye en una ceremonia pública.</p>
         <figure class="acto-figure">
           <img src="../../assets/china/destruccion-opio-1839.jpg" alt="Destrucción pública del opio confiscado en Humen, ordenada por Lin Zexu en 1839" loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>La destrucción del opio en Humen, junio de 1839 — más de 1,150 toneladas mezcladas con cal y arrojadas al mar frente a la población local.
@@ -245,6 +273,16 @@
       <span class="acto-date">27 mar – 3 nov 1839</span>
       <p class="acto-teaser">El superintendente británico Charles Elliot toma una decisión que cambia todo: convierte una disputa contra contrabandistas privados en una deuda del Estado británico.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="versus">
+          <p class="vis-one"><small>En una frase</small>Elliot no salvó la mercancía: convirtió un problema de contrabandistas en uno de Estado.</p>
+          <div class="vis-card">
+            <div class="v-versus">
+              <div class="v-col before"><h4>Antes del 27 de marzo de 1839</h4><ul><li>El opio es de mercaderes privados</li><li>Si se pierde, lo pierden ellos</li><li>Un asunto de contrabando</li></ul></div>
+              <svg class="v-vs" viewBox="0 0 34 24" aria-hidden="true"><path d="M2 12h26M20 4l10 8-10 8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-col after"><h4>Después</h4><ul><li>Elliot ordena entregarlo "en nombre de la Corona"</li><li>Londres promete reembolsar las pérdidas</li><li>Una cuestión de soberanía estatal</li></ul></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <p>El 27 de marzo de 1839, en vez de dejar que los mercaderes perdieran su mercancía ilegal, Elliot les ordena entregar el opio en nombre de la Corona, prometiendo reembolsarles las pérdidas. Con ese movimiento, lo que era un problema de contrabandistas privados se transforma de golpe en una cuestión de soberanía estatal, obligando a Londres a intervenir militarmente para "cobrar" esa deuda.</p>
         <p>El primer disparo llega por una situación casi absurda: el 3 de noviembre de 1839, en aguas de Ch'uan-pi, el mercante británico Royal Saxon intenta ignorar el bloqueo de sus propios compatriotas para negociar con los chinos. El buque de guerra HMS Volage le dispara una advertencia a su propio compatriota; la flota china sale a defenderlo, y ahí comienza la batalla que da inicio formal a la Primera Guerra del Opio.</p>
         <p class="quote">Ya no era solo una grieta comercial: era el choque frontal entre un imperio que se sentía el centro del mundo y una potencia industrial que no aceptaría el sistema de subordinación tributaria de Cantón.</p>
@@ -265,7 +303,17 @@
       <span class="acto-date">1842 – 1847</span>
       <p class="acto-teaser">El Tratado de Nanjing reordena en cinco años todo el mapa del poder comercial en Asia, y nadie en Pekín lo había previsto.</p>
       <div class="acto-body">
-        <p>El tratado abre cinco "puertos de tratado" (Cantón, Amoy, Fuzhou, Ningbo y Shanghái), donde comerciantes extranjeros pueden residir y operar permanentemente. Se disuelve legalmente el gremio Cohong, que había controlado cada gramo de té y seda durante décadas.</p>
+        <!--vis--><div class="vis" data-vis="stats">
+          <p class="vis-one"><small>En una frase</small>El tratado abrió puertos, disolvió un monopolio y cambió el centro del comercio.</p>
+          <div class="vis-card">
+            <div class="v-stats" style="--n:3">
+              <div class="v-stat"><span class="v-num" data-to="5" data-dec="0" data-pre="" data-suf="">5</span><span class="v-lbl">puertos de tratado: Cantón, Amoy, Fuzhou, Ningbo y Shanghái</span></div>
+              <div class="v-stat"><span class="v-num" data-to="21" data-dec="0" data-pre="" data-suf=" M">21 M</span><span class="v-lbl">de dólares de indemnización, más la cesión de Hong Kong</span></div>
+              <div class="v-stat"><span class="v-num" data-to="3" data-dec="0" data-pre="×" data-suf="">×3</span><span class="v-lbl">la exportación de seda de Shanghái en solo dos años (1845–1847)</span></div>
+            </div>
+          </div>
+        </div><!--/vis-->
+        <p>El tratado abre cinco "<span class="gl" tabindex="0">puertos de tratado<span class="gl-def" role="note">Puertos donde los extranjeros podían residir y comerciar por tratado, fuera del viejo sistema de Cantón.</span></span>" (Cantón, Amoy, Fuzhou, Ningbo y Shanghái), donde comerciantes extranjeros pueden residir y operar permanentemente. Se disuelve legalmente el gremio Cohong, que había controlado cada gramo de té y seda durante décadas.</p>
         <figure class="acto-figure">
           <img src="../../assets/china/tratado-nanjing.jpg" alt="La firma del Tratado de Nanjing a bordo del HMS Cornwallis, agosto de 1842" loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>La firma del Tratado de Nanjing a bordo del HMS Cornwallis, 29 de agosto de 1842 — el primero de los "tratados desiguales".
@@ -282,7 +330,7 @@
           <p class="chart-note">En solo dos años, Shanghái multiplica por más de tres su exportación de seda: el nuevo puerto adelanta a Cantón, que había dominado el comercio durante casi un siglo.</p>
         </div>
         <p style="color:var(--ink-soft);">China cede Hong Kong a la Corona británica y paga una indemnización de 21 millones de dólares.</p>
-        <p class="quote">Se rompió algo más grande que dinero o barcos: la idea de que el emperador era el centro del universo. Empieza lo que en China se recuerda como el siglo de la humillación.</p>
+        <p class="quote">Se rompió algo más grande que dinero o barcos: la idea de que el emperador era el centro del universo. Empieza lo que en China se recuerda como el <span class="gl" tabindex="0">siglo de la humillación<span class="gl-def" role="note">Nombre con que China recuerda el periodo que empieza con las derrotas ante las potencias en 1842.</span></span>.</p>
       </div>
     </div>
   </div>
@@ -294,9 +342,20 @@
       <span class="acto-date">1979 → hoy</span>
       <p class="acto-teaser">Lo que pasó en las factorías de Cantón hace dos siglos no se quedó guardado en los libros: es la lógica detrás de las políticas económicas chinas de hoy.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="timeline">
+          <p class="vis-one"><small>En una frase</small>Los puertos donde China perdió en 1842 son hoy donde se conecta con el mundo.</p>
+          <div class="vis-card">
+            <div class="v-tline" style="--n:3">
+              <div class="v-tline-rail"><div class="v-tline-fill"></div></div>
+              <div class="v-tl"><span class="v-tl-yr">1842</span><p>Cinco puertos de tratado y el siglo de la humillación.</p></div>
+              <div class="v-tl"><span class="v-tl-yr">1979–80</span><p>Las Zonas Económicas Especiales se levantan, muchas, sobre antiguos puertos de tratado.</p></div>
+              <div class="v-tl"><span class="v-tl-yr">Hoy</span><p>El delta del río Perla genera más del 23% de las exportaciones nacionales.</p></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <p><strong>Reversión simbólica.</strong> Las Zonas Económicas Especiales creadas en 1979-1980 están, muchas de ellas, construidas sobre antiguos puertos de tratado: una inversión deliberada de la fortuna respecto al periodo de debilidad que empezó en 1842.</p>
         <p><strong>Guangdong sigue siendo el corazón.</strong> El delta del río Perla, centrado en Shenzhen y Guangzhou, genera más del 23% de las exportaciones nacionales: la misma provincia donde operaba el Sistema de Cantón sigue siendo la rendija por la que China se conecta con el mundo.</p>
-        <p class="quote">La desconfianza histórica hacia la dependencia externa explica por qué el gobierno actual prioriza la seguridad económica sobre el libre mercado: políticas como la "Doble Circulación" y la autosuficiencia tecnológica son la respuesta directa al trauma del siglo de la humillación.</p>
+        <p class="quote">La desconfianza histórica hacia la dependencia externa explica por qué el gobierno actual prioriza la seguridad económica sobre el libre mercado: políticas como la "<span class="gl" tabindex="0">Doble Circulación<span class="gl-def" role="note">Estrategia económica actual de Pekín que prioriza la seguridad económica y la autosuficiencia tecnológica.</span></span>" y la autosuficiencia tecnológica son la respuesta directa al trauma del siglo de la humillación.</p>
       </div>
     </div>
   </div>
@@ -354,8 +413,9 @@
     gsap.to(acto.querySelector('.acto-body'), {
       height: 'auto', opacity: 1, duration: reduceMotion ? 0 : 0.65, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
-      onComplete: function(){ ScrollTrigger.refresh(); }
+      onComplete: function(){ acto.querySelector('.acto-body').style.overflow = 'visible'; ScrollTrigger.refresh(); }
     });
+    if(window.playVis) setTimeout(function(){ window.playVis(acto); }, reduceMotion ? 0 : 60);
     var bars = acto.querySelectorAll('.chart-bar');
     if(bars.length && !acto.dataset.chartsPlayed){
       acto.dataset.chartsPlayed = '1';
@@ -367,6 +427,7 @@
   }
   function closeActo(acto){
     acto.querySelector('.acto-toggle').textContent = '＋';
+    acto.querySelector('.acto-body').style.overflow = 'hidden';
     gsap.to(acto.querySelector('.acto-body'), {
       height: 0, opacity: 0, duration: reduceMotion ? 0 : 0.5, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
@@ -376,7 +437,8 @@
 
   var actos = document.querySelectorAll('.acto');
   actos.forEach(function(acto){
-    acto.addEventListener('click', function(){
+    acto.addEventListener('click', function(e){
+      if(e.target.closest('.acto-body')) return;
       var wasActive = acto.classList.contains('active');
       document.querySelectorAll('.acto.active').forEach(function(a){ a.classList.remove('active'); closeActo(a); });
       if(!wasActive){ acto.classList.add('active'); openActo(acto); }
@@ -384,7 +446,7 @@
   });
   var firstActive = document.querySelector('.acto.active .acto-body');
   if(firstActive){
-    gsap.set(firstActive, {height:'auto', opacity:1});
+    gsap.set(firstActive, {height:'auto', opacity:1, overflow:'visible'});
     document.querySelector('.acto.active .acto-toggle').textContent = '－';
   }
 
@@ -433,5 +495,6 @@
   window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
 </script>
 
+<!--vis-js--><script src="../../assets/vis.js"></script><!--/vis-js-->
 </body>
 </html>

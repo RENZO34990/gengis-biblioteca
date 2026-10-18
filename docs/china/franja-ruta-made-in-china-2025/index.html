@@ -160,6 +160,8 @@
     section{padding:6vh 6vw;}
   }
 </style>
+<!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
+<style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(201,166,62,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Noto Serif SC', serif; --v-body:'Hanken Grotesk', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
 </head>
 <body>
 <a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
@@ -194,7 +196,17 @@
       <span class="acto-date">antes de 2013</span>
       <p class="acto-teaser">Treinta años de 10% anual dejan sobrecapacidad industrial, deuda local opaca y una dependencia tecnológica crítica frente a Occidente.</p>
       <div class="acto-body">
-        <p>Antes de 2013, el modelo económico chino impulsado por el hiper-inversionismo en activos fijos, la expansión desmedida del sector inmobiliario y la manufactura intensiva en mano de obra de bajo costo comenzó a mostrar signos de agotamiento estructural. Aunque la estrategia post-ingreso a la OMC logró tres décadas de crecimiento promedio del 10% anual, la economía entró en la "Nueva Normalidad" (Xin changtai).</p>
+        <!--vis--><div class="vis" data-vis="stats">
+          <p class="vis-one"><small>En una frase</small>El motor de ladrillo y deuda empezaba a fallar.</p>
+          <div class="vis-card">
+            <div class="v-stats" style="--n:3">
+              <div class="v-stat"><span class="v-num">66 billones</span><span class="v-lbl">de yuanes de deuda opaca de los gobiernos locales, ≈75% del PIB</span></div>
+              <div class="v-stat"><span class="v-num">2016</span><span class="v-lbl">año en que la población en edad de trabajar empezó a contraerse</span></div>
+              <div class="v-stat"><span class="v-num">≈10%</span><span class="v-lbl">de crecimiento anual promedio en tres décadas</span></div>
+            </div>
+          </div>
+        </div><!--/vis-->
+        <p>Antes de 2013, el modelo económico chino impulsado por el hiper-inversionismo en activos fijos, la expansión desmedida del sector inmobiliario y la manufactura intensiva en mano de obra de bajo costo comenzó a mostrar signos de agotamiento estructural. Aunque la estrategia post-ingreso a la OMC logró tres décadas de crecimiento promedio del 10% anual, la economía entró en la "<span class="gl" tabindex="0">Nueva Normalidad<span class="gl-def" role="note">Etapa de crecimiento más lento que sucedió a tres décadas de crecimiento cercano al 10%.</span></span>" (Xin changtai).</p>
         <p class="quote">Las Plataformas de Financiamiento de los Gobiernos Locales acumularon una deuda opaca fuera de balance estimada en más de 66 billones de yuanes (75% del PIB), altamente expuesta al mercado inmobiliario. Al mismo tiempo, la población en edad de trabajar comenzó a contraerse en 2016, y China mantenía una vulnerabilidad crítica al depender de importaciones occidentales para semiconductores, maquinaria de precisión y software industrial.</p>
       </div>
     </div>
@@ -207,13 +219,23 @@
       <span class="acto-date">2013 – 2018</span>
       <p class="acto-teaser">La Franja y la Ruta sale a construir corredores globales mientras Made in China 2025 apunta a diez sectores estratégicos de alta tecnología.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="versus">
+          <p class="vis-one"><small>En una frase</small>Dos planes paralelos: exportar infraestructura e importar menos tecnología.</p>
+          <div class="vis-card">
+            <div class="v-versus">
+              <div class="v-col before"><h4>Hacia afuera</h4><ul><li>Franja y la Ruta (2013): corredores logísticos y sobrecapacidad al exterior</li></ul></div>
+              <svg class="v-vs" viewBox="0 0 34 24" aria-hidden="true"><path d="M2 12h26M20 4l10 8-10 8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-col after"><h4>Hacia adentro</h4><ul><li>Made in China 2025 (mayo de 2015): potencia de alta tecnología en 10 sectores</li></ul></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <figure class="acto-figure">
           <img src="../../assets/china/franja-ruta-made-in-china-2025/mapa-franja-ruta.jpg" alt="Mapa de los países participantes en la Iniciativa de la Franja y la Ruta." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>El mapa de la Franja y la Ruta: corredores logísticos lanzados en 2013 para exportar la sobrecapacidad industrial china hacia Asia, África y Europa.
             <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
           </figcaption>
         </figure>
-        <p>El proceso de ruptura con el viejo modelo se detonó entre 2013 y 2015, cuando la dirigencia del PCCh reconoció que continuar impulsando el crecimiento mediante la burbuja inmobiliaria y la deuda abocaba a China a caer en la "trampa del ingreso medio". La transformación se activó mediante dos grandes iniciativas: la Iniciativa de la Franja y la Ruta (BRI, 2013), para construir corredores logísticos globales y exportar la sobrecapacidad industrial, y la Estrategia Industrial "Made in China 2025" (mayo de 2015), un plan para transformar a China de ensamblador de bajo valor en potencia manufacturera de alta tecnología en diez sectores estratégicos.</p>
+        <p>El proceso de ruptura con el viejo modelo se detonó entre 2013 y 2015, cuando la dirigencia del PCCh reconoció que continuar impulsando el crecimiento mediante la burbuja inmobiliaria y la deuda abocaba a China a caer en la "trampa del ingreso medio". La transformación se activó mediante dos grandes iniciativas: la Iniciativa de la Franja y la Ruta (BRI, 2013), para construir corredores logísticos globales y exportar la sobrecapacidad industrial, y la Estrategia Industrial "<span class="gl" tabindex="0">Made in China 2025<span class="gl-def" role="note">Estrategia industrial de mayo de 2015 para pasar del ensamblaje barato a la alta tecnología.</span></span>" (mayo de 2015), un plan para transformar a China de ensamblador de bajo valor en potencia manufacturera de alta tecnología en diez sectores estratégicos.</p>
         <p class="quote">Esta grieta se profundizó drásticamente a partir de 2018 con el estallido de la guerra comercial y tecnológica con Estados Unidos —aranceles, sanciones a Huawei, controles de exportación de microchips—, seguida por el shock de la pandemia de COVID-19 y la crisis de liquidez del sector inmobiliario a partir de 2021.</p>
       </div>
     </div>
@@ -226,12 +248,24 @@
       <span class="acto-date">2020 – 2026</span>
       <p class="acto-teaser">Doble Circulación, subsidios masivos a EV/baterías/solar, y las "Nuevas Fuerzas Productivas" como el nuevo motor de crecimiento.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="flow">
+          <p class="vis-one"><small>En una frase</small>El Estado reasignó el capital hacia los "Nuevos Tres".</p>
+          <div class="vis-card">
+            <div class="v-flow">
+              <div class="v-node"><span class="v-k">Vehículos</span><h4>Nueva energía</h4><p>Subsidios y créditos dirigidos.</p></div>
+              <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-node"><span class="v-k">Almacenamiento</span><h4>Baterías de litio</h4><p>Más del 70% de la cadena mundial.</p></div>
+              <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-node"><span class="v-k">Generación</span><h4>Solar fotovoltaica</h4><p>Más del 80% de los módulos.</p></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <div class="loss-list">
-          <div class="loss-item"><h3>Doble Circulación, 2020</h3><p>Fijó el mercado interno como columna vertebral del desarrollo, buscando la autosuficiencia tecnológica para blindar al país frente a sanciones externas.</p></div>
-          <div class="loss-item"><h3>El "Nuevos Tres" (Xin San Yang)</h3><p>El Estado canalizó subsidios, créditos dirigidos e incentivos tributarios hacia los Vehículos de Nueva Energía, las baterías de litio y la energía solar fotovoltaica, los nuevos motores de reemplazo del sector inmobiliario.</p></div>
-          <div class="loss-item"><h3>SOE como "directores de cadena"</h3><p>La comisión SASAC reorganizó las SOE centrales como chain masters, asegurando la resiliencia de los suministros nacionales y financiando a más de 14,600 PYMEs especializadas ("Pequeños Gigantes").</p></div>
+          <div class="loss-item"><h3><span class="gl" tabindex="0">Doble Circulación<span class="gl-def" role="note">Estrategia de 2020 que fija el mercado interno como columna vertebral y busca autosuficiencia tecnológica.</span></span>, 2020</h3><p>Fijó el mercado interno como columna vertebral del desarrollo, buscando la autosuficiencia tecnológica para blindar al país frente a sanciones externas.</p></div>
+          <div class="loss-item"><h3>El "Nuevos Tres" (<span class="gl" tabindex="0">Xin San Yang<span class="gl-def" role="note">Los &quot;Nuevos Tres&quot;: vehículos de nueva energía, baterías de litio y energía solar fotovoltaica.</span></span>)</h3><p>El Estado canalizó subsidios, créditos dirigidos e incentivos tributarios hacia los Vehículos de Nueva Energía, las baterías de litio y la energía solar fotovoltaica, los nuevos motores de reemplazo del sector inmobiliario.</p></div>
+          <div class="loss-item"><h3>SOE como "directores de cadena"</h3><p>La comisión SASAC reorganizó las SOE centrales como <span class="gl" tabindex="0">chain masters<span class="gl-def" role="note">&quot;Directores de cadena&quot;: SOE centrales que aseguran el suministro nacional.</span></span>, asegurando la resiliencia de los suministros nacionales y financiando a más de 14,600 PYMEs especializadas ("Pequeños Gigantes").</p></div>
         </div>
-        <p class="quote">Desde 2023, el concepto de "Nuevas Fuerzas Productivas" (New Quality Productive Forces) introducido por Xi Jinping impulsa la productividad total de los factores mediante innovaciones disruptivas: inteligencia artificial, computación cuántica, biomanufactura, 6G y robótica humanoide.</p>
+        <p class="quote">Desde 2023, el concepto de "<span class="gl" tabindex="0">Nuevas Fuerzas Productivas<span class="gl-def" role="note">Concepto de Xi Jinping desde 2023: productividad por innovaciones como IA y computación cuántica.</span></span>" (New Quality Productive Forces) introducido por Xi Jinping impulsa la productividad total de los factores mediante innovaciones disruptivas: inteligencia artificial, computación cuántica, biomanufactura, 6G y robótica humanoide.</p>
       </div>
     </div>
   </div>
@@ -243,6 +277,16 @@
       <span class="acto-date">2015 – 2026</span>
       <p class="acto-teaser">CATL y BYD capturan más de la mitad del mercado global de baterías; China supera a Japón como mayor exportador mundial de automóviles.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="bars">
+          <p class="vis-one"><small>En una frase</small>Cuota china de la producción mundial.</p>
+          <div class="vis-card">
+            <div class="v-bars">
+              <div class="v-bar"><span class="v-bl">Baterías de litio</span><div class="v-btrack"><div class="v-bfill" style="--w:70%"></div></div><span class="v-bv">70%</span></div>
+              <div class="v-bar alt"><span class="v-bl">Módulos solares fotovoltaicos</span><div class="v-btrack"><div class="v-bfill" style="--w:80%"></div></div><span class="v-bv">80%</span></div>
+            </div>
+            <p class="vis-note">En 2023 China exportó más de 4 millones de vehículos y superó a Japón como mayor exportador.</p>
+          </div>
+        </div><!--/vis-->
         <div class="chart-block">
           <span class="chart-title">Cuota china de producción mundial</span>
           <div class="chart-bars">
@@ -269,6 +313,17 @@
       <span class="acto-date">2026 → hoy</span>
       <p class="acto-teaser">El dominio en tecnología verde fija precios globales y alimenta tanto la fricción comercial como las bases del siguiente plan quinquenal.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="timeline">
+          <p class="vis-one"><small>En una frase</small>De ensamblador de bajo costo a potencia industrial autónoma.</p>
+          <div class="vis-card">
+            <div class="v-tline" style="--n:3">
+              <div class="v-tline-rail"><div class="v-tline-fill"></div></div>
+              <div class="v-tl"><span class="v-tl-yr">2013–2026</span><p>Se edifica la base industrial de alta tecnología.</p></div>
+              <div class="v-tl"><span class="v-tl-yr">2026–2030</span><p>El 15º Plan Quinquenal busca el pico de emisiones antes de 2030.</p></div>
+              <div class="v-tl"><span class="v-tl-yr">Hoy</span><p>Acusaciones de sobrecapacidad: aranceles, barreras y sanciones.</p></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <figure class="acto-figure">
           <img src="../../assets/china/franja-ruta-made-in-china-2025/panel-solar.jpg" alt="Un campo de paneles solares fotovoltaicos, parte del dominio chino de más del 80% de la capacidad mundial instalada." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Un parque fotovoltaico: China controla más del 80% de la capacidad instalada mundial de módulos solares, fijando precios internacionales a escala inalcanzable para Occidente.
@@ -335,8 +390,9 @@
     gsap.to(acto.querySelector('.acto-body'), {
       height: 'auto', opacity: 1, duration: reduceMotion ? 0 : 0.65, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
-      onComplete: function(){ ScrollTrigger.refresh(); }
+      onComplete: function(){ acto.querySelector('.acto-body').style.overflow = 'visible'; ScrollTrigger.refresh(); }
     });
+    if(window.playVis) setTimeout(function(){ window.playVis(acto); }, reduceMotion ? 0 : 60);
     var bars = acto.querySelectorAll('.chart-bar');
     if(bars.length && !acto.dataset.chartsPlayed){
       acto.dataset.chartsPlayed = '1';
@@ -348,6 +404,7 @@
   }
   function closeActo(acto){
     acto.querySelector('.acto-toggle').textContent = '＋';
+    acto.querySelector('.acto-body').style.overflow = 'hidden';
     gsap.to(acto.querySelector('.acto-body'), {
       height: 0, opacity: 0, duration: reduceMotion ? 0 : 0.5, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
@@ -357,7 +414,8 @@
 
   var actos = document.querySelectorAll('.acto');
   actos.forEach(function(acto){
-    acto.addEventListener('click', function(){
+    acto.addEventListener('click', function(e){
+      if(e.target.closest('.acto-body')) return;
       var wasActive = acto.classList.contains('active');
       document.querySelectorAll('.acto.active').forEach(function(a){ a.classList.remove('active'); closeActo(a); });
       if(!wasActive){ acto.classList.add('active'); openActo(acto); }
@@ -365,7 +423,7 @@
   });
   var firstActive = document.querySelector('.acto.active .acto-body');
   if(firstActive){
-    gsap.set(firstActive, {height:'auto', opacity:1});
+    gsap.set(firstActive, {height:'auto', opacity:1, overflow:'visible'});
     document.querySelector('.acto.active .acto-toggle').textContent = '－';
   }
 
@@ -414,5 +472,6 @@
   window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
 </script>
 
+<!--vis-js--><script src="../../assets/vis.js"></script><!--/vis-js-->
 </body>
 </html>

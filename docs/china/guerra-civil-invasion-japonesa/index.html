@@ -152,6 +152,8 @@
     section{padding:6vh 6vw;}
   }
 </style>
+<!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
+<style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(201,166,62,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Noto Serif SC', serif; --v-body:'Hanken Grotesk', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
 </head>
 <body>
 <a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
@@ -186,7 +188,19 @@
       <span class="acto-date">1923 – abr 1927</span>
       <p class="acto-teaser">El Primer Frente Unido entre el PCCh y el Kuomintang había logrado derrotar a los caudillos — hasta que Chiang Kai-shek decide que ya no necesita a sus aliados comunistas.</p>
       <div class="acto-body">
-        <p>Antes de 1927, China atravesaba una profunda fragmentación estatal bajo el dominio de los señores de la guerra y la injerencia de las potencias imperialistas occidentales y Japón. Para unificar el país y recuperar la soberanía nacional, el Partido Comunista de China (PCCh) y el Kuomintang (KMT) constituyeron en 1923 el Primer Frente Unido, respaldado por la Internacional Comunista, que movilizó a obreros y campesinos e impulsó la Expedición al Norte contra los caudillos del Norte.</p>
+        <!--vis--><div class="vis" data-vis="flow">
+          <p class="vis-one"><small>En una frase</small>Una alianza para unificar China se rompió a sangre en Shanghái.</p>
+          <div class="vis-card">
+            <div class="v-flow">
+              <div class="v-node"><span class="v-k">1923</span><h4>Primer Frente Unido</h4><p>PCCh y Kuomintang, con la Internacional Comunista.</p></div>
+              <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-node"><span class="v-k">Siguiente</span><h4>Expedición al Norte</h4><p>Contra los caudillos del Norte.</p></div>
+              <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-node"><span class="v-k">Abr 1927</span><h4>Purga en Shanghái</h4><p>Chiang Kai-shek rompe la alianza y masacra a comunistas.</p></div>
+            </div>
+          </div>
+        </div><!--/vis-->
+        <p>Antes de 1927, China atravesaba una profunda fragmentación estatal bajo el dominio de los señores de la guerra y la injerencia de las potencias imperialistas occidentales y Japón. Para unificar el país y recuperar la soberanía nacional, el Partido Comunista de China (PCCh) y el Kuomintang (KMT) constituyeron en 1923 el <span class="gl" tabindex="0">Primer Frente Unido<span class="gl-def" role="note">Alianza de 1923 entre el Partido Comunista y el Kuomintang para unificar China.</span></span>, respaldado por la Internacional Comunista, que movilizó a obreros y campesinos e impulsó la Expedición al Norte contra los caudillos del Norte.</p>
         <p class="quote">Pero la estructura del Estado republicano era frágil y carecía de instituciones consolidadas. A medida que los movimientos obreros y campesinos ganaban fuerza, la cúpula derechista del KMT, encabezada por el generalísimo Chiang Kai-shek y aliada con la gran burguesía compradora y los terratenientes, ejecutó en abril de 1927 una sangrienta purga anticomunista en Shanghái y otras provincias. El colapso del Frente Unido destruyó la posibilidad de una república democrático-burguesa unificada e instauró la dictadura del régimen de Nanjing.</p>
       </div>
     </div>
@@ -199,9 +213,20 @@
       <span class="acto-date">ago 1927 – dic 1936</span>
       <p class="acto-teaser">El PCCh se refugia en la montaña y funda su propio ejército justo cuando Japón empieza a devorar el territorio que Chiang se niega a defender primero.</p>
       <div class="acto-body">
-        <p>La ruptura de 1927 forzó al PCCh a abandonar el trabajo político urbano y asumir la lucha armada independiente contra el régimen del KMT. El Levantamiento de Nanchang (1 de agosto de 1927) y el Levantamiento de la Cosecha de Otoño liderado por Mao Zedong dieron nacimiento al Ejército Rojo de Obreros y Campesinos. A través de la Reorganización de Sanwan, el PCCh estableció filiales del Partido en cada compañía militar, fijando el principio del control político absoluto sobre las fuerzas armadas.</p>
+        <!--vis--><div class="vis" data-vis="steps">
+          <p class="vis-one"><small>En una frase</small>El Partido fue perseguido por dentro mientras Japón invadía por fuera.</p>
+          <div class="vis-card">
+            <div class="v-steps" role="list">
+              <div class="v-rail"><div class="v-fill"></div></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">Ago 1927</span><h4>Nanchang y Cosecha de Otoño</h4><p>Nace el Ejército Rojo de Obreros y Campesinos.</p></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">Sep 1931</span><h4>Invasión de Manchuria</h4><p>Japón crea el régimen títere de Manchukuo.</p></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">1936</span><h4>Incidente de Xi'an</h4><p>Generales del KMT apresan a Chiang y lo fuerzan a un Segundo Frente Unido.</p></div>
+            </div>
+          </div>
+        </div><!--/vis-->
+        <p>La ruptura de 1927 forzó al PCCh a abandonar el trabajo político urbano y asumir la lucha armada independiente contra el régimen del KMT. El Levantamiento de Nanchang (1 de agosto de 1927) y el Levantamiento de la Cosecha de Otoño liderado por Mao Zedong dieron nacimiento al Ejército Rojo de Obreros y Campesinos. A través de la <span class="gl" tabindex="0">Reorganización de Sanwan<span class="gl-def" role="note">Reforma que puso una filial del Partido en cada compañía militar: el Partido manda sobre el ejército.</span></span>, el PCCh estableció filiales del Partido en cada compañía militar, fijando el principio del control político absoluto sobre las fuerzas armadas.</p>
         <div class="loss-list">
-          <div class="loss-item"><h3>La invasión de Manchuria, 1931</h3><p>Japón invadió Manchuria en septiembre de 1931 mediante el Incidente del 18 de Septiembre, estableciendo el régimen títere de Manchukuo.</p></div>
+          <div class="loss-item"><h3>La invasión de Manchuria, 1931</h3><p>Japón invadió Manchuria en septiembre de 1931 mediante el Incidente del 18 de Septiembre, estableciendo el régimen títere de <span class="gl" tabindex="0">Manchukuo<span class="gl-def" role="note">Régimen títere que Japón estableció en Manchuria tras 1931.</span></span>.</p></div>
           <div class="loss-item"><h3>"Pacificación interna antes de resistir"</h3><p>Chiang Kai-shek insistió en aniquilar al Ejército Rojo antes de defender el territorio nacional frente a Japón, desencadenando una profunda crisis de legitimidad.</p></div>
           <div class="loss-item"><h3>El Incidente de Xi'an, 1936</h3><p>Generales del propio KMT apresaron a Chiang Kai-shek y lo forzaron a cesar la guerra civil para formar el Segundo Frente Unido contra Japón.</p></div>
         </div>
@@ -216,8 +241,22 @@
       <span class="acto-date">jul 1937 – ago 1945</span>
       <p class="acto-teaser">Mao formula una teoría de guerra hecha a la medida de un ejército débil: ceder las ciudades, cercar desde el campo, y construir ideología mientras se combate.</p>
       <div class="acto-body">
-        <p>Tras la invasión generalizada de Japón a partir del Incidente del Puente Marco Polo (julio de 1937), Mao Zedong formuló la teoría de la "Guerra Prolongada" y el cerco a las ciudades desde el campo. El Ejército Rojo se reorganizó en el Octavo Ejército de Ruta y el Nuevo Cuarto Ejército, desplegando guerra de guerrillas detrás de las líneas japonesas y construyendo zonas liberadas en el norte y centro de China.</p>
-        <p>En las bases regionales como Yan'an, el PCCh implementó el sistema de gobierno de "tres tercios" y formuló la doctrina de la "Nueva Democracia" (1940) y la "Línea de Masas". Entre 1942 y 1945, el Movimiento de Rectificación de Yan'an unificó a la militancia, consolidando el Pensamiento de Mao Zedong como guía ideológica oficial en el 7º Congreso Nacional del PCCh (1945).</p>
+        <!--vis--><div class="vis" data-vis="rings">
+          <p class="vis-one"><small>En una frase</small>Una guerra que se gana desde el campo, rodeando las ciudades.</p>
+          <div class="vis-card">
+            <div class="v-rings-wrap">
+              <div class="v-rings" role="img" aria-label="Círculos concéntricos: el campo al centro y las ciudades alrededor."><div class="v-ring r3"></div><div class="v-ring r2"></div><div class="v-ring r1">村</div></div>
+              <ul class="v-legend">
+                <li><i class="k1"></i><span><b>El campo</b>Guerrillas y zonas liberadas en el norte y centro.</span></li>
+                <li><i class="k2"></i><span><b>Las ciudades</b>Ocupadas por Japón: se rodean, no se atacan primero.</span></li>
+                <li><i class="k3"></i><span><b>Yan'an</b>Base del "tres tercios", la Nueva Democracia y la Línea de Masas.</span></li>
+              </ul>
+            </div>
+            <p class="vis-note">Esquema de la "Guerra Prolongada" formulada por Mao tras julio de 1937.</p>
+          </div>
+        </div><!--/vis-->
+        <p>Tras la invasión generalizada de Japón a partir del Incidente del Puente Marco Polo (julio de 1937), Mao Zedong formuló la teoría de la "<span class="gl" tabindex="0">Guerra Prolongada<span class="gl-def" role="note">Teoría de Mao: resistir a Japón con guerrillas y cercar las ciudades desde el campo.</span></span>" y el cerco a las ciudades desde el campo. El Ejército Rojo se reorganizó en el Octavo Ejército de Ruta y el Nuevo Cuarto Ejército, desplegando guerra de guerrillas detrás de las líneas japonesas y construyendo zonas liberadas en el norte y centro de China.</p>
+        <p>En las bases regionales como Yan'an, el PCCh implementó el sistema de gobierno de "tres tercios" y formuló la doctrina de la "<span class="gl" tabindex="0">Nueva Democracia<span class="gl-def" role="note">Doctrina formulada por Mao en 1940 para las bases regionales como Yan'an.</span></span>" (1940) y la "Línea de Masas". Entre 1942 y 1945, el Movimiento de Rectificación de Yan'an unificó a la militancia, consolidando el Pensamiento de Mao Zedong como guía ideológica oficial en el 7º Congreso Nacional del PCCh (1945).</p>
         <p class="quote">Japón se rindió incondicionalmente en agosto de 1945, tras ocho años de resistencia — pero la guerra por el poder dentro de China apenas estaba entrando en su fase decisiva.</p>
       </div>
     </div>
@@ -230,8 +269,19 @@
       <span class="acto-date">1945 – 1 oct 1949</span>
       <p class="acto-teaser">Las negociaciones de paz fracasan, la reforma agraria moviliza al campesinado, y el Ejército Popular de Liberación acaba con el Kuomintang en menos de cuatro meses.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="steps">
+          <p class="vis-one"><small>En una frase</small>Tres campañas bastaron para destruir al ejército nacionalista.</p>
+          <div class="vis-card">
+            <div class="v-steps" role="list">
+              <div class="v-rail"><div class="v-fill"></div></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">1946</span><h4>Guerra de Liberación</h4><p>Tras fracasar las Negociaciones de Chongqing.</p></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">Sep 1948 – Ene 1949</span><h4>Tres Grandes Campañas</h4><p>Liaoxi-Shenyang, Huaihai y Beiping-Tianjin.</p></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">1 oct 1949</span><h4>Nace la RPC</h4><p>El KMT se repliega a Taiwán.</p></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <p>Tras el fracaso de las Negociaciones de Chongqing, estalló la Guerra de Liberación nacional en 1946. El PCCh movilizó masivamente al campesinado mediante la reforma agraria y la confiscación del capital burócrata. Entre septiembre de 1948 y enero de 1949, el Ejército Popular de Liberación ejecutó las Tres Grandes Campañas (Liaoxi-Shenyang, Huaihai y Beiping-Tianjin), destruyendo las fuerzas principales del KMT, que se replegó a la isla de Taiwán.</p>
-        <p class="quote">En junio de 1949, Mao teorizó la "Dictadura Democrática del Pueblo". En septiembre, la Conferencia Consultiva Política del Pueblo Chino aprobó el Programa Común como constitución provisional, y el 1 de octubre de 1949 se proclamó la República Popular China.</p>
+        <p class="quote">En junio de 1949, Mao teorizó la "Dictadura Democrática del Pueblo". En septiembre, la Conferencia Consultiva Política del Pueblo Chino aprobó el <span class="gl" tabindex="0">Programa Común<span class="gl-def" role="note">Documento aprobado en septiembre de 1949 que sirvió de constitución provisional.</span></span> como constitución provisional, y el 1 de octubre de 1949 se proclamó la República Popular China.</p>
         <figure class="acto-figure">
           <img src="../../assets/china/guerra-civil-invasion-japonesa/mao-proclamacion-prc.jpg" alt="Mao Zedong proclamando el establecimiento de la República Popular China, 1 de octubre de 1949." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Mao Zedong proclama la fundación de la República Popular China, 1 de octubre de 1949, en Tiananmen.
@@ -249,6 +299,17 @@
       <span class="acto-date">1949 → hoy</span>
       <p class="acto-teaser">La fundación de 1949 no solo dio nombre al Estado chino contemporáneo: fijó la narrativa de legitimidad y el principio militar que Xi Jinping sigue invocando.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="timeline">
+          <p class="vis-one"><small>En una frase</small>Lo que nació en la guerra sigue vigente: el Partido dirige al fusil.</p>
+          <div class="vis-card">
+            <div class="v-tline" style="--n:3">
+              <div class="v-tline-rail"><div class="v-tline-fill"></div></div>
+              <div class="v-tl"><span class="v-tl-yr">1927</span><p>Sanwan: filiales del Partido en cada compañía.</p></div>
+              <div class="v-tl"><span class="v-tl-yr">1949</span><p>El fin del "Siglo de la Humillación" funda la legitimidad.</p></div>
+              <div class="v-tl"><span class="v-tl-yr">Hoy</span><p>"Democracia Popular en Todo el Proceso", heredera de la Nueva Democracia.</p></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <p><strong>Legitimidad histórica del "rejuvenecimiento nacional".</strong> La narrativa de haber puesto fin al "Siglo de la Humillación" y expulsado al imperialismo en 1949 constituye la fuente primordial de legitimidad política del PCCh hasta el presente.</p>
         <p><strong>El Partido dirige al fusil.</strong> El principio nacido en la Reorganización de Sanwan en 1927 —que las fuerzas armadas obedecen al Partido y no al revés— sigue rigiendo sin excepción la relación entre el PCCh y el Ejército Popular de Liberación.</p>
         <p class="quote">Conceptos centrales del liderazgo actual de Xi Jinping, como la "Democracia Popular en Todo el Proceso", son una reelaboración directa de la "Dictadura Democrática del Pueblo" y la "Nueva Democracia" formuladas por Mao durante este conflicto.</p>
@@ -309,11 +370,13 @@
     gsap.to(acto.querySelector('.acto-body'), {
       height: 'auto', opacity: 1, duration: reduceMotion ? 0 : 0.65, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
-      onComplete: function(){ ScrollTrigger.refresh(); }
+      onComplete: function(){ acto.querySelector('.acto-body').style.overflow = 'visible'; ScrollTrigger.refresh(); }
     });
+    if(window.playVis) setTimeout(function(){ window.playVis(acto); }, reduceMotion ? 0 : 60);
   }
   function closeActo(acto){
     acto.querySelector('.acto-toggle').textContent = '＋';
+    acto.querySelector('.acto-body').style.overflow = 'hidden';
     gsap.to(acto.querySelector('.acto-body'), {
       height: 0, opacity: 0, duration: reduceMotion ? 0 : 0.5, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
@@ -323,7 +386,8 @@
 
   var actos = document.querySelectorAll('.acto');
   actos.forEach(function(acto){
-    acto.addEventListener('click', function(){
+    acto.addEventListener('click', function(e){
+      if(e.target.closest('.acto-body')) return;
       var wasActive = acto.classList.contains('active');
       document.querySelectorAll('.acto.active').forEach(function(a){ a.classList.remove('active'); closeActo(a); });
       if(!wasActive){ acto.classList.add('active'); openActo(acto); }
@@ -331,7 +395,7 @@
   });
   var firstActive = document.querySelector('.acto.active .acto-body');
   if(firstActive){
-    gsap.set(firstActive, {height:'auto', opacity:1});
+    gsap.set(firstActive, {height:'auto', opacity:1, overflow:'visible'});
     document.querySelector('.acto.active .acto-toggle').textContent = '－';
   }
 
@@ -380,5 +444,6 @@
   window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
 </script>
 
+<!--vis-js--><script src="../../assets/vis.js"></script><!--/vis-js-->
 </body>
 </html>

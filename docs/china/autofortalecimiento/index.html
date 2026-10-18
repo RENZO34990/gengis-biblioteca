@@ -161,6 +161,8 @@
     section{padding:6vh 6vw;}
   }
 </style>
+<!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
+<style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(201,166,62,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Noto Serif SC', serif; --v-body:'Hanken Grotesk', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
 </head>
 <body>
 <a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
@@ -195,9 +197,21 @@
       <span class="acto-date">1861 – 1872</span>
       <p class="acto-teaser">Tras la Segunda Guerra del Opio y la sangrienta Rebelión Taiping, la corte Qing aposta su supervivencia a la tecnología occidental, sin tocar el resto del sistema.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="flow">
+          <p class="vis-one"><small>En una frase</small>Tras dos guerras y una rebelión, el imperio buscó copiar la técnica de Occidente para sobrevivir.</p>
+          <div class="vis-card">
+            <div class="v-flow">
+              <div class="v-node"><span class="v-k">1856–64</span><h4>Golpes seguidos</h4><p>Segunda Guerra del Opio y Rebelión Taiping dejan al imperio exhausto.</p></div>
+              <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-node"><span class="v-k">1861</span><h4>Tsungli Yamen</h4><p>Nace la oficina para tratar con el extranjero.</p></div>
+              <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-node"><span class="v-k">1865–66</span><h4>Arsenales</h4><p>Arsenal de Kiangnan y Astillero de Foochow.</p></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <p>Tras el devastador impacto de la Segunda Guerra del Opio (1856–1860) y el sofocamiento de la sangrienta Rebelión Taiping (1850–1864), la dinastía Qing entró en un periodo de tregua política y recuperación conocido como la "Restauración T'ung-chih" (1862–1874). El imperio estaba militarmente exhausto, fiscalmente drenado y amenazado por el avance del imperialismo occidental.</p>
         <p>Para asegurar la supervivencia dinástica y bajo el lema del erudito Wei Yuan —"aprender las técnicas superiores de los bárbaros para controlar a los bárbaros"—, altos funcionarios imperiales impulsaron el Movimiento de Autofortalecimiento (Yang-wu yundong). Liderado en la corte por el Príncipe Kung y Wen-hsiang, y en las provincias por gobernadores generales como Tseng Kuo-fan, Tso Tsung-t'ang y Li Hung-chang, el proyecto buscó dotar a China de capacidades tecnológicas modernas.</p>
-        <p class="quote">En su primera fase (1861–1872), la iniciativa se volcó exclusivamente a la modernización militar e institucional de emergencia: el Tsungli Yamen (1861) para la diplomacia extranjera, la escuela de lenguas T'ung-wen kuan (1862) y grandes complejos bélicos como el Arsenal de Kiangnan (1865) y el Astillero de Foochow (1866).</p>
+        <p class="quote">En su primera fase (1861–1872), la iniciativa se volcó exclusivamente a la modernización militar e institucional de emergencia: el <span class="gl" tabindex="0">Tsungli Yamen<span class="gl-def" role="note">Oficina creada en 1861 para manejar la diplomacia con las potencias extranjeras.</span></span> (1861) para la diplomacia extranjera, la escuela de lenguas T'ung-wen kuan (1862) y grandes complejos bélicos como el Arsenal de Kiangnan (1865) y el Astillero de Foochow (1866).</p>
         <figure class="acto-figure">
           <img src="../../assets/china/autofortalecimiento/arsenal-jiangnan.jpg" alt="El Arsenal de Kiangnan (Jiangnan), fundado en 1865 cerca de Shanghái por Li Hung-chang." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>El Arsenal de Kiangnan, 1865: el complejo bélico que simbolizó la primera fase del Autofortalecimiento.
@@ -215,10 +229,24 @@
       <span class="acto-date">1872 – 1894</span>
       <p class="acto-teaser">El salto hacia la industria civil tropieza con el mismo obstáculo que intentaba evitar: una autocracia agraria que no deja crecer al capital que necesita.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="rings">
+          <p class="vis-one"><small>En una frase</small>Sabiduría china por dentro, técnica occidental por fuera: la estructura no se tocaba.</p>
+          <div class="vis-card">
+            <div class="v-rings-wrap">
+              <div class="v-rings" role="img" aria-label="Círculos concéntricos: el fundamento chino al centro, la técnica occidental alrededor."><div class="v-ring r3"></div><div class="v-ring r2"></div><div class="v-ring r1">道</div></div>
+              <ul class="v-legend">
+                <li><i class="k1"></i><span><b>Fundamento (Ti)</b>Instituciones políticas, jurídicas y sociales confucianas, sin cambios.</span></li>
+                <li><i class="k2"></i><span><b>Uso práctico (Yong)</b>Tecnología y aprendizaje occidental, injertados encima.</span></li>
+                <li><i class="k3"></i><span><b>El problema</b>Nuevas fábricas sobre un Estado agrario y sin capital.</span></li>
+              </ul>
+            </div>
+            <p class="vis-note">El lema del movimiento: "sabiduría china como fundamento, aprendizaje occidental para uso práctico".</p>
+          </div>
+        </div><!--/vis-->
         <p>El modelo inicial chocó rápido con una barrera financiera y estructural: sostener una infraestructura militar moderna resultaba prohibitivo para un Estado agrario con escasez de capital. En 1876, Li Hung-chang diagnosticó el problema al señalar que "la debilidad crónica de China proviene de la pobreza" y que el poder militar requería indispensablemente de una base de riqueza económica.</p>
         <figure class="acto-figure">
           <img src="../../assets/china/autofortalecimiento/li-hongzhang.jpg" alt="Retrato de Li Hongzhang, 1871." loading="lazy" onerror="this.closest('figure').hidden=true">
-          <figcaption>Li Hung-chang (Li Hongzhang), 1871: el gobernador general que impulsó la industrialización civil kuan-tu shang-pan.
+          <figcaption>Li Hung-chang (Li Hongzhang), 1871: el gobernador general que impulsó la industrialización civil <span class="gl" tabindex="0">kuan-tu shang-pan<span class="gl-def" role="note">Fórmula de &quot;supervisión oficial y gestión mercantil&quot;: el Estado vigila, los comerciantes administran.</span></span>.
             <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
           </figcaption>
         </figure>
@@ -228,7 +256,7 @@
           <div class="loss-item"><h3>Regionalismo y feudos personales</h3><p>Con Pekín debilitado, los proyectos industriales fueron promovidos por gobernadores provinciales que los gestionaban como bases de poder personal, compitiendo entre sí en vez de operar bajo un plan nacional.</p></div>
           <div class="loss-item"><h3>Asfixia burocrática e ineficiencia</h3><p>Las empresas kuan-tu shang-pan sufrieron interferencia administrativa, nepotismo, extorsiones fiscales locales y exigencias de dividendos inmediatos de inversionistas temerosos de la confiscación estatal, impidiendo la reinversión de capital.</p></div>
         </div>
-        <p class="quote">El movimiento operó bajo el dogma "sabiduría china como fundamento, aprendizaje occidental para uso práctico" (Ti-Yong): injertar tecnología sobre la estructura autocrática y agraria confuciana sin modificar las instituciones políticas, jurídicas o sociales subyacentes.</p>
+        <p class="quote">El movimiento operó bajo el dogma "sabiduría china como fundamento, aprendizaje occidental para uso práctico" (<span class="gl" tabindex="0">Ti-Yong<span class="gl-def" role="note">Lema: &quot;sabiduría china como fundamento (ti), aprendizaje occidental para uso práctico (yong)&quot;.</span></span>): injertar tecnología sobre la estructura autocrática y agraria confuciana sin modificar las instituciones políticas, jurídicas o sociales subyacentes.</p>
       </div>
     </div>
   </div>
@@ -240,9 +268,20 @@
       <span class="acto-date">1894 – abr 1895</span>
       <p class="acto-teaser">Tres décadas de inversión militar se desmoronan en meses frente a Japón, que sí transformó sus instituciones.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="steps">
+          <p class="vis-one"><small>En una frase</small>Una flota de arsenales perdió contra un vecino que sí había cambiado sus instituciones.</p>
+          <div class="vis-card">
+            <div class="v-steps" role="list">
+              <div class="v-rail"><div class="v-fill"></div></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">1888</span><h4>Flota de Peiyang</h4><p>Tres décadas de inversión en arsenales.</p></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">1894–95</span><h4>Guerra Sino-Japonesa</h4><p>La Flota de Nanyang se declara "neutral" y Peiyang pelea sola.</p></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">17 abr 1895</span><h4>Tratado de Shimonoseki</h4><p>Corea independiente; Taiwán, Pescadores y Liaotung a Japón.</p></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <p>La prueba de fuego que expuso de forma irreversible el colapso del modelo llegó con la Guerra Sino-Japonesa (1894–1895). A pesar de más de tres décadas de inversión en arsenales y de la Flota de Peiyang (1888), China sufrió una humillante derrota ante Japón, una nación asiática de menor tamaño que sí había transformado radicalmente sus estructuras políticas e institucionales mediante la Restauración Meiji.</p>
         <p>El conflicto desnudó la falta de cohesión nacional: la Flota de Nanyang declaró su "neutralidad" y se negó a acudir al rescate de la Flota de Peiyang, que luchó en solitario. Al mismo tiempo, la emperatriz Cixi desvió cerca de 30 millones de taeles del presupuesto naval hacia la reconstrucción recreativa del Palacio de Verano.</p>
-        <p class="quote">El punto de no retorno se selló el 17 de abril de 1895 con el Tratado de Shimonoseki, firmado por Li Hung-chang: China reconoció la independencia de Corea, cedió Taiwán, las islas Pescadores y la península de Liaotung a Japón, y pagó una indemnización de 200 millones de taeles.</p>
+        <p class="quote">El punto de no retorno se selló el 17 de abril de 1895 con el <span class="gl" tabindex="0">Tratado de Shimonoseki<span class="gl-def" role="note">Tratado de 1895 que cerró la guerra con Japón: Taiwán, Pescadores y Liaotung cedidos y 200 millones de taeles de indemnización.</span></span>, firmado por Li Hung-chang: China reconoció la independencia de Corea, cedió Taiwán, las islas Pescadores y la península de Liaotung a Japón, y pagó una indemnización de 200 millones de taeles.</p>
       </div>
     </div>
   </div>
@@ -254,6 +293,16 @@
       <span class="acto-date">1895 – 1900</span>
       <p class="acto-teaser">La derrota invalida la idea de que el fortalecimiento técnico bastaba, y desata un reparto imperialista del territorio chino.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="bars">
+          <p class="vis-one"><small>En una frase</small>Lo que la corte gastó en su placer pesó poco frente a lo que pagó a Japón.</p>
+          <div class="vis-card">
+            <div class="v-bars">
+              <div class="v-bar"><span class="v-bl">Desviado del presupuesto naval al Palacio de Verano</span><div class="v-btrack"><div class="v-bfill" style="--w:15%"></div></div><span class="v-bv">≈30 M de taeles</span></div>
+              <div class="v-bar alt"><span class="v-bl">Indemnización de Shimonoseki</span><div class="v-btrack"><div class="v-bfill" style="--w:100%"></div></div><span class="v-bv">200 M de taeles</span></div>
+            </div>
+            <p class="vis-note">El desvío equivale a cerca de una séptima parte de la indemnización.</p>
+          </div>
+        </div><!--/vis-->
         <p>El Tratado de Shimonoseki otorgó a las potencias occidentales y a Japón el derecho legal de establecer fábricas e industrias directamente en los puertos de tratado chinos. Con mayor capital, exención de aranceles internos y tecnología avanzada, las empresas extranjeras asfixiaron a las nacientes industrias locales y arruinaron la economía artesanal campesina.</p>
         <div class="chart-block">
           <span class="chart-title">Indemnización de guerra exigida por Japón (millones de taeles)</span>
@@ -263,7 +312,7 @@
           </div>
           <p class="chart-note">La suma que la corte desvió para su propio ocio recreativo equivale a apenas una séptima parte de lo que tuvo que pagar a Japón meses después.</p>
         </div>
-        <p>Las potencias imperialistas fraccionaron a China en esferas de influencia en el llamado "reparto del melón" (Scramble for Concessions), apoderándose de minas y concesiones ferroviarias como el Ferrocarril Oriental Chino de Rusia y la línea Kiaochow-Tsinan de Alemania. Para financiar los 200 millones de taeles, la dinastía Qing contrató préstamos leoninos con consorcios bancarios europeos, comprometiendo los ingresos de las aduanas marítimas y los impuestos a la sal como garantía.</p>
+        <p>Las potencias imperialistas fraccionaron a China en esferas de influencia en el llamado "<span class="gl" tabindex="0">reparto del melón<span class="gl-def" role="note">Nombre con que se conoce la división de China en esferas de influencia entre las potencias.</span></span>" (Scramble for Concessions), apoderándose de minas y concesiones ferroviarias como el Ferrocarril Oriental Chino de Rusia y la línea Kiaochow-Tsinan de Alemania. Para financiar los 200 millones de taeles, la dinastía Qing contrató préstamos leoninos con consorcios bancarios europeos, comprometiendo los ingresos de las aduanas marítimas y los impuestos a la sal como garantía.</p>
         <p class="quote">La crisis convenció a los intelectuales de que la modernización requería reformas institucionales profundas, desencadenando la Reforma de los Cien Días en 1898 de K'ang Yu-wei y Liang Ch'i-ch'ao, y fortaleciendo al movimiento revolucionario de Sun Yat-sen.</p>
       </div>
     </div>
@@ -276,8 +325,19 @@
       <span class="acto-date">1861 → hoy</span>
       <p class="acto-teaser">La industrialización limitada de 1861-1895 legó dos tensiones que China contemporánea sigue administrando.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="timeline">
+          <p class="vis-one"><small>En una frase</small>Las empresas estatales de hoy repiten una tensión que nació en los arsenales.</p>
+          <div class="vis-card">
+            <div class="v-tline" style="--n:3">
+              <div class="v-tline-rail"><div class="v-tline-fill"></div></div>
+              <div class="v-tl"><span class="v-tl-yr">1861–95</span><p>Shanghái, Tianjin, Hankow y Guangzhou se vuelven metrópolis modernas.</p></div>
+              <div class="v-tl"><span class="v-tl-yr">Modelo kuan-tu shang-pan</span><p>El Estado supervisa, el mercado gestiona: antecedente de las actuales SOE.</p></div>
+              <div class="v-tl"><span class="v-tl-yr">Hoy</span><p>"Made in China 2025" y la autonomía tecnológica, para no depender de nadie.</p></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <p><strong>Nace la clase empresarial urbana.</strong> Los polos industriales desarrollados entre 1861 y 1895 transformaron ciudades costeras y fluviales como Shanghái, Tianjin, Hankow y Guangzhou en metrópolis modernas, propiciando el surgimiento de la primera clase obrera urbana y de la clase empresarial/compradora en China.</p>
-        <p><strong>El dilema histórico de las empresas estatales.</strong> El modelo kuan-tu shang-pan sentó el antecedente de la tensión entre el control político del Estado y la autonomía del mercado: un esquema que prefigura los dilemas de gobernanza de las actuales Empresas Estatales (SOE), donde Pekín mantiene la supervisión estratégica mientras busca preservar la eficiencia comercial.</p>
+        <p><strong>El dilema histórico de las empresas estatales.</strong> El modelo kuan-tu shang-pan sentó el antecedente de la tensión entre el control político del Estado y la autonomía del mercado: un esquema que prefigura los dilemas de gobernanza de las actuales Empresas Estatales (<span class="gl" tabindex="0">SOE<span class="gl-def" role="note">Siglas en inglés de las empresas estatales (State-Owned Enterprises).</span></span>), donde Pekín mantiene la supervisión estratégica mientras busca preservar la eficiencia comercial.</p>
         <p class="quote">El fracaso de depender del suministro y la asesoría extranjera en el siglo XIX fundamenta la determinación del Estado chino actual en la autonomía tecnológica —"Made in China 2025" y las "Nuevas Fuerzas Productivas de Calidad"— para evitar vulnerabilidades estratégicas frente a presiones externas.</p>
       </div>
     </div>
@@ -336,8 +396,9 @@
     gsap.to(acto.querySelector('.acto-body'), {
       height: 'auto', opacity: 1, duration: reduceMotion ? 0 : 0.65, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
-      onComplete: function(){ ScrollTrigger.refresh(); }
+      onComplete: function(){ acto.querySelector('.acto-body').style.overflow = 'visible'; ScrollTrigger.refresh(); }
     });
+    if(window.playVis) setTimeout(function(){ window.playVis(acto); }, reduceMotion ? 0 : 60);
     var bars = acto.querySelectorAll('.chart-bar');
     if(bars.length && !acto.dataset.chartsPlayed){
       acto.dataset.chartsPlayed = '1';
@@ -349,6 +410,7 @@
   }
   function closeActo(acto){
     acto.querySelector('.acto-toggle').textContent = '＋';
+    acto.querySelector('.acto-body').style.overflow = 'hidden';
     gsap.to(acto.querySelector('.acto-body'), {
       height: 0, opacity: 0, duration: reduceMotion ? 0 : 0.5, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
@@ -358,7 +420,8 @@
 
   var actos = document.querySelectorAll('.acto');
   actos.forEach(function(acto){
-    acto.addEventListener('click', function(){
+    acto.addEventListener('click', function(e){
+      if(e.target.closest('.acto-body')) return;
       var wasActive = acto.classList.contains('active');
       document.querySelectorAll('.acto.active').forEach(function(a){ a.classList.remove('active'); closeActo(a); });
       if(!wasActive){ acto.classList.add('active'); openActo(acto); }
@@ -366,7 +429,7 @@
   });
   var firstActive = document.querySelector('.acto.active .acto-body');
   if(firstActive){
-    gsap.set(firstActive, {height:'auto', opacity:1});
+    gsap.set(firstActive, {height:'auto', opacity:1, overflow:'visible'});
     document.querySelector('.acto.active .acto-toggle').textContent = '－';
   }
 
@@ -415,5 +478,6 @@
   window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
 </script>
 
+<!--vis-js--><script src="../../assets/vis.js"></script><!--/vis-js-->
 </body>
 </html>
