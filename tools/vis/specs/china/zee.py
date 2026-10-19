@@ -8,7 +8,7 @@ V=[
  flow('Zhu Rongji rediseñó el Estado desde los cimientos fiscales.',
   [('1994','Reforma fiscal','IVA de 17% y recaudación recentralizada en Pekín.'),('1994','Tipo de cambio','Unificado: 8.7 RMB por dólar.'),('1997–98','Agarrar lo grande','Más de 50,000 SOE pequeñas vendidas o liquidadas.'),('2001','OMC','Adhesión firmada el 11 de diciembre.')]),
  stats('Cambió el campo por la fábrica, pero con un costo social enorme.',
-  [S('150 M','campesinos migraron a metrópolis costeras',to=None),S('21 M+','trabajadores estatales despedidos',to=None),S('42.9% → 16.6%','arancel promedio, 1992 y 2001',to=None)]),
+  [S('9–10%+','de crecimiento anual del PIB real; la economía se cuadruplicó entre 1978 y 2000',to=None),S('21 M+','trabajadores estatales despedidos',to=None),S('150 M','campesinos migraron a metrópolis costeras',to=None)]),
  versus('La reforma de 1994 explica tanto la fábrica del mundo como la deuda local de hoy.',
   ['Fábrica del mundo: más de 400 empresas Fortune 500','Estado dueño de las "alturas dominantes"'],
   ['Municipios con déficit estructural','Dependencia del mercado inmobiliario y LGFV'],labels=('Lo que se ganó','Lo que se heredó')),

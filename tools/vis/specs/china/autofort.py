@@ -8,9 +8,8 @@ V=[
   note='El lema del movimiento: "sabiduría china como fundamento, aprendizaje occidental para uso práctico".',aria='Círculos concéntricos: el fundamento chino al centro, la técnica occidental alrededor.'),
  steps('Una flota de arsenales perdió contra un vecino que sí había cambiado sus instituciones.',
   [('1888','Flota de Peiyang','Tres décadas de inversión en arsenales.'),('1894–95','Guerra Sino-Japonesa','La Flota de Nanyang se declara "neutral" y Peiyang pelea sola.'),('17 abr 1895','Tratado de Shimonoseki','Corea independiente; Taiwán, Pescadores y Liaotung a Japón.')]),
- bars('Lo que la corte gastó en su placer pesó poco frente a lo que pagó a Japón.',
-  [('Desviado del presupuesto naval al Palacio de Verano','≈30 M de taeles',15),('Indemnización de Shimonoseki','200 M de taeles',100,True)],
-  note='El desvío equivale a cerca de una séptima parte de la indemnización.'),
+ flow('Perder contra Japón abrió la puerta a las fábricas extranjeras y a los bancos europeos.',
+  [('1895','Fábricas extranjeras','Shimonoseki permite instalarlas en los puertos de tratado.'),('Resultado','Industria local ahogada','Más capital, sin aranceles internos y mejor tecnología.'),('Deuda','Préstamos leoninos','Aduanas e impuestos a la sal quedan como garantía.'),('1898','Cien Días','Kang Youwei y Liang Qichao piden reformas profundas.')]),
  timeline('Las empresas estatales de hoy repiten una tensión que nació en los arsenales.',
   [('1861–95','Shanghái, Tianjin, Hankow y Guangzhou se vuelven metrópolis modernas.'),('Modelo kuan-tu shang-pan','El Estado supervisa, el mercado gestiona: antecedente de las actuales SOE.'),('Hoy','"Made in China 2025" y la autonomía tecnológica, para no depender de nadie.')]),
 ]

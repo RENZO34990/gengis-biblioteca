@@ -12,7 +12,7 @@ V=[
   ['El opio es de mercaderes privados','Si se pierde, lo pierden ellos','Un asunto de contrabando'],
   ['Elliot ordena entregarlo "en nombre de la Corona"','Londres promete reembolsar las pérdidas','Una cuestión de soberanía estatal'],labels=('Antes del 27 de marzo de 1839','Después')),
  stats('El tratado abrió puertos, disolvió un monopolio y cambió el centro del comercio.',
-  [S('5','puertos de tratado: Cantón, Amoy, Fuzhou, Ningbo y Shanghái',to=5),S('21 M','de dólares de indemnización, más la cesión de Hong Kong',to=21,suf=' M'),S('×3','la exportación de seda de Shanghái en solo dos años (1845–1847)',to=3,pre='×')]),
+  [S('5','puertos de tratado: Cantón, Amoy, Fuzhou, Ningbo y Shanghái',to=5),S('21 M','de dólares de indemnización',to=21,suf=' M'),S('Hong Kong','cedido a la Corona británica; el Cohong, disuelto',to=None)]),
  timeline('Los puertos donde China perdió en 1842 son hoy donde se conecta con el mundo.',
   [('1842','Cinco puertos de tratado y el siglo de la humillación.'),('1979–80','Las Zonas Económicas Especiales se levantan, muchas, sobre antiguos puertos de tratado.'),('Hoy','El delta del río Perla genera más del 23% de las exportaciones nacionales.')]),
 ]

@@ -9,7 +9,7 @@ V=[
   [('Arancel industrial promedio, 2001','16.6%',100),('Arancel industrial promedio, 2005','8.9%',54,True)],
   note='En 2005 se abolieron las restricciones cuantitativas y el monopolio estatal de licencias.'),
  timeline('De tercera a segunda economía del mundo.',
-  [('2007','Supera a Alemania: tercera economía.'),('2010','Primer exportador mundial; supera a Japón.'),('2012','Exportaciones de más de 2,000 mil millones de dólares.')]),
+  [('2007','Supera a Alemania: tercera economía.'),('2010','Primer exportador mundial; supera a Japón.'),('2008','Estímulo de 4 billones de yuanes en infraestructura ante la crisis global.')]),
  stats('Escala que sostiene el liderazgo de hoy.',
   [S('≈30%','de la producción manufacturera mundial',to=None),S('120+','países para los que es el principal socio comercial',to=None),S('4 billones','de yuanes de estímulo ante la crisis de 2008',to=None)]),
 ]

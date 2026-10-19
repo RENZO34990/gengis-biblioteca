@@ -3,8 +3,8 @@ PATH='republica-senores-guerra'
 V=[
  steps('La república heredó una economía que otros controlaban y un presidente que quiso ser emperador.',
   [('Oct 1911','Revolución de Wuchang','Cae la dinastía Qing tras más de 2,000 años de monarquía.'),('1912','Nace la república','Con banca, ferrocarriles y minas en manos extranjeras.'),('1911–16','Yuan Shikai','Reprime al Kuomintang y termina intentando proclamarse emperador.')]),
- stats('Con el Estado partido en feudos, el empresariado chino vivió su edad de oro.',
-  [S('13.8%','de crecimiento anual del sector industrial moderno en su pico (1912–1920)',to=13.8,dec=1,suf='%'),S('9.2%','promedio anual 1912–1936',to=9.2,dec=1,suf='%'),S('145 M','de yenes en los préstamos de Nishihara de 1918',to=145,suf=' M')]),
+ stats('Con el Estado partido en feudos, la guerra mundial le dio aire al empresariado chino.',
+  [S('×2','precio mundial de la plata, 1914–1919: maquinaria importada más barata',to=2,pre='×'),S('3','clanes rivales: Zhihli, Anhui y Fengtien',to=3),S('145 M','de yenes en los préstamos de Nishihara de 1918',to=None)]),
  flow('Una indignación nacional terminó en un frente unido y en una traición.',
   [('1919','Movimiento del 4 de Mayo','Protesta por entregar Shandong a Japón.'),('1921','Nace el PCCh','El marxismo se une al movimiento obrero.'),('1923–27','Primer Frente Unido','Expedición al Norte contra los caudillos.'),('12 abr 1927','Masacre de Shanghái','Chiang Kai-shek rompe la alianza.')]),
  versus('Un país unificado en el papel, partido en dos economías.',

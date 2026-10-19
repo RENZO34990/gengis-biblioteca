@@ -8,9 +8,8 @@ V=[
   ['Made in China 2025 (mayo de 2015): potencia de alta tecnología en 10 sectores'],labels=('Hacia afuera','Hacia adentro')),
  flow('El Estado reasignó el capital hacia los "Nuevos Tres".',
   [('Vehículos','Nueva energía','Subsidios y créditos dirigidos.'),('Almacenamiento','Baterías de litio','Más del 70% de la cadena mundial.'),('Generación','Solar fotovoltaica','Más del 80% de los módulos.')]),
- bars('Cuota china de la producción mundial.',
-  [('Baterías de litio','70%',70),('Módulos solares fotovoltaicos','80%',80,True)],
-  note='En 2023 China exportó más de 4 millones de vehículos y superó a Japón como mayor exportador.'),
+ stats('Del ensamblaje barato a vender autos, invertir en ciencia y producir sus propios chips.',
+  [S('4 M+','de vehículos exportados en 2023, 1.2 M de EVs: superó a Japón',to=None),S('2.68%','del PIB en I+D en 2024: 3.6 billones de yuanes',to=None),S('70%','de autoconsumo de obleas de silicio domésticas en 2026',to=None)]),
  timeline('De ensamblador de bajo costo a potencia industrial autónoma.',
   [('2013–2026','Se edifica la base industrial de alta tecnología.'),('2026–2030','El 15º Plan Quinquenal busca el pico de emisiones antes de 2030.'),('Hoy','Acusaciones de sobrecapacidad: aranceles, barreras y sanciones.')]),
 ]
