@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>햇볕정책 — La Política del Sol y la diplomacia económica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F5F3EE;
+    --paper-warm:#EAE6DC;
+    --ink:#1C1C1C;
+    --ink-soft:#5C5A54;
+    --celadon:#7A9E8E;
+    --celadon-deep:#4F6F61;
+    --terracota:#B5623B;
+    --terracota-deep:#8E4B2C;
+    --terracota-light:#F0B898;
+    --peach:#FAE6D9;
+    --line: rgba(28,28,28,0.13);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:auto;}
+  html.lenis, html.lenis body{height:auto;}
+  html.lenis.lenis-smooth{scroll-behavior:auto !important;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:'Gothic A1', sans-serif; font-weight:400;
+    font-size:17px; line-height:1.7;
+  }
+  ::selection{background:var(--terracota); color:var(--paper);}
+  a{color:var(--ink);}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; letter-spacing:.1em; text-transform:uppercase;
+    font-size:.72rem; color:var(--terracota-deep); font-weight:500;
+  }
+
+  .top-return{
+    position:fixed; top:1.4rem; left:1.4rem; z-index:50;
+    background:var(--paper); color:var(--ink-soft);
+    border:1px solid var(--line); padding:.5rem 1rem;
+    font-family:'IBM Plex Mono', monospace; font-size:.72rem;
+    text-decoration:none; display:inline-flex; align-items:center; gap:.5rem;
+    transition:border-color .3s ease, color .3s ease, transform 160ms cubic-bezier(0.23,1,0.32,1);
+  }
+  .top-return:hover{border-color:var(--celadon-deep); color:var(--ink);}
+  .top-return:active{transform:scale(0.97);}
+  .tr-arrow{display:inline-block; transition:transform .3s ease;}
+  .top-return:hover .tr-arrow{transform:translateX(-3px);}
+
+  /* ---------- HERO: rigor industrial, calma celadón ---------- */
+  header.hero{
+    position:relative; min-height:94vh; overflow:hidden;
+    display:flex; flex-direction:column; justify-content:center;
+    padding:14vh 8vw 12vh;
+    background:linear-gradient(160deg, #16201C 0%, var(--celadon-deep) 68%, #3E5A4E 100%);
+    color:var(--paper);
+  }
+  .hero-kanji{
+    position:absolute; right:5vw; top:50%; transform:translateY(-50%);
+    font-family:'Gothic A1', sans-serif; font-weight:700;
+    font-size:clamp(8rem, 22vw, 18rem);
+    color:rgba(245,243,238,0.055);
+    user-select:none; z-index:0; line-height:1;
+  }
+  .hero-content{position:relative; z-index:2; max-width:660px;}
+  .hero .eyebrow{color:var(--peach);}
+  .hero-rule{width:48px; height:2px; background:var(--terracota); margin-bottom:1.6rem;}
+  h1.title-kr{
+    font-family:'Gothic A1', sans-serif; font-weight:700;
+    font-size:clamp(2.1rem, 4.8vw, 3.6rem); line-height:1.3; margin:.4rem 0 .5rem; color:var(--paper);
+  }
+  .title-romaja{font-family:'IBM Plex Mono', monospace; font-size:.82rem; color:rgba(245,243,238,0.72); letter-spacing:.02em; margin-bottom:2rem; line-height:1.6;}
+  .hero-dek{font-size:1.06rem; max-width:560px; color:rgba(245,243,238,0.9); font-weight:400; line-height:1.85;}
+  .hero-stats{display:flex; flex-wrap:wrap; margin-top:3.2rem; border-top:1px solid rgba(245,243,238,0.2);}
+  .hero-stats div{padding:1.1rem 3rem 1.6rem 0; margin-right:1.4rem; border-right:1px solid rgba(245,243,238,0.2);}
+  .hero-stats div:last-child{border-right:none; padding-right:0;}
+  .hero-stats .num{font-family:'Gothic A1', sans-serif; font-weight:700; font-size:1.5rem; display:block; color:var(--terracota-light);}
+  .hero-stats .lbl{font-family:'IBM Plex Mono', monospace; font-size:.78rem; color:rgba(245,243,238,0.7); display:block; margin-top:.3rem; max-width:150px;}
+
+  section{padding:7vh 8vw; max-width:1080px; margin:0 auto;}
+  .section-head{max-width:580px; margin-bottom:3.4rem;}
+  h2{font-family:'Gothic A1', sans-serif; font-weight:700; font-size:clamp(1.6rem, 3vw, 2.2rem); margin:.5rem 0 0; color:var(--ink);}
+  .lede{font-size:1.02rem; color:var(--ink-soft); margin-top:1rem;}
+
+  /* ---------- Divisor Cheonjiin (círculo + línea + línea) ---------- */
+  .divider-motif{display:flex; justify-content:center; align-items:center; gap:1.4rem; padding:3vh 0; opacity:.5;}
+  .divider-motif svg{display:block; width:220px; height:16px;}
+
+  /* ---------- ACTOS ---------- */
+  .acto{border-top:1px solid var(--line); padding:2.6rem 0; display:grid; grid-template-columns:100px 1fr; gap:2.4rem; cursor:pointer; transition:transform 160ms cubic-bezier(0.23,1,0.32,1);}
+  .acto:last-child{border-bottom:1px solid var(--line);}
+  .acto:active{transform:scale(0.99);}
+  .acto-num{font-family:'Gothic A1', sans-serif; font-weight:700; font-size:2.1rem; color:rgba(181,98,59,0.35); line-height:1; transition:color .3s ease;}
+  .acto.active .acto-num{color:var(--terracota);}
+  .acto-label{font-family:'IBM Plex Mono', monospace; font-size:.75rem; text-transform:uppercase; letter-spacing:.06em; color:var(--celadon-deep); display:block; margin-top:.6rem;}
+  .acto-head{display:flex; align-items:baseline; gap:1.1rem; flex-wrap:wrap; justify-content:space-between;}
+  .acto-title{font-family:'Gothic A1', sans-serif; font-weight:600; font-size:1.24rem; color:var(--ink);}
+  .acto-date{font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink-soft); white-space:nowrap; font-weight:500;}
+  .acto-toggle{font-family:'IBM Plex Mono', monospace; font-size:.9rem; color:var(--terracota-deep); flex-shrink:0;}
+  .acto-teaser{color:var(--ink-soft); margin:.7rem 0 0; max-width:620px;}
+  .acto-body{height:0; overflow:hidden; opacity:0;}
+  .acto-body p{margin:0 0 1rem; color:var(--ink); max-width:660px; line-height:1.85;}
+  .acto-body strong{font-weight:700; color:var(--celadon-deep);}
+  .acto-body .quote{padding-left:1.1rem; border-left:2px solid var(--terracota); color:var(--ink-soft); font-size:.98rem; margin-top:1.2rem; max-width:610px; font-style:normal;}
+
+  /* ---------- Listas de ruptura / de reformas ---------- */
+  .loss-list{margin:1.6rem 0; border-top:1px solid var(--line); max-width:640px;}
+  .loss-item{padding:1.4rem 0; border-bottom:1px solid var(--line);}
+  .loss-item h3{margin:0 0 .4rem; font-family:'Gothic A1', sans-serif; font-weight:600; font-size:1rem; color:var(--celadon-deep);}
+  .loss-item h3 .when{font-family:'IBM Plex Mono', monospace; font-weight:500; font-size:.76rem; color:var(--terracota-deep); margin-right:.7rem; letter-spacing:.02em;}
+  .loss-item p{margin:0; font-size:.94rem; color:var(--ink-soft); line-height:1.75;}
+
+  /* ---------- ACTORES / COMPARACIÓN ---------- */
+  .flat-grid{display:grid; grid-template-columns:repeat(2, 1fr); gap:0; border-top:1px solid var(--line);}
+  .flat-grid.cols-3{grid-template-columns:repeat(3, 1fr);}
+  .flat-grid.cols-4{grid-template-columns:repeat(4, 1fr);}
+  .flat-grid.cols-2{grid-template-columns:repeat(2, 1fr);}
+  .flat-grid > div{padding:2rem 3rem 2rem 0; border-right:1px solid var(--line);}
+  .flat-grid > div:last-child{border-right:none;}
+  .flat-grid h3{margin:0 0 .8rem; font-family:'Gothic A1', sans-serif; font-weight:600; font-size:1.02rem; color:var(--ink);}
+  .flat-grid h3::before{content:"●"; color:var(--terracota); font-size:.5rem; margin-right:.5rem; vertical-align:middle;}
+  .flat-grid p{margin:0; font-size:.92rem; color:var(--ink-soft); line-height:1.75;}
+  .flat-grid .role{font-family:'IBM Plex Mono', monospace; font-size:.7rem; color:var(--celadon-deep); text-transform:uppercase; letter-spacing:.04em; display:block; margin-bottom:.6rem;}
+
+  .connect-note{margin-top:2.6rem; padding-top:1.6rem; border-top:1px solid var(--line); font-family:'IBM Plex Mono', monospace; font-size:.82rem; color:var(--ink-soft);}
+  .connect-note a{color:var(--celadon-deep); border-bottom:1px solid var(--celadon-deep); padding-bottom:1px;}
+
+  .sources{border-top:1px solid var(--line); padding-top:2rem;}
+  .sources p{font-size:.92rem; color:var(--ink-soft); max-width:640px;}
+
+  .nav-adjacent{display:grid; grid-template-columns:1fr 1fr; border-top:1px solid var(--line); margin-top:1rem;}
+  .nav-adjacent a, .nav-adjacent .empty{padding:2rem 3rem 2.4rem 0; text-decoration:none; color:var(--ink); display:flex; flex-direction:column; border-right:1px solid var(--line); transition:transform 160ms cubic-bezier(0.23,1,0.32,1);}
+  .nav-adjacent a:hover{transform:translateX(.4rem);}
+  .nav-adjacent a:active{transform:scale(0.98);}
+  .nav-adjacent .dir{font-family:'IBM Plex Mono', monospace; font-size:.76rem; text-transform:uppercase; color:var(--celadon-deep); margin-bottom:.6rem; letter-spacing:.05em;}
+  .nav-adjacent .ttl{font-family:'Gothic A1', sans-serif; font-weight:700; font-size:1.08rem; display:inline-flex; align-items:center; gap:.5rem;}
+  .nav-adjacent .next{text-align:right; align-items:flex-end; border-right:none; padding-right:0; padding-left:1.6rem; border-left:1px solid var(--line);}
+  .nav-adjacent .empty{color:#6E685C; justify-content:center; align-items:center; text-align:center; font-family:'IBM Plex Mono', monospace; font-size:.78rem; border-right:none;}
+
+  footer{text-align:center; padding:3rem 6vw 4rem; border-top:1px solid var(--line); font-family:'IBM Plex Mono', monospace; font-size:.74rem; color:var(--ink-soft);}
+
+  @media(max-width:820px){
+    .acto{grid-template-columns:56px 1fr; gap:1.2rem;}
+    .acto-num{font-size:1.4rem;}
+    .flat-grid, .flat-grid.cols-2, .flat-grid.cols-3, .flat-grid.cols-4{grid-template-columns:1fr;}
+    .flat-grid > div{border-right:none; border-bottom:1px solid var(--line); padding:1.6rem 0;}
+    .nav-adjacent{grid-template-columns:1fr;}
+    .nav-adjacent a, .nav-adjacent .next, .nav-adjacent .empty{border-right:none; border-left:none; padding:1.6rem 0;}
+    .nav-adjacent .next{text-align:left; align-items:flex-start;}
+    section{padding:6vh 6vw;}
+  }
+  .acto-figure[hidden]{display:none;}
+  .acto-figure{margin:1.8rem 0; border:1px solid var(--line); max-width:640px; background:var(--ink);}
+  .acto-figure img{width:100%; display:block; filter:sepia(.12) contrast(1.03); opacity:.94;}
+  .acto-figure figcaption{padding:.85rem 1.1rem; font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink-soft); border-top:1px solid var(--line); background:var(--paper);}
+  .acto-figure figcaption .credit{display:block; margin-top:.3rem; color:#8A8478; font-size:.76rem;}
+</style>
+</head>
+<body>
+<a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
+
+<header class="hero">
+  <div class="hero-kanji">陽光</div>
+  <div class="hero-content">
+    <span class="eyebrow">Kongzhi · Corea · Política / Economía 12</span>
+    <div class="hero-rule"></div>
+    <h1 class="title-kr">햇볕정책</h1>
+    <div class="title-romaja">Haetbyeot Jeongchaek — la Política del Sol, Kaesong y la red de TLCs, 1998–2008</div>
+    <p class="hero-dek">Con la economía todavía en rescate, Kim Dae-jung propuso tratar al Norte con incentivos en vez de contención. Hubo cumbres, un Nobel de la Paz, una zona industrial al norte de la DMZ y, a la vez, la primera red de tratados de libre comercio del país. También hubo un ensayo nuclear en 2006 y un debate que sigue dividiendo a Seúl.</p>
+    <div class="hero-stats">
+      <div><span class="num">15 jun 2000</span><span class="lbl">la Declaración Conjunta</span></div>
+      <div><span class="num">+50.000</span><span class="lbl">trabajadores norcoreanos en Kaesong</span></div>
+      <div><span class="num">+70%</span><span class="lbl">del comercio hoy, bajo TLCs</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="actos">
+  <div class="section-head">
+    <span class="eyebrow">Los 5 actos</span>
+    <h2>Cómo Seúl intentó comprar paz con comercio, y qué quedó de ello</h2>
+    <p class="lede">Toca cada acto para expandirlo.</p>
+  </div>
+
+  <div class="acto active" data-i="1">
+    <div><span class="acto-num">01</span><span class="acto-label">El mundo antes</span></div>
+    <div>
+      <div class="acto-head"><span class="acto-title">Anticomunismo de Estado y un Norte en colapso</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">Hasta 1998</span>
+      <p class="acto-teaser">Una ley de seguridad que restringía todo contacto, un Sur bajo el FMI y un Norte en plena hambruna.</p>
+      <div class="acto-body">
+        <p><strong>Política.</strong> Antes de 1998 la política intercoreana estaba condicionada por la lógica de contención de la Guerra Fría. Las administraciones autoritarias y los primeros gobiernos civiles mantuvieron el anticomunismo como eje de legitimidad, con la Ley de Seguridad Nacional para restringir los contactos con el Norte y tratar a Pionyang como amenaza militar. Ni la Segyehwa ni el ingreso a la OCDE en 1996 destrabaron el diálogo.</p>
+        <p><strong>Economía.</strong> Tras el rescate del FMI de 1997, Corea del Sur necesitaba abaratar el financiamiento externo (el "Riesgo Corea"), atraer inversión extranjera y encontrar nuevos motores de crecimiento. Dependía de las exportaciones a EE. UU. y Japón, sin un marco de integración regional en Asia Oriental. Mientras tanto, el Norte sufría la "Ardua Marcha": hambrunas y colapso económico tras la caída de la Unión Soviética. Un derrumbe caótico del régimen le habría impuesto al Sur un costo fiscal inasumible.</p>
+        <p class="quote">Con el Norte al borde del colapso, el Sur no podía permitirse un vecino roto.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="acto" data-i="2">
+    <div><span class="acto-num">02</span><span class="acto-label">La grieta</span></div>
+    <div>
+      <div class="acto-head"><span class="acto-title">Una alternancia histórica y tres principios</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">1998</span>
+      <p class="acto-teaser">Kim Dae-jung, el primer opositor en ganar la presidencia, rechaza la contención y proclama la Política del Sol.</p>
+      <div class="acto-body">
+        <p><strong>Política.</strong> El punto de ruptura fue la toma de posesión de Kim Dae-jung en 1998, la primera alternancia pacífica del poder a favor de la oposición. Rechazó la doctrina de seguridad centrada en la contención y proclamó la Política del Sol (Haetbyeot Jeongchaek), con tres principios: cero tolerancia a la provocación armada del Norte, renuncia a buscar la unificación por absorción o a promover el colapso del régimen, y promoción activa de la coexistencia pacífica mediante cooperación económica e intercambio humano.</p>
+        <p><strong>Economía.</strong> La política formalizó el principio de separar la cooperación económica de las disputas políticas y militares. Hyundai actuó como pionero privado e inició en 1998 el proyecto turístico del Monte Kumgang.</p>
+        <p class="quote">La apuesta era usar capital privado y comercio como instrumentos de desescalada.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="acto" data-i="3">
+    <div><span class="acto-num">03</span><span class="acto-label">El giro</span></div>
+    <div>
+      <div class="acto-head"><span class="acto-title">Cumbre, Kaesong y una red de tratados</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">2000 – 2008</span>
+      <p class="acto-teaser">Dos cumbres, un Nobel, una fábrica al norte de la DMZ y los primeros TLCs de Corea.</p>
+      <div class="acto-body">
+        <figure class="acto-figure">
+          <img src="../../assets/corea/politica-del-sol/cumbre-2000.jpg" alt="Kim Dae-jung y Kim Jong-il durante la cumbre intercoreana de Pionyang en junio de 2000." loading="lazy" onerror="this.closest('figure').hidden=true">
+          <figcaption>Pionyang, junio de 2000: Kim Dae-jung y Kim Jong-il en la primera cumbre intercoreana.
+            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+          </figcaption>
+        </figure>
+        <p>El giro tuvo dos líneas a la vez: la cooperación económica intercoreana y la proyección estatal a través del comercio y la cultura.</p>
+        <div class="loss-list">
+          <div class="loss-item"><h3><span class="when">13–15 jun 2000</span>La Cumbre de Pionyang</h3><p>La Declaración Conjunta del 15 de Junio selló un compromiso de diálogo directo entre Kim Dae-jung y Kim Jong-il, y le valió a Kim Dae-jung el Premio Nobel de la Paz de 2000.</p></div>
+          <div class="loss-item"><h3><span class="when">2003</span>El Complejo Industrial de Kaesong</h3><p>Construido al norte de la Zona Desmilitarizada, combinó el capital y la gestión de pymes del Sur con la mano de obra del Norte. Reunió a más de 120 empresas y más de 50.000 trabajadores norcoreanos. Se reconectaron además las líneas ferroviarias y carreteras Gyeongui y Donghae.</p></div>
+          <div class="loss-item"><h3><span class="when">2003–2008</span>Paz y Prosperidad</h3><p>Roh Moo-hyun profundizó el enfoque. En la cumbre de 2007 cruzó a pie la Línea de Demarcación Militar.</p></div>
+          <div class="loss-item"><h3><span class="when">2004–2007</span>Los TLCs</h3><p>Ante el estancamiento de la OMC, Corea lanzó una estrategia de acuerdos bilaterales: Chile (2004), Singapur (2006) y el KORUS con EE. UU., firmado en 2007, para ser el centro logístico de Asia Oriental.</p></div>
+          <div class="loss-item"><h3><span class="when">1998</span>Apertura cultural</h3><p>Se levantaron las restricciones a la cultura popular japonesa y Corea asumió un rol impulsor del regionalismo de Asia Oriental con el East Asian Vision Group, como potencia media. El Estado empezó a apoyar la exportación de dramas y música (Hallyu).</p></div>
+        </div>
+        <p class="quote">Convertir el comercio con el Norte en política de Estado, y al mismo tiempo abrirse al resto del mundo.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="acto" data-i="4">
+    <div><span class="acto-num">04</span><span class="acto-label">La consecuencia inmediata</span></div>
+    <div>
+      <div class="acto-head"><span class="acto-title">Un rebote, un Norte humanizado y un ensayo nuclear</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">1998 – 2008</span>
+      <p class="acto-teaser">La economía rebota, el cine cambia cómo se ve al Norte y la oposición acusa a Seúl de financiar a Pionyang.</p>
+      <div class="acto-body">
+        <p><strong>Economía.</strong> El PIB rebotó 10,9% en 1999 y creció en promedio 4%–5% en los años 2000. El comercio entre las dos Coreas pasó de niveles insignificantes a más de 1.800 millones de dólares anuales hacia 2007–2008. Kaesong fue la principal fuente de divisas del Norte y permitió a pymes textiles y de manufactura ligera del Sur competir contra la mano de obra barata de China. Bajo Roh Moo-hyun aumentó el gasto en bienestar y la regulación de los chaebols.</p>
+        <p><strong>Política y cultura.</strong> El cine surcoreano retrató a los norcoreanos como personas y no como caricaturas, con Shiri (1999), Joint Security Area (2000), Taegukgi (2004) y Welcome to Dongmakgol (2005). Con los mercados informales (jangmadang) entraron música, radios y casetes del Sur al Norte, y los desertores llegados al Sur pasaron de cientos a entre 1.000 y 2.000 al año.</p>
+        <p><strong>Los límites.</strong> La oposición conservadora denunció la ayuda como una "política de generosidad indiscriminada" (peojugi) que oxigenó al régimen y financió su programa nuclear. Los choques navales en el Mar Amarillo y el primer ensayo nuclear norcoreano en 2006 mostraron los límites de la distensión.</p>
+        <p class="quote">Dos lecturas se enfrentan. Para unos, la Política del Sol erosionó el monopolio informativo del Norte con soft power. Para otros, subsidió a Pionyang y le permitió armarse sin reformarse.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="acto" data-i="5">
+    <div><span class="acto-num">05</span><span class="acto-label">El eco</span></div>
+    <div>
+      <div class="acto-head"><span class="acto-title">La línea que divide a los partidos</span><span class="acto-toggle">＋</span></div>
+      <span class="acto-date">2008 → hoy</span>
+      <p class="acto-teaser">Kaesong cerró en 2016, pero los TLCs cubren más de 70% del comercio y la postura ante el Norte parte la política surcoreana.</p>
+      <div class="acto-body">
+        <p><strong>Economía.</strong> Los TLCs impulsados desde esta década, entre ellos el RCEP y los acuerdos con la UE, EE. UU. y China, cubren hoy más de 70% del comercio de mercancías. Kaesong cerró en 2016 y llegó una política de desacoplamiento del Norte, lo que mostró la fragilidad de una integración no vinculada a la desnuclearización. Y el PIB per cápita del Sur es unas 30 veces el del Norte, de modo que cualquier acercamiento exigiría transferencias fiscales masivas.</p>
+        <p><strong>Política.</strong> La postura ante Corea del Norte es la principal línea divisoria entre el bloque progresista, que defiende el diálogo y la autonomía estratégica, y el conservador, que defiende la disuasión militar, la presión por derechos humanos y la alianza incondicional con EE. UU. Lee Myung-bak (2008) y Park Geun-hye (2013) congelaron la cooperación y cerraron Kaesong y Kumgang. Moon Jae-in rescató la diplomacia de cumbres con las Declaraciones de Panmunjom y Pionyang de 2018, y Lee Jae-myung articuló la Iniciativa END (Exchange, Normalization, Denuclearization), un marco pragmático de coexistencia entre dos Estados.</p>
+        <p class="quote">Sin la Política del Sol es difícil explicar la fractura partidista en política exterior y la red de TLCs que blinda a una economía exportadora.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-motif" aria-hidden="true">
+  <svg width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="var(--celadon-deep)" stroke-width="1.3"/></svg>
+  <svg width="24" height="24" viewBox="0 0 24 24"><line x1="4" y1="12" x2="20" y2="12" stroke="var(--celadon-deep)" stroke-width="1.3"/></svg>
+  <svg width="24" height="24" viewBox="0 0 24 24"><line x1="12" y1="4" x2="12" y2="20" stroke="var(--celadon-deep)" stroke-width="1.3"/></svg>
+</div>
+
+<section id="actores">
+  <div class="section-head">
+    <span class="eyebrow">Actores en tensión</span>
+    <h2>Quién quería qué, y con qué poder</h2>
+  </div>
+  <div class="flat-grid cols-4">
+    <div><span class="role">Los presidentes</span><h3>Kim Dae-jung y Roh Moo-hyun</h3><p>Diseñaron la Política del Sol y la de Paz y Prosperidad, y lanzaron Kaesong y la agenda de TLCs. Lograron una pacificación temporal y liderazgo comercial, con críticas internas.</p></div>
+    <div><span class="role">Pionyang</span><h3>Kim Jong-il y el régimen del Norte</h3><p>Aceptaron ayuda y proyectos conjuntos como cálculo de supervivencia tras la hambruna, y obtuvieron divisas sin alterar el control socialista. Mantuvieron sus ambiciones nucleares.</p></div>
+    <div><span class="role">El pionero</span><h3>Hyundai (Hyundai Asan)</h3><p>Financió Kumgang y Kaesong y asumió el riesgo de capital inicial. Se convirtió en el símbolo privado de la integración intercoreana.</p></div>
+    <div><span class="role">La oposición</span><h3>Conservadores y el Partido Gran Nación</h3><p>Criticaron las transferencias al Norte como pacificación ilusoria y amenaza a la seguridad nacional.</p></div>
+  </div>
+</section>
+
+<section id="comparacion">
+  <div class="section-head">
+    <span class="eyebrow">Comparación regional</span>
+    <h2>Tres maneras de acercarse a un vecino hostil</h2>
+  </div>
+  <div class="flat-grid cols-3">
+    <div><h3>China y Taiwán</h3><p>China aplicó hacia Taiwán una integración económica bajo "Un País, Dos Sistemas". La inversión de los Taishang en el continente creció sin acuerdos políticos formales.</p></div>
+    <div><h3>Japón</h3><p>Apoyó con cautela el diálogo intercoreano pero se mantuvo inflexible con Pionyang por el secuestro de ciudadanos japoneses y los misiles balísticos.</p></div>
+    <div><h3>Alemania</h3><p>La Ostpolitik de Brandt usó transferencias y lazos comerciales con la RDA y creó una interdependencia que facilitó la reunificación de 1990. En Corea, la brecha económica impidió una convergencia duradera.</p></div>
+  </div>
+  <div class="connect-note">
+    Este cuaderno cierra el Acto V, "Ruptura del modelo desarrollista y reestructuración". Sigue a <a href="../crisis-asiatica-fmi/index.html">la Crisis Financiera Asiática</a>, de la que salió la necesidad de abrir mercados. Con él termina el periodo de la reestructuración y empieza el Acto VI.
+  </div>
+</section>
+
+<section id="fuentes">
+  <div class="sources">
+    <span class="eyebrow">Sobre esta investigación</span>
+    <p>Contenido curado por el equipo de Club Kongzhi a partir de los cuadernos de NotebookLM dedicados a la Política del Sol, la diplomacia económica regional y la proyección estatal, en sus dimensiones política y económica.</p>
+  </div>
+  <div class="nav-adjacent">
+    <a href="../crisis-asiatica-fmi/index.html"><span class="dir">← Cuaderno anterior</span><span class="ttl">아시아 금융위기 Crisis Financiera Asiática</span></a>
+    <div class="empty next">En construcción — Tema 13: Potencia tecnológica y semiconductores (2000s–2026)</div>
+  </div>
+</section>
+
+<footer>Club Kongzhi UNMSM · Observatorio Asia-Pacífico · Biblioteca Nalanda</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if(!reduceMotion && window.Lenis){
+    var lenis = new Lenis({ duration: 1.2, smoothWheel: true });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(function(time){ lenis.raf(time * 1000); });
+    gsap.ticker.lagSmoothing(0);
+  }
+
+  function openActo(acto){
+    acto.querySelector('.acto-toggle').textContent = '－';
+    gsap.to(acto.querySelector('.acto-body'), {
+      height: 'auto', opacity: 1, duration: reduceMotion ? 0 : 0.65, ease: 'power1.inOut',
+      onUpdate: function(){ ScrollTrigger.update(); },
+      onComplete: function(){ ScrollTrigger.refresh(); }
+    });
+  }
+  function closeActo(acto){
+    acto.querySelector('.acto-toggle').textContent = '＋';
+    gsap.to(acto.querySelector('.acto-body'), {
+      height: 0, opacity: 0, duration: reduceMotion ? 0 : 0.5, ease: 'power1.inOut',
+      onUpdate: function(){ ScrollTrigger.update(); },
+      onComplete: function(){ ScrollTrigger.refresh(); }
+    });
+  }
+
+  var actos = document.querySelectorAll('.acto');
+  actos.forEach(function(acto){
+    acto.addEventListener('click', function(){
+      var wasActive = acto.classList.contains('active');
+      document.querySelectorAll('.acto.active').forEach(function(a){ a.classList.remove('active'); closeActo(a); });
+      if(!wasActive){ acto.classList.add('active'); openActo(acto); }
+    });
+  });
+  var firstActive = document.querySelector('.acto.active .acto-body');
+  if(firstActive){
+    gsap.set(firstActive, {height:'auto', opacity:1});
+    document.querySelector('.acto.active .acto-toggle').textContent = '－';
+  }
+
+  if(!reduceMotion){
+    actos.forEach(function(acto){
+      gsap.from(acto, {
+        opacity: 0, y: 24, duration: 0.9, ease: 'power1.out',
+        scrollTrigger: { trigger: acto, start: 'top 90%', toggleActions: 'play none none reverse' }
+      });
+    });
+
+    var heroTl = gsap.timeline({ defaults: { ease: 'power1.out' } });
+    heroTl
+      .from('.top-return', { opacity: 0, y: -8, duration: 0.7 })
+      .from('.hero-rule', { scaleX: 0, transformOrigin: 'left center', duration: 1.1 }, '-=0.3')
+      .from('h1.title-kr', { opacity: 0, y: 16, duration: 1.1 }, '-=0.7')
+      .from('.title-romaja', { opacity: 0, y: 10, duration: 0.9 }, '-=0.7')
+      .from('.hero-dek', { opacity: 0, y: 14, duration: 1 }, '-=0.6')
+      .from('.hero-stats > div', { opacity: 0, y: 14, duration: 0.8, stagger: 0.15 }, '-=0.5');
+
+    gsap.to('.hero-kanji', {
+      yPercent: 12, ease: 'none',
+      scrollTrigger: { trigger: 'header.hero', start: 'top top', end: 'bottom top', scrub: 1.2 }
+    });
+
+    gsap.from('.divider-motif svg', {
+      opacity: 0, scale: 0.5, duration: 0.7, stagger: 0.15, ease: 'power1.out',
+      scrollTrigger: { trigger: '.divider-motif', start: 'top 92%', toggleActions: 'play none none reverse' }
+    });
+
+    document.querySelectorAll('.flat-grid').forEach(function(grid){
+      gsap.from(grid.children, {
+        opacity: 0, y: 20, duration: 0.8, stagger: 0.1, ease: 'power1.out',
+        scrollTrigger: { trigger: grid, start: 'top 85%', toggleActions: 'play none none reverse' }
+      });
+    });
+    gsap.from('.nav-adjacent > *', {
+      opacity: 0, y: 16, duration: 0.8, stagger: 0.1, ease: 'power1.out',
+      scrollTrigger: { trigger: '.nav-adjacent', start: 'top 90%', toggleActions: 'play none none reverse' }
+    });
+  }
+
+  window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
+</script>
+
+</body>
+</html>
