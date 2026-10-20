@@ -145,7 +145,46 @@
     .nav-adjacent .next{text-align:left; align-items:flex-start;}
     section{padding:6vh 6vw;}
   }
+/* ---------- Homogeneización con China ---------- */
+  :root{ --wood-deep:#4A3A28; --sumi:#23211F; --sumi-warm:#3A2C24; --sumi-red:#5E2B21; --paper-hero:#F5F1E8; --vermillion-deep:#7E2E20; }
+  body{ line-height:1.7; }
+  header.hero{ min-height:96vh; padding:14vh 8vw 12vh; overflow:hidden; color:var(--paper);
+    background:linear-gradient(155deg, var(--sumi) 0%, var(--sumi-warm) 58%, var(--sumi-red) 100%); }
+  .hero-kanji{ right:5vw; font-size:clamp(8rem, 22vw, 17rem); color:rgba(245,241,232,0.06); }
+  .hero .eyebrow{ color:var(--gold); }
+  .hero-rule{ width:48px; height:2px; background:var(--gold); margin-bottom:1.6rem; }
+  h1.title-jp{ font-size:clamp(2.2rem, 5vw, 3.8rem); line-height:1.25; margin:.4rem 0 .5rem; color:var(--paper); }
+  .title-romaji{ font-size:.85rem; color:rgba(245,241,232,0.72); margin-bottom:2rem; line-height:1.6; }
+  .hero-dek{ font-size:1.08rem; max-width:560px; color:rgba(245,241,232,0.9); font-weight:400; line-height:1.85; }
+  .hero-stats{ margin-top:3.2rem; border-top:1px solid rgba(245,241,232,0.2); }
+  .hero-stats div{ border-right:1px solid rgba(245,241,232,0.2); }
+  .hero-stats .num{ color:var(--gold); }
+  .hero-stats .lbl{ font-size:.8rem; color:rgba(245,241,232,0.7); }
+  .acto-title{ font-weight:700; }
+  .acto-date{ font-size:.8rem; color:var(--ink-soft); }
+  .acto-teaser{ font-weight:400; }
+  .acto-body p{ font-weight:400; line-height:1.85; }
+  .acto-body strong{ font-weight:700; color:var(--vermillion-deep); }
+  .acto-body .quote{ border-left-color:var(--gold); font-style:normal; }
+  .flat-grid > div:not(:first-child){ padding-left:3rem; }
+  .flat-grid p{ font-weight:400; }
+  .sources p{ font-weight:400; }
+  .nav-adjacent > *:not(:first-child){ padding-left:3rem; }
+  .acto-figure[hidden]{display:none;}
+  .acto-figure{margin:1.8rem 0; border:1px solid var(--line); max-width:640px; background:var(--ink);}
+  .acto-figure img{width:100%; display:block; filter:sepia(.12) contrast(1.03); opacity:.94;}
+  .acto-figure figcaption{padding:.85rem 1.1rem; font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink-soft); border-top:1px solid var(--line); background:var(--paper);}
+  .acto-figure figcaption .credit{display:block; margin-top:.3rem; color:#8A8478; font-size:.76rem;}
+  .chart-block{margin:1.8rem 0; border-top:1px solid var(--line); padding-top:1.6rem; max-width:640px;}
+  @media(max-width:820px){
+    .flat-grid > div:not(:first-child){ padding-left:0; }
+    .nav-adjacent > *:not(:first-child){ padding-left:0; }
+    .nav-adjacent .next{ padding-left:0; }
+    header.hero{ min-height:88vh; padding:12vh 7vw 10vh; }
+  }
 </style>
+<!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
+<style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(168,134,60,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Shippori Mincho', serif; --v-body:'Zen Kaku Gothic New', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
 </head>
 <body>
 <a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
@@ -180,8 +219,19 @@
       <span class="acto-date">1889 – 1945</span>
       <p class="acto-teaser">La Constitución Meiji nunca subordinó al ejército al gobierno civil, y esa ambigüedad, sumada a monopolios y feudalismo agrario, llevó al país al colapso total.</p>
       <div class="acto-body">
-        <p>Bajo la Constitución Meiji de 1889, la soberanía residía de forma absoluta en el Emperador por su ascendencia divina. Pero el Artículo 11 otorgaba el mando militar supremo (tosuiken) exclusivamente al soberano, permitiendo al Ejército y la Armada eludir el control del gabinete civil y de la Dieta: la grieta institucional que permitió el ascenso de una élite castrense ultranacionalista.</p>
-        <p>Esa estructura se apoyaba sobre tensiones profundas: los zaibatsu (Mitsui, Mitsubishi, Sumitomo, Yasuda) dominaban la economía y financiaban la agresión militar; el campesinado, atrapado en tenencia agraria semi-feudal, era el semillero de reclutas del régimen. Hacia 1945, la devastación de la guerra había reducido la producción de cultivos a menos de la mitad, dejando a millones al borde de la hambruna.</p>
+        <!--vis--><div class="vis" data-vis="press">
+          <p class="vis-one"><small>En una frase</small>El mando militar escapaba al gabinete y la economía financiaba la guerra.</p>
+          <div class="vis-card">
+            <div class="v-press">
+              <div class="v-press-side v-press-l"><b>Artículo 11 de 1889</b><em>El mando supremo solo del soberano: el Ejército eludía a la Dieta</em><svg class="v-arrow" viewBox="0 0 54 24" aria-hidden="true"><path d="M2 12h44M36 3l12 9-12 9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="v-press-core">日本<small>1889–1945</small><svg class="v-crack" viewBox="0 0 96 96" aria-hidden="true"><path d="M48 0l-8 22 12 14-14 20 10 14-6 26" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--v-paper)"/></svg></div>
+              <div class="v-press-side v-press-r"><b>Zaibatsu y campo</b><em>Mitsui, Mitsubishi, Sumitomo y Yasuda; campesinos como reclutas</em><svg class="v-arrow" viewBox="0 0 54 24" aria-hidden="true"><path d="M2 12h44M36 3l12 9-12 9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            </div>
+            <div class="v-press-out">En 1945 los cultivos habían caído a <b>menos de la mitad</b>: millones al borde de la hambruna.</div>
+          </div>
+        </div><!--/vis-->
+        <p>Bajo la Constitución Meiji de 1889, la soberanía residía de forma absoluta en el Emperador por su ascendencia divina. Pero el Artículo 11 otorgaba el mando militar supremo (<span class="gl" tabindex="0">tosuiken<span class="gl-def" role="note">Mando militar supremo, que la Constitución de 1889 daba solo al Emperador.</span></span>) exclusivamente al soberano, permitiendo al Ejército y la Armada eludir el control del gabinete civil y de la Dieta: la grieta institucional que permitió el ascenso de una élite castrense ultranacionalista.</p>
+        <p>Esa estructura se apoyaba sobre tensiones profundas: los <span class="gl" tabindex="0">zaibatsu<span class="gl-def" role="note">Conglomerados familiares que dominaban la economía japonesa.</span></span> (Mitsui, Mitsubishi, Sumitomo, Yasuda) dominaban la economía y financiaban la agresión militar; el campesinado, atrapado en tenencia agraria semi-feudal, era el semillero de reclutas del régimen. Hacia 1945, la devastación de la guerra había reducido la producción de cultivos a menos de la mitad, dejando a millones al borde de la hambruna.</p>
       </div>
     </div>
   </div>
@@ -193,13 +243,23 @@
       <span class="acto-date">2 sep 1945</span>
       <p class="acto-teaser">MacArthur destrona la soberanía japonesa, y en vez de castigar, alimenta, ganándose la colaboración civil que necesitaba para reformar el país.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="stats">
+          <p class="vis-one"><small>En una frase</small>Evitar el caos antes de reformar: la "política del pan".</p>
+          <div class="vis-card">
+            <div class="v-stats" style="--n:3">
+              <div class="v-stat"><span class="v-num">~1/3</span><span class="v-lbl">del grano consumido llegó a ser distribuido por el SCAP</span></div>
+              <div class="v-stat"><span class="v-num">2 sep 1945</span><span class="v-lbl">rendición incondicional</span></div>
+              <div class="v-stat"><span class="v-num">MacArthur</span><span class="v-lbl">al frente del SCAP</span></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <figure class="acto-figure">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Surrender%20of%20Japan%20-%20USS%20Missouri.jpg" alt="Delegación japonesa a bordo del USS Missouri durante la ceremonia de rendición, 2 de septiembre de 1945" loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>La delegación japonesa a bordo del USS Missouri durante la ceremonia formal de rendición, Bahía de Tokio, 2 de septiembre de 1945.
             <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
           </figcaption>
         </figure>
-        <p>El Imperio de Japón se rinde incondicionalmente ante las potencias aliadas, y llegan las fuerzas de ocupación bajo el SCAP (Supremo Comandante de las Potencias Aliadas), encabezado por el General Douglas MacArthur. Ante el riesgo de un tumulto social por hambre extrema, MacArthur desvía raciones del ejército estadounidense e importa cientos de miles de toneladas de alimentos: el SCAP llega a distribuir casi un tercio del grano consumido en el país.</p>
+        <p>El Imperio de Japón se rinde incondicionalmente ante las potencias aliadas, y llegan las fuerzas de ocupación bajo el <span class="gl" tabindex="0">SCAP<span class="gl-def" role="note">Supremo Comandante de las Potencias Aliadas, a cargo de la ocupación.</span></span> (Supremo Comandante de las Potencias Aliadas), encabezado por el General Douglas MacArthur. Ante el riesgo de un tumulto social por hambre extrema, MacArthur desvía raciones del ejército estadounidense e importa cientos de miles de toneladas de alimentos: el SCAP llega a distribuir casi un tercio del grano consumido en el país.</p>
         <p class="quote">Esta transferencia masiva de recursos, la "política del pan", apaciguó el caos doméstico y convenció a la población civil de colaborar activamente con las reformas democráticas que venían.</p>
       </div>
     </div>
@@ -212,6 +272,15 @@
       <span class="acto-date">1946 – 1947</span>
       <p class="acto-teaser">MacArthur salva a Hirohito del juicio por crímenes de guerra, a cambio de despojarlo de su divinidad y aceptar una constitución redactada en secreto por extranjeros.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="switches">
+          <p class="vis-one"><small>En una frase</small>La Constitución de 1947 cambió quién manda.</p>
+          <div class="vis-card">
+            <div class="v-sov-head"><span>Poderes del orden antiguo</span><span class="v-sov-count" aria-live="polite"><b class="n">0</b> / 3</span></div>
+            <div class="v-sw off"><span class="v-sw-mark">神</span><span><b>Soberanía imperial</b><em>Pasa al pueblo</em></span><span class="to-end"><span class="v-sw-state"><span class="st-on">En pie</span><span class="st-off">Cambiado</span></span><span class="v-sw-track"></span></span></div>
+            <div class="v-sw off"><span class="v-sw-mark">爵</span><span><b>Títulos aristocráticos</b><em>Abolidos</em></span><span class="to-end"><span class="v-sw-state"><span class="st-on">En pie</span><span class="st-off">Cambiado</span></span><span class="v-sw-track"></span></span></div>
+            <div class="v-sw off"><span class="v-sw-mark">戦</span><span><b>Derecho a la guerra</b><em>Renuncia permanente (Art. 9)</em></span><span class="to-end"><span class="v-sw-state"><span class="st-on">En pie</span><span class="st-off">Cambiado</span></span><span class="v-sw-track"></span></span></div>
+          </div>
+        </div><!--/vis-->
         <figure class="acto-figure">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Emperor%20Hirohito%20and%20General%20MacArthur.jpg" alt="Primer encuentro entre el Emperador Hirohito y el General MacArthur, Tokio, septiembre de 1945" loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>El primer encuentro entre el Emperador Hirohito y el General MacArthur, embajada de EE.UU. en Tokio, 27 de septiembre de 1945: la fotografía que selló el nuevo orden político.
@@ -231,8 +300,20 @@
       <span class="acto-date">1947 – 1952</span>
       <p class="acto-teaser">La Guerra de Corea cambia los planes de Washington a mitad de camino, y Japón pasa de país desarmado a aliado militar en cuestión de meses.</p>
       <div class="acto-body">
-        <p>Se instaura la Dieta bicameral electa por sufragio directo; las mujeres votan por primera vez en la historia del país. El SCAP dirige una reforma agraria que desintegra a los terratenientes tradicionales, y decreta la disolución de los zaibatsu ("Los Cuatro Grandes"), dividiendo a Mitsui y Mitsubishi en cientos de firmas, aunque el proceso se frena hacia fines de los 40 por el interés anticomunista de EE.UU., permitiendo que se reorganicen como keiretsu.</p>
-        <p><strong>El Reverse Course.</strong> Con el estallido de la Guerra de Corea en 1950, Washington necesita que Japón tenga un rol militar activo. MacArthur crea la Reserva Policial Nacional de 75,000 hombres: sus tanques, para sortear el Artículo 9, son catalogados burocráticamente como "vehículos especiales". Este cuerpo es la base directa de las futuras Fuerzas de Autodefensa (1954).</p>
+        <!--vis--><div class="vis" data-vis="timeline">
+          <p class="vis-one"><small>En una frase</small>Siete años de ocupación en cuatro movimientos.</p>
+          <div class="vis-card">
+            <div class="v-tline" style="--n:4">
+              <div class="v-tline-rail"><div class="v-tline-fill"></div></div>
+              <div class="v-tl"><span class="v-tl-yr">1947</span><p>Constitución, sufragio femenino y reforma agraria.</p></div>
+              <div class="v-tl"><span class="v-tl-yr">1950</span><p>Estalla la Guerra de Corea: nace la Reserva Policial de 75,000.</p></div>
+              <div class="v-tl"><span class="v-tl-yr">1951</span><p>Tratado de San Francisco y Tratado de Seguridad.</p></div>
+              <div class="v-tl"><span class="v-tl-yr">1952</span><p>28 de abril: fin de la ocupación.</p></div>
+            </div>
+          </div>
+        </div><!--/vis-->
+        <p>Se instaura la Dieta bicameral electa por sufragio directo; las mujeres votan por primera vez en la historia del país. El SCAP dirige una reforma agraria que desintegra a los terratenientes tradicionales, y decreta la disolución de los zaibatsu ("Los Cuatro Grandes"), dividiendo a Mitsui y Mitsubishi en cientos de firmas, aunque el proceso se frena hacia fines de los 40 por el interés anticomunista de EE.UU., permitiendo que se reorganicen como <span class="gl" tabindex="0">keiretsu<span class="gl-def" role="note">Grupos de empresas con participaciones cruzadas, sucesores de los zaibatsu.</span></span>.</p>
+        <p><strong>El <span class="gl" tabindex="0">Reverse Course<span class="gl-def" role="note">Giro estadounidense hacia el anticomunismo, que frenó las reformas a finales de los 40.</span></span>.</strong> Con el estallido de la Guerra de Corea en 1950, Washington necesita que Japón tenga un rol militar activo. MacArthur crea la Reserva Policial Nacional de 75,000 hombres: sus tanques, para sortear el Artículo 9, son catalogados burocráticamente como "vehículos especiales". Este cuerpo es la base directa de las futuras Fuerzas de Autodefensa (1954).</p>
         <p>El Tratado de San Francisco (1951) devuelve la soberanía y pone fin a la ocupación el 28 de abril de 1952, firmado junto a un Tratado de Seguridad que ata permanentemente la defensa japonesa a la presencia militar estadounidense.</p>
       </div>
     </div>
@@ -245,7 +326,19 @@
       <span class="acto-date">1955 → hoy</span>
       <p class="acto-teaser">El Triángulo de Hierro, el amakudari, y el debate del Artículo 9 son herencia directa de decisiones tomadas en apenas siete años.</p>
       <div class="acto-body">
-        <p><strong>Burocracia y amakudari.</strong> Durante las purgas del SCAP, la burocracia de los ministerios económicos quedó prácticamente intacta, ganando enorme influencia técnica sobre los políticos civiles: el amakudari ("descenso del cielo") sigue siendo el mecanismo donde funcionarios retirados asumen cargos ejecutivos en las empresas que antes regulaban.</p>
+        <!--vis--><div class="vis" data-vis="flow">
+          <p class="vis-one"><small>En una frase</small>La herencia: ministerios intactos, un partido y un artículo ambiguo.</p>
+          <div class="vis-card">
+            <div class="v-flow">
+              <div class="v-node"><span class="v-k">SCAP</span><h4>Purgas</h4><p>La burocracia económica quedó casi intacta.</p></div>
+              <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-node"><span class="v-k">1955</span><h4>LDP</h4><p>Unificación conservadora; gobierna 38 años.</p></div>
+              <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-node"><span class="v-k">Hoy</span><h4>Artículo 9</h4><p>Su reforma sigue sin resolverse.</p></div>
+            </div>
+          </div>
+        </div><!--/vis-->
+        <p><strong>Burocracia y <span class="gl" tabindex="0">amakudari<span class="gl-def" role="note">&quot;Descenso del cielo&quot;: funcionarios retirados pasan a cargos ejecutivos en empresas.</span></span>.</strong> Durante las purgas del SCAP, la burocracia de los ministerios económicos quedó prácticamente intacta, ganando enorme influencia técnica sobre los políticos civiles: el amakudari ("descenso del cielo") sigue siendo el mecanismo donde funcionarios retirados asumen cargos ejecutivos en las empresas que antes regulaban.</p>
         <p><strong>La hegemonía del LDP.</strong> La unificación conservadora de noviembre de 1955, con respaldo financiero encubierto de la CIA, da origen al Partido Liberal Democrático, que gobernaría 38 años seguidos mediante el "Triángulo de Hierro" (políticos, ministerios y conglomerados).</p>
         <p class="quote">El debate sobre reformar o reinterpretar el Artículo 9 para consolidar a las Fuerzas de Autodefensa como ejército regular pleno se remonta, de forma directa, a la ambigüedad constitucional que la propia ocupación dejó sin resolver.</p>
       </div>
@@ -317,11 +410,13 @@
     gsap.to(acto.querySelector('.acto-body'), {
       height: 'auto', opacity: 1, duration: reduceMotion ? 0 : 0.65, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
-      onComplete: function(){ ScrollTrigger.refresh(); }
+      onComplete: function(){ acto.querySelector('.acto-body').style.overflow = 'visible'; ScrollTrigger.refresh(); }
     });
+    if(window.playVis) setTimeout(function(){ window.playVis(acto); }, reduceMotion ? 0 : 60);
   }
   function closeActo(acto){
     acto.querySelector('.acto-toggle').textContent = '＋';
+    acto.querySelector('.acto-body').style.overflow = 'hidden';
     gsap.to(acto.querySelector('.acto-body'), {
       height: 0, opacity: 0, duration: reduceMotion ? 0 : 0.5, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
@@ -331,7 +426,8 @@
 
   var actos = document.querySelectorAll('.acto');
   actos.forEach(function(acto){
-    acto.addEventListener('click', function(){
+    acto.addEventListener('click', function(e){
+      if(e.target.closest('.acto-body')) return;
       var wasActive = acto.classList.contains('active');
       document.querySelectorAll('.acto.active').forEach(function(a){ a.classList.remove('active'); closeActo(a); });
       if(!wasActive){ acto.classList.add('active'); openActo(acto); }
@@ -339,7 +435,7 @@
   });
   var firstActive = document.querySelector('.acto.active .acto-body');
   if(firstActive){
-    gsap.set(firstActive, {height:'auto', opacity:1});
+    gsap.set(firstActive, {height:'auto', opacity:1, overflow:'visible'});
     document.querySelector('.acto.active .acto-toggle').textContent = '－';
   }
 
@@ -380,5 +476,6 @@
   window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
 </script>
 
+<!--vis-js--><script src="../../assets/vis.js"></script><!--/vis-js-->
 </body>
 </html>

@@ -145,7 +145,46 @@
     .nav-adjacent .next{text-align:left; align-items:flex-start;}
     section{padding:6vh 6vw;}
   }
+/* ---------- Homogeneización con China ---------- */
+  :root{ --wood-deep:#4A3A28; --sumi:#23211F; --sumi-warm:#3A2C24; --sumi-red:#5E2B21; --paper-hero:#F5F1E8; --vermillion-deep:#7E2E20; }
+  body{ line-height:1.7; }
+  header.hero{ min-height:96vh; padding:14vh 8vw 12vh; overflow:hidden; color:var(--paper);
+    background:linear-gradient(155deg, var(--sumi) 0%, var(--sumi-warm) 58%, var(--sumi-red) 100%); }
+  .hero-kanji{ right:5vw; font-size:clamp(8rem, 22vw, 17rem); color:rgba(245,241,232,0.06); }
+  .hero .eyebrow{ color:var(--gold); }
+  .hero-rule{ width:48px; height:2px; background:var(--gold); margin-bottom:1.6rem; }
+  h1.title-jp{ font-size:clamp(2.2rem, 5vw, 3.8rem); line-height:1.25; margin:.4rem 0 .5rem; color:var(--paper); }
+  .title-romaji{ font-size:.85rem; color:rgba(245,241,232,0.72); margin-bottom:2rem; line-height:1.6; }
+  .hero-dek{ font-size:1.08rem; max-width:560px; color:rgba(245,241,232,0.9); font-weight:400; line-height:1.85; }
+  .hero-stats{ margin-top:3.2rem; border-top:1px solid rgba(245,241,232,0.2); }
+  .hero-stats div{ border-right:1px solid rgba(245,241,232,0.2); }
+  .hero-stats .num{ color:var(--gold); }
+  .hero-stats .lbl{ font-size:.8rem; color:rgba(245,241,232,0.7); }
+  .acto-title{ font-weight:700; }
+  .acto-date{ font-size:.8rem; color:var(--ink-soft); }
+  .acto-teaser{ font-weight:400; }
+  .acto-body p{ font-weight:400; line-height:1.85; }
+  .acto-body strong{ font-weight:700; color:var(--vermillion-deep); }
+  .acto-body .quote{ border-left-color:var(--gold); font-style:normal; }
+  .flat-grid > div:not(:first-child){ padding-left:3rem; }
+  .flat-grid p{ font-weight:400; }
+  .sources p{ font-weight:400; }
+  .nav-adjacent > *:not(:first-child){ padding-left:3rem; }
+  .acto-figure[hidden]{display:none;}
+  .acto-figure{margin:1.8rem 0; border:1px solid var(--line); max-width:640px; background:var(--ink);}
+  .acto-figure img{width:100%; display:block; filter:sepia(.12) contrast(1.03); opacity:.94;}
+  .acto-figure figcaption{padding:.85rem 1.1rem; font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink-soft); border-top:1px solid var(--line); background:var(--paper);}
+  .acto-figure figcaption .credit{display:block; margin-top:.3rem; color:#8A8478; font-size:.76rem;}
+  .chart-block{margin:1.8rem 0; border-top:1px solid var(--line); padding-top:1.6rem; max-width:640px;}
+  @media(max-width:820px){
+    .flat-grid > div:not(:first-child){ padding-left:0; }
+    .nav-adjacent > *:not(:first-child){ padding-left:0; }
+    .nav-adjacent .next{ padding-left:0; }
+    header.hero{ min-height:88vh; padding:12vh 7vw 10vh; }
+  }
 </style>
+<!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
+<style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(168,134,60,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Shippori Mincho', serif; --v-body:'Zen Kaku Gothic New', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
 </head>
 <body>
 <a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
@@ -180,8 +219,19 @@
       <span class="acto-date">1868 – 1889</span>
       <p class="acto-teaser">Dos décadas de poder informal, presionadas por un movimiento popular que exigía por escrito las reglas del juego.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="press">
+          <p class="vis-one"><small>En una frase</small>Sin constitución, la oligarquía gobernaba a medias entre el pueblo que exigía voz y Occidente que exigía "civilización".</p>
+          <div class="vis-card">
+            <div class="v-press">
+              <div class="v-press-side v-press-l"><b>Movimiento por la Libertad</b><em>Pide constitución y asamblea electa</em><svg class="v-arrow" viewBox="0 0 54 24" aria-hidden="true"><path d="M2 12h44M36 3l12 9-12 9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="v-press-core">寡頭<small>1868–89</small><svg class="v-crack" viewBox="0 0 96 96" aria-hidden="true"><path d="M48 0l-8 22 12 14-14 20 10 14-6 26" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--v-paper)"/></svg></div>
+              <div class="v-press-side v-press-r"><b>Occidente</b><em>Exige un Estado "civilizado" para renegociar los tratados desiguales</em><svg class="v-arrow" viewBox="0 0 54 24" aria-hidden="true"><path d="M2 12h44M36 3l12 9-12 9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            </div>
+            <div class="v-press-out">La oligarquía respondió con <b>censura (1875) y límites a las asambleas (1880)</b>.</div>
+          </div>
+        </div><!--/vis-->
         <p>Tras la caída del shogunato Tokugawa en 1868, el nuevo gobierno de la Restauración Meiji centraliza de manera nominal el poder en torno al Emperador. Pero durante las dos primeras décadas, Japón carece de una constitución escrita: el Estado opera como una coalición informal de líderes samuráis de Satsuma y Chōshū (la oligarquía de Meiji), gobernando de forma pragmática pero sin un plan administrativo predeterminado.</p>
-        <p>Surge el Movimiento por la Libertad y los Derechos del Pueblo (Jiyū Minken Undō), que exige con urgencia una constitución y una asamblea nacional electa. La oligarquía responde con censura de prensa (1875) y restricciones extremas para asambleas públicas (1880). En paralelo, Japón necesita urgentemente demostrar ser un "Estado civilizado" para renegociar los tratados desiguales impuestos por Occidente.</p>
+        <p>Surge el Movimiento por la Libertad y los Derechos del Pueblo (<span class="gl" tabindex="0">Jiyū Minken Undō<span class="gl-def" role="note">Movimiento por la Libertad y los Derechos del Pueblo, que pedía constitución y asamblea.</span></span>), que exige con urgencia una constitución y una asamblea nacional electa. La oligarquía responde con censura de prensa (1875) y restricciones extremas para asambleas públicas (1880). En paralelo, Japón necesita urgentemente demostrar ser un "Estado civilizado" para renegociar los tratados desiguales impuestos por Occidente.</p>
       </div>
     </div>
   </div>
@@ -193,6 +243,17 @@
       <span class="acto-date">1881</span>
       <p class="acto-teaser">Un desafío interno obliga al Emperador a comprometerse con una fecha límite irrevocable.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="steps">
+          <p class="vis-one"><small>En una frase</small>Un solo rescripto fijó la fecha y cambió la pregunta.</p>
+          <div class="vis-card">
+            <div class="v-steps" role="list">
+              <div class="v-rail"><div class="v-fill"></div></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">1881</span><h4>Ōkuma propone el modelo británico</h4><p>La facción de Iwakura Tomomi lo destituye.</p></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">Oct 1881</span><h4>Rescripto imperial</h4><p>Promesa formal de una asamblea nacional para 1890.</p></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">Después</span><h4>Qué tipo de constitución</h4><p>Ya no importa si habrá una, sino cuál.</p></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <p>Ōkuma Shigenobu desafía el consenso gradualista de la oligarquía al proponer, sin autorización, la adopción inmediata de un sistema parlamentario de corte británico. La facción conservadora, liderada por Iwakura Tomomi, lo destituye de inmediato. Pero para aplacar las protestas populares, el Emperador se ve obligado a promulgar un rescripto imperial en octubre de 1881: la promesa formal de una asamblea nacional para 1890.</p>
         <p class="quote">Ese compromiso fija una fecha límite irrevocable — a partir de ahí, la pregunta ya no es si Japón tendrá constitución, sino qué tipo de constitución tendrá.</p>
       </div>
@@ -206,14 +267,24 @@
       <span class="acto-date">1882 – 1889</span>
       <p class="acto-teaser">Descartan Estados Unidos por "demasiado liberal", Francia y España por despóticas, Gran Bretaña por darle demasiado poder al parlamento. Eligen Prusia.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="versus">
+          <p class="vis-one"><small>En una frase</small>Itō descartó todo lo liberal y eligió el modelo alemán.</p>
+          <div class="vis-card">
+            <div class="v-versus">
+              <div class="v-col before"><h4>Lo que descartó</h4><ul><li>EE. UU.: demasiado liberal</li><li>Francia y España: tendencia al despotismo</li><li>Gran Bretaña: demasiado poder al parlamento</li></ul></div>
+              <svg class="v-vs" viewBox="0 0 34 24" aria-hidden="true"><path d="M2 12h26M20 4l10 8-10 8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-col after"><h4>Lo que adoptó</h4><ul><li>Estructuras autoritarias del Imperio alemán</li><li>Kokutai: la identidad nacional en torno al trono</li></ul></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <figure class="acto-figure">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ito%20Hirobumi.jpg" alt="Retrato fotográfico de Itō Hirobumi" loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Itō Hirobumi, arquitecto de la Constitución Meiji y primer Primer Ministro de Japón.
             <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
           </figcaption>
         </figure>
-        <p>En 1882 la oligarquía encomienda a Itō Hirobumi liderar una misión de estudio constitucional en el extranjero. Itō y su equipo descartan la Constitución estadounidense por "demasiado liberal", la francesa y española por su tendencia al despotismo, y el parlamentarismo británico por otorgar excesivo poder al parlamento. Adoptan las estructuras autoritarias del Imperio alemán, legitimadas mediante el concepto de kokutai: la identidad nacional aglutinada en torno a la dinastía imperial.</p>
-        <p>A su regreso, Itō orquesta una reestructuración de arriba hacia abajo, en secreto: el sistema de Gabinete (1885, con él mismo como primer Primer Ministro), el Consejo Privado (1888, para ratificar el borrador de forma hermética), y finalmente la promulgación de la Constitución el 11 de febrero de 1889 — entregada por el Emperador como un regalo sagrado, no negociado con nadie.</p>
+        <p>En 1882 la oligarquía encomienda a Itō Hirobumi liderar una misión de estudio constitucional en el extranjero. Itō y su equipo descartan la Constitución estadounidense por "demasiado liberal", la francesa y española por su tendencia al despotismo, y el parlamentarismo británico por otorgar excesivo poder al parlamento. Adoptan las estructuras autoritarias del Imperio alemán, legitimadas mediante el concepto de <span class="gl" tabindex="0">kokutai<span class="gl-def" role="note">Identidad nacional aglutinada en torno a la dinastía imperial.</span></span>: la identidad nacional aglutinada en torno a la dinastía imperial.</p>
+        <p>A su regreso, Itō orquesta una reestructuración de arriba hacia abajo, en secreto: el sistema de Gabinete (1885, con él mismo como primer Primer Ministro), el <span class="gl" tabindex="0">Consejo Privado<span class="gl-def" role="note">Órgano creado en 1888 para ratificar el borrador de la constitución en secreto.</span></span> (1888, para ratificar el borrador de forma hermética), y finalmente la promulgación de la Constitución el 11 de febrero de 1889 — entregada por el Emperador como un regalo sagrado, no negociado con nadie.</p>
       </div>
     </div>
   </div>
@@ -225,13 +296,24 @@
       <span class="acto-date">1889 – 1894</span>
       <p class="acto-teaser">Sufragio para el 1.1% de la población, un ejército que responde solo al Emperador, y una guerra por el presupuesto que paraliza al gobierno.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="stats">
+          <p class="vis-one"><small>En una frase</small>Una dieta con poder, pero con pocos votantes.</p>
+          <div class="vis-card">
+            <div class="v-stats" style="--n:3">
+              <div class="v-stat"><span class="v-num" data-to="1.1" data-dec="1" data-pre="" data-suf="%">1.1%</span><span class="v-lbl">de la población podía votar</span></div>
+              <div class="v-stat"><span class="v-num">15 yenes</span><span class="v-lbl">de impuestos mínimos para votar</span></div>
+              <div class="v-stat"><span class="v-num">1890</span><span class="v-lbl">se constituye la Dieta Imperial bicameral</span></div>
+            </div>
+            <p class="vis-note">Los militares quedaron fuera del control civil por el Artículo 11.</p>
+          </div>
+        </div><!--/vis-->
         <figure class="acto-figure">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Promulgation%20of%20The%20New%20Japanese%20Constitution%20(1889).jpg" alt="Ceremonia de promulgación de la Constitución Meiji por el Emperador en Tokio, 1889" loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>La ceremonia de promulgación de la nueva Constitución japonesa por el Emperador Meiji en Tokio, 1889.
             <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
           </figcaption>
         </figure>
-        <p>En 1890 se constituye la Dieta Imperial, bicameral: la Cámara de Representantes (electa) y la Cámara de Pares (nobleza y designados). Se consolida una burocracia meritocrática leal directamente al Emperador. Bajo el Artículo 11, el mando militar supremo (tosuiken) reside exclusivamente en el trono, blindando a los militares del control civil.</p>
+        <p>En 1890 se constituye la Dieta Imperial, bicameral: la Cámara de Representantes (electa) y la Cámara de Pares (nobleza y designados). Se consolida una burocracia meritocrática leal directamente al Emperador. Bajo el Artículo 11, el mando militar supremo (<span class="gl" tabindex="0">tosuiken<span class="gl-def" role="note">Mando militar supremo, reservado al Emperador por el Artículo 11.</span></span>) reside exclusivamente en el trono, blindando a los militares del control civil.</p>
         <p>El derecho al voto se limita a hombres que pagaran un mínimo de 15 yenes de impuestos: apenas el 1.1% de la población. La Cámara de Representantes usa su único recurso real, el veto al presupuesto, para bloquear a la oligarquía — hasta que la Primera Guerra Sino-Japonesa de 1894 unifica temporalmente al país y acelera la abolición de los tratados desiguales hacia 1911.</p>
       </div>
     </div>
@@ -244,8 +326,17 @@
       <span class="acto-date">1947 → hoy</span>
       <p class="acto-teaser">La Constitución de 1947 se promulgó técnicamente como enmienda a esta — y el debate sobre el Artículo 9 sigue siendo la misma pugna de siempre.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="switches">
+          <p class="vis-one"><small>En una frase</small>Una herencia con dos caras: estabilidad y un vacío de control.</p>
+          <div class="vis-card">
+            <div class="v-sov-head"><span>Rasgos que siguen vivos</span><span class="v-sov-count" aria-live="polite"><b class="n">0</b> / 3</span></div>
+            <div class="v-sw off"><span class="v-sw-mark">憲</span><span><b>Constitución 1947</b><em>Se promulgó como enmienda al Artículo 73 de 1889</em></span><span class="to-end"><span class="v-sw-state"><span class="st-on">Continuidad</span><span class="st-off">Ruptura</span></span><span class="v-sw-track"></span></span></div>
+            <div class="v-sw off"><span class="v-sw-mark">官</span><span><b>Burocracia de Kasumigaseki</b><em>Hereda a la meritocracia Meiji sobre los partidos</em></span><span class="to-end"><span class="v-sw-state"><span class="st-on">Continuidad</span><span class="st-off">Ruptura</span></span><span class="v-sw-track"></span></span></div>
+            <div class="v-sw off"><span class="v-sw-mark">軍</span><span><b>Control civil del ejército</b><em>Su ausencia fue explotada en los años 30</em></span><span class="to-end"><span class="v-sw-state"><span class="st-on">Continuidad</span><span class="st-off">Ruptura</span></span><span class="v-sw-track"></span></span></div>
+          </div>
+        </div><!--/vis-->
         <p><strong>Continuidad legal.</strong> La Constitución democrática de posguerra de 1947 se promulgó formalmente como una enmienda al Artículo 73 de la Constitución Meiji, para preservar la continuidad legal del Estado. Los debates actuales sobre el Artículo 9 (pacifismo militar) reflejan la misma tensión entre normas impuestas desde fuera y la herencia legal del periodo Meiji.</p>
-        <p><strong>El "Shadow Shogun".</strong> La influencia técnica de los burócratas de Kasumigaseki por encima de los partidos es herencia directa de la burocracia meritocrática Meiji — y la persistencia de liderazgos fácticos e informales replica el funcionamiento de los genrō.</p>
+        <p><strong>El "Shadow Shogun".</strong> La influencia técnica de los burócratas de <span class="gl" tabindex="0">Kasumigaseki<span class="gl-def" role="note">Barrio de Tokio donde están los ministerios: sinónimo de la burocracia.</span></span> por encima de los partidos es herencia directa de la burocracia meritocrática Meiji — y la persistencia de liderazgos fácticos e informales replica el funcionamiento de los <span class="gl" tabindex="0">genrō<span class="gl-def" role="note">Los viejos líderes de la oligarquía Meiji que decidían de modo informal.</span></span>.</p>
         <p class="quote">La misma ambigüedad constitucional que dio a Japón una asombrosa estabilidad institucional —la falta de control civil sobre el ejército— fue el agujero negro que la facción ultranacionalista explotó en los años 30 para secuestrar el gobierno civil y arrastrar al país a la Segunda Guerra Mundial.</p>
       </div>
     </div>
@@ -317,11 +408,13 @@
     gsap.to(acto.querySelector('.acto-body'), {
       height: 'auto', opacity: 1, duration: reduceMotion ? 0 : 0.65, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
-      onComplete: function(){ ScrollTrigger.refresh(); }
+      onComplete: function(){ acto.querySelector('.acto-body').style.overflow = 'visible'; ScrollTrigger.refresh(); }
     });
+    if(window.playVis) setTimeout(function(){ window.playVis(acto); }, reduceMotion ? 0 : 60);
   }
   function closeActo(acto){
     acto.querySelector('.acto-toggle').textContent = '＋';
+    acto.querySelector('.acto-body').style.overflow = 'hidden';
     gsap.to(acto.querySelector('.acto-body'), {
       height: 0, opacity: 0, duration: reduceMotion ? 0 : 0.5, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
@@ -331,7 +424,8 @@
 
   var actos = document.querySelectorAll('.acto');
   actos.forEach(function(acto){
-    acto.addEventListener('click', function(){
+    acto.addEventListener('click', function(e){
+      if(e.target.closest('.acto-body')) return;
       var wasActive = acto.classList.contains('active');
       document.querySelectorAll('.acto.active').forEach(function(a){ a.classList.remove('active'); closeActo(a); });
       if(!wasActive){ acto.classList.add('active'); openActo(acto); }
@@ -339,7 +433,7 @@
   });
   var firstActive = document.querySelector('.acto.active .acto-body');
   if(firstActive){
-    gsap.set(firstActive, {height:'auto', opacity:1});
+    gsap.set(firstActive, {height:'auto', opacity:1, overflow:'visible'});
     document.querySelector('.acto.active .acto-toggle').textContent = '－';
   }
 
@@ -380,5 +474,6 @@
   window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
 </script>
 
+<!--vis-js--><script src="../../assets/vis.js"></script><!--/vis-js-->
 </body>
 </html>

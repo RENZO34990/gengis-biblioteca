@@ -5,6 +5,8 @@ REPO = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'doc
 
 TOKENS = {
  'china': ':root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(201,166,62,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:\'Noto Serif SC\', serif; --v-body:\'Hanken Grotesk\', sans-serif; --v-mono:\'IBM Plex Mono\', monospace;}',
+
+ 'japon': ':root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(168,134,60,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:\'Shippori Mincho\', serif; --v-body:\'Zen Kaku Gothic New\', sans-serif; --v-mono:\'IBM Plex Mono\', monospace;}',
 }
 
 SHIP = '<svg class="v-ship" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 15h20l-3 6H6z" fill="currentColor"/><path d="M13 3v11M13 4l6 8h-6M12 6l-5 7h5" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>'
@@ -107,7 +109,8 @@ def in_tag(t, i):
     return t.rfind('<', 0, i) > t.rfind('>', 0, i)
 
 def glossary(t, terms):
-    start = t.index('<section id="actos">')
+    m = re.search(r'<section id="(actos|ruta)">', t)
+    start = m.start()
     for term, d in terms:
         pos = start
         while True:
@@ -146,6 +149,9 @@ def integrate(t, country, depth='../../'):
       onComplete: function(){ acto.querySelector('.acto-body').style.overflow = 'visible'; ScrollTrigger.refresh(); }
     });
     if(window.playVis) setTimeout(function(){ window.playVis(acto); }, reduceMotion ? 0 : 60);"""
+        t = t.replace("height: 'auto', opacity: 1, duration: reduceMotion ? 0 : 0.7,", "height: 'auto', opacity: 1, duration: reduceMotion ? 0 : 0.65,")
+        if a not in t:  # variante: duration en línea aparte y 0.7
+            t = t.replace("height: 'auto', opacity: 1,\n      duration: reduceMotion ? 0 : 0.7, ease", "height: 'auto', opacity: 1, duration: reduceMotion ? 0 : 0.65, ease")
         assert a in t, 'openActo no coincide'
         t = t.replace(a, a2)
         b = """    acto.querySelector('.acto-toggle').textContent = '＋';

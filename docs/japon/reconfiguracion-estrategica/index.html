@@ -144,7 +144,46 @@
   .acto-figure img{width:100%; display:block; filter:sepia(.12) contrast(1.03); opacity:.94;}
   .acto-figure figcaption{padding:.85rem 1.1rem; font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink-soft); border-top:1px solid var(--line); background:var(--paper);}
   .acto-figure figcaption .credit{display:block; margin-top:.3rem; color:#8A8478; font-size:.76rem;}
+/* ---------- Homogeneización con China ---------- */
+  :root{ --wood-deep:#4A3A28; --sumi:#23211F; --sumi-warm:#3A2C24; --sumi-red:#5E2B21; --paper-hero:#F5F1E8; --vermillion-deep:#7E2E20; }
+  body{ line-height:1.7; }
+  header.hero{ min-height:96vh; padding:14vh 8vw 12vh; overflow:hidden; color:var(--paper);
+    background:linear-gradient(155deg, var(--sumi) 0%, var(--sumi-warm) 58%, var(--sumi-red) 100%); }
+  .hero-kanji{ right:5vw; font-size:clamp(8rem, 22vw, 17rem); color:rgba(245,241,232,0.06); }
+  .hero .eyebrow{ color:var(--gold); }
+  .hero-rule{ width:48px; height:2px; background:var(--gold); margin-bottom:1.6rem; }
+  h1.title-jp{ font-size:clamp(2.2rem, 5vw, 3.8rem); line-height:1.25; margin:.4rem 0 .5rem; color:var(--paper); }
+  .title-romaji{ font-size:.85rem; color:rgba(245,241,232,0.72); margin-bottom:2rem; line-height:1.6; }
+  .hero-dek{ font-size:1.08rem; max-width:560px; color:rgba(245,241,232,0.9); font-weight:400; line-height:1.85; }
+  .hero-stats{ margin-top:3.2rem; border-top:1px solid rgba(245,241,232,0.2); }
+  .hero-stats div{ border-right:1px solid rgba(245,241,232,0.2); }
+  .hero-stats .num{ color:var(--gold); }
+  .hero-stats .lbl{ font-size:.8rem; color:rgba(245,241,232,0.7); }
+  .acto-title{ font-weight:700; }
+  .acto-date{ font-size:.8rem; color:var(--ink-soft); }
+  .acto-teaser{ font-weight:400; }
+  .acto-body p{ font-weight:400; line-height:1.85; }
+  .acto-body strong{ font-weight:700; color:var(--vermillion-deep); }
+  .acto-body .quote{ border-left-color:var(--gold); font-style:normal; }
+  .flat-grid > div:not(:first-child){ padding-left:3rem; }
+  .flat-grid p{ font-weight:400; }
+  .sources p{ font-weight:400; }
+  .nav-adjacent > *:not(:first-child){ padding-left:3rem; }
+  .acto-figure[hidden]{display:none;}
+  .acto-figure{margin:1.8rem 0; border:1px solid var(--line); max-width:640px; background:var(--ink);}
+  .acto-figure img{width:100%; display:block; filter:sepia(.12) contrast(1.03); opacity:.94;}
+  .acto-figure figcaption{padding:.85rem 1.1rem; font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink-soft); border-top:1px solid var(--line); background:var(--paper);}
+  .acto-figure figcaption .credit{display:block; margin-top:.3rem; color:#8A8478; font-size:.76rem;}
+  .chart-block{margin:1.8rem 0; border-top:1px solid var(--line); padding-top:1.6rem; max-width:640px;}
+  @media(max-width:820px){
+    .flat-grid > div:not(:first-child){ padding-left:0; }
+    .nav-adjacent > *:not(:first-child){ padding-left:0; }
+    .nav-adjacent .next{ padding-left:0; }
+    header.hero{ min-height:88vh; padding:12vh 7vw 10vh; }
+  }
 </style>
+<!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
+<style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(168,134,60,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Shippori Mincho', serif; --v-body:'Zen Kaku Gothic New', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
 </head>
 <body>
 <a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
@@ -179,8 +218,19 @@
       <span class="acto-date">2011 – 2012</span>
       <p class="acto-teaser">El colapso del gobierno del DPJ, el desastre de Fukushima y un METI que arrastraba décadas de fracasos dejan a Japón sin rumbo estratégico claro frente al ascenso de China.</p>
       <div class="acto-body">
-        <p>A principios de la década de 2010, el sistema político y la arquitectura económica de Japón se encontraban en un punto de profunda parálisis. El país acababa de atravesar la "década perdida" y se encontraba conmocionado por el terremoto, tsunami y desastre nuclear de Fukushima de marzo de 2011. El breve gobierno del Partido Democrático de Japón (2009-2012) —que había prometido romper el Triángulo de Hierro— colapsó por su inexperiencia técnica, obligándolo a volver a apoyarse en la burocracia tradicional.</p>
-        <p>A nivel estratégico, la interpretación restrictiva del Artículo 9 limitaba drásticamente la capacidad de Japón de coordinar una defensa colectiva en un Indo-Pacífico cada vez más inestable. El Ministerio de Economía, Comercio e Industria (METI) arrastraba un historial de costosos fracasos en su planificación centralizada de la era analógica: el viejo modelo de "estado desarrollista" se mostraba obsoleto ante la competencia tecnológica global.</p>
+        <!--vis--><div class="vis" data-vis="press">
+          <p class="vis-one"><small>En una frase</small>Un Estado pasivo en un Indo-Pacífico cada vez más inestable.</p>
+          <div class="vis-card">
+            <div class="v-press">
+              <div class="v-press-side v-press-l"><b>Fukushima y la parálisis</b><em>Terremoto, tsunami y desastre nuclear de 2011</em><svg class="v-arrow" viewBox="0 0 54 24" aria-hidden="true"><path d="M2 12h44M36 3l12 9-12 9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="v-press-core">日本<small>2011–12</small><svg class="v-crack" viewBox="0 0 96 96" aria-hidden="true"><path d="M48 0l-8 22 12 14-14 20 10 14-6 26" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--v-paper)"/></svg></div>
+              <div class="v-press-side v-press-r"><b>Modelo agotado</b><em>METI con fracasos de planificación; Art. 9 restrictivo</em><svg class="v-arrow" viewBox="0 0 54 24" aria-hidden="true"><path d="M2 12h44M36 3l12 9-12 9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            </div>
+            <div class="v-press-out">El gobierno del PDJ (2009-2012) colapsó y volvió a apoyarse en la <b>burocracia tradicional</b>.</div>
+          </div>
+        </div><!--/vis-->
+        <p>A principios de la década de 2010, el sistema político y la arquitectura económica de Japón se encontraban en un punto de profunda parálisis. El país acababa de atravesar la "década perdida" y se encontraba conmocionado por el terremoto, tsunami y desastre nuclear de Fukushima de marzo de 2011. El breve gobierno del Partido Democrático de Japón (2009-2012) —que había prometido romper el <span class="gl" tabindex="0">Triángulo de Hierro<span class="gl-def" role="note">Alianza entre políticos, burocracia y grandes empresas.</span></span>— colapsó por su inexperiencia técnica, obligándolo a volver a apoyarse en la burocracia tradicional.</p>
+        <p>A nivel estratégico, la interpretación restrictiva del Artículo 9 limitaba drásticamente la capacidad de Japón de coordinar una defensa colectiva en un Indo-Pacífico cada vez más inestable. El Ministerio de Economía, Comercio e Industria (<span class="gl" tabindex="0">METI<span class="gl-def" role="note">Ministerio de Economía, Comercio e Industria.</span></span>) arrastraba un historial de costosos fracasos en su planificación centralizada de la era analógica: el viejo modelo de "estado desarrollista" se mostraba obsoleto ante la competencia tecnológica global.</p>
       </div>
     </div>
   </div>
@@ -192,6 +242,18 @@
       <span class="acto-date">2019 – 2024</span>
       <p class="acto-teaser">Japón restringe exportaciones de semiconductores a Corea del Sur sin aviso previo. El mensaje llega a todas las élites: las cadenas de suministro tecnológico ya no son inmunes a la política.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="flow">
+          <p class="vis-one"><small>En una frase</small>Una restricción comercial convirtió la tecnología en seguridad nacional.</p>
+          <div class="vis-card">
+            <div class="v-flow">
+              <div class="v-node"><span class="v-k">Jul 2019</span><h4>Tres químicos</h4><p>METI restringe su exportación a Corea del Sur sin consulta.</p></div>
+              <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-node"><span class="v-k">Disputa</span><h4>OMC</h4><p>Conflicto comercial bilateral.</p></div>
+              <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-node"><span class="v-k">2023–24</span><h4>Escándalo LDP</h4><p>Las facciones tradicionales se disuelven casi por completo.</p></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <p>El detonante fáctico ocurre en julio de 2019: bajo justificación de seguridad nacional, METI impone de forma abrupta restricciones a la exportación de tres componentes químicos esenciales para semiconductores hacia Corea del Sur, sin consulta previa. El episodio desencadena una disputa comercial bilateral ante la OMC y demuestra a las élites niponas que la tecnología debía tratarse formalmente como un asunto de seguridad nacional.</p>
         <p class="quote">El gran escándalo de fondos ilícitos de las facciones del LDP, que estalla a finales de 2023, remata el vacío: la indignación pública fuerza la disolución casi total de las facciones tradicionales en 2024, barriendo con los liderazgos moderados y allanando el camino a figuras de corte nacionalista.</p>
       </div>
@@ -205,9 +267,21 @@
       <span class="acto-date">2014 – 2026</span>
       <p class="acto-teaser">La reinterpretación del Artículo 9, un nuevo Ministerio de Seguridad Económica, y la primera mujer en la historia como primera ministra con supermayoría parlamentaria.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="steps">
+          <p class="vis-one"><small>En una frase</small>De la defensa colectiva a la primera ministra Takaichi.</p>
+          <div class="vis-card">
+            <div class="v-steps" role="list">
+              <div class="v-rail"><div class="v-fill"></div></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">2014–15</span><h4>Leyes de seguridad</h4><p>Permiten la defensa colectiva bajo Abe.</p></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">2021–25</span><h4>Seguridad económica</h4><p>Nuevo ministerio y Buró de Comercio y Seguridad Económica en METI.</p></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">21 oct 2025</span><h4>Takaichi</h4><p>Primera mujer primera ministra.</p></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">Feb 2026</span><h4>Supermayoría</h4><p>316 escaños tras disolver la Dieta.</p></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <figure class="acto-figure">
           <img src="../../assets/japon/reconfiguracion-estrategica/kantei.jpg" alt="Edificio del Kantei, residencia oficial del primer ministro de Japón." loading="lazy" onerror="this.closest('figure').hidden=true">
-          <figcaption>El Kantei, sede del gabinete, donde se centralizó la política de seguridad económica desde 2014.
+          <figcaption>El <span class="gl" tabindex="0">Kantei<span class="gl-def" role="note">Oficina del Primer Ministro, donde se concentra hoy el control.</span></span>, sede del gabinete, donde se centralizó la política de seguridad económica desde 2014.
             <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
           </figcaption>
         </figure>
@@ -224,14 +298,24 @@
       <span class="acto-date">2022 – 2026</span>
       <p class="acto-teaser">El Estado vuelve a elegir sectores ganadores: semiconductores, IA, fusión nuclear, defensa. Rapidus, JASM y Mitsubishi Electric reciben miles de millones en subsidios.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="stats">
+          <p class="vis-one"><small>En una frase</small>Dinero y poder concentrados en 17 sectores.</p>
+          <div class="vis-card">
+            <div class="v-stats" style="--n:3">
+              <div class="v-stat"><span class="v-num" data-to="17" data-dec="0" data-pre="" data-suf="">17</span><span class="v-lbl">industrias prioritarias del Cuartel General de Estrategia de Crecimiento</span></div>
+              <div class="v-stat"><span class="v-num" data-to="20" data-dec="0" data-pre="" data-suf="%">20%</span><span class="v-lbl">deducción tributaria máxima, aprobada por METI en 2023</span></div>
+              <div class="v-stat"><span class="v-num">$3,500 M+</span><span class="v-lbl">en subsidios para JASM en Kumamoto</span></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <figure class="acto-figure">
           <img src="../../assets/japon/reconfiguracion-estrategica/semiconductores-japon.jpg" alt="Planta de semiconductores TSMC–JASM en Kumamoto, Japón." loading="lazy" onerror="this.closest('figure').hidden=true">
-          <figcaption>La planta de semiconductores en Kumamoto (TSMC–JASM): el tipo de proyecto que Japón subsidia para no depender de una sola cadena.
+          <figcaption>La planta de semiconductores en Kumamoto (TSMC–<span class="gl" tabindex="0">JASM<span class="gl-def" role="note">Megafábrica de TSMC, Sony y Denso en Kumamoto.</span></span>): el tipo de proyecto que Japón subsidia para no depender de una sola cadena.
             <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
           </figcaption>
         </figure>
         <p>El Cuartel General de Estrategia de Crecimiento de Takaichi fija 17 industrias prioritarias para inversión masiva pública y privada: inteligencia artificial, semiconductores de próxima generación, energía nuclear y de fusión, computación cuántica, construcción naval y defensa. Para sectores de ciclo ultra-largo, el Estado establece planes de compras plurianuales y hojas de ruta de inversión a diez años; en diciembre de 2023, METI aprueba deducciones tributarias de hasta un 20% sobre producción y ventas en sectores estratégicos.</p>
-        <p>La empresa estatal-privada Rapidus, en alianza con IBM, avanza hacia chips de 2 nanómetros; la megafábrica JASM en Kumamoto (TSMC, Sony, Denso) recibe más de $3,500 millones en subsidios estatales, reactivando clusters industriales en más de 25 prefecturas. Políticamente, la disolución de las facciones y el triunfo electoral de Takaichi concentran el control en la Oficina del Primer Ministro (Kantei), debilitando la antigua descentralización consensual del LDP, mientras Keidanren reconfigura su agenda para marchar en sintonía con las prioridades gubernamentales.</p>
+        <p>La empresa estatal-privada <span class="gl" tabindex="0">Rapidus<span class="gl-def" role="note">Empresa estatal-privada que avanza hacia chips de 2 nanómetros con IBM.</span></span>, en alianza con IBM, avanza hacia chips de 2 nanómetros; la megafábrica JASM en Kumamoto (TSMC, Sony, Denso) recibe más de $3,500 millones en subsidios estatales, reactivando clusters industriales en más de 25 prefecturas. Políticamente, la disolución de las facciones y el triunfo electoral de Takaichi concentran el control en la Oficina del Primer Ministro (Kantei), debilitando la antigua descentralización consensual del LDP, mientras <span class="gl" tabindex="0">Keidanren<span class="gl-def" role="note">Federación empresarial japonesa.</span></span> reconfigura su agenda para marchar en sintonía con las prioridades gubernamentales.</p>
       </div>
     </div>
   </div>
@@ -243,6 +327,16 @@
       <span class="acto-date">2026 → hoy</span>
       <p class="acto-teaser">La defensa cibernética activa, la enmienda constitucional pendiente, y una nueva oposición unificada laica que es el último dique de contención del giro militarista.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="versus">
+          <p class="vis-one"><small>En una frase</small>Con 316 escaños, enmendar el Artículo 9 está a un voto.</p>
+          <div class="vis-card">
+            <div class="v-versus neutral">
+              <div class="v-col before"><h4>Gobierno</h4><ul><li>Gobierno de Takaichi: 316 escaños</li><li>Posible enmienda del Artículo 9</li></ul></div>
+              <span class="v-vs v-vs-t">vs</span>
+              <div class="v-col after"><h4>Oposición</h4><ul><li>CRA (CDP + Komeito): 173 escaños</li><li>Dique laico y pacifista</li></ul></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <p>En 2026, uno de los ejes más candentes en la Dieta es la propuesta de ley de Defensa Activa en el Ciberespacio, que busca expandir la capacidad del Estado para vigilar redes y neutralizar ataques informáticos de forma preventiva, generando intensas disputas sobre privacidad y los límites de la constitución pacifista. Con la supermayoría de 316 escaños, la administración Takaichi se encuentra en posición histórica para enmendar formalmente el Artículo 9 y codificar el estatus pleno de las Fuerzas de Autodefensa.</p>
         <p class="quote">El auge nacionalista forzó un reagrupamiento de las fuerzas moderadas: la fusión histórica del CDP y el antiguo socio del LDP, Komeito, dio origen al Centrist Reform Alliance (CRA), que con 173 escaños se erige como el único dique de contención laico y pacifista frente al giro militarista del gobierno.</p>
       </div>
@@ -312,11 +406,13 @@
     gsap.to(acto.querySelector('.acto-body'), {
       height: 'auto', opacity: 1, duration: reduceMotion ? 0 : 0.65, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
-      onComplete: function(){ ScrollTrigger.refresh(); }
+      onComplete: function(){ acto.querySelector('.acto-body').style.overflow = 'visible'; ScrollTrigger.refresh(); }
     });
+    if(window.playVis) setTimeout(function(){ window.playVis(acto); }, reduceMotion ? 0 : 60);
   }
   function closeActo(acto){
     acto.querySelector('.acto-toggle').textContent = '＋';
+    acto.querySelector('.acto-body').style.overflow = 'hidden';
     gsap.to(acto.querySelector('.acto-body'), {
       height: 0, opacity: 0, duration: reduceMotion ? 0 : 0.5, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
@@ -326,7 +422,8 @@
 
   var actos = document.querySelectorAll('.acto');
   actos.forEach(function(acto){
-    acto.addEventListener('click', function(){
+    acto.addEventListener('click', function(e){
+      if(e.target.closest('.acto-body')) return;
       var wasActive = acto.classList.contains('active');
       document.querySelectorAll('.acto.active').forEach(function(a){ a.classList.remove('active'); closeActo(a); });
       if(!wasActive){ acto.classList.add('active'); openActo(acto); }
@@ -334,7 +431,7 @@
   });
   var firstActive = document.querySelector('.acto.active .acto-body');
   if(firstActive){
-    gsap.set(firstActive, {height:'auto', opacity:1});
+    gsap.set(firstActive, {height:'auto', opacity:1, overflow:'visible'});
     document.querySelector('.acto.active .acto-toggle').textContent = '－';
   }
 
@@ -375,5 +472,6 @@
   window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
 </script>
 
+<!--vis-js--><script src="../../assets/vis.js"></script><!--/vis-js-->
 </body>
 </html>

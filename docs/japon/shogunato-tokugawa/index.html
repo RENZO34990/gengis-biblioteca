@@ -145,7 +145,46 @@
     .nav-adjacent .next{text-align:left; align-items:flex-start;}
     section{padding:6vh 6vw;}
   }
+/* ---------- Homogeneización con China ---------- */
+  :root{ --wood-deep:#4A3A28; --sumi:#23211F; --sumi-warm:#3A2C24; --sumi-red:#5E2B21; --paper-hero:#F5F1E8; --vermillion-deep:#7E2E20; }
+  body{ line-height:1.7; }
+  header.hero{ min-height:96vh; padding:14vh 8vw 12vh; overflow:hidden; color:var(--paper);
+    background:linear-gradient(155deg, var(--sumi) 0%, var(--sumi-warm) 58%, var(--sumi-red) 100%); }
+  .hero-kanji{ right:5vw; font-size:clamp(8rem, 22vw, 17rem); color:rgba(245,241,232,0.06); }
+  .hero .eyebrow{ color:var(--gold); }
+  .hero-rule{ width:48px; height:2px; background:var(--gold); margin-bottom:1.6rem; }
+  h1.title-jp{ font-size:clamp(2.2rem, 5vw, 3.8rem); line-height:1.25; margin:.4rem 0 .5rem; color:var(--paper); }
+  .title-romaji{ font-size:.85rem; color:rgba(245,241,232,0.72); margin-bottom:2rem; line-height:1.6; }
+  .hero-dek{ font-size:1.08rem; max-width:560px; color:rgba(245,241,232,0.9); font-weight:400; line-height:1.85; }
+  .hero-stats{ margin-top:3.2rem; border-top:1px solid rgba(245,241,232,0.2); }
+  .hero-stats div{ border-right:1px solid rgba(245,241,232,0.2); }
+  .hero-stats .num{ color:var(--gold); }
+  .hero-stats .lbl{ font-size:.8rem; color:rgba(245,241,232,0.7); }
+  .acto-title{ font-weight:700; }
+  .acto-date{ font-size:.8rem; color:var(--ink-soft); }
+  .acto-teaser{ font-weight:400; }
+  .acto-body p{ font-weight:400; line-height:1.85; }
+  .acto-body strong{ font-weight:700; color:var(--vermillion-deep); }
+  .acto-body .quote{ border-left-color:var(--gold); font-style:normal; }
+  .flat-grid > div:not(:first-child){ padding-left:3rem; }
+  .flat-grid p{ font-weight:400; }
+  .sources p{ font-weight:400; }
+  .nav-adjacent > *:not(:first-child){ padding-left:3rem; }
+  .acto-figure[hidden]{display:none;}
+  .acto-figure{margin:1.8rem 0; border:1px solid var(--line); max-width:640px; background:var(--ink);}
+  .acto-figure img{width:100%; display:block; filter:sepia(.12) contrast(1.03); opacity:.94;}
+  .acto-figure figcaption{padding:.85rem 1.1rem; font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink-soft); border-top:1px solid var(--line); background:var(--paper);}
+  .acto-figure figcaption .credit{display:block; margin-top:.3rem; color:#8A8478; font-size:.76rem;}
+  .chart-block{margin:1.8rem 0; border-top:1px solid var(--line); padding-top:1.6rem; max-width:640px;}
+  @media(max-width:820px){
+    .flat-grid > div:not(:first-child){ padding-left:0; }
+    .nav-adjacent > *:not(:first-child){ padding-left:0; }
+    .nav-adjacent .next{ padding-left:0; }
+    header.hero{ min-height:88vh; padding:12vh 7vw 10vh; }
+  }
 </style>
+<!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
+<style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(168,134,60,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Shippori Mincho', serif; --v-body:'Zen Kaku Gothic New', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
 </head>
 <body>
 <a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
@@ -180,15 +219,29 @@
       <span class="acto-date">1635 – 1840s</span>
       <p class="acto-teaser">El sakoku no fue un accidente geográfico: fue política de Estado, reforzada durante dos siglos frente a un cerco cada vez más real.</p>
       <div class="acto-body">
-        <p>Durante más de dos siglos, Japón vive bajo un sistema semi-feudal dominado por el shogunato (bakufu) de la dinastía Tokugawa. Para consolidar su control político y erradicar la influencia cristiana, los Tokugawa implementan desde el siglo XVII una rígida política de aislamiento internacional (sakoku), formalizada en el Edicto de Sakoku de 1635. Los súbditos tienen prohibido salir del archipiélago, y el comercio extranjero queda confinado a Nagasaki, principalmente con holandeses y chinos.</p>
+        <!--vis--><div class="vis" data-vis="rings">
+          <p class="vis-one"><small>En una frase</small>Japón se cerraba, pero el cañón ya llegaba hasta Nagasaki.</p>
+          <div class="vis-card">
+            <div class="v-rings-wrap">
+              <div class="v-rings" role="img" aria-label="Tres círculos concéntricos: el shogunato al centro, Nagasaki alrededor y las potencias afuera."><div class="v-ring r3"></div><div class="v-ring r2"></div><div class="v-ring r1">鎖</div></div>
+              <ul class="v-legend">
+                <li><i class="k1"></i><span><b>El shogunato</b>Edicto de Sakoku de 1635: nadie sale ni entra.</span></li>
+                <li><i class="k2"></i><span><b>Nagasaki</b>Único puerto, solo con holandeses y chinos.</span></li>
+                <li><i class="k3"></i><span><b>Rusia y Gran Bretaña</b>Presionan desde el norte y desde el sur.</span></li>
+              </ul>
+            </div>
+            <p class="vis-note">Esquema del aislamiento, no un mapa.</p>
+          </div>
+        </div><!--/vis-->
+        <p>Durante más de dos siglos, Japón vive bajo un sistema semi-feudal dominado por el shogunato (<span class="gl" tabindex="0">bakufu<span class="gl-def" role="note">Gobierno militar del shogun.</span></span>) de la dinastía Tokugawa. Para consolidar su control político y erradicar la influencia cristiana, los Tokugawa implementan desde el siglo XVII una rígida política de aislamiento internacional (<span class="gl" tabindex="0">sakoku<span class="gl-def" role="note">Política de aislamiento internacional de los Tokugawa.</span></span>), formalizada en el Edicto de Sakoku de 1635. Los súbditos tienen prohibido salir del archipiélago, y el comercio extranjero queda confinado a Nagasaki, principalmente con holandeses y chinos.</p>
         <figure class="acto-figure">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/DejimaInNagasakiBay.jpg" alt="Pintura del comercio entre japoneses y holandeses en la isla artificial de Dejima, bahía de Nagasaki, 1820" loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Comercio japonés-holandés en Dejima, la isla artificial en la bahía de Nagasaki por donde pasaba todo el contacto autorizado con Occidente, c. 1820.
             <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
           </figcaption>
         </figure>
-        <p>Hacia finales del XVIII, el sistema empieza a tensionarse: Rusia presiona desde el norte, Gran Bretaña desde el sur. En 1808 el navío británico HMS Phaeton entra a Nagasaki y amenaza con cañonear la ciudad si no se le proveen suministros: la prueba de que el shogunato no tiene cómo defenderse. La respuesta es el Edicto de Expulsión de 1825: disparar de inmediato contra cualquier embarcación occidental sospechosa.</p>
-        <p class="quote">Intelectuales nacionalistas de la escuela de Mito, como Aizawa Seishisai, advierten sobre una "invasión espiritual" occidental: el temor no era solo militar, era que el cristianismo sedujera a un pueblo que ya se sentía alienado de sus señores feudales.</p>
+        <p>Hacia finales del XVIII, el sistema empieza a tensionarse: Rusia presiona desde el norte, Gran Bretaña desde el sur. En 1808 el navío británico HMS Phaeton entra a Nagasaki y amenaza con cañonear la ciudad si no se le proveen suministros: la prueba de que el shogunato no tiene cómo defenderse. La respuesta es el <span class="gl" tabindex="0">Edicto de Expulsión<span class="gl-def" role="note">Decreto de 1825: disparar de inmediato contra embarcaciones occidentales sospechosas.</span></span> de 1825: disparar de inmediato contra cualquier embarcación occidental sospechosa.</p>
+        <p class="quote">Intelectuales nacionalistas de la <span class="gl" tabindex="0">escuela de Mito<span class="gl-def" role="note">Corriente de intelectuales nacionalistas, como Aizawa Seishisai.</span></span>, como Aizawa Seishisai, advierten sobre una "invasión espiritual" occidental: el temor no era solo militar, era que el cristianismo sedujera a un pueblo que ya se sentía alienado de sus señores feudales.</p>
       </div>
     </div>
   </div>
@@ -200,6 +253,18 @@
       <span class="acto-date">jul 1853</span>
       <p class="acto-teaser">El comodoro Matthew Perry entra a la bahía de Tokio exigiendo apertura, y desnuda la impotencia militar de 250 años de aislamiento.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="steps">
+          <p class="vis-one"><small>En una frase</small>Dos amenazas, 45 años: el sistema ya estaba roto antes de Perry.</p>
+          <div class="vis-card">
+            <div class="v-steps" role="list" data-up>
+              <div class="v-rail"><div class="v-fill"></div></div>
+<svg class="v-ship" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 15h20l-3 6H6z" fill="currentColor"/><path d="M13 3v11M13 4l6 8h-6M12 6l-5 7h5" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>              <div class="v-stop" role="listitem"><span class="v-yr">Jul 1853</span><h4>Perry en la bahía de Tokio</h4><p>Abre los puertos a cañonazos.</p></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">1825</span><h4>Edicto de Expulsión</h4><p>Disparar contra todo barco occidental.</p></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">1808</span><h4>HMS Phaeton</h4><p>Amenaza a Nagasaki y nadie puede detenerlo.</p></div>
+            </div>
+            <p class="vis-note">De abajo hacia arriba. Esquema, no a escala.</p>
+          </div>
+        </div><!--/vis-->
         <p>El catalizador definitivo llega en julio de 1853: el comodoro Matthew Perry, al mando de sus "barcos negros" fuertemente artillados, entra en la bahía de Tokio por orden directa del presidente Millard Fillmore, exigiendo a punta de cañón que Japón abra sus puertos al comercio y a la presencia diplomática occidental.</p>
         <figure class="acto-figure">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Japanese%201854%20print%20Commodore%20Perry.jpg" alt="Grabado japonés de 1854 representando la flota del comodoro Perry" loading="lazy" onerror="this.closest('figure').hidden=true">
@@ -219,6 +284,18 @@
       <span class="acto-date">1850s – 1868</span>
       <p class="acto-teaser">Una paradoja estratégica deliberada: usar las herramientas del enemigo para no terminar colonizado por él.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="flow">
+          <p class="vis-one"><small>En una frase</small>Adoptar métodos occidentales para mantener fuera a Occidente.</p>
+          <div class="vis-card">
+            <div class="v-flow">
+              <div class="v-node"><span class="v-k">Norte</span><h4>Mapas</h4><p>Expediciones como la de Mamiya Rinzō fijan límites.</p></div>
+              <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-node"><span class="v-k">Estudio</span><h4>Leyes y técnica</h4><p>La élite traduce modelos occidentales.</p></div>
+              <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-node"><span class="v-k">1867–68</span><h4>Satsuma y Chōshū</h4><p>Deponen al bakufu y restituyen al Emperador.</p></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <p>El giro no es solo resistencia militar: es una paradoja estratégica, adoptar métodos occidentales para mantener fuera a Occidente y preservar la esencia nacional. Para defenderse del expansionismo ruso en el norte, el shogunato financia expediciones científicas modernas, como la del explorador Mamiya Rinzō, usando las herramientas cartográficas europeas para fijar límites territoriales reconocibles ante las potencias extranjeras.</p>
         <p>Se reconoce que la fortaleza espiritual sin poder material era inútil: la élite política empieza a estudiar y traducir leyes, modelos de soberanía y adelantos técnicos occidentales. Esa corriente modernizadora culmina en 1867-1868, cuando jóvenes samuráis de Satsuma y Chōshū deponen definitivamente al bakufu Tokugawa y restituyen el poder político al Emperador.</p>
         <figure class="acto-figure">
@@ -238,6 +315,15 @@
       <span class="acto-date">1868 – 1873</span>
       <p class="acto-teaser">El sistema de shogunatos termina, se abole el feudalismo, y el Emperador se convierte en símbolo de una identidad nacional unificada.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="switches">
+          <p class="vis-one"><small>En una frase</small>1868 desmontó el orden Tokugawa en tres frentes.</p>
+          <div class="vis-card">
+            <div class="v-sov-head"><span>Pilares del régimen</span><span class="v-sov-count" aria-live="polite"><b class="n">0</b> / 3</span></div>
+            <div class="v-sw off"><span class="v-sw-mark">藩</span><span><b>Dominios feudales</b><em>Abolidos</em></span><span class="to-end"><span class="v-sw-state"><span class="st-on">En pie</span><span class="st-off">Cambiado</span></span><span class="v-sw-track"></span></span></div>
+            <div class="v-sw off"><span class="v-sw-mark">身</span><span><b>Distinciones hereditarias</b><em>Abolidas</em></span><span class="to-end"><span class="v-sw-state"><span class="st-on">En pie</span><span class="st-off">Cambiado</span></span><span class="v-sw-track"></span></span></div>
+            <div class="v-sw off"><span class="v-sw-mark">帝</span><span><b>Soberanía del Emperador</b><em>Símbolo sagrado e inviolable</em></span><span class="to-end"><span class="v-sw-state"><span class="st-on">En pie</span><span class="st-off">Cambiado</span></span><span class="v-sw-track"></span></span></div>
+          </div>
+        </div><!--/vis-->
         <p>Tras la deposición de Tokugawa Yoshinobu y la proclamación de la Restauración Meiji en 1868, se sientan las bases de un Estado-nación moderno: se abolen los dominios feudales y las distinciones hereditarias de clase, concentrando la administración en un poder ejecutivo central unificado.</p>
         <figure class="acto-figure">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mutsuhito-Emperor-Meiji-1873.png" alt="Retrato oficial del Emperador Meiji, 1873, fotografiado por Uchida Kuichi" loading="lazy" onerror="this.closest('figure').hidden=true">
@@ -245,7 +331,7 @@
             <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
           </figcaption>
         </figure>
-        <p>Se envía la histórica Misión Iwakura (1871-1873) a Europa y Estados Unidos para estudiar los sistemas industriales, legales y constitucionales occidentales como plan maestro de modernización. Para contrarrestar las lealtades locales de antiguos clanes, el gobierno promueve al Emperador como símbolo sagrado e inviolable de la soberanía nacional.</p>
+        <p>Se envía la histórica <span class="gl" tabindex="0">Misión Iwakura<span class="gl-def" role="note">Delegación (1871-1873) que estudió Estados Unidos y Europa.</span></span> (1871-1873) a Europa y Estados Unidos para estudiar los sistemas industriales, legales y constitucionales occidentales como plan maestro de modernización. Para contrarrestar las lealtades locales de antiguos clanes, el gobierno promueve al Emperador como símbolo sagrado e inviolable de la soberanía nacional.</p>
       </div>
     </div>
   </div>
@@ -257,7 +343,17 @@
       <span class="acto-date">1868 → hoy</span>
       <p class="acto-teaser">La tensión entre asimilar Occidente y proteger la identidad nacional sigue siendo el eje de la política exterior japonesa.</p>
       <div class="acto-body">
-        <p><strong>Occidentalización vs. Kokutai.</strong> La política exterior y de defensa de Japón sigue marcada por el dilema surgido entre 1603 y 1853: la necesidad de asimilar estructuras internacionales, como la alianza de seguridad con EE.UU., mientras se lucha por mantener la esencia tradicional japonesa frente a las dinámicas del poder global.</p>
+        <!--vis--><div class="vis" data-vis="versus">
+          <p class="vis-one"><small>En una frase</small>Japón sigue sin decidir si 1868 fue ruptura o continuidad.</p>
+          <div class="vis-card">
+            <div class="v-versus neutral">
+              <div class="v-col before"><h4>Narrativa oficial</h4><ul><li>Despotismo superado por la "luz" imperial</li><li>Lectura oficial Meiji</li></ul></div>
+              <span class="v-vs v-vs-t">vs</span>
+              <div class="v-col after"><h4>Contralectura</h4><ul><li>250 años de estabilidad y primeras misiones diplomáticas</li><li>Katsu Kaishū: legado Tokugawa</li></ul></div>
+            </div>
+          </div>
+        </div><!--/vis-->
+        <p><strong>Occidentalización vs. <span class="gl" tabindex="0">Kokutai<span class="gl-def" role="note">La esencia tradicional japonesa.</span></span>.</strong> La política exterior y de defensa de Japón sigue marcada por el dilema surgido entre 1603 y 1853: la necesidad de asimilar estructuras internacionales, como la alianza de seguridad con EE.UU., mientras se lucha por mantener la esencia tradicional japonesa frente a las dinámicas del poder global.</p>
         <p><strong>El debate historiográfico.</strong> La narrativa "oficial" de la era Meiji retrató al shogunato como una era de despotismo superada por la "luz" imperial. Pero historiadores herederos del antiguo régimen, como el diplomático Katsu Kaishū, defendieron que las bases del Japón moderno (sus primeras misiones diplomáticas, la modernización militar, 250 años de estabilidad administrativa) fueron un legado directo del orden Tokugawa, no una ruptura súbita de 1868.</p>
         <p class="quote">Ninguna de las dos lecturas ganó del todo: Japón sigue debatiendo si 1868 fue una ruptura o una continuación, la misma pregunta que se hace cada vez que decide cuánto absorber del exterior y cuánto proteger de sí mismo.</p>
       </div>
@@ -314,11 +410,13 @@
     gsap.to(acto.querySelector('.acto-body'), {
       height: 'auto', opacity: 1, duration: reduceMotion ? 0 : 0.65, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
-      onComplete: function(){ ScrollTrigger.refresh(); }
+      onComplete: function(){ acto.querySelector('.acto-body').style.overflow = 'visible'; ScrollTrigger.refresh(); }
     });
+    if(window.playVis) setTimeout(function(){ window.playVis(acto); }, reduceMotion ? 0 : 60);
   }
   function closeActo(acto){
     acto.querySelector('.acto-toggle').textContent = '＋';
+    acto.querySelector('.acto-body').style.overflow = 'hidden';
     gsap.to(acto.querySelector('.acto-body'), {
       height: 0, opacity: 0, duration: reduceMotion ? 0 : 0.5, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
@@ -328,7 +426,8 @@
 
   var actos = document.querySelectorAll('.acto');
   actos.forEach(function(acto){
-    acto.addEventListener('click', function(){
+    acto.addEventListener('click', function(e){
+      if(e.target.closest('.acto-body')) return;
       var wasActive = acto.classList.contains('active');
       document.querySelectorAll('.acto.active').forEach(function(a){ a.classList.remove('active'); closeActo(a); });
       if(!wasActive){ acto.classList.add('active'); openActo(acto); }
@@ -336,7 +435,7 @@
   });
   var firstActive = document.querySelector('.acto.active .acto-body');
   if(firstActive){
-    gsap.set(firstActive, {height:'auto', opacity:1});
+    gsap.set(firstActive, {height:'auto', opacity:1, overflow:'visible'});
     document.querySelector('.acto.active .acto-toggle').textContent = '－';
   }
 
@@ -375,5 +474,6 @@
   window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
 </script>
 
+<!--vis-js--><script src="../../assets/vis.js"></script><!--/vis-js-->
 </body>
 </html>

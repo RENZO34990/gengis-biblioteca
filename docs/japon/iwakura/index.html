@@ -172,7 +172,46 @@
   .acto-figure img{width:100%; display:block; filter:sepia(.12) contrast(1.03); opacity:.94;}
   .acto-figure figcaption{padding:.85rem 1.1rem; font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink-soft); border-top:1px solid var(--line); background:var(--paper);}
   .acto-figure figcaption .credit{display:block; margin-top:.3rem; color:#8A8478; font-size:.76rem;}
+/* ---------- Homogeneización con China ---------- */
+  :root{ --wood-deep:#4A3A28; --sumi:#23211F; --sumi-warm:#3A2C24; --sumi-red:#5E2B21; --paper-hero:#F5F1E8; --vermillion-deep:#7E2E20; }
+  body{ line-height:1.7; }
+  header.hero{ min-height:96vh; padding:14vh 8vw 12vh; overflow:hidden; color:var(--paper);
+    background:linear-gradient(155deg, var(--sumi) 0%, var(--sumi-warm) 58%, var(--sumi-red) 100%); }
+  .hero-kanji{ right:5vw; font-size:clamp(8rem, 22vw, 17rem); color:rgba(245,241,232,0.06); }
+  .hero .eyebrow{ color:var(--gold); }
+  .hero-rule{ width:48px; height:2px; background:var(--gold); margin-bottom:1.6rem; }
+  h1.title-jp{ font-size:clamp(2.2rem, 5vw, 3.8rem); line-height:1.25; margin:.4rem 0 .5rem; color:var(--paper); }
+  .title-romaji{ font-size:.85rem; color:rgba(245,241,232,0.72); margin-bottom:2rem; line-height:1.6; }
+  .hero-dek{ font-size:1.08rem; max-width:560px; color:rgba(245,241,232,0.9); font-weight:400; line-height:1.85; }
+  .hero-stats{ margin-top:3.2rem; border-top:1px solid rgba(245,241,232,0.2); }
+  .hero-stats div{ border-right:1px solid rgba(245,241,232,0.2); }
+  .hero-stats .num{ color:var(--gold); }
+  .hero-stats .lbl{ font-size:.8rem; color:rgba(245,241,232,0.7); }
+  .acto-title{ font-weight:700; }
+  .acto-date{ font-size:.8rem; color:var(--ink-soft); }
+  .acto-teaser{ font-weight:400; }
+  .acto-body p{ font-weight:400; line-height:1.85; }
+  .acto-body strong{ font-weight:700; color:var(--vermillion-deep); }
+  .acto-body .quote{ border-left-color:var(--gold); font-style:normal; }
+  .flat-grid > div:not(:first-child){ padding-left:3rem; }
+  .flat-grid p{ font-weight:400; }
+  .sources p{ font-weight:400; }
+  .nav-adjacent > *:not(:first-child){ padding-left:3rem; }
+  .acto-figure[hidden]{display:none;}
+  .acto-figure{margin:1.8rem 0; border:1px solid var(--line); max-width:640px; background:var(--ink);}
+  .acto-figure img{width:100%; display:block; filter:sepia(.12) contrast(1.03); opacity:.94;}
+  .acto-figure figcaption{padding:.85rem 1.1rem; font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink-soft); border-top:1px solid var(--line); background:var(--paper);}
+  .acto-figure figcaption .credit{display:block; margin-top:.3rem; color:#8A8478; font-size:.76rem;}
+  .chart-block{margin:1.8rem 0; border-top:1px solid var(--line); padding-top:1.6rem; max-width:640px;}
+  @media(max-width:820px){
+    .flat-grid > div:not(:first-child){ padding-left:0; }
+    .nav-adjacent > *:not(:first-child){ padding-left:0; }
+    .nav-adjacent .next{ padding-left:0; }
+    header.hero{ min-height:88vh; padding:12vh 7vw 10vh; }
+  }
 </style>
+<!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
+<style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(168,134,60,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Shippori Mincho', serif; --v-body:'Zen Kaku Gothic New', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
 </head>
 <body>
 <a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
@@ -207,6 +246,16 @@
       <span class="acto-date">23 dic 1871</span>
       <p class="acto-teaser">Zarpan cerca de 50 funcionarios de alto rango más unos 60 estudiantes y asistentes — más de 100 personas, con un costo estimado de un millón de dólares de la época.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="stats">
+          <p class="vis-one"><small>En una frase</small>No era una delegación cualquiera: era casi el gabinete entero, de viaje durante dos años.</p>
+          <div class="vis-card">
+            <div class="v-stats" style="--n:3">
+              <div class="v-stat"><span class="v-num" data-to="50" data-dec="0" data-pre="~" data-suf="">~50</span><span class="v-lbl">funcionarios de alto rango</span></div>
+              <div class="v-stat"><span class="v-num" data-to="60" data-dec="0" data-pre="~" data-suf="">~60</span><span class="v-lbl">estudiantes y asistentes</span></div>
+              <div class="v-stat"><span class="v-num">US$1 M</span><span class="v-lbl">costo estimado de la época</span></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <figure class="acto-figure">
           <img src="../../assets/japon/iwakura/iwakura-embajadores.jpg" alt="Los cuatro líderes de la Misión Iwakura vestidos con ropa occidental y tradicional, 1872." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Iwakura Tomomi, Kido Takayoshi, Ōkubo Toshimichi e Itō Hirobumi, retratados durante la misión: dos años recorriendo 12 países para decidir qué copiar.
@@ -225,7 +274,19 @@
       <span class="acto-date">ene–ago 1872</span>
       <p class="acto-teaser">Cruzan el continente en tren, con una parada no planificada en Salt Lake City por el invierno severo de 1872.</p>
       <div class="acto-body">
-        <p>En Washington D.C. intentan renegociar los tratados desiguales impuestos a Japón. Fracasan: es demasiado pronto para exigir un trato de igual a igual. La lección los marca para el resto del viaje — entienden que el reconocimiento hay que ganárselo antes de poder exigir nada.</p>
+        <!--vis--><div class="vis" data-vis="flow">
+          <p class="vis-one"><small>En una frase</small>Washington fue la primera lección: el reconocimiento se gana antes de exigirlo.</p>
+          <div class="vis-card">
+            <div class="v-flow">
+              <div class="v-node"><span class="v-k">Ene–ago 1872</span><h4>Intentan renegociar</h4><p>Piden revisar los tratados desiguales impuestos a Japón.</p></div>
+              <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-node"><span class="v-k">Resultado</span><h4>Fracasan</h4><p>Es demasiado pronto para exigir un trato de igual a igual.</p></div>
+              <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-node"><span class="v-k">Lección</span><h4>Primero, ganarse el lugar</h4><p>Esa idea los acompaña el resto del viaje.</p></div>
+            </div>
+          </div>
+        </div><!--/vis-->
+        <p>En Washington D.C. intentan renegociar los <span class="gl" tabindex="0">tratados desiguales<span class="gl-def" role="note">Acuerdos que Japón firmó bajo presión y que le quitaban control sobre sus aduanas y su justicia.</span></span> impuestos a Japón. Fracasan: es demasiado pronto para exigir un trato de igual a igual. La lección los marca para el resto del viaje — entienden que el reconocimiento hay que ganárselo antes de poder exigir nada.</p>
       </div>
     </div>
   </div>
@@ -237,7 +298,17 @@
       <span class="acto-date">ago–dic 1872</span>
       <p class="acto-teaser">Llegan a Liverpool el 17 de agosto. Es la estadía más larga del viaje: recorren minas de carbón, fundiciones, talleres, fábricas de cerveza y galletas.</p>
       <div class="acto-body">
-        <p>Entienden que la revolución industrial británica tomó apenas cuatro o cinco décadas, no siglos. Este es el país que más espacio ocupa en el Jikki final: 20 de los 100 fascículos. Del 24 al 27 de octubre se desvían a Bradford y Saltaire, el pueblo-modelo textil de Titus Salt, recibidos por el propio alcalde de Bradford — el interés no era turístico sino técnico.</p>
+        <!--vis--><div class="vis" data-vis="bars">
+          <p class="vis-one"><small>En una frase</small>Dónde creyeron que estaba el modelo a estudiar con más detalle.</p>
+          <div class="vis-card">
+            <div class="v-bars">
+              <div class="v-bar"><span class="v-bl">Reino Unido en el Jikki</span><div class="v-btrack"><div class="v-bfill" style="--w:20%"></div></div><span class="v-bv">20 de 100 fascículos</span></div>
+              <div class="v-bar alt"><span class="v-bl">EE. UU. y Reino Unido juntos</span><div class="v-btrack"><div class="v-bfill" style="--w:40%"></div></div><span class="v-bv">40% del libro</span></div>
+            </div>
+            <p class="vis-note">Proporción del texto del Jikki, el relato oficial del viaje.</p>
+          </div>
+        </div><!--/vis-->
+        <p>Entienden que la revolución industrial británica tomó apenas cuatro o cinco décadas, no siglos. Este es el país que más espacio ocupa en el <span class="gl" tabindex="0">Jikki<span class="gl-def" role="note">El relato oficial de la misión, en 100 fascículos.</span></span> final: 20 de los 100 fascículos. Del 24 al 27 de octubre se desvían a Bradford y <span class="gl" tabindex="0">Saltaire<span class="gl-def" role="note">Pueblo-modelo textil de Titus Salt, cerca de Bradford.</span></span>, el pueblo-modelo textil de Titus Salt, recibidos por el propio alcalde de Bradford — el interés no era turístico sino técnico.</p>
         <p class="quote">EE.UU. y Reino Unido concentran juntos el 40% del contenido del libro completo: la proporción revela dónde creyeron que estaba el modelo a estudiar con más detalle.</p>
       </div>
     </div>
@@ -250,13 +321,23 @@
       <span class="acto-date">dic 1872–jul 1873</span>
       <p class="acto-teaser">Francia, Bélgica, Países Bajos, Alemania, Rusia, Dinamarca, Suecia, Italia, Austria-Hungría y Suiza.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="versus">
+          <p class="vis-one"><small>En una frase</small>Cada capital dejó una pieza para el Japón que venía.</p>
+          <div class="vis-card">
+            <div class="v-versus neutral">
+              <div class="v-col before"><h4>Prusia</h4><ul><li>Prusia: sistema educativo centralizado</li><li>Prusia: estructura militar eficiente</li></ul></div>
+              <span class="v-vs v-vs-t">vs</span>
+              <div class="v-col after"><h4>Francia</h4><ul><li>Francia: informes sobre industria</li><li>Francia: derecho, insumo para Nakae Chōmin</li></ul></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <figure class="acto-figure">
           <img src="../../assets/japon/iwakura/iwakura-europa.jpg" alt="Fotografía de los miembros de la Misión Iwakura en Europa, 1873." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>La delegación en Europa continental, donde Bismarck les dijo que el derecho internacional era un arma de los fuertes.
             <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
           </figcaption>
         </figure>
-        <p>En Prusia estudian el sistema educativo centralizado y la estructura militar eficiente — piezas que luego aparecerán en las reformas Meiji. En Francia se llevan reportes detallados sobre industria y el derecho francés, insumo directo para Nakae Chōmin y las futuras reformas legales. En Berlín, el 11 de marzo de 1873, asisten a su primera ópera en el Teatro Imperial: Kume anota semejanzas entre ese drama musical y el teatro Noh japonés.</p>
+        <p>En Prusia estudian el sistema educativo centralizado y la estructura militar eficiente — piezas que luego aparecerán en las reformas Meiji. En Francia se llevan reportes detallados sobre industria y el derecho francés, insumo directo para <span class="gl" tabindex="0">Nakae Chōmin<span class="gl-def" role="note">Pensador japonés que estudió derecho francés y difundió ideas de gobierno representativo.</span></span> y las futuras reformas legales. En Berlín, el 11 de marzo de 1873, asisten a su primera ópera en el Teatro Imperial: Kume anota semejanzas entre ese drama musical y el teatro <span class="gl" tabindex="0">Noh<span class="gl-def" role="note">Teatro japonés clásico, con máscaras y movimiento lento.</span></span> japonés.</p>
       </div>
     </div>
   </div>
@@ -268,6 +349,17 @@
       <span class="acto-date">jul–sep 1873</span>
       <p class="acto-teaser">El viaje de vuelta cruza el Canal de Suez hacia el Índico, con paradas en puertos del sur de Asia y en Hong Kong.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="press">
+          <p class="vis-one"><small>En una frase</small>De vuelta, vieron a Asia con ojos nuevos: territorios bajo dominio colonial.</p>
+          <div class="vis-card">
+            <div class="v-press">
+              <div class="v-press-side v-press-l"><b>Estética europea</b><em>Oro y perlas</em><svg class="v-arrow" viewBox="0 0 54 24" aria-hidden="true"><path d="M2 12h44M36 3l12 9-12 9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="v-press-core">港<small>HK</small><svg class="v-crack" viewBox="0 0 96 96" aria-hidden="true"><path d="M48 0l-8 22 12 14-14 20 10 14-6 26" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--v-paper)"/></svg></div>
+              <div class="v-press-side v-press-r"><b>Estética china</b><em>Bermellón</em><svg class="v-arrow" viewBox="0 0 54 24" aria-hidden="true"><path d="M2 12h44M36 3l12 9-12 9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            </div>
+            <div class="v-press-out">Kume los compara conscientemente en la arquitectura colonial de <b>Hong Kong</b>, el 27 de agosto de 1873.</div>
+          </div>
+        </div><!--/vis-->
         <p>Un contraste directo con lo visto en Europa: territorios asiáticos bajo dominio colonial. El 27 de agosto, ya de regreso, Kume compara conscientemente la estética europea (oro y perlas) frente a la estética china tradicional (bermellón) en la arquitectura colonial de Hong Kong. Ōkubo y Kido regresan antes por asuntos urgentes de gobierno.</p>
       </div>
     </div>
@@ -280,7 +372,19 @@
       <span class="acto-date">13 sep 1873</span>
       <p class="acto-teaser">Casi dos años después de zarpar, la misión vuelve con un inventario completo de cómo funciona un Estado industrial moderno.</p>
       <div class="acto-body">
-        <p>Más valioso que un tratado renegociado: un plan maestro listo para convertirse en política pública. El periodo cierra, meses después, con el debate Seikanron de 1873 sobre si invadir Corea — la primera gran fractura interna del gobierno Meiji.</p>
+        <!--vis--><div class="vis" data-vis="timeline">
+          <p class="vis-one"><small>En una frase</small>Casi dos años de viaje terminaron en una fractura interna.</p>
+          <div class="vis-card">
+            <div class="v-tline" style="--n:4">
+              <div class="v-tline-rail"><div class="v-tline-fill"></div></div>
+              <div class="v-tl"><span class="v-tl-yr">23 dic 1871</span><p>Zarpan de Yokohama.</p></div>
+              <div class="v-tl"><span class="v-tl-yr">1872</span><p>Fracasa la renegociación en Washington.</p></div>
+              <div class="v-tl"><span class="v-tl-yr">13 sep 1873</span><p>Vuelven con un plan maestro para el Estado.</p></div>
+              <div class="v-tl"><span class="v-tl-yr">1873</span><p>Debate Seikanron: ¿invadir Corea? Primera gran fractura del gobierno Meiji.</p></div>
+            </div>
+          </div>
+        </div><!--/vis-->
+        <p>Más valioso que un tratado renegociado: un plan maestro listo para convertirse en política pública. El periodo cierra, meses después, con el debate <span class="gl" tabindex="0">Seikanron<span class="gl-def" role="note">Debate de 1873 sobre invadir Corea.</span></span> de 1873 sobre si invadir Corea — la primera gran fractura interna del gobierno Meiji.</p>
       </div>
     </div>
   </div>
@@ -442,13 +546,15 @@
   function openActo(acto){
     acto.querySelector('.acto-toggle').textContent = '－';
     gsap.to(acto.querySelector('.acto-body'), {
-      height: 'auto', opacity: 1, duration: reduceMotion ? 0 : 0.7, ease: 'power1.inOut',
+      height: 'auto', opacity: 1, duration: reduceMotion ? 0 : 0.65, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
-      onComplete: function(){ ScrollTrigger.refresh(); }
+      onComplete: function(){ acto.querySelector('.acto-body').style.overflow = 'visible'; ScrollTrigger.refresh(); }
     });
+    if(window.playVis) setTimeout(function(){ window.playVis(acto); }, reduceMotion ? 0 : 60);
   }
   function closeActo(acto){
     acto.querySelector('.acto-toggle').textContent = '＋';
+    acto.querySelector('.acto-body').style.overflow = 'hidden';
     gsap.to(acto.querySelector('.acto-body'), {
       height: 0, opacity: 0, duration: reduceMotion ? 0 : 0.55, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
@@ -458,7 +564,8 @@
 
   var actos = document.querySelectorAll('.acto');
   actos.forEach(function(acto){
-    acto.addEventListener('click', function(){
+    acto.addEventListener('click', function(e){
+      if(e.target.closest('.acto-body')) return;
       var wasActive = acto.classList.contains('active');
       document.querySelectorAll('.acto.active').forEach(function(a){ a.classList.remove('active'); closeActo(a); });
       if(!wasActive){ acto.classList.add('active'); openActo(acto); }
@@ -466,7 +573,7 @@
   });
   var firstActive = document.querySelector('.acto.active .acto-body');
   if(firstActive){
-    gsap.set(firstActive, {height:'auto', opacity:1});
+    gsap.set(firstActive, {height:'auto', opacity:1, overflow:'visible'});
     document.querySelector('.acto.active .acto-toggle').textContent = '－';
   }
 
@@ -527,5 +634,6 @@
   window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
 </script>
 
+<!--vis-js--><script src="../../assets/vis.js"></script><!--/vis-js-->
 </body>
 </html>

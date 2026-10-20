@@ -237,7 +237,46 @@
   .acto-figure img{width:100%; display:block; filter:sepia(.12) contrast(1.03); opacity:.94;}
   .acto-figure figcaption{padding:.85rem 1.1rem; font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink-soft); border-top:1px solid var(--line); background:var(--paper);}
   .acto-figure figcaption .credit{display:block; margin-top:.3rem; color:#8A8478; font-size:.76rem;}
+/* ---------- Homogeneización con China ---------- */
+  :root{ --wood-deep:#4A3A28; --sumi:#23211F; --sumi-warm:#3A2C24; --sumi-red:#5E2B21; --paper-hero:#F5F1E8; --vermillion-deep:#7E2E20; }
+  body{ line-height:1.7; }
+  header.hero{ min-height:96vh; padding:14vh 8vw 12vh; overflow:hidden; color:var(--paper);
+    background:linear-gradient(155deg, var(--sumi) 0%, var(--sumi-warm) 58%, var(--sumi-red) 100%); }
+  .hero-kanji{ right:5vw; font-size:clamp(8rem, 22vw, 17rem); color:rgba(245,241,232,0.06); }
+  .hero .eyebrow{ color:var(--gold); }
+  .hero-rule{ width:48px; height:2px; background:var(--gold); margin-bottom:1.6rem; }
+  h1.title-jp{ font-size:clamp(2.2rem, 5vw, 3.8rem); line-height:1.25; margin:.4rem 0 .5rem; color:var(--paper); }
+  .title-romaji{ font-size:.85rem; color:rgba(245,241,232,0.72); margin-bottom:2rem; line-height:1.6; }
+  .hero-dek{ font-size:1.08rem; max-width:560px; color:rgba(245,241,232,0.9); font-weight:400; line-height:1.85; }
+  .hero-stats{ margin-top:3.2rem; border-top:1px solid rgba(245,241,232,0.2); }
+  .hero-stats div{ border-right:1px solid rgba(245,241,232,0.2); }
+  .hero-stats .num{ color:var(--gold); }
+  .hero-stats .lbl{ font-size:.8rem; color:rgba(245,241,232,0.7); }
+  .acto-title{ font-weight:700; }
+  .acto-date{ font-size:.8rem; color:var(--ink-soft); }
+  .acto-teaser{ font-weight:400; }
+  .acto-body p{ font-weight:400; line-height:1.85; }
+  .acto-body strong{ font-weight:700; color:var(--vermillion-deep); }
+  .acto-body .quote{ border-left-color:var(--gold); font-style:normal; }
+  .flat-grid > div:not(:first-child){ padding-left:3rem; }
+  .flat-grid p{ font-weight:400; }
+  .sources p{ font-weight:400; }
+  .nav-adjacent > *:not(:first-child){ padding-left:3rem; }
+  .acto-figure[hidden]{display:none;}
+  .acto-figure{margin:1.8rem 0; border:1px solid var(--line); max-width:640px; background:var(--ink);}
+  .acto-figure img{width:100%; display:block; filter:sepia(.12) contrast(1.03); opacity:.94;}
+  .acto-figure figcaption{padding:.85rem 1.1rem; font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink-soft); border-top:1px solid var(--line); background:var(--paper);}
+  .acto-figure figcaption .credit{display:block; margin-top:.3rem; color:#8A8478; font-size:.76rem;}
+  .chart-block{margin:1.8rem 0; border-top:1px solid var(--line); padding-top:1.6rem; max-width:640px;}
+  @media(max-width:820px){
+    .flat-grid > div:not(:first-child){ padding-left:0; }
+    .nav-adjacent > *:not(:first-child){ padding-left:0; }
+    .nav-adjacent .next{ padding-left:0; }
+    header.hero{ min-height:88vh; padding:12vh 7vw 10vh; }
+  }
 </style>
+<!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
+<style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(168,134,60,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Shippori Mincho', serif; --v-body:'Zen Kaku Gothic New', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
 </head>
 <body>
 <a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
@@ -278,8 +317,22 @@
       <span class="acto-date">1635 – 1853</span>
       <p class="acto-teaser">Cuatro crisis simultáneas: estancamiento social, vulnerabilidad militar, falta de identidad nacional, y un shogunato cada vez más incapaz de sostener las tres cosas a la vez.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="rings">
+          <p class="vis-one"><small>En una frase</small>Un mosaico de dominios con el shogun al centro: ni nación, ni defensa común.</p>
+          <div class="vis-card">
+            <div class="v-rings-wrap">
+              <div class="v-rings" role="img" aria-label="Tres círculos concéntricos: el shogunato al centro, los dominios alrededor y el Emperador afuera."><div class="v-ring r3"></div><div class="v-ring r2"></div><div class="v-ring r1">幕</div></div>
+              <ul class="v-legend">
+                <li><i class="k1"></i><span><b>El shogunato</b>El bakufu Tokugawa, sin poder para proteger fronteras ni recursos.</span></li>
+                <li><i class="k2"></i><span><b>Los dominios</b>Un mosaico de feudos casi independientes.</span></li>
+                <li><i class="k3"></i><span><b>El Emperador</b>En segundo plano, deliberadamente.</span></li>
+              </ul>
+            </div>
+            <p class="vis-note">Esquema del orden político antes de 1853. No es un mapa.</p>
+          </div>
+        </div><!--/vis-->
         <p><strong>Estancamiento social y político.</strong> Desde principios del siglo XVII, Japón vive bajo un orden semi-feudal donde el linaje es la única base del poder. El intelectual Fukuzawa Yukichi describiría después ese periodo como el "yugo del despotismo", un estancamiento absoluto sin espacio para la iniciativa individual. Los samuráis de rango medio e inferior, pese a su talento, quedan atrapados en una posición asalariada insegura y sin ninguna ambición política posible.</p>
-        <p><strong>Soberanía vulnerable.</strong> El sakoku, estricto desde 1635, empieza a mostrar grietas frente al avance colonial: Rusia presiona por el norte, Gran Bretaña por el sur. Ya en 1808 el barco británico Phaeton había amenazado con cañonear Nagasaki, una señal temprana de que Japón no tenía cómo responder a la tecnología militar occidental.</p>
+        <p><strong>Soberanía vulnerable.</strong> El <span class="gl" tabindex="0">sakoku<span class="gl-def" role="note">Política de aislamiento de Japón, estricta desde 1635.</span></span>, estricto desde 1635, empieza a mostrar grietas frente al avance colonial: Rusia presiona por el norte, Gran Bretaña por el sur. Ya en 1808 el barco británico Phaeton había amenazado con cañonear Nagasaki, una señal temprana de que Japón no tenía cómo responder a la tecnología militar occidental.</p>
         <p><strong>Sin identidad nacional.</strong> Japón no funciona todavía como una nación moderna, sino como un mosaico de dominios feudales independientes. Existe un temor real a un "asalto espiritual" occidental vía el cristianismo, mientras el Emperador permanece deliberadamente en un segundo plano.</p>
         <p class="quote">El shogunato termina de perder legitimidad al firmar, bajo amenaza militar directa, los tratados desiguales de 1858: la prueba pública de que ya no podía proteger ni las fronteras ni los recursos del país.</p>
       </div>
@@ -299,6 +352,18 @@
       <span class="acto-date">1853</span>
       <p class="acto-teaser">Un comodoro estadounidense entra a la bahía de Tokio con órdenes de abrir Japón a la fuerza — y expone en semanas lo que 250 años de aislamiento habían escondido.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="steps">
+          <p class="vis-one"><small>En una frase</small>Un solo golpe de cañón abrió un país cerrado desde 1635.</p>
+          <div class="vis-card">
+            <div class="v-steps" role="list" data-up>
+              <div class="v-rail"><div class="v-fill"></div></div>
+<svg class="v-ship" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 15h20l-3 6H6z" fill="currentColor"/><path d="M13 3v11M13 4l6 8h-6M12 6l-5 7h5" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>              <div class="v-stop" role="listitem"><span class="v-yr">1858</span><h4>Tratados desiguales</h4><p>Las potencias extraen recursos y la soberanía se erosiona.</p></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">1853</span><h4>Los barcos negros de Perry</h4><p>Exige apertura bajo amenaza de fuerza.</p></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">1808</span><h4>El Phaeton en Nagasaki</h4><p>Primera señal de que Japón no podía responder.</p></div>
+            </div>
+            <p class="vis-note">De abajo hacia arriba, en orden cronológico. Esquema, no a escala.</p>
+          </div>
+        </div><!--/vis-->
         <figure class="acto-figure">
           <img src="../../assets/japon/meiji/perry-barcos-negros.jpg" alt="Grabado japonés de la flota del comodoro Perry en la bahía de Edo, 1853." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>La flota del comodoro Perry en la bahía de Edo, vista por artistas japoneses de la época: cuatro buques de vapor frente a un país que llevaba 215 años cerrado.
@@ -324,6 +389,15 @@
       <span class="acto-date">nov 1867 – abr 1868</span>
       <p class="acto-teaser">Una renuncia diplomática no basta: hace falta un golpe de Estado, la decisión de desmontar el orden feudal entero, y un juramento de cinco frases que fija el nuevo rumbo.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="switches">
+          <p class="vis-one"><small>En una frase</small>Meiji borró lo viejo antes de construir lo nuevo.</p>
+          <div class="vis-card">
+            <div class="v-sov-head"><span>Pilares del orden feudal</span><span class="v-sov-count" aria-live="polite"><b class="n">0</b> / 3</span></div>
+            <div class="v-sw off"><span class="v-sw-mark">藩</span><span><b>Dominios feudales</b><em>Reemplazados por prefecturas</em></span><span class="to-end"><span class="v-sw-state"><span class="st-on">En pie</span><span class="st-off">Abolido</span></span><span class="v-sw-track"></span></span></div>
+            <div class="v-sw off"><span class="v-sw-mark">士</span><span><b>Clase samurái</b><em>Sin estipendios ni espadas</em></span><span class="to-end"><span class="v-sw-state"><span class="st-on">En pie</span><span class="st-off">Abolido</span></span><span class="v-sw-track"></span></span></div>
+            <div class="v-sw off"><span class="v-sw-mark">幕</span><span><b>Shogunato</b><em>Devolvió el poder al Emperador</em></span><span class="to-end"><span class="v-sw-state"><span class="st-on">En pie</span><span class="st-off">Abolido</span></span><span class="v-sw-track"></span></span></div>
+          </div>
+        </div><!--/vis-->
         <figure class="acto-figure">
           <img src="../../assets/japon/meiji/emperador-meiji.jpg" alt="Retrato oficial del emperador Meiji, hacia 1872." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Mutsuhito, el emperador Meiji, a los 15 años de la restauración: de figura ritual en Kioto a símbolo de un Estado centralizado en Tokio.
@@ -332,7 +406,7 @@
         </figure>
         <p>A finales de 1867 el último shōgun, Tokugawa Yoshinobu, renuncia y devuelve el poder político a la Corte Imperial, aceptando ser instrumento de las órdenes del Emperador. No alcanza: samuráis de Satsuma y Chōshū ya habían decidido deponer al bakufu por la fuerza. Instauran un nuevo gobierno bajo el mando del joven Emperador Meiji: el verdadero punto sin retorno.</p>
         <p>Lo que hace irreversible el giro es la decisión que sigue: descartar todos los vestigios del orden viejo. Se abole el sistema feudal en favor de una administración central, y se determina eliminar la clase samurái (estipendios, prohibición de espadas, transformación en ciudadanos comunes o en un futuro ejército de conscripción).</p>
-        <p>En abril de 1868 el Juramento de la Carta fija las bases ideológicas: fin del aislamiento, búsqueda global de conocimiento, y la convicción de que Japón debe fortalecerse para no compartir el destino colonial de sus vecinos asiáticos. De ahí nace el lema que ordena todo lo que sigue: <em>Fukoku Kyōhei</em>, nación rica y ejército fuerte.</p>
+        <p>En abril de 1868 el Juramento de la Carta fija las bases ideológicas: fin del aislamiento, búsqueda global de conocimiento, y la convicción de que Japón debe fortalecerse para no compartir el destino colonial de sus vecinos asiáticos. De ahí nace el lema que ordena todo lo que sigue: <em><span class="gl" tabindex="0">Fukoku Kyōhei<span class="gl-def" role="note">Lema Meiji: &quot;nación rica y ejército fuerte&quot;.</span></span></em>, nación rica y ejército fuerte.</p>
       </div>
     </div>
   </div>
@@ -350,10 +424,24 @@
       <span class="acto-date">1868 – 1873</span>
       <p class="acto-teaser">Nueva capital, fin de los dominios, un ejército de plebeyos, una misión diplomática de 21 meses, y la primera fractura interna del nuevo gobierno.</p>
       <div class="acto-body">
-        <p>En 1869 la capital se traslada de Kioto a Edo, rebautizada Tokio. Ese mismo año, Satsuma, Chōshū, Hizen y Tosa devuelven sus tierras al Emperador; para 1871 la abolición de los dominios (han) es total, reemplazados por prefecturas administradas directamente desde el centro. En paralelo, el Seitaisho de 1868 crea el sistema Daijōkan: burocracia de la era Nara mezclada con la división de poderes occidental.</p>
+        <!--vis--><div class="vis" data-vis="flow">
+          <p class="vis-one"><small>En una frase</small>Cinco años para pasar de dominios a Estado central.</p>
+          <div class="vis-card">
+            <div class="v-flow">
+              <div class="v-node"><span class="v-k">1869</span><h4>Capital</h4><p>Edo pasa a ser Tokio.</p></div>
+              <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-node"><span class="v-k">1871</span><h4>Prefecturas</h4><p>Abolición total de los dominios (han).</p></div>
+              <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-node"><span class="v-k">1871–73</span><h4>Misión Iwakura</h4><p>Estudia sistemas industriales, legales y educativos.</p></div>
+              <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-node"><span class="v-k">1873</span><h4>Seikanron</h4><p>Ganan la reforma interna sobre invadir Corea.</p></div>
+            </div>
+          </div>
+        </div><!--/vis-->
+        <p>En 1869 la capital se traslada de Kioto a Edo, rebautizada Tokio. Ese mismo año, Satsuma, Chōshū, Hizen y Tosa devuelven sus tierras al Emperador; para 1871 la abolición de los dominios (han) es total, reemplazados por prefecturas administradas directamente desde el centro. En paralelo, el Seitaisho de 1868 crea el sistema <span class="gl" tabindex="0">Daijōkan<span class="gl-def" role="note">Sistema de gobierno de 1868 que mezcla la burocracia de la era Nara con división de poderes occidental.</span></span>: burocracia de la era Nara mezclada con la división de poderes occidental.</p>
         <p>La clase samurái se desmantela por completo: caen los estipendios hereditarios, se prohíbe portar espada en público, y un ejército de conscripción universal (compuesto por "plebeyos") reemplaza el monopolio militar samurái.</p>
         <p>La pieza más ambiciosa del periodo es la <strong>Misión Iwakura (1871-1873)</strong>: una delegación de altos ministros viaja a Estados Unidos y Europa con tres objetivos: obtener reconocimiento para la nueva dinastía, iniciar la renegociación de los tratados desiguales, y estudiar a fondo los sistemas industriales, legales y educativos occidentales como plan maestro de modernización.</p>
-        <p class="quote">El periodo cierra con la primera gran grieta interna del gobierno Meiji: el debate Seikanron de 1873, sobre si invadir Corea. Ganan quienes priorizan la reforma interna sobre la expansión militar inmediata.</p>
+        <p class="quote">El periodo cierra con la primera gran grieta interna del gobierno Meiji: el debate <span class="gl" tabindex="0">Seikanron<span class="gl-def" role="note">Debate de 1873 sobre invadir Corea.</span></span> de 1873, sobre si invadir Corea. Ganan quienes priorizan la reforma interna sobre la expansión militar inmediata.</p>
       </div>
     </div>
   </div>
@@ -371,7 +459,17 @@
       <span class="acto-date">1889 → hoy</span>
       <p class="acto-teaser">Ni la derrota de 1945 ni la ocupación estadounidense lograron desconectar al Japón de hoy de los cimientos que puso Meiji.</p>
       <div class="acto-body">
-        <p><strong>El Triángulo de Hierro.</strong> Meiji crea una burocracia meritocrática de élite (hoy reclutada sobre todo de la Universidad de Tokio, sucesora directa de la Universidad Imperial fundada en esa era) que junto a políticos y grandes empresas forma el "sei-kan-zai", el Triángulo de Hierro. La práctica del amakudari ("descenso del cielo"), donde burócratas retirados asumen cargos directivos en empresas privadas, hunde sus raíces en la visión Meiji del funcionario como figura casi sagrada.</p>
+        <!--vis--><div class="vis" data-vis="versus">
+          <p class="vis-one"><small>En una frase</small>Hoy siguen vivos el Triángulo de Hierro y el debate sobre el Artículo 9.</p>
+          <div class="vis-card">
+            <div class="v-versus">
+              <div class="v-col before"><h4>Lo que creó Meiji</h4><ul><li>1868: burocracia meritocrática de élite</li><li>Emperador como gobernante absoluto</li></ul></div>
+              <svg class="v-vs" viewBox="0 0 34 24" aria-hidden="true"><path d="M2 12h26M20 4l10 8-10 8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-col after"><h4>Lo que queda</h4><ul><li>Hoy: sei-kan-zai y amakudari</li><li>1947: Emperador como símbolo, Artículo 9 en debate</li></ul></div>
+            </div>
+          </div>
+        </div><!--/vis-->
+        <p><strong>El <span class="gl" tabindex="0">Triángulo de Hierro<span class="gl-def" role="note">Alianza entre burocracia, políticos y grandes empresas (sei-kan-zai).</span></span>.</strong> Meiji crea una burocracia meritocrática de élite (hoy reclutada sobre todo de la Universidad de Tokio, sucesora directa de la Universidad Imperial fundada en esa era) que junto a políticos y grandes empresas forma el "sei-kan-zai", el Triángulo de Hierro. La práctica del <span class="gl" tabindex="0">amakudari<span class="gl-def" role="note">&quot;Descenso del cielo&quot;: burócratas retirados pasan a dirigir empresas privadas.</span></span> ("descenso del cielo"), donde burócratas retirados asumen cargos directivos en empresas privadas, hunde sus raíces en la visión Meiji del funcionario como figura casi sagrada.</p>
         <p><strong>El Emperador como símbolo.</strong> Meiji convierte al Emperador de figura en la sombra a gobernante absoluto; la Constitución de 1947 lo redefine como "símbolo del Estado y de la unidad del pueblo", sin poder de gobierno, pero esa función unificadora sigue siendo herencia directa del proyecto Meiji.</p>
         <p><strong>Continuidad legal.</strong> Técnicamente, la Constitución de 1947 se promulgó como una <em>enmienda</em> a la Constitución Meiji de 1889, no como un documento nuevo desde cero: muchos códigos civiles actuales datan originalmente de las reformas Meiji.</p>
         <p class="quote">El lema Fukoku Kyōhei sigue resonando: el debate contemporáneo sobre revisar el Artículo 9 (que prohíbe a Japón mantener fuerzas de guerra) es, en el fondo, la misma lucha por el estatus de "nación normal" que está en el ADN del Estado desde 1868.</p>
@@ -473,14 +571,15 @@
   function openActo(acto){
     acto.querySelector('.acto-toggle').textContent = '－';
     gsap.to(acto.querySelector('.acto-body'), {
-      height: 'auto', opacity: 1,
-      duration: reduceMotion ? 0 : 0.7, ease: 'power1.inOut',
+      height: 'auto', opacity: 1, duration: reduceMotion ? 0 : 0.65, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
-      onComplete: function(){ ScrollTrigger.refresh(); }
+      onComplete: function(){ acto.querySelector('.acto-body').style.overflow = 'visible'; ScrollTrigger.refresh(); }
     });
+    if(window.playVis) setTimeout(function(){ window.playVis(acto); }, reduceMotion ? 0 : 60);
   }
   function closeActo(acto){
     acto.querySelector('.acto-toggle').textContent = '＋';
+    acto.querySelector('.acto-body').style.overflow = 'hidden';
     gsap.to(acto.querySelector('.acto-body'), {
       height: 0, opacity: 0,
       duration: reduceMotion ? 0 : 0.55, ease: 'power1.inOut',
@@ -491,7 +590,8 @@
 
   var actos = document.querySelectorAll('.acto');
   actos.forEach(function(acto){
-    acto.addEventListener('click', function(){
+    acto.addEventListener('click', function(e){
+      if(e.target.closest('.acto-body')) return;
       var wasActive = acto.classList.contains('active');
       document.querySelectorAll('.acto.active').forEach(function(a){
         a.classList.remove('active');
@@ -505,7 +605,7 @@
   });
   var firstActive = document.querySelector('.acto.active .acto-body');
   if(firstActive){
-    gsap.set(firstActive, {height:'auto', opacity:1});
+    gsap.set(firstActive, {height:'auto', opacity:1, overflow:'visible'});
     document.querySelector('.acto.active .acto-toggle').textContent = '－';
   }
 
@@ -574,5 +674,6 @@
   window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
 </script>
 
+<!--vis-js--><script src="../../assets/vis.js"></script><!--/vis-js-->
 </body>
 </html>

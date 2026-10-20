@@ -145,7 +145,46 @@
     .nav-adjacent .next{text-align:left; align-items:flex-start;}
     section{padding:6vh 6vw;}
   }
+/* ---------- Homogeneización con China ---------- */
+  :root{ --wood-deep:#4A3A28; --sumi:#23211F; --sumi-warm:#3A2C24; --sumi-red:#5E2B21; --paper-hero:#F5F1E8; --vermillion-deep:#7E2E20; }
+  body{ line-height:1.7; }
+  header.hero{ min-height:96vh; padding:14vh 8vw 12vh; overflow:hidden; color:var(--paper);
+    background:linear-gradient(155deg, var(--sumi) 0%, var(--sumi-warm) 58%, var(--sumi-red) 100%); }
+  .hero-kanji{ right:5vw; font-size:clamp(8rem, 22vw, 17rem); color:rgba(245,241,232,0.06); }
+  .hero .eyebrow{ color:var(--gold); }
+  .hero-rule{ width:48px; height:2px; background:var(--gold); margin-bottom:1.6rem; }
+  h1.title-jp{ font-size:clamp(2.2rem, 5vw, 3.8rem); line-height:1.25; margin:.4rem 0 .5rem; color:var(--paper); }
+  .title-romaji{ font-size:.85rem; color:rgba(245,241,232,0.72); margin-bottom:2rem; line-height:1.6; }
+  .hero-dek{ font-size:1.08rem; max-width:560px; color:rgba(245,241,232,0.9); font-weight:400; line-height:1.85; }
+  .hero-stats{ margin-top:3.2rem; border-top:1px solid rgba(245,241,232,0.2); }
+  .hero-stats div{ border-right:1px solid rgba(245,241,232,0.2); }
+  .hero-stats .num{ color:var(--gold); }
+  .hero-stats .lbl{ font-size:.8rem; color:rgba(245,241,232,0.7); }
+  .acto-title{ font-weight:700; }
+  .acto-date{ font-size:.8rem; color:var(--ink-soft); }
+  .acto-teaser{ font-weight:400; }
+  .acto-body p{ font-weight:400; line-height:1.85; }
+  .acto-body strong{ font-weight:700; color:var(--vermillion-deep); }
+  .acto-body .quote{ border-left-color:var(--gold); font-style:normal; }
+  .flat-grid > div:not(:first-child){ padding-left:3rem; }
+  .flat-grid p{ font-weight:400; }
+  .sources p{ font-weight:400; }
+  .nav-adjacent > *:not(:first-child){ padding-left:3rem; }
+  .acto-figure[hidden]{display:none;}
+  .acto-figure{margin:1.8rem 0; border:1px solid var(--line); max-width:640px; background:var(--ink);}
+  .acto-figure img{width:100%; display:block; filter:sepia(.12) contrast(1.03); opacity:.94;}
+  .acto-figure figcaption{padding:.85rem 1.1rem; font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink-soft); border-top:1px solid var(--line); background:var(--paper);}
+  .acto-figure figcaption .credit{display:block; margin-top:.3rem; color:#8A8478; font-size:.76rem;}
+  .chart-block{margin:1.8rem 0; border-top:1px solid var(--line); padding-top:1.6rem; max-width:640px;}
+  @media(max-width:820px){
+    .flat-grid > div:not(:first-child){ padding-left:0; }
+    .nav-adjacent > *:not(:first-child){ padding-left:0; }
+    .nav-adjacent .next{ padding-left:0; }
+    header.hero{ min-height:88vh; padding:12vh 7vw 10vh; }
+  }
 </style>
+<!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
+<style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(168,134,60,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Shippori Mincho', serif; --v-body:'Zen Kaku Gothic New', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
 </head>
 <body>
 <a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
@@ -180,6 +219,17 @@
       <span class="acto-date">1945 – 1955</span>
       <p class="acto-teaser">Japón sale de la guerra con el 40% de sus plantas destruidas, 4 de cada 10 trabajadores todavía en el campo y un déficit comercial crónico que lo obliga a vender textiles baratos para pagar importaciones vitales.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="bars">
+          <p class="vis-one"><small>En una frase</small>Antes del milagro, Japón vendía lo barato y seguía siendo un país de campesinos.</p>
+          <div class="vis-card">
+            <div class="v-bars">
+              <div class="v-bar"><span class="v-bl">Plantas industriales destruidas</span><div class="v-btrack"><div class="v-bfill" style="--w:40%"></div></div><span class="v-bv">~40%</span></div>
+              <div class="v-bar alt"><span class="v-bl">Población activa en el campo, 1955</span><div class="v-btrack"><div class="v-bfill" style="--w:42%"></div></div><span class="v-bv">40–42%</span></div>
+              <div class="v-bar alt"><span class="v-bl">Exportaciones de textil y ligera, preguerra</span><div class="v-btrack"><div class="v-bfill" style="--w:80%"></div></div><span class="v-bv">80%</span></div>
+            </div>
+            <p class="vis-note">Cifras del texto, escala de 0 a 100%.</p>
+          </div>
+        </div><!--/vis-->
         <p>En la década de posguerra previa a 1955, Japón salía apenas de la prostración absoluta dejada por la Segunda Guerra Mundial, la cual había destruido cerca del 40% de sus plantas industriales e infraestructura. La fuerza laboral se concentraba masivamente en actividades tradicionales y de bajo valor agregado: en 1955, entre el 40% y el 42% de la población activa dependía todavía directamente de la agricultura y la silvicultura, y los sectores industriales predominantes eran industrias "clásicas" como los textiles, el carbón y los fertilizantes.</p>
         <p>Aunque la producción industrial logró igualar los niveles de preguerra hacia mediados de la década de 1950, la economía enfrentaba un déficit comercial crónico y problemas constantes de balanza de pagos. Al carecer casi por completo de recursos naturales, el país se vio obligado a importar grandes cantidades de alimentos, energía y materias primas para sostener a su población, financiando esas importaciones mediante un modelo de comercio de procesamiento: importar materia prima, procesarla con mano de obra disponible y exportarla con valor agregado. Sin embargo, en esta época los productos japoneses aún cargaban con el estereotipo internacional de ser copias baratas o de baja calidad.</p>
       </div>
@@ -193,6 +243,17 @@
       <span class="acto-date">1955 – 1960</span>
       <p class="acto-teaser">El PLD consolida el poder y Occidente presiona por abrir el mercado japonés al Artículo 8 del FMI — una apertura que, sin reestructuración previa, habría expuesto a industrias jóvenes e ineficientes frente a multinacionales mucho más avanzadas.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="press">
+          <p class="vis-one"><small>En una frase</small>Abrirse sin preparación habría arrasado a las industrias jóvenes: la apertura llegaba por los dos lados.</p>
+          <div class="vis-card">
+            <div class="v-press">
+              <div class="v-press-side v-press-l"><b>Presión de Washington</b><em>Liberalizar el comercio y entrar al Artículo 8 del FMI</em><svg class="v-arrow" viewBox="0 0 54 24" aria-hidden="true"><path d="M2 12h44M36 3l12 9-12 9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="v-press-core">日本<small>1955–60</small><svg class="v-crack" viewBox="0 0 96 96" aria-hidden="true"><path d="M48 0l-8 22 12 14-14 20 10 14-6 26" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--v-paper)"/></svg></div>
+              <div class="v-press-side v-press-r"><b>Industrias jóvenes</b><em>Pequeñas, caras y sin escala para competir</em><svg class="v-arrow" viewBox="0 0 54 24" aria-hidden="true"><path d="M2 12h44M36 3l12 9-12 9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            </div>
+            <div class="v-press-out">Respuesta: en vez de proteger pasivamente, <b>reestructurar la industria por adelantado</b>.</div>
+          </div>
+        </div><!--/vis-->
         <p>La transición del período de reconstrucción hacia la integración global acelerada expuso a Japón a presiones externas e internas que resquebrajaron el esquema de aislamiento arancelario de posguerra. En 1955, el panorama político japonés se estabilizó de forma decisiva con la unificación y el ascenso continuo del Partido Liberal Demócrata (PLD), lo que consolidó una estrecha alianza de poder e intereses compartidos entre las grandes corporaciones, el sector bancario y la élite burocrática del Estado.</p>
         <p class="quote">Hacia finales de la década de 1950, especialmente a partir de 1959, el gobierno comenzó a promover la liberalización del comercio exterior para alinearse con las tendencias globales y responder a las exigencias de Estados Unidos. La inminente transición hacia una economía de "puertas abiertas" —que culminaría con el ingreso de Japón al Artículo 8 del FMI en los años sesenta— amenazaba con exponer a las jóvenes e ineficientes industrias locales a la competencia extranjera. El Estado y el sector privado comprendieron que el modelo de protección pasiva ya no era viable: se necesitaba una reestructuración industrial ofensiva y de gran escala para sobrevivir en el mercado global.</p>
       </div>
@@ -206,6 +267,19 @@
       <span class="acto-date">1960</span>
       <p class="acto-teaser">El Plan de Duplicación de Ingresos de Ikeda y el "Estado Desarrollista" liderado por el MITI orientan —sin estatizar— la inversión hacia la industria pesada, mientras los keiretsu reemplazan a los zaibatsu con una lógica de largo plazo.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="flow">
+          <p class="vis-one"><small>En una frase</small>El Estado no fabricó: orientó. Cada pieza empujaba hacia la industria pesada.</p>
+          <div class="vis-card">
+            <div class="v-flow">
+              <div class="v-node"><span class="v-k">1960</span><h4>Ikeda</h4><p>Plan de Duplicación de Ingresos: inversión privada, rebajas de impuestos, industria pesada y química.</p></div>
+              <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-node"><span class="v-k">MITI</span><h4>Orientación administrativa</h4><p>Protege acero, astilleros, autos y electrónica; compra patentes y autoriza "carteles de racionalización".</p></div>
+              <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-node"><span class="v-k">Keiretsu</span><h4>Redes con banco principal</h4><p>Participaciones cruzadas que protegen del accionista cortoplacista.</p></div>
+            </div>
+            <p class="vis-note">Esquema del mecanismo, no un organigrama.</p>
+          </div>
+        </div><!--/vis-->
         <figure class="acto-figure">
           <img src="../../assets/japon/estado-desarrollista/hayato-ikeda.jpg" alt="Retrato de Hayato Ikeda, primer ministro de Japón y autor del Plan de Duplicación de Ingresos de 1960." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Hayato Ikeda, primer ministro de Japón: su Plan de Duplicación de Ingresos de 1960 desvió el enfoque nacional de la agitación política hacia el consenso de crecimiento material.
@@ -213,7 +287,7 @@
           </figcaption>
         </figure>
         <p>La trayectoria de la economía japonesa cambió de manera radical mediante una combinación de planificación estatal audaz, una alianza corporativa de largo plazo y un entorno geopolítico favorable. Bajo el liderazgo del Primer Ministro Hayato Ikeda, el gobierno lanzó en 1960 el Plan de Duplicación de Ingresos, un plan masivo para estimular la demanda interna mediante la inversión corporativa privada, reducciones impositivas y el desarrollo acelerado de la industria pesada y química.</p>
-        <p>Siguiendo la "Doctrina Yoshida" de priorizar la economía sobre el gasto militar, el Ministerio de Comercio Internacional e Industria (MITI) asumió un rol puramente desarrollista: no estatizó la producción, sino que operó como "guía" del sector privado. A través de la orientación administrativa (<em>gyōsei seidō</em>), el MITI protegió sectores estratégicos —acero, petroquímica, astilleros, automóviles y electrónica—, coordinó la adquisición de patentes extranjeras y autorizó fusiones e incluso "carteles administrativos" de racionalización para evitar la competencia autodestructiva (<em>katō kyōsō</em>). Tras la disolución de los antiguos zaibatsu familiares durante la ocupación, las corporaciones se reorganizaron en redes horizontales y verticales llamadas keiretsu: interconectadas mediante participaciones accionarias cruzadas y coordinadas alrededor de un banco principal, se protegieron de accionistas que buscaban dividendos rápidos, lo que facilitó una mentalidad de negocios a largo plazo enfocada en ganar cuota de mercado global.</p>
+        <p>Siguiendo la "<span class="gl" tabindex="0">Doctrina Yoshida<span class="gl-def" role="note">Línea de posguerra: seguridad a cargo de Estados Unidos y energía puesta en la economía, no en el gasto militar.</span></span>" de priorizar la economía sobre el gasto militar, el Ministerio de Comercio Internacional e Industria (<span class="gl" tabindex="0">MITI<span class="gl-def" role="note">Ministerio de Comercio Internacional e Industria: el organismo que guiaba la política industrial.</span></span>) asumió un rol puramente desarrollista: no estatizó la producción, sino que operó como "guía" del sector privado. A través de la <span class="gl" tabindex="0">orientación administrativa<span class="gl-def" role="note">Instrucciones informales del ministerio, sin respaldo de ley, que las empresas seguían.</span></span> (<em>gyōsei seidō</em>), el MITI protegió sectores estratégicos —acero, petroquímica, astilleros, automóviles y electrónica—, coordinó la adquisición de patentes extranjeras y autorizó fusiones e incluso "carteles administrativos" de racionalización para evitar la competencia autodestructiva (<em>katō kyōsō</em>). Tras la disolución de los antiguos <span class="gl" tabindex="0">zaibatsu<span class="gl-def" role="note">Conglomerados familiares anteriores a la guerra, disueltos durante la ocupación.</span></span> familiares durante la ocupación, las corporaciones se reorganizaron en redes horizontales y verticales llamadas <span class="gl" tabindex="0">keiretsu<span class="gl-def" role="note">Grupos de empresas unidos por participaciones accionarias cruzadas y un banco principal.</span></span>: interconectadas mediante participaciones accionarias cruzadas y coordinadas alrededor de un banco principal, se protegieron de accionistas que buscaban dividendos rápidos, lo que facilitó una mentalidad de negocios a largo plazo enfocada en ganar cuota de mercado global.</p>
       </div>
     </div>
   </div>
@@ -225,6 +299,16 @@
       <span class="acto-date">1960s</span>
       <p class="acto-teaser">El PIB crece 12.8% anual entre 1965 y 1970, las exportaciones se transforman de textiles a maquinaria pesada, y la nueva clase media urbana adopta la lavadora, el refrigerador y el televisor.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="stats">
+          <p class="vis-one"><small>En una frase</small>Una década de crecimiento sin precedentes.</p>
+          <div class="vis-card">
+            <div class="v-stats" style="--n:3">
+              <div class="v-stat"><span class="v-num" data-to="10.8" data-dec="1" data-pre="" data-suf="%">10.8%</span><span class="v-lbl">crecimiento real del PIB, primera mitad de los 60</span></div>
+              <div class="v-stat"><span class="v-num" data-to="12.8" data-dec="1" data-pre="" data-suf="%">12.8%</span><span class="v-lbl">crecimiento anual entre 1965 y 1970</span></div>
+              <div class="v-stat"><span class="v-num">1968</span><span class="v-lbl">Japón supera a Alemania Occidental</span></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <figure class="acto-figure">
           <img src="../../assets/japon/estado-desarrollista/fabrica-electronica-1960s.jpg" alt="Fotografía de una línea de ensamblaje de productos electrónicos en una fábrica japonesa de la década de 1960." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Una línea de producción electrónica japonesa de los años sesenta, el rostro visible del giro exportador hacia la maquinaria y la tecnología de alto valor.
@@ -244,7 +328,17 @@
       <span class="acto-date">1973 → hoy</span>
       <p class="acto-teaser">El METI, los keiretsu y el Monozukuri heredan la lógica del MITI; pero la deuda pública supera el 200% del PIB, el empleo dual y la crisis demográfica son el lastre del mismo modelo que produjo el milagro.</p>
       <div class="acto-body">
-        <p>La arquitectura del Estado desarrollista y las dinámicas industriales forjadas durante el milagro económico continúan definiendo la estructura socioeconómica de Japón en el siglo XXI. La idea de que el gobierno debe proveer visiones industriales coordinadas a largo plazo sigue guiando al Ministerio de Economía, Comercio e Industria (METI) ante desafíos como la digitalización, la descarbonización y la seguridad económica. La política económica de la administración de Sanae Takaichi —apodada "Sanaenomics"— representa un retorno directo a la estrategia de "picking winners" de la era Meiji y del Milagro Económico: a través de su Cuartel General de Estrategia de Crecimiento, el Estado seleccionó 17 sectores estratégicos (semiconductores, inteligencia artificial, fusión nuclear, defensa, astilleros) para concentrar inversión pública y privada.</p>
+        <!--vis--><div class="vis" data-vis="versus">
+          <p class="vis-one"><small>En una frase</small>El mismo Estado que fabricó el milagro hoy administra sus costos.</p>
+          <div class="vis-card">
+            <div class="v-versus">
+              <div class="v-col before"><h4>El modelo original</h4><ul><li>1960: "picking winners" con el MITI</li><li>Un país joven, empleo de por vida</li></ul></div>
+              <svg class="v-vs" viewBox="0 0 34 24" aria-hidden="true"><path d="M2 12h26M20 4l10 8-10 8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-col after"><h4>Su herencia</h4><ul><li>2025: 17 sectores estratégicos de "Sanaenomics"</li><li>Deuda sobre 200% del PIB y escasez de mano de obra</li></ul></div>
+            </div>
+          </div>
+        </div><!--/vis-->
+        <p>La arquitectura del Estado desarrollista y las dinámicas industriales forjadas durante el milagro económico continúan definiendo la estructura socioeconómica de Japón en el siglo XXI. La idea de que el gobierno debe proveer visiones industriales coordinadas a largo plazo sigue guiando al Ministerio de Economía, Comercio e Industria (<span class="gl" tabindex="0">METI<span class="gl-def" role="note">Ministerio de Economía, Comercio e Industria: el sucesor del MITI desde 2001.</span></span>) ante desafíos como la digitalización, la descarbonización y la seguridad económica. La política económica de la administración de Sanae Takaichi —apodada "Sanaenomics"— representa un retorno directo a la estrategia de "picking winners" de la era Meiji y del Milagro Económico: a través de su Cuartel General de Estrategia de Crecimiento, el Estado seleccionó 17 sectores estratégicos (semiconductores, inteligencia artificial, fusión nuclear, defensa, astilleros) para concentrar inversión pública y privada.</p>
         <p class="quote">Pero la priorización absoluta del crecimiento corporativo y la rigidez de esas instituciones dejaron lastres persistentes: la deuda pública supera el 200% del PIB, la carga fiscal más alta del planeta; los empleados temporales y sin seguridad laboral representan más de un tercio de la fuerza laboral tras la erosión del empleo de por vida; y la baja natalidad y el envejecimiento acelerado han creado una escasez crónica de mano de obra que amenaza el crecimiento potencial del país. El mismo Estado que fabricó el milagro hoy administra sus costos de largo plazo.</p>
       </div>
     </div>
@@ -302,11 +396,13 @@
     gsap.to(acto.querySelector('.acto-body'), {
       height: 'auto', opacity: 1, duration: reduceMotion ? 0 : 0.65, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
-      onComplete: function(){ ScrollTrigger.refresh(); }
+      onComplete: function(){ acto.querySelector('.acto-body').style.overflow = 'visible'; ScrollTrigger.refresh(); }
     });
+    if(window.playVis) setTimeout(function(){ window.playVis(acto); }, reduceMotion ? 0 : 60);
   }
   function closeActo(acto){
     acto.querySelector('.acto-toggle').textContent = '＋';
+    acto.querySelector('.acto-body').style.overflow = 'hidden';
     gsap.to(acto.querySelector('.acto-body'), {
       height: 0, opacity: 0, duration: reduceMotion ? 0 : 0.5, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
@@ -316,7 +412,8 @@
 
   var actos = document.querySelectorAll('.acto');
   actos.forEach(function(acto){
-    acto.addEventListener('click', function(){
+    acto.addEventListener('click', function(e){
+      if(e.target.closest('.acto-body')) return;
       var wasActive = acto.classList.contains('active');
       document.querySelectorAll('.acto.active').forEach(function(a){ a.classList.remove('active'); closeActo(a); });
       if(!wasActive){ acto.classList.add('active'); openActo(acto); }
@@ -324,7 +421,7 @@
   });
   var firstActive = document.querySelector('.acto.active .acto-body');
   if(firstActive){
-    gsap.set(firstActive, {height:'auto', opacity:1});
+    gsap.set(firstActive, {height:'auto', opacity:1, overflow:'visible'});
     document.querySelector('.acto.active .acto-toggle').textContent = '－';
   }
 
@@ -365,5 +462,6 @@
   window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
 </script>
 
+<!--vis-js--><script src="../../assets/vis.js"></script><!--/vis-js-->
 </body>
 </html>

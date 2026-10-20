@@ -153,7 +153,46 @@
   .acto-figure img{width:100%; display:block; filter:sepia(.12) contrast(1.03); opacity:.94;}
   .acto-figure figcaption{padding:.85rem 1.1rem; font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink-soft); border-top:1px solid var(--line); background:var(--paper);}
   .acto-figure figcaption .credit{display:block; margin-top:.3rem; color:#8A8478; font-size:.76rem;}
+/* ---------- Homogeneización con China ---------- */
+  :root{ --wood-deep:#4A3A28; --sumi:#23211F; --sumi-warm:#3A2C24; --sumi-red:#5E2B21; --paper-hero:#F5F1E8; --vermillion-deep:#7E2E20; }
+  body{ line-height:1.7; }
+  header.hero{ min-height:96vh; padding:14vh 8vw 12vh; overflow:hidden; color:var(--paper);
+    background:linear-gradient(155deg, var(--sumi) 0%, var(--sumi-warm) 58%, var(--sumi-red) 100%); }
+  .hero-kanji{ right:5vw; font-size:clamp(8rem, 22vw, 17rem); color:rgba(245,241,232,0.06); }
+  .hero .eyebrow{ color:var(--gold); }
+  .hero-rule{ width:48px; height:2px; background:var(--gold); margin-bottom:1.6rem; }
+  h1.title-jp{ font-size:clamp(2.2rem, 5vw, 3.8rem); line-height:1.25; margin:.4rem 0 .5rem; color:var(--paper); }
+  .title-romaji{ font-size:.85rem; color:rgba(245,241,232,0.72); margin-bottom:2rem; line-height:1.6; }
+  .hero-dek{ font-size:1.08rem; max-width:560px; color:rgba(245,241,232,0.9); font-weight:400; line-height:1.85; }
+  .hero-stats{ margin-top:3.2rem; border-top:1px solid rgba(245,241,232,0.2); }
+  .hero-stats div{ border-right:1px solid rgba(245,241,232,0.2); }
+  .hero-stats .num{ color:var(--gold); }
+  .hero-stats .lbl{ font-size:.8rem; color:rgba(245,241,232,0.7); }
+  .acto-title{ font-weight:700; }
+  .acto-date{ font-size:.8rem; color:var(--ink-soft); }
+  .acto-teaser{ font-weight:400; }
+  .acto-body p{ font-weight:400; line-height:1.85; }
+  .acto-body strong{ font-weight:700; color:var(--vermillion-deep); }
+  .acto-body .quote{ border-left-color:var(--gold); font-style:normal; }
+  .flat-grid > div:not(:first-child){ padding-left:3rem; }
+  .flat-grid p{ font-weight:400; }
+  .sources p{ font-weight:400; }
+  .nav-adjacent > *:not(:first-child){ padding-left:3rem; }
+  .acto-figure[hidden]{display:none;}
+  .acto-figure{margin:1.8rem 0; border:1px solid var(--line); max-width:640px; background:var(--ink);}
+  .acto-figure img{width:100%; display:block; filter:sepia(.12) contrast(1.03); opacity:.94;}
+  .acto-figure figcaption{padding:.85rem 1.1rem; font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink-soft); border-top:1px solid var(--line); background:var(--paper);}
+  .acto-figure figcaption .credit{display:block; margin-top:.3rem; color:#8A8478; font-size:.76rem;}
+  .chart-block{margin:1.8rem 0; border-top:1px solid var(--line); padding-top:1.6rem; max-width:640px;}
+  @media(max-width:820px){
+    .flat-grid > div:not(:first-child){ padding-left:0; }
+    .nav-adjacent > *:not(:first-child){ padding-left:0; }
+    .nav-adjacent .next{ padding-left:0; }
+    header.hero{ min-height:88vh; padding:12vh 7vw 10vh; }
+  }
 </style>
+<!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
+<style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(168,134,60,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Shippori Mincho', serif; --v-body:'Zen Kaku Gothic New', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
 </head>
 <body>
 <a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
@@ -188,7 +227,18 @@
       <span class="acto-date">1955 – 1985</span>
       <p class="acto-teaser">El "Milagro Económico" japonés construyó un superávit comercial crónico con EE. UU. que, hacia 1985, el Congreso estadounidense amenazaba con frenar a golpe de aranceles.</p>
       <div class="acto-body">
-        <p>Durante las décadas de posguerra, Japón construyó un modelo de crecimiento acelerado que lo situó como la segunda mayor economía del mundo: estructura exportadora altamente competitiva (automoción, acero, electrónica), finanzas reguladas con una tasa de ahorro de los hogares cercana al 40% del PIB en los años setenta, corporaciones organizadas en redes keiretsu con participaciones cruzadas, y un pacto laboral de empleo de por vida.</p>
+        <!--vis--><div class="vis" data-vis="press">
+          <p class="vis-one"><small>En una frase</small>El éxito exportador de Japón se volvió un problema político en Washington.</p>
+          <div class="vis-card">
+            <div class="v-press">
+              <div class="v-press-side v-press-l"><b>Superávit con EE. UU.</b><em>Autos, acero y electrónica competitivos; dólar 50% más fuerte entre 1980 y 1985</em><svg class="v-arrow" viewBox="0 0 54 24" aria-hidden="true"><path d="M2 12h44M36 3l12 9-12 9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="v-press-core">日米<small>1985</small><svg class="v-crack" viewBox="0 0 96 96" aria-hidden="true"><path d="M48 0l-8 22 12 14-14 20 10 14-6 26" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--v-paper)"/></svg></div>
+              <div class="v-press-side v-press-r"><b>Congreso de EE. UU.</b><em>Debate seriamente aranceles proteccionistas</em><svg class="v-arrow" viewBox="0 0 54 24" aria-hidden="true"><path d="M2 12h44M36 3l12 9-12 9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            </div>
+            <div class="v-press-out">Respuesta: un pacto para <b>abaratar el dólar frente al yen</b>.</div>
+          </div>
+        </div><!--/vis-->
+        <p>Durante las décadas de posguerra, Japón construyó un modelo de crecimiento acelerado que lo situó como la segunda mayor economía del mundo: estructura exportadora altamente competitiva (automoción, acero, electrónica), finanzas reguladas con una tasa de ahorro de los hogares cercana al 40% del PIB en los años setenta, corporaciones organizadas en redes <span class="gl" tabindex="0">keiretsu<span class="gl-def" role="note">Redes de empresas con participaciones cruzadas y un banco principal.</span></span> con participaciones cruzadas, y un pacto laboral de empleo de por vida.</p>
         <p>Entre 1980 y 1985, el dólar se apreció cerca de un 50% frente al yen, abaratando artificialmente los productos japoneses y disparando el superávit comercial con Estados Unidos. Para 1985, el Congreso estadounidense debatía seriamente barreras arancelarias proteccionistas: el modelo exportador japonés amenazaba con asfixiar su propia base industrial.</p>
       </div>
     </div>
@@ -201,6 +251,19 @@
       <span class="acto-date">sep 1985 – 1987</span>
       <p class="acto-teaser">Cinco potencias pactan devaluar el dólar frente al yen. La apreciación resultante es tan violenta que hunde a la industria exportadora en una recesión inmediata.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="flow">
+          <p class="vis-one"><small>En una frase</small>Cinco ministros de finanzas, un hotel y una sola dirección para el dólar.</p>
+          <div class="vis-card">
+            <div class="v-flow">
+              <div class="v-node"><span class="v-k">22 sep 1985</span><h4>Hotel Plaza, Nueva York</h4><p>EE. UU., Japón, Alemania Occidental, Francia y Reino Unido firman el pacto.</p></div>
+              <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-node"><span class="v-k">Mecanismo</span><h4>Intervención coordinada</h4><p>Los bancos centrales actúan en los mercados cambiarios.</p></div>
+              <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-node"><span class="v-k">Efecto</span><h4>Recesión del Yen Alto</h4><p>El PIB crece 3.3% en 1986, frente a 5.2% en 1985.</p></div>
+            </div>
+            <p class="vis-note">Esquema del encadenamiento, no a escala.</p>
+          </div>
+        </div><!--/vis-->
         <figure class="acto-figure">
           <img src="../../assets/japon/acuerdo-del-plaza/hotel-plaza-1985.jpg" alt="El hotel Plaza en Nueva York, sede del acuerdo de septiembre de 1985." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>El hotel Plaza de Nueva York, donde el G5 firmó el 22 de septiembre de 1985 el acuerdo que duplicó el valor del yen en tres años.
@@ -215,7 +278,7 @@
             <div class="chart-col"><span class="chart-value">165</span><div class="chart-bar" style="height:69%"></div><div class="chart-col-label">1986</div></div>
             <div class="chart-col"><span class="chart-value">128</span><div class="chart-bar" style="height:54%"></div><div class="chart-col-label">finales 1987</div></div>
           </div>
-          <p class="chart-note">El yen se apreció casi un 85% en poco más de dos años: la "Recesión del Yen Alto" (endaka fukyō) hizo caer el crecimiento del PIB del 5.2% en 1985 al 3.3% en 1986.</p>
+          <p class="chart-note">El yen se apreció casi un 85% en poco más de dos años: la "Recesión del Yen Alto" (<span class="gl" tabindex="0">endaka fukyō<span class="gl-def" role="note">&quot;Recesión del Yen Alto&quot;: la caída del crecimiento tras la fuerte apreciación del yen.</span></span>) hizo caer el crecimiento del PIB del 5.2% en 1985 al 3.3% en 1986.</p>
         </div>
       </div>
     </div>
@@ -228,6 +291,18 @@
       <span class="acto-date">1986 – 1989</span>
       <p class="acto-teaser">Para contrarrestar la recesión del yen alto, el Banco de Japón inunda la economía de liquidez barata — y esa liquidez, en vez de ir a la industria, se vuelca a comprar terrenos.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="steps">
+          <p class="vis-one"><small>En una frase</small>El dinero barato salió de la industria y se fue a la tierra.</p>
+          <div class="vis-card">
+            <div class="v-steps" role="list">
+              <div class="v-rail"><div class="v-fill"></div></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">1986–87</span><h4>Cinco recortes de tasa</h4><p>El BOJ baja la tasa de descuento hasta 2.5% en febrero de 1987.</p></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">1987–89</span><h4>Tasa congelada</h4><p>Se mantiene en el mínimo hasta mayo de 1989.</p></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">Bancos</span><h4>Crédito a la tierra</h4><p>Pequeñas empresas y préstamos especulativos con terrenos como garantía.</p></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">Impuestos</span><h4>Distorsión fiscal</h4><p>Sucesiones de 75%, con la tierra valorada a la mitad: endeudarse para comprar evadía impuestos.</p></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <p>El Banco de Japón recorta la tasa de descuento oficial en cinco rondas sucesivas entre 1986 y 1987, hasta un histórico 2.5% en febrero de 1987, manteniéndola congelada hasta mayo de 1989. Con la liberalización financiera, las grandes firmas empiezan a financiarse directamente en los mercados de capitales, dejando de depender del crédito bancario tradicional. Los bancos comerciales, urgidos de colocar su excesiva liquidez, reorientan su cartera hacia pequeñas empresas y préstamos individuales especulativos usando terrenos como garantía.</p>
         <p class="quote">Una distorsión fiscal acelera todo: el impuesto de sucesiones llegaba al 75%, pero valoraba la tierra a la mitad de su precio real mientras la deuda se computaba a su valor nominal completo. Endeudarse para comprar terrenos se volvió, literalmente, una forma legal de evadir impuestos.</p>
       </div>
@@ -241,6 +316,17 @@
       <span class="acto-date">1989 – 1991</span>
       <p class="acto-teaser">El Nikkei toca los 38,915 puntos en diciembre de 1989. Nueve meses después, el BOJ sube las tasas al 6% y la burbuja revienta en cadena.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="stats">
+          <p class="vis-one"><small>En una frase</small>Una burbuja de proporciones inéditas.</p>
+          <div class="vis-card">
+            <div class="v-stats" style="--n:3">
+              <div class="v-stat"><span class="v-num" data-to="122" data-dec="0" data-pre="" data-suf="%">122%</span><span class="v-lbl">alza en zonas comerciales de Tokio en 1986</span></div>
+              <div class="v-stat"><span class="v-num">30 M</span><span class="v-lbl">yenes por metro cuadrado en Ginza, 1989</span></div>
+              <div class="v-stat"><span class="v-num">2.5% → 6.0%</span><span class="v-lbl">la tasa que subió el BOJ hasta agosto de 1990</span></div>
+            </div>
+            <p class="vis-note">Los terrenos del Palacio Imperial llegaron a valer más que todo California.</p>
+          </div>
+        </div><!--/vis-->
         <figure class="acto-figure">
           <img src="../../assets/japon/acuerdo-del-plaza/tokio-burbuja.jpg" alt="Distrito financiero de Marunouchi, Tokio, finales de los años 80." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Tokio en la cima de la burbuja: en 1989 los terrenos del Palacio Imperial valían, según se decía, más que toda California.
@@ -268,8 +354,20 @@
       <span class="acto-date">1991 → hoy</span>
       <p class="acto-teaser">La deuda incobrable de los bancos, las empresas zombi y la precarización laboral que siguieron no son un capítulo aparte: son la consecuencia directa de esta burbuja y su estallido.</p>
       <div class="acto-body">
-        <p>El colapso de 1990-1991 da inicio a las "Décadas Perdidas": el crecimiento del PIB real se congela en un promedio de apenas 1.14% anual entre 1991 y 2003. Los bancos de la red keiretsu, atrapados en carteras de préstamos incobrables, recurren a refinanciamientos artificiales para ocultar pérdidas, institucionalizando el fenómeno de las "empresas zombi".</p>
-        <p class="quote">La crisis forzó mega-fusiones bancarias —Sumitomo y Mitsui se unieron en 2001 para formar SMBC— y una deuda pública que pasó del 65% del PIB en 1989 a superar el 250% en la actualidad. Japón se convirtió, por necesidad, en el laboratorio mundial de la política monetaria no convencional: ZIRP (1999), QE (2001) y tasas negativas (2016), medidas que Occidente replicaría recién tras 2008.</p>
+        <!--vis--><div class="vis" data-vis="timeline">
+          <p class="vis-one"><small>En una frase</small>Una sola burbuja explica tres décadas de herencia.</p>
+          <div class="vis-card">
+            <div class="v-tline" style="--n:4">
+              <div class="v-tline-rail"><div class="v-tline-fill"></div></div>
+              <div class="v-tl"><span class="v-tl-yr">1990</span><p>El Nikkei pierde 35% de su valor.</p></div>
+              <div class="v-tl"><span class="v-tl-yr">1999–2001</span><p>ZIRP y QE: política no convencional décadas antes que Occidente.</p></div>
+              <div class="v-tl"><span class="v-tl-yr">2001</span><p>Sumitomo y Mitsui forman SMBC.</p></div>
+              <div class="v-tl"><span class="v-tl-yr">Hoy</span><p>Deuda pública de más de 250% del PIB, frente a 65% en 1989.</p></div>
+            </div>
+          </div>
+        </div><!--/vis-->
+        <p>El colapso de 1990-1991 da inicio a las "<span class="gl" tabindex="0">Décadas Perdidas<span class="gl-def" role="note">Largo periodo de crecimiento casi nulo y deflación que siguió al estallido.</span></span>": el crecimiento del PIB real se congela en un promedio de apenas 1.14% anual entre 1991 y 2003. Los bancos de la red keiretsu, atrapados en carteras de préstamos incobrables, recurren a refinanciamientos artificiales para ocultar pérdidas, institucionalizando el fenómeno de las "<span class="gl" tabindex="0">empresas zombi<span class="gl-def" role="note">Compañías insolventes que sobreviven porque los bancos refinancian sus deudas.</span></span>".</p>
+        <p class="quote">La crisis forzó mega-fusiones bancarias —Sumitomo y Mitsui se unieron en 2001 para formar <span class="gl" tabindex="0">SMBC<span class="gl-def" role="note">Sumitomo Mitsui Banking Corporation, fusión bancaria de 2001.</span></span>— y una deuda pública que pasó del 65% del PIB en 1989 a superar el 250% en la actualidad. Japón se convirtió, por necesidad, en el laboratorio mundial de la política monetaria no convencional: <span class="gl" tabindex="0">ZIRP<span class="gl-def" role="note">Política de tasa de interés cero.</span></span> (1999), QE (2001) y tasas negativas (2016), medidas que Occidente replicaría recién tras 2008.</p>
       </div>
     </div>
   </div>
@@ -339,8 +437,9 @@
     gsap.to(acto.querySelector('.acto-body'), {
       height: 'auto', opacity: 1, duration: reduceMotion ? 0 : 0.65, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
-      onComplete: function(){ ScrollTrigger.refresh(); }
+      onComplete: function(){ acto.querySelector('.acto-body').style.overflow = 'visible'; ScrollTrigger.refresh(); }
     });
+    if(window.playVis) setTimeout(function(){ window.playVis(acto); }, reduceMotion ? 0 : 60);
     var bars = acto.querySelectorAll('.chart-bar');
     if(bars.length && !acto.dataset.chartsPlayed){
       acto.dataset.chartsPlayed = '1';
@@ -352,6 +451,7 @@
   }
   function closeActo(acto){
     acto.querySelector('.acto-toggle').textContent = '＋';
+    acto.querySelector('.acto-body').style.overflow = 'hidden';
     gsap.to(acto.querySelector('.acto-body'), {
       height: 0, opacity: 0, duration: reduceMotion ? 0 : 0.5, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
@@ -361,7 +461,8 @@
 
   var actos = document.querySelectorAll('.acto');
   actos.forEach(function(acto){
-    acto.addEventListener('click', function(){
+    acto.addEventListener('click', function(e){
+      if(e.target.closest('.acto-body')) return;
       var wasActive = acto.classList.contains('active');
       document.querySelectorAll('.acto.active').forEach(function(a){ a.classList.remove('active'); closeActo(a); });
       if(!wasActive){ acto.classList.add('active'); openActo(acto); }
@@ -369,7 +470,7 @@
   });
   var firstActive = document.querySelector('.acto.active .acto-body');
   if(firstActive){
-    gsap.set(firstActive, {height:'auto', opacity:1});
+    gsap.set(firstActive, {height:'auto', opacity:1, overflow:'visible'});
     document.querySelector('.acto.active .acto-toggle').textContent = '－';
   }
 
@@ -410,5 +511,6 @@
   window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
 </script>
 
+<!--vis-js--><script src="../../assets/vis.js"></script><!--/vis-js-->
 </body>
 </html>

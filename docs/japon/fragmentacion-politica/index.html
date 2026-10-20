@@ -144,7 +144,46 @@
   .acto-figure img{width:100%; display:block; filter:sepia(.12) contrast(1.03); opacity:.94;}
   .acto-figure figcaption{padding:.85rem 1.1rem; font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink-soft); border-top:1px solid var(--line); background:var(--paper);}
   .acto-figure figcaption .credit{display:block; margin-top:.3rem; color:#8A8478; font-size:.76rem;}
+/* ---------- Homogeneización con China ---------- */
+  :root{ --wood-deep:#4A3A28; --sumi:#23211F; --sumi-warm:#3A2C24; --sumi-red:#5E2B21; --paper-hero:#F5F1E8; --vermillion-deep:#7E2E20; }
+  body{ line-height:1.7; }
+  header.hero{ min-height:96vh; padding:14vh 8vw 12vh; overflow:hidden; color:var(--paper);
+    background:linear-gradient(155deg, var(--sumi) 0%, var(--sumi-warm) 58%, var(--sumi-red) 100%); }
+  .hero-kanji{ right:5vw; font-size:clamp(8rem, 22vw, 17rem); color:rgba(245,241,232,0.06); }
+  .hero .eyebrow{ color:var(--gold); }
+  .hero-rule{ width:48px; height:2px; background:var(--gold); margin-bottom:1.6rem; }
+  h1.title-jp{ font-size:clamp(2.2rem, 5vw, 3.8rem); line-height:1.25; margin:.4rem 0 .5rem; color:var(--paper); }
+  .title-romaji{ font-size:.85rem; color:rgba(245,241,232,0.72); margin-bottom:2rem; line-height:1.6; }
+  .hero-dek{ font-size:1.08rem; max-width:560px; color:rgba(245,241,232,0.9); font-weight:400; line-height:1.85; }
+  .hero-stats{ margin-top:3.2rem; border-top:1px solid rgba(245,241,232,0.2); }
+  .hero-stats div{ border-right:1px solid rgba(245,241,232,0.2); }
+  .hero-stats .num{ color:var(--gold); }
+  .hero-stats .lbl{ font-size:.8rem; color:rgba(245,241,232,0.7); }
+  .acto-title{ font-weight:700; }
+  .acto-date{ font-size:.8rem; color:var(--ink-soft); }
+  .acto-teaser{ font-weight:400; }
+  .acto-body p{ font-weight:400; line-height:1.85; }
+  .acto-body strong{ font-weight:700; color:var(--vermillion-deep); }
+  .acto-body .quote{ border-left-color:var(--gold); font-style:normal; }
+  .flat-grid > div:not(:first-child){ padding-left:3rem; }
+  .flat-grid p{ font-weight:400; }
+  .sources p{ font-weight:400; }
+  .nav-adjacent > *:not(:first-child){ padding-left:3rem; }
+  .acto-figure[hidden]{display:none;}
+  .acto-figure{margin:1.8rem 0; border:1px solid var(--line); max-width:640px; background:var(--ink);}
+  .acto-figure img{width:100%; display:block; filter:sepia(.12) contrast(1.03); opacity:.94;}
+  .acto-figure figcaption{padding:.85rem 1.1rem; font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink-soft); border-top:1px solid var(--line); background:var(--paper);}
+  .acto-figure figcaption .credit{display:block; margin-top:.3rem; color:#8A8478; font-size:.76rem;}
+  .chart-block{margin:1.8rem 0; border-top:1px solid var(--line); padding-top:1.6rem; max-width:640px;}
+  @media(max-width:820px){
+    .flat-grid > div:not(:first-child){ padding-left:0; }
+    .nav-adjacent > *:not(:first-child){ padding-left:0; }
+    .nav-adjacent .next{ padding-left:0; }
+    header.hero{ min-height:88vh; padding:12vh 7vw 10vh; }
+  }
 </style>
+<!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
+<style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(168,134,60,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Shippori Mincho', serif; --v-body:'Zen Kaku Gothic New', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
 </head>
 <body>
 <a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
@@ -179,8 +218,19 @@
       <span class="acto-date">1955 – 1993</span>
       <p class="acto-teaser">El voto único no transferible en distritos multimedios fuerza al LDP a postular varios candidatos propios por distrito: la semilla de un clientelismo cada vez más caro y corrupto.</p>
       <div class="acto-body">
-        <p>El marco de gobernanza japonés de posguerra está dominado por el "Sistema de 1955": el LDP retiene el control del gobierno de manera casi ininterrumpida durante 38 años. Bajo el sistema de Voto Único No Transferible en distritos multimedios (SNTV/MMD), cada circunscripción elige a múltiples representantes pero el ciudadano emite un solo voto. Para asegurar mayoría parlamentaria, el LDP se ve obligado a postular a varios candidatos propios en el mismo distrito, generando una competencia caníbal entre correligionarios.</p>
-        <p>Para sobrevivir a esa competencia interna, los candidatos se agrupan en facciones (habatsu) que negocian a puerta cerrada financiamiento y cargos, y centran sus campañas en el carisma personal y las koenkai (redes de apoyo local) en vez de en plataformas ideológicas. Hacia 1991, el colapso de la burbuja económica y escándalos como Recruit (1988) y Sagawa Kyūbin (1992) destruyen la confianza de la sociedad civil en la legitimidad del parlamento.</p>
+        <!--vis--><div class="vis" data-vis="press">
+          <p class="vis-one"><small>En una frase</small>Cada candidato del LDP competía contra su propio partido, y sobrevivía con facciones y redes personales.</p>
+          <div class="vis-card">
+            <div class="v-press">
+              <div class="v-press-side v-press-l"><b>Un solo voto</b><em>El ciudadano elige entre varios candidatos del mismo partido</em><svg class="v-arrow" viewBox="0 0 54 24" aria-hidden="true"><path d="M2 12h44M36 3l12 9-12 9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="v-press-core">SNTV<small>1955–93</small><svg class="v-crack" viewBox="0 0 96 96" aria-hidden="true"><path d="M48 0l-8 22 12 14-14 20 10 14-6 26" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--v-paper)"/></svg></div>
+              <div class="v-press-side v-press-r"><b>Facciones (habatsu)</b><em>Financian campañas y reparten cargos a puerta cerrada</em><svg class="v-arrow" viewBox="0 0 54 24" aria-hidden="true"><path d="M2 12h44M36 3l12 9-12 9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            </div>
+            <div class="v-press-out">Resultado: <b>campañas personalistas</b> y escándalos como Recruit (1988) y Sagawa Kyūbin (1992).</div>
+          </div>
+        </div><!--/vis-->
+        <p>El marco de gobernanza japonés de posguerra está dominado por el "Sistema de 1955": el LDP retiene el control del gobierno de manera casi ininterrumpida durante 38 años. Bajo el sistema de Voto Único No Transferible en distritos multimedios (<span class="gl" tabindex="0">SNTV/MMD<span class="gl-def" role="note">Voto único no transferible en distritos con varios escaños: cada elector emite un solo voto.</span></span>), cada circunscripción elige a múltiples representantes pero el ciudadano emite un solo voto. Para asegurar mayoría parlamentaria, el LDP se ve obligado a postular a varios candidatos propios en el mismo distrito, generando una competencia caníbal entre correligionarios.</p>
+        <p>Para sobrevivir a esa competencia interna, los candidatos se agrupan en facciones (<span class="gl" tabindex="0">habatsu<span class="gl-def" role="note">Facciones internas del LDP que negocian financiamiento y cargos.</span></span>) que negocian a puerta cerrada financiamiento y cargos, y centran sus campañas en el carisma personal y las <span class="gl" tabindex="0">koenkai<span class="gl-def" role="note">Redes de apoyo local de cada político, centradas en su persona y no en el partido.</span></span> (redes de apoyo local) en vez de en plataformas ideológicas. Hacia 1991, el colapso de la burbuja económica y escándalos como Recruit (1988) y Sagawa Kyūbin (1992) destruyen la confianza de la sociedad civil en la legitimidad del parlamento.</p>
       </div>
     </div>
   </div>
@@ -192,13 +242,25 @@
       <span class="acto-date">1993</span>
       <p class="acto-teaser">Tras el fracaso de una reforma interna, un grupo de legisladores liderado por Ozawa Ichirō se escinde del LDP: el oficialismo pierde su mayoría por primera vez desde 1955.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="steps">
+          <p class="vis-one"><small>En una frase</small>Una escisión bastó para sacar al LDP del poder por primera vez en 38 años.</p>
+          <div class="vis-card">
+            <div class="v-steps" role="list">
+              <div class="v-rail"><div class="v-fill"></div></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">1993</span><h4>Ozawa y Hata rompen el partido</h4><p>Fundan el Shinseitō con 44 partidarios.</p></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">1993</span><h4>El LDP pierde la mayoría</h4><p>Elecciones generales de 1993.</p></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">1993</span><h4>Gobierno de ocho partidos</h4><p>Coalición de oposición con Hosokawa como primer ministro.</p></div>
+            </div>
+            <p class="vis-note">Orden cronológico de arriba hacia abajo.</p>
+          </div>
+        </div><!--/vis-->
         <figure class="acto-figure">
           <img src="../../assets/japon/fragmentacion-politica/ozawa-1993.jpg" alt="Ozawa Ichirō en 1993, año en que rompió con el LDP." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Ozawa Ichirō, el arquitecto de la ruptura de 1993 que terminó con 38 años de gobierno del LDP.
             <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
           </figcaption>
         </figure>
-        <p>Tras el fracaso del gabinete del LDP en aprobar reformas políticas que subsanaran la indignación popular por los escándalos de corrupción, un grupo de legisladores reformistas liderado por Ozawa Ichirō y Hata Tsutomu decide escindirse del partido oficialista y fundar el Partido de la Renovación (Shinseitō) con 44 partidarios.</p>
+        <p>Tras el fracaso del gabinete del LDP en aprobar reformas políticas que subsanaran la indignación popular por los escándalos de corrupción, un grupo de legisladores reformistas liderado por Ozawa Ichirō y Hata Tsutomu decide escindirse del partido oficialista y fundar el Partido de la Renovación (<span class="gl" tabindex="0">Shinseitō<span class="gl-def" role="note">Partido de la Renovación, fundado en 1993 por Ozawa y Hata tras escindirse del LDP.</span></span>) con 44 partidarios.</p>
         <p class="quote">Este cisma provoca que el LDP pierda su mayoría absoluta en las elecciones generales de 1993. Por primera vez desde su fundación, el LDP es desplazado del poder: una coalición heterogénea de ocho partidos de oposición forma gobierno bajo el primer ministro Morihiro Hosokawa.</p>
       </div>
     </div>
@@ -211,6 +273,16 @@
       <span class="acto-date">29 ene 1994</span>
       <p class="acto-teaser">El gabinete de coalición reemplaza el sistema SNTV/MMD por uno mixto, pensado para forzar un bipartidismo a la británica y abaratar las campañas.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="versus">
+          <p class="vis-one"><small>En una frase</small>La ley del 29 de enero de 1994 cambió el sistema electoral entero.</p>
+          <div class="vis-card">
+            <div class="v-versus">
+              <div class="v-col before"><h4>Antes</h4><ul><li>Voto único no transferible (SNTV/MMD)</li><li>Competencia entre candidatos del mismo partido</li></ul></div>
+              <svg class="v-vs" viewBox="0 0 34 24" aria-hidden="true"><path d="M2 12h26M20 4l10 8-10 8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-col after"><h4>Después de 1994</h4><ul><li>300 distritos uninominales</li><li>200 escaños proporcionales (luego 180)</li></ul></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <figure class="acto-figure">
           <img src="../../assets/japon/fragmentacion-politica/dieta-nacional.jpg" alt="Edificio de la Dieta Nacional de Japón, Tokio." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>La Dieta Nacional, donde el 29 de enero de 1994 se aprobó la reforma electoral que cambió las reglas de la competencia.
@@ -230,7 +302,17 @@
       <span class="acto-date">1994 – 2009</span>
       <p class="acto-teaser">El LDP vuelve al poder mediante coaliciones pragmáticas; Koizumi centraliza el mando enviando "candidatos asesinos" contra sus propios disidentes; el DPJ gana en 2009 con 308 de 480 escaños.</p>
       <div class="acto-body">
-        <p>El LDP demuestra una asombrosa resiliencia táctica y regresa al poder a los diez meses (1994) mediante una coalición con su histórico archienemigo, el Partido Socialista de Japón, y el Partido Sakigake. Las primeras elecciones bajo el nuevo sistema, en 1996, demuestran que el LDP ya no puede gobernar en solitario: la necesidad de alianzas estables da origen a la coalición con el partido budista Komeito en 1999.</p>
+        <!--vis--><div class="vis" data-vis="stats">
+          <p class="vis-one"><small>En una frase</small>Las nuevas reglas dieron al líder nacional el poder de nominar candidatos.</p>
+          <div class="vis-card">
+            <div class="v-stats" style="--n:3">
+              <div class="v-stat"><span class="v-num">10 meses</span><span class="v-lbl">y el LDP vuelve al gobierno en 1994</span></div>
+              <div class="v-stat"><span class="v-num">2005</span><span class="v-lbl">Koizumi niega la nominación a los rebeldes de la privatización postal</span></div>
+              <div class="v-stat"><span class="v-num">308 / 480</span><span class="v-lbl">escaños del DPJ en 2009</span></div>
+            </div>
+          </div>
+        </div><!--/vis-->
+        <p>El LDP demuestra una asombrosa resiliencia táctica y regresa al poder a los diez meses (1994) mediante una coalición con su histórico archienemigo, el Partido Socialista de Japón, y el Partido Sakigake. Las primeras elecciones bajo el nuevo sistema, en 1996, demuestran que el LDP ya no puede gobernar en solitario: la necesidad de alianzas estables da origen a la coalición con el partido budista <span class="gl" tabindex="0">Komeito<span class="gl-def" role="note">Partido budista que se alió con el LDP desde 1999.</span></span> en 1999.</p>
         <p>Al eliminar la competencia intrapartidista —solo se permite un candidato por partido y distrito—, el poder de nominación se concentra en la dirigencia nacional. El primer ministro <strong>Jun'ichirō Koizumi</strong> (2001-2006) explota de manera radical este incentivo: ignora los procesos deliberativos internos, centraliza las decisiones en la Oficina del Gabinete y, en 2005, niega la nominación oficial a todos los legisladores que votaron contra la privatización del servicio postal, enviando candidatos "asesinos" a sus propios distritos.</p>
         <p>El sistema uninominal fuerza, a la vez, la consolidación de la oposición en un bloque unificado: en 2009 el Partido Democrático de Japón (DPJ) logra una victoria aplastante —308 de 480 escaños— y obliga al LDP a la oposición por segunda vez, consumando de manera temporal la alternancia bipartidista.</p>
       </div>
@@ -244,8 +326,20 @@
       <span class="acto-date">2011 → hoy</span>
       <p class="acto-teaser">Fukushima hunde al DPJ, las facciones del LDP se disuelven por escándalo en 2024, y los políticos hereditarios se multiplican precisamente en los distritos que la reforma quiso volver meritocráticos.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="timeline">
+          <p class="vis-one"><small>En una frase</small>El bipartidismo duró poco; las facciones, en cambio, sobrevivieron hasta 2023-2024.</p>
+          <div class="vis-card">
+            <div class="v-tline" style="--n:4">
+              <div class="v-tline-rail"><div class="v-tline-fill"></div></div>
+              <div class="v-tl"><span class="v-tl-yr">2009</span><p>El DPJ gana con 308 escaños.</p></div>
+              <div class="v-tl"><span class="v-tl-yr">2011</span><p>Fukushima y el desgaste del DPJ.</p></div>
+              <div class="v-tl"><span class="v-tl-yr">2012</span><p>Abe vuelve y la oposición queda fragmentada.</p></div>
+              <div class="v-tl"><span class="v-tl-yr">2023-24</span><p>Escándalo de fondos ilícitos: Kishida disuelve casi todas las facciones.</p></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <p>El accidentado paso del DPJ por el gobierno (2009-2012) —marcado por luchas internas y el deficiente manejo del terremoto y desastre nuclear de Fukushima de 2011— desilusiona profundamente a los votantes. Su derrota en 2012 ante el LDP de Shinzō Abe pone fin de manera definitiva al ideal bipartidista: la oposición queda permanentemente fragmentada en partidos pequeños, facilitando que el LDP retenga el gobierno mediante coaliciones adaptativas.</p>
-        <p>Lejos de mermar como esperaba la reforma de 1994, los políticos hereditarios aumentan de manera significativa en los distritos uninominales: ante la alta competencia por un escaño único, los partidos prefieren postular a familiares directos capaces de heredar intacta la maquinaria electoral, el nombre y los recursos de sus antecesores.</p>
+        <p>Lejos de mermar como esperaba la reforma de 1994, los <span class="gl" tabindex="0">políticos hereditarios<span class="gl-def" role="note">Candidatos que heredan la maquinaria electoral de un familiar.</span></span> aumentan de manera significativa en los distritos uninominales: ante la alta competencia por un escaño único, los partidos prefieren postular a familiares directos capaces de heredar intacta la maquinaria electoral, el nombre y los recursos de sus antecesores.</p>
         <p class="quote">Los vacíos de la ley de 1994 permitieron que las facciones siguieran recaudando de forma informal mediante venta de boletos para eventos, hasta estallar en el escándalo de fondos ilícitos de 2023-2024: la presión forzó al primer ministro Fumio Kishida a disolver casi todas las facciones históricas del LDP, dejando solo una en pie.</p>
       </div>
     </div>
@@ -317,11 +411,13 @@
     gsap.to(acto.querySelector('.acto-body'), {
       height: 'auto', opacity: 1, duration: reduceMotion ? 0 : 0.65, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
-      onComplete: function(){ ScrollTrigger.refresh(); }
+      onComplete: function(){ acto.querySelector('.acto-body').style.overflow = 'visible'; ScrollTrigger.refresh(); }
     });
+    if(window.playVis) setTimeout(function(){ window.playVis(acto); }, reduceMotion ? 0 : 60);
   }
   function closeActo(acto){
     acto.querySelector('.acto-toggle').textContent = '＋';
+    acto.querySelector('.acto-body').style.overflow = 'hidden';
     gsap.to(acto.querySelector('.acto-body'), {
       height: 0, opacity: 0, duration: reduceMotion ? 0 : 0.5, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
@@ -331,7 +427,8 @@
 
   var actos = document.querySelectorAll('.acto');
   actos.forEach(function(acto){
-    acto.addEventListener('click', function(){
+    acto.addEventListener('click', function(e){
+      if(e.target.closest('.acto-body')) return;
       var wasActive = acto.classList.contains('active');
       document.querySelectorAll('.acto.active').forEach(function(a){ a.classList.remove('active'); closeActo(a); });
       if(!wasActive){ acto.classList.add('active'); openActo(acto); }
@@ -339,7 +436,7 @@
   });
   var firstActive = document.querySelector('.acto.active .acto-body');
   if(firstActive){
-    gsap.set(firstActive, {height:'auto', opacity:1});
+    gsap.set(firstActive, {height:'auto', opacity:1, overflow:'visible'});
     document.querySelector('.acto.active .acto-toggle').textContent = '－';
   }
 
@@ -380,5 +477,6 @@
   window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
 </script>
 
+<!--vis-js--><script src="../../assets/vis.js"></script><!--/vis-js-->
 </body>
 </html>

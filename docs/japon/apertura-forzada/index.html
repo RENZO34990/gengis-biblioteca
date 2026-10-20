@@ -145,7 +145,46 @@
     .nav-adjacent .next{text-align:left; align-items:flex-start;}
     section{padding:6vh 6vw;}
   }
+/* ---------- Homogeneización con China ---------- */
+  :root{ --wood-deep:#4A3A28; --sumi:#23211F; --sumi-warm:#3A2C24; --sumi-red:#5E2B21; --paper-hero:#F5F1E8; --vermillion-deep:#7E2E20; }
+  body{ line-height:1.7; }
+  header.hero{ min-height:96vh; padding:14vh 8vw 12vh; overflow:hidden; color:var(--paper);
+    background:linear-gradient(155deg, var(--sumi) 0%, var(--sumi-warm) 58%, var(--sumi-red) 100%); }
+  .hero-kanji{ right:5vw; font-size:clamp(8rem, 22vw, 17rem); color:rgba(245,241,232,0.06); }
+  .hero .eyebrow{ color:var(--gold); }
+  .hero-rule{ width:48px; height:2px; background:var(--gold); margin-bottom:1.6rem; }
+  h1.title-jp{ font-size:clamp(2.2rem, 5vw, 3.8rem); line-height:1.25; margin:.4rem 0 .5rem; color:var(--paper); }
+  .title-romaji{ font-size:.85rem; color:rgba(245,241,232,0.72); margin-bottom:2rem; line-height:1.6; }
+  .hero-dek{ font-size:1.08rem; max-width:560px; color:rgba(245,241,232,0.9); font-weight:400; line-height:1.85; }
+  .hero-stats{ margin-top:3.2rem; border-top:1px solid rgba(245,241,232,0.2); }
+  .hero-stats div{ border-right:1px solid rgba(245,241,232,0.2); }
+  .hero-stats .num{ color:var(--gold); }
+  .hero-stats .lbl{ font-size:.8rem; color:rgba(245,241,232,0.7); }
+  .acto-title{ font-weight:700; }
+  .acto-date{ font-size:.8rem; color:var(--ink-soft); }
+  .acto-teaser{ font-weight:400; }
+  .acto-body p{ font-weight:400; line-height:1.85; }
+  .acto-body strong{ font-weight:700; color:var(--vermillion-deep); }
+  .acto-body .quote{ border-left-color:var(--gold); font-style:normal; }
+  .flat-grid > div:not(:first-child){ padding-left:3rem; }
+  .flat-grid p{ font-weight:400; }
+  .sources p{ font-weight:400; }
+  .nav-adjacent > *:not(:first-child){ padding-left:3rem; }
+  .acto-figure[hidden]{display:none;}
+  .acto-figure{margin:1.8rem 0; border:1px solid var(--line); max-width:640px; background:var(--ink);}
+  .acto-figure img{width:100%; display:block; filter:sepia(.12) contrast(1.03); opacity:.94;}
+  .acto-figure figcaption{padding:.85rem 1.1rem; font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink-soft); border-top:1px solid var(--line); background:var(--paper);}
+  .acto-figure figcaption .credit{display:block; margin-top:.3rem; color:#8A8478; font-size:.76rem;}
+  .chart-block{margin:1.8rem 0; border-top:1px solid var(--line); padding-top:1.6rem; max-width:640px;}
+  @media(max-width:820px){
+    .flat-grid > div:not(:first-child){ padding-left:0; }
+    .nav-adjacent > *:not(:first-child){ padding-left:0; }
+    .nav-adjacent .next{ padding-left:0; }
+    header.hero{ min-height:88vh; padding:12vh 7vw 10vh; }
+  }
 </style>
+<!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
+<style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(168,134,60,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Shippori Mincho', serif; --v-body:'Zen Kaku Gothic New', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
 </head>
 <body>
 <a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
@@ -180,8 +219,22 @@
       <span class="acto-date">desde 1635</span>
       <p class="acto-teaser">El Edicto de 1635 confina el comercio exterior a Nagasaki y prohíbe salir del país. Dos siglos después, el estancamiento social y el acoso de las potencias occidentales desgastan el orden desde dentro y desde fuera.</p>
       <div class="acto-body">
-        <p>Desde principios del siglo XVII, Japón estuvo gobernado por un sistema gubernamental semi-feudal encabezado por el shōgun de la dinastía Tokugawa. Para proteger al archipiélago de la influencia del cristianismo y de potencias extranjeras, el shogunato (bakufu) impuso una rígida política de aislamiento internacional conocida como sakoku mediante el Edicto de 1635. Bajo este marco, se prohibió a los súbditos japoneses salir del país y el comercio extranjero se confinó estrictamente al puerto de Nagasaki bajo un riguroso control estatal.</p>
-        <p>A principios del siglo XIX, este orden político comenzó a desgastarse: la estructura Tokugawa, basada en el linaje hereditario como única fuente de poder, generó un estancamiento sin espacio para la iniciativa humana, lo que provocó una profunda frustración entre los samuráis de rangos medios e inferiores. Al mismo tiempo, incidentes como el del navío británico HMS Phaeton en Nagasaki (1808) llevaron al shogunato a promulgar el Edicto de Expulsión de 1825, ordenando disparar contra embarcaciones extranjeras — mientras pensadores del rangaku (estudios occidentales) ya analizaban en secreto la tecnología y la política europeas para diseñar estrategias de defensa.</p>
+        <!--vis--><div class="vis" data-vis="rings">
+          <p class="vis-one"><small>En una frase</small>El shogunato Tokugawa dejaba entrar solo lo que podía controlar.</p>
+          <div class="vis-card">
+            <div class="v-rings-wrap">
+              <div class="v-rings" role="img" aria-label="Tres círculos concéntricos: el shogun al centro, Nagasaki alrededor y el mundo exterior afuera."><div class="v-ring r3"></div><div class="v-ring r2"></div><div class="v-ring r1">徳川</div></div>
+              <ul class="v-legend">
+                <li><i class="k1"></i><span><b>El shogun</b>Linaje hereditario como única fuente de poder.</span></li>
+                <li><i class="k2"></i><span><b>Nagasaki</b>El único puerto abierto al comercio extranjero, bajo control estatal.</span></li>
+                <li><i class="k3"></i><span><b>El mundo exterior</b>Edicto de 1635: ningún súbdito podía salir, y los barcos extranjeros se repelían.</span></li>
+              </ul>
+            </div>
+            <p class="vis-note">Esquema del sakoku, no un mapa.</p>
+          </div>
+        </div><!--/vis-->
+        <p>Desde principios del siglo XVII, Japón estuvo gobernado por un sistema gubernamental semi-feudal encabezado por el shōgun de la dinastía Tokugawa. Para proteger al archipiélago de la influencia del cristianismo y de potencias extranjeras, el shogunato (<span class="gl" tabindex="0">bakufu<span class="gl-def" role="note">El gobierno militar del shogun.</span></span>) impuso una rígida política de aislamiento internacional conocida como <span class="gl" tabindex="0">sakoku<span class="gl-def" role="note">Política de aislamiento internacional del shogunato Tokugawa.</span></span> mediante el Edicto de 1635. Bajo este marco, se prohibió a los súbditos japoneses salir del país y el comercio extranjero se confinó estrictamente al puerto de Nagasaki bajo un riguroso control estatal.</p>
+        <p>A principios del siglo XIX, este orden político comenzó a desgastarse: la estructura Tokugawa, basada en el linaje hereditario como única fuente de poder, generó un estancamiento sin espacio para la iniciativa humana, lo que provocó una profunda frustración entre los samuráis de rangos medios e inferiores. Al mismo tiempo, incidentes como el del navío británico HMS Phaeton en Nagasaki (1808) llevaron al shogunato a promulgar el Edicto de Expulsión de 1825, ordenando disparar contra embarcaciones extranjeras — mientras pensadores del <span class="gl" tabindex="0">rangaku<span class="gl-def" role="note">&quot;Estudios holandeses&quot;: el estudio de ciencia y política occidentales durante el aislamiento.</span></span> (estudios occidentales) ya analizaban en secreto la tecnología y la política europeas para diseñar estrategias de defensa.</p>
       </div>
     </div>
   </div>
@@ -193,6 +246,17 @@
       <span class="acto-date">jul 1853 – 1858</span>
       <p class="acto-teaser">El Comodoro Perry exige a punta de cañón la apertura comercial. El bakufu cede, firma los tratados desiguales de 1858 y pierde toda credibilidad defensiva ante el país.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="steps">
+          <p class="vis-one"><small>En una frase</small>De los cañones de Perry al colapso de la autoridad del shogun.</p>
+          <div class="vis-card">
+            <div class="v-steps" role="list">
+              <div class="v-rail"><div class="v-fill"></div></div>
+<svg class="v-ship" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 15h20l-3 6H6z" fill="currentColor"/><path d="M13 3v11M13 4l6 8h-6M12 6l-5 7h5" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>              <div class="v-stop" role="listitem"><span class="v-yr">Jul 1853</span><h4>Perry en la bahía</h4><p>Barcos de guerra exigen abrir Japón al comercio.</p></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">1858</span><h4>Tratados desiguales</h4><p>El bakufu cede y rompe el sakoku.</p></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">1858–68</span><h4>Bakumatsu</h4><p>Década y media de violenta agitación interna.</p></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <figure class="acto-figure">
           <img src="../../assets/japon/apertura-forzada/perry-desembarco.jpg" alt="Grabado japonés de época representando el desembarco del Comodoro Perry y su expedición en 1853." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Un grabado de época (kawaraban) documentando la llegada de los "barcos negros" de Perry a la bahía de Tokio en julio de 1853.
@@ -200,7 +264,7 @@
           </figcaption>
         </figure>
         <p>El acontecimiento concreto que detonó la crisis política definitiva fue la llegada del Comodoro Matthew Perry en julio de 1853. Perry ingresó a la bahía de Tokio con barcos de guerra y exigió a punta de cañón la apertura de Japón al comercio y a la diplomacia de Occidente.</p>
-        <p class="quote">Este suceso expuso la total impotencia defensiva del shogunato frente al poderío militar de las potencias marítimas. Ante la amenaza armada, el bakufu se vio obligado a ceder y a firmar los tratados desiguales de 1858, rompiendo definitivamente la política de reclusión (sakoku). Este colapso defensivo destruyó la autoridad política del shogunato, desatando una década y media de violenta agitación doméstica conocida como el periodo Bakumatsu.</p>
+        <p class="quote">Este suceso expuso la total impotencia defensiva del shogunato frente al poderío militar de las potencias marítimas. Ante la amenaza armada, el bakufu se vio obligado a ceder y a firmar los tratados desiguales de 1858, rompiendo definitivamente la política de reclusión (sakoku). Este colapso defensivo destruyó la autoridad política del shogunato, desatando una década y media de violenta agitación doméstica conocida como el periodo <span class="gl" tabindex="0">Bakumatsu<span class="gl-def" role="note">Los últimos años del shogunato, de 1853 a 1868.</span></span>.</p>
       </div>
     </div>
   </div>
@@ -212,14 +276,26 @@
       <span class="acto-date">1867 – 1868</span>
       <p class="acto-teaser">El último shōgun devuelve el poder a la Corte Imperial. Jóvenes samuráis de Satsuma y Chōshū ejecutan un golpe de Estado y proclaman la Restauración Meiji.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="flow">
+          <p class="vis-one"><small>En una frase</small>Occidentalizar para resistir a Occidente: la paradoja que fundó el Estado Meiji.</p>
+          <div class="vis-card">
+            <div class="v-flow">
+              <div class="v-node"><span class="v-k">Nov 1867</span><h4>El shogun renuncia</h4><p>Yoshinobu devuelve el poder a la Corte Imperial.</p></div>
+              <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-node"><span class="v-k">1868</span><h4>Golpe en Kioto</h4><p>Satsuma y Chōshū deponen el bakufu y proclaman la Restauración.</p></div>
+              <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-node"><span class="v-k">Carta 1868</span><h4>Modernizar</h4><p>Unificar el país y adoptar tecnologías e instituciones occidentales.</p></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <figure class="acto-figure">
           <img src="../../assets/japon/apertura-forzada/tokugawa-yoshinobu.jpg" alt="Retrato de Tokugawa Yoshinobu, el decimoquinto y último shōgun del shogunato Tokugawa." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Tokugawa Yoshinobu, el último shōgun: su renuncia en noviembre de 1867 abrió la puerta al golpe de Estado que proclamó la Restauración Meiji.
             <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
           </figcaption>
         </figure>
-        <p>El punto de no retorno ocurrió entre finales de 1867 y principios de 1868. En noviembre de 1867, el último shōgun, Tokugawa Yoshinobu, renunció a su cargo y devolvió el poder político a la Corte Imperial. No obstante, jóvenes samuráis de los dominios occidentales de Satsuma y Chōshū ejecutaron un golpe de Estado en Kioto, depusieron el bakufu de forma definitiva y proclamaron la Restauración Meiji en 1868 bajo la figura del joven Emperador Meiji.</p>
-        <p>El gran giro estratégico consistió en asumir la paradoja de que, para preservar la independencia nacional y resistir el imperialismo occidental, era indispensable desmantelar el viejo orden feudal y adoptar las tecnologías, instituciones y métodos occidentales. Bajo principios como el Juramento de la Carta de 1868, la nueva élite unificó el país e inició una modernización radical del Estado.</p>
+        <p>El punto de no retorno ocurrió entre finales de 1867 y principios de 1868. En noviembre de 1867, el último shōgun, Tokugawa Yoshinobu, renunció a su cargo y devolvió el poder político a la Corte Imperial. No obstante, jóvenes samuráis de los dominios occidentales de <span class="gl" tabindex="0">Satsuma<span class="gl-def" role="note">Dominio del sur de Japón, uno de los que derribaron al shogunato.</span></span> y Chōshū ejecutaron un golpe de Estado en Kioto, depusieron el bakufu de forma definitiva y proclamaron la Restauración Meiji en 1868 bajo la figura del joven Emperador Meiji.</p>
+        <p>El gran giro estratégico consistió en asumir la paradoja de que, para preservar la independencia nacional y resistir el imperialismo occidental, era indispensable desmantelar el viejo orden feudal y adoptar las tecnologías, instituciones y métodos occidentales. Bajo principios como el <span class="gl" tabindex="0">Juramento de la Carta<span class="gl-def" role="note">Declaración de principios de 1868 de la nueva élite Meiji.</span></span> de 1868, la nueva élite unificó el país e inició una modernización radical del Estado.</p>
       </div>
     </div>
   </div>
@@ -231,6 +307,16 @@
       <span class="acto-date">1868 – 1873</span>
       <p class="acto-teaser">La capital se traslada a Tokio, se abolen los dominios feudales, desaparece la casta samurái y la Misión Iwakura sale a estudiar Occidente.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="stats">
+          <p class="vis-one"><small>En una frase</small>En cinco años se desmontó el orden feudal.</p>
+          <div class="vis-card">
+            <div class="v-stats" style="--n:3">
+              <div class="v-stat"><span class="v-num">1869</span><span class="v-lbl">la capital pasa a Edo, rebautizada Tokio</span></div>
+              <div class="v-stat"><span class="v-num">1871</span><span class="v-lbl">abolición de los dominios, reemplazados por prefecturas</span></div>
+              <div class="v-stat"><span class="v-num">1871–73</span><span class="v-lbl">la Misión Iwakura recorre EE. UU. y Europa</span></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <figure class="acto-figure">
           <img src="../../assets/japon/apertura-forzada/emperador-meiji.jpg" alt="Retrato del joven Emperador Meiji, figura simbólica de la nueva élite política tras 1868." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>El joven Emperador Meiji: bajo su figura, la élite de Satsuma y Chōshū legitimó el desmantelamiento del orden feudal.
@@ -250,6 +336,16 @@
       <span class="acto-date">1868 → hoy</span>
       <p class="acto-teaser">La administración de carrera, el rol simbólico del Emperador y la dialéctica entre asimilar e identidad nacional siguen vigentes 150 años después.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="versus">
+          <p class="vis-one"><small>En una frase</small>El debate sigue abierto: ¿ruptura súbita en 1868 o asimilación continua?</p>
+          <div class="vis-card">
+            <div class="v-versus neutral">
+              <div class="v-col before"><h4>Tesis de la ruptura</h4><ul><li>Una modernidad impuesta en 1868</li><li>Dos siglos y medio de aislamiento superados de golpe</li></ul></div>
+              <span class="v-vs v-vs-t">vs</span>
+              <div class="v-col after"><h4>Tesis de la continuidad</h4><ul><li>Un proceso gradual de asimilación bajo los Tokugawa</li><li>Rangaku: estudio occidental ya antes de Perry</li></ul></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <p>El impacto de la caída del orden Tokugawa y el advenimiento del Estado Meiji sigue influyendo en el Japón contemporáneo. La creación de un aparato burocrático centralizado y tecnocrático echó las bases de la administración pública de carrera que hoy influye en la toma de decisiones del país, mientras que la institucionalización del Emperador como símbolo unificador de la nación, iniciada en la era Meiji, se preservó en la Constitución actual de 1947 — promulgada formalmente como una enmienda a la Constitución Meiji de 1889 para garantizar la continuidad legal del Estado.</p>
         <p class="quote">Persiste además la discusión historiográfica sobre si la modernidad japonesa fue una ruptura súbita impuesta en 1868 o el resultado de un proceso continuo de asimilación desarrollado durante el prolongado orden Tokugawa — el mismo debate que atraviesa, siglo y medio después, la relación de Japón con la influencia extranjera.</p>
       </div>
@@ -308,11 +404,13 @@
     gsap.to(acto.querySelector('.acto-body'), {
       height: 'auto', opacity: 1, duration: reduceMotion ? 0 : 0.65, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
-      onComplete: function(){ ScrollTrigger.refresh(); }
+      onComplete: function(){ acto.querySelector('.acto-body').style.overflow = 'visible'; ScrollTrigger.refresh(); }
     });
+    if(window.playVis) setTimeout(function(){ window.playVis(acto); }, reduceMotion ? 0 : 60);
   }
   function closeActo(acto){
     acto.querySelector('.acto-toggle').textContent = '＋';
+    acto.querySelector('.acto-body').style.overflow = 'hidden';
     gsap.to(acto.querySelector('.acto-body'), {
       height: 0, opacity: 0, duration: reduceMotion ? 0 : 0.5, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
@@ -322,7 +420,8 @@
 
   var actos = document.querySelectorAll('.acto');
   actos.forEach(function(acto){
-    acto.addEventListener('click', function(){
+    acto.addEventListener('click', function(e){
+      if(e.target.closest('.acto-body')) return;
       var wasActive = acto.classList.contains('active');
       document.querySelectorAll('.acto.active').forEach(function(a){ a.classList.remove('active'); closeActo(a); });
       if(!wasActive){ acto.classList.add('active'); openActo(acto); }
@@ -330,7 +429,7 @@
   });
   var firstActive = document.querySelector('.acto.active .acto-body');
   if(firstActive){
-    gsap.set(firstActive, {height:'auto', opacity:1});
+    gsap.set(firstActive, {height:'auto', opacity:1, overflow:'visible'});
     document.querySelector('.acto.active .acto-toggle').textContent = '－';
   }
 
@@ -371,5 +470,6 @@
   window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
 </script>
 
+<!--vis-js--><script src="../../assets/vis.js"></script><!--/vis-js-->
 </body>
 </html>
