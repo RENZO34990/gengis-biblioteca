@@ -7,6 +7,7 @@ TOKENS = {
  'china': ':root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(201,166,62,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:\'Noto Serif SC\', serif; --v-body:\'Hanken Grotesk\', sans-serif; --v-mono:\'IBM Plex Mono\', monospace;}',
 
  'japon': ':root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(168,134,60,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:\'Shippori Mincho\', serif; --v-body:\'Zen Kaku Gothic New\', sans-serif; --v-mono:\'IBM Plex Mono\', monospace;}',
+ 'corea': ':root{--v-accent:var(--terracota); --v-accent-deep:var(--terracota-deep); --v-accent2:var(--celadon-deep); --v-accent-soft:rgba(79,111,97,.2); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:\'Gothic A1\', sans-serif; --v-body:\'Gothic A1\', sans-serif; --v-mono:\'IBM Plex Mono\', monospace;}',
 }
 
 SHIP = '<svg class="v-ship" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 15h20l-3 6H6z" fill="currentColor"/><path d="M13 3v11M13 4l6 8h-6M12 6l-5 7h5" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>'
@@ -131,6 +132,8 @@ def integrate(t, country, depth='../../'):
     t = re.sub(r'<!--vis-head-->.*?<!--/vis-head-->\n?', '', t, flags=re.S)
     head = f'<!--vis-head--><link rel="stylesheet" href="{depth}assets/vis.css">\n<style>{TOKENS[country]}</style><!--/vis-head-->\n'
     t = t.replace('</head>', head + '</head>', 1)
+    if country == 'corea' and 'data-num=' not in t:
+        t = t.replace('<html lang="es">', '<html lang="es" data-num="eu">', 1)
     # script compartido al final
     t = re.sub(r'<!--vis-js--><script src="[^"]*vis\.js"></script><!--/vis-js-->\n?', '', t)
     t = t.replace('</body>', f'<!--vis-js--><script src="{depth}assets/vis.js"></script><!--/vis-js-->\n</body>', 1)

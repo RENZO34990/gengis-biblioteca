@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-num="eu">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -156,7 +156,20 @@
   .acto-figure img{width:100%; display:block; filter:sepia(.12) contrast(1.03); opacity:.94;}
   .acto-figure figcaption{padding:.85rem 1.1rem; font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink-soft); border-top:1px solid var(--line); background:var(--paper);}
   .acto-figure figcaption .credit{display:block; margin-top:.3rem; color:#8A8478; font-size:.76rem;}
+/* ---------- Homogeneización con China ---------- */
+  header.hero{ min-height:96vh; }
+  h1.title-kr{ font-size:clamp(2.2rem, 5vw, 3.8rem); line-height:1.25; }
+  .flat-grid > div:not(:first-child){ padding-left:3rem; }
+  .nav-adjacent > *:not(:first-child){ padding-left:3rem; }
+  .chart-block{margin:1.8rem 0; border-top:1px solid var(--line); padding-top:1.6rem; max-width:640px;}
+  @media(max-width:820px){
+    .flat-grid > div:not(:first-child){ padding-left:0; }
+    .nav-adjacent > *:not(:first-child){ padding-left:0; }
+    header.hero{ min-height:88vh; }
+  }
 </style>
+<!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
+<style>:root{--v-accent:var(--terracota); --v-accent-deep:var(--terracota-deep); --v-accent2:var(--celadon-deep); --v-accent-soft:rgba(79,111,97,.2); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Gothic A1', sans-serif; --v-body:'Gothic A1', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
 </head>
 <body>
 <a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
@@ -191,8 +204,22 @@
       <span class="acto-date">agosto 1945</span>
       <p class="acto-teaser">Cae el Gobierno General y la península entra en un vacío de poder: una sociedad movilizada y dos ocupaciones militares.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="rings">
+          <p class="vis-one"><small>En una frase</small>Un país libre de Japón, pero decidido desde afuera.</p>
+          <div class="vis-card">
+            <div class="v-rings-wrap">
+              <div class="v-rings" role="img" aria-label="Tres círculos concéntricos: los coreanos al centro, las superpotencias alrededor y la división afuera."><div class="v-ring r3"></div><div class="v-ring r2"></div><div class="v-ring r1">38°</div></div>
+              <ul class="v-legend">
+                <li><i class="k1"></i><span><b>Los coreanos</b>Sindicatos, asociaciones campesinas y movimientos estudiantiles querían fundar un Estado soberano.</span></li>
+                <li><i class="k2"></i><span><b>Estados Unidos y la URSS</b>Dividen temporalmente la península en el paralelo 38.</span></li>
+                <li><i class="k3"></i><span><b>El resultado</b>Lo provisional duró para siempre.</span></li>
+              </ul>
+            </div>
+            <p class="vis-note">Esquema de las capas de decisión. No es un mapa.</p>
+          </div>
+        </div><!--/vis-->
         <p>El fin de la Segunda Guerra Mundial, en agosto de 1945, hundió el Gobierno General colonial japonés. La península quedó sin instituciones estatales soberanas después de treinta y cinco años de dominio colonial.</p>
-        <p>Al mismo tiempo estalló una intensa vida civil: organizaciones sociales, sindicatos, asociaciones campesinas y movimientos estudiantiles que querían fundar un Estado soberano. Pero las superpotencias vencedoras ya habían decidido otra cosa. Dividieron temporalmente la península en el paralelo 38. Estados Unidos instaló una administración militar en el sur (USAMGIK) y la Unión Soviética se hizo cargo del norte.</p>
+        <p>Al mismo tiempo estalló una intensa vida civil: organizaciones sociales, sindicatos, asociaciones campesinas y movimientos estudiantiles que querían fundar un Estado soberano. Pero las superpotencias vencedoras ya habían decidido otra cosa. Dividieron temporalmente la península en el <span class="gl" tabindex="0">paralelo 38<span class="gl-def" role="note">Línea que dividió la península entre las zonas de ocupación estadounidense y soviética.</span></span>. Estados Unidos instaló una administración militar en el sur (<span class="gl" tabindex="0">USAMGIK<span class="gl-def" role="note">Gobierno militar estadounidense en el sur de Corea tras 1945.</span></span>) y la Unión Soviética se hizo cargo del norte.</p>
         <p class="quote">La división se presentó como provisional. Duró para siempre.</p>
       </div>
     </div>
@@ -205,13 +232,25 @@
       <span class="acto-date">1945 – 1947</span>
       <p class="acto-teaser">La Guerra Fría se acelera, la negociación sobre una tutela internacional fracasa y Washington lleva el problema a la ONU.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="flow">
+          <p class="vis-one"><small>En una frase</small>Sin acuerdo entre las potencias, la ONU autorizó elecciones solo en el sur.</p>
+          <div class="vis-card">
+            <div class="v-flow">
+              <div class="v-node"><span class="v-k">1947</span><h4>Comisión Mixta</h4><p>Estados Unidos y la URSS se estancan.</p></div>
+              <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-node"><span class="v-k">ONU</span><h4>UNTCOK</h4><p>Washington lleva el caso a la ONU; la URSS no deja entrar al norte.</p></div>
+              <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-node"><span class="v-k">Decisión</span><h4>Elecciones solo en el sur</h4><p>Se hace irreversible un Estado dividido.</p></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <figure class="acto-figure">
           <img src="../../assets/corea/liberacion-division/paralelo-38.jpg" alt="Soldados estadounidenses en el paralelo 38, 1945." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>El paralelo 38 en 1945: una línea de ocupación pensada como temporal que terminó fijando la frontera.
             <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
           </figcaption>
         </figure>
-        <p>La Comisión Mixta entre Estados Unidos y la URSS se estancó en 1947. Washington trasladó entonces la "cuestión coreana" a la recién creada Organización de las Naciones Unidas, que formó la Comisión Temporal para Corea (UNTCOK).</p>
+        <p>La Comisión Mixta entre Estados Unidos y la URSS se estancó en 1947. Washington trasladó entonces la "cuestión coreana" a la recién creada Organización de las Naciones Unidas, que formó la Comisión Temporal para Corea (<span class="gl" tabindex="0">UNTCOK<span class="gl-def" role="note">Comisión Temporal de la ONU para Corea.</span></span>).</p>
         <p>La Unión Soviética no dejó entrar a la comisión en el norte. La Asamblea General de la ONU autorizó entonces elecciones solo en los territorios accesibles, es decir, en el sur. Esa decisión hizo irreversible la perspectiva de un Estado dividido de forma permanente.</p>
         <p class="quote">Sin un acuerdo entre las potencias que ocupaban la península, la unidad dependía de que ninguna de las dos aceptara ceder. Ninguna cedió.</p>
       </div>
@@ -225,6 +264,18 @@
       <span class="acto-date">1948</span>
       <p class="acto-teaser">El 10 de mayo de 1948 el sur vota solo. Dos repúblicas nacen con semanas de diferencia.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="timeline">
+          <p class="vis-one"><small>En una frase</small>Cuatro fechas separaron una península en dos Estados.</p>
+          <div class="vis-card">
+            <div class="v-tline" style="--n:4">
+              <div class="v-tline-rail"><div class="v-tline-fill"></div></div>
+              <div class="v-tl"><span class="v-tl-yr">10 may 1948</span><p>Elecciones solo en el sur.</p></div>
+              <div class="v-tl"><span class="v-tl-yr">17 jul 1948</span><p>Primera Constitución de la República de Corea.</p></div>
+              <div class="v-tl"><span class="v-tl-yr">15 ago 1948</span><p>Nace la República de Corea.</p></div>
+              <div class="v-tl"><span class="v-tl-yr">9 sep 1948</span><p>Kim Il-sung proclama la RPDC en el norte.</p></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <figure class="acto-figure">
           <img src="../../assets/corea/liberacion-division/proclamacion-rok.jpg" alt="Ceremonia de proclamación de la República de Corea, 15 de agosto de 1948." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>La proclamación de la República de Corea, el 15 de agosto de 1948, con Syngman Rhee como primer presidente.
@@ -250,8 +301,18 @@
       <span class="acto-date">1948 – 1953</span>
       <p class="acto-teaser">El nuevo Estado nace con policías del régimen colonial, insurrecciones reprimidas con masacres y un enemigo al norte.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="versus">
+          <p class="vis-one"><small>En una frase</small>Un Estado nacido contra el comunismo con hombres del aparato colonial.</p>
+          <div class="vis-card">
+            <div class="v-versus neutral">
+              <div class="v-col before"><h4>Lo que se fundó</h4><ul><li>Presidencialismo centralizado</li><li>Fin declarado: contener a la izquierda</li></ul></div>
+              <span class="v-vs v-vs-t">vs</span>
+              <div class="v-col after"><h4>Con quién se fundó</h4><ul><li>Policía y burocracia con funcionarios coloniales</li><li>Crisis de legitimidad desde el origen</li></ul></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <p>Se estructuró un sistema presidencialista centralizado. Para contener a las fuerzas progresistas y de izquierda, el USAMGIK y la administración de Rhee reincorporaron a la policía y a la burocracia a numerosos funcionarios del aparato colonial japonés. Eso generó desde el principio una crisis de legitimidad estatal.</p>
-        <p>La oposición a las elecciones del sur desató insurrecciones populares y purgas brutales por parte de tropas del gobierno y de grupos paramilitares de derecha. Los episodios más graves fueron la Masacre de la Isla de Jeju (desde el 3 de abril de 1948) y la insurrección de Yeosu-Suncheon, donde miles de civiles e insurgentes fueron ejecutados. La polarización ideológica entre los dos regímenes terminó, en 1950, en la Guerra de Corea.</p>
+        <p>La oposición a las elecciones del sur desató insurrecciones populares y purgas brutales por parte de tropas del gobierno y de grupos paramilitares de derecha. Los episodios más graves fueron la <span class="gl" tabindex="0">Masacre de la Isla de Jeju<span class="gl-def" role="note">Represión de 1948 contra insurgentes y civiles en la isla de Jeju.</span></span> (desde el 3 de abril de 1948) y la insurrección de Yeosu-Suncheon, donde miles de civiles e insurgentes fueron ejecutados. La polarización ideológica entre los dos regímenes terminó, en 1950, en la Guerra de Corea.</p>
         <p class="quote">Se fundó un Estado en nombre de la contención del comunismo con muchos de los hombres que habían servido al Estado colonial. Esa contradicción pesó sobre su legitimidad durante décadas.</p>
       </div>
     </div>
@@ -264,8 +325,18 @@
       <span class="acto-date">1948 → hoy</span>
       <p class="acto-teaser">Conservadores contra progresistas: la pregunta de fondo sigue siendo Estados Unidos y Corea del Norte.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="versus">
+          <p class="vis-one"><small>En una frase</small>Dos lecturas siguen en disputa.</p>
+          <div class="vis-card">
+            <div class="v-versus neutral">
+              <div class="v-col before"><h4>Lectura revisionista</h4><ul><li>Bruce Cumings: la división fue una imposición de la Guerra Fría</li><li>El USAMGIK sofocó los órganos populares de autogobierno</li></ul></div>
+              <span class="v-vs v-vs-t">vs</span>
+              <div class="v-col after"><h4>Lectura tradicional</h4><ul><li>Lectura tradicional: crear la ROK fue una acción defensiva</li><li>Salvaba al menos la mitad de la península de la órbita soviética</li></ul></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <p><strong>La matriz ideológica.</strong> La polarización entre conservadores y progresistas sobre la política exterior hacia Estados Unidos y Corea del Norte nace de la lucha posterior a la liberación. Los conservadores entienden la "democracia liberal" como anticomunismo y alianza con Washington, y los progresistas priorizan el diálogo intercoreano y la soberanía autónoma.</p>
-        <p><strong>La legitimidad constitucional.</strong> El preámbulo de la Constitución actual reclama la herencia del Gobierno Provisional de 1919 y rechaza la etapa colonial. A la vez, la Ley de Seguridad Nacional de 1948 siguió usándose durante décadas para regular el disenso político.</p>
+        <p><strong>La legitimidad constitucional.</strong> El preámbulo de la Constitución actual reclama la herencia del <span class="gl" tabindex="0">Gobierno Provisional<span class="gl-def" role="note">Gobierno de la resistencia creado en el exilio en 1919.</span></span> de 1919 y rechaza la etapa colonial. A la vez, la <span class="gl" tabindex="0">Ley de Seguridad Nacional<span class="gl-def" role="note">Ley de 1948 usada durante décadas para regular el disenso político.</span></span> de 1948 siguió usándose durante décadas para regular el disenso político.</p>
         <p class="quote">Dos lecturas se enfrentan. La revisionista, con Bruce Cumings, ve la división como una imposición de la Guerra Fría y sostiene que el USAMGIK sofocó los órganos populares de autogobierno. La tradicional sostiene que crear la ROK en 1948 fue una acción defensiva indispensable para salvar al menos la mitad de la península de la órbita soviética.</p>
       </div>
     </div>
@@ -338,11 +409,13 @@
     gsap.to(acto.querySelector('.acto-body'), {
       height: 'auto', opacity: 1, duration: reduceMotion ? 0 : 0.65, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
-      onComplete: function(){ ScrollTrigger.refresh(); }
+      onComplete: function(){ acto.querySelector('.acto-body').style.overflow = 'visible'; ScrollTrigger.refresh(); }
     });
+    if(window.playVis) setTimeout(function(){ window.playVis(acto); }, reduceMotion ? 0 : 60);
   }
   function closeActo(acto){
     acto.querySelector('.acto-toggle').textContent = '＋';
+    acto.querySelector('.acto-body').style.overflow = 'hidden';
     gsap.to(acto.querySelector('.acto-body'), {
       height: 0, opacity: 0, duration: reduceMotion ? 0 : 0.5, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
@@ -352,7 +425,8 @@
 
   var actos = document.querySelectorAll('.acto');
   actos.forEach(function(acto){
-    acto.addEventListener('click', function(){
+    acto.addEventListener('click', function(e){
+      if(e.target.closest('.acto-body')) return;
       var wasActive = acto.classList.contains('active');
       document.querySelectorAll('.acto.active').forEach(function(a){ a.classList.remove('active'); closeActo(a); });
       if(!wasActive){ acto.classList.add('active'); openActo(acto); }
@@ -360,7 +434,7 @@
   });
   var firstActive = document.querySelector('.acto.active .acto-body');
   if(firstActive){
-    gsap.set(firstActive, {height:'auto', opacity:1});
+    gsap.set(firstActive, {height:'auto', opacity:1, overflow:'visible'});
     document.querySelector('.acto.active .acto-toggle').textContent = '－';
   }
 
@@ -406,5 +480,6 @@
   window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
 </script>
 
+<!--vis-js--><script src="../../assets/vis.js"></script><!--/vis-js-->
 </body>
 </html>

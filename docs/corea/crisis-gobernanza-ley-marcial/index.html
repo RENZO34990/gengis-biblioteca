@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-num="eu">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -157,7 +157,20 @@
   .acto-figure img{width:100%; display:block; filter:sepia(.12) contrast(1.03); opacity:.94;}
   .acto-figure figcaption{padding:.85rem 1.1rem; font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink-soft); border-top:1px solid var(--line); background:var(--paper);}
   .acto-figure figcaption .credit{display:block; margin-top:.3rem; color:#8A8478; font-size:.76rem;}
+/* ---------- Homogeneización con China ---------- */
+  header.hero{ min-height:96vh; }
+  h1.title-kr{ font-size:clamp(2.2rem, 5vw, 3.8rem); line-height:1.25; }
+  .flat-grid > div:not(:first-child){ padding-left:3rem; }
+  .nav-adjacent > *:not(:first-child){ padding-left:3rem; }
+  .chart-block{margin:1.8rem 0; border-top:1px solid var(--line); padding-top:1.6rem; max-width:640px;}
+  @media(max-width:820px){
+    .flat-grid > div:not(:first-child){ padding-left:0; }
+    .nav-adjacent > *:not(:first-child){ padding-left:0; }
+    header.hero{ min-height:88vh; }
+  }
 </style>
+<!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
+<style>:root{--v-accent:var(--terracota); --v-accent-deep:var(--terracota-deep); --v-accent2:var(--celadon-deep); --v-accent-soft:rgba(79,111,97,.2); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Gothic A1', sans-serif; --v-body:'Gothic A1', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
 </head>
 <body>
 <a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
@@ -181,7 +194,7 @@
 <section id="actos">
   <div class="section-head">
     <span class="eyebrow">Los 5 actos</span>
-    <h2>Cómo la polarización llegó a un autogolpe, y cómo la institucionalidad lo frenó</h2>
+    <h2>Cómo la polarización llegó a un <span class="gl" tabindex="0">autogolpe<span class="gl-def" role="note">Golpe de Estado dado desde el propio gobierno.</span></span>, y cómo la institucionalidad lo frenó</h2>
     <p class="lede">Toca cada acto para expandirlo.</p>
   </div>
 
@@ -192,9 +205,19 @@
       <span class="acto-date">2010s – 2022</span>
       <p class="acto-teaser">Un presidente muy fuerte, fiscales usados para la revancha y más de 90% de la población viendo conflicto agudo.</p>
       <div class="acto-body">
-        <p><strong>El presidencialismo imperial.</strong> El diseño de 1987 concentró amplias atribuciones en la Presidencia (mandato único de 5 años), incluido el veto legislativo y el nombramiento de altos cargos ministeriales y judiciales sin necesidad de un consenso parlamentario amplio.</p>
+        <!--vis--><div class="vis" data-vis="stats">
+          <p class="vis-one"><small>En una frase</small>Una democracia donde los rivales dejaron de verse como legítimos.</p>
+          <div class="vis-card">
+            <div class="v-stats" style="--n:3">
+              <div class="v-stat"><span class="v-num">5 años</span><span class="v-lbl">mandato presidencial único</span></div>
+              <div class="v-stat"><span class="v-num" data-to="90" data-dec="0" data-pre="+" data-suf="%">+90%</span><span class="v-lbl">percibe conflicto agudo entre PPP y DPK</span></div>
+              <div class="v-stat"><span class="v-num">2017</span><span class="v-lbl">destitución de Park Geun-hye</span></div>
+            </div>
+          </div>
+        </div><!--/vis-->
+        <p><strong>El <span class="gl" tabindex="0">presidencialismo imperial<span class="gl-def" role="note">Presidencia con muchas atribuciones y pocos contrapesos.</span></span>.</strong> El diseño de 1987 concentró amplias atribuciones en la Presidencia (mandato único de 5 años), incluido el veto legislativo y el nombramiento de altos cargos ministeriales y judiciales sin necesidad de un consenso parlamentario amplio.</p>
         <p><strong>La "política de venganza".</strong> Tras la destitución de Park Geun-hye en 2017 y la llegada de Moon Jae-in, el uso de investigaciones judiciales para procesar y encarcelar a figuras de la administración saliente instauró un clima de revancha en el que las élites dejaron de verse como competidores legítimos.</p>
-        <p><strong>Polarización.</strong> Estudios internacionales ubicaron a Corea del Sur a la cabeza de la polarización política global: más de 90% de la población percibía conflictos agudos entre simpatizantes del Partido del Poder Popular (PPP, conservador) y el Partido Demócrata (DPK, progresista), alimentados por comunidades de "política de fandom" y propaganda en redes.</p>
+        <p><strong>Polarización.</strong> Estudios internacionales ubicaron a Corea del Sur a la cabeza de la polarización política global: más de 90% de la población percibía conflictos agudos entre simpatizantes del Partido del Poder Popular (<span class="gl" tabindex="0">PPP<span class="gl-def" role="note">Partido del Poder Popular, conservador.</span></span>, conservador) y el Partido Demócrata (<span class="gl" tabindex="0">DPK<span class="gl-def" role="note">Partido Demócrata de Corea, progresista.</span></span>, progresista), alimentados por comunidades de "política de fandom" y propaganda en redes.</p>
         <p class="quote">Cuando los rivales dejan de ser legítimos, cualquier institución se vuelve un arma.</p>
       </div>
     </div>
@@ -207,8 +230,18 @@
       <span class="acto-date">2022 – 2024</span>
       <p class="acto-teaser">Un presidente sin mayoría contra un Parlamento opositor, y 29 mociones contra 33 vetos.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="versus">
+          <p class="vis-one"><small>En una frase</small>Un Ejecutivo sin mayoría contra un Legislativo hostil.</p>
+          <div class="vis-card">
+            <div class="v-versus neutral">
+              <div class="v-col before"><h4>Presidente</h4><ul><li>Yoon Suk-yeol ganó en 2022 por 0,73%</li><li>33 vetos contra proyectos opositores</li></ul></div>
+              <span class="v-vs v-vs-t">vs</span>
+              <div class="v-col after"><h4>Parlamento</h4><ul><li>DPK con 175 de 300 escaños desde abril de 2024</li><li>29 mociones de censura e impeachment</li></ul></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <p>En las elecciones presidenciales de marzo de 2022 el exfiscal general Yoon Suk-yeol (PPP) derrotó a Lee Jae-myung (DPK) por un margen mínimo histórico de 0,73%. Asumió sin experiencia política previa y sin mayoría parlamentaria, frente a un Legislativo dominado por el DPK.</p>
-        <p>La relación entre ambos poderes colapsó en una guerra institucional: la oposición aprobó 29 mociones de censura e impeachment contra fiscales y ministros, y Yoon vetó 33 veces proyectos opositores, con el presupuesto y la agenda pública paralizados. En abril de 2024, el DPK consolidó su mayoría absoluta (175 de 300 escaños) y dejó a Yoon acorralado, sin poder promulgar reformas.</p>
+        <p>La relación entre ambos poderes colapsó en una guerra institucional: la oposición aprobó 29 mociones de censura e <span class="gl" tabindex="0">impeachment<span class="gl-def" role="note">Juicio político para destituir a un alto cargo.</span></span> contra fiscales y ministros, y Yoon vetó 33 veces proyectos opositores, con el presupuesto y la agenda pública paralizados. En abril de 2024, el DPK consolidó su mayoría absoluta (175 de 300 escaños) y dejó a Yoon acorralado, sin poder promulgar reformas.</p>
         <p class="quote">Un Ejecutivo sin mayoría y un Legislativo hostil: nadie podía ganar ni dejar que el otro gobernara.</p>
       </div>
     </div>
@@ -221,6 +254,18 @@
       <span class="acto-date">3 dic 2024 → 2026</span>
       <p class="acto-teaser">Un decreto, una votación de 190 a 0 y un proceso que termina en cadena perpetua.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="timeline">
+          <p class="vis-one"><small>En una frase</small>El autogolpe duró seis horas, pero el proceso llegó hasta cadena perpetua.</p>
+          <div class="vis-card">
+            <div class="v-tline" style="--n:4">
+              <div class="v-tline-rail"><div class="v-tline-fill"></div></div>
+              <div class="v-tl"><span class="v-tl-yr">3 dic 2024</span><p>Yoon decreta la ley marcial.</p></div>
+              <div class="v-tl"><span class="v-tl-yr">4 dic</span><p>La Asamblea la anula por 190 a 0.</p></div>
+              <div class="v-tl"><span class="v-tl-yr">4 abr 2025</span><p>El Tribunal Constitucional confirma su destitución.</p></div>
+              <div class="v-tl"><span class="v-tl-yr">Feb 2026</span><p>Condena a cadena perpetua.</p></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <figure class="acto-figure">
           <img src="../../assets/corea/crisis-gobernanza-ley-marcial/asamblea-nacional-2024.jpg" alt="Ciudadanos frente a la Asamblea Nacional de Corea del Sur la noche del 3 de diciembre de 2024." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Seúl, la noche del 3 de diciembre de 2024: ciudadanos frente a la Asamblea Nacional.
@@ -247,7 +292,19 @@
       <span class="acto-date">2025 – 2026</span>
       <p class="acto-teaser">Lee Jae-myung gana en junio, se condena al gabinete y se reforma la ley marcial.</p>
       <div class="acto-body">
-        <p>El 3 de junio de 2025 se celebró la elección presidencial extraordinaria, que ganó el progresista Lee Jae-myung (DPK). Su administración se presentó como la "Revolución de la Luz" (Light Revolution).</p>
+        <!--vis--><div class="vis" data-vis="flow">
+          <p class="vis-one"><small>En una frase</small>La respuesta fue arreglar la regla, no solo castigar a quien la usó.</p>
+          <div class="vis-card">
+            <div class="v-flow">
+              <div class="v-node"><span class="v-k">3 jun 2025</span><h4>Elección anticipada</h4><p>Gana Lee Jae-myung (DPK).</p></div>
+              <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-node"><span class="v-k">Tribunales</span><h4>Condenas al gabinete</h4><p>Kim Yong-hyun y Han Duck-soo reciben severas penas.</p></div>
+              <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-node"><span class="v-k">Jul 2025</span><h4>Enmienda</h4><p>Prohíbe que las fuerzas armadas bloqueen el ingreso de legisladores.</p></div>
+            </div>
+          </div>
+        </div><!--/vis-->
+        <p>El 3 de junio de 2025 se celebró la elección presidencial extraordinaria, que ganó el progresista Lee Jae-myung (DPK). Su administración se presentó como la "<span class="gl" tabindex="0">Revolución de la Luz<span class="gl-def" role="note">Nombre con que se presentó la administración de Lee Jae-myung.</span></span>" (Light Revolution).</p>
         <p>Los tribunales condenaron a severas penas de prisión al exministro de Defensa Kim Yong-hyun y al ex primer ministro Han Duck-soo por su participación en la conspiración militar.</p>
         <p>En julio de 2025 la Asamblea enmendó la ley marcial para prohibir explícitamente que las fuerzas armadas bloqueen el ingreso de legisladores al Parlamento o interfieran en sus labores. Ganó fuerza además el consenso político para reformar la Constitución de 1987, para atenuar los poderes del presidente e introducir un modelo de 4 años con reelección o esquemas semipresidenciales.</p>
         <p class="quote">La respuesta fue arreglar la regla que permitió el abuso, no solo castigar a quien lo cometió.</p>
@@ -262,6 +319,16 @@
       <span class="acto-date">2025 → hoy</span>
       <p class="acto-teaser">El fracaso del autogolpe mostró instituciones fuertes. También dejó al conservadurismo fragmentado y la reforma pendiente.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="versus">
+          <p class="vis-one"><small>En una frase</small>Dos lecturas del autogolpe.</p>
+          <div class="vis-card">
+            <div class="v-versus neutral">
+              <div class="v-col before"><h4>Yul Sohn y Won-Taek Kang</h4><ul><li>Consecuencia de décadas de normas rotas por ambos partidos</li><li>"El partido primero, la democracia después"</li></ul></div>
+              <span class="v-vs v-vs-t">vs</span>
+              <div class="v-col after"><h4>Otros investigadores</h4><ul><li>Reacción eficaz de instituciones y ciudadanía</li><li>La cultura democrática de 1987 está arraigada</li></ul></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <p><strong>Resiliencia democrática.</strong> El fracaso del autogolpe evidenció que la sociedad civil y las instituciones (la Asamblea, el Tribunal Constitucional, la Comisión Nacional Electoral) tienen madurez para neutralizar un intento dictatorial en pocas horas.</p>
         <p><strong>Un bloque conservador roto.</strong> La tentativa de Yoon sumió al movimiento conservador en una profunda crisis de identidad y fragmentación, y debilitó su hegemonía tradicional sobre la seguridad nacional y la economía.</p>
         <p><strong>Gobernanza pragmática.</strong> El gobierno de Lee Jae-myung adoptó una "diplomacia pragmática" y reformas de equidad socioeconómica para intentar desarmar la polarización afectiva que llevó al país al borde del colapso.</p>
@@ -336,11 +403,13 @@
     gsap.to(acto.querySelector('.acto-body'), {
       height: 'auto', opacity: 1, duration: reduceMotion ? 0 : 0.65, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
-      onComplete: function(){ ScrollTrigger.refresh(); }
+      onComplete: function(){ acto.querySelector('.acto-body').style.overflow = 'visible'; ScrollTrigger.refresh(); }
     });
+    if(window.playVis) setTimeout(function(){ window.playVis(acto); }, reduceMotion ? 0 : 60);
   }
   function closeActo(acto){
     acto.querySelector('.acto-toggle').textContent = '＋';
+    acto.querySelector('.acto-body').style.overflow = 'hidden';
     gsap.to(acto.querySelector('.acto-body'), {
       height: 0, opacity: 0, duration: reduceMotion ? 0 : 0.5, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
@@ -350,7 +419,8 @@
 
   var actos = document.querySelectorAll('.acto');
   actos.forEach(function(acto){
-    acto.addEventListener('click', function(){
+    acto.addEventListener('click', function(e){
+      if(e.target.closest('.acto-body')) return;
       var wasActive = acto.classList.contains('active');
       document.querySelectorAll('.acto.active').forEach(function(a){ a.classList.remove('active'); closeActo(a); });
       if(!wasActive){ acto.classList.add('active'); openActo(acto); }
@@ -358,7 +428,7 @@
   });
   var firstActive = document.querySelector('.acto.active .acto-body');
   if(firstActive){
-    gsap.set(firstActive, {height:'auto', opacity:1});
+    gsap.set(firstActive, {height:'auto', opacity:1, overflow:'visible'});
     document.querySelector('.acto.active .acto-toggle').textContent = '－';
   }
 
@@ -404,5 +474,6 @@
   window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
 </script>
 
+<!--vis-js--><script src="../../assets/vis.js"></script><!--/vis-js-->
 </body>
 </html>

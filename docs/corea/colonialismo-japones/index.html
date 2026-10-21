@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-num="eu">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -156,7 +156,20 @@
   .acto-figure img{width:100%; display:block; filter:sepia(.12) contrast(1.03); opacity:.94;}
   .acto-figure figcaption{padding:.85rem 1.1rem; font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink-soft); border-top:1px solid var(--line); background:var(--paper);}
   .acto-figure figcaption .credit{display:block; margin-top:.3rem; color:#8A8478; font-size:.76rem;}
+/* ---------- Homogeneización con China ---------- */
+  header.hero{ min-height:96vh; }
+  h1.title-kr{ font-size:clamp(2.2rem, 5vw, 3.8rem); line-height:1.25; }
+  .flat-grid > div:not(:first-child){ padding-left:3rem; }
+  .nav-adjacent > *:not(:first-child){ padding-left:3rem; }
+  .chart-block{margin:1.8rem 0; border-top:1px solid var(--line); padding-top:1.6rem; max-width:640px;}
+  @media(max-width:820px){
+    .flat-grid > div:not(:first-child){ padding-left:0; }
+    .nav-adjacent > *:not(:first-child){ padding-left:0; }
+    header.hero{ min-height:88vh; }
+  }
 </style>
+<!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
+<style>:root{--v-accent:var(--terracota); --v-accent-deep:var(--terracota-deep); --v-accent2:var(--celadon-deep); --v-accent-soft:rgba(79,111,97,.2); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Gothic A1', sans-serif; --v-body:'Gothic A1', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
 </head>
 <body>
 <a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
@@ -191,9 +204,20 @@
       <span class="acto-date">hasta 1910</span>
       <p class="acto-teaser">Joseon llegó a 1910 sin moneda unificada, sin banco propio y con un Estado incapaz de recaudar. Japón ya administraba sus finanzas desde 1905.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="press">
+          <p class="vis-one"><small>En una frase</small>Antes de 1910, el Estado coreano estaba atrapado entre un orden feudal y un banco extranjero.</p>
+          <div class="vis-card">
+            <div class="v-press">
+              <div class="v-press-side v-press-l"><b>Orden confuciano</b><em>Aristocracia yangban, sin registro de tierras ni moneda nacional</em><svg class="v-arrow" viewBox="0 0 54 24" aria-hidden="true"><path d="M2 12h44M36 3l12 9-12 9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="v-press-core">朝鮮<small>ANTES DE 1910</small><svg class="v-crack" viewBox="0 0 96 96" aria-hidden="true"><path d="M48 0l-8 22 12 14-14 20 10 14-6 26" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--v-paper)"/></svg></div>
+              <div class="v-press-side v-press-r"><b>Capital japonés</b><em>Dai-Ichi cumple de hecho funciones de banco central desde 1905</em><svg class="v-arrow" viewBox="0 0 54 24" aria-hidden="true"><path d="M2 12h44M36 3l12 9-12 9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            </div>
+            <div class="v-press-out">Resultado: un Estado sin capacidad <b>fiscal, monetaria ni militar</b> para resistir.</div>
+          </div>
+        </div><!--/vis-->
         <p>Antes de la anexión, la península estaba regida por la dinastía Joseon y su sucesor, el Imperio Coreano, sobre un orden confuciano jerárquico dominado por los yangban. No existía una burocracia técnica moderna y centralizada: el poder local descansaba en esa aristocracia terrateniente. Las Reformas Gabo, el intento de modernizar el Estado desde dentro, habían fracasado.</p>
         <p>La economía seguía siendo agraria. Más del 80% de los hogares vivía de una agricultura de subsistencia, no había un registro unificado de la propiedad de la tierra y el crédito rural lo manejaban prestamistas informales y terratenientes. Tampoco había un sistema bancario coordinado ni una moneda nacional de circulación fluida.</p>
-        <p>Desde el protectorado de 1905, además, instituciones financieras japonesas, sobre todo el banco privado Dai-Ichi, cumplían de hecho funciones de banco central. Introdujeron el nuevo marco monetario y prepararon el terreno para la absorción colonial.</p>
+        <p>Desde el protectorado de 1905, además, instituciones financieras japonesas, sobre todo el banco privado <span class="gl" tabindex="0">Dai-Ichi<span class="gl-def" role="note">Banco privado japonés que cumplía de hecho funciones de banco central en Corea.</span></span>, cumplían de hecho funciones de banco central. Introdujeron el nuevo marco monetario y prepararon el terreno para la absorción colonial.</p>
         <p class="quote">El Estado coreano no tenía capacidad fiscal, monetaria ni militar para frenar al capital bancario e industrial japonés. La estructura feudal quedó expuesta a una reorganización impuesta desde fuera.</p>
       </div>
     </div>
@@ -206,15 +230,24 @@
       <span class="acto-date">1910 – 1919</span>
       <p class="acto-teaser">El 22 de agosto de 1910 Corea se convierte en la provincia de Chōsen. Cinco años de protectorado habían preparado el golpe.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="switches">
+          <p class="vis-one"><small>En una frase</small>La anexión de 1910 le quitó a Corea el control de su economía y su Estado.</p>
+          <div class="vis-card">
+            <div class="v-sov-head"><span>Qué seguía en manos coreanas</span><span class="v-sov-count" aria-live="polite"><b class="n">0</b> / 3</span></div>
+            <div class="v-sw off"><span class="v-sw-mark">主</span><span><b>Soberanía</b><em>El Imperio Coreano se disuelve</em></span><span class="to-end"><span class="v-sw-state"><span class="st-on">En manos coreanas</span><span class="st-off">En manos japonesas</span></span><span class="v-sw-track"></span></span></div>
+            <div class="v-sw off"><span class="v-sw-mark">官</span><span><b>Cargos directivos</b><em>Reservados a ciudadanos japoneses</em></span><span class="to-end"><span class="v-sw-state"><span class="st-on">En manos coreanas</span><span class="st-off">En manos japonesas</span></span><span class="v-sw-track"></span></span></div>
+            <div class="v-sw off"><span class="v-sw-mark">業</span><span><b>Grandes empresas</b><em>Propiedad reservada a japoneses</em></span><span class="to-end"><span class="v-sw-state"><span class="st-on">En manos coreanas</span><span class="st-off">En manos japonesas</span></span><span class="v-sw-track"></span></span></div>
+          </div>
+        </div><!--/vis-->
         <figure class="acto-figure">
           <img src="../../assets/corea/colonialismo-japones/movimiento-1-marzo.jpg" alt="Manifestantes coreanos durante el Movimiento del Primero de Marzo de 1919." loading="lazy" onerror="this.closest('figure').hidden=true">
-          <figcaption>El Movimiento del Primero de Marzo de 1919: la mayor protesta contra la ocupación y el hecho que obligó a Japón a cambiar de método.
+          <figcaption>El Movimiento del <span class="gl" tabindex="0">Primero de Marzo<span class="gl-def" role="note">Movimiento de independencia de 1919, reprimido con dureza por Japón.</span></span> de 1919: la mayor protesta contra la ocupación y el hecho que obligó a Japón a cambiar de método.
             <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
           </figcaption>
         </figure>
-        <p>El Tratado de Anexión del 22 de agosto de 1910 disolvió el Imperio Coreano e instauró el Gobierno General de Corea (Chōsen Sōtokufu), un régimen colonial absolutista encabezado por un gobernador general militar. Desapareció la soberanía y se desmantelaron las instituciones políticas coreanas. Los funcionarios y letrados yangban fueron reemplazados por un aparato burocrático y militar japonés muy centralizado.</p>
+        <p>El Tratado de Anexión del 22 de agosto de 1910 disolvió el Imperio Coreano e instauró el <span class="gl" tabindex="0">Gobierno General<span class="gl-def" role="note">Régimen colonial absolutista dirigido por un gobernador general militar.</span></span> de Corea (Chōsen Sōtokufu), un régimen colonial absolutista encabezado por un gobernador general militar. Desapareció la soberanía y se desmantelaron las instituciones políticas coreanas. Los funcionarios y letrados yangban fueron reemplazados por un aparato burocrático y militar japonés muy centralizado.</p>
         <p>En lo económico, el marco legal colonial reservó la propiedad de las grandes empresas y los cargos directivos a ciudadanos japoneses. A los coreanos les quedaron los empleos no cualificados, mal pagados y en condiciones duras.</p>
-        <p>La respuesta social fue una resistencia permanente. Su hito fue el Movimiento de Independencia del Primero de Marzo de 1919. Japón lo reprimió con dureza masiva y después cambió de estrategia hacia una "política cultural" (Bunka Seiji), un control social y policial más sutil y más penetrante.</p>
+        <p>La respuesta social fue una resistencia permanente. Su hito fue el Movimiento de Independencia del Primero de Marzo de 1919. Japón lo reprimió con dureza masiva y después cambió de estrategia hacia una "política cultural" (<span class="gl" tabindex="0">Bunka Seiji<span class="gl-def" role="note">La &quot;política cultural&quot; que Japón adoptó tras 1919: control social y policial más sutil.</span></span>), un control social y policial más sutil y más penetrante.</p>
         <p class="quote">La anexión eliminó al Estado coreano y puso sus recursos agrarios, naturales y humanos bajo el mando directo del Gobierno General.</p>
       </div>
     </div>
@@ -227,6 +260,19 @@
       <span class="acto-date">1910 – 1945</span>
       <p class="acto-teaser">Un catastro, una policía y una geografía económica rediseñada: arroz en el sur, minería e industria pesada en el norte, todo hacia Japón.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="flow">
+          <p class="vis-one"><small>En una frase</small>El Gobierno General reorganizó la península como proveedor del imperio.</p>
+          <div class="vis-card">
+            <div class="v-flow">
+              <div class="v-node"><span class="v-k">Catastro</span><h4>Registro de tierras</h4><p>Formaliza la propiedad privada y deja al Estado las tierras comunales.</p></div>
+              <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-node"><span class="v-k">Sur</span><h4>Granero de Japón</h4><p>Jeolla y otras provincias se especializan en arroz de exportación.</p></div>
+              <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-node"><span class="v-k">Norte</span><h4>Retaguardia militar</h4><p>Minería e industria pesada para las operaciones en China y Manchuria.</p></div>
+            </div>
+            <p class="vis-note">Esquema del reparto de funciones.</p>
+          </div>
+        </div><!--/vis-->
         <figure class="acto-figure">
           <img src="../../assets/corea/colonialismo-japones/gobierno-general.jpg" alt="Edificio del Gobierno General de Corea en Seúl, hacia 1930." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>La sede del Gobierno General en Seúl, centro de un aparato que concentraba el poder ejecutivo, legislativo y judicial.
@@ -253,6 +299,16 @@
       <span class="acto-date">1910 – 1945</span>
       <p class="acto-teaser">Arroz que se va, fábricas que no son propias, un idioma prohibido. Corea sale de la guerra semiindustrializada y empobrecida.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="stats">
+          <p class="vis-one"><small>En una frase</small>Treinta y cinco años de extracción dejaron una infraestructura moderna y un pueblo empobrecido.</p>
+          <div class="vis-card">
+            <div class="v-stats" style="--n:3">
+              <div class="v-stat"><span class="v-num" data-to="35" data-dec="0" data-pre="" data-suf="">35</span><span class="v-lbl">años de dominio colonial (1910–1945)</span></div>
+              <div class="v-stat"><span class="v-num">1939</span><span class="v-lbl">año en que se obligó a adoptar nombres japoneses</span></div>
+              <div class="v-stat"><span class="v-num">1945</span><span class="v-lbl">Corea es liberada en pobreza severa</span></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <p>En el campo, el arroz y los granos se transfirieron masivamente a Japón y la población rural sufrió racionamientos e inseguridad alimentaria. En el norte, la minería de carbón y hierro y la manufactura pesada crecieron en los años 30 y 40 para sostener la Guerra del Pacífico. El comercio exterior quedó casi absorbido por Japón: todo lo que se extraía salía hacia la metrópoli.</p>
         <p>La gran industria era casi toda de capital japonés. Aun así surgieron las primeras empresas coreanas en sectores permitidos como el textil o el comercio agrario. De ahí vienen los orígenes de Kyungsung Textile, de Samyang y de la comercializadora que daría origen a Samsung.</p>
         <p>En lo social, el régimen prohibió el idioma coreano, impuso la educación japonesa y obligó a adoptar nombres japoneses desde 1939. Con la Segunda Guerra Mundial la explotación de la mano de obra y de los recursos llegó al extremo, y en 1945 Corea fue liberada en una pobreza severa.</p>
@@ -268,8 +324,18 @@
       <span class="acto-date">1945 → hoy</span>
       <p class="acto-teaser">Los colaboradores siguieron en sus cargos, las fábricas japonesas se vendieron a empresarios bien conectados y el Estado fuerte pasó a otras manos. El trauma sigue votando.</p>
       <div class="acto-body">
-        <p><strong>Un Estado que no empezó de cero.</strong> Tras 1945, el gobierno militar estadounidense (USAMGIK) y luego el de Syngman Rhee reincorporaron a la policía y a la burocracia a coreanos que habían servido a Japón, para frenar a la izquierda. La rehabilitación de los colaboradores (chinil) deslegitimó al nuevo Estado desde el inicio, y las leyes de control político coloniales sirvieron de modelo para la Ley de Seguridad Nacional de 1948.</p>
-        <p><strong>El origen de los chaebols.</strong> El Estado surcoreano nacionalizó y luego privatizó 3.551 plantas, empresas y propiedades que los japoneses dejaron. Se vendieron a precios bajos y con facilidades de crédito a empresarios bien conectados, y eso sentó las bases de los grandes conglomerados. Su modelo familiar se inspira en los zaibatsu japoneses. Los activos de los terratenientes ligados al régimen colonial alimentaron además la reforma agraria de 1949.</p>
+        <!--vis--><div class="vis" data-vis="versus">
+          <p class="vis-one"><small>En una frase</small>Lo que 1945 no desmontó explica parte de la Corea del Sur de hoy.</p>
+          <div class="vis-card">
+            <div class="v-versus">
+              <div class="v-col before"><h4>Lo que se heredó del Estado colonial</h4><ul><li>Policía y burocracia con colaboradores (chinil)</li><li>Leyes de control político, modelo de la Ley de Seguridad Nacional de 1948</li></ul></div>
+              <svg class="v-vs" viewBox="0 0 34 24" aria-hidden="true"><path d="M2 12h26M20 4l10 8-10 8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-col after"><h4>Lo que se privatizó</h4><ul><li>3.551 propiedades japonesas vendidas a empresarios conectados</li><li>Base de los grandes chaebols</li></ul></div>
+            </div>
+          </div>
+        </div><!--/vis-->
+        <p><strong>Un Estado que no empezó de cero.</strong> Tras 1945, el gobierno militar estadounidense (<span class="gl" tabindex="0">USAMGIK<span class="gl-def" role="note">Gobierno militar estadounidense en el sur de Corea tras 1945.</span></span>) y luego el de Syngman Rhee reincorporaron a la policía y a la burocracia a coreanos que habían servido a Japón, para frenar a la izquierda. La rehabilitación de los colaboradores (<span class="gl" tabindex="0">chinil<span class="gl-def" role="note">Colaborador pro-japonés durante el periodo colonial.</span></span>) deslegitimó al nuevo Estado desde el inicio, y las leyes de control político coloniales sirvieron de modelo para la Ley de Seguridad Nacional de 1948.</p>
+        <p><strong>El origen de los chaebols.</strong> El Estado surcoreano nacionalizó y luego privatizó 3.551 plantas, empresas y propiedades que los japoneses dejaron. Se vendieron a precios bajos y con facilidades de crédito a empresarios bien conectados, y eso sentó las bases de los grandes conglomerados. Su modelo familiar se inspira en los <span class="gl" tabindex="0">zaibatsu<span class="gl-def" role="note">Conglomerados familiares japoneses; modelo de los chaebols.</span></span> japoneses. Los activos de los terratenientes ligados al régimen colonial alimentaron además la reforma agraria de 1949.</p>
         <p><strong>El Estado desarrollista.</strong> Muchos politólogos ven la centralización, la capacidad técnica de la burocracia y la planificación de Park Chung-hee como herederas del ethos administrativo colonial, resumido en la frase "ethos japonés con traje estadounidense". Hoy la disputa por la memoria, con los colaboradores y las víctimas del trabajo forzado, sigue dividiendo a conservadores y progresistas y marca las tensiones comerciales con Japón.</p>
         <p class="quote">Hay dos lecturas en disputa. La de la trayectoria histórica, con Atul Kohli, sostiene que el Estado desarrollista prolonga las capacidades de la "industrialización coercitiva" colonial. La tesis nacionalista de la explotación responde que el periodo deformó el desarrollo propio y que las bases del desarrollo moderno vienen de la reforma agraria y de la movilización posterior a 1945.</p>
       </div>
@@ -343,11 +409,13 @@
     gsap.to(acto.querySelector('.acto-body'), {
       height: 'auto', opacity: 1, duration: reduceMotion ? 0 : 0.65, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
-      onComplete: function(){ ScrollTrigger.refresh(); }
+      onComplete: function(){ acto.querySelector('.acto-body').style.overflow = 'visible'; ScrollTrigger.refresh(); }
     });
+    if(window.playVis) setTimeout(function(){ window.playVis(acto); }, reduceMotion ? 0 : 60);
   }
   function closeActo(acto){
     acto.querySelector('.acto-toggle').textContent = '＋';
+    acto.querySelector('.acto-body').style.overflow = 'hidden';
     gsap.to(acto.querySelector('.acto-body'), {
       height: 0, opacity: 0, duration: reduceMotion ? 0 : 0.5, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
@@ -357,7 +425,8 @@
 
   var actos = document.querySelectorAll('.acto');
   actos.forEach(function(acto){
-    acto.addEventListener('click', function(){
+    acto.addEventListener('click', function(e){
+      if(e.target.closest('.acto-body')) return;
       var wasActive = acto.classList.contains('active');
       document.querySelectorAll('.acto.active').forEach(function(a){ a.classList.remove('active'); closeActo(a); });
       if(!wasActive){ acto.classList.add('active'); openActo(acto); }
@@ -365,7 +434,7 @@
   });
   var firstActive = document.querySelector('.acto.active .acto-body');
   if(firstActive){
-    gsap.set(firstActive, {height:'auto', opacity:1});
+    gsap.set(firstActive, {height:'auto', opacity:1, overflow:'visible'});
     document.querySelector('.acto.active .acto-toggle').textContent = '－';
   }
 
@@ -411,5 +480,6 @@
   window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
 </script>
 
+<!--vis-js--><script src="../../assets/vis.js"></script><!--/vis-js-->
 </body>
 </html>

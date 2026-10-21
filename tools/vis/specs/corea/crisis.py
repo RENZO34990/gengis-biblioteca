@@ -1,0 +1,31 @@
+from visgen import *
+PATH='crisis-asiatica-fmi'
+V=[
+ press('Un modelo sólido por fuera: la deuda corta en dólares chocaba con préstamos largos en wones.',
+  ('Deuda corta en dólares','Los bancos y las merchant banks la tomaban en el exterior'),'ㅎ',
+  ('Préstamos largos en wones','Se los daban a los chaebols, con deuda sobre patrimonio de 524%'),
+  'Resultado: un <b>doble descalce</b> que la apertura financiera apresurada dejó sin supervisión.',core_small='1996–97'),
+ steps('Primero fallaron las empresas. Después, cuando nadie quiso renovar la deuda, falló el país.',
+  [('Ene–oct 1997','Quiebran los chaebols','Hanbo Steel, Sanmi, Halla y Kia Motors.'),
+   ('Jul 1997','Contagio asiático','Baht tailandés y rupia indonesia: los acreedores dejan de refinanciar.'),
+   ('Nov 1997','Reservas agotadas','Solo 9.100 millones utilizables de 32.000, frente a más de 100.000 millones de deuda corta por vencer.')],
+  note='Orden de los hechos, de arriba abajo. Esquema, no a escala.'),
+ flow('El rescate llegó con cuatro condiciones.',
+  [('Finanzas','Un regulador único','Comisión de Supervisión Financiera; 29 de los 30 merchant banks pierden licencia o se fusionan.'),
+   ('Chaebols','Principios "5+3"','Deuda/patrimonio bajo 200% y fin de las garantías cruzadas; Daewoo cae en 1999.'),
+   ('Trabajo','Acuerdo Tripartito','Despidos aceptados a cambio de derechos sindicales y seguro de desempleo.'),
+   ('Mercado','Won flotante','Se eliminan los topes a la inversión extranjera.')],
+  note='Rescate de 58.400 millones de dólares, firmado el 3 y 4 de diciembre de 1997.'),
+ stats('Una recesión profunda pero corta, pagada por la sociedad entera.',
+  [S('-6,7%','caída del PIB real en 1998',to=None),S('10,9%','rebote del PIB en 1999',to=10.9,dec=1,suf='%'),S('3,5 M','ciudadanos donaron o vendieron oro',to=3.5,dec=1,suf=' M')],
+  note='Corea devolvió todo el préstamo al FMI en diciembre de 2001, tres años antes de lo previsto.'),
+ versus('Lo que la crisis blindó y lo que dejó sin resolver.',
+  ['Reservas: de 9.000 millones utilizables en 1997 a más de 400.000 millones','Iniciativa Chiang Mai y swaps regionales','Empresas más prudentes'],
+  ['Gobernanza por propiedad familiar de los chaebols','Brecha entre trabajadores regulares y temporales'],labels=('Lo que se blindó','Lo que quedó')),
+]
+T=[('merchant banks','Financieras no bancarias que tomaban dólares a corto plazo y los prestaban a largo plazo en wones.'),
+ ('garantías cruzadas','Deudas de una filial respaldadas por las otras empresas del mismo grupo.'),
+ ('Stand-By','Acuerdo de crédito de emergencia del FMI.'),
+ ('FSC','Comisión de Supervisión Financiera, el regulador único creado tras la crisis.'),
+ ('Big Deals','Permutas de activos entre grandes grupos para reducir su deuda.'),
+ ('Iniciativa Chiang Mai','Red de canje de divisas entre países de ASEAN+3 para prevenir contagios.')]

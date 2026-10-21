@@ -8,9 +8,10 @@
   function qa(el, s){ return Array.prototype.slice.call(el.querySelectorAll(s)); }
 
   function fmt(n, dec){
+    var eu = document.documentElement.getAttribute('data-num') === 'eu';
     var s = Math.abs(n).toFixed(dec).split('.');
-    s[0] = s[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-    return (n < 0 ? '-' : '') + s.join('.');
+    s[0] = s[0].replace(/\B(?=(\d{3})+(?!\d))/g, eu ? '.' : ',');
+    return (n < 0 ? '-' : '') + s.join(eu ? ',' : '.');
   }
 
   var VIS = {

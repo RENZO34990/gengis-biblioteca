@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-num="eu">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -156,7 +156,20 @@
   .acto-figure img{width:100%; display:block; filter:sepia(.12) contrast(1.03); opacity:.94;}
   .acto-figure figcaption{padding:.85rem 1.1rem; font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--ink-soft); border-top:1px solid var(--line); background:var(--paper);}
   .acto-figure figcaption .credit{display:block; margin-top:.3rem; color:#8A8478; font-size:.76rem;}
+/* ---------- Homogeneización con China ---------- */
+  header.hero{ min-height:96vh; }
+  h1.title-kr{ font-size:clamp(2.2rem, 5vw, 3.8rem); line-height:1.25; }
+  .flat-grid > div:not(:first-child){ padding-left:3rem; }
+  .nav-adjacent > *:not(:first-child){ padding-left:3rem; }
+  .chart-block{margin:1.8rem 0; border-top:1px solid var(--line); padding-top:1.6rem; max-width:640px;}
+  @media(max-width:820px){
+    .flat-grid > div:not(:first-child){ padding-left:0; }
+    .nav-adjacent > *:not(:first-child){ padding-left:0; }
+    header.hero{ min-height:88vh; }
+  }
 </style>
+<!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
+<style>:root{--v-accent:var(--terracota); --v-accent-deep:var(--terracota-deep); --v-accent2:var(--celadon-deep); --v-accent-soft:rgba(79,111,97,.2); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Gothic A1', sans-serif; --v-body:'Gothic A1', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
 </head>
 <body>
 <a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
@@ -191,7 +204,21 @@
       <span class="acto-date">1392 – 1875</span>
       <p class="acto-teaser">La dinastía Joseon era una monarquía neoconfuciana donde el cargo se obtenía por examen y la riqueza era tierra. Más de ocho de cada diez coreanos cultivaban arroz, y el Estado cobraba en grano porque no tenía moneda para cobrar de otra forma.</p>
       <div class="acto-body">
-        <p>Antes de 1876, la península estaba gobernada por la dinastía Joseon, fundada en 1392: una monarquía neoconfuciana muy centralizada cuyo poder descansaba en una burocracia rígida. Los cargos los ocupaba la aristocracia yangban a través de los exámenes confucianos (gwageo), y la política exterior, el llamado "Reino Ermitaño", se reducía al sistema de tributo con la dinastía Qing de China, con contactos limitados fuera de él.</p>
+        <!--vis--><div class="vis" data-vis="rings">
+          <p class="vis-one"><small>En una frase</small>Un reino cerrado: el rey al centro, los yangban alrededor y el campo que sostenía a todos.</p>
+          <div class="vis-card">
+            <div class="v-rings-wrap">
+              <div class="v-rings" role="img" aria-label="Tres círculos concéntricos: el rey al centro, los yangban alrededor y los campesinos afuera."><div class="v-ring r3"></div><div class="v-ring r2"></div><div class="v-ring r1">王</div></div>
+              <ul class="v-legend">
+                <li><i class="k1"></i><span><b>El rey y la corte</b>Monarquía neoconfuciana, muy centralizada, fundada en 1392.</span></li>
+                <li><i class="k2"></i><span><b>Los yangban</b>Aristocracia que ocupaba los cargos por exámenes confucianos y controlaba la tierra.</span></li>
+                <li><i class="k3"></i><span><b>El campo</b>Más del 80% de la población vivía del arroz y los granos, pagando impuestos en especie y en trabajo.</span></li>
+              </ul>
+            </div>
+            <p class="vis-note">Esquema de cómo se organizaba Joseon. No es un mapa.</p>
+          </div>
+        </div><!--/vis-->
+        <p>Antes de 1876, la península estaba gobernada por la dinastía Joseon, fundada en 1392: una monarquía neoconfuciana muy centralizada cuyo poder descansaba en una burocracia rígida. Los cargos los ocupaba la aristocracia <span class="gl" tabindex="0">yangban<span class="gl-def" role="note">Aristocracia de Joseon: ocupaba los cargos y controlaba la mayor parte de la tierra.</span></span> a través de los exámenes confucianos (<span class="gl" tabindex="0">gwageo<span class="gl-def" role="note">Los exámenes confucianos con que se accedía a los cargos del Estado.</span></span>), y la política exterior, el llamado "<span class="gl" tabindex="0">Reino Ermitaño<span class="gl-def" role="note">Nombre de la política exterior de Joseon: contactos mínimos fuera del tributo a China.</span></span>", se reducía al sistema de tributo con la dinastía Qing de China, con contactos limitados fuera de él.</p>
         <p>La economía era agraria y cerrada. Más del 80% de la población vivía de una agricultura de subsistencia basada en arroz y granos, en tierras controladas sobre todo por los yangban y los terratenientes. El comercio interior era limitado y vigilado, no existían industrias manufactureras modernas ni empresas, y el comercio exterior se reducía a intercambios tributarios con China. No había una moneda uniforme ni bancos formales: el crédito dependía de prestamistas informales, y los impuestos se pagaban en especie (grano, telas) y en trabajo obligatorio.</p>
         <p class="quote">El modelo ya estaba tensionado desde dentro: estancamiento técnico, corrupción endémica en la recaudación, facciones en la corte (el regente Daewongun, conservador, frente a la reina Min, más moderada) y crecientes levantamientos campesinos. Un Estado incapaz de recaudar dinero líquido tampoco podía comprar armas, y estaba rodeado de potencias que sí las tenían.</p>
       </div>
@@ -205,16 +232,25 @@
       <span class="acto-date">1875 – 1876</span>
       <p class="acto-teaser">Tras el incidente del buque Un'yō, Japón impone a Joseon el primer tratado desigual de su historia: lo declara "independiente" de China y le abre los puertos.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="switches">
+          <p class="vis-one"><small>En una frase</small>Tres puertos y un tratado le quitaron al Estado el control de su propio comercio.</p>
+          <div class="vis-card">
+            <div class="v-sov-head"><span>Poderes que aún controla Joseon</span><span class="v-sov-count" aria-live="polite"><b class="n">0</b> / 3</span></div>
+            <div class="v-sw off"><span class="v-sw-mark">港</span><span><b>Puertos</b><em>Busan, Incheon y Wonsan quedan abiertos a Japón</em></span><span class="to-end"><span class="v-sw-state"><span class="st-on">En manos de Joseon</span><span class="st-off">Cedido a Japón</span></span><span class="v-sw-track"></span></span></div>
+            <div class="v-sw off"><span class="v-sw-mark">稅</span><span><b>Aduanas</b><em>Exenciones temporales para el comercio japonés</em></span><span class="to-end"><span class="v-sw-state"><span class="st-on">En manos de Joseon</span><span class="st-off">Cedido a Japón</span></span><span class="v-sw-track"></span></span></div>
+            <div class="v-sw off"><span class="v-sw-mark">法</span><span><b>Justicia propia</b><em>Los japoneses quedan fuera de los tribunales coreanos</em></span><span class="to-end"><span class="v-sw-state"><span class="st-on">En manos de Joseon</span><span class="st-off">Cedido a Japón</span></span><span class="v-sw-track"></span></span></div>
+          </div>
+        </div><!--/vis-->
         <figure class="acto-figure">
           <img src="../../assets/corea/joseon-ganghwa-gabo/tratado-ganghwa.jpg" alt="Escena de la firma del Tratado de Ganghwa en 1876." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Las delegaciones de Corea y Japón en la isla de Ganghwa en febrero de 1876: el tratado que abrió tres puertos y redefinió el país.
             <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
           </figcaption>
         </figure>
-        <p>En febrero de 1876, la Armada del Imperio del Japón obligó a Joseon a firmar el Tratado de Ganghwa mediante la llamada "diplomacia de cañoneras", tras el incidente del buque Un'yō de 1875. Fue el primer tratado desigual impuesto a Corea. Su cláusula más sutil era diplomática: declaraba a Joseon "Estado independiente", un título pensado para romper el vasallaje tributario con la China Qing.</p>
+        <p>En febrero de 1876, la Armada del Imperio del Japón obligó a Joseon a firmar el <span class="gl" tabindex="0">Tratado de Ganghwa<span class="gl-def" role="note">Tratado de 1876, impuesto por la Armada japonesa; el primero desigual para Corea.</span></span> mediante la llamada "diplomacia de cañoneras", tras el incidente del buque Un'yō de 1875. Fue el primer tratado desigual impuesto a Corea. Su cláusula más sutil era diplomática: declaraba a Joseon "Estado independiente", un título pensado para romper el vasallaje tributario con la China Qing.</p>
         <div class="loss-list">
           <div class="loss-item"><h3>Tres puertos abiertos</h3><p>Busan, Incheon y Wonsan quedaron abiertos al comercio japonés, que además obtuvo exenciones aduaneras temporales y derechos de navegación costera.</p></div>
-          <div class="loss-item"><h3>Justicia extranjera en suelo propio</h3><p>La extraterritorialidad jurídica dejó a los ciudadanos japoneses fuera del alcance de los tribunales coreanos y vulneró la soberanía jurisdiccional del reino.</p></div>
+          <div class="loss-item"><h3>Justicia extranjera en suelo propio</h3><p>La <span class="gl" tabindex="0">extraterritorialidad<span class="gl-def" role="note">Derecho de los extranjeros a ser juzgados por sus propios tribunales y no por los locales.</span></span> jurídica dejó a los ciudadanos japoneses fuera del alcance de los tribunales coreanos y vulneró la soberanía jurisdiccional del reino.</p></div>
           <div class="loss-item"><h3>Un mercado sin defensas</h3><p>Entraron manufacturas industriales baratas, sobre todo textiles de algodón, y salieron grano y arroz coreanos hacia Japón sin regulación alguna.</p></div>
         </div>
         <p class="quote">El resultado fue un choque doble. Las importaciones desmantelaron los mercados locales tradicionales, la salida de grano provocó escasez e inflación en el interior, y quedó a la vista que el Estado de Joseon no podía regular ni su propio comercio fronterizo. Corea entraba al sistema de tratados desiguales que China ya conocía desde las Guerras del Opio, con una diferencia que se vería después: China conservó su núcleo estatal, Corea perdería el suyo.</p>
@@ -229,18 +265,30 @@
       <span class="acto-date">1894 – 1897</span>
       <p class="acto-teaser">Una revuelta campesina, una guerra entre China y Japón y un gabinete modernizador producen el paquete de reformas más drástico que intentó Corea: el fin del orden yangban y el nacimiento de una economía monetaria.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="steps">
+          <p class="vis-one"><small>En una frase</small>Dos choques en cadena abrieron paso a un paquete de reformas bajo vigilancia japonesa.</p>
+          <div class="vis-card">
+            <div class="v-steps" role="list">
+              <div class="v-rail"><div class="v-fill"></div></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">1894</span><h4>Revolución Donghak</h4><p>Insurrección campesina antifeudal; su represión trae a China y Japón.</p></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">1894–95</span><h4>Guerra Sino-Japonesa</h4><p>La victoria japonesa deja a Japón supervisando.</p></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">1894–96</span><h4>Reformas Gabo</h4><p>Fin del orden yangban, ministerios modernos, impuestos en dinero.</p></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">1897</span><h4>Imperio Coreano</h4><p>Gojong proclama el Daehan Jeguk para afirmar igualdad diplomática.</p></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <figure class="acto-figure">
           <img src="../../assets/corea/joseon-ganghwa-gabo/gojong.jpg" alt="Retrato del rey Gojong de Corea, hacia 1900." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>El rey Gojong, que en 1897 proclamó el Imperio Coreano buscando equilibrar entre Japón, Rusia y China.
             <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
           </figcaption>
         </figure>
-        <p>Las Reformas Gabo (1894–1896) surgieron en el cruce de dos choques. Por un lado, la Revolución Campesina Donghak, una insurrección antifeudal y antiimperialista cuya represión provocó en 1894 la intervención armada de China y Japón. Por otro, la victoria japonesa en la Primera Guerra Sino-Japonesa. Con Japón supervisando e influyendo, un gabinete de reformistas, los Gaehwapa, inspirados en la Restauración Meiji y en modelos occidentales, promulgó el paquete.</p>
+        <p>Las Reformas Gabo (1894–1896) surgieron en el cruce de dos choques. Por un lado, la Revolución Campesina Donghak, una insurrección antifeudal y antiimperialista cuya represión provocó en 1894 la intervención armada de China y Japón. Por otro, la victoria japonesa en la Primera Guerra Sino-Japonesa. Con Japón supervisando e influyendo, un gabinete de reformistas, los <span class="gl" tabindex="0">Gaehwapa<span class="gl-def" role="note">Grupo de reformistas coreanos inspirados en la Restauración Meiji.</span></span>, inspirados en la Restauración Meiji y en modelos occidentales, promulgó el paquete.</p>
         <div class="loss-list">
           <div class="loss-item"><h3>Fin del orden yangban</h3><p>Se abolieron legalmente el estatus aristocrático, la servidumbre feudal y la esclavitud, y terminó el sistema de exámenes confucianos.</p></div>
           <div class="loss-item"><h3>Un gabinete al estilo occidental</h3><p>El aparato estatal se reorganizó en ministerios modernos bajo un gabinete de gobierno.</p></div>
           <div class="loss-item"><h3>Impuestos en dinero</h3><p>Todos los tributos debían pagarse en moneda, no en grano ni en telas. Para pagar al Estado, el campesino tenía ahora que vender su cosecha.</p></div>
-          <div class="loss-item"><h3>Un Ministerio de Finanzas y un patrón plata</h3><p>El Takjibu centralizó la contabilidad, la recaudación y el presupuesto, y se intentó un patrón monetario moderno basado en la plata. Pero el banco japonés Dai-Ichi empezó a operar como emisor de facto en la península.</p></div>
+          <div class="loss-item"><h3>Un Ministerio de Finanzas y un patrón plata</h3><p>El Takjibu centralizó la contabilidad, la recaudación y el presupuesto, y se intentó un patrón monetario moderno basado en la plata. Pero el banco japonés <span class="gl" tabindex="0">Dai-Ichi<span class="gl-def" role="note">Banco privado japonés que funcionó como emisor de facto en la península.</span></span> empezó a operar como emisor de facto en la península.</p></div>
         </div>
         <p class="quote">En 1897, el rey Gojong respondió proclamando el Imperio Coreano (Daehan Jeguk), un intento de afirmar igualdad diplomática plena frente a los imperios chino, ruso y japonés. La fragilidad institucional y militar impidió convertir el título en una defensa efectiva.</p>
       </div>
@@ -254,6 +302,16 @@
       <span class="acto-date">1895 – 1910</span>
       <p class="acto-teaser">Entre el asesinato de la reina y la anexión, Corea pierde sus aduanas, su moneda y por último su Estado, mientras el campesinado paga impuestos en efectivo que no tiene.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="versus">
+          <p class="vis-one"><small>En una frase</small>Las reformas dieron instituciones modernas a un Estado sin finanzas propias.</p>
+          <div class="vis-card">
+            <div class="v-versus">
+              <div class="v-col before"><h4>Lo que se reformó</h4><ul><li>Ministerios y un gabinete al estilo occidental</li><li>Impuestos pagados en moneda, no en grano</li></ul></div>
+              <svg class="v-vs" viewBox="0 0 34 24" aria-hidden="true"><path d="M2 12h26M20 4l10 8-10 8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="v-col after"><h4>Lo que quedó fuera de control</h4><ul><li>El banco japonés Dai-Ichi como emisor de facto</li><li>Campesinos obligados a vender su cosecha para pagar</li></ul></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <p>En el campo, el cultivo de grano se reorientó hacia la exportación y la presión por pagar impuestos en efectivo proletarizó a campesinos que no podían afrontarlos: más densidad rural, sin mejoras tecnológicas proporcionales. En las ciudades, las importaciones de textiles y bienes procesados desplazaron a la artesanía doméstica. Japón monopolizó las rutas marítimas y la infraestructura portuaria, y construyó los ferrocarriles Seúl–Busan y Seúl–Incheon con una lógica de extracción y de transporte militar. En medio de todo esto aparecieron los primeros grupos empresariales coreanos, firmas mercantes e industriales todavía incipientes.</p>
         <div class="loss-list">
           <div class="loss-item"><h3><span class="when">1895</span>La reina Min es asesinada</h3><p>La corte intentaba equilibrar a Rusia, China y Estados Unidos para defender la monarquía. Agentes japoneses asesinaron a la reina y el reino quedó atrapado en conspiraciones.</p></div>
@@ -273,6 +331,18 @@
       <span class="acto-date">1910 → hoy</span>
       <p class="acto-teaser">La caída de Joseon explica tres rasgos de la Corea contemporánea: una tierra sin aristocracia, una soberanía económica convertida en obsesión y una memoria política que todavía divide.</p>
       <div class="acto-body">
+        <!--vis--><div class="vis" data-vis="timeline">
+          <p class="vis-one"><small>En una frase</small>De la pérdida de soberanía a la memoria que aún divide.</p>
+          <div class="vis-card">
+            <div class="v-tline" style="--n:4">
+              <div class="v-tline-rail"><div class="v-tline-fill"></div></div>
+              <div class="v-tl"><span class="v-tl-yr">1895</span><p>Agentes japoneses asesinan a la reina Min.</p></div>
+              <div class="v-tl"><span class="v-tl-yr">1905</span><p>Tratado de Eulsa: Corea es protectorado.</p></div>
+              <div class="v-tl"><span class="v-tl-yr">22 ago 1910</span><p>Japón anexa formalmente Corea.</p></div>
+              <div class="v-tl"><span class="v-tl-yr">1949</span><p>La reforma agraria de Rhee elimina el latifundio.</p></div>
+            </div>
+          </div>
+        </div><!--/vis-->
         <p><strong>Una tierra sin aristocracia.</strong> La disolución de los yangban iniciada con Gabo despejó el camino para la reforma agraria de 1949 bajo Syngman Rhee, que erradicó el latifundismo y entregó la tierra a quienes la cultivaban. Por eso Corea del Sur no tiene hoy una clase terrateniente aristocrática, algo difícil de explicar sin este episodio.</p>
         <p><strong>La autosuficiencia como obsesión.</strong> La pérdida de soberanía entre 1876 y 1910 alimentó un imperativo de nacionalismo económico y autosuficiencia que influyó en la industrialización dirigida por el Estado de Park Chung-hee en los años sesenta, para no volver a ser una nación vulnerable. Las primeras firmas mercantes e industriales de la época, además, sentaron el precedente del corporativismo familiar que más tarde evolucionaría hacia los chaebols.</p>
         <p><strong>Una memoria que sigue dividiendo.</strong> El Gobierno Provisional de la República de Corea, creado en el exilio en 1919 como heredero de la resistencia, es hoy la raíz de legitimidad que reconoce explícitamente el preámbulo de la Constitución surcoreana. Pero quién fue colaborador (chinil) y quién patriota reformista a finales del siglo XIX sigue siendo una línea de fractura entre los sectores progresistas y el movimiento conservador "New Right".</p>
@@ -348,11 +418,13 @@
     gsap.to(acto.querySelector('.acto-body'), {
       height: 'auto', opacity: 1, duration: reduceMotion ? 0 : 0.65, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
-      onComplete: function(){ ScrollTrigger.refresh(); }
+      onComplete: function(){ acto.querySelector('.acto-body').style.overflow = 'visible'; ScrollTrigger.refresh(); }
     });
+    if(window.playVis) setTimeout(function(){ window.playVis(acto); }, reduceMotion ? 0 : 60);
   }
   function closeActo(acto){
     acto.querySelector('.acto-toggle').textContent = '＋';
+    acto.querySelector('.acto-body').style.overflow = 'hidden';
     gsap.to(acto.querySelector('.acto-body'), {
       height: 0, opacity: 0, duration: reduceMotion ? 0 : 0.5, ease: 'power1.inOut',
       onUpdate: function(){ ScrollTrigger.update(); },
@@ -362,7 +434,8 @@
 
   var actos = document.querySelectorAll('.acto');
   actos.forEach(function(acto){
-    acto.addEventListener('click', function(){
+    acto.addEventListener('click', function(e){
+      if(e.target.closest('.acto-body')) return;
       var wasActive = acto.classList.contains('active');
       document.querySelectorAll('.acto.active').forEach(function(a){ a.classList.remove('active'); closeActo(a); });
       if(!wasActive){ acto.classList.add('active'); openActo(acto); }
@@ -370,7 +443,7 @@
   });
   var firstActive = document.querySelector('.acto.active .acto-body');
   if(firstActive){
-    gsap.set(firstActive, {height:'auto', opacity:1});
+    gsap.set(firstActive, {height:'auto', opacity:1, overflow:'visible'});
     document.querySelector('.acto.active .acto-toggle').textContent = '－';
   }
 
@@ -416,5 +489,6 @@
   window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
 </script>
 
+<!--vis-js--><script src="../../assets/vis.js"></script><!--/vis-js-->
 </body>
 </html>
