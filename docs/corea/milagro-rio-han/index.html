@@ -405,7 +405,7 @@
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if(!reduceMotion && window.Lenis){
-    var lenis = new Lenis({ duration: 1.2, smoothWheel: true });
+    var lenis = window.__lenis = new Lenis({ duration: 1.2, smoothWheel: true });
     lenis.on('scroll', ScrollTrigger.update);
     gsap.ticker.add(function(time){ lenis.raf(time * 1000); });
     gsap.ticker.lagSmoothing(0);
