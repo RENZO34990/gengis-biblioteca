@@ -57,7 +57,7 @@
   .ceremony-word{
     font-family:'Source Serif 4', serif; font-style:normal; font-weight:500; text-transform:uppercase;
     font-size:clamp(2.4rem, 8.5vw, 5.8rem); color:var(--editorial-black);
-    margin:0; letter-spacing:.2em; padding-left:.2em;
+    margin:0; letter-spacing:.2em; padding-left:.2em; line-height:1.12;
     clip-path:inset(0 100% 0 0);
     filter:blur(0px);
   }
@@ -92,10 +92,10 @@
   .hero-rule{width:56px; height:1px; background:var(--gold); margin:0 auto 1.8rem;}
   header h1{
     font-family:'Source Serif 4', serif; font-weight:500; font-optical-sizing:auto;
-    font-size:clamp(2.6rem, 5.8vw, 4.3rem);
-    margin:0 0 1.6rem; line-height:1.12; color:var(--editorial-black); letter-spacing:-.012em;
+    font-size:clamp(2.4rem, 8.5vw, 5.8rem); text-transform:uppercase;
+    margin:0 0 1.8rem; line-height:1.12; color:var(--editorial-black); letter-spacing:.2em; padding-left:.2em;
   }
-  header h1 .accent{color:var(--china-imperial); font-style:italic;}
+  header h1 .accent{color:var(--china-imperial); font-style:normal; display:inline-block;}
   header p.dek{
     max-width:610px; color:var(--warm-gray); margin:0 auto;
     font-size:clamp(1rem,1.5vw,1.15rem); font-weight:300; line-height:1.92;
@@ -316,7 +316,7 @@
 <header>
   <div class="header-inner">
     <div class="hero-rule"></div>
-    <h1>Biblioteca <span class="accent">Nalanda</span></h1>
+    <h1><span class="accent">Nalanda</span></h1>
     <p class="dek">Nos sumergimos en los dominios de China, Japón y Corea del Sur para rescatar algo más que simples cifras. El club ha destilado años de estudio para transformar la investigación pura en un relato de poder y legado. Hemos dejado atrás la frialdad de las enciclopedias. Lo que vas a encontrar en estas páginas es la crónica de civilizaciones que hoy dictan el ritmo del mundo mientras cargan con el peso de milenios de historia.</p>
     <div class="header-meta">
       <div><span id="statPublished">34</span> temas publicados</div>
@@ -1081,7 +1081,7 @@
   (function(){
     var ceremony = document.getElementById('ceremony');
     var seen = false;
-    try { seen = localStorage.getItem('nalanda_intro_seen') === '1'; } catch(e){}
+    try { seen = sessionStorage.getItem('nalanda_intro_seen') === '1'; } catch(e){}
 
     if(seen || reduceMotion){
       ceremony.style.display = 'none';
@@ -1112,7 +1112,7 @@
     function finishCeremony(){
       if(finished) return;
       finished = true;
-      try { localStorage.setItem('nalanda_intro_seen', '1'); } catch(e){}
+      try { sessionStorage.setItem('nalanda_intro_seen', '1'); } catch(e){}
       tl.kill();
 
       var accent = document.querySelector('header h1 .accent');
