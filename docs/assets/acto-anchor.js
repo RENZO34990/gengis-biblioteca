@@ -8,10 +8,11 @@
   }
   function cur(){ return window.__lenis ? window.__lenis.scroll : window.scrollY; }
   document.addEventListener('click', function(e){
-    var head = e.target.closest && e.target.closest('.acto-head');
-    if(!head) return;
-    var acto = head.closest('.acto');
+    var t = e.target;
+    if(!t.closest || t.closest('.acto-body')) return;
+    var acto = t.closest('.acto');
     if(!acto || acto.classList.contains('active')) return;
+    var head = acto.querySelector('.acto-head') || acto;
     if(!document.querySelector('.acto.active')) return;
     var y0 = head.getBoundingClientRect().top, t0 = performance.now();
     (function loop(){
