@@ -1,6 +1,6 @@
 import sys, re, html, urllib.parse, os
 sys.path.insert(0, os.path.dirname(__file__))
-from china_data import S, CUADERNOS
+from china_data import S, CUADERNOS, URL
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'docs', 'china'))
 esc = html.escape
 NAME = {k: (n, z) for k, n, z in CUADERNOS}
@@ -19,16 +19,21 @@ def entry(n, i):
     t, via, tipo, lente, cuads, aviso = S[i]
     chips = ''.join('<a class="cq" href="../%s/index.html">%s</a>' % (k, esc(NAME[k][0])) for k in cuads)
     avi = '<span class="aviso">%s</span>' % esc(aviso) if aviso else ''
+    u = URL.get(t)
+    ab = ''
+    if u:
+        ab = '<a href="%s" target="_blank" rel="noopener">%s ↗</a>' % (esc(u[1], quote=True), 'Abrir fuente' if u[0] == 'd' else 'Sitio de la fuente')
+    if not cuads: chips = '<span class="cq cq0">Aún sin cuaderno asignado</span>'
     return ('<li class="src" data-tipo="%s" data-lente="%s" data-c="%s" data-t="%s">'
             '<span class="n">%02d</span><div class="body">'
             '<p class="t">%s</p><p class="m">%s<span class="tp tp-%d">%s</span>%s</p>'
             '<p class="c">%s</p>'
-            '<p class="a"><a href="%s" target="_blank" rel="noopener">Buscar en la web ↗</a>'
+            '<p class="a">%s<a href="%s" target="_blank" rel="noopener">Buscar en la web ↗</a>'
             '<button type="button" class="copy" data-cita="%s">Copiar referencia</button></p>'
             '</div></li>') % (
         esc(tipo), lente, ' '.join(cuads), esc((t + ' ' + via).lower()), n,
         esc(t), (esc(via) + ' · ') if via else '', TIER[tipo], esc(tipo), (' · ' + avi) if avi else '',
-        chips, esc(q(S[i]), quote=True), esc((t + (' — ' + via if via else '')), quote=True))
+        chips, ab, esc(q(S[i]), quote=True), esc((t + (' — ' + via if via else '')), quote=True))
 
 items = ''.join(entry(n + 1, i) for n, i in enumerate(srcs))
 opts = ''.join('<option value="%s">%s</option>' % (k, esc(n)) for k, n, z in CUADERNOS)
@@ -83,6 +88,7 @@ PAGE = '''<!DOCTYPE html>
   .aviso{color:var(--ink-soft); font-style:normal;}
   .c{margin:.7rem 0 0; display:flex; flex-wrap:wrap; gap:.4rem;}
   .cq{font-family:'IBM Plex Mono',monospace; font-size:.68rem; color:var(--ink-soft); text-decoration:none; border:1px solid var(--line); padding:.15rem .55rem; transition:all .25s;}
+  .cq0{border-style:dashed; opacity:.8;}
   .cq:hover{border-color:var(--vermillion); color:var(--vermillion);}
   .a{margin:.7rem 0 0; display:flex; flex-wrap:wrap; gap:1.2rem; font-family:'IBM Plex Mono',monospace; font-size:.72rem;}
   .a a{color:var(--vermillion); text-decoration:none; border-bottom:1px solid currentColor; padding-bottom:1px;}
@@ -124,7 +130,7 @@ PAGE = '''<!DOCTYPE html>
   <p class="empty" id="empty">Ninguna fuente coincide con esos filtros.</p>
   <div class="legend">
     <p><strong>Cómo leer los tipos.</strong> <em>Académico</em> son artículos, documentos de trabajo y libros universitarios. <em>Institucional</em> reúne bancos centrales, organismos multilaterales y centros de investigación. <em>Oficial</em> son documentos del Estado o del Partido: documentan su posición, no la verifican. <em>Análisis</em> y <em>Prensa</em> son útiles para contexto y cifras recientes. <em>Referencia</em> (Wikipedia, cronologías) sirve para ubicarte; para citar, busca la fuente primaria que traen al pie.</p>
-    <p><strong>Sobre los enlaces.</strong> Los títulos están como figuran en nuestro registro de investigación. Algunas fuentes no traen todavía institución o autor, y los enlaces directos se irán añadiendo; mientras tanto, «Buscar en la web» lleva al título exacto.</p>
+    <p><strong>Sobre los enlaces.</strong> Los títulos están como figuran en nuestro registro de investigación. «Abrir fuente» lleva al documento; «Sitio de la fuente» solo a la página general de quien lo publica, porque no tenemos aún el enlace exacto. «Buscar en la web» busca el título exacto. Algunas fuentes no traen todavía institución o autor.</p>
     <p>Curado por el equipo de Club Kongzhi UNMSM. Las dos fuentes metodológicas internas del equipo no se listan aquí.</p>
   </div>
 </main>

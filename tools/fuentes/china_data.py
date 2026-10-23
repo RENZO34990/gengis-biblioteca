@@ -106,7 +106,42 @@ S=[
 ("Who has more say: the CPC's Central Committee or the State Council?","CGTN","Prensa","P",c("RPC XIJ"),"Medio estatal"),
 ("Xi Jinping's Family: His Revolutionary Father, Harvard-Educated Daughter and Wealthy Siblings","Facts and Details","Otro","P",c("REV TIA XIJ"),"Divulgación"),
 ("Xi Jinping Thought on Socialism with Chinese Characteristics for a New Era","Theory China","Oficial","P",c("XIJ"),"Fuente oficial"),
-("Xi Jinping and Constitutional Revisions in China","","Académico","P",c("XIJ"),""),
+("Xi Jinping and Constitutional Revisions in China","ISDP","Institucional","P",c("XIJ"),""),
 ("Xi Jinping's Ideology: A Hybrid between Marxism and Nationalism","","Análisis","P",c("OPI XIJ"),""),
 ("Xi Zhongxun","Wikipedia","Referencia","P",c("GCV RPC REV MAO"),""),
+# ---- fuentes añadidas con el catálogo de enlaces (cuaderno sin asignar todavía) ----
+("China's one child family policy","PMC (NIH)","Académico","P",[],"Sin cuaderno asignado"),
+("Deciphering the Chinese Political System: An Overview","PolSci Institute","Análisis","P",[],"Sin cuaderno asignado"),
+("The Origins and Social Consequences of China's Hukou System","The China Quarterly","Académico","P",[],"Sin cuaderno asignado"),
+("Xi Jinping - Family, Education & Age","Biography.com","Otro","P",[],"Sin cuaderno asignado; divulgación"),
 ]
+
+# Enlaces: 'd' = enlace directo al documento; 'g' = solo la página general de la fuente
+W='https://en.wikipedia.org/wiki/'
+URL={
+"After Xi: A Succession Crisis to Rock the World":("g","https://www.chinadebate.com/chinamacroreporter"),
+"Burying Deng: Xi Jinping and the Abnormalization of Chinese Politics":("d","https://www.prcleader.org/post/burying-deng"),
+"China in Xi's \"New Era\": The Return to Personalistic Rule":("d","https://www.journalofdemocracy.org/articles/china-in-xis-new-era-the-return-to-personalistic-rule/"),
+"China's one child family policy":("d","https://pmc.ncbi.nlm.nih.gov/articles/PMC1116810/"),
+"Deciphering the Chinese Political System: An Overview":("d","https://polsci.institute/deciphering-the-chinese-political-system"),
+"Early life of Xi Jinping":("d",W+"Early_life_of_Xi_Jinping"),
+"Early political career of Xi Jinping":("d",W+"Early_political_career_of_Xi_Jinping"),
+"From Power Balance to Dominant Faction in Xi Jinping's China":("d","https://doi.org/10.1017/S0305741021000473"),
+"History of China (1949–1976)":("d",W+"History_of_China_(1949%E2%80%931976)"),
+"In Xi We Trust: The Centralization of Power in China":("g","https://archivemacropolo.org/"),
+"Informal networks and influential politicians in China: an SNA study of full CC CCP members":("g","https://www.tandfonline.com/"),
+"Mapping China's Red Nobility":("d","https://www.chinafile.com/links/Mapping-Chinas-Red-Nobility-Graphic"),
+"Organization Department of the Chinese Communist Party":("d",W+"Organization_Department_of_the_Chinese_Communist_Party"),
+"Politburo Standing Committee of the Chinese Communist Party":("d",W+"Politburo_Standing_Committee_of_the_Chinese_Communist_Party"),
+"Premier of China":("d",W+"Premier_of_China"),
+"Princelings":("d",W+"Princelings"),
+"Reform and opening up":("d",W+"Reform_and_opening_up"),
+"State Council of China":("d",W+"State_Council_of_China"),
+"The Origins and Social Consequences of China's Hukou System":("d","https://doi.org/10.1017/S0305741000043083"),
+"Who has more say: the CPC's Central Committee or the State Council?":("d","https://news.cgtn.com/news/7a63444d30597a6333566d54/share_p.html"),
+"Xi Jinping's Family: His Revolutionary Father, Harvard-Educated Daughter and Wealthy Siblings":("d","https://factsanddetails.com/china/cat2/4sub5/entry-4300.html"),
+"Xi Jinping - Family, Education & Age":("d","https://www.biography.com/political-figures/xi-jinping"),
+"Xi Jinping Thought on Socialism with Chinese Characteristics for a New Era":("g","https://en.theorychina.org.cn/"),
+"Xi Jinping and Constitutional Revisions in China":("d","https://www.isdp.eu/publication/xi-jinping-and-constitutional-revisions-in-china/"),
+"Xi Zhongxun":("d","https://es.wikipedia.org/wiki/Xi_Zhongxun"),
+}
