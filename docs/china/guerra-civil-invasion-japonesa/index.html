@@ -151,6 +151,15 @@
     .nav-adjacent > *:not(:first-child){padding-left:0;}
     section{padding:6vh 6vw;}
   }
+/* ---------- FUENTES (baúl) ---------- */
+  .src-intro{font-size:.92rem; color:var(--ink-soft); max-width:640px;}
+  .src-list{list-style:none; margin:1.4rem 0 0; padding:0; border-top:1px solid var(--line); max-width:720px;}
+  .src-list li{padding:.85rem 0; border-bottom:1px solid var(--line);}
+  .src-list .st{display:block; font-size:.95rem; font-weight:500; color:var(--ink); line-height:1.5;}
+  .src-list .sm{display:block; margin-top:.2rem; font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--ink-soft);}
+  .src-list .sm b{font-weight:500; color:var(--vermillion);}
+  .src-all{display:inline-block; margin-top:1.4rem; font-family:'IBM Plex Mono',monospace; font-size:.8rem; color:var(--vermillion); text-decoration:none; border-bottom:1px solid var(--vermillion); padding-bottom:1px;}
+  .src-all:hover{color:var(--vermillion-deep); border-color:var(--vermillion-deep);}
 </style>
 <!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
 <style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(201,166,62,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Noto Serif SC', serif; --v-body:'Hanken Grotesk', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
@@ -340,8 +349,10 @@
 
 <section id="fuentes">
   <div class="sources">
-    <span class="eyebrow">Sobre esta investigación</span>
-    <p>Contenido curado por el equipo de Club Kongzhi a partir de fuentes académicas reunidas en el cuaderno de NotebookLM dedicado a la Guerra Civil y la invasión japonesa.</p>
+    <span class="eyebrow">Fuentes</span>
+    <p class="src-intro">Las fuentes consultadas para este cuaderno. Curado por el equipo de Club Kongzhi.</p>
+    <ol class="src-list"><li><span class="st">History of the Chinese Communist Party: a chronology of events, 1919–1990</span><span class="sm">Foreign Languages Press, Beijing, 1991 · <b>Oficial</b></span></li><li><span class="st">Xi Zhongxun</span><span class="sm">Wikipedia · <b>Referencia</b></span></li></ol>
+    <a class="src-all" href="../fuentes/index.html?c=guerra-civil-invasion-japonesa">Abrir el baúl de fuentes de China →</a>
   </div>
   <div class="nav-adjacent">
     <a href="../republica-senores-guerra/index.html"><span class="dir">← Cuaderno anterior</span><span class="ttl">军阀时代 República / Señores de la Guerra</span></a>
