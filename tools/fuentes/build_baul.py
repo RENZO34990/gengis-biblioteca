@@ -5,17 +5,23 @@ COUNTRY = sys.argv[1] if len(sys.argv) > 1 else 'china'
 _d = importlib.import_module(COUNTRY + '_data')
 S, CUADERNOS, URL = _d.S, _d.CUADERNOS, getattr(_d, 'URL', {})
 CONF = {
- 'china': dict(nombre='China', dir='china', acc='--vermillion', acc2='--vermillion-deep', hero_eye='var(--gold)',
+ 'china': dict(hfg='var(--paper)', hdek='rgba(242,239,233,.9)', hkj='rgba(242,239,233,.06)', dw='700', nombre='China', dir='china', acc='--vermillion', acc2='--vermillion-deep', hero_eye='var(--gold)',
    root=':root{--paper:#F2EFE9; --paper-warm:#E9E2D4; --ink:#1A1A1A; --ink-soft:#544F47; --accent:#9E2B25; --accent-deep:#7A211C; --gold:#C9A63E; --hero-eye:#C9A63E; --line:rgba(26,26,26,0.14);}',
    grad='linear-gradient(155deg,#7A211C 0%,#9E2B25 62%,#8A2620 100%)',
    fonts='family=Noto+Serif+SC:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500',
    body="'Hanken Grotesk'", disp="'Noto Serif SC'", zh='参考文献', title='参考文献 — Baúl de fuentes · China', article='los 17 cuadernos de China', serie='la serie China', nota=''),
- 'corea': dict(nombre='Corea', dir='corea', acc='--terracota-deep', acc2='--terracota', hero_eye='#FAE6D9',
+ 'corea': dict(hfg='var(--paper)', hdek='rgba(242,239,233,.9)', hkj='rgba(242,239,233,.06)', dw='700', nombre='Corea', dir='corea', acc='--terracota-deep', acc2='--terracota', hero_eye='#FAE6D9',
    root=':root{--paper:#F5F3EE; --paper-warm:#EAE6DC; --ink:#1C1C1C; --ink-soft:#5C5A54; --accent:#8E4B2C; --accent-deep:#6F3A22; --gold:#B5623B; --hero-eye:#FAE6D9; --line:rgba(28,28,28,0.13);}',
    grad='linear-gradient(160deg,#16201C 0%,#4F6F61 68%,#3E5A4E 100%)',
    fonts='family=Gothic+A1:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500',
    body="'Gothic A1'", disp="'Gothic A1'", zh='참고문헌', title='참고문헌 — Baúl de fuentes · Corea', article='los cuadernos de Corea', serie='la serie Corea',
    nota='<p><strong>Asignación provisional.</strong> El baúl de Corea reúne los catálogos económico y político. Los cuadernos aparecen asignados <em>por tema</em>, no porque se haya confirmado su uso en cada texto; las fuentes sin cuaderno esperan asignación.</p>'),
+ 'japon': dict(hfg='var(--ink)', hdek='var(--ink-soft)', hkj='rgba(43,42,40,.06)', dw='500', nombre='Japón', dir='japon', acc='--vermillion', acc2='--vermillion-deep', hero_eye='#A13D2C',
+   root=':root{--paper:#F5F1E8; --paper-warm:#EDE6D6; --ink:#2B2A28; --ink-soft:#5A5650; --accent:#A13D2C; --accent-deep:#7E2E20; --gold:#A8863C; --hero-eye:#A13D2C; --line:rgba(43,42,40,0.14);}',
+   grad='linear-gradient(160deg,#EDE6D6 0%,#F5F1E8 70%,#EFE8D8 100%)',
+   fonts='family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Shippori+Mincho:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500',
+   body="'Zen Kaku Gothic New'", disp="'Shippori Mincho'", zh='参考文献', title='参考文献 — Baúl de fuentes · Japón', article='los cuadernos de Japón', serie='la serie Japón',
+   nota='<p><strong>Asignación provisional.</strong> Por ahora el baúl de Japón reúne el catálogo político. Los cuadernos aparecen asignados <em>por tema</em>, no porque se haya confirmado su uso en cada texto; las fuentes sin cuaderno esperan asignación. El catálogo económico se añadirá después.</p>'),
 }
 CF = CONF[COUNTRY]
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'docs', CONF[COUNTRY]['dir']))
@@ -75,12 +81,12 @@ PAGE = '''<!DOCTYPE html>
   .eyebrow{font-family:'IBM Plex Mono',monospace; letter-spacing:.1em; text-transform:uppercase; font-size:.72rem; color:var(--hero-eye); font-weight:500;}
   .top-return{position:fixed; top:1.4rem; left:1.4rem; z-index:50; background:var(--paper); color:var(--ink-soft); border:1px solid var(--line); padding:.5rem 1rem; font-family:'IBM Plex Mono',monospace; font-size:.72rem; text-decoration:none; display:inline-flex; gap:.5rem; transition:border-color .3s, color .3s;}
   .top-return:hover{border-color:var(--gold); color:var(--ink);}
-  header.hero{position:relative; overflow:hidden; padding:15vh 8vw 9vh; background:@@GRAD@@; color:var(--paper);}
-  .hero-kanji{position:absolute; right:5vw; top:50%; transform:translateY(-50%); font-family:@@DISP@@,serif; font-weight:700; font-size:clamp(5rem,13vw,10rem); color:rgba(242,239,233,.06); user-select:none; line-height:1; white-space:nowrap;}
+  header.hero{position:relative; overflow:hidden; padding:15vh 8vw 9vh; background:@@GRAD@@; color:@@HFG@@;}
+  .hero-kanji{position:absolute; right:5vw; top:50%; transform:translateY(-50%); font-family:@@DISP@@,serif; font-weight:@@DW@@; font-size:clamp(5rem,13vw,10rem); color:@@HKJ@@; user-select:none; line-height:1; white-space:nowrap;}
   .hero-in{position:relative; max-width:1080px; margin:0 auto;}
-  .hero-rule{width:48px; height:2px; background:var(--gold); margin-bottom:1.6rem;}
-  h1{font-family:@@DISP@@,serif; font-weight:700; font-size:clamp(2rem,4.6vw,3.2rem); line-height:1.25; margin:.4rem 0 .6rem; max-width:620px;}
-  .dek{max-width:600px; color:rgba(242,239,233,.9); font-size:1.05rem; line-height:1.85; margin:0;}
+  .hero-rule{width:48px; height:2px; background:var(--hero-eye); margin-bottom:1.6rem;}
+  h1{font-family:@@DISP@@,serif; font-weight:@@DW@@; font-size:clamp(2rem,4.6vw,3.2rem); line-height:1.25; margin:.4rem 0 .6rem; max-width:620px;}
+  .dek{max-width:600px; color:@@HDEK@@; font-size:1.05rem; line-height:1.85; margin:0;}
   main{max-width:1080px; margin:0 auto; padding:5vh 8vw 8vh;}
   .tools{position:sticky; top:0; z-index:20; background:var(--paper); border-bottom:1px solid var(--line); padding:1rem 0 .9rem; margin-bottom:1.6rem;}
   .row{display:flex; flex-wrap:wrap; gap:.7rem; align-items:center;}
@@ -97,7 +103,7 @@ PAGE = '''<!DOCTYPE html>
   ol.list{list-style:none; margin:0; padding:0; border-top:1px solid var(--line);}
   .src{display:grid; grid-template-columns:3rem 1fr; gap:1rem; padding:1.4rem 0; border-bottom:1px solid var(--line);}
   .src[hidden]{display:none;}
-  .n{font-family:@@DISP@@,serif; font-weight:700; font-size:1.1rem; color:var(--accent); opacity:.45; line-height:1.5;}
+  .n{font-family:@@DISP@@,serif; font-weight:@@DW@@; font-size:1.1rem; color:var(--accent); opacity:.45; line-height:1.5;}
   .t{margin:0; font-weight:600; font-size:1.02rem; line-height:1.45; max-width:760px;}
   .m{margin:.3rem 0 0; font-family:'IBM Plex Mono',monospace; font-size:.76rem; color:var(--ink-soft); line-height:1.6;}
   .tp{color:var(--accent); font-weight:500;}
@@ -198,7 +204,7 @@ PAGE = '''<!DOCTYPE html>
 </html>
 '''
 os.makedirs(os.path.join(ROOT, 'fuentes'), exist_ok=True)
-for k, v in dict(TITLE=CF['title'], SERIE=CF['serie'], FONTS=CF['fonts'], ROOT=CF['root'], BODY=CF['body'], GRAD=CF['grad'], DISP=CF['disp'], ZH=CF['zh'], NOMBRE=CF['nombre'], ARTICLE=CF['article'], NOTA=CF['nota']).items():
+for k, v in dict(TITLE=CF['title'], SERIE=CF['serie'], FONTS=CF['fonts'], ROOT=CF['root'], HFG=CF['hfg'], HDEK=CF['hdek'], HKJ=CF['hkj'], DW=CF['dw'], BODY=CF['body'], GRAD=CF['grad'], DISP=CF['disp'], ZH=CF['zh'], NOMBRE=CF['nombre'], ARTICLE=CF['article'], NOTA=CF['nota']).items():
     PAGE = PAGE.replace('@@%s@@' % k, v)
 open(os.path.join(ROOT, 'fuentes', 'index.html'), 'w').write(
     PAGE.replace('@@OPTS@@', opts).replace('@@TIPOS@@', tipo_chips).replace('@@ITEMS@@', items))
@@ -227,7 +233,7 @@ for slug, nm, zh in CUADERNOS:
     top, n = main_for(slug)
     lis = ''.join('<li><span class="st">%s</span><span class="sm">%s<b>%s</b></span></li>' % (
         esc(r[0]), (esc(r[1]) + ' · ') if r[1] else '', esc(r[2])) for _, r in top)
-    prov = (COUNTRY == 'corea')
+    prov = (COUNTRY in ('corea', 'japon'))
     if n == 0:
         intro = 'Las fuentes de este cuaderno se irán añadiendo al baúl.'
         link = 'Abrir el baúl de fuentes de %s →' % CF['nombre']

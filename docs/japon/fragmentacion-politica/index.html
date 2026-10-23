@@ -168,6 +168,15 @@
     .nav-adjacent .next{ padding-left:0; }
     header.hero{ min-height:88vh; padding:12vh 7vw 10vh; }
   }
+/* ---------- FUENTES (baúl) ---------- */
+  .src-intro{font-size:.92rem; color:var(--ink-soft); max-width:640px;}
+  .src-list{list-style:none; margin:1.4rem 0 0; padding:0; border-top:1px solid var(--line); max-width:720px;}
+  .src-list li{padding:.85rem 0; border-bottom:1px solid var(--line);}
+  .src-list .st{display:block; font-size:.95rem; font-weight:500; color:var(--ink); line-height:1.5;}
+  .src-list .sm{display:block; margin-top:.2rem; font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--ink-soft);}
+  .src-list .sm b{font-weight:500; color:var(--vermillion);}
+  .src-all{display:inline-block; margin-top:1.4rem; font-family:'IBM Plex Mono',monospace; font-size:.8rem; color:var(--vermillion); text-decoration:none; border-bottom:1px solid var(--vermillion); padding-bottom:1px;}
+  .src-all:hover{color:var(--vermillion-deep); border-color:var(--vermillion-deep);}
 </style>
 <!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
 <style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(168,134,60,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Shippori Mincho', serif; --v-body:'Zen Kaku Gothic New', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
@@ -362,8 +371,10 @@
 
 <section id="fuentes">
   <div class="sources">
-    <span class="eyebrow">Sobre esta investigación</span>
-    <p>Contenido curado por el equipo de Club Kongzhi a partir de fuentes académicas reunidas en el cuaderno de NotebookLM dedicado a la fragmentación política y las reformas electorales de 1993-2012.</p>
+    <span class="eyebrow">Fuentes</span>
+    <p class="src-intro">Fuentes afines a este cuaderno, asignadas por tema: de lo más sólido a lo más contextual. Curado por el equipo de Club Kongzhi.</p>
+    <ol class="src-list"><li><span class="st">A Case Study of the &quot;Iron Triangle&quot; in the Postal Industry and Postal Reforms in Japan</span><span class="sm">Lund University · <b>Académico</b></span></li><li><span class="st">Changes of &quot;Zoku-giin&quot; in the LDP: The Impact of Prime Minister Koizumi&#x27;s Leadership</span><span class="sm">Canadian Political Science Association · <b>Académico</b></span></li><li><span class="st">The Pendulum Swings: Experiences from the LDP on Democratizing Party Leadership Selection</span><span class="sm">Japanese Journal of Political Science, Cambridge University Press · <b>Académico</b></span></li><li><span class="st">The Rise of Political Opposition in Japan</span><span class="sm">Council on Foreign Relations · <b>Institucional</b></span></li><li><span class="st">Factional Dynamics in Japan&#x27;s LDP Since Political Reform</span><span class="sm"><b>Académico</b></span></li><li><span class="st">The changing nature of the &quot;Iron Triangle&quot; phenomenon</span><span class="sm">Lund University Publications · <b>Académico</b></span></li></ol>
+    <a class="src-all" href="../fuentes/index.html?c=fragmentacion-politica">Ver las 12 fuentes de este cuaderno en el baúl →</a>
   </div>
   <div class="nav-adjacent">
     <a href="../deflacion-decadas-perdidas/index.html">
