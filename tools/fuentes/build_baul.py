@@ -21,7 +21,7 @@ CONF = {
    grad='linear-gradient(160deg,#EDE6D6 0%,#F5F1E8 70%,#EFE8D8 100%)',
    fonts='family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Shippori+Mincho:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500',
    body="'Zen Kaku Gothic New'", disp="'Shippori Mincho'", zh='参考文献', title='参考文献 — Baúl de fuentes · Japón', article='los cuadernos de Japón', serie='la serie Japón',
-   nota='<p><strong>Asignación provisional.</strong> Por ahora el baúl de Japón reúne el catálogo político. Los cuadernos aparecen asignados <em>por tema</em>, no porque se haya confirmado su uso en cada texto; las fuentes sin cuaderno esperan asignación. El catálogo económico se añadirá después.</p>'),
+   nota='<p><strong>Asignación provisional.</strong> El baúl de Japón reúne los catálogos político y económico. Los cuadernos aparecen asignados <em>por tema</em>, no porque se haya confirmado su uso en cada texto; las fuentes sin cuaderno esperan asignación.</p>'),
 }
 CF = CONF[COUNTRY]
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'docs', CONF[COUNTRY]['dir']))

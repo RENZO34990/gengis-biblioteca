@@ -16,7 +16,7 @@ CUADERNOS = [
  ('abenomics','Abenomics',''),
  ('reconfiguracion-estrategica','Reconfiguración estratégica',''),
 ]
-A=dict(SHO='shogunato-tokugawa',APE='apertura-forzada',MEI='meiji',IWA='iwakura',CON='constitucion-meiji',OCU='ocupacion-estadounidense',
+A=dict(IND='industrializacion-meiji',EXP='expansion-imperial',PLA='acuerdo-del-plaza',DEF='deflacion-decadas-perdidas',ABE='abenomics',SHO='shogunato-tokugawa',APE='apertura-forzada',MEI='meiji',IWA='iwakura',CON='constitucion-meiji',OCU='ocupacion-estadounidense',
  EST='estado-desarrollista',HEG='hegemonia-ldp',FRA='fragmentacion-politica',REC='reconfiguracion-estrategica')
 def c(s): return [A[x] for x in s.split()] if s else []
 N='Sin cuaderno asignado'
@@ -62,4 +62,71 @@ P=[
 ("What Explains Low Female Political Representation? Evidence from Survey Experiments in Japan","Cambridge University Press & Assessment","Académico",c(""),N),
 ]
 S=[(t,v,tp,"P",cu,av) for (t,v,tp,cu,av) in P]
-URL={}
+# ---- catálogo económico ----
+E=[
+("Daiwa's Economic View","Daiwa","Análisis",c(""),N+"; fuente comercial"),
+("[Japan] METI White paper on international economy and trade 2026","JEPIC (resumen del Libro Blanco de METI)","Análisis",c("REC"),""),
+("A Policy Vision Beyond Abenomics","","Análisis",c("ABE"),""),
+("Artificial Intelligence (AI) May Not Solve Japan's labor shortages: an unprecedented automation of knowledge-based jobs","","Análisis",c("REC"),""),
+("Chapter 1: Understanding the Keiretsu System","","Análisis",c("EST"),""),
+("Debt Management Report 2026","Ministerio de Finanzas (財務省)","Oficial",c("DEF ABE"),"Documento oficial"),
+("Developmental state","Wikipedia","Referencia",c("EST"),""),
+("Economics in Japan: A Curriculum Project (Tandfors, B. R.)","ERIC","Otro",c(""),N+"; material docente"),
+("Does export lead growth? Evidence from Japan","Munich Personal RePEc Archive","Académico",c("EST"),""),
+("Década perdida (Japón)","Wikipedia","Referencia",c("DEF"),""),
+("Economic history of Japan","Wikipedia","Referencia",c(""),N),
+("Economy of Japan","Wikipedia","Referencia",c(""),N),
+("Economy of the Empire of Japan","Wikipedia","Referencia",c("EXP"),""),
+("Executive Summary: Economic and Fiscal Projections for Medium to Long Term Analysis (January 2026)","","Oficial",c("REC"),"Documento oficial"),
+("FY2024 Strategic Survey Report on Semiconductor Industry Competitiveness Enhancement","","Análisis",c("REC"),""),
+("Growth of Japanese Exports","Institute of Developing Economies","Institucional",c("EST"),""),
+("Growth Strategy and the Role of Small and Medium-sized Enterprises (SMEs)","","Análisis",c("ABE"),""),
+("Japan 1. Industrial Strategy (Including Objectives/Goals)","","Análisis",c(""),N),
+("Japan GX-ETS","International Carbon Action Partnership (ICAP)","Institucional",c("REC"),""),
+("Japan's Economy and Monetary Policy","","Análisis",c("ABE DEF"),""),
+("Japanese asset price bubble","Wikipedia","Referencia",c("PLA DEF"),""),
+("Japanese Semiconductor Renaissance","Boston Consulting Group","Análisis",c("REC"),"Fuente comercial"),
+("Keiretsu - Overview, History, Types, Pros and Cons","Corporate Finance Institute","Análisis",c("EST"),"Fuente comercial"),
+("Keiretsu","Wikipedia","Referencia",c("EST"),""),
+("Keynote Address by ITO Yutaka, Commissioner, Financial Services Agency, 2026 International Monetary Conference","Financial Services Agency, Japón","Oficial",c(""),N),
+("Lost Decades","Wikipedia","Referencia",c("DEF"),""),
+("Mitsubishi Electric Group 2025 Integrated Report","Mitsubishi Electric","Otro",c("REC"),"Informe corporativo"),
+("Plaza Accord","Wikipedia","Referencia",c("PLA"),""),
+("Policy Proposals","Keidanren","Institucional",c("REC"),"Gremio empresarial"),
+("Population Aging and Small Business Exits","","Análisis",c(""),N),
+("Silver Hues: Building Age-Ready Cities. Japan Background Paper","Open Knowledge Repository (Banco Mundial)","Institucional",c(""),N),
+("Regulatory Scenario: Balancing EODB & Governance","ICSI","Institucional",c(""),N),
+("Sanaenomics: Japan Returns to Picking Winners","Global Trade Alert","Análisis",c("REC"),""),
+("Society 5.0","Cabinet Office, Japón","Oficial",c("REC"),"Documento oficial"),
+("Sony Group Corporate Strategy 2026","Sony","Otro",c("REC"),"Informe corporativo"),
+("Summary of Opinions at the Monetary Policy Meeting on January 22 and 23, 2026","Banco de Japón","Oficial",c("REC"),"Documento oficial"),
+("The CPTPP: A Key Strategic Advantage for Japan to Advance its Leadership in the Pacific","","Análisis",c("REC"),""),
+("The Challenges of the Japanese Government to Implement Society 5.0","Atlantis Press","Académico",c("REC"),""),
+("The Japanese Economic Miracle","Berkeley Economic Review","Análisis",c("EST"),"Revista estudiantil"),
+("The Origin of Japan's Modernization: Reviewing the Significance of the Meiji Restoration after 150 Years","","Análisis",c("MEI IND"),""),
+("Three Arrows of \"Abenomics\" and the Structural Reform of Japan","","Análisis",c("ABE"),""),
+("MITI and the Japanese Miracle","","Análisis",c("EST"),""),
+]
+S += [(t,v,tp,"E",cu,av) for (t,v,tp,cu,av) in E]
+W='https://en.wikipedia.org/wiki/'
+URL={
+"[Japan] METI White paper on international economy and trade 2026":("d","https://www.jepic-usa.org/digests/2026/7/9/japan-meti-white-paper-on-international-economy-and-trade-2026"),
+"Debt Management Report 2026":("d","https://www.mof.go.jp/english/policy/jgbs/publication/debt_management_report/2026/index.html"),
+"Developmental state":("d",W+"Developmental_state"),
+"Década perdida (Japón)":("d","https://es.wikipedia.org/wiki/D%C3%A9cada_perdida_(Jap%C3%B3n)"),
+"Economic history of Japan":("d",W+"Economic_history_of_Japan"),
+"Economy of Japan":("d",W+"Economy_of_Japan"),
+"Economy of the Empire of Japan":("d",W+"Economy_of_the_Empire_of_Japan"),
+"FY2024 Strategic Survey Report on Semiconductor Industry Competitiveness Enhancement":("g","https://jp-reports.com/"),
+"Japanese asset price bubble":("d",W+"Japanese_asset_price_bubble"),
+"Keiretsu - Overview, History, Types, Pros and Cons":("d","https://corporatefinanceinstitute.com/resources/management/keiretsu/"),
+"Keiretsu":("d",W+"Keiretsu"),
+"Lost Decades":("d",W+"Lost_Decades"),
+"Plaza Accord":("d",W+"Plaza_Accord"),
+"Policy Proposals":("g","https://www.keidanren.or.jp/en/policy/"),
+"Silver Hues: Building Age-Ready Cities. Japan Background Paper":("d","https://hdl.handle.net/10986/37478"),
+"Sanaenomics: Japan Returns to Picking Winners":("g","https://www.globaltradealert.org/"),
+"Society 5.0":("d","https://www8.cao.go.jp/cstp/society5_0/"),
+"Sony Group Corporate Strategy 2026":("g","https://www.sony.com/en/SonyInfo/News/Press/"),
+"The Japanese Economic Miracle":("d","https://econreview.studentorg.berkeley.edu/the-japanese-economic-miracle/"),
+}
