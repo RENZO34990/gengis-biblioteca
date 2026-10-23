@@ -168,6 +168,15 @@
     .nav-adjacent > *:not(:first-child){ padding-left:0; }
     header.hero{ min-height:88vh; }
   }
+/* ---------- FUENTES (baúl) ---------- */
+  .src-intro{font-size:.92rem; color:var(--ink-soft); max-width:640px;}
+  .src-list{list-style:none; margin:1.4rem 0 0; padding:0; border-top:1px solid var(--line); max-width:720px;}
+  .src-list li{padding:.85rem 0; border-bottom:1px solid var(--line);}
+  .src-list .st{display:block; font-size:.95rem; font-weight:500; color:var(--ink); line-height:1.5;}
+  .src-list .sm{display:block; margin-top:.2rem; font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--ink-soft);}
+  .src-list .sm b{font-weight:500; color:var(--terracota-deep);}
+  .src-all{display:inline-block; margin-top:1.4rem; font-family:'IBM Plex Mono',monospace; font-size:.8rem; color:var(--terracota-deep); text-decoration:none; border-bottom:1px solid var(--terracota-deep); padding-bottom:1px;}
+  .src-all:hover{color:var(--terracota); border-color:var(--terracota);}
 </style>
 <!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
 <style>:root{--v-accent:var(--terracota); --v-accent-deep:var(--terracota-deep); --v-accent2:var(--celadon-deep); --v-accent-soft:rgba(79,111,97,.2); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Gothic A1', sans-serif; --v-body:'Gothic A1', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
@@ -382,8 +391,10 @@
 
 <section id="fuentes">
   <div class="sources">
-    <span class="eyebrow">Sobre esta investigación</span>
-    <p>Contenido curado por el equipo de Club Kongzhi a partir de los cuadernos de NotebookLM dedicados a la sostenibilidad fiscal, el gasto público y las políticas económicas ante el cambio demográfico, en sus dimensiones política y económica.</p>
+    <span class="eyebrow">Fuentes</span>
+    <p class="src-intro">Fuentes afines a este cuaderno, asignadas por tema. Curado por el equipo de Club Kongzhi.</p>
+    <ol class="src-list"><li><span class="st">2025 Article IV Consultation: Press Release; Staff Report; and Statement by the Executive Director for Republic of Korea</span><span class="sm">FMI, vía KDI · <b>Institucional</b></span></li><li><span class="st">2025 Tax Reform</span><span class="sm">KPMG · <b>Análisis</b></span></li><li><span class="st">2026 budget proposal</span><span class="sm"><b>Oficial</b></span></li><li><span class="st">2026 Economic Growth Strategy</span><span class="sm">Ministry of Finance and Economy · <b>Oficial</b></span></li><li><span class="st">Economic inequality in South Korea</span><span class="sm">Wikipedia · <b>Referencia</b></span></li></ol>
+    <a class="src-all" href="../fuentes/index.html?c=demografia-sostenibilidad-fiscal">Abrir el baúl de fuentes de Corea →</a>
   </div>
   <div class="nav-adjacent">
     <a href="../crisis-gobernanza-ley-marcial/index.html"><span class="dir">← Cuaderno anterior</span><span class="ttl">계엄과 거버넌스 위기 Crisis de gobernanza</span></a>

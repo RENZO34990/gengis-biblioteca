@@ -9,15 +9,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root{--paper:#F2EFE9; --paper-warm:#E9E2D4; --ink:#1A1A1A; --ink-soft:#544F47; --vermillion:#9E2B25; --vermillion-deep:#7A211C; --gold:#C9A63E; --line:rgba(26,26,26,0.14);}
+  :root{--paper:#F2EFE9; --paper-warm:#E9E2D4; --ink:#1A1A1A; --ink-soft:#544F47; --accent:#9E2B25; --accent-deep:#7A211C; --gold:#C9A63E; --hero-eye:#C9A63E; --line:rgba(26,26,26,0.14);}
   *{box-sizing:border-box;}
   body{margin:0; background:var(--paper); color:var(--ink); font-family:'Hanken Grotesk',sans-serif; font-size:17px; line-height:1.7;}
-  ::selection{background:var(--vermillion); color:var(--paper);}
+  ::selection{background:var(--accent); color:var(--paper);}
   a{color:var(--ink);}
-  .eyebrow{font-family:'IBM Plex Mono',monospace; letter-spacing:.1em; text-transform:uppercase; font-size:.72rem; color:var(--gold); font-weight:500;}
+  .eyebrow{font-family:'IBM Plex Mono',monospace; letter-spacing:.1em; text-transform:uppercase; font-size:.72rem; color:var(--hero-eye); font-weight:500;}
   .top-return{position:fixed; top:1.4rem; left:1.4rem; z-index:50; background:var(--paper); color:var(--ink-soft); border:1px solid var(--line); padding:.5rem 1rem; font-family:'IBM Plex Mono',monospace; font-size:.72rem; text-decoration:none; display:inline-flex; gap:.5rem; transition:border-color .3s, color .3s;}
   .top-return:hover{border-color:var(--gold); color:var(--ink);}
-  header.hero{position:relative; overflow:hidden; padding:15vh 8vw 9vh; background:linear-gradient(155deg,var(--vermillion-deep) 0%,var(--vermillion) 62%,#8A2620 100%); color:var(--paper);}
+  header.hero{position:relative; overflow:hidden; padding:15vh 8vw 9vh; background:linear-gradient(155deg,#7A211C 0%,#9E2B25 62%,#8A2620 100%); color:var(--paper);}
   .hero-kanji{position:absolute; right:5vw; top:50%; transform:translateY(-50%); font-family:'Noto Serif SC',serif; font-weight:700; font-size:clamp(5rem,13vw,10rem); color:rgba(242,239,233,.06); user-select:none; line-height:1; white-space:nowrap;}
   .hero-in{position:relative; max-width:1080px; margin:0 auto;}
   .hero-rule{width:48px; height:2px; background:var(--gold); margin-bottom:1.6rem;}
@@ -30,27 +30,27 @@
   input[type=search], select{font-family:'IBM Plex Mono',monospace; font-size:.8rem; padding:.55rem .8rem; border:1px solid var(--line); background:#fff8; color:var(--ink); border-radius:0; min-width:0;}
   input[type=search]{flex:1 1 240px;}
   select{flex:0 1 270px;}
-  input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible{outline:2px solid var(--vermillion); outline-offset:2px;}
+  input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
   .chip{font-family:'IBM Plex Mono',monospace; font-size:.72rem; padding:.3rem .7rem; border:1px solid var(--line); background:transparent; color:var(--ink-soft); cursor:pointer; transition:all .25s;}
   .chip:hover{border-color:var(--gold); color:var(--ink);}
-  .chip[aria-pressed=true]{background:var(--vermillion); border-color:var(--vermillion); color:var(--paper);}
+  .chip[aria-pressed=true]{background:var(--accent); border-color:var(--accent); color:var(--paper);}
   .lbl{font-family:'IBM Plex Mono',monospace; font-size:.7rem; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.06em; margin-right:.2rem;}
   .count{font-family:'IBM Plex Mono',monospace; font-size:.76rem; color:var(--ink-soft); margin:0 0 1rem;}
   ol.list{list-style:none; margin:0; padding:0; border-top:1px solid var(--line);}
   .src{display:grid; grid-template-columns:3rem 1fr; gap:1rem; padding:1.4rem 0; border-bottom:1px solid var(--line);}
   .src[hidden]{display:none;}
-  .n{font-family:'Noto Serif SC',serif; font-weight:700; font-size:1.1rem; color:rgba(158,43,37,.4); line-height:1.5;}
+  .n{font-family:'Noto Serif SC',serif; font-weight:700; font-size:1.1rem; color:var(--accent); opacity:.45; line-height:1.5;}
   .t{margin:0; font-weight:600; font-size:1.02rem; line-height:1.45; max-width:760px;}
   .m{margin:.3rem 0 0; font-family:'IBM Plex Mono',monospace; font-size:.76rem; color:var(--ink-soft); line-height:1.6;}
-  .tp{color:var(--vermillion); font-weight:500;}
+  .tp{color:var(--accent); font-weight:500;}
   .tp-3{color:#8A8478;}
   .aviso{color:var(--ink-soft); font-style:normal;}
   .c{margin:.7rem 0 0; display:flex; flex-wrap:wrap; gap:.4rem;}
   .cq{font-family:'IBM Plex Mono',monospace; font-size:.68rem; color:var(--ink-soft); text-decoration:none; border:1px solid var(--line); padding:.15rem .55rem; transition:all .25s;}
   .cq0{border-style:dashed; opacity:.8;}
-  .cq:hover{border-color:var(--vermillion); color:var(--vermillion);}
+  .cq:hover{border-color:var(--accent); color:var(--accent);}
   .a{margin:.7rem 0 0; display:flex; flex-wrap:wrap; gap:1.2rem; font-family:'IBM Plex Mono',monospace; font-size:.72rem;}
-  .a a{color:var(--vermillion); text-decoration:none; border-bottom:1px solid currentColor; padding-bottom:1px;}
+  .a a{color:var(--accent); text-decoration:none; border-bottom:1px solid currentColor; padding-bottom:1px;}
   .copy{font:inherit; background:none; border:none; padding:0; color:var(--ink-soft); cursor:pointer; border-bottom:1px solid var(--line);}
   .copy:hover{color:var(--ink);}
   .empty{display:none; padding:3rem 0; color:var(--ink-soft);}
@@ -90,7 +90,7 @@
   <div class="legend">
     <p><strong>Cómo leer los tipos.</strong> <em>Académico</em> son artículos, documentos de trabajo y libros universitarios. <em>Institucional</em> reúne bancos centrales, organismos multilaterales y centros de investigación. <em>Oficial</em> son documentos del Estado o del Partido: documentan su posición, no la verifican. <em>Análisis</em> y <em>Prensa</em> son útiles para contexto y cifras recientes. <em>Referencia</em> (Wikipedia, cronologías) sirve para ubicarte; para citar, busca la fuente primaria que traen al pie.</p>
     <p><strong>Sobre los enlaces.</strong> Los títulos están como figuran en nuestro registro de investigación. «Abrir fuente» lleva al documento; «Sitio de la fuente» solo a la página general de quien lo publica, porque no tenemos aún el enlace exacto. «Buscar en la web» busca el título exacto. Algunas fuentes no traen todavía institución o autor.</p>
-    <p>Curado por el equipo de Club Kongzhi UNMSM. Las dos fuentes metodológicas internas del equipo no se listan aquí.</p>
+    <p>Curado por el equipo de Club Kongzhi UNMSM. Las fuentes metodológicas internas del equipo no se listan aquí.</p>
   </div>
 </main>
 <footer>Club Kongzhi UNMSM · Observatorio Asia-Pacífico · Biblioteca Nalanda</footer>
