@@ -16,7 +16,7 @@ CUADERNOS = [
  ('crisis-gobernanza-ley-marcial','Gobernanza y ley marcial',''),
  ('demografia-sostenibilidad-fiscal','Demografía y sostenibilidad fiscal',''),
 ]
-A=dict(PRI='primera-republica',MIL='milagro-rio-han',IND='industria-pesada-chaebols',DEM='democratizacion-apertura',
+A=dict(GOB='crisis-gobernanza-ley-marcial',PAR='park-yushin',GWA='gwangju-junio-1987',LIB='liberacion-division',GUE='guerra-de-corea',SOL='politica-del-sol',COL='colonialismo-japones',PRI='primera-republica',MIL='milagro-rio-han',IND='industria-pesada-chaebols',DEM='democratizacion-apertura',
  CRI='crisis-asiatica-fmi',SEM='semiconductores-ia',FIS='demografia-sostenibilidad-fiscal')
 def c(s): return [A[x] for x in s.split()] if s else []
 N='Sin cuaderno asignado'
@@ -71,6 +71,58 @@ S=[
 ("Twenty Years after the Financial Crisis in the Republic of Korea","Asian Development Bank","Institucional","E",c("CRI"),""),
 ("Why South Korea and Japan Need a Digital Trade Agreement","","Análisis","E",c(""),N),
 ]
+# ---- catálogo político ----
+P=[
+("2024 South Korean martial law crisis","Wikipedia","Referencia",c("GOB"),""),
+("Documento PDF (9defc197-en.pdf)","","Otro",c(""),N+"; título por confirmar"),
+("Documento PDF (ab1a95c7-en.pdf)","","Otro",c(""),N+"; título por confirmar"),
+("Analysis of the Implementation of South Korea's Nordpolitik in 1970s-1990s: Focusing on the Interaction between Environment and Foreign Policy Decision-Making","ProQuest","Académico",c("SOL DEM"),""),
+("Anti-Corruption 2026 - South Korea","Chambers and Partners, Global Practice Guides","Análisis",c("GOB"),"Fuente comercial"),
+("Chapter 34: The First National Assembly Elections","Cambridge University Press & Assessment","Académico",c("PRI LIB"),""),
+("Civil service reforms and the development of Korea","Korean Journal of Policy Studies, InK @ SMU","Académico",c("PAR"),""),
+("Civil Service Training: Nurturing the Driving Force of Economic Development in Korea","","Análisis",c("PAR"),""),
+("Constitution of South Korea","Wikipedia","Referencia",c("GOB DEM"),""),
+("Counter-Narrative of Gwangju: South Korean film as a Medium of Resistance and Memory","UNITesi","Académico",c("GWA"),"Tesis"),
+("Demographic transition in South Korea: implications of falling birth rates","Clinical and Experimental Pediatrics","Académico",c("FIS"),""),
+("Effects of the Korean War on Social Structures of the Republic of Korea","Columbia International Affairs Online","Académico",c("GUE PRI"),""),
+("Essentialist Democracy and Political Polarization: Korea's Experience from a Comparative Perspective","","Académico",c("GOB"),""),
+("Exploring Worldwide Democratic Innovations: A case study of South Korea","European Partnership for Democracy","Institucional",c("GOB"),""),
+("South Korea's soft power influence on North Korea (FRS note N°13/2026)","FRS","Institucional",c("SOL"),""),
+("Government of South Korea","Wikipedia","Referencia",c("GOB"),""),
+("How Polarization Undermines Democracy in South Korea","Council on Foreign Relations","Institucional",c("GOB"),""),
+("Introduction to the Electoral and Political Systems of the Republic of Korea","Comisión Nacional Electoral (NEC)","Oficial",c(""),N),
+("Judicial review in the Republic of Korea: an introduction","Dialnet","Académico",c("DEM GOB"),""),
+("June Democratic Struggle","Wikipedia","Referencia",c("GWA DEM"),""),
+("Lee Jae Myung","Wikipedia","Referencia",c("GOB"),""),
+("Lessons from Korea to Africa: Leaders, Politics and Developmental States","","Análisis",c("PAR"),""),
+("National Assembly (South Korea)","Wikipedia","Referencia",c("GOB"),""),
+("National Election Commission (South Korea)","Wikipedia","Referencia",c(""),N),
+("People Power: Lessons From Korea's Martial Law One Year Later","","Análisis",c("GOB"),""),
+("Politics of South Korea","Wikipedia","Referencia",c(""),N),
+("President of South Korea","Wikipedia","Referencia",c("GOB"),""),
+("Documento PDF (PSLee.pdf)","","Otro",c(""),N+"; título por confirmar"),
+("Public Administration and Policy in Korea: Its Evolution and Challenge","Routledge","Académico",c("PAR"),""),
+("Recent Decentralization Challenges in Korea: Repertoire, Reality and Reshaping","","Análisis",c(""),N),
+("Reforming South Korea's \"Imperial Presidency\"","Institute for Security & Development Policy","Institucional",c("GOB"),""),
+("Securing the future of US–Japan–South Korea cooperation","Chatham House","Institucional",c(""),N),
+("South Korea as a global pivotal state","Brookings Institution","Institucional",c(""),N),
+("South Korea Reins In Its Powerful Prosecutors","U.S.-Asia Law Institute","Institucional",c("GOB"),""),
+("South Korea's Chaebol Challenge","Council on Foreign Relations","Institucional",c("IND"),""),
+("South Korea's Democracy Movement (1970-1993)","","Análisis",c("GWA DEM"),""),
+("South Korea's Democracy: Both Resilient and Fragile","","Análisis",c("GOB"),""),
+("South Korea's Foreign Policy After Regime Change","","Análisis",c("SOL"),""),
+("South Korea's Two-Party System at Breaking Point","","Análisis",c("GOB"),""),
+("South Korean Development Model","International Analytics","Análisis",c("MIL"),""),
+("The 2022 South Korean Presidential Election and the Gender Divide among the Youth","Pacific Affairs, UBC","Académico",c("GOB"),""),
+("The 2024 South Korean National Assembly Election: Efficiency Amid Political Polarisation","","Análisis",c("GOB"),""),
+("The Influence of the American Constitution on South Korean Constitutional Development Since 1948","Johns Hopkins University","Académico",c("PRI DEM"),""),
+("The Origin of Northeast Asian NICS in Retrospect: The Colonial Political Economy, Japan in Korea and Taiwan","Johns Hopkins University","Académico",c("COL MIL"),""),
+("Understanding Korean Public Administration","","Análisis",c("PAR"),""),
+("Unlocking South Korea's Digital Potential","Access Partnership","Análisis",c("SEM"),"Fuente comercial"),
+("Yoon Suk Yeol","Wikipedia","Referencia",c("GOB"),""),
+("Yoon Suk-yeol: 13th President of South Korea","Model Diplomat","Análisis",c("GOB"),""),
+]
+S += [(t,v,tp,"P",cu,av) for (t,v,tp,cu,av) in P]
 W='https://en.wikipedia.org/wiki/'
 URL={
 "2025 Article IV Consultation: Press Release; Staff Report; and Statement by the Executive Director for Republic of Korea":("d","https://eiec.kdi.re.kr/policy/internationalView.do?ac=0000200866"),

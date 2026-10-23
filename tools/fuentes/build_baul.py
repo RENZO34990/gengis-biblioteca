@@ -15,7 +15,7 @@ CONF = {
    grad='linear-gradient(160deg,#16201C 0%,#4F6F61 68%,#3E5A4E 100%)',
    fonts='family=Gothic+A1:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500',
    body="'Gothic A1'", disp="'Gothic A1'", zh='참고문헌', title='참고문헌 — Baúl de fuentes · Corea', article='los cuadernos de Corea', serie='la serie Corea',
-   nota='<p><strong>Asignación provisional.</strong> Por ahora el baúl de Corea reúne el catálogo económico. Los cuadernos aparecen asignados <em>por tema</em>, no porque se haya confirmado su uso en cada texto; las fuentes sin cuaderno esperan asignación. El catálogo político se añadirá después.</p>'),
+   nota='<p><strong>Asignación provisional.</strong> El baúl de Corea reúne los catálogos económico y político. Los cuadernos aparecen asignados <em>por tema</em>, no porque se haya confirmado su uso en cada texto; las fuentes sin cuaderno esperan asignación.</p>'),
 }
 CF = CONF[COUNTRY]
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'docs', CONF[COUNTRY]['dir']))
