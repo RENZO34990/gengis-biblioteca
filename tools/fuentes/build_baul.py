@@ -157,7 +157,7 @@ PAGE = '''<!DOCTYPE html>
     @@NOTA@@<p>Curado por el equipo de Club Kongzhi UNMSM. Las fuentes metodológicas internas del equipo no se listan aquí.</p>
   </div>
 </main>
-<footer>Club Kongzhi UNMSM · Observatorio Asia-Pacífico · Biblioteca Nalanda</footer>
+<footer>Club Kongzhi UNMSM · <a href="../../index.html#departamento-de-investigacion" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Departamento de Investigación</a> · Biblioteca Nalanda</footer>
 <script>
 (function(){
   var items=[].slice.call(document.querySelectorAll('.src'));

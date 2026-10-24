@@ -283,6 +283,24 @@
     header{padding:4vh 6vw 6vh;}
     main{padding:1rem 6vw 5rem;}
   }
+
+  /* ---------- DEPARTAMENTO DE INVESTIGACIÓN ---------- */
+  .dept{margin-top:0; padding:4.4rem 6vw 4.6rem; background:var(--kz-paper); border-top:1px solid var(--line); scroll-margin-top:1rem;}
+  .dept-in{max-width:1080px; margin:0 auto;}
+  .dept .eyebrow{display:block; margin-bottom:1rem;}
+  .dept h2{font-family:'Crimson Pro', serif; font-weight:500; color:var(--kz-navy); font-size:clamp(1.9rem,4vw,2.8rem); margin:0 0 1rem; line-height:1.1;}
+  .dept .lead{font-family:'Atkinson Hyperlegible', sans-serif; color:var(--kz-text-secondary); font-size:1rem; line-height:1.75; max-width:62ch; margin:0 0 2.6rem;}
+  .dept h3{font-family:'Crimson Pro', serif; font-weight:500; color:var(--kz-navy); font-size:1.25rem; margin:2.2rem 0 1rem; padding-top:1.4rem; border-top:1px solid var(--line);}
+  .dept-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:1rem;}
+  .dept-card{display:flex; flex-direction:column; gap:.2rem; padding:1.1rem 1.2rem; background:#fff; border:1px solid var(--line); border-left:3px solid var(--kz-teal); text-decoration:none; color:inherit; font-family:'Atkinson Hyperlegible', sans-serif;}
+  .dept-card strong{font-size:.98rem; color:var(--kz-navy);}
+  .dept-card em{font-style:normal; font-size:.82rem; color:var(--kz-text-secondary);}
+  .dept-card .in{margin-top:.6rem; font-family:'IBM Plex Mono', monospace; font-size:.74rem; color:var(--kz-teal); text-transform:uppercase; letter-spacing:.04em;}
+  a.dept-card:hover,a.dept-card:focus-visible{border-color:var(--kz-teal); box-shadow:0 2px 10px rgba(14,34,51,.1);}
+  .dept-card.pending{border-left-color:var(--kz-sand); background:transparent; border-style:dashed;}
+  .dept-card.pending .in{color:var(--stone);}
+  .dept-contact{margin-top:2rem; font-family:'Atkinson Hyperlegible', sans-serif; font-size:.9rem; color:var(--kz-text-secondary);}
+  .dept-contact a{color:var(--kz-teal);}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -981,6 +999,26 @@
       </div>
     </div>
   </div>
+
+  <section class="dept" id="departamento-de-investigacion" aria-labelledby="dept-title">
+    <div class="dept-in">
+      <span class="eyebrow">Club Kongzhi UNMSM</span>
+      <h2 id="dept-title">Departamento de Investigación</h2>
+      <p class="lead">Quienes investigan, verifican y escriben los cuadernos de Nalanda. Si quieres corregirnos, proponer un tema, colaborar o invitarnos a conversar, escríbenos por LinkedIn.</p>
+
+      <h3>Equipo del Departamento</h3>
+      <div class="dept-grid">
+        <span class="dept-card pending"><strong>Renzo</strong><em>Director de Investigación</em><span class="in">LinkedIn · por añadir</span></span>
+      </div>
+
+      <h3>Miembros del Club Kongzhi</h3>
+      <div class="dept-grid">
+        <span class="dept-card pending"><strong>Próximamente</strong><em>Perfiles de miembros del club</em></span>
+      </div>
+
+      <p class="dept-contact">También estamos en <a href="https://www.instagram.com/clubkongzhi/" target="_blank" rel="noopener">Instagram</a>.</p>
+    </div>
+  </section>
 
 </main>
 

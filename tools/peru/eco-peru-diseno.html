@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eco en el Perú — Diseño del bloque (borrador)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700&family=Hanken+Grotesk:wght@400;500;600;700&family=Gothic+A1:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Shippori+Mincho:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* Tokens por país: el bloque hereda la identidad de cada serie */
+  :root,[data-theme="china"]{--paper:#F2EFE9; --paper-warm:#E9E2D4; --ink:#1A1A1A; --ink-soft:#544F47; --accent:#9E2B25; --accent-deep:#7A211C; --gold:#C9A63E; --line:rgba(26,26,26,.14);
+    --body:'Hanken Grotesk',sans-serif; --disp:'Noto Serif SC',serif; --dw:700; --hero:linear-gradient(155deg,#7A211C 0%,#9E2B25 62%,#8A2620 100%); --hfg:#F2EFE9; --hdek:rgba(242,239,233,.9); --heye:#C9A63E;}
+  [data-theme="japon"]{--paper:#F5F1E8; --paper-warm:#EDE6D6; --ink:#2B2A28; --ink-soft:#5A5650; --accent:#A13D2C; --accent-deep:#7E2E20; --gold:#A8863C; --line:rgba(43,42,40,.14);
+    --body:'Zen Kaku Gothic New',sans-serif; --disp:'Shippori Mincho',serif; --dw:500; --hero:linear-gradient(160deg,#EDE6D6 0%,#F5F1E8 70%,#EFE8D8 100%); --hfg:#2B2A28; --hdek:#5A5650; --heye:#A13D2C;}
+  [data-theme="corea"]{--paper:#F5F3EE; --paper-warm:#EAE6DC; --ink:#1C1C1C; --ink-soft:#5C5A54; --accent:#8E4B2C; --accent-deep:#6F3A22; --gold:#B5623B; --line:rgba(28,28,28,.13);
+    --body:'Gothic A1',sans-serif; --disp:'Gothic A1',serif; --dw:700; --hero:linear-gradient(160deg,#16201C 0%,#4F6F61 68%,#3E5A4E 100%); --hfg:#F5F3EE; --hdek:rgba(245,243,238,.9); --heye:#FAE6D9;}
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--body); font-size:17px; line-height:1.7;}
+  a{color:var(--ink);}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  .eyebrow{font-family:'IBM Plex Mono',monospace; letter-spacing:.1em; text-transform:uppercase; font-size:.72rem; color:var(--accent); font-weight:500;}
+  /* Cinta de borrador: solo para esta maqueta */
+  .draft{position:sticky; top:0; z-index:60; background:var(--ink); color:var(--paper); text-align:center; font-family:'IBM Plex Mono',monospace; font-size:.7rem; letter-spacing:.06em; padding:.45rem 1rem;}
+  .draft button{font:inherit; background:none; border:1px solid rgba(255,255,255,.35); color:inherit; padding:.1rem .6rem; margin-left:.4rem; cursor:pointer;}
+  .draft button[aria-pressed=true]{background:var(--paper); color:var(--ink);}
+  /* Estado vacío: todo lo "por completar" se ve como hueco, no como contenido */
+  .tbd{border:1px dashed var(--line); color:var(--ink-soft); background:rgba(255,255,255,.35);}
+  .tbd-t{color:var(--ink-soft); opacity:.75; font-style:normal;}
+
+  header.hero{padding:13vh 8vw 8vh; background:var(--hero); color:var(--hfg); position:relative; overflow:hidden;}
+  .hero-in{max-width:1080px; margin:0 auto; position:relative;}
+  .hero .eyebrow{color:var(--heye);}
+  .hero-rule{width:48px; height:2px; background:var(--heye); margin-bottom:1.5rem;}
+  .pe-mark{position:absolute; right:0; top:-.4rem; font-family:'IBM Plex Mono',monospace; font-size:.72rem; letter-spacing:.14em; border:1px solid currentColor; padding:.2rem .6rem; opacity:.7;}
+  h1{font-family:var(--disp); font-weight:var(--dw); font-size:clamp(2rem,4.6vw,3.2rem); line-height:1.25; margin:.4rem 0 .8rem; max-width:720px;}
+  .dek{max-width:600px; color:var(--hdek); font-size:1.05rem; line-height:1.85; margin:0;}
+  .meta{display:flex; flex-wrap:wrap; gap:.4rem 1.8rem; margin-top:2.2rem; padding-top:1.1rem; border-top:1px solid color-mix(in srgb, var(--hfg) 24%, transparent); font-family:'IBM Plex Mono',monospace; font-size:.74rem; color:var(--hdek);}
+  .meta b{font-weight:500; color:var(--hfg);}
+  .meta a{color:inherit;}
+
+  main{max-width:1080px; margin:0 auto; padding:0 8vw;}
+  section{padding:7vh 0; border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .sh{display:flex; align-items:baseline; gap:1rem; margin-bottom:2rem;}
+  .sh .n{font-family:var(--disp); font-weight:var(--dw); font-size:1.5rem; color:var(--accent); opacity:.45;}
+  h2{font-family:var(--disp); font-weight:var(--dw); font-size:clamp(1.4rem,2.6vw,1.9rem); margin:0; line-height:1.3;}
+  .lede{color:var(--ink-soft); max-width:620px; margin:.5rem 0 0; font-size:.98rem;}
+
+  /* 01 cifras ancla */
+  .tiles{display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--line);}
+  .tile{padding:1.6rem 1.6rem 1.6rem 0; border-right:1px solid var(--line);}
+  .tile:not(:first-child){padding-left:1.6rem;}
+  .tile:last-child{border-right:none;}
+  .tile .v{font-family:var(--disp); font-weight:var(--dw); font-size:2.3rem; line-height:1.1; color:var(--accent);}
+  .tile .l{font-size:.9rem; margin:.5rem 0 .2rem; color:var(--ink);}
+  .tile .y{font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--ink-soft);}
+  .chip{display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:.68rem; padding:.12rem .55rem; border:1px solid var(--line); color:var(--ink-soft); margin-top:.7rem;}
+  .chip.tbd{border-style:dashed;}
+
+  /* 02 línea de tiempo */
+  .tl{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(5,1fr); position:relative;}
+  .tl::before{content:""; position:absolute; left:0; right:0; top:.55rem; height:1px; background:var(--line);}
+  .tl li{position:relative; padding:2rem 1.2rem 0 0;}
+  .tl li::before{content:""; position:absolute; top:.2rem; left:0; width:.7rem; height:.7rem; border-radius:50%; background:var(--paper); border:1.5px solid var(--accent);}
+  .tl .yr{font-family:'IBM Plex Mono',monospace; font-size:.8rem; color:var(--accent); font-weight:500;}
+  .tl .tx{font-size:.92rem; margin-top:.3rem; color:var(--ink-soft);}
+
+  /* 03 del cuaderno al presente */
+  .bridges{display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem;}
+  .bridge{display:flex; flex-direction:column; padding:1.5rem; border:1px solid var(--line); background:rgba(255,255,255,.4); text-decoration:none; transition:border-color .3s, transform .3s;}
+  .bridge:hover{border-color:var(--accent); transform:translate(-2px,-2px);}
+  .bridge .from{font-family:'IBM Plex Mono',monospace; font-size:.7rem; color:var(--accent); text-transform:uppercase; letter-spacing:.06em;}
+  .bridge .ttl{font-family:var(--disp); font-weight:var(--dw); font-size:1.05rem; margin:.5rem 0 .8rem; line-height:1.35;}
+  .bridge .arrow{font-family:'IBM Plex Mono',monospace; font-size:.8rem; color:var(--ink-soft); margin:.2rem 0;}
+  .bridge .now{font-size:.92rem; color:var(--ink-soft); padding:.7rem .8rem; border:1px dashed var(--line);}
+
+  /* 04 oportunidades y riesgos */
+  .duo{display:grid; grid-template-columns:1fr 1fr; gap:0; border-top:1px solid var(--line);}
+  .duo > div{padding:1.8rem 2.2rem 1.8rem 0;}
+  .duo > div + div{padding-left:2.2rem; border-left:1px solid var(--line);}
+  .duo h3{margin:0 0 1rem; font-family:'IBM Plex Mono',monospace; font-size:.76rem; letter-spacing:.08em; text-transform:uppercase; font-weight:500;}
+  .duo .op h3{color:var(--accent);} .duo .rk h3{color:var(--ink-soft);}
+  .duo ul{list-style:none; margin:0; padding:0;}
+  .duo li{padding:.7rem .9rem; margin-bottom:.6rem; font-size:.94rem;}
+
+  /* 05 preguntas */
+  .qs{list-style:none; margin:0; padding:0; counter-reset:q;}
+  .qs li{counter-increment:q; display:grid; grid-template-columns:2.6rem 1fr; padding:1.1rem 0; border-top:1px solid var(--line);}
+  .qs li:last-child{border-bottom:1px solid var(--line);}
+  .qs li::before{content:counter(q,decimal-leading-zero); font-family:var(--disp); font-weight:var(--dw); color:var(--accent); opacity:.5;}
+
+  /* 06 fuentes del bloque */
+  .srcs{display:flex; flex-wrap:wrap; gap:.5rem;}
+  .go{display:inline-block; margin-top:1.4rem; font-family:'IBM Plex Mono',monospace; font-size:.8rem; color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent); padding-bottom:1px;}
+
+  /* Franja de cierre dentro de cada cuaderno (componente compacto) */
+  .strip-demo{max-width:1080px; margin:0 auto; padding:0 8vw 8vh;}
+  .strip-demo > .eyebrow{display:block; margin-bottom:1rem; color:var(--ink-soft);}
+  .strip{display:grid; grid-template-columns:auto 1fr auto; gap:1.8rem; align-items:center; padding:1.6rem 1.8rem; border:1px solid var(--line); border-left:3px solid var(--accent); background:rgba(255,255,255,.4); text-decoration:none; transition:border-color .3s;}
+  .strip:hover{border-color:var(--accent);}
+  .strip .tag{font-family:'IBM Plex Mono',monospace; font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); white-space:nowrap;}
+  .strip .tag b{display:block; font-family:var(--disp); font-weight:var(--dw); font-size:1.15rem; letter-spacing:0; text-transform:none; color:var(--ink); margin-top:.15rem;}
+  .strip .txt{font-size:.95rem; color:var(--ink-soft);}
+  .strip .cta{font-family:'IBM Plex Mono',monospace; font-size:.78rem; color:var(--accent); white-space:nowrap;}
+  footer{padding:3rem 8vw; text-align:center; font-family:'IBM Plex Mono',monospace; font-size:.74rem; color:var(--ink-soft); border-top:1px solid var(--line);}
+
+  @media (max-width:860px){
+    .tiles{grid-template-columns:1fr 1fr;} .tile{border-right:none; border-bottom:1px solid var(--line); padding:1.3rem 1rem 1.3rem 0 !important;}
+    .tl{grid-template-columns:1fr; gap:0; padding-left:1.4rem;} .tl::before{left:.32rem; right:auto; top:0; bottom:0; width:1px; height:auto;}
+    .tl li{padding:0 0 1.6rem 1rem;} .tl li::before{left:-1.4rem; top:.3rem;}
+    .bridges{grid-template-columns:1fr;} .duo{grid-template-columns:1fr;} .duo > div + div{padding-left:0; border-left:none; border-top:1px solid var(--line);} .duo > div{padding-right:0;}
+    .strip{grid-template-columns:1fr; gap:.8rem;}
+  }
+  @media (max-width:560px){ body{font-size:16px;} header.hero{padding:11vh 6vw 6vh;} main,.strip-demo{padding-left:6vw; padding-right:6vw;} .tiles{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+<div class="draft">BORRADOR DE DISEÑO · sin contenido real
+  <button type="button" data-t="china" aria-pressed="true">China</button><button type="button" data-t="japon" aria-pressed="false">Japón</button><button type="button" data-t="corea" aria-pressed="false">Corea</button>
+</div>
+
+<header class="hero">
+  <div class="hero-in">
+    <span class="pe-mark" aria-hidden="true">PE</span>
+    <div class="hero-rule"></div>
+    <span class="eyebrow">Eco en el Perú · <span class="pais">China</span></span>
+    <h1 class="tbd-t">[La tesis peruana de esta serie, en una frase]</h1>
+    <p class="dek tbd-t">[Dos líneas: qué hizo esta historia asiática con el Perú, y por qué importa a quien estudia economía internacional hoy.]</p>
+    <div class="meta">
+      <span>Datos al <b>[mes / año]</b></span>
+      <span>Elaborado por <b>[autoría]</b></span>
+      <span>Revisado por <b>[docente o par]</b></span>
+      <a href="#cita">Cómo citar</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="cifras">
+    <div class="sh"><span class="n">01</span><div><h2>Cuatro cifras para ubicarse</h2><p class="lede">Una cifra por idea, con año y fuente visibles. Si no tiene fuente, no entra.</p></div></div>
+    <div class="tiles">
+      <div class="tile"><div class="v tbd-t">—</div><div class="l tbd-t">[Comercio bilateral]</div><div class="y">[año]</div><span class="chip tbd">fuente por asignar</span></div>
+      <div class="tile"><div class="v tbd-t">—</div><div class="l tbd-t">[Peso en las exportaciones peruanas]</div><div class="y">[año]</div><span class="chip tbd">fuente por asignar</span></div>
+      <div class="tile"><div class="v tbd-t">—</div><div class="l tbd-t">[Producto que más se vende]</div><div class="y">[año]</div><span class="chip tbd">fuente por asignar</span></div>
+      <div class="tile"><div class="v tbd-t">—</div><div class="l tbd-t">[Inversión o proyecto emblemático]</div><div class="y">[año]</div><span class="chip tbd">fuente por asignar</span></div>
+    </div>
+  </section>
+
+  <section id="hitos">
+    <div class="sh"><span class="n">02</span><div><h2>La relación, hito a hito</h2><p class="lede">Cinco momentos entre el Perú y el país, del primer contacto al presente.</p></div></div>
+    <ol class="tl">
+      <li><div class="yr">[año]</div><div class="tx tbd-t">[Primer contacto]</div></li>
+      <li><div class="yr">[año]</div><div class="tx tbd-t">[Hito]</div></li>
+      <li><div class="yr">[año]</div><div class="tx tbd-t">[Hito]</div></li>
+      <li><div class="yr">[año]</div><div class="tx tbd-t">[Hito]</div></li>
+      <li><div class="yr">[año]</div><div class="tx tbd-t">[Hoy]</div></li>
+    </ol>
+  </section>
+
+  <section id="puentes">
+    <div class="sh"><span class="n">03</span><div><h2>Del cuaderno al presente</h2><p class="lede">Tres episodios de la serie que ayudan a entender algo concreto de la relación actual.</p></div></div>
+    <div class="bridges">
+      <a class="bridge" href="#"><span class="from">Cuaderno · [elegir]</span><span class="ttl">[Título del cuaderno]</span><span class="arrow">↓ explica</span><span class="now tbd-t">[Qué rasgo de la relación con el Perú se entiende mejor gracias a este episodio]</span></a>
+      <a class="bridge" href="#"><span class="from">Cuaderno · [elegir]</span><span class="ttl">[Título del cuaderno]</span><span class="arrow">↓ explica</span><span class="now tbd-t">[Idem]</span></a>
+      <a class="bridge" href="#"><span class="from">Cuaderno · [elegir]</span><span class="ttl">[Título del cuaderno]</span><span class="arrow">↓ explica</span><span class="now tbd-t">[Idem]</span></a>
+    </div>
+  </section>
+
+  <section id="balance">
+    <div class="sh"><span class="n">04</span><div><h2>Qué gana y qué arriesga el Perú</h2><p class="lede">Tres oportunidades y tres riesgos, cada uno con su dato de respaldo.</p></div></div>
+    <div class="duo">
+      <div class="op"><h3>Oportunidades</h3><ul><li class="tbd tbd-t">[Oportunidad + dato]</li><li class="tbd tbd-t">[Oportunidad + dato]</li><li class="tbd tbd-t">[Oportunidad + dato]</li></ul></div>
+      <div class="rk"><h3>Riesgos</h3><ul><li class="tbd tbd-t">[Riesgo + dato]</li><li class="tbd tbd-t">[Riesgo + dato]</li><li class="tbd tbd-t">[Riesgo + dato]</li></ul></div>
+    </div>
+  </section>
+
+  <section id="debate">
+    <div class="sh"><span class="n">05</span><div><h2>Para pensar y debatir</h2><p class="lede">Preguntas abiertas para clase o para el club. Sin respuesta única.</p></div></div>
+    <ol class="qs"><li class="tbd-t">[Pregunta 1]</li><li class="tbd-t">[Pregunta 2]</li><li class="tbd-t">[Pregunta 3]</li></ol>
+  </section>
+
+  <section id="cita">
+    <div class="sh"><span class="n">06</span><div><h2>Fuentes de este bloque</h2><p class="lede">Prioridad a fuentes peruanas y primarias; Wikipedia no cuenta como fuente del bloque.</p></div></div>
+    <div class="srcs"><span class="chip tbd">[MINCETUR]</span><span class="chip tbd">[SUNAT]</span><span class="chip tbd">[BCRP]</span><span class="chip tbd">[PromPerú]</span><span class="chip tbd">[+ académica]</span></div>
+    <a class="go" href="#">Ver también el baúl de fuentes →</a>
+    <p class="mono" style="font-size:.76rem; color:var(--ink-soft); margin-top:2rem;">Cómo citar: [Apellido, N.] ([año]). <i>Eco en el Perú · País</i>. Biblioteca Nalanda, Club Kongzhi UNMSM. [URL] (consultado el [fecha]).</p>
+  </section>
+</main>
+
+<div class="strip-demo">
+  <span class="eyebrow">Componente 2 · franja al final de cada cuaderno, antes de «Fuentes»</span>
+  <a class="strip" href="#"><span class="tag">Eco en el Perú<b>[Rasgo concreto]</b></span><span class="txt tbd-t">[Una o dos líneas que conecten este cuaderno con la relación actual del Perú con el país.]</span><span class="cta">Ver el bloque →</span></a>
+</div>
+<footer>Club Kongzhi UNMSM · Observatorio Asia-Pacífico · Biblioteca Nalanda</footer>
+<script>
+  var names={china:'China',japon:'Japón',corea:'Corea'};
+  document.querySelector('.draft').addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    document.documentElement.setAttribute('data-theme',b.dataset.t);
+    [].forEach.call(this.querySelectorAll('button'),function(x){x.setAttribute('aria-pressed',x===b);});
+    document.querySelector('.pais').textContent=names[b.dataset.t];
+  });
+</script>
+</body>
+</html>
