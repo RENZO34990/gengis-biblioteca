@@ -173,32 +173,9 @@
   .src-list .sm b{font-weight:500; color:var(--vermillion);}
   .src-all{display:inline-block; margin-top:1.4rem; font-family:'IBM Plex Mono',monospace; font-size:.8rem; color:var(--vermillion); text-decoration:none; border-bottom:1px solid var(--vermillion); padding-bottom:1px;}
   .src-all:hover{color:var(--vermillion-deep); border-color:var(--vermillion-deep);}
-  /* ---------- TRANSICIÓN ENTRE CUADERNOS (piloto) ---------- */
-  @view-transition{navigation:auto;}
-  ::view-transition-group(nb-title){animation-duration:.8s; animation-timing-function:cubic-bezier(.77,0,.175,1);}
-  ::view-transition-old(root),::view-transition-new(root){animation-duration:.45s;}
-  @media (prefers-reduced-motion:reduce){@view-transition{navigation:none;}}
 </style>
 <!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
 <style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(168,134,60,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Shippori Mincho', serif; --v-body:'Zen Kaku Gothic New', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
-<script>
-/* Transición entre cuadernos consecutivos: el título del enlace "siguiente/anterior" se convierte en el título del héroe */
-(function(){
-  if(!('PageSwapEvent' in window)) return;
-  window.addEventListener('pageswap',function(e){
-    if(!e.viewTransition||!e.activation||!e.activation.entry) return;
-    var to=new URL(e.activation.entry.url).pathname, t=null;
-    document.querySelectorAll('.nav-adjacent a').forEach(function(a){ if(new URL(a.href).pathname===to) t=a.querySelector('.nb-cn'); });
-    if(t){ t.style.viewTransitionName='nb-title'; } else { e.viewTransition.skipTransition(); }
-  });
-  window.addEventListener('pagereveal',function(e){
-    if(!e.viewTransition) return;
-    var h=document.querySelector('h1.title-cn,h1.title-jp,h1.title-kr'); if(!h) return;
-    h.style.viewTransitionName='nb-title';
-    e.viewTransition.finished.finally(function(){ h.style.viewTransitionName=''; });
-  });
-})();
-</script>
 </head>
 <body>
 <a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
@@ -400,11 +377,11 @@
   <div class="nav-adjacent">
     <a href="../iwakura/index.html">
       <span class="dir">‹ Anterior</span>
-      <span class="ttl"><span class="ttl-arrow">←</span><span class="nb-cn">特命全権大使</span> 1872: La misión Iwakura</span>
+      <span class="ttl"><span class="ttl-arrow">←</span>1872: La misión Iwakura</span>
     </a>
     <a class="next" href="../constitucion-meiji/index.html">
       <span class="dir">Siguiente</span>
-      <span class="ttl"><span class="ttl-arrow">→</span><span class="nb-cn">大日本帝国憲法</span> 1889: La Constitución Meiji</span>
+      <span class="ttl"><span class="ttl-arrow">→</span>1889: La Constitución Meiji</span>
     </a>
   </div>
 </section>
@@ -471,7 +448,7 @@
     heroTl
       .from('.top-return', { opacity: 0, y: -8, duration: 0.7 })
       .from('.hero-rule', { scaleX: 0, transformOrigin: 'left center', duration: 1.1 }, '-=0.3')
-      .from('h1.title-jp', { y: 16, duration: 1.1 }, '-=0.7')
+      .from('h1.title-jp', { opacity: 0, y: 16, duration: 1.1 }, '-=0.7')
       .from('.title-romaji', { opacity: 0, y: 10, duration: 0.9 }, '-=0.7')
       .from('.hero-dek', { opacity: 0, y: 14, duration: 1 }, '-=0.6')
       .from('.hero-stats > div', { opacity: 0, y: 14, duration: 0.8, stagger: 0.15 }, '-=0.5');

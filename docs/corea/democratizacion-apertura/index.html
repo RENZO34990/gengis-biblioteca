@@ -177,32 +177,9 @@
   .src-list .sm b{font-weight:500; color:var(--terracota-deep);}
   .src-all{display:inline-block; margin-top:1.4rem; font-family:'IBM Plex Mono',monospace; font-size:.8rem; color:var(--terracota-deep); text-decoration:none; border-bottom:1px solid var(--terracota-deep); padding-bottom:1px;}
   .src-all:hover{color:var(--terracota); border-color:var(--terracota);}
-  /* ---------- TRANSICIÓN ENTRE CUADERNOS (piloto) ---------- */
-  @view-transition{navigation:auto;}
-  ::view-transition-group(nb-title){animation-duration:.8s; animation-timing-function:cubic-bezier(.77,0,.175,1);}
-  ::view-transition-old(root),::view-transition-new(root){animation-duration:.45s;}
-  @media (prefers-reduced-motion:reduce){@view-transition{navigation:none;}}
 </style>
 <!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
 <style>:root{--v-accent:var(--terracota); --v-accent-deep:var(--terracota-deep); --v-accent2:var(--celadon-deep); --v-accent-soft:rgba(79,111,97,.2); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Gothic A1', sans-serif; --v-body:'Gothic A1', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
-<script>
-/* Transición entre cuadernos consecutivos: el título del enlace "siguiente/anterior" se convierte en el título del héroe */
-(function(){
-  if(!('PageSwapEvent' in window)) return;
-  window.addEventListener('pageswap',function(e){
-    if(!e.viewTransition||!e.activation||!e.activation.entry) return;
-    var to=new URL(e.activation.entry.url).pathname, t=null;
-    document.querySelectorAll('.nav-adjacent a').forEach(function(a){ if(new URL(a.href).pathname===to) t=a.querySelector('.nb-cn'); });
-    if(t){ t.style.viewTransitionName='nb-title'; } else { e.viewTransition.skipTransition(); }
-  });
-  window.addEventListener('pagereveal',function(e){
-    if(!e.viewTransition) return;
-    var h=document.querySelector('h1.title-cn,h1.title-jp,h1.title-kr'); if(!h) return;
-    h.style.viewTransitionName='nb-title';
-    e.viewTransition.finished.finally(function(){ h.style.viewTransitionName=''; });
-  });
-})();
-</script>
 </head>
 <body>
 <a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
@@ -420,8 +397,8 @@
     <a class="src-all" href="../fuentes/index.html?c=democratizacion-apertura">Ver las 7 fuentes de este cuaderno en el baúl →</a>
   </div>
   <div class="nav-adjacent">
-    <a href="../gwangju-junio-1987/index.html"><span class="dir">← Cuaderno anterior</span><span class="ttl"><span class="nb-cn">광주와 6월 항쟁</span> Gwangju y Junio de 1987</span></a>
-    <a href="../crisis-asiatica-fmi/index.html"><span class="dir">Siguiente cuaderno</span><span class="ttl"><span class="nb-cn">아시아 금융위기</span> Crisis Financiera Asiática →</span></a>
+    <a href="../gwangju-junio-1987/index.html"><span class="dir">← Cuaderno anterior</span><span class="ttl">광주와 6월 항쟁 Gwangju y Junio de 1987</span></a>
+    <a href="../crisis-asiatica-fmi/index.html"><span class="dir">Siguiente cuaderno</span><span class="ttl">아시아 금융위기 Crisis Financiera Asiática →</span></a>
   </div>
 </section>
 
@@ -487,7 +464,7 @@
     heroTl
       .from('.top-return', { opacity: 0, y: -8, duration: 0.7 })
       .from('.hero-rule', { scaleX: 0, transformOrigin: 'left center', duration: 1.1 }, '-=0.3')
-      .from('h1.title-kr', { y: 16, duration: 1.1 }, '-=0.7')
+      .from('h1.title-kr', { opacity: 0, y: 16, duration: 1.1 }, '-=0.7')
       .from('.title-romaja', { opacity: 0, y: 10, duration: 0.9 }, '-=0.7')
       .from('.hero-dek', { opacity: 0, y: 14, duration: 1 }, '-=0.6')
       .from('.hero-stats > div', { opacity: 0, y: 14, duration: 0.8, stagger: 0.15 }, '-=0.5');
