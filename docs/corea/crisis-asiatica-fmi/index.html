@@ -177,6 +177,35 @@
   .src-list .sm b{font-weight:500; color:var(--terracota-deep);}
   .src-all{display:inline-block; margin-top:1.4rem; font-family:'IBM Plex Mono',monospace; font-size:.8rem; color:var(--terracota-deep); text-decoration:none; border-bottom:1px solid var(--terracota-deep); padding-bottom:1px;}
   .src-all:hover{color:var(--terracota); border-color:var(--terracota);}
+  /* ---------- HERO: cifras como lista vertical con destino ---------- */
+  .hero .hero-stats{display:block; max-width:560px; margin-top:3rem; border-top:1px solid rgba(245,243,238,.2);}
+  .hero .hero-stats > div{position:relative; display:grid; grid-template-columns:6.4rem 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid rgba(245,243,238,.2); transition:background-color .35s cubic-bezier(0.23,1,0.32,1), padding-left .35s cubic-bezier(0.23,1,0.32,1);}
+  .hero .hero-stats > div:last-child{padding-right:2.4rem;}
+  .hero .hero-stats .num{font-size:1.5rem; line-height:1; width:max-content;}
+  .hero .hero-stats .lbl{margin:0; max-width:none; font-size:.82rem; line-height:1.5;}
+  .hero .hero-stats > div::before{content:""; position:absolute; left:0; top:.9rem; bottom:.9rem; width:2px; background:var(--terracota-light); transform-origin:top; transform:scaleY(0); animation:statBar .9s cubic-bezier(0.23,1,0.32,1) both;}
+  .hero .hero-stats > div:nth-child(1)::before{animation-delay:1.5s;}
+  .hero .hero-stats > div:nth-child(2)::before{animation-delay:1.7s;}
+  .hero .hero-stats > div:nth-child(3)::before{animation-delay:1.9s;}
+  .hero .hero-stats > div:hover{background:rgba(245,243,238,.07); padding-left:1.4rem;}
+  .hero .hero-stats > div[data-go]{cursor:pointer;}
+  .hero .hero-stats > div[data-go]::after{content:"\2193"; position:absolute; right:1rem; top:50%; transform:translate(-4px,-50%); opacity:0; font-family:'IBM Plex Mono', monospace; font-size:.95rem; color:var(--terracota-light); transition:opacity .3s, transform .3s cubic-bezier(0.23,1,0.32,1);}
+  .hero .hero-stats > div[data-go]:hover::after,.hero .hero-stats > div[data-go]:focus-visible::after{opacity:1; transform:translate(0,-50%);}
+  .hero .hero-stats > div[data-go]:focus-visible{outline:2px solid var(--terracota-light); outline-offset:2px;}
+  .hero .hero-stats > div[data-go]:active{transform:scale(0.985);}
+  [id^="go-"]{scroll-margin-top:110px;}
+  .go-flash{animation:goFlash 2s cubic-bezier(0.23,1,0.32,1) both;}
+  @keyframes statBar{to{transform:scaleY(1);}}
+  @keyframes goFlash{0%{background-color:rgba(181,98,59,.14); box-shadow:0 0 0 8px rgba(181,98,59,.14);} 100%{background-color:rgba(181,98,59,0); box-shadow:0 0 0 8px rgba(181,98,59,0);}}
+  @media (prefers-reduced-motion:reduce){
+    .hero .hero-stats > div::before{animation:none; transform:scaleY(1);}
+    .hero .hero-stats > div{transition:none;}
+    .go-flash{animation:none; outline:2px solid rgb(181,98,59); outline-offset:6px;}
+  }
+  @media (max-width:560px){
+    .hero .hero-stats > div{grid-template-columns:1fr; row-gap:.35rem;}
+    .hero .hero-stats .num{font-size:1.4rem;}
+  }
 </style>
 <!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
 <style>:root{--v-accent:var(--terracota); --v-accent-deep:var(--terracota-deep); --v-accent2:var(--celadon-deep); --v-accent-soft:rgba(79,111,97,.2); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Gothic A1', sans-serif; --v-body:'Gothic A1', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
@@ -193,9 +222,9 @@
     <div class="title-romaja">Asia Geumyung Wigi — la crisis de 1997, el rescate del FMI y la reestructuración de Korea Inc.</div>
     <p class="hero-dek">En 1996 Corea del Sur entraba a la OCDE con 35%–40% de ahorro y presupuestos equilibrados. Un año después, doce de sus treinta mayores conglomerados desaparecerían y tres millones y medio de personas donarían su oro para pagar la deuda. La crisis destruyó el mito del "demasiado grande para quebrar".</p>
     <div class="hero-stats">
-      <div><span class="num">58.400 M</span><span class="lbl">dólares del rescate de diciembre de 1997</span></div>
-      <div><span class="num">9.100 M</span><span class="lbl">dólares de reservas utilizables en noviembre</span></div>
-      <div><span class="num">−6,7%</span><span class="lbl">el PIB real en 1998</span></div>
+      <div data-go="go-1" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: dólares del rescate de diciembre de 1997"><span class="num">58.400 M</span><span class="lbl">dólares del rescate de diciembre de 1997</span></div>
+      <div data-go="go-2" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: dólares de reservas utilizables en noviembre"><span class="num">9.100 M</span><span class="lbl">dólares de reservas utilizables en noviembre</span></div>
+      <div data-go="go-3" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: el PIB real en 1998"><span class="num">−6,7%</span><span class="lbl">el PIB real en 1998</span></div>
     </div>
   </div>
 </header>
@@ -257,7 +286,7 @@
           </div>
         </div><!--/vis-->
         <p>Mucho antes de la fuga de capitales quebró Hanbo Steel (14.º chaebol), salpicado por escándalos de corrupción y sobornos bancarios. Le siguieron Sanmi (26.º), el grupo Halla y el gigante automotriz Kia Motors (8.º), entre junio y octubre de 1997.</p>
-        <p>Tras la devaluación del baht tailandés en julio y el colapso de la rupia indonesia, los acreedores internacionales dejaron de refinanciar los créditos de corto plazo concedidos a los bancos surcoreanos. Para defender la paridad fija del won, el Banco de Corea gastó sus divisas: en noviembre, de 32.000 millones de dólares de reservas oficiales solo quedaban utilizables 9.100 millones, frente a más de 100.000 millones de deuda externa de corto plazo por vencer.</p>
+        <p id="go-2">Tras la devaluación del baht tailandés en julio y el colapso de la rupia indonesia, los acreedores internacionales dejaron de refinanciar los créditos de corto plazo concedidos a los bancos surcoreanos. Para defender la paridad fija del won, el Banco de Corea gastó sus divisas: en noviembre, de 32.000 millones de dólares de reservas oficiales solo quedaban utilizables 9.100 millones, frente a más de 100.000 millones de deuda externa de corto plazo por vencer.</p>
         <p class="quote">Primero fallaron las empresas. Después, cuando nadie quiso renovar la deuda, falló el país.</p>
       </div>
     </div>
@@ -282,7 +311,7 @@
               <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               <div class="v-node"><span class="v-k">Mercado</span><h4>Won flotante</h4><p>Se eliminan los topes a la inversión extranjera.</p></div>
             </div>
-            <p class="vis-note">Rescate de 58.400 millones de dólares, firmado el 3 y 4 de diciembre de 1997.</p>
+            <p id="go-1" class="vis-note">Rescate de 58.400 millones de dólares, firmado el 3 y 4 de diciembre de 1997.</p>
           </div>
         </div><!--/vis-->
         <figure class="acto-figure">
@@ -314,7 +343,7 @@
           <p class="vis-one"><small>En una frase</small>Una recesión profunda pero corta, pagada por la sociedad entera.</p>
           <div class="vis-card">
             <div class="v-stats" style="--n:3">
-              <div class="v-stat"><span class="v-num">-6,7%</span><span class="v-lbl">caída del PIB real en 1998</span></div>
+              <div id="go-3" class="v-stat"><span class="v-num">-6,7%</span><span class="v-lbl">caída del PIB real en 1998</span></div>
               <div class="v-stat"><span class="v-num" data-to="10.9" data-dec="1" data-pre="" data-suf="%">10,9%</span><span class="v-lbl">rebote del PIB en 1999</span></div>
               <div class="v-stat"><span class="v-num" data-to="3.5" data-dec="1" data-pre="" data-suf=" M">3,5 M</span><span class="v-lbl">ciudadanos donaron o vendieron oro</span></div>
             </div>
@@ -462,6 +491,26 @@
     gsap.set(firstActive, {height:'auto', opacity:1, overflow:'visible'});
     document.querySelector('.acto.active .acto-toggle').textContent = '－';
   }
+
+  // Cifras del héroe: llevan al pasaje donde se explican (abre el acto si hace falta)
+  document.querySelectorAll('.hero-stats [data-go]').forEach(function(row){
+    function go(){
+      var el = document.getElementById(row.getAttribute('data-go')); if(!el) return;
+      var acto = el.closest('.acto'), wait = 0;
+      if(acto && !acto.classList.contains('active')){
+        document.querySelectorAll('.acto.active').forEach(function(a){ a.classList.remove('active'); closeActo(a); });
+        acto.classList.add('active'); openActo(acto); wait = reduceMotion ? 60 : 420;
+      }
+      setTimeout(function(){
+        if(window.__lenis){ window.__lenis.scrollTo(el, { offset: -110, duration: 1.0 }); }
+        else { el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' }); }
+        el.classList.remove('go-flash'); void el.offsetWidth;
+        setTimeout(function(){ el.classList.add('go-flash'); }, reduceMotion ? 0 : 300);
+      }, wait);
+    }
+    row.addEventListener('click', go);
+    row.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); go(); } });
+  });
 
   if(!reduceMotion){
     actos.forEach(function(acto){

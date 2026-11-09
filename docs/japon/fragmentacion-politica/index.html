@@ -177,6 +177,35 @@
   .src-list .sm b{font-weight:500; color:var(--vermillion);}
   .src-all{display:inline-block; margin-top:1.4rem; font-family:'IBM Plex Mono',monospace; font-size:.8rem; color:var(--vermillion); text-decoration:none; border-bottom:1px solid var(--vermillion); padding-bottom:1px;}
   .src-all:hover{color:var(--vermillion-deep); border-color:var(--vermillion-deep);}
+  /* ---------- HERO: cifras como lista vertical con destino ---------- */
+  .hero .hero-stats{display:block; max-width:560px; margin-top:3rem; border-top:1px solid var(--line);}
+  .hero .hero-stats > div{position:relative; display:grid; grid-template-columns:5.4rem 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid var(--line); transition:background-color .35s cubic-bezier(0.23,1,0.32,1), padding-left .35s cubic-bezier(0.23,1,0.32,1);}
+  .hero .hero-stats > div:last-child{padding-right:2.4rem;}
+  .hero .hero-stats .num{font-size:1.75rem; line-height:1; width:max-content;}
+  .hero .hero-stats .lbl{margin:0; max-width:none; font-size:.82rem; line-height:1.5;}
+  .hero .hero-stats > div::before{content:""; position:absolute; left:0; top:.9rem; bottom:.9rem; width:2px; background:var(--vermillion); transform-origin:top; transform:scaleY(0); animation:statBar .9s cubic-bezier(0.23,1,0.32,1) both;}
+  .hero .hero-stats > div:nth-child(1)::before{animation-delay:1.5s;}
+  .hero .hero-stats > div:nth-child(2)::before{animation-delay:1.7s;}
+  .hero .hero-stats > div:nth-child(3)::before{animation-delay:1.9s;}
+  .hero .hero-stats > div:hover{background:rgba(161,61,44,.05); padding-left:1.4rem;}
+  .hero .hero-stats > div[data-go]{cursor:pointer;}
+  .hero .hero-stats > div[data-go]::after{content:"\2193"; position:absolute; right:1rem; top:50%; transform:translate(-4px,-50%); opacity:0; font-family:'IBM Plex Mono', monospace; font-size:.95rem; color:var(--vermillion); transition:opacity .3s, transform .3s cubic-bezier(0.23,1,0.32,1);}
+  .hero .hero-stats > div[data-go]:hover::after,.hero .hero-stats > div[data-go]:focus-visible::after{opacity:1; transform:translate(0,-50%);}
+  .hero .hero-stats > div[data-go]:focus-visible{outline:2px solid var(--vermillion); outline-offset:2px;}
+  .hero .hero-stats > div[data-go]:active{transform:scale(0.985);}
+  [id^="go-"]{scroll-margin-top:110px;}
+  .go-flash{animation:goFlash 2s cubic-bezier(0.23,1,0.32,1) both;}
+  @keyframes statBar{to{transform:scaleY(1);}}
+  @keyframes goFlash{0%{background-color:rgba(161,61,44,.14); box-shadow:0 0 0 8px rgba(161,61,44,.14);} 100%{background-color:rgba(161,61,44,0); box-shadow:0 0 0 8px rgba(161,61,44,0);}}
+  @media (prefers-reduced-motion:reduce){
+    .hero .hero-stats > div::before{animation:none; transform:scaleY(1);}
+    .hero .hero-stats > div{transition:none;}
+    .go-flash{animation:none; outline:2px solid rgb(161,61,44); outline-offset:6px;}
+  }
+  @media (max-width:560px){
+    .hero .hero-stats > div{grid-template-columns:4.2rem 1fr; column-gap:1.1rem;}
+    .hero .hero-stats .num{font-size:1.4rem;}
+  }
 </style>
 <!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
 <style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(168,134,60,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Shippori Mincho', serif; --v-body:'Zen Kaku Gothic New', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
@@ -193,9 +222,9 @@
     <div class="title-romaji">Seikai saihen — reformas electorales y fragmentación del sistema de partidos, 1993-2012</div>
     <p class="hero-dek">En 1993, un solo político escindido rompió 38 años de dominio ininterrumpido. La reforma que siguió prometía un bipartidismo a la británica. Lo que produjo, dos décadas después, fue algo distinto: un LDP más resiliente que nunca, una oposición permanentemente fragmentada, y una nueva generación de políticos hereditarios heredando distritos como quien hereda un negocio familiar.</p>
     <div class="hero-stats">
-      <div><span class="num">1993</span><span class="lbl">Ozawa rompe el LDP, cae el Sistema de 1955</span></div>
-      <div><span class="num">1994</span><span class="lbl">reforma electoral: distritos mixtos SMD/PR</span></div>
-      <div><span class="num">2009</span><span class="lbl">el DPJ gana 308 de 480 escaños</span></div>
+      <div data-go="go-1" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: Ozawa rompe el LDP, cae el Sistema de 1955"><span class="num">1993</span><span class="lbl">Ozawa rompe el LDP, cae el Sistema de 1955</span></div>
+      <div data-go="go-2" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: reforma electoral: distritos mixtos SMD/PR"><span class="num">1994</span><span class="lbl">reforma electoral: distritos mixtos SMD/PR</span></div>
+      <div data-go="go-3" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: el DPJ gana 308 de 480 escaños"><span class="num">2009</span><span class="lbl">el DPJ gana 308 de 480 escaños</span></div>
     </div>
   </div>
 </header>
@@ -244,7 +273,7 @@
             <div class="v-steps" role="list">
               <div class="v-rail"><div class="v-fill"></div></div>
               <div class="v-stop" role="listitem"><span class="v-yr">1993</span><h4>Ozawa y Hata rompen el partido</h4><p>Fundan el Shinseitō con 44 partidarios.</p></div>
-              <div class="v-stop" role="listitem"><span class="v-yr">1993</span><h4>El LDP pierde la mayoría</h4><p>Elecciones generales de 1993.</p></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">1993</span><h4>El LDP pierde la mayoría</h4><p id="go-1">Elecciones generales de 1993.</p></div>
               <div class="v-stop" role="listitem"><span class="v-yr">1993</span><h4>Gobierno de ocho partidos</h4><p>Coalición de oposición con Hosokawa como primer ministro.</p></div>
             </div>
             <p class="vis-note">Orden cronológico de arriba hacia abajo.</p>
@@ -285,7 +314,7 @@
             <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
           </figcaption>
         </figure>
-        <p>El gabinete de coalición de Hosokawa asume la reforma del sistema político como su principal razón de ser. Tras intensas negociaciones, el 29 de enero de 1994 se aprueba la ley de reforma electoral: reemplaza por completo el sistema SNTV/MMD por uno mixto en la Cámara de Representantes, dividido en 300 escaños de distritos uninominales (SMD, elegidos por mayoría simple) y 200 escaños —luego reducidos a 180— de representación proporcional regional (PR).</p>
+        <p id="go-2">El gabinete de coalición de Hosokawa asume la reforma del sistema político como su principal razón de ser. Tras intensas negociaciones, el 29 de enero de 1994 se aprueba la ley de reforma electoral: reemplaza por completo el sistema SNTV/MMD por uno mixto en la Cámara de Representantes, dividido en 300 escaños de distritos uninominales (SMD, elegidos por mayoría simple) y 200 escaños —luego reducidos a 180— de representación proporcional regional (PR).</p>
         <p>El propósito explícito es forzar la consolidación de un sistema bipartidista que permita la alternancia en el poder, abaratar las campañas electorales y transicionar la competencia de una lucha personalista de prebendas locales a campañas nacionales centradas en las marcas partidarias.</p>
       </div>
     </div>
@@ -304,7 +333,7 @@
             <div class="v-stats" style="--n:3">
               <div class="v-stat"><span class="v-num">10 meses</span><span class="v-lbl">y el LDP vuelve al gobierno en 1994</span></div>
               <div class="v-stat"><span class="v-num">2005</span><span class="v-lbl">Koizumi niega la nominación a los rebeldes de la privatización postal</span></div>
-              <div class="v-stat"><span class="v-num">308 / 480</span><span class="v-lbl">escaños del DPJ en 2009</span></div>
+              <div id="go-3" class="v-stat"><span class="v-num">308 / 480</span><span class="v-lbl">escaños del DPJ en 2009</span></div>
             </div>
           </div>
         </div><!--/vis-->
@@ -437,6 +466,26 @@
     gsap.set(firstActive, {height:'auto', opacity:1, overflow:'visible'});
     document.querySelector('.acto.active .acto-toggle').textContent = '－';
   }
+
+  // Cifras del héroe: llevan al pasaje donde se explican (abre el acto si hace falta)
+  document.querySelectorAll('.hero-stats [data-go]').forEach(function(row){
+    function go(){
+      var el = document.getElementById(row.getAttribute('data-go')); if(!el) return;
+      var acto = el.closest('.acto'), wait = 0;
+      if(acto && !acto.classList.contains('active')){
+        document.querySelectorAll('.acto.active').forEach(function(a){ a.classList.remove('active'); closeActo(a); });
+        acto.classList.add('active'); openActo(acto); wait = reduceMotion ? 60 : 420;
+      }
+      setTimeout(function(){
+        if(window.__lenis){ window.__lenis.scrollTo(el, { offset: -110, duration: 1.0 }); }
+        else { el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' }); }
+        el.classList.remove('go-flash'); void el.offsetWidth;
+        setTimeout(function(){ el.classList.add('go-flash'); }, reduceMotion ? 0 : 300);
+      }, wait);
+    }
+    row.addEventListener('click', go);
+    row.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); go(); } });
+  });
 
   if(!reduceMotion){
     actos.forEach(function(acto){

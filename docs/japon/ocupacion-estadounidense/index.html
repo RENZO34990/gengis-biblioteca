@@ -178,6 +178,35 @@
   .src-list .sm b{font-weight:500; color:var(--vermillion);}
   .src-all{display:inline-block; margin-top:1.4rem; font-family:'IBM Plex Mono',monospace; font-size:.8rem; color:var(--vermillion); text-decoration:none; border-bottom:1px solid var(--vermillion); padding-bottom:1px;}
   .src-all:hover{color:var(--vermillion-deep); border-color:var(--vermillion-deep);}
+  /* ---------- HERO: cifras como lista vertical con destino ---------- */
+  .hero .hero-stats{display:block; max-width:560px; margin-top:3rem; border-top:1px solid var(--line);}
+  .hero .hero-stats > div{position:relative; display:grid; grid-template-columns:5.4rem 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid var(--line); transition:background-color .35s cubic-bezier(0.23,1,0.32,1), padding-left .35s cubic-bezier(0.23,1,0.32,1);}
+  .hero .hero-stats > div:last-child{padding-right:2.4rem;}
+  .hero .hero-stats .num{font-size:1.75rem; line-height:1; width:max-content;}
+  .hero .hero-stats .lbl{margin:0; max-width:none; font-size:.82rem; line-height:1.5;}
+  .hero .hero-stats > div::before{content:""; position:absolute; left:0; top:.9rem; bottom:.9rem; width:2px; background:var(--vermillion); transform-origin:top; transform:scaleY(0); animation:statBar .9s cubic-bezier(0.23,1,0.32,1) both;}
+  .hero .hero-stats > div:nth-child(1)::before{animation-delay:1.5s;}
+  .hero .hero-stats > div:nth-child(2)::before{animation-delay:1.7s;}
+  .hero .hero-stats > div:nth-child(3)::before{animation-delay:1.9s;}
+  .hero .hero-stats > div:hover{background:rgba(161,61,44,.05); padding-left:1.4rem;}
+  .hero .hero-stats > div[data-go]{cursor:pointer;}
+  .hero .hero-stats > div[data-go]::after{content:"\2193"; position:absolute; right:1rem; top:50%; transform:translate(-4px,-50%); opacity:0; font-family:'IBM Plex Mono', monospace; font-size:.95rem; color:var(--vermillion); transition:opacity .3s, transform .3s cubic-bezier(0.23,1,0.32,1);}
+  .hero .hero-stats > div[data-go]:hover::after,.hero .hero-stats > div[data-go]:focus-visible::after{opacity:1; transform:translate(0,-50%);}
+  .hero .hero-stats > div[data-go]:focus-visible{outline:2px solid var(--vermillion); outline-offset:2px;}
+  .hero .hero-stats > div[data-go]:active{transform:scale(0.985);}
+  [id^="go-"]{scroll-margin-top:110px;}
+  .go-flash{animation:goFlash 2s cubic-bezier(0.23,1,0.32,1) both;}
+  @keyframes statBar{to{transform:scaleY(1);}}
+  @keyframes goFlash{0%{background-color:rgba(161,61,44,.14); box-shadow:0 0 0 8px rgba(161,61,44,.14);} 100%{background-color:rgba(161,61,44,0); box-shadow:0 0 0 8px rgba(161,61,44,0);}}
+  @media (prefers-reduced-motion:reduce){
+    .hero .hero-stats > div::before{animation:none; transform:scaleY(1);}
+    .hero .hero-stats > div{transition:none;}
+    .go-flash{animation:none; outline:2px solid rgb(161,61,44); outline-offset:6px;}
+  }
+  @media (max-width:560px){
+    .hero .hero-stats > div{grid-template-columns:4.2rem 1fr; column-gap:1.1rem;}
+    .hero .hero-stats .num{font-size:1.4rem;}
+  }
 </style>
 <!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
 <style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(168,134,60,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Shippori Mincho', serif; --v-body:'Zen Kaku Gothic New', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
@@ -194,9 +223,9 @@
     <div class="title-romaji">Senryōki — la ocupación estadounidense, 1945-1952</div>
     <p class="hero-dek">Un solo hombre gobernó Japón durante casi siete años, y decidió no juzgar a su Emperador. La ocupación que debía castigar al país que atacó Pearl Harbor terminó, en cambio, escribiendo su constitución pacifista, repartiendo sus tierras y alimentando a su población hambrienta. Nada de eso fue generosidad: fue la Guerra Fría empezando a jugarse en Asia.</p>
     <div class="hero-stats">
-      <div><span class="num">1945</span><span class="lbl">rendición incondicional, 2 de septiembre</span></div>
-      <div><span class="num">1947</span><span class="lbl">nueva Constitución, Artículo 9</span></div>
-      <div><span class="num">1952</span><span class="lbl">Tratado de San Francisco, fin de la ocupación</span></div>
+      <div data-go="go-1" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: rendición incondicional, 2 de septiembre"><span class="num">1945</span><span class="lbl">rendición incondicional, 2 de septiembre</span></div>
+      <div data-go="go-2" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: nueva Constitución, Artículo 9"><span class="num">1947</span><span class="lbl">nueva Constitución, Artículo 9</span></div>
+      <div data-go="go-3" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: Tratado de San Francisco, fin de la ocupación"><span class="num">1952</span><span class="lbl">Tratado de San Francisco, fin de la ocupación</span></div>
     </div>
   </div>
 </header>
@@ -244,7 +273,7 @@
           <div class="vis-card">
             <div class="v-stats" style="--n:3">
               <div class="v-stat"><span class="v-num">~1/3</span><span class="v-lbl">del grano consumido llegó a ser distribuido por el SCAP</span></div>
-              <div class="v-stat"><span class="v-num">2 sep 1945</span><span class="v-lbl">rendición incondicional</span></div>
+              <div id="go-1" class="v-stat"><span class="v-num">2 sep 1945</span><span class="v-lbl">rendición incondicional</span></div>
               <div class="v-stat"><span class="v-num">MacArthur</span><span class="v-lbl">al frente del SCAP</span></div>
             </div>
           </div>
@@ -284,7 +313,7 @@
           </figcaption>
         </figure>
         <p>Aunque las potencias aliadas exigían juzgar a Hirohito como criminal de guerra, MacArthur convence al SCAP de que el Emperador es indispensable para la cohesión civil del país. El giro consiste en despojarlo de su carácter sagrado, obligándolo a emitir la Declaración de Humanidad, sin gobierno real, convirtiéndolo por ley en un símbolo ceremonial.</p>
-        <p>Tras desechar el Borrador Matsumoto japonés por ser demasiado superficial, el gabinete legal de MacArthur redacta en secreto un nuevo marco basado en las "MacArthur Notes". La nueva Constitución, en vigor el 3 de mayo de 1947, sustituye la soberanía imperial por la soberanía popular, abole los títulos aristocráticos, e incorpora el Artículo 9: renuncia permanente a la guerra y a mantener fuerzas armadas regulares.</p>
+        <p id="go-2">Tras desechar el Borrador Matsumoto japonés por ser demasiado superficial, el gabinete legal de MacArthur redacta en secreto un nuevo marco basado en las "MacArthur Notes". La nueva Constitución, en vigor el 3 de mayo de 1947, sustituye la soberanía imperial por la soberanía popular, abole los títulos aristocráticos, e incorpora el Artículo 9: renuncia permanente a la guerra y a mantener fuerzas armadas regulares.</p>
       </div>
     </div>
   </div>
@@ -310,7 +339,7 @@
         </div><!--/vis-->
         <p>Se instaura la Dieta bicameral electa por sufragio directo; las mujeres votan por primera vez en la historia del país. El SCAP dirige una reforma agraria que desintegra a los terratenientes tradicionales, y decreta la disolución de los zaibatsu ("Los Cuatro Grandes"), dividiendo a Mitsui y Mitsubishi en cientos de firmas, aunque el proceso se frena hacia fines de los 40 por el interés anticomunista de EE.UU., permitiendo que se reorganicen como <span class="gl" tabindex="0">keiretsu<span class="gl-def" role="note">Grupos de empresas con participaciones cruzadas, sucesores de los zaibatsu.</span></span>.</p>
         <p><strong>El <span class="gl" tabindex="0">Reverse Course<span class="gl-def" role="note">Giro estadounidense hacia el anticomunismo, que frenó las reformas a finales de los 40.</span></span>.</strong> Con el estallido de la Guerra de Corea en 1950, Washington necesita que Japón tenga un rol militar activo. MacArthur crea la Reserva Policial Nacional de 75,000 hombres: sus tanques, para sortear el Artículo 9, son catalogados burocráticamente como "vehículos especiales". Este cuerpo es la base directa de las futuras Fuerzas de Autodefensa (1954).</p>
-        <p>El Tratado de San Francisco (1951) devuelve la soberanía y pone fin a la ocupación el 28 de abril de 1952, firmado junto a un Tratado de Seguridad que ata permanentemente la defensa japonesa a la presencia militar estadounidense.</p>
+        <p id="go-3">El Tratado de San Francisco (1951) devuelve la soberanía y pone fin a la ocupación el 28 de abril de 1952, firmado junto a un Tratado de Seguridad que ata permanentemente la defensa japonesa a la presencia militar estadounidense.</p>
       </div>
     </div>
   </div>
@@ -436,6 +465,26 @@
     gsap.set(firstActive, {height:'auto', opacity:1, overflow:'visible'});
     document.querySelector('.acto.active .acto-toggle').textContent = '－';
   }
+
+  // Cifras del héroe: llevan al pasaje donde se explican (abre el acto si hace falta)
+  document.querySelectorAll('.hero-stats [data-go]').forEach(function(row){
+    function go(){
+      var el = document.getElementById(row.getAttribute('data-go')); if(!el) return;
+      var acto = el.closest('.acto'), wait = 0;
+      if(acto && !acto.classList.contains('active')){
+        document.querySelectorAll('.acto.active').forEach(function(a){ a.classList.remove('active'); closeActo(a); });
+        acto.classList.add('active'); openActo(acto); wait = reduceMotion ? 60 : 420;
+      }
+      setTimeout(function(){
+        if(window.__lenis){ window.__lenis.scrollTo(el, { offset: -110, duration: 1.0 }); }
+        else { el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' }); }
+        el.classList.remove('go-flash'); void el.offsetWidth;
+        setTimeout(function(){ el.classList.add('go-flash'); }, reduceMotion ? 0 : 300);
+      }, wait);
+    }
+    row.addEventListener('click', go);
+    row.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); go(); } });
+  });
 
   if(!reduceMotion){
     actos.forEach(function(acto){

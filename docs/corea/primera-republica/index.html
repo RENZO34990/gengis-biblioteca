@@ -176,6 +176,35 @@
   .src-list .sm b{font-weight:500; color:var(--terracota-deep);}
   .src-all{display:inline-block; margin-top:1.4rem; font-family:'IBM Plex Mono',monospace; font-size:.8rem; color:var(--terracota-deep); text-decoration:none; border-bottom:1px solid var(--terracota-deep); padding-bottom:1px;}
   .src-all:hover{color:var(--terracota); border-color:var(--terracota);}
+  /* ---------- HERO: cifras como lista vertical con destino ---------- */
+  .hero .hero-stats{display:block; max-width:560px; margin-top:3rem; border-top:1px solid rgba(245,243,238,.2);}
+  .hero .hero-stats > div{position:relative; display:grid; grid-template-columns:6.4rem 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid rgba(245,243,238,.2); transition:background-color .35s cubic-bezier(0.23,1,0.32,1), padding-left .35s cubic-bezier(0.23,1,0.32,1);}
+  .hero .hero-stats > div:last-child{padding-right:2.4rem;}
+  .hero .hero-stats .num{font-size:1.5rem; line-height:1; width:max-content;}
+  .hero .hero-stats .lbl{margin:0; max-width:none; font-size:.82rem; line-height:1.5;}
+  .hero .hero-stats > div::before{content:""; position:absolute; left:0; top:.9rem; bottom:.9rem; width:2px; background:var(--terracota-light); transform-origin:top; transform:scaleY(0); animation:statBar .9s cubic-bezier(0.23,1,0.32,1) both;}
+  .hero .hero-stats > div:nth-child(1)::before{animation-delay:1.5s;}
+  .hero .hero-stats > div:nth-child(2)::before{animation-delay:1.7s;}
+  .hero .hero-stats > div:nth-child(3)::before{animation-delay:1.9s;}
+  .hero .hero-stats > div:hover{background:rgba(245,243,238,.07); padding-left:1.4rem;}
+  .hero .hero-stats > div[data-go]{cursor:pointer;}
+  .hero .hero-stats > div[data-go]::after{content:"\2193"; position:absolute; right:1rem; top:50%; transform:translate(-4px,-50%); opacity:0; font-family:'IBM Plex Mono', monospace; font-size:.95rem; color:var(--terracota-light); transition:opacity .3s, transform .3s cubic-bezier(0.23,1,0.32,1);}
+  .hero .hero-stats > div[data-go]:hover::after,.hero .hero-stats > div[data-go]:focus-visible::after{opacity:1; transform:translate(0,-50%);}
+  .hero .hero-stats > div[data-go]:focus-visible{outline:2px solid var(--terracota-light); outline-offset:2px;}
+  .hero .hero-stats > div[data-go]:active{transform:scale(0.985);}
+  [id^="go-"]{scroll-margin-top:110px;}
+  .go-flash{animation:goFlash 2s cubic-bezier(0.23,1,0.32,1) both;}
+  @keyframes statBar{to{transform:scaleY(1);}}
+  @keyframes goFlash{0%{background-color:rgba(181,98,59,.14); box-shadow:0 0 0 8px rgba(181,98,59,.14);} 100%{background-color:rgba(181,98,59,0); box-shadow:0 0 0 8px rgba(181,98,59,0);}}
+  @media (prefers-reduced-motion:reduce){
+    .hero .hero-stats > div::before{animation:none; transform:scaleY(1);}
+    .hero .hero-stats > div{transition:none;}
+    .go-flash{animation:none; outline:2px solid rgb(181,98,59); outline-offset:6px;}
+  }
+  @media (max-width:560px){
+    .hero .hero-stats > div{grid-template-columns:1fr; row-gap:.35rem;}
+    .hero .hero-stats .num{font-size:1.4rem;}
+  }
 </style>
 <!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
 <style>:root{--v-accent:var(--terracota); --v-accent-deep:var(--terracota-deep); --v-accent2:var(--celadon-deep); --v-accent-soft:rgba(79,111,97,.2); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Gothic A1', sans-serif; --v-body:'Gothic A1', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
@@ -192,9 +221,9 @@
     <div class="title-romaja">Je-il Gonghwaguk — la Primera República de Syngman Rhee, la reforma agraria y la economía de ayuda, 1945–1960</div>
     <p class="hero-dek">La reforma agraria de 1949 hizo desaparecer a los terratenientes, y la venta de las fábricas japonesas hizo nacer a los empresarios. Entre ambas cosas, la ayuda estadounidense pagó la mitad del presupuesto. Esa receta dejó una sociedad sin aristocracia y un capitalismo de favores, y terminó en abril de 1960 con una revolución estudiantil.</p>
     <div class="hero-stats">
-      <div><span class="num">1949</span><span class="lbl">reforma agraria, tope de 3 chongbo</span></div>
-      <div><span class="num">~50%</span><span class="lbl">del presupuesto pagado con ayuda de EE. UU.</span></div>
-      <div><span class="num">abr 1960</span><span class="lbl">la revolución derriba a Rhee</span></div>
+      <div data-go="go-1" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: reforma agraria, tope de 3 chongbo"><span class="num">1949</span><span class="lbl">reforma agraria, tope de 3 chongbo</span></div>
+      <div data-go="go-2" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: del presupuesto pagado con ayuda de EE. UU."><span class="num">~50%</span><span class="lbl">del presupuesto pagado con ayuda de EE. UU.</span></div>
+      <div data-go="go-3" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: la revolución derriba a Rhee"><span class="num">abr 1960</span><span class="lbl">la revolución derriba a Rhee</span></div>
     </div>
   </div>
 </header>
@@ -291,12 +320,12 @@
         </figure>
         <p>El gobierno ejecutó dos reformas estructurales. La primera cambió el mapa agrario: eliminó el orden señorial y convirtió a Corea del Sur en una sociedad de pequeños propietarios. La segunda fue la privatización de los bienes japoneses y la "economía de ayuda". Las dos juntas definieron quién sería rico en la Corea que venía.</p>
         <div class="loss-list">
-          <div class="loss-item"><h3>Tope de 3 <span class="gl" tabindex="0">chongbo<span class="gl-def" role="note">Unidad de superficie coreana; 3 chongbo equivalen a unas 3 hectáreas.</span></span></h3><p>La <span class="gl" tabindex="0">Ley de Reforma Agraria<span class="gl-def" role="note">Ley de junio de 1949 que limitó la propiedad de tierra y redistribuyó los latifundios.</span></span> de junio de 1949 limitó la propiedad a unas 3 hectáreas por explotación. Se expropiaron los latifundios y las tierras de colaboradores coloniales y se redistribuyeron a los arrendatarios.</p></div>
+          <div class="loss-item"><h3>Tope de 3 <span class="gl" tabindex="0">chongbo<span class="gl-def" role="note">Unidad de superficie coreana; 3 chongbo equivalen a unas 3 hectáreas.</span></span></h3><p id="go-1">La <span class="gl" tabindex="0">Ley de Reforma Agraria<span class="gl-def" role="note">Ley de junio de 1949 que limitó la propiedad de tierra y redistribuyó los latifundios.</span></span> de junio de 1949 limitó la propiedad a unas 3 hectáreas por explotación. Se expropiaron los latifundios y las tierras de colaboradores coloniales y se redistribuyeron a los arrendatarios.</p></div>
           <div class="loss-item"><h3>Bonos que valían cada vez menos</h3><p>Los terratenientes recibieron vales para comprar empresas estatales. La inflación los devaluó, los vendieron con descuentos severos y en 1953 solo el 7% de esas empresas estaba en manos de la antigua élite rural.</p></div>
           <div class="loss-item"><h3><span class="gl" tabindex="0">Jeok-san<span class="gl-def" role="note">Los bienes que dejaron los japoneses y que el Estado subastó.</span></span>, a precio de favor</h3><p>El Estado tomó 3.551 plantas, terrenos e inventarios japoneses y los subastó al 25–30% de su valor, con pago a 15 años, a empresarios vinculados al <span class="gl" tabindex="0">Partido Liberal<span class="gl-def" role="note">Partido de Syngman Rhee, vinculado a los empresarios favorecidos.</span></span>.</p></div>
           <div class="loss-item"><h3>Licencias y divisas</h3><p>Con la ayuda de EE. UU. (<span class="gl" tabindex="0">GARIOA<span class="gl-def" role="note">Programa de ayuda estadounidense de posguerra.</span></span>, ECA, FOA, ICA) llegaron bienes de consumo, fertilizantes y harina. Se impuso una sustitución de importaciones en harina, azúcar y textil, con licencias y tipos de cambio preferenciales para aliados.</p></div>
         </div>
-        <p>La ayuda estadounidense financió cerca del 50% del presupuesto público anual y más del 70% de las importaciones entre 1953 y 1961. Rhee la usó para tejer una red de clientelismo que financió al Partido Liberal y dio origen a los primeros núcleos de empresarios privados.</p>
+        <p id="go-2">La ayuda estadounidense financió cerca del 50% del presupuesto público anual y más del 70% de las importaciones entre 1953 y 1961. Rhee la usó para tejer una red de clientelismo que financió al Partido Liberal y dio origen a los primeros núcleos de empresarios privados.</p>
         <p class="quote">La decisión clave no fue solo repartir la tierra, sino también quién recibiría las fábricas y los dólares.</p>
       </div>
     </div>
@@ -328,7 +357,7 @@
           </figcaption>
         </figure>
         <p>Entre 1954 y 1961 el PIB creció a un ritmo del 3,5% anual y en 1954 el PIB per cápita era de apenas 70 dólares. Las grandes empresas de hoy hicieron su acumulación originaria entonces. Samsung, de Lee Byung-chul, fundó Cheil Sugar en 1953 y Cheil Industries en 1954 y adquirió participaciones en bancos comerciales. LG, de Koo In-hwoi, partió de plásticos y cosméticos y creó GoldStar en 1958, con las primeras radios nacionales. Hyundai, de Chung Ju-yung, creció con contratos de construcción del gobierno y del ejército. Se formaron carteles respaldados por el Estado en los sectores textil, harinero y azucarero.</p>
-        <p>En lo político, Rhee forzó la enmienda constitucional de 1952, que impuso la elección presidencial directa, y la de 1954, que eliminó el límite de mandatos solo para él. La Ley de Servicio Público de 1949 creó un examen para entrar a la administración, pero se priorizaron los nombramientos políticos por lealtad. La corrupción, el fraude de las elecciones del 15 de marzo de 1960 y la apropiación privada de la ayuda externa desataron la Revolución del 19 de Abril. Rhee renunció y se exilió en abril de 1960.</p>
+        <p id="go-3">En lo político, Rhee forzó la enmienda constitucional de 1952, que impuso la elección presidencial directa, y la de 1954, que eliminó el límite de mandatos solo para él. La Ley de Servicio Público de 1949 creó un examen para entrar a la administración, pero se priorizaron los nombramientos políticos por lealtad. La corrupción, el fraude de las elecciones del 15 de marzo de 1960 y la apropiación privada de la ayuda externa desataron la Revolución del 19 de Abril. Rhee renunció y se exilió en abril de 1960.</p>
         <p class="quote">El régimen cayó por lo mismo que lo sostuvo: la distribución discrecional de los recursos del Estado y de la ayuda exterior.</p>
       </div>
     </div>
@@ -456,6 +485,26 @@
     gsap.set(firstActive, {height:'auto', opacity:1, overflow:'visible'});
     document.querySelector('.acto.active .acto-toggle').textContent = '－';
   }
+
+  // Cifras del héroe: llevan al pasaje donde se explican (abre el acto si hace falta)
+  document.querySelectorAll('.hero-stats [data-go]').forEach(function(row){
+    function go(){
+      var el = document.getElementById(row.getAttribute('data-go')); if(!el) return;
+      var acto = el.closest('.acto'), wait = 0;
+      if(acto && !acto.classList.contains('active')){
+        document.querySelectorAll('.acto.active').forEach(function(a){ a.classList.remove('active'); closeActo(a); });
+        acto.classList.add('active'); openActo(acto); wait = reduceMotion ? 60 : 420;
+      }
+      setTimeout(function(){
+        if(window.__lenis){ window.__lenis.scrollTo(el, { offset: -110, duration: 1.0 }); }
+        else { el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' }); }
+        el.classList.remove('go-flash'); void el.offsetWidth;
+        setTimeout(function(){ el.classList.add('go-flash'); }, reduceMotion ? 0 : 300);
+      }, wait);
+    }
+    row.addEventListener('click', go);
+    row.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); go(); } });
+  });
 
   if(!reduceMotion){
     actos.forEach(function(acto){

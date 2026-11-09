@@ -177,6 +177,35 @@
   .src-list .sm b{font-weight:500; color:var(--terracota-deep);}
   .src-all{display:inline-block; margin-top:1.4rem; font-family:'IBM Plex Mono',monospace; font-size:.8rem; color:var(--terracota-deep); text-decoration:none; border-bottom:1px solid var(--terracota-deep); padding-bottom:1px;}
   .src-all:hover{color:var(--terracota); border-color:var(--terracota);}
+  /* ---------- HERO: cifras como lista vertical con destino ---------- */
+  .hero .hero-stats{display:block; max-width:560px; margin-top:3rem; border-top:1px solid rgba(245,243,238,.2);}
+  .hero .hero-stats > div{position:relative; display:grid; grid-template-columns:8.5rem 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid rgba(245,243,238,.2); transition:background-color .35s cubic-bezier(0.23,1,0.32,1), padding-left .35s cubic-bezier(0.23,1,0.32,1);}
+  .hero .hero-stats > div:last-child{padding-right:2.4rem;}
+  .hero .hero-stats .num{font-size:1.5rem; line-height:1; width:max-content;}
+  .hero .hero-stats .lbl{margin:0; max-width:none; font-size:.82rem; line-height:1.5;}
+  .hero .hero-stats > div::before{content:""; position:absolute; left:0; top:.9rem; bottom:.9rem; width:2px; background:var(--terracota-light); transform-origin:top; transform:scaleY(0); animation:statBar .9s cubic-bezier(0.23,1,0.32,1) both;}
+  .hero .hero-stats > div:nth-child(1)::before{animation-delay:1.5s;}
+  .hero .hero-stats > div:nth-child(2)::before{animation-delay:1.7s;}
+  .hero .hero-stats > div:nth-child(3)::before{animation-delay:1.9s;}
+  .hero .hero-stats > div:hover{background:rgba(245,243,238,.07); padding-left:1.4rem;}
+  .hero .hero-stats > div[data-go]{cursor:pointer;}
+  .hero .hero-stats > div[data-go]::after{content:"\2193"; position:absolute; right:1rem; top:50%; transform:translate(-4px,-50%); opacity:0; font-family:'IBM Plex Mono', monospace; font-size:.95rem; color:var(--terracota-light); transition:opacity .3s, transform .3s cubic-bezier(0.23,1,0.32,1);}
+  .hero .hero-stats > div[data-go]:hover::after,.hero .hero-stats > div[data-go]:focus-visible::after{opacity:1; transform:translate(0,-50%);}
+  .hero .hero-stats > div[data-go]:focus-visible{outline:2px solid var(--terracota-light); outline-offset:2px;}
+  .hero .hero-stats > div[data-go]:active{transform:scale(0.985);}
+  [id^="go-"]{scroll-margin-top:110px;}
+  .go-flash{animation:goFlash 2s cubic-bezier(0.23,1,0.32,1) both;}
+  @keyframes statBar{to{transform:scaleY(1);}}
+  @keyframes goFlash{0%{background-color:rgba(181,98,59,.14); box-shadow:0 0 0 8px rgba(181,98,59,.14);} 100%{background-color:rgba(181,98,59,0); box-shadow:0 0 0 8px rgba(181,98,59,0);}}
+  @media (prefers-reduced-motion:reduce){
+    .hero .hero-stats > div::before{animation:none; transform:scaleY(1);}
+    .hero .hero-stats > div{transition:none;}
+    .go-flash{animation:none; outline:2px solid rgb(181,98,59); outline-offset:6px;}
+  }
+  @media (max-width:560px){
+    .hero .hero-stats > div{grid-template-columns:1fr; row-gap:.35rem;}
+    .hero .hero-stats .num{font-size:1.4rem;}
+  }
 </style>
 <!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
 <style>:root{--v-accent:var(--terracota); --v-accent-deep:var(--terracota-deep); --v-accent2:var(--celadon-deep); --v-accent-soft:rgba(79,111,97,.2); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Gothic A1', sans-serif; --v-body:'Gothic A1', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
@@ -193,9 +222,9 @@
     <div class="title-romaja">Haetbyeot Jeongchaek — la Política del Sol, Kaesong y la red de TLCs, 1998–2008</div>
     <p class="hero-dek">Con la economía todavía en rescate, Kim Dae-jung propuso tratar al Norte con incentivos en vez de contención. Hubo cumbres, un Nobel de la Paz, una zona industrial al norte de la DMZ y, a la vez, la primera red de tratados de libre comercio del país. También hubo un ensayo nuclear en 2006 y un debate que sigue dividiendo a Seúl.</p>
     <div class="hero-stats">
-      <div><span class="num">15 jun 2000</span><span class="lbl">la Declaración Conjunta</span></div>
-      <div><span class="num">+50.000</span><span class="lbl">trabajadores norcoreanos en Kaesong</span></div>
-      <div><span class="num">+70%</span><span class="lbl">del comercio hoy, bajo TLCs</span></div>
+      <div data-go="go-1" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: la Declaración Conjunta"><span class="num">15 jun 2000</span><span class="lbl">la Declaración Conjunta</span></div>
+      <div data-go="go-2" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: trabajadores norcoreanos en Kaesong"><span class="num">+50.000</span><span class="lbl">trabajadores norcoreanos en Kaesong</span></div>
+      <div data-go="go-3" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: del comercio hoy, bajo TLCs"><span class="num">+70%</span><span class="lbl">del comercio hoy, bajo TLCs</span></div>
     </div>
   </div>
 </header>
@@ -274,7 +303,7 @@
               <div class="v-tline-rail"><div class="v-tline-fill"></div></div>
               <div class="v-tl"><span class="v-tl-yr">1998</span><p>Hyundai abre el turismo al Monte Kumgang.</p></div>
               <div class="v-tl"><span class="v-tl-yr">2000</span><p>Cumbre de Pionyang; Nobel de la Paz para Kim Dae-jung.</p></div>
-              <div class="v-tl"><span class="v-tl-yr">2003</span><p>Kaesong: más de 120 empresas y 50.000 trabajadores norcoreanos.</p></div>
+              <div class="v-tl"><span class="v-tl-yr">2003</span><p id="go-2">Kaesong: más de 120 empresas y 50.000 trabajadores norcoreanos.</p></div>
               <div class="v-tl"><span class="v-tl-yr">2004–07</span><p>TLCs con Chile, Singapur y EE. UU. (KORUS).</p></div>
             </div>
           </div>
@@ -287,7 +316,7 @@
         </figure>
         <p>El giro tuvo dos líneas a la vez: la cooperación económica intercoreana y la proyección estatal a través del comercio y la cultura.</p>
         <div class="loss-list">
-          <div class="loss-item"><h3><span class="when">13–15 jun 2000</span>La Cumbre de Pionyang</h3><p>La Declaración Conjunta del 15 de Junio selló un compromiso de diálogo directo entre Kim Dae-jung y Kim Jong-il, y le valió a Kim Dae-jung el Premio Nobel de la Paz de 2000.</p></div>
+          <div class="loss-item"><h3><span class="when">13–15 jun 2000</span>La Cumbre de Pionyang</h3><p id="go-1">La Declaración Conjunta del 15 de Junio selló un compromiso de diálogo directo entre Kim Dae-jung y Kim Jong-il, y le valió a Kim Dae-jung el Premio Nobel de la Paz de 2000.</p></div>
           <div class="loss-item"><h3><span class="when">2003</span>El Complejo Industrial de <span class="gl" tabindex="0">Kaesong<span class="gl-def" role="note">Complejo industrial al norte de la Zona Desmilitarizada, con capital del Sur y mano de obra del Norte.</span></span></h3><p>Construido al norte de la Zona Desmilitarizada, combinó el capital y la gestión de pymes del Sur con la mano de obra del Norte. Reunió a más de 120 empresas y más de 50.000 trabajadores norcoreanos. Se reconectaron además las líneas ferroviarias y carreteras Gyeongui y Donghae.</p></div>
           <div class="loss-item"><h3><span class="when">2003–2008</span>Paz y Prosperidad</h3><p>Roh Moo-hyun profundizó el enfoque. En la cumbre de 2007 cruzó a pie la Línea de Demarcación Militar.</p></div>
           <div class="loss-item"><h3><span class="when">2004–2007</span>Los TLCs</h3><p>Ante el estancamiento de la OMC, Corea lanzó una estrategia de acuerdos bilaterales: Chile (2004), Singapur (2006) y el <span class="gl" tabindex="0">KORUS<span class="gl-def" role="note">Tratado de libre comercio entre Corea del Sur y Estados Unidos, firmado en 2007.</span></span> con EE. UU., firmado en 2007, para ser el centro logístico de Asia Oriental.</p></div>
@@ -334,7 +363,7 @@
           <p class="vis-one"><small>En una frase</small>Lo que quedó: más comercio abierto, el Norte cerrado y partidos divididos.</p>
           <div class="vis-card">
             <div class="v-stats" style="--n:3">
-              <div class="v-stat"><span class="v-num" data-to="70" data-dec="0" data-pre="+" data-suf="%">+70%</span><span class="v-lbl">del comercio de mercancías cubierto por TLCs</span></div>
+              <div id="go-3" class="v-stat"><span class="v-num" data-to="70" data-dec="0" data-pre="+" data-suf="%">+70%</span><span class="v-lbl">del comercio de mercancías cubierto por TLCs</span></div>
               <div class="v-stat"><span class="v-num">2016</span><span class="v-lbl">Kaesong cierra</span></div>
               <div class="v-stat"><span class="v-num" data-to="30" data-dec="0" data-pre="" data-suf="×">30×</span><span class="v-lbl">PIB per cápita del Sur frente al del Norte</span></div>
             </div>
@@ -445,6 +474,26 @@
     gsap.set(firstActive, {height:'auto', opacity:1, overflow:'visible'});
     document.querySelector('.acto.active .acto-toggle').textContent = '－';
   }
+
+  // Cifras del héroe: llevan al pasaje donde se explican (abre el acto si hace falta)
+  document.querySelectorAll('.hero-stats [data-go]').forEach(function(row){
+    function go(){
+      var el = document.getElementById(row.getAttribute('data-go')); if(!el) return;
+      var acto = el.closest('.acto'), wait = 0;
+      if(acto && !acto.classList.contains('active')){
+        document.querySelectorAll('.acto.active').forEach(function(a){ a.classList.remove('active'); closeActo(a); });
+        acto.classList.add('active'); openActo(acto); wait = reduceMotion ? 60 : 420;
+      }
+      setTimeout(function(){
+        if(window.__lenis){ window.__lenis.scrollTo(el, { offset: -110, duration: 1.0 }); }
+        else { el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' }); }
+        el.classList.remove('go-flash'); void el.offsetWidth;
+        setTimeout(function(){ el.classList.add('go-flash'); }, reduceMotion ? 0 : 300);
+      }, wait);
+    }
+    row.addEventListener('click', go);
+    row.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); go(); } });
+  });
 
   if(!reduceMotion){
     actos.forEach(function(acto){

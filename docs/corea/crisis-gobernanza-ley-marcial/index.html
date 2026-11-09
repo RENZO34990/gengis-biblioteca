@@ -177,6 +177,35 @@
   .src-list .sm b{font-weight:500; color:var(--terracota-deep);}
   .src-all{display:inline-block; margin-top:1.4rem; font-family:'IBM Plex Mono',monospace; font-size:.8rem; color:var(--terracota-deep); text-decoration:none; border-bottom:1px solid var(--terracota-deep); padding-bottom:1px;}
   .src-all:hover{color:var(--terracota); border-color:var(--terracota);}
+  /* ---------- HERO: cifras como lista vertical con destino ---------- */
+  .hero .hero-stats{display:block; max-width:560px; margin-top:3rem; border-top:1px solid rgba(245,243,238,.2);}
+  .hero .hero-stats > div{position:relative; display:grid; grid-template-columns:7.8rem 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid rgba(245,243,238,.2); transition:background-color .35s cubic-bezier(0.23,1,0.32,1), padding-left .35s cubic-bezier(0.23,1,0.32,1);}
+  .hero .hero-stats > div:last-child{padding-right:2.4rem;}
+  .hero .hero-stats .num{font-size:1.5rem; line-height:1; width:max-content;}
+  .hero .hero-stats .lbl{margin:0; max-width:none; font-size:.82rem; line-height:1.5;}
+  .hero .hero-stats > div::before{content:""; position:absolute; left:0; top:.9rem; bottom:.9rem; width:2px; background:var(--terracota-light); transform-origin:top; transform:scaleY(0); animation:statBar .9s cubic-bezier(0.23,1,0.32,1) both;}
+  .hero .hero-stats > div:nth-child(1)::before{animation-delay:1.5s;}
+  .hero .hero-stats > div:nth-child(2)::before{animation-delay:1.7s;}
+  .hero .hero-stats > div:nth-child(3)::before{animation-delay:1.9s;}
+  .hero .hero-stats > div:hover{background:rgba(245,243,238,.07); padding-left:1.4rem;}
+  .hero .hero-stats > div[data-go]{cursor:pointer;}
+  .hero .hero-stats > div[data-go]::after{content:"\2193"; position:absolute; right:1rem; top:50%; transform:translate(-4px,-50%); opacity:0; font-family:'IBM Plex Mono', monospace; font-size:.95rem; color:var(--terracota-light); transition:opacity .3s, transform .3s cubic-bezier(0.23,1,0.32,1);}
+  .hero .hero-stats > div[data-go]:hover::after,.hero .hero-stats > div[data-go]:focus-visible::after{opacity:1; transform:translate(0,-50%);}
+  .hero .hero-stats > div[data-go]:focus-visible{outline:2px solid var(--terracota-light); outline-offset:2px;}
+  .hero .hero-stats > div[data-go]:active{transform:scale(0.985);}
+  [id^="go-"]{scroll-margin-top:110px;}
+  .go-flash{animation:goFlash 2s cubic-bezier(0.23,1,0.32,1) both;}
+  @keyframes statBar{to{transform:scaleY(1);}}
+  @keyframes goFlash{0%{background-color:rgba(181,98,59,.14); box-shadow:0 0 0 8px rgba(181,98,59,.14);} 100%{background-color:rgba(181,98,59,0); box-shadow:0 0 0 8px rgba(181,98,59,0);}}
+  @media (prefers-reduced-motion:reduce){
+    .hero .hero-stats > div::before{animation:none; transform:scaleY(1);}
+    .hero .hero-stats > div{transition:none;}
+    .go-flash{animation:none; outline:2px solid rgb(181,98,59); outline-offset:6px;}
+  }
+  @media (max-width:560px){
+    .hero .hero-stats > div{grid-template-columns:1fr; row-gap:.35rem;}
+    .hero .hero-stats .num{font-size:1.4rem;}
+  }
 </style>
 <!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
 <style>:root{--v-accent:var(--terracota); --v-accent-deep:var(--terracota-deep); --v-accent2:var(--celadon-deep); --v-accent-soft:rgba(79,111,97,.2); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Gothic A1', sans-serif; --v-body:'Gothic A1', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
@@ -193,9 +222,9 @@
     <div class="title-romaja">Gyeeom-gwa Georeonenseu Wigi — la polarización, la ley marcial de 2024 y la reforma del presidencialismo imperial, 2010s–2026</div>
     <p class="hero-dek">Una noche de diciembre de 2024 un presidente declaró la ley marcial. Seis horas después tuvo que levantarla, porque 190 legisladores, oficialistas incluidos, habían cruzado cercas y comandos militares para votar en su contra. La democracia que nació en junio de 1987 pasó su prueba más dura, y dejó abierta la reforma de la Constitución.</p>
     <div class="hero-stats">
-      <div><span class="num">3 dic 2024</span><span class="lbl">la declaración de la ley marcial</span></div>
-      <div><span class="num">190–0</span><span class="lbl">el voto que la anuló, seis horas después</span></div>
-      <div><span class="num">4 abr 2025</span><span class="lbl">el Tribunal Constitucional confirma la destitución</span></div>
+      <div data-go="go-1" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: la declaración de la ley marcial"><span class="num">3 dic 2024</span><span class="lbl">la declaración de la ley marcial</span></div>
+      <div data-go="go-2" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: el voto que la anuló, seis horas después"><span class="num">190–0</span><span class="lbl">el voto que la anuló, seis horas después</span></div>
+      <div data-go="go-3" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: el Tribunal Constitucional confirma la destitución"><span class="num">4 abr 2025</span><span class="lbl">el Tribunal Constitucional confirma la destitución</span></div>
     </div>
   </div>
 </header>
@@ -281,10 +310,10 @@
             <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
           </figcaption>
         </figure>
-        <p>El momento de quiebre ocurrió en la noche del 3 de diciembre de 2024, cuando el presidente Yoon declaró la ley marcial en lo que fue un autogolpe de Estado.</p>
+        <p id="go-1">El momento de quiebre ocurrió en la noche del 3 de diciembre de 2024, cuando el presidente Yoon declaró la ley marcial en lo que fue un autogolpe de Estado.</p>
         <div class="loss-list">
           <div class="loss-item"><h3><span class="when">3 dic 2024</span>El decreto</h3><p>Yoon acusó en televisión a la mayoría parlamentaria de "dictadura legislativa" y de "fuerzas antiestatales aliadas con el comunismo norcoreano", y ordenó suspender la Asamblea, prohibir partidos, controlar los medios y arrestar a líderes opositores y de su propio partido, entre ellos Lee Jae-myung y Han Dong-hoon.</p></div>
-          <div class="loss-item"><h3><span class="when">4 dic</span>La anulación</h3><p>Legisladores opositores y oficialistas entraron al recinto, escalando cercas y evadiendo comandos militares, y votaron 190 a 0 para anular la ley marcial. Yoon levantó el decreto seis horas después de emitirlo.</p></div>
+          <div class="loss-item"><h3><span class="when">4 dic</span>La anulación</h3><p id="go-2">Legisladores opositores y oficialistas entraron al recinto, escalando cercas y evadiendo comandos militares, y votaron 190 a 0 para anular la ley marcial. Yoon levantó el decreto seis horas después de emitirlo.</p></div>
           <div class="loss-item"><h3><span class="when">14 dic</span>La destitución</h3><p>La Asamblea aprobó el impeachment.</p></div>
           <div class="loss-item"><h3><span class="when">Ene – abr 2025</span>Arresto y fallo</h3><p>Yoon fue arrestado e imputado por insurrección. El 4 de abril el Tribunal Constitucional ratificó por unanimidad su destitución definitiva.</p></div>
           <div class="loss-item"><h3><span class="when">Feb 2026</span>La condena</h3><p>Yoon fue condenado a cadena perpetua por liderar la rebelión militar.</p></div>
@@ -313,7 +342,7 @@
             </div>
           </div>
         </div><!--/vis-->
-        <p>El 3 de junio de 2025 se celebró la elección presidencial extraordinaria, que ganó el progresista Lee Jae-myung (DPK). Su administración se presentó como la "<span class="gl" tabindex="0">Revolución de la Luz<span class="gl-def" role="note">Nombre con que se presentó la administración de Lee Jae-myung.</span></span>" (Light Revolution).</p>
+        <p id="go-3">El 3 de junio de 2025 se celebró la elección presidencial extraordinaria, que ganó el progresista Lee Jae-myung (DPK). Su administración se presentó como la "<span class="gl" tabindex="0">Revolución de la Luz<span class="gl-def" role="note">Nombre con que se presentó la administración de Lee Jae-myung.</span></span>" (Light Revolution).</p>
         <p>Los tribunales condenaron a severas penas de prisión al exministro de Defensa Kim Yong-hyun y al ex primer ministro Han Duck-soo por su participación en la conspiración militar.</p>
         <p>En julio de 2025 la Asamblea enmendó la ley marcial para prohibir explícitamente que las fuerzas armadas bloqueen el ingreso de legisladores al Parlamento o interfieran en sus labores. Ganó fuerza además el consenso político para reformar la Constitución de 1987, para atenuar los poderes del presidente e introducir un modelo de 4 años con reelección o esquemas semipresidenciales.</p>
         <p class="quote">La respuesta fue arreglar la regla que permitió el abuso, no solo castigar a quien lo cometió.</p>
@@ -442,6 +471,26 @@
     gsap.set(firstActive, {height:'auto', opacity:1, overflow:'visible'});
     document.querySelector('.acto.active .acto-toggle').textContent = '－';
   }
+
+  // Cifras del héroe: llevan al pasaje donde se explican (abre el acto si hace falta)
+  document.querySelectorAll('.hero-stats [data-go]').forEach(function(row){
+    function go(){
+      var el = document.getElementById(row.getAttribute('data-go')); if(!el) return;
+      var acto = el.closest('.acto'), wait = 0;
+      if(acto && !acto.classList.contains('active')){
+        document.querySelectorAll('.acto.active').forEach(function(a){ a.classList.remove('active'); closeActo(a); });
+        acto.classList.add('active'); openActo(acto); wait = reduceMotion ? 60 : 420;
+      }
+      setTimeout(function(){
+        if(window.__lenis){ window.__lenis.scrollTo(el, { offset: -110, duration: 1.0 }); }
+        else { el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' }); }
+        el.classList.remove('go-flash'); void el.offsetWidth;
+        setTimeout(function(){ el.classList.add('go-flash'); }, reduceMotion ? 0 : 300);
+      }, wait);
+    }
+    row.addEventListener('click', go);
+    row.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); go(); } });
+  });
 
   if(!reduceMotion){
     actos.forEach(function(acto){

@@ -176,6 +176,35 @@
   .src-list .sm b{font-weight:500; color:var(--terracota-deep);}
   .src-all{display:inline-block; margin-top:1.4rem; font-family:'IBM Plex Mono',monospace; font-size:.8rem; color:var(--terracota-deep); text-decoration:none; border-bottom:1px solid var(--terracota-deep); padding-bottom:1px;}
   .src-all:hover{color:var(--terracota); border-color:var(--terracota);}
+  /* ---------- HERO: cifras como lista vertical con destino ---------- */
+  .hero .hero-stats{display:block; max-width:560px; margin-top:3rem; border-top:1px solid rgba(245,243,238,.2);}
+  .hero .hero-stats > div{position:relative; display:grid; grid-template-columns:5.4rem 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid rgba(245,243,238,.2); transition:background-color .35s cubic-bezier(0.23,1,0.32,1), padding-left .35s cubic-bezier(0.23,1,0.32,1);}
+  .hero .hero-stats > div:last-child{padding-right:2.4rem;}
+  .hero .hero-stats .num{font-size:1.75rem; line-height:1; width:max-content;}
+  .hero .hero-stats .lbl{margin:0; max-width:none; font-size:.82rem; line-height:1.5;}
+  .hero .hero-stats > div::before{content:""; position:absolute; left:0; top:.9rem; bottom:.9rem; width:2px; background:var(--terracota-light); transform-origin:top; transform:scaleY(0); animation:statBar .9s cubic-bezier(0.23,1,0.32,1) both;}
+  .hero .hero-stats > div:nth-child(1)::before{animation-delay:1.5s;}
+  .hero .hero-stats > div:nth-child(2)::before{animation-delay:1.7s;}
+  .hero .hero-stats > div:nth-child(3)::before{animation-delay:1.9s;}
+  .hero .hero-stats > div:hover{background:rgba(245,243,238,.07); padding-left:1.4rem;}
+  .hero .hero-stats > div[data-go]{cursor:pointer;}
+  .hero .hero-stats > div[data-go]::after{content:"\2193"; position:absolute; right:1rem; top:50%; transform:translate(-4px,-50%); opacity:0; font-family:'IBM Plex Mono', monospace; font-size:.95rem; color:var(--terracota-light); transition:opacity .3s, transform .3s cubic-bezier(0.23,1,0.32,1);}
+  .hero .hero-stats > div[data-go]:hover::after,.hero .hero-stats > div[data-go]:focus-visible::after{opacity:1; transform:translate(0,-50%);}
+  .hero .hero-stats > div[data-go]:focus-visible{outline:2px solid var(--terracota-light); outline-offset:2px;}
+  .hero .hero-stats > div[data-go]:active{transform:scale(0.985);}
+  [id^="go-"]{scroll-margin-top:110px;}
+  .go-flash{animation:goFlash 2s cubic-bezier(0.23,1,0.32,1) both;}
+  @keyframes statBar{to{transform:scaleY(1);}}
+  @keyframes goFlash{0%{background-color:rgba(181,98,59,.14); box-shadow:0 0 0 8px rgba(181,98,59,.14);} 100%{background-color:rgba(181,98,59,0); box-shadow:0 0 0 8px rgba(181,98,59,0);}}
+  @media (prefers-reduced-motion:reduce){
+    .hero .hero-stats > div::before{animation:none; transform:scaleY(1);}
+    .hero .hero-stats > div{transition:none;}
+    .go-flash{animation:none; outline:2px solid rgb(181,98,59); outline-offset:6px;}
+  }
+  @media (max-width:560px){
+    .hero .hero-stats > div{grid-template-columns:4.2rem 1fr; column-gap:1.1rem;}
+    .hero .hero-stats .num{font-size:1.4rem;}
+  }
 </style>
 <!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
 <style>:root{--v-accent:var(--terracota); --v-accent-deep:var(--terracota-deep); --v-accent2:var(--celadon-deep); --v-accent-soft:rgba(79,111,97,.2); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Gothic A1', sans-serif; --v-body:'Gothic A1', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
@@ -192,9 +221,9 @@
     <div class="title-romaja">Sikminji Joseon — la anexión de 1910, el Estado colonial y la economía de extracción, 1910–1945</div>
     <p class="hero-dek">En 1910 Corea dejó de ser un Estado. Durante treinta y cinco años una burocracia militar japonesa decidió qué se sembraba, qué se extraía y quién podía dirigir una empresa. Cuando terminó, había ferrocarriles, bancos y fábricas, pero ninguno era de los coreanos. Esa herencia explica desde la fuerza del Estado surcoreano hasta el origen de sus conglomerados.</p>
     <div class="hero-stats">
-      <div><span class="num">1910</span><span class="lbl">la anexión borra la soberanía</span></div>
-      <div><span class="num">35</span><span class="lbl">años de dominio colonial</span></div>
-      <div><span class="num">3.551</span><span class="lbl">propiedades japonesas pasan a manos coreanas</span></div>
+      <div data-go="go-1" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: la anexión borra la soberanía"><span class="num">1910</span><span class="lbl">la anexión borra la soberanía</span></div>
+      <div data-go="go-2" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: años de dominio colonial"><span class="num">35</span><span class="lbl">años de dominio colonial</span></div>
+      <div data-go="go-3" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: propiedades japonesas pasan a manos coreanas"><span class="num">3.551</span><span class="lbl">propiedades japonesas pasan a manos coreanas</span></div>
     </div>
   </div>
 </header>
@@ -254,7 +283,7 @@
             <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
           </figcaption>
         </figure>
-        <p>El Tratado de Anexión del 22 de agosto de 1910 disolvió el Imperio Coreano e instauró el <span class="gl" tabindex="0">Gobierno General<span class="gl-def" role="note">Régimen colonial absolutista dirigido por un gobernador general militar.</span></span> de Corea (Chōsen Sōtokufu), un régimen colonial absolutista encabezado por un gobernador general militar. Desapareció la soberanía y se desmantelaron las instituciones políticas coreanas. Los funcionarios y letrados yangban fueron reemplazados por un aparato burocrático y militar japonés muy centralizado.</p>
+        <p id="go-1">El Tratado de Anexión del 22 de agosto de 1910 disolvió el Imperio Coreano e instauró el <span class="gl" tabindex="0">Gobierno General<span class="gl-def" role="note">Régimen colonial absolutista dirigido por un gobernador general militar.</span></span> de Corea (Chōsen Sōtokufu), un régimen colonial absolutista encabezado por un gobernador general militar. Desapareció la soberanía y se desmantelaron las instituciones políticas coreanas. Los funcionarios y letrados yangban fueron reemplazados por un aparato burocrático y militar japonés muy centralizado.</p>
         <p>En lo económico, el marco legal colonial reservó la propiedad de las grandes empresas y los cargos directivos a ciudadanos japoneses. A los coreanos les quedaron los empleos no cualificados, mal pagados y en condiciones duras.</p>
         <p>La respuesta social fue una resistencia permanente. Su hito fue el Movimiento de Independencia del Primero de Marzo de 1919. Japón lo reprimió con dureza masiva y después cambió de estrategia hacia una "política cultural" (<span class="gl" tabindex="0">Bunka Seiji<span class="gl-def" role="note">La &quot;política cultural&quot; que Japón adoptó tras 1919: control social y policial más sutil.</span></span>), un control social y policial más sutil y más penetrante.</p>
         <p class="quote">La anexión eliminó al Estado coreano y puso sus recursos agrarios, naturales y humanos bajo el mando directo del Gobierno General.</p>
@@ -312,7 +341,7 @@
           <p class="vis-one"><small>En una frase</small>Treinta y cinco años de extracción dejaron una infraestructura moderna y un pueblo empobrecido.</p>
           <div class="vis-card">
             <div class="v-stats" style="--n:3">
-              <div class="v-stat"><span class="v-num" data-to="35" data-dec="0" data-pre="" data-suf="">35</span><span class="v-lbl">años de dominio colonial (1910–1945)</span></div>
+              <div id="go-2" class="v-stat"><span class="v-num" data-to="35" data-dec="0" data-pre="" data-suf="">35</span><span class="v-lbl">años de dominio colonial (1910–1945)</span></div>
               <div class="v-stat"><span class="v-num">1939</span><span class="v-lbl">año en que se obligó a adoptar nombres japoneses</span></div>
               <div class="v-stat"><span class="v-num">1945</span><span class="v-lbl">Corea es liberada en pobreza severa</span></div>
             </div>
@@ -339,7 +368,7 @@
             <div class="v-versus">
               <div class="v-col before"><h4>Lo que se heredó del Estado colonial</h4><ul><li>Policía y burocracia con colaboradores (chinil)</li><li>Leyes de control político, modelo de la Ley de Seguridad Nacional de 1948</li></ul></div>
               <svg class="v-vs" viewBox="0 0 34 24" aria-hidden="true"><path d="M2 12h26M20 4l10 8-10 8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <div class="v-col after"><h4>Lo que se privatizó</h4><ul><li>3.551 propiedades japonesas vendidas a empresarios conectados</li><li>Base de los grandes chaebols</li></ul></div>
+              <div class="v-col after"><h4>Lo que se privatizó</h4><ul><li id="go-3">3.551 propiedades japonesas vendidas a empresarios conectados</li><li>Base de los grandes chaebols</li></ul></div>
             </div>
           </div>
         </div><!--/vis-->
@@ -448,6 +477,26 @@
     gsap.set(firstActive, {height:'auto', opacity:1, overflow:'visible'});
     document.querySelector('.acto.active .acto-toggle').textContent = '－';
   }
+
+  // Cifras del héroe: llevan al pasaje donde se explican (abre el acto si hace falta)
+  document.querySelectorAll('.hero-stats [data-go]').forEach(function(row){
+    function go(){
+      var el = document.getElementById(row.getAttribute('data-go')); if(!el) return;
+      var acto = el.closest('.acto'), wait = 0;
+      if(acto && !acto.classList.contains('active')){
+        document.querySelectorAll('.acto.active').forEach(function(a){ a.classList.remove('active'); closeActo(a); });
+        acto.classList.add('active'); openActo(acto); wait = reduceMotion ? 60 : 420;
+      }
+      setTimeout(function(){
+        if(window.__lenis){ window.__lenis.scrollTo(el, { offset: -110, duration: 1.0 }); }
+        else { el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' }); }
+        el.classList.remove('go-flash'); void el.offsetWidth;
+        setTimeout(function(){ el.classList.add('go-flash'); }, reduceMotion ? 0 : 300);
+      }, wait);
+    }
+    row.addEventListener('click', go);
+    row.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); go(); } });
+  });
 
   if(!reduceMotion){
     actos.forEach(function(acto){

@@ -178,6 +178,35 @@
   .src-list .sm b{font-weight:500; color:var(--vermillion);}
   .src-all{display:inline-block; margin-top:1.4rem; font-family:'IBM Plex Mono',monospace; font-size:.8rem; color:var(--vermillion); text-decoration:none; border-bottom:1px solid var(--vermillion); padding-bottom:1px;}
   .src-all:hover{color:var(--vermillion-deep); border-color:var(--vermillion-deep);}
+  /* ---------- HERO: cifras como lista vertical con destino ---------- */
+  .hero .hero-stats{display:block; max-width:560px; margin-top:3rem; border-top:1px solid var(--line);}
+  .hero .hero-stats > div{position:relative; display:grid; grid-template-columns:5.4rem 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid var(--line); transition:background-color .35s cubic-bezier(0.23,1,0.32,1), padding-left .35s cubic-bezier(0.23,1,0.32,1);}
+  .hero .hero-stats > div:last-child{padding-right:2.4rem;}
+  .hero .hero-stats .num{font-size:1.75rem; line-height:1; width:max-content;}
+  .hero .hero-stats .lbl{margin:0; max-width:none; font-size:.82rem; line-height:1.5;}
+  .hero .hero-stats > div::before{content:""; position:absolute; left:0; top:.9rem; bottom:.9rem; width:2px; background:var(--vermillion); transform-origin:top; transform:scaleY(0); animation:statBar .9s cubic-bezier(0.23,1,0.32,1) both;}
+  .hero .hero-stats > div:nth-child(1)::before{animation-delay:1.5s;}
+  .hero .hero-stats > div:nth-child(2)::before{animation-delay:1.7s;}
+  .hero .hero-stats > div:nth-child(3)::before{animation-delay:1.9s;}
+  .hero .hero-stats > div:hover{background:rgba(161,61,44,.05); padding-left:1.4rem;}
+  .hero .hero-stats > div[data-go]{cursor:pointer;}
+  .hero .hero-stats > div[data-go]::after{content:"\2193"; position:absolute; right:1rem; top:50%; transform:translate(-4px,-50%); opacity:0; font-family:'IBM Plex Mono', monospace; font-size:.95rem; color:var(--vermillion); transition:opacity .3s, transform .3s cubic-bezier(0.23,1,0.32,1);}
+  .hero .hero-stats > div[data-go]:hover::after,.hero .hero-stats > div[data-go]:focus-visible::after{opacity:1; transform:translate(0,-50%);}
+  .hero .hero-stats > div[data-go]:focus-visible{outline:2px solid var(--vermillion); outline-offset:2px;}
+  .hero .hero-stats > div[data-go]:active{transform:scale(0.985);}
+  [id^="go-"]{scroll-margin-top:110px;}
+  .go-flash{animation:goFlash 2s cubic-bezier(0.23,1,0.32,1) both;}
+  @keyframes statBar{to{transform:scaleY(1);}}
+  @keyframes goFlash{0%{background-color:rgba(161,61,44,.14); box-shadow:0 0 0 8px rgba(161,61,44,.14);} 100%{background-color:rgba(161,61,44,0); box-shadow:0 0 0 8px rgba(161,61,44,0);}}
+  @media (prefers-reduced-motion:reduce){
+    .hero .hero-stats > div::before{animation:none; transform:scaleY(1);}
+    .hero .hero-stats > div{transition:none;}
+    .go-flash{animation:none; outline:2px solid rgb(161,61,44); outline-offset:6px;}
+  }
+  @media (max-width:560px){
+    .hero .hero-stats > div{grid-template-columns:4.2rem 1fr; column-gap:1.1rem;}
+    .hero .hero-stats .num{font-size:1.4rem;}
+  }
 </style>
 <!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
 <style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(168,134,60,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Shippori Mincho', serif; --v-body:'Zen Kaku Gothic New', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
@@ -194,9 +223,9 @@
     <div class="title-romaji">Gososendan Hōshiki — el Estado Desarrollista, el MITI y el milagro económico japonés, 1955-1973</div>
     <p class="hero-dek">Un país que importaba hasta la comida que comía logró, en quince años, convertirse en la segunda economía del mundo no comunista. No lo hizo el mercado solo ni lo hizo el Estado solo: lo hizo una burocracia que decidió escoger ganadores, y una flota de empresas que aceptó navegar en convoy, al ritmo del barco más lento, para no hundirse ninguna.</p>
     <div class="hero-stats">
-      <div><span class="num">10.8%</span><span class="lbl">crecimiento anual promedio del PIB, 1960-1965</span></div>
-      <div><span class="num">1960</span><span class="lbl">Plan de Duplicación de Ingresos de Hayato Ikeda</span></div>
-      <div><span class="num">1968</span><span class="lbl">Japón supera a Alemania Occidental en PIB</span></div>
+      <div data-go="go-1" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: crecimiento anual promedio del PIB, 1960-1965"><span class="num">10.8%</span><span class="lbl">crecimiento anual promedio del PIB, 1960-1965</span></div>
+      <div data-go="go-2" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: Plan de Duplicación de Ingresos de Hayato Ikeda"><span class="num">1960</span><span class="lbl">Plan de Duplicación de Ingresos de Hayato Ikeda</span></div>
+      <div data-go="go-3" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: Japón supera a Alemania Occidental en PIB"><span class="num">1968</span><span class="lbl">Japón supera a Alemania Occidental en PIB</span></div>
     </div>
   </div>
 </header>
@@ -282,7 +311,7 @@
             <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
           </figcaption>
         </figure>
-        <p>La trayectoria de la economía japonesa cambió de manera radical mediante una combinación de planificación estatal audaz, una alianza corporativa de largo plazo y un entorno geopolítico favorable. Bajo el liderazgo del Primer Ministro Hayato Ikeda, el gobierno lanzó en 1960 el Plan de Duplicación de Ingresos, un plan masivo para estimular la demanda interna mediante la inversión corporativa privada, reducciones impositivas y el desarrollo acelerado de la industria pesada y química.</p>
+        <p id="go-2">La trayectoria de la economía japonesa cambió de manera radical mediante una combinación de planificación estatal audaz, una alianza corporativa de largo plazo y un entorno geopolítico favorable. Bajo el liderazgo del Primer Ministro Hayato Ikeda, el gobierno lanzó en 1960 el Plan de Duplicación de Ingresos, un plan masivo para estimular la demanda interna mediante la inversión corporativa privada, reducciones impositivas y el desarrollo acelerado de la industria pesada y química.</p>
         <p>Siguiendo la "<span class="gl" tabindex="0">Doctrina Yoshida<span class="gl-def" role="note">Línea de posguerra: seguridad a cargo de Estados Unidos y energía puesta en la economía, no en el gasto militar.</span></span>" de priorizar la economía sobre el gasto militar, el Ministerio de Comercio Internacional e Industria (<span class="gl" tabindex="0">MITI<span class="gl-def" role="note">Ministerio de Comercio Internacional e Industria: el organismo que guiaba la política industrial.</span></span>) asumió un rol puramente desarrollista: no estatizó la producción, sino que operó como "guía" del sector privado. A través de la <span class="gl" tabindex="0">orientación administrativa<span class="gl-def" role="note">Instrucciones informales del ministerio, sin respaldo de ley, que las empresas seguían.</span></span> (<em>gyōsei seidō</em>), el MITI protegió sectores estratégicos —acero, petroquímica, astilleros, automóviles y electrónica—, coordinó la adquisición de patentes extranjeras y autorizó fusiones e incluso "carteles administrativos" de racionalización para evitar la competencia autodestructiva (<em>katō kyōsō</em>). Tras la disolución de los antiguos <span class="gl" tabindex="0">zaibatsu<span class="gl-def" role="note">Conglomerados familiares anteriores a la guerra, disueltos durante la ocupación.</span></span> familiares durante la ocupación, las corporaciones se reorganizaron en redes horizontales y verticales llamadas <span class="gl" tabindex="0">keiretsu<span class="gl-def" role="note">Grupos de empresas unidos por participaciones accionarias cruzadas y un banco principal.</span></span>: interconectadas mediante participaciones accionarias cruzadas y coordinadas alrededor de un banco principal, se protegieron de accionistas que buscaban dividendos rápidos, lo que facilitó una mentalidad de negocios a largo plazo enfocada en ganar cuota de mercado global.</p>
       </div>
     </div>
@@ -301,7 +330,7 @@
             <div class="v-stats" style="--n:3">
               <div class="v-stat"><span class="v-num" data-to="10.8" data-dec="1" data-pre="" data-suf="%">10.8%</span><span class="v-lbl">crecimiento real del PIB, primera mitad de los 60</span></div>
               <div class="v-stat"><span class="v-num" data-to="12.8" data-dec="1" data-pre="" data-suf="%">12.8%</span><span class="v-lbl">crecimiento anual entre 1965 y 1970</span></div>
-              <div class="v-stat"><span class="v-num">1968</span><span class="v-lbl">Japón supera a Alemania Occidental</span></div>
+              <div id="go-3" class="v-stat"><span class="v-num">1968</span><span class="v-lbl">Japón supera a Alemania Occidental</span></div>
             </div>
           </div>
         </div><!--/vis-->
@@ -311,7 +340,7 @@
             <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
           </figcaption>
         </figure>
-        <p>En el corto plazo, particularmente durante la década de 1960, las reformas institucionales y el nuevo modelo económico desataron un crecimiento sin precedentes: la tasa de crecimiento real del PIB promedió más de un 10% anual en la década posterior a 1955, alcanzando 10.8% en la primera mitad de los sesenta y un extraordinario 12.8% entre 1965 y 1970. En 1968, Japón superó nominalmente a Alemania Occidental para convertirse en la segunda mayor economía del mundo no comunista.</p>
+        <p id="go-1">En el corto plazo, particularmente durante la década de 1960, las reformas institucionales y el nuevo modelo económico desataron un crecimiento sin precedentes: la tasa de crecimiento real del PIB promedió más de un 10% anual en la década posterior a 1955, alcanzando 10.8% en la primera mitad de los sesenta y un extraordinario 12.8% entre 1965 y 1970. En 1968, Japón superó nominalmente a Alemania Occidental para convertirse en la segunda mayor economía del mundo no comunista.</p>
         <p>La composición de las exportaciones cambió por completo: la industria textil y ligera pasó del 80% de las exportaciones en la preguerra a apenas el 8% a inicios de los sesenta, mientras la maquinaria pesada, el acero, la construcción naval, los automóviles y los productos electrónicos pasaron a representar más del 50% de las ventas externas, creciendo 15% anual desde 1960. Las empresas firmaron miles de contratos para importar tecnología extranjera —Sony adquirió la licencia del transistor a Western Electric por solo 25,000 dólares en 1953, cimiento de toda su industria microelectrónica— y no solo la asimilaron, sino que la hicieron un 20% más eficiente. Para 1965 Japón revirtió su déficit comercial crónico; el empleo agrícola cayó del 42% al 17% entre 1955 y 1970, los salarios reales crecieron más de 7% anual, y para 1962 el 79.4% de los hogares urbanos ya tenía televisión.</p>
       </div>
     </div>
@@ -422,6 +451,26 @@
     gsap.set(firstActive, {height:'auto', opacity:1, overflow:'visible'});
     document.querySelector('.acto.active .acto-toggle').textContent = '－';
   }
+
+  // Cifras del héroe: llevan al pasaje donde se explican (abre el acto si hace falta)
+  document.querySelectorAll('.hero-stats [data-go]').forEach(function(row){
+    function go(){
+      var el = document.getElementById(row.getAttribute('data-go')); if(!el) return;
+      var acto = el.closest('.acto'), wait = 0;
+      if(acto && !acto.classList.contains('active')){
+        document.querySelectorAll('.acto.active').forEach(function(a){ a.classList.remove('active'); closeActo(a); });
+        acto.classList.add('active'); openActo(acto); wait = reduceMotion ? 60 : 420;
+      }
+      setTimeout(function(){
+        if(window.__lenis){ window.__lenis.scrollTo(el, { offset: -110, duration: 1.0 }); }
+        else { el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' }); }
+        el.classList.remove('go-flash'); void el.offsetWidth;
+        setTimeout(function(){ el.classList.add('go-flash'); }, reduceMotion ? 0 : 300);
+      }, wait);
+    }
+    row.addEventListener('click', go);
+    row.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); go(); } });
+  });
 
   if(!reduceMotion){
     actos.forEach(function(acto){

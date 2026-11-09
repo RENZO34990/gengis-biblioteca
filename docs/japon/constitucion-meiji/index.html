@@ -178,6 +178,35 @@
   .src-list .sm b{font-weight:500; color:var(--vermillion);}
   .src-all{display:inline-block; margin-top:1.4rem; font-family:'IBM Plex Mono',monospace; font-size:.8rem; color:var(--vermillion); text-decoration:none; border-bottom:1px solid var(--vermillion); padding-bottom:1px;}
   .src-all:hover{color:var(--vermillion-deep); border-color:var(--vermillion-deep);}
+  /* ---------- HERO: cifras como lista vertical con destino ---------- */
+  .hero .hero-stats{display:block; max-width:560px; margin-top:3rem; border-top:1px solid var(--line);}
+  .hero .hero-stats > div{position:relative; display:grid; grid-template-columns:5.4rem 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid var(--line); transition:background-color .35s cubic-bezier(0.23,1,0.32,1), padding-left .35s cubic-bezier(0.23,1,0.32,1);}
+  .hero .hero-stats > div:last-child{padding-right:2.4rem;}
+  .hero .hero-stats .num{font-size:1.75rem; line-height:1; width:max-content;}
+  .hero .hero-stats .lbl{margin:0; max-width:none; font-size:.82rem; line-height:1.5;}
+  .hero .hero-stats > div::before{content:""; position:absolute; left:0; top:.9rem; bottom:.9rem; width:2px; background:var(--vermillion); transform-origin:top; transform:scaleY(0); animation:statBar .9s cubic-bezier(0.23,1,0.32,1) both;}
+  .hero .hero-stats > div:nth-child(1)::before{animation-delay:1.5s;}
+  .hero .hero-stats > div:nth-child(2)::before{animation-delay:1.7s;}
+  .hero .hero-stats > div:nth-child(3)::before{animation-delay:1.9s;}
+  .hero .hero-stats > div:hover{background:rgba(161,61,44,.05); padding-left:1.4rem;}
+  .hero .hero-stats > div[data-go]{cursor:pointer;}
+  .hero .hero-stats > div[data-go]::after{content:"\2193"; position:absolute; right:1rem; top:50%; transform:translate(-4px,-50%); opacity:0; font-family:'IBM Plex Mono', monospace; font-size:.95rem; color:var(--vermillion); transition:opacity .3s, transform .3s cubic-bezier(0.23,1,0.32,1);}
+  .hero .hero-stats > div[data-go]:hover::after,.hero .hero-stats > div[data-go]:focus-visible::after{opacity:1; transform:translate(0,-50%);}
+  .hero .hero-stats > div[data-go]:focus-visible{outline:2px solid var(--vermillion); outline-offset:2px;}
+  .hero .hero-stats > div[data-go]:active{transform:scale(0.985);}
+  [id^="go-"]{scroll-margin-top:110px;}
+  .go-flash{animation:goFlash 2s cubic-bezier(0.23,1,0.32,1) both;}
+  @keyframes statBar{to{transform:scaleY(1);}}
+  @keyframes goFlash{0%{background-color:rgba(161,61,44,.14); box-shadow:0 0 0 8px rgba(161,61,44,.14);} 100%{background-color:rgba(161,61,44,0); box-shadow:0 0 0 8px rgba(161,61,44,0);}}
+  @media (prefers-reduced-motion:reduce){
+    .hero .hero-stats > div::before{animation:none; transform:scaleY(1);}
+    .hero .hero-stats > div{transition:none;}
+    .go-flash{animation:none; outline:2px solid rgb(161,61,44); outline-offset:6px;}
+  }
+  @media (max-width:560px){
+    .hero .hero-stats > div{grid-template-columns:4.2rem 1fr; column-gap:1.1rem;}
+    .hero .hero-stats .num{font-size:1.4rem;}
+  }
 </style>
 <!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
 <style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(168,134,60,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Shippori Mincho', serif; --v-body:'Zen Kaku Gothic New', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
@@ -194,9 +223,9 @@
     <div class="title-romaji">Dai-Nippon Teikoku Kenpō — la Constitución Meiji, 1889-1912</div>
     <p class="hero-dek">Un regalo, no un pacto. Cuando el Emperador Meiji entregó la primera constitución de Asia en 1889, no estaba cediendo poder — lo estaba blindando. Este documento diseñado en secreto por un puñado de hombres definió durante casi 60 años qué significaba gobernar Japón, y dejó una ambigüedad tan calculada que décadas después ayudaría a arrastrar al país a la guerra.</p>
     <div class="hero-stats">
-      <div><span class="num">21</span><span class="lbl">años sin constitución tras 1868</span></div>
-      <div><span class="num">1.1%</span><span class="lbl">de la población podía votar</span></div>
-      <div><span class="num">1889</span><span class="lbl">promulgación, primera de Asia</span></div>
+      <div data-go="go-inicio" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: años sin constitución tras 1868"><span class="num">21</span><span class="lbl">años sin constitución tras 1868</span></div>
+      <div data-go="go-1" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: de la población podía votar"><span class="num">1.1%</span><span class="lbl">de la población podía votar</span></div>
+      <div data-go="go-2" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: promulgación, primera de Asia"><span class="num">1889</span><span class="lbl">promulgación, primera de Asia</span></div>
     </div>
   </div>
 </header>
@@ -208,7 +237,7 @@
     <p class="lede">Toca cada acto para expandirlo.</p>
   </div>
 
-  <div class="acto active" data-i="1">
+  <div id="go-inicio" class="acto active" data-i="1">
     <div><span class="acto-num">01</span><span class="acto-label">El mundo antes</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">Una oligarquía sin plan escrito</span><span class="acto-toggle">＋</span></div>
@@ -280,7 +309,7 @@
           </figcaption>
         </figure>
         <p>En 1882 la oligarquía encomienda a Itō Hirobumi liderar una misión de estudio constitucional en el extranjero. Itō y su equipo descartan la Constitución estadounidense por "demasiado liberal", la francesa y española por su tendencia al despotismo, y el parlamentarismo británico por otorgar excesivo poder al parlamento. Adoptan las estructuras autoritarias del Imperio alemán, legitimadas mediante el concepto de <span class="gl" tabindex="0">kokutai<span class="gl-def" role="note">Identidad nacional aglutinada en torno a la dinastía imperial.</span></span>: la identidad nacional aglutinada en torno a la dinastía imperial.</p>
-        <p>A su regreso, Itō orquesta una reestructuración de arriba hacia abajo, en secreto: el sistema de Gabinete (1885, con él mismo como primer Primer Ministro), el <span class="gl" tabindex="0">Consejo Privado<span class="gl-def" role="note">Órgano creado en 1888 para ratificar el borrador de la constitución en secreto.</span></span> (1888, para ratificar el borrador de forma hermética), y finalmente la promulgación de la Constitución el 11 de febrero de 1889 — entregada por el Emperador como un regalo sagrado, no negociado con nadie.</p>
+        <p id="go-2">A su regreso, Itō orquesta una reestructuración de arriba hacia abajo, en secreto: el sistema de Gabinete (1885, con él mismo como primer Primer Ministro), el <span class="gl" tabindex="0">Consejo Privado<span class="gl-def" role="note">Órgano creado en 1888 para ratificar el borrador de la constitución en secreto.</span></span> (1888, para ratificar el borrador de forma hermética), y finalmente la promulgación de la Constitución el 11 de febrero de 1889 — entregada por el Emperador como un regalo sagrado, no negociado con nadie.</p>
       </div>
     </div>
   </div>
@@ -296,7 +325,7 @@
           <p class="vis-one"><small>En una frase</small>Una dieta con poder, pero con pocos votantes.</p>
           <div class="vis-card">
             <div class="v-stats" style="--n:3">
-              <div class="v-stat"><span class="v-num" data-to="1.1" data-dec="1" data-pre="" data-suf="%">1.1%</span><span class="v-lbl">de la población podía votar</span></div>
+              <div id="go-1" class="v-stat"><span class="v-num" data-to="1.1" data-dec="1" data-pre="" data-suf="%">1.1%</span><span class="v-lbl">de la población podía votar</span></div>
               <div class="v-stat"><span class="v-num">15 yenes</span><span class="v-lbl">de impuestos mínimos para votar</span></div>
               <div class="v-stat"><span class="v-num">1890</span><span class="v-lbl">se constituye la Dieta Imperial bicameral</span></div>
             </div>
@@ -434,6 +463,26 @@
     gsap.set(firstActive, {height:'auto', opacity:1, overflow:'visible'});
     document.querySelector('.acto.active .acto-toggle').textContent = '－';
   }
+
+  // Cifras del héroe: llevan al pasaje donde se explican (abre el acto si hace falta)
+  document.querySelectorAll('.hero-stats [data-go]').forEach(function(row){
+    function go(){
+      var el = document.getElementById(row.getAttribute('data-go')); if(!el) return;
+      var acto = el.closest('.acto'), wait = 0;
+      if(acto && !acto.classList.contains('active')){
+        document.querySelectorAll('.acto.active').forEach(function(a){ a.classList.remove('active'); closeActo(a); });
+        acto.classList.add('active'); openActo(acto); wait = reduceMotion ? 60 : 420;
+      }
+      setTimeout(function(){
+        if(window.__lenis){ window.__lenis.scrollTo(el, { offset: -110, duration: 1.0 }); }
+        else { el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' }); }
+        el.classList.remove('go-flash'); void el.offsetWidth;
+        setTimeout(function(){ el.classList.add('go-flash'); }, reduceMotion ? 0 : 300);
+      }, wait);
+    }
+    row.addEventListener('click', go);
+    row.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); go(); } });
+  });
 
   if(!reduceMotion){
     actos.forEach(function(acto){

@@ -178,6 +178,35 @@
   .src-list .sm b{font-weight:500; color:var(--vermillion);}
   .src-all{display:inline-block; margin-top:1.4rem; font-family:'IBM Plex Mono',monospace; font-size:.8rem; color:var(--vermillion); text-decoration:none; border-bottom:1px solid var(--vermillion); padding-bottom:1px;}
   .src-all:hover{color:var(--vermillion-deep); border-color:var(--vermillion-deep);}
+  /* ---------- HERO: cifras como lista vertical con destino ---------- */
+  .hero .hero-stats{display:block; max-width:560px; margin-top:3rem; border-top:1px solid var(--line);}
+  .hero .hero-stats > div{position:relative; display:grid; grid-template-columns:5.4rem 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid var(--line); transition:background-color .35s cubic-bezier(0.23,1,0.32,1), padding-left .35s cubic-bezier(0.23,1,0.32,1);}
+  .hero .hero-stats > div:last-child{padding-right:2.4rem;}
+  .hero .hero-stats .num{font-size:1.75rem; line-height:1; width:max-content;}
+  .hero .hero-stats .lbl{margin:0; max-width:none; font-size:.82rem; line-height:1.5;}
+  .hero .hero-stats > div::before{content:""; position:absolute; left:0; top:.9rem; bottom:.9rem; width:2px; background:var(--vermillion); transform-origin:top; transform:scaleY(0); animation:statBar .9s cubic-bezier(0.23,1,0.32,1) both;}
+  .hero .hero-stats > div:nth-child(1)::before{animation-delay:1.5s;}
+  .hero .hero-stats > div:nth-child(2)::before{animation-delay:1.7s;}
+  .hero .hero-stats > div:nth-child(3)::before{animation-delay:1.9s;}
+  .hero .hero-stats > div:hover{background:rgba(161,61,44,.05); padding-left:1.4rem;}
+  .hero .hero-stats > div[data-go]{cursor:pointer;}
+  .hero .hero-stats > div[data-go]::after{content:"\2193"; position:absolute; right:1rem; top:50%; transform:translate(-4px,-50%); opacity:0; font-family:'IBM Plex Mono', monospace; font-size:.95rem; color:var(--vermillion); transition:opacity .3s, transform .3s cubic-bezier(0.23,1,0.32,1);}
+  .hero .hero-stats > div[data-go]:hover::after,.hero .hero-stats > div[data-go]:focus-visible::after{opacity:1; transform:translate(0,-50%);}
+  .hero .hero-stats > div[data-go]:focus-visible{outline:2px solid var(--vermillion); outline-offset:2px;}
+  .hero .hero-stats > div[data-go]:active{transform:scale(0.985);}
+  [id^="go-"]{scroll-margin-top:110px;}
+  .go-flash{animation:goFlash 2s cubic-bezier(0.23,1,0.32,1) both;}
+  @keyframes statBar{to{transform:scaleY(1);}}
+  @keyframes goFlash{0%{background-color:rgba(161,61,44,.14); box-shadow:0 0 0 8px rgba(161,61,44,.14);} 100%{background-color:rgba(161,61,44,0); box-shadow:0 0 0 8px rgba(161,61,44,0);}}
+  @media (prefers-reduced-motion:reduce){
+    .hero .hero-stats > div::before{animation:none; transform:scaleY(1);}
+    .hero .hero-stats > div{transition:none;}
+    .go-flash{animation:none; outline:2px solid rgb(161,61,44); outline-offset:6px;}
+  }
+  @media (max-width:560px){
+    .hero .hero-stats > div{grid-template-columns:4.2rem 1fr; column-gap:1.1rem;}
+    .hero .hero-stats .num{font-size:1.4rem;}
+  }
 </style>
 <!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
 <style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(168,134,60,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Shippori Mincho', serif; --v-body:'Zen Kaku Gothic New', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
@@ -194,9 +223,9 @@
     <div class="title-romaji">Sakoku — el Japón cerrado bajo el shogunato Tokugawa, 1603-1853</div>
     <p class="hero-dek">Durante 250 años, un país entero decidió mirar hacia adentro. No por aislamiento accidental, sino por una política de Estado deliberada, defendida con decretos y cañones. Esta es la historia de cómo ese muro se construyó, se justificó, y terminó por no poder sostenerse frente al mundo que golpeaba la puerta.</p>
     <div class="hero-stats">
-      <div><span class="num">1635</span><span class="lbl">Edicto de Sakoku: se cierra el país</span></div>
-      <div><span class="num">1808</span><span class="lbl">el HMS Phaeton amenaza Nagasaki</span></div>
-      <div><span class="num">1853</span><span class="lbl">llegan los barcos negros de Perry</span></div>
+      <div data-go="go-1" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: Edicto de Sakoku: se cierra el país"><span class="num">1635</span><span class="lbl">Edicto de Sakoku: se cierra el país</span></div>
+      <div data-go="go-2" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: el HMS Phaeton amenaza Nagasaki"><span class="num">1808</span><span class="lbl">el HMS Phaeton amenaza Nagasaki</span></div>
+      <div data-go="go-3" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: llegan los barcos negros de Perry"><span class="num">1853</span><span class="lbl">llegan los barcos negros de Perry</span></div>
     </div>
   </div>
 </header>
@@ -221,7 +250,7 @@
             <div class="v-rings-wrap">
               <div class="v-rings" role="img" aria-label="Tres círculos concéntricos: el shogunato al centro, Nagasaki alrededor y las potencias afuera."><div class="v-ring r3"></div><div class="v-ring r2"></div><div class="v-ring r1">鎖</div></div>
               <ul class="v-legend">
-                <li><i class="k1"></i><span><b>El shogunato</b>Edicto de Sakoku de 1635: nadie sale ni entra.</span></li>
+                <li id="go-1"><i class="k1"></i><span><b>El shogunato</b>Edicto de Sakoku de 1635: nadie sale ni entra.</span></li>
                 <li><i class="k2"></i><span><b>Nagasaki</b>Único puerto, solo con holandeses y chinos.</span></li>
                 <li><i class="k3"></i><span><b>Rusia y Gran Bretaña</b>Presionan desde el norte y desde el sur.</span></li>
               </ul>
@@ -236,7 +265,7 @@
             <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
           </figcaption>
         </figure>
-        <p>Hacia finales del XVIII, el sistema empieza a tensionarse: Rusia presiona desde el norte, Gran Bretaña desde el sur. En 1808 el navío británico HMS Phaeton entra a Nagasaki y amenaza con cañonear la ciudad si no se le proveen suministros: la prueba de que el shogunato no tiene cómo defenderse. La respuesta es el <span class="gl" tabindex="0">Edicto de Expulsión<span class="gl-def" role="note">Decreto de 1825: disparar de inmediato contra embarcaciones occidentales sospechosas.</span></span> de 1825: disparar de inmediato contra cualquier embarcación occidental sospechosa.</p>
+        <p id="go-2">Hacia finales del XVIII, el sistema empieza a tensionarse: Rusia presiona desde el norte, Gran Bretaña desde el sur. En 1808 el navío británico HMS Phaeton entra a Nagasaki y amenaza con cañonear la ciudad si no se le proveen suministros: la prueba de que el shogunato no tiene cómo defenderse. La respuesta es el <span class="gl" tabindex="0">Edicto de Expulsión<span class="gl-def" role="note">Decreto de 1825: disparar de inmediato contra embarcaciones occidentales sospechosas.</span></span> de 1825: disparar de inmediato contra cualquier embarcación occidental sospechosa.</p>
         <p class="quote">Intelectuales nacionalistas de la <span class="gl" tabindex="0">escuela de Mito<span class="gl-def" role="note">Corriente de intelectuales nacionalistas, como Aizawa Seishisai.</span></span>, como Aizawa Seishisai, advierten sobre una "invasión espiritual" occidental: el temor no era solo militar, era que el cristianismo sedujera a un pueblo que ya se sentía alienado de sus señores feudales.</p>
       </div>
     </div>
@@ -261,7 +290,7 @@
             <p class="vis-note">De abajo hacia arriba. Esquema, no a escala.</p>
           </div>
         </div><!--/vis-->
-        <p>El catalizador definitivo llega en julio de 1853: el comodoro Matthew Perry, al mando de sus "barcos negros" fuertemente artillados, entra en la bahía de Tokio por orden directa del presidente Millard Fillmore, exigiendo a punta de cañón que Japón abra sus puertos al comercio y a la presencia diplomática occidental.</p>
+        <p id="go-3">El catalizador definitivo llega en julio de 1853: el comodoro Matthew Perry, al mando de sus "barcos negros" fuertemente artillados, entra en la bahía de Tokio por orden directa del presidente Millard Fillmore, exigiendo a punta de cañón que Japón abra sus puertos al comercio y a la presencia diplomática occidental.</p>
         <figure class="acto-figure">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Japanese%201854%20print%20Commodore%20Perry.jpg" alt="Grabado japonés de 1854 representando la flota del comodoro Perry" loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Grabado japonés de la flota de Perry, 1854, publicado en Edo para saciar la curiosidad pública sobre los extranjeros que acababan de forzar la apertura del país.
@@ -436,6 +465,26 @@
     gsap.set(firstActive, {height:'auto', opacity:1, overflow:'visible'});
     document.querySelector('.acto.active .acto-toggle').textContent = '－';
   }
+
+  // Cifras del héroe: llevan al pasaje donde se explican (abre el acto si hace falta)
+  document.querySelectorAll('.hero-stats [data-go]').forEach(function(row){
+    function go(){
+      var el = document.getElementById(row.getAttribute('data-go')); if(!el) return;
+      var acto = el.closest('.acto'), wait = 0;
+      if(acto && !acto.classList.contains('active')){
+        document.querySelectorAll('.acto.active').forEach(function(a){ a.classList.remove('active'); closeActo(a); });
+        acto.classList.add('active'); openActo(acto); wait = reduceMotion ? 60 : 420;
+      }
+      setTimeout(function(){
+        if(window.__lenis){ window.__lenis.scrollTo(el, { offset: -110, duration: 1.0 }); }
+        else { el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' }); }
+        el.classList.remove('go-flash'); void el.offsetWidth;
+        setTimeout(function(){ el.classList.add('go-flash'); }, reduceMotion ? 0 : 300);
+      }, wait);
+    }
+    row.addEventListener('click', go);
+    row.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); go(); } });
+  });
 
   if(!reduceMotion){
     actos.forEach(function(acto){

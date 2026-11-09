@@ -177,6 +177,35 @@
   .src-list .sm b{font-weight:500; color:var(--terracota-deep);}
   .src-all{display:inline-block; margin-top:1.4rem; font-family:'IBM Plex Mono',monospace; font-size:.8rem; color:var(--terracota-deep); text-decoration:none; border-bottom:1px solid var(--terracota-deep); padding-bottom:1px;}
   .src-all:hover{color:var(--terracota); border-color:var(--terracota);}
+  /* ---------- HERO: cifras como lista vertical con destino ---------- */
+  .hero .hero-stats{display:block; max-width:560px; margin-top:3rem; border-top:1px solid rgba(245,243,238,.2);}
+  .hero .hero-stats > div{position:relative; display:grid; grid-template-columns:8.5rem 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid rgba(245,243,238,.2); transition:background-color .35s cubic-bezier(0.23,1,0.32,1), padding-left .35s cubic-bezier(0.23,1,0.32,1);}
+  .hero .hero-stats > div:last-child{padding-right:2.4rem;}
+  .hero .hero-stats .num{font-size:1.5rem; line-height:1; width:max-content;}
+  .hero .hero-stats .lbl{margin:0; max-width:none; font-size:.82rem; line-height:1.5;}
+  .hero .hero-stats > div::before{content:""; position:absolute; left:0; top:.9rem; bottom:.9rem; width:2px; background:var(--terracota-light); transform-origin:top; transform:scaleY(0); animation:statBar .9s cubic-bezier(0.23,1,0.32,1) both;}
+  .hero .hero-stats > div:nth-child(1)::before{animation-delay:1.5s;}
+  .hero .hero-stats > div:nth-child(2)::before{animation-delay:1.7s;}
+  .hero .hero-stats > div:nth-child(3)::before{animation-delay:1.9s;}
+  .hero .hero-stats > div:hover{background:rgba(245,243,238,.07); padding-left:1.4rem;}
+  .hero .hero-stats > div[data-go]{cursor:pointer;}
+  .hero .hero-stats > div[data-go]::after{content:"\2193"; position:absolute; right:1rem; top:50%; transform:translate(-4px,-50%); opacity:0; font-family:'IBM Plex Mono', monospace; font-size:.95rem; color:var(--terracota-light); transition:opacity .3s, transform .3s cubic-bezier(0.23,1,0.32,1);}
+  .hero .hero-stats > div[data-go]:hover::after,.hero .hero-stats > div[data-go]:focus-visible::after{opacity:1; transform:translate(0,-50%);}
+  .hero .hero-stats > div[data-go]:focus-visible{outline:2px solid var(--terracota-light); outline-offset:2px;}
+  .hero .hero-stats > div[data-go]:active{transform:scale(0.985);}
+  [id^="go-"]{scroll-margin-top:110px;}
+  .go-flash{animation:goFlash 2s cubic-bezier(0.23,1,0.32,1) both;}
+  @keyframes statBar{to{transform:scaleY(1);}}
+  @keyframes goFlash{0%{background-color:rgba(181,98,59,.14); box-shadow:0 0 0 8px rgba(181,98,59,.14);} 100%{background-color:rgba(181,98,59,0); box-shadow:0 0 0 8px rgba(181,98,59,0);}}
+  @media (prefers-reduced-motion:reduce){
+    .hero .hero-stats > div::before{animation:none; transform:scaleY(1);}
+    .hero .hero-stats > div{transition:none;}
+    .go-flash{animation:none; outline:2px solid rgb(181,98,59); outline-offset:6px;}
+  }
+  @media (max-width:560px){
+    .hero .hero-stats > div{grid-template-columns:1fr; row-gap:.35rem;}
+    .hero .hero-stats .num{font-size:1.4rem;}
+  }
 </style>
 <!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
 <style>:root{--v-accent:var(--terracota); --v-accent-deep:var(--terracota-deep); --v-accent2:var(--celadon-deep); --v-accent-soft:rgba(79,111,97,.2); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Gothic A1', sans-serif; --v-body:'Gothic A1', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
@@ -193,9 +222,9 @@
     <div class="title-romaja">Bak Jeonghui-wa Yusin — el golpe de 1961, el Estado desarrollista autoritario y la Constitución Yushin, 1961–1979</div>
     <p class="hero-dek">Un golpe militar en 1961 prometió acabar con la corrupción y la pobreza. Dieciocho años después, el mismo hombre gobernaba por decreto, sin límite de mandatos y con una agencia de inteligencia que vigilaba al país. Ese Estado construyó el Milagro del Río Han y también la cultura de resistencia que lo terminó, en un disparo, en 1979.</p>
     <div class="hero-stats">
-      <div><span class="num">16 may 1961</span><span class="lbl">el golpe de Park Chung-hee</span></div>
-      <div><span class="num">1972</span><span class="lbl">la Constitución Yushin</span></div>
-      <div><span class="num">26 oct 1979</span><span class="lbl">el asesinato de Park</span></div>
+      <div data-go="go-1" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: el golpe de Park Chung-hee"><span class="num">16 may 1961</span><span class="lbl">el golpe de Park Chung-hee</span></div>
+      <div data-go="go-inicio" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: la Constitución Yushin"><span class="num">1972</span><span class="lbl">la Constitución Yushin</span></div>
+      <div data-go="go-2" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: el asesinato de Park"><span class="num">26 oct 1979</span><span class="lbl">el asesinato de Park</span></div>
     </div>
   </div>
 </header>
@@ -207,7 +236,7 @@
     <p class="lede">Toca cada acto para expandirlo.</p>
   </div>
 
-  <div class="acto active" data-i="1">
+  <div id="go-inicio" class="acto active" data-i="1">
     <div><span class="acto-num">01</span><span class="acto-label">El mundo antes</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">Una democracia frágil que no alcanzó</span><span class="acto-toggle">＋</span></div>
@@ -240,7 +269,7 @@
       <p class="acto-teaser">El general Park Chung-hee derroca al gobierno civil, disuelve la Asamblea y gobierna directamente.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="switches">
-          <p class="vis-one"><small>En una frase</small>El 16 de mayo de 1961 el golpe suspendió el orden constitucional en tres frentes.</p>
+          <p id="go-1" class="vis-one"><small>En una frase</small>El 16 de mayo de 1961 el golpe suspendió el orden constitucional en tres frentes.</p>
           <div class="vis-card">
             <div class="v-sov-head"><span>Lo que quedó en pie tras el golpe</span><span class="v-sov-count" aria-live="polite"><b class="n">0</b> / 3</span></div>
             <div class="v-sw off"><span class="v-sw-mark">議</span><span><b>Asamblea Nacional</b><em>Quién legisla</em></span><span class="to-end"><span class="v-sw-state"><span class="st-on">En pie</span><span class="st-off">Suspendido</span></span><span class="v-sw-track"></span></span></div>
@@ -321,7 +350,7 @@
         </div><!--/vis-->
         <p>El Ejecutivo gobernó con una serie de Decretos de Emergencia, sobre todo los 1, 4 y 9. Convirtieron en delito cualquier crítica a la Constitución, prohibieron las protestas estudiantiles y permitieron detenciones sin orden judicial. Casos como el montaje del incidente del Partido Revolucionario del Pueblo (1975) terminaron en la ejecución sumaria de disidentes.</p>
         <p>El núcleo del diseño de políticas pasó del Gabinete a la Secretaría Presidencial (la <span class="gl" tabindex="0">Casa Azul<span class="gl-def" role="note">Sede de la Presidencia surcoreana.</span></span>), apoyada en la burocracia técnica de la EPB. Se consolidó el nexo Estado-chaebol: el Estado controlaba la banca y asignaba crédito subsidiado a los conglomerados familiares a cambio de que cumplieran metas de exportación en la industria pesada y química.</p>
-        <p>La represión catalizó un movimiento prodemocracia de estudiantes, obreros, intelectuales y grupos cristianos. Uno de sus hitos fue la Declaración por la Salvación Nacional de 1976. Las tensiones llegaron a su punto máximo en las protestas masivas de Pusan-Masan, en octubre de 1979, y el 26 de octubre Park fue asesinado por el director de la KCIA, Kim Jae-gyu.</p>
+        <p id="go-2">La represión catalizó un movimiento prodemocracia de estudiantes, obreros, intelectuales y grupos cristianos. Uno de sus hitos fue la Declaración por la Salvación Nacional de 1976. Las tensiones llegaron a su punto máximo en las protestas masivas de Pusan-Masan, en octubre de 1979, y el 26 de octubre Park fue asesinado por el director de la KCIA, Kim Jae-gyu.</p>
         <p class="quote">El régimen que había prometido estabilidad terminó con un asesinato dentro de su propio círculo.</p>
       </div>
     </div>
@@ -448,6 +477,26 @@
     gsap.set(firstActive, {height:'auto', opacity:1, overflow:'visible'});
     document.querySelector('.acto.active .acto-toggle').textContent = '－';
   }
+
+  // Cifras del héroe: llevan al pasaje donde se explican (abre el acto si hace falta)
+  document.querySelectorAll('.hero-stats [data-go]').forEach(function(row){
+    function go(){
+      var el = document.getElementById(row.getAttribute('data-go')); if(!el) return;
+      var acto = el.closest('.acto'), wait = 0;
+      if(acto && !acto.classList.contains('active')){
+        document.querySelectorAll('.acto.active').forEach(function(a){ a.classList.remove('active'); closeActo(a); });
+        acto.classList.add('active'); openActo(acto); wait = reduceMotion ? 60 : 420;
+      }
+      setTimeout(function(){
+        if(window.__lenis){ window.__lenis.scrollTo(el, { offset: -110, duration: 1.0 }); }
+        else { el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' }); }
+        el.classList.remove('go-flash'); void el.offsetWidth;
+        setTimeout(function(){ el.classList.add('go-flash'); }, reduceMotion ? 0 : 300);
+      }, wait);
+    }
+    row.addEventListener('click', go);
+    row.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); go(); } });
+  });
 
   if(!reduceMotion){
     actos.forEach(function(acto){
