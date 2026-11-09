@@ -21,7 +21,7 @@ def css(country,maxlen=4):
     mob='grid-template-columns:4.2rem 1fr; column-gap:1.1rem;' if not long else 'grid-template-columns:1fr; row-gap:.35rem;'
     return f'''  {MARK}
   .hero .hero-stats{{display:block; max-width:560px; margin-top:3rem; border-top:1px solid {br};}}
-  .hero .hero-stats > div{{position:relative; display:grid; grid-template-columns:{col} 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid {br}; transition:background-color .35s cubic-bezier(0.23,1,0.32,1), padding-left .35s cubic-bezier(0.23,1,0.32,1);}}
+  .hero .hero-stats > div{{position:relative; display:grid; grid-template-columns:{col} 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid {br}; transition:background-color .35s cubic-bezier(0.23,1,0.32,1), transform .35s cubic-bezier(0.23,1,0.32,1);}}
   .hero .hero-stats > div:last-child{{padding-right:2.4rem;}}
   .hero .hero-stats .num{{font-size:{nfs}; line-height:1; width:max-content;}}
   .hero .hero-stats .lbl{{margin:0; max-width:none; font-size:.82rem; line-height:1.5;}}
