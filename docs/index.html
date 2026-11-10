@@ -21,6 +21,7 @@
 <link rel="stylesheet" href="assets/fonts/source-sans-3.css">
 <link rel="stylesheet" href="assets/fonts/ibm-plex-mono.css">
 <link rel="stylesheet" href="assets/fonts/crimson-pro.css">
+<link rel="stylesheet" href="assets/fonts/cormorant-garamond.css">
 <link rel="stylesheet" href="assets/fonts/atkinson-hyperlegible.css">
 <style>
   :root{
@@ -65,23 +66,23 @@
 
   /* ---------- CEREMONIA DE APERTURA (solo primera visita) ---------- */
   .ceremony{
-    position:fixed; inset:0; z-index:100; background:var(--ivory);
+    position:fixed; inset:0; z-index:100; background:#10090D;
     display:flex; flex-direction:column; align-items:center; justify-content:center;
     cursor:pointer; overflow:hidden;
   }
   .ceremony-word{
-    font-family:'Crimson Pro', 'Source Serif 4', serif; font-style:italic; font-weight:500; text-transform:uppercase;
-    font-size:clamp(2.6rem, 9vw, 6.2rem); color:var(--editorial-black);
-    margin:0; letter-spacing:.03em; padding-left:.03em; line-height:1.12; font-optical-sizing:auto;
+    font-family:'Cormorant Garamond', 'Crimson Pro', serif; font-style:normal; font-weight:500; text-transform:uppercase;
+    font-size:clamp(2.4rem, 8.4vw, 6rem); color:#F1D4D0;
+    margin:0; letter-spacing:.14em; padding-left:.14em; line-height:1.12;
     clip-path:inset(0 100% 0 0);
     filter:blur(0px);
   }
   .ceremony-sub{display:flex; align-items:center; gap:.7rem; margin-top:1.7rem; opacity:0;}
-  .ceremony-sub .by{font-family:'Source Serif 4', serif; font-style:italic; font-size:.98rem; color:var(--warm-gray);}
+  .ceremony-sub .by{font-family:'Cormorant Garamond', 'Source Serif 4', serif; font-style:italic; font-size:1.1rem; color:#C9A9AE;}
   .ceremony-sub svg{width:22px; height:22px;}
   .ceremony-skip{
     position:absolute; bottom:3rem; font-family:'IBM Plex Mono', monospace; font-size:.76rem;
-    color:var(--stone); letter-spacing:.02em; opacity:0;
+    color:#9E7E86; letter-spacing:.02em; opacity:0;
   }
 
   /* ---------- SPINE NAV: Nalanda como columna vertebral persistente ---------- */
@@ -1150,6 +1151,7 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
     var ceremony = document.getElementById('ceremony');
     var seen = false;
     try { seen = sessionStorage.getItem('nalanda_intro_seen') === '1'; } catch(e){}
+    if(/[?&]desde=triveni/.test(location.search)) seen = false;
 
     if(seen || reduceMotion){
       ceremony.style.display = 'none';
@@ -1202,7 +1204,8 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
         }
       });
       exit
-        .to(ceremony, { backgroundColor: 'rgba(246,241,230,0)', duration: 1, ease: 'power1.inOut' }, 0)
+        .to(ceremony, { backgroundColor: '#F6F1E6', duration: 0.95, ease: 'power1.inOut' }, 0)
+        .to(ceremony, { backgroundColor: 'rgba(246,241,230,0)', duration: 0.3, ease: 'none' }, 0.95)
         .to(skip, { opacity: 0, duration: 0.35 }, 0)
         .to(sub, { opacity: 0, y: -6, duration: 0.4 }, 0)
         .to(word, {
