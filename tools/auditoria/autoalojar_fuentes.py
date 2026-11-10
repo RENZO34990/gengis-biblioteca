@@ -24,7 +24,10 @@ FAM = {  # nombre Google -> (paquete, pesos normales, pesos itálica)
     'Figtree': ('figtree', [300, 400, 500, 600, 700], []),
     'Crimson Pro': ('crimson-pro', [400, 500, 600], [400, 500]),
     'Atkinson Hyperlegible': ('atkinson-hyperlegible', [400, 700], []),
+    'Cormorant Garamond': ('cormorant-garamond', [400, 500, 600], [400]),
+    'DM Sans': ('dm-sans', [300, 400, 500, 600], []),
 }
+ONLY = [x for x in os.environ.get('SOLO', '').split(',') if x]  # SOLO='DM Sans,Cormorant Garamond' procesa solo esas familias y no toca las páginas
 slug = lambda n: n.lower().replace(' ', '-')
 
 pages = sorted(glob.glob(os.path.join(DOCS, '*/*/index.html'))) + [os.path.join(DOCS, 'index.html'), os.path.join(DOCS, '404.html')]
@@ -76,6 +79,7 @@ def keep(name, ur, used):
 os.makedirs(OUT + '/files', exist_ok=True)
 tot = 0
 for gname, (pkg, wn, wi) in FAM.items():
+    if ONLY and gname not in ONLY: continue
     css_out = []
     for style, weights in (('normal', wn), ('italic', wi)):
         for w in weights:
@@ -96,6 +100,7 @@ print('woff2 copiados (MB aprox):', round(tot / 1e6, 1))
 
 # páginas
 changed = 0
+if ONLY: pages = []
 for p in pages:
     s = open(p, encoding='utf-8').read(); o = s
     m = re.search(r'<link href="https://fonts\.googleapis\.com/css2\?([^"]+)" rel="stylesheet">\n?', s)
