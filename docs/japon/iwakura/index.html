@@ -256,6 +256,15 @@ h1,h2,h3,.acto-title,.title-cn{text-wrap:balance;}
 p,li,.lbl{text-wrap:pretty;}
 h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflow-wrap:break-word;}
 .acto-figure img{height:auto;}
+/* ---------- AUDITORIA: flat-grid como filas ---------- */
+.flat-grid,.flat-grid.cols-3,.flat-grid.cols-4{display:block; border-top:1px solid var(--line);}
+.flat-grid > div,.flat-grid > div:not(:first-child){display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.7fr); column-gap:3rem; align-items:start; padding:1.8rem 0; border-right:none; border-bottom:1px solid var(--line);}
+.flat-grid > div > h3{grid-column:1; grid-row:1 / span 4; margin:0;}
+.flat-grid > div > :not(h3){grid-column:2;}
+.flat-grid h3::before{content:none;}
+.flat-grid p{max-width:62ch;}
+@media (max-width:720px){.flat-grid > div,.flat-grid > div:not(:first-child){grid-template-columns:1fr; row-gap:.6rem; padding:1.4rem 0;}
+  .flat-grid > div > h3{grid-row:auto;} .flat-grid > div > :not(h3){grid-column:1;}}
 </style><!--/vis-head-->
 </head>
 <body>

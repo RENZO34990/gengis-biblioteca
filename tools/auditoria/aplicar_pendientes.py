@@ -226,12 +226,35 @@ def cifras(s):
     return s, 'ok'
 
 
+
+FILAS_MARK = '/* ---------- AUDITORIA: flat-grid como filas ---------- */'
+FILAS_CSS = FILAS_MARK + """
+.flat-grid,.flat-grid.cols-3,.flat-grid.cols-4{display:block; border-top:1px solid var(--line);}
+.flat-grid > div,.flat-grid > div:not(:first-child){display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.7fr); column-gap:3rem; align-items:start; padding:1.8rem 0; border-right:none; border-bottom:1px solid var(--line);}
+.flat-grid > div > h3{grid-column:1; grid-row:1 / span 4; margin:0;}
+.flat-grid > div > :not(h3){grid-column:2;}
+.flat-grid h3::before{content:none;}
+.flat-grid p{max-width:62ch;}
+@media (max-width:720px){.flat-grid > div,.flat-grid > div:not(:first-child){grid-template-columns:1fr; row-gap:.6rem; padding:1.4rem 0;}
+  .flat-grid > div > h3{grid-row:auto;} .flat-grid > div > :not(h3){grid-column:1;}}
+"""
+
+
+def filas_y_eyebrows(s):
+    if 'class="flat-grid' in s and FILAS_MARK not in s:
+        i = s.rindex('</style>')
+        s = s[:i] + FILAS_CSS + s[i:]
+    s = re.sub(r'[ \t]*<span class="eyebrow">(?:Comparación regional|Por qué importa hoy|Actores en tensión)</span>\s*', '', s)
+    return s
+
+
 files = sorted(glob.glob('*/*/index.html')) + ['index.html']
 report = {}
 for rel in files:
     s0 = open(rel, encoding='utf-8').read()
     s = fix_all_text(s0)
     s, st = cifras(s)
+    s = filas_y_eyebrows(s)
     s = structure(s, rel)
     s = img_dims(s, rel)
     s = meta_block(s, rel)  # al final: usa el texto ya corregido

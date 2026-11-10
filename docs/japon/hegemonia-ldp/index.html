@@ -229,6 +229,15 @@ h1,h2,h3,.acto-title,.title-cn{text-wrap:balance;}
 p,li,.lbl{text-wrap:pretty;}
 h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflow-wrap:break-word;}
 .acto-figure img{height:auto;}
+/* ---------- AUDITORIA: flat-grid como filas ---------- */
+.flat-grid,.flat-grid.cols-3,.flat-grid.cols-4{display:block; border-top:1px solid var(--line);}
+.flat-grid > div,.flat-grid > div:not(:first-child){display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.7fr); column-gap:3rem; align-items:start; padding:1.8rem 0; border-right:none; border-bottom:1px solid var(--line);}
+.flat-grid > div > h3{grid-column:1; grid-row:1 / span 4; margin:0;}
+.flat-grid > div > :not(h3){grid-column:2;}
+.flat-grid h3::before{content:none;}
+.flat-grid p{max-width:62ch;}
+@media (max-width:720px){.flat-grid > div,.flat-grid > div:not(:first-child){grid-template-columns:1fr; row-gap:.6rem; padding:1.4rem 0;}
+  .flat-grid > div > h3{grid-row:auto;} .flat-grid > div > :not(h3){grid-column:1;}}
 </style><!--/vis-head-->
 </head>
 <body>
@@ -389,8 +398,7 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
 
 <section id="actores">
   <div class="section-head">
-    <span class="eyebrow">Actores en tensión</span>
-    <h2>Quién quería qué, y con qué poder</h2>
+<h2>Quién quería qué, y con qué poder</h2>
   </div>
   <div class="flat-grid cols-4">
     <div><span class="role">El partido-Estado</span><h3>El LDP y sus facciones</h3><p>Quería retener la hegemonía absoluta y garantizar la reelección perpetua de sus miembros. Contaba con la maquinaria de las koenkai, el financiamiento de Keidanren y apoyo encubierto de la CIA. Institucionalizó las donaciones y delegó la política pública a los ministerios.</p></div>
@@ -402,8 +410,7 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
 
 <section id="comparacion">
   <div class="section-head">
-    <span class="eyebrow">Comparación regional</span>
-    <h2>Por qué el LDP sobrevivió donde otros colapsaron</h2>
+<h2>Por qué el LDP sobrevivió donde otros colapsaron</h2>
   </div>
   <div class="flat-grid">
     <div><h3>Con la Democracia Cristiana italiana</h3><p>Ambos partidos gobernaron de forma casi ininterrumpida durante la Guerra Fría con financiamiento estadounidense y masivas redes clientelares de obras públicas regionales, frente al miedo anticomunista compartido.</p></div>
