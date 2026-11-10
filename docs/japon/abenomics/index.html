@@ -3,7 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>アベノミクス — Abenomics</title>
+<title>アベノミクス: Abenomics</title>
+<meta name="description" content="Veinte años de deflación habían convencido al país entero de que los precios solo podían bajar.">
+<meta name="theme-color" content="#A13D2C">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Biblioteca Nalanda">
+<meta property="og:locale" content="es_PE">
+<meta property="og:title" content="アベノミクス: Abenomics">
+<meta property="og:description" content="Veinte años de deflación habían convencido al país entero de que los precios solo podían bajar.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23A13D2C'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%23F2EFE9' font-family='Georgia,serif'%3EN%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Shippori+Mincho:wght@400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -187,56 +195,73 @@
   .src-all{display:inline-block; margin-top:1.4rem; font-family:'IBM Plex Mono',monospace; font-size:.8rem; color:var(--vermillion); text-decoration:none; border-bottom:1px solid var(--vermillion); padding-bottom:1px;}
   .src-all:hover{color:var(--vermillion-deep); border-color:var(--vermillion-deep);}
   /* ---------- HERO: cifras como lista vertical con destino ---------- */
-  .hero .hero-stats{display:block; max-width:560px; margin-top:3rem; border-top:1px solid var(--line);}
-  .hero .hero-stats > div{position:relative; display:grid; grid-template-columns:5.4rem 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid var(--line); transition:background-color .35s cubic-bezier(0.23,1,0.32,1), transform .35s cubic-bezier(0.23,1,0.32,1);}
-  .hero .hero-stats > div:last-child{padding-right:2.4rem;}
-  .hero .hero-stats .num{font-size:1.75rem; line-height:1; width:max-content;}
-  .hero .hero-stats .lbl{margin:0; max-width:none; font-size:.82rem; line-height:1.5;}
-  .hero .hero-stats > div::before{content:""; position:absolute; left:0; top:.9rem; bottom:.9rem; width:2px; background:var(--vermillion); transform-origin:top; transform:scaleY(0); animation:statBar .9s cubic-bezier(0.23,1,0.32,1) both;}
-  .hero .hero-stats > div:nth-child(1)::before{animation-delay:1.5s;}
-  .hero .hero-stats > div:nth-child(2)::before{animation-delay:1.7s;}
-  .hero .hero-stats > div:nth-child(3)::before{animation-delay:1.9s;}
-  @media (hover:hover){.hero .hero-stats > div:hover{background:rgba(161,61,44,.05); transform:translateX(.3rem);}}
-  .hero .hero-stats > div[data-go]{cursor:pointer;}
-  .hero .hero-stats > div[data-go]::after{content:"\2193"; position:absolute; right:1rem; top:50%; transform:translate(-4px,-50%); opacity:0; font-family:'IBM Plex Mono', monospace; font-size:.95rem; color:var(--vermillion); transition:opacity .3s, transform .3s cubic-bezier(0.23,1,0.32,1);}
-  .hero .hero-stats > div[data-go]:hover::after,.hero .hero-stats > div[data-go]:focus-visible::after{opacity:1; transform:translate(0,-50%);}
-  .hero .hero-stats > div[data-go]:focus-visible{outline:2px solid var(--vermillion); outline-offset:2px;}
-  .hero .hero-stats > div[data-go]:active{transform:scale(0.985);}
+  .cifras .hero-stats{display:block; max-width:560px; margin-top:3rem; border-top:1px solid var(--line);}
+  .cifras .hero-stats > div{position:relative; display:grid; grid-template-columns:5.4rem 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid var(--line); transition:background-color .35s cubic-bezier(0.23,1,0.32,1), transform .35s cubic-bezier(0.23,1,0.32,1);}
+  .cifras .hero-stats > div:last-child{padding-right:2.4rem;}
+  .cifras .hero-stats .num{font-size:1.75rem; line-height:1; width:max-content;}
+  .cifras .hero-stats .lbl{margin:0; max-width:none; font-size:.82rem; line-height:1.5;}
+  .cifras .hero-stats > div::before{content:""; position:absolute; left:0; top:.9rem; bottom:.9rem; width:2px; background:var(--vermillion); transform-origin:top; transform:scaleY(0);}
+  @media (hover:hover){.cifras .hero-stats > div:hover{background:rgba(161,61,44,.05); transform:translateX(.3rem);}}
+  .cifras .hero-stats > div[data-go]{cursor:pointer;}
+  .cifras .hero-stats > div[data-go]::after{content:"\2193"; position:absolute; right:1rem; top:50%; transform:translate(-4px,-50%); opacity:0; font-family:'IBM Plex Mono', monospace; font-size:.95rem; color:var(--vermillion); transition:opacity .3s, transform .3s cubic-bezier(0.23,1,0.32,1);}
+  .cifras .hero-stats > div[data-go]:hover::after,.cifras .hero-stats > div[data-go]:focus-visible::after{opacity:1; transform:translate(0,-50%);}
+  .cifras .hero-stats > div[data-go]:focus-visible{outline:2px solid var(--vermillion); outline-offset:2px;}
+  .cifras .hero-stats > div[data-go]:active{transform:scale(0.985);}
   [id^="go-"]{scroll-margin-top:110px;}
   .go-flash{animation:goFlash 2s cubic-bezier(0.23,1,0.32,1) both;}
   @keyframes statBar{to{transform:scaleY(1);}}
   @keyframes goFlash{0%{background-color:rgba(161,61,44,.14); box-shadow:0 0 0 8px rgba(161,61,44,.14);} 100%{background-color:rgba(161,61,44,0); box-shadow:0 0 0 8px rgba(161,61,44,0);}}
   @media (prefers-reduced-motion:reduce){
-    .hero .hero-stats > div::before{animation:none; transform:scaleY(1);}
-    .hero .hero-stats > div{transition:none;}
+    .cifras .hero-stats > div::before{animation:none !important; transform:scaleY(1);}
+    .cifras .hero-stats > div{transition:none;}
     .go-flash{animation:none; outline:2px solid rgb(161,61,44); outline-offset:6px;}
   }
   @media (max-width:560px){
-    .hero .hero-stats > div{grid-template-columns:4.2rem 1fr; column-gap:1.1rem;}
-    .hero .hero-stats .num{font-size:1.4rem;}
+    .cifras .hero-stats > div{grid-template-columns:4.2rem 1fr; column-gap:1.1rem;}
+    .cifras .hero-stats .num{font-size:1.4rem;}
   }
 </style>
 <!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
-<style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(168,134,60,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Shippori Mincho', serif; --v-body:'Zen Kaku Gothic New', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
+<style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(168,134,60,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Shippori Mincho', serif; --v-body:'Zen Kaku Gothic New', sans-serif; --v-mono:'IBM Plex Mono', monospace;}
+.cifras{max-width:none; margin:0; padding:3.5rem 8vw 3rem;}
+.cifras .hero-stats{margin-top:0;}
+.cifras.in .hero-stats > div::before{animation:statBar .9s cubic-bezier(0.23,1,0.32,1) both;}
+.cifras.in .hero-stats > div:nth-child(1)::before{animation-delay:.1s;}
+.cifras.in .hero-stats > div:nth-child(2)::before{animation-delay:.25s;}
+.cifras.in .hero-stats > div:nth-child(3)::before{animation-delay:.4s;}
+.skip-link{position:absolute; left:1rem; top:-4rem; z-index:200; background:#1A1A1A; color:#F2EFE9; padding:.7rem 1.1rem; font:500 .85rem/1 sans-serif; text-decoration:none; transition:top .25s cubic-bezier(0.23,1,0.32,1);}
+.skip-link:focus{top:1rem;}
+/* ---------- AUDITORIA: tipografia y accesibilidad ---------- */
+.num,.acto-date,.v-yr,.v-k,.when,td,th{font-variant-numeric:tabular-nums;}
+h1,h2,h3,.acto-title,.title-cn{text-wrap:balance;}
+p,li,.lbl{text-wrap:pretty;}
+h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflow-wrap:break-word;}
+.acto-figure img{height:auto;}
+</style><!--/vis-head-->
 </head>
 <body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 <a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
 
 <header class="hero">
   <div class="hero-kanji">アベノミクス</div>
   <div class="hero-content">
-    <span class="eyebrow">Kongzhi · Japón · Economía 04</span>
+    <span class="eyebrow">Kongzhi / Japón / Economía 04</span>
     <div class="hero-rule"></div>
     <h1 class="title-jp">アベノミクス</h1>
-    <div class="title-romaji">Abenomikusu — política monetaria expansiva y reinvención económica, 2012-2020</div>
-    <p class="hero-dek">Veinte años de deflación habían convencido al país entero de que los precios solo podían bajar. Un primer ministro de vuelta en el poder apostó todo a lo contrario: tres flechas disparadas a la vez, un banco central que compró deuda como nunca nadie lo había hecho, y un experimento que terminó por resolver el problema equivocándose de bando — Japón dejó de tener poca demanda y empezó a tener pocos trabajadores.</p>
-    <div class="hero-stats">
+    <div class="title-romaji">Abenomikusu: política monetaria expansiva y reinvención económica, 2012-2020</div>
+    <p class="hero-dek">Veinte años de deflación habían convencido al país entero de que los precios solo podían bajar. Un primer ministro de vuelta en el poder apostó todo a lo contrario: tres flechas disparadas a la vez, un banco central que compró deuda como nunca nadie lo había hecho, y un experimento que terminó por resolver el problema equivocándose de bando. Japón dejó de tener poca demanda y empezó a tener pocos trabajadores.</p>
+    
+  </div>
+</header>
+<main id="contenido">
+<section class="cifras" aria-label="Cifras clave">
+<div class="hero-stats">
       <div data-go="go-1" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: Kuroda lanza el QQE en el BOJ"><span class="num">2013</span><span class="lbl">Kuroda lanza el QQE en el BOJ</span></div>
       <div data-go="go-2" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: Nikkei supera los 20,000 puntos"><span class="num">2015</span><span class="lbl">Nikkei supera los 20,000 puntos</span></div>
       <div data-go="go-3" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: empleos nuevos creados"><span class="num">5.4M</span><span class="lbl">empleos nuevos creados</span></div>
     </div>
-  </div>
-</header>
+</section>
 
 <section id="actos">
   <div class="section-head">
@@ -249,7 +274,7 @@
     <div><span class="acto-num">01</span><span class="acto-label">El mundo antes</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">Una trampa de liquidez, y un yen insostenible</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">1991 – 2012</span>
+      <span class="acto-date">1991-2012</span>
       <p class="acto-teaser">Dos décadas de deflación, un yen apreciado a niveles récord y las secuelas de Fukushima dejan a Japón atrapado en el límite inferior de cero sin herramientas convencionales.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="press">
@@ -273,7 +298,7 @@
     <div><span class="acto-num">02</span><span class="acto-label">La grieta</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">El retorno de Abe, y la meta del 2%</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">dic 2012 – abr 2013</span>
+      <span class="acto-date">dic 2012 - abr 2013</span>
       <p class="acto-teaser">Shinzo Abe vuelve al poder prometiendo erradicar la deflación. El BOJ y el gobierno fijan por primera vez una meta de inflación formal, y Kuroda llega al banco central a romper la ortodoxia.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="steps">
@@ -290,7 +315,7 @@
         <figure class="acto-figure">
           <img src="../../assets/japon/abenomics/abe-2013.jpg" alt="Shinzō Abe en 2013, primer ministro de Japón." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Shinzō Abe, de regreso al poder en diciembre de 2012 con una promesa: terminar con 15 años de deflación.
-            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+            <span class="credit">Fuente: Wikimedia Commons, dominio público</span>
           </figcaption>
         </figure>
         <p>La aplastante victoria electoral del Partido Liberal Demócrata en diciembre de 2012 lleva a Shinzo Abe por segunda vez a la jefatura de gobierno, con el compromiso explícito de erradicar la deflación mediante una estrategia macroeconómica agresiva. En enero de 2013, el gobierno y el Banco de Japón firman una declaración conjunta histórica estableciendo formalmente una meta de inflación del 2% interanual.</p>
@@ -303,7 +328,7 @@
     <div><span class="acto-num">03</span><span class="acto-label">El giro</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">Las Tres Flechas</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">2013 – 2016</span>
+      <span class="acto-date">2013-2016</span>
       <p class="acto-teaser">Política monetaria agresiva, estímulo fiscal flexible y reformas estructurales disparadas a la vez: Abenomics no es una medida, es una estrategia integral.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="switches">
@@ -318,12 +343,12 @@
         <figure class="acto-figure">
           <img src="../../assets/japon/abenomics/kuroda-boj.jpg" alt="Haruhiko Kuroda, gobernador del Banco de Japón, 2013." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Haruhiko Kuroda, gobernador del Banco de Japón, anunció en abril de 2013 una expansión monetaria sin precedentes.
-            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+            <span class="credit">Fuente: Wikimedia Commons, dominio público</span>
           </figcaption>
         </figure>
-        <p><strong>Primera flecha — política monetaria agresiva:</strong> el BOJ ejecuta la <span class="gl" tabindex="0">Flexibilización Monetaria Cuantitativa y Cualitativa<span class="gl-def" role="note">Programa del Banco de Japón desde 2013: comprar bonos a gran escala para ampliar el dinero en circulación.</span></span> (QQE) desde abril de 2013, expandiendo la base monetaria mediante compra masiva de bonos, e introduce en 2016 una tasa de interés negativa de -0.1%.</p>
-        <p><strong>Segunda flecha — política fiscal flexible:</strong> gasto público de estímulo a corto plazo combinado con un plan de consolidación a mediano plazo, que incluyó elevar el impuesto al consumo del 5% al 8% en abril de 2014.</p>
-        <p><strong>Tercera flecha — reformas estructurales:</strong> <span class="gl" tabindex="0">Womenomics<span class="gl-def" role="note">Política para incorporar a más mujeres a la fuerza laboral.</span></span> para incorporar a más mujeres a la fuerza laboral, reformas de gobernanza corporativa para forzar directores independientes, apertura comercial (<span class="gl" tabindex="0">CPTPP<span class="gl-def" role="note">Acuerdo comercial transpacífico del que Japón es parte.</span></span>, acuerdo UE-Japón) y la estrategia <span class="gl" tabindex="0">Society 5.0<span class="gl-def" role="note">Estrategia para integrar robótica e IA ante el colapso demográfico.</span></span> para integrar robótica e IA ante el colapso demográfico.</p>
+        <p><strong>Primera flecha, política monetaria agresiva:</strong> el BOJ ejecuta la <span class="gl" tabindex="0">Flexibilización Monetaria Cuantitativa y Cualitativa<span class="gl-def" role="note">Programa del Banco de Japón desde 2013: comprar bonos a gran escala para ampliar el dinero en circulación.</span></span> (QQE) desde abril de 2013, expandiendo la base monetaria mediante compra masiva de bonos, e introduce en 2016 una tasa de interés negativa de -0.1%.</p>
+        <p><strong>Segunda flecha, política fiscal flexible:</strong> gasto público de estímulo a corto plazo combinado con un plan de consolidación a mediano plazo, que incluyó elevar el impuesto al consumo del 5% al 8% en abril de 2014.</p>
+        <p><strong>Tercera flecha, reformas estructurales:</strong> <span class="gl" tabindex="0">Womenomics<span class="gl-def" role="note">Política para incorporar a más mujeres a la fuerza laboral.</span></span> para incorporar a más mujeres a la fuerza laboral, reformas de gobernanza corporativa para forzar directores independientes, apertura comercial (<span class="gl" tabindex="0">CPTPP<span class="gl-def" role="note">Acuerdo comercial transpacífico del que Japón es parte.</span></span>, acuerdo UE-Japón) y la estrategia <span class="gl" tabindex="0">Society 5.0<span class="gl-def" role="note">Estrategia para integrar robótica e IA ante el colapso demográfico.</span></span> para integrar robótica e IA ante el colapso demográfico.</p>
       </div>
     </div>
   </div>
@@ -332,7 +357,7 @@
     <div><span class="acto-num">04</span><span class="acto-label">La consecuencia inmediata</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">El yen se devalúa, el Nikkei se dispara, y 5.4 millones de empleos nuevos</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">2013 – 2017</span>
+      <span class="acto-date">2013-2017</span>
       <p class="acto-teaser">La economía sale de la contracción prolongada. Pero los salarios reales tardan en reaccionar: el pleno empleo llega antes que el aumento de sueldos.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="stats">
@@ -340,8 +365,8 @@
           <div class="vis-card">
             <div class="v-stats" style="--n:3">
               <div id="go-3" class="v-stat"><span class="v-num" data-to="5.4" data-dec="1" data-pre="" data-suf=" M">5.4 M</span><span class="v-lbl">empleos nuevos, más de 2 millones regulares</span></div>
-              <div class="v-stat"><span class="v-num">2.8–3%</span><span class="v-lbl">desempleo en mínimos históricos</span></div>
-              <div class="v-stat"><span class="v-num">100–120</span><span class="v-lbl">yenes por dólar, desde 70</span></div>
+              <div class="v-stat"><span class="v-num">2.8-3%</span><span class="v-lbl">desempleo en mínimos históricos</span></div>
+              <div class="v-stat"><span class="v-num">100-120</span><span class="v-lbl">yenes por dólar, desde 70</span></div>
             </div>
             <p class="vis-note">Los salarios reales cayeron por los precios importados y el impuesto al consumo.</p>
           </div>
@@ -379,7 +404,7 @@
           </div>
         </div><!--/vis-->
         <p>Japón logra erradicar la mentalidad deflacionaria arraigada y pasa de ser una economía con déficit de demanda a una caracterizada por restricciones de oferta y falta estructural de trabajadores. El éxito en anclar las expectativas inflacionarias cerca del 2% permite al Banco de Japón finalizar la política de tasas negativas en marzo de 2024 y avanzar hacia aumentos de tasas, alcanzando el 1% en junio de 2026: la normalización monetaria más larga de su historia reciente.</p>
-        <p class="quote">Bajo la administración de Sanae Takaichi, las reformas de demanda de Abe evolucionan hacia una política industrial directa basada en la <span class="gl" tabindex="0">Economía de Oferta Moderna<span class="gl-def" role="note">Enfoque que busca aumentar la capacidad productiva del país, no su demanda.</span></span>: el gobierno canaliza inversiones estratégicas hacia 17 sectores prioritarios —semiconductores, IA, fusión nuclear, robótica, defensa— para aumentar la capacidad productiva del país, no su demanda.</p>
+        <p class="quote">Bajo la administración de Sanae Takaichi, las reformas de demanda de Abe evolucionan hacia una política industrial directa basada en la <span class="gl" tabindex="0">Economía de Oferta Moderna<span class="gl-def" role="note">Enfoque que busca aumentar la capacidad productiva del país, no su demanda.</span></span>: el gobierno canaliza inversiones estratégicas hacia 17 sectores prioritarios (semiconductores, IA, fusión nuclear, robótica, defensa) para aumentar la capacidad productiva del país, no su demanda.</p>
       </div>
     </div>
   </div>
@@ -405,7 +430,7 @@
   </div>
   <div class="flat-grid">
     <div><h3>China y Corea del Sur</h3><p>China basó su crecimiento en la acumulación de infraestructura y crédito estatal masivo; Corea del Sur, en el dinamismo exportador agresivo de sus chaebols, sin enfrentar una deflación previa comparable.</p></div>
-    <div><h3>La anomalía japonesa</h3><p>Japón debió aplicar un experimento monetario no convencional sin precedentes (QQE) para romper una trampa de liquidez madura y reestructurar su mercado de trabajo frente a un envejecimiento demográfico pionero a nivel mundial — un problema que ni China ni Corea habían enfrentado todavía en esa escala.</p></div>
+    <div><h3>La anomalía japonesa</h3><p>Japón debió aplicar un experimento monetario no convencional sin precedentes (QQE) para romper una trampa de liquidez madura y reestructurar su mercado de trabajo frente a un envejecimiento demográfico pionero a nivel mundial, un problema que ni China ni Corea habían enfrentado todavía en esa escala.</p></div>
   </div>
   <div class="connect-note">
     Este capítulo se conecta con <a href="../reconfiguracion-estrategica/index.html">la Reconfiguración estratégica</a>: la transición de Abenomics hacia una política industrial de Estado directa es, literalmente, el punto de partida de ese siguiente giro.
@@ -416,10 +441,10 @@
   <div class="sources">
     <span class="eyebrow">Fuentes</span>
     <p class="src-intro">Fuentes afines a este cuaderno, asignadas por tema. Curado por el equipo de Club Kongzhi.</p>
-    <ol class="src-list"><li><span class="st">A Policy Vision Beyond Abenomics</span><span class="sm"><b>Análisis</b></span></li><li><span class="st">Growth Strategy and the Role of Small and Medium-sized Enterprises (SMEs)</span><span class="sm"><b>Análisis</b></span></li><li><span class="st">Three Arrows of &quot;Abenomics&quot; and the Structural Reform of Japan</span><span class="sm"><b>Análisis</b></span></li><li><span class="st">Debt Management Report 2026</span><span class="sm">Ministerio de Finanzas (財務省) · <b>Oficial</b></span></li><li><span class="st">Japan&#x27;s Economy and Monetary Policy</span><span class="sm"><b>Análisis</b></span></li></ol>
+    <ol class="src-list"><li><span class="st">A Policy Vision Beyond Abenomics</span><span class="sm"><b>Análisis</b></span></li><li><span class="st">Growth Strategy and the Role of Small and Medium-sized Enterprises (SMEs)</span><span class="sm"><b>Análisis</b></span></li><li><span class="st">Three Arrows of &quot;Abenomics&quot; and the Structural Reform of Japan</span><span class="sm"><b>Análisis</b></span></li><li><span class="st">Debt Management Report 2026</span><span class="sm">Ministerio de Finanzas (財務省) / <b>Oficial</b></span></li><li><span class="st">Japan&#x27;s Economy and Monetary Policy</span><span class="sm"><b>Análisis</b></span></li></ol>
     <a class="src-all" href="../fuentes/index.html?c=abenomics">Abrir el baúl de fuentes de Japón →</a>
   </div>
-  <div class="nav-adjacent">
+  <div class="nav-adjacent" role="navigation" aria-label="Cuadernos relacionados">
     <a href="../fragmentacion-politica/index.html">
       <span class="dir">‹ Anterior</span>
       <span class="ttl"><span class="ttl-arrow">←</span>1993: Fragmentación política</span>
@@ -431,7 +456,8 @@
   </div>
 </section>
 
-<footer>Club Kongzhi UNMSM · <a href="../../index.html#departamento-de-investigacion" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Departamento de Investigación</a> · Biblioteca Nalanda</footer>
+</main>
+<footer>Club Kongzhi UNMSM / <a href="../../index.html#departamento-de-investigacion" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Departamento de Investigación</a> / Biblioteca Nalanda</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -528,7 +554,7 @@
 
     gsap.to('.hero-kanji', {
       yPercent: 12, ease: 'none',
-      scrollTrigger: { trigger: 'header.hero', start: 'top top', end: 'bottom top', scrub: 1.2 }
+      scrollTrigger: { trigger: 'header.hero', start: 'top top', end: 'bottom top', scrub: 0.6 }
     });
 
     document.querySelectorAll('.flat-grid').forEach(function(grid){
@@ -548,5 +574,6 @@
 
 <!--vis-js--><script src="../../assets/vis.js"></script><!--/vis-js-->
 <script src="../../assets/acto-anchor.js"></script>
+<script>(function(){var s=document.querySelector('.cifras');if(!s)return;if(typeof reduceMotion!=='undefined'&&reduceMotion||!('IntersectionObserver' in window)){s.classList.add('in');return;}var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){s.classList.add('in');io.disconnect();}},{threshold:.35});io.observe(s);})();</script>
 </body>
 </html>

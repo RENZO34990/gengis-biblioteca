@@ -3,7 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>失われた十年 — Deflación y Décadas Perdidas</title>
+<title>失われた十年: Deflación y Décadas Perdidas</title>
+<meta name="description" content="La burbuja ya había estallado. Lo que vino después no fue una recesión normal: fue la decisión, tomada una y otra vez, de no dejar morir a los bancos ni a.">
+<meta name="theme-color" content="#A13D2C">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Biblioteca Nalanda">
+<meta property="og:locale" content="es_PE">
+<meta property="og:title" content="失われた十年: Deflación y Décadas Perdidas">
+<meta property="og:description" content="La burbuja ya había estallado. Lo que vino después no fue una recesión normal: fue la decisión, tomada una y otra vez, de no dejar morir a los bancos ni a.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23A13D2C'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%23F2EFE9' font-family='Georgia,serif'%3EN%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Shippori+Mincho:wght@400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -187,56 +195,73 @@
   .src-all{display:inline-block; margin-top:1.4rem; font-family:'IBM Plex Mono',monospace; font-size:.8rem; color:var(--vermillion); text-decoration:none; border-bottom:1px solid var(--vermillion); padding-bottom:1px;}
   .src-all:hover{color:var(--vermillion-deep); border-color:var(--vermillion-deep);}
   /* ---------- HERO: cifras como lista vertical con destino ---------- */
-  .hero .hero-stats{display:block; max-width:560px; margin-top:3rem; border-top:1px solid var(--line);}
-  .hero .hero-stats > div{position:relative; display:grid; grid-template-columns:5.4rem 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid var(--line); transition:background-color .35s cubic-bezier(0.23,1,0.32,1), transform .35s cubic-bezier(0.23,1,0.32,1);}
-  .hero .hero-stats > div:last-child{padding-right:2.4rem;}
-  .hero .hero-stats .num{font-size:1.75rem; line-height:1; width:max-content;}
-  .hero .hero-stats .lbl{margin:0; max-width:none; font-size:.82rem; line-height:1.5;}
-  .hero .hero-stats > div::before{content:""; position:absolute; left:0; top:.9rem; bottom:.9rem; width:2px; background:var(--vermillion); transform-origin:top; transform:scaleY(0); animation:statBar .9s cubic-bezier(0.23,1,0.32,1) both;}
-  .hero .hero-stats > div:nth-child(1)::before{animation-delay:1.5s;}
-  .hero .hero-stats > div:nth-child(2)::before{animation-delay:1.7s;}
-  .hero .hero-stats > div:nth-child(3)::before{animation-delay:1.9s;}
-  @media (hover:hover){.hero .hero-stats > div:hover{background:rgba(161,61,44,.05); transform:translateX(.3rem);}}
-  .hero .hero-stats > div[data-go]{cursor:pointer;}
-  .hero .hero-stats > div[data-go]::after{content:"\2193"; position:absolute; right:1rem; top:50%; transform:translate(-4px,-50%); opacity:0; font-family:'IBM Plex Mono', monospace; font-size:.95rem; color:var(--vermillion); transition:opacity .3s, transform .3s cubic-bezier(0.23,1,0.32,1);}
-  .hero .hero-stats > div[data-go]:hover::after,.hero .hero-stats > div[data-go]:focus-visible::after{opacity:1; transform:translate(0,-50%);}
-  .hero .hero-stats > div[data-go]:focus-visible{outline:2px solid var(--vermillion); outline-offset:2px;}
-  .hero .hero-stats > div[data-go]:active{transform:scale(0.985);}
+  .cifras .hero-stats{display:block; max-width:560px; margin-top:3rem; border-top:1px solid var(--line);}
+  .cifras .hero-stats > div{position:relative; display:grid; grid-template-columns:5.4rem 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid var(--line); transition:background-color .35s cubic-bezier(0.23,1,0.32,1), transform .35s cubic-bezier(0.23,1,0.32,1);}
+  .cifras .hero-stats > div:last-child{padding-right:2.4rem;}
+  .cifras .hero-stats .num{font-size:1.75rem; line-height:1; width:max-content;}
+  .cifras .hero-stats .lbl{margin:0; max-width:none; font-size:.82rem; line-height:1.5;}
+  .cifras .hero-stats > div::before{content:""; position:absolute; left:0; top:.9rem; bottom:.9rem; width:2px; background:var(--vermillion); transform-origin:top; transform:scaleY(0);}
+  @media (hover:hover){.cifras .hero-stats > div:hover{background:rgba(161,61,44,.05); transform:translateX(.3rem);}}
+  .cifras .hero-stats > div[data-go]{cursor:pointer;}
+  .cifras .hero-stats > div[data-go]::after{content:"\2193"; position:absolute; right:1rem; top:50%; transform:translate(-4px,-50%); opacity:0; font-family:'IBM Plex Mono', monospace; font-size:.95rem; color:var(--vermillion); transition:opacity .3s, transform .3s cubic-bezier(0.23,1,0.32,1);}
+  .cifras .hero-stats > div[data-go]:hover::after,.cifras .hero-stats > div[data-go]:focus-visible::after{opacity:1; transform:translate(0,-50%);}
+  .cifras .hero-stats > div[data-go]:focus-visible{outline:2px solid var(--vermillion); outline-offset:2px;}
+  .cifras .hero-stats > div[data-go]:active{transform:scale(0.985);}
   [id^="go-"]{scroll-margin-top:110px;}
   .go-flash{animation:goFlash 2s cubic-bezier(0.23,1,0.32,1) both;}
   @keyframes statBar{to{transform:scaleY(1);}}
   @keyframes goFlash{0%{background-color:rgba(161,61,44,.14); box-shadow:0 0 0 8px rgba(161,61,44,.14);} 100%{background-color:rgba(161,61,44,0); box-shadow:0 0 0 8px rgba(161,61,44,0);}}
   @media (prefers-reduced-motion:reduce){
-    .hero .hero-stats > div::before{animation:none; transform:scaleY(1);}
-    .hero .hero-stats > div{transition:none;}
+    .cifras .hero-stats > div::before{animation:none !important; transform:scaleY(1);}
+    .cifras .hero-stats > div{transition:none;}
     .go-flash{animation:none; outline:2px solid rgb(161,61,44); outline-offset:6px;}
   }
   @media (max-width:560px){
-    .hero .hero-stats > div{grid-template-columns:4.2rem 1fr; column-gap:1.1rem;}
-    .hero .hero-stats .num{font-size:1.4rem;}
+    .cifras .hero-stats > div{grid-template-columns:4.2rem 1fr; column-gap:1.1rem;}
+    .cifras .hero-stats .num{font-size:1.4rem;}
   }
 </style>
 <!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
-<style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(168,134,60,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Shippori Mincho', serif; --v-body:'Zen Kaku Gothic New', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
+<style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(168,134,60,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Shippori Mincho', serif; --v-body:'Zen Kaku Gothic New', sans-serif; --v-mono:'IBM Plex Mono', monospace;}
+.cifras{max-width:none; margin:0; padding:3.5rem 8vw 3rem;}
+.cifras .hero-stats{margin-top:0;}
+.cifras.in .hero-stats > div::before{animation:statBar .9s cubic-bezier(0.23,1,0.32,1) both;}
+.cifras.in .hero-stats > div:nth-child(1)::before{animation-delay:.1s;}
+.cifras.in .hero-stats > div:nth-child(2)::before{animation-delay:.25s;}
+.cifras.in .hero-stats > div:nth-child(3)::before{animation-delay:.4s;}
+.skip-link{position:absolute; left:1rem; top:-4rem; z-index:200; background:#1A1A1A; color:#F2EFE9; padding:.7rem 1.1rem; font:500 .85rem/1 sans-serif; text-decoration:none; transition:top .25s cubic-bezier(0.23,1,0.32,1);}
+.skip-link:focus{top:1rem;}
+/* ---------- AUDITORIA: tipografia y accesibilidad ---------- */
+.num,.acto-date,.v-yr,.v-k,.when,td,th{font-variant-numeric:tabular-nums;}
+h1,h2,h3,.acto-title,.title-cn{text-wrap:balance;}
+p,li,.lbl{text-wrap:pretty;}
+h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflow-wrap:break-word;}
+.acto-figure img{height:auto;}
+</style><!--/vis-head-->
 </head>
 <body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 <a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
 
 <header class="hero">
   <div class="hero-kanji">失われた十年</div>
   <div class="hero-content">
-    <span class="eyebrow">Kongzhi · Japón · Economía 03</span>
+    <span class="eyebrow">Kongzhi / Japón / Economía 03</span>
     <div class="hero-rule"></div>
     <h1 class="title-jp">失われた十年</h1>
-    <div class="title-romaji">Ushinawareta jūnen — deflación y décadas perdidas, 1991-2012</div>
+    <div class="title-romaji">Ushinawareta jūnen: deflación y décadas perdidas, 1991-2012</div>
     <p class="hero-dek">La burbuja ya había estallado. Lo que vino después no fue una recesión normal: fue la decisión, tomada una y otra vez, de no dejar morir a los bancos ni a las empresas insolventes. Japón eligió la anestesia en vez de la cirugía, y pasó veinte años pagando el precio en forma de precios que no suben, salarios que no crecen y una generación entera que se graduó sin trabajo.</p>
-    <div class="hero-stats">
+    
+  </div>
+</header>
+<main id="contenido">
+<section class="cifras" aria-label="Cifras clave">
+<div class="hero-stats">
       <div data-go="go-1" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: quiebra Yamaichi Securities, crisis bancaria"><span class="num">1997</span><span class="lbl">quiebra Yamaichi Securities, crisis bancaria</span></div>
       <div data-go="go-2" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: el BOJ estrena la tasa de interés cero"><span class="num">1999</span><span class="lbl">el BOJ estrena la tasa de interés cero</span></div>
       <div data-go="go-3" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: desempleo toca su máximo: 5.4%"><span class="num">2002</span><span class="lbl">desempleo toca su máximo: 5.4%</span></div>
     </div>
-  </div>
-</header>
+</section>
 
 <section id="actos">
   <div class="section-head">
@@ -249,7 +274,7 @@
     <div><span class="acto-num">01</span><span class="acto-label">El mundo antes</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">Una burbuja que ya había dejado su factura</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">1985 – 1991</span>
+      <span class="acto-date">1985-1991</span>
       <p class="acto-teaser">La especulación inmobiliaria y bursátil de finales de los 80 dejó bancos con carteras cargadas de crédito colateralizado en terrenos cuyo valor estaba a punto de desplomarse.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="versus">
@@ -263,7 +288,7 @@
           </div>
         </div><!--/vis-->
         <p>Tras el Acuerdo del Plaza de 1985, el Banco de Japón mantuvo tasas en mínimos históricos para contrarrestar la recesión del yen alto. El exceso de liquidez desató una burbuja inmobiliaria y bursátil sin precedentes: el Nikkei 225 alcanzó su máximo histórico de 38,915 puntos el 29 de diciembre de 1989, y los precios del suelo en Tokio se triplicaron entre 1985 y 1989.</p>
-        <p>Las grandes corporaciones de la red keiretsu operaban bajo un rígido pacto social de posguerra —empleo de por vida, salarios ligados a la antigüedad— mientras desviaban recursos a operaciones especulativas de cartera (<span class="gl" tabindex="0">zaitech<span class="gl-def" role="note">Operaciones especulativas de cartera con que las empresas disfrazaban su debilidad operativa.</span></span>) para enmascarar debilidades operativas.</p>
+        <p>Las grandes corporaciones de la red keiretsu operaban bajo un rígido pacto social de posguerra (empleo de por vida, salarios ligados a la antigüedad) mientras desviaban recursos a operaciones especulativas de cartera (<span class="gl" tabindex="0">zaitech<span class="gl-def" role="note">Operaciones especulativas de cartera con que las empresas disfrazaban su debilidad operativa.</span></span>) para enmascarar debilidades operativas.</p>
       </div>
     </div>
   </div>
@@ -272,7 +297,7 @@
     <div><span class="acto-num">02</span><span class="acto-label">La grieta</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">El shock de tasas, y el colapso en cadena</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">1989 – 1991</span>
+      <span class="acto-date">1989-1991</span>
       <p class="acto-teaser">El Banco de Japón sube las tasas del 2.5% al 6% para frenar la especulación. El mercado bursátil e inmobiliario colapsa de inmediato, y con él, el valor de las garantías bancarias.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="press">
@@ -288,8 +313,8 @@
         </div><!--/vis-->
         <figure class="acto-figure">
           <img src="../../assets/japon/deflacion-decadas-perdidas/boj-sede.jpg" alt="Sede del Banco de Japón en Nihonbashi, Tokio." loading="lazy" onerror="this.closest('figure').hidden=true">
-          <figcaption>La sede del Banco de Japón, desde donde las alzas de tasas de 1989–1990 pincharon la burbuja.
-            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+          <figcaption>La sede del Banco de Japón, desde donde las alzas de tasas de 1989-1990 pincharon la burbuja.
+            <span class="credit">Fuente: Wikimedia Commons, dominio público</span>
           </figcaption>
         </figure>
         <div class="chart-block">
@@ -310,14 +335,14 @@
     <div><span class="acto-num">03</span><span class="acto-label">El giro</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">Rescatar en vez de liquidar, y la trampa de la tasa cero</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">1998 – 2001</span>
-      <p class="acto-teaser">En vez de dejar quebrar a los bancos insolventes, el Estado los sostiene con capital público. Nace la "empresa zombi" — y el BOJ, sin margen de maniobra convencional, inventa políticas monetarias nunca antes probadas.</p>
+      <span class="acto-date">1998-2001</span>
+      <p class="acto-teaser">En vez de dejar quebrar a los bancos insolventes, el Estado los sostiene con capital público. Nace la "empresa zombi", y el BOJ, sin margen de maniobra convencional, inventa políticas monetarias nunca antes probadas.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="flow">
           <p class="vis-one"><small>En una frase</small>Rescatar en vez de liquidar: el origen de las empresas zombi.</p>
           <div class="vis-card">
             <div class="v-flow">
-              <div class="v-node"><span class="v-k">1998–99</span><h4>Capital público</h4><p>9.3 billones de yenes a los grandes bancos, con permiso para posponer pérdidas.</p></div>
+              <div class="v-node"><span class="v-k">1998-99</span><h4>Capital público</h4><p>9.3 billones de yenes a los grandes bancos, con permiso para posponer pérdidas.</p></div>
               <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               <div class="v-node"><span class="v-k">Bancos</span><h4>Refinanciar insolventes</h4><p>Corporaciones "demasiado grandes para caer" siguen vivas.</p></div>
               <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -325,8 +350,8 @@
             </div>
           </div>
         </div><!--/vis-->
-        <p>Para evitar una quiebra en cadena que desestabilizara la cohesión social, el gobierno inyecta capital público masivo en los grandes bancos —9.3 billones de yenes entre 1998 y 1999— y les permite posponer el reconocimiento de sus pérdidas. Estos bancos, a su vez, refinancian artificialmente a corporaciones insolventes catalogadas como "demasiado grandes para caer", institucionalizando el fenómeno de las <span class="gl" tabindex="0">empresas zombi<span class="gl-def" role="note">Compañías insolventes mantenidas vivas por refinanciamientos de los bancos.</span></span> que deprimen la productividad nacional.</p>
-        <p id="go-2">Ante la ineficacia de las reducciones de tasas tradicionales en un entorno deflacionario —donde la tasa nominal de 0% se vuelve una tasa real positiva por el aumento del valor del dinero en el tiempo—, el BOJ implementa la Política de Tasa de Interés Cero (<span class="gl" tabindex="0">ZIRP<span class="gl-def" role="note">Política de tasa de interés cero.</span></span>) en 1999, y en marzo de 2001 introduce de forma pionera la Flexibilización Cuantitativa (QE).</p>
+        <p>Para evitar una quiebra en cadena que desestabilizara la cohesión social, el gobierno inyecta capital público masivo en los grandes bancos (9.3 billones de yenes entre 1998 y 1999) y les permite posponer el reconocimiento de sus pérdidas. Estos bancos, a su vez, refinancian artificialmente a corporaciones insolventes catalogadas como "demasiado grandes para caer", institucionalizando el fenómeno de las <span class="gl" tabindex="0">empresas zombi<span class="gl-def" role="note">Compañías insolventes mantenidas vivas por refinanciamientos de los bancos.</span></span> que deprimen la productividad nacional.</p>
+        <p id="go-2">Ante la ineficacia de las reducciones de tasas tradicionales en un entorno deflacionario, donde la tasa nominal de 0% se vuelve una tasa real positiva por el aumento del valor del dinero en el tiempo, el BOJ implementa la Política de Tasa de Interés Cero (<span class="gl" tabindex="0">ZIRP<span class="gl-def" role="note">Política de tasa de interés cero.</span></span>) en 1999, y en marzo de 2001 introduce de forma pionera la Flexibilización Cuantitativa (QE).</p>
         <p class="quote">Las empresas, traumatizadas por la pérdida de activos que dejó sus pasivos por encima del valor neto de sus firmas, cambiaron su objetivo existencial: en vez de invertir, destinaron sus flujos de efectivo a amortizar deuda. Los economistas llamarían a esto, después, la "<span class="gl" tabindex="0">recesión de balance<span class="gl-def" role="note">Cuando las empresas, con deudas por encima de su valor neto, dejan de invertir y solo pagan deuda.</span></span>".</p>
       </div>
     </div>
@@ -336,7 +361,7 @@
     <div><span class="acto-num">04</span><span class="acto-label">La consecuencia inmediata</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">Quiebras bancarias, desempleo récord y el "Glaciar del Empleo"</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">1992 – 2002</span>
+      <span class="acto-date">1992-2002</span>
       <p class="acto-teaser">El retraso en resolver la deuda incobrable termina provocando lo que se quería evitar: el colapso de firmas financieras centenarias, y una generación entera de graduados sin empleo estable.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="steps">
@@ -353,11 +378,11 @@
         <figure class="acto-figure">
           <img src="../../assets/japon/deflacion-decadas-perdidas/yamaichi-quiebra.jpg" alt="Directivo de Yamaichi Securities llorando en la conferencia de prensa del cierre, 1997." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>La quiebra de Yamaichi Securities en 1997: la imagen del colapso bancario de los años 90.
-            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+            <span class="credit">Fuente: Wikimedia Commons, dominio público</span>
           </figcaption>
         </figure>
         <p id="go-1">El crecimiento real promedio del PIB, que superaba el 4% en la preguerra, cae a un anémico 1.14% anual entre 1991 y 2003. En noviembre de 1997 quiebran sucesivamente Sanyo Securities, el banco regional Hokkaido Takushoku Bank y la centenaria firma bursátil Yamaichi Securities, seguidos por la nacionalización del Long-Term Credit Bank of Japan en 1998.</p>
-        <p id="go-3">Debido al desplome de los presupuestos de I+D y a la falta de inversión de capital interno, las grandes corporaciones de electrónica de consumo e informática —Sony, Panasonic, Toshiba, Sharp— comienzan a perder su liderazgo global ante competidores más dinámicos de Corea del Sur, Taiwán y China. El desempleo, históricamente marginal en Japón, escala hasta su máximo histórico del 5.4% en 2002: los jóvenes graduados universitarios de los noventa viven la época del "<span class="gl" tabindex="0">Glaciar del Empleo<span class="gl-def" role="note">Los años en que los jóvenes graduados no lograban empleos regulares estables.</span></span>", sin poder acceder a empleos regulares estables.</p>
+        <p id="go-3">Debido al desplome de los presupuestos de I+D y a la falta de inversión de capital interno, las grandes corporaciones de electrónica de consumo e informática (Sony, Panasonic, Toshiba, Sharp) comienzan a perder su liderazgo global ante competidores más dinámicos de Corea del Sur, Taiwán y China. El desempleo, históricamente marginal en Japón, escala hasta su máximo histórico del 5.4% en 2002: los jóvenes graduados universitarios de los noventa viven la época del "<span class="gl" tabindex="0">Glaciar del Empleo<span class="gl-def" role="note">Los años en que los jóvenes graduados no lograban empleos regulares estables.</span></span>", sin poder acceder a empleos regulares estables.</p>
       </div>
     </div>
   </div>
@@ -373,9 +398,9 @@
           <p class="vis-one"><small>En una frase</small>Tres décadas de estancamiento dejan cifras que no se mueven.</p>
           <div class="vis-card">
             <div class="v-stats" style="--n:3">
-              <div class="v-stat"><span class="v-num" data-to="1.14" data-dec="2" data-pre="" data-suf="%">1.14%</span><span class="v-lbl">crecimiento anual del PIB, 1991–2003</span></div>
+              <div class="v-stat"><span class="v-num" data-to="1.14" data-dec="2" data-pre="" data-suf="%">1.14%</span><span class="v-lbl">crecimiento anual del PIB, 1991-2003</span></div>
               <div class="v-stat"><span class="v-num">250%+</span><span class="v-lbl">deuda pública sobre el PIB</span></div>
-              <div class="v-stat"><span class="v-num">11–13%</span><span class="v-lbl">caída de salarios reales desde el pico de 1997</span></div>
+              <div class="v-stat"><span class="v-num">11-13%</span><span class="v-lbl">caída de salarios reales desde el pico de 1997</span></div>
             </div>
             <p class="vis-note">Más de un tercio de la fuerza laboral tiene hoy contratos temporales o no tradicionales.</p>
           </div>
@@ -419,10 +444,10 @@
   <div class="sources">
     <span class="eyebrow">Fuentes</span>
     <p class="src-intro">Fuentes afines a este cuaderno, asignadas por tema. Curado por el equipo de Club Kongzhi.</p>
-    <ol class="src-list"><li><span class="st">Debt Management Report 2026</span><span class="sm">Ministerio de Finanzas (財務省) · <b>Oficial</b></span></li><li><span class="st">Japan&#x27;s Economy and Monetary Policy</span><span class="sm"><b>Análisis</b></span></li><li><span class="st">Década perdida (Japón)</span><span class="sm">Wikipedia · <b>Referencia</b></span></li><li><span class="st">Lost Decades</span><span class="sm">Wikipedia · <b>Referencia</b></span></li><li><span class="st">Japanese asset price bubble</span><span class="sm">Wikipedia · <b>Referencia</b></span></li></ol>
+    <ol class="src-list"><li><span class="st">Debt Management Report 2026</span><span class="sm">Ministerio de Finanzas (財務省) / <b>Oficial</b></span></li><li><span class="st">Japan&#x27;s Economy and Monetary Policy</span><span class="sm"><b>Análisis</b></span></li><li><span class="st">Década perdida (Japón)</span><span class="sm">Wikipedia / <b>Referencia</b></span></li><li><span class="st">Lost Decades</span><span class="sm">Wikipedia / <b>Referencia</b></span></li><li><span class="st">Japanese asset price bubble</span><span class="sm">Wikipedia / <b>Referencia</b></span></li></ol>
     <a class="src-all" href="../fuentes/index.html?c=deflacion-decadas-perdidas">Abrir el baúl de fuentes de Japón →</a>
   </div>
-  <div class="nav-adjacent">
+  <div class="nav-adjacent" role="navigation" aria-label="Cuadernos relacionados">
     <a href="../acuerdo-del-plaza/index.html">
       <span class="dir">‹ Anterior</span>
       <span class="ttl"><span class="ttl-arrow">←</span>1985: El Acuerdo del Plaza</span>
@@ -434,7 +459,8 @@
   </div>
 </section>
 
-<footer>Club Kongzhi UNMSM · <a href="../../index.html#departamento-de-investigacion" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Departamento de Investigación</a> · Biblioteca Nalanda</footer>
+</main>
+<footer>Club Kongzhi UNMSM / <a href="../../index.html#departamento-de-investigacion" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Departamento de Investigación</a> / Biblioteca Nalanda</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -531,7 +557,7 @@
 
     gsap.to('.hero-kanji', {
       yPercent: 12, ease: 'none',
-      scrollTrigger: { trigger: 'header.hero', start: 'top top', end: 'bottom top', scrub: 1.2 }
+      scrollTrigger: { trigger: 'header.hero', start: 'top top', end: 'bottom top', scrub: 0.6 }
     });
 
     document.querySelectorAll('.flat-grid').forEach(function(grid){
@@ -551,5 +577,6 @@
 
 <!--vis-js--><script src="../../assets/vis.js"></script><!--/vis-js-->
 <script src="../../assets/acto-anchor.js"></script>
+<script>(function(){var s=document.querySelector('.cifras');if(!s)return;if(typeof reduceMotion!=='undefined'&&reduceMotion||!('IntersectionObserver' in window)){s.classList.add('in');return;}var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){s.classList.add('in');io.disconnect();}},{threshold:.35});io.observe(s);})();</script>
 </body>
 </html>

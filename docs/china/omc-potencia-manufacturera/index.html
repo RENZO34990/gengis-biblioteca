@@ -3,7 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>世界工厂 — La Fábrica del Mundo</title>
+<title>世界工厂: La Fábrica del Mundo</title>
+<meta name="description" content="Once años bastaron para que China pasara de negociar su entrada a un club comercial a fabricar casi un tercio de todo lo que el planeta produce.">
+<meta name="theme-color" content="#9E2B25">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Biblioteca Nalanda">
+<meta property="og:locale" content="es_PE">
+<meta property="og:title" content="世界工厂: La Fábrica del Mundo">
+<meta property="og:description" content="Once años bastaron para que China pasara de negociar su entrada a un club comercial a fabricar casi un tercio de todo lo que el planeta produce.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%239E2B25'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%23F2EFE9' font-family='Georgia,serif'%3EN%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -169,56 +177,73 @@
   .src-all{display:inline-block; margin-top:1.4rem; font-family:'IBM Plex Mono',monospace; font-size:.8rem; color:var(--vermillion); text-decoration:none; border-bottom:1px solid var(--vermillion); padding-bottom:1px;}
   .src-all:hover{color:var(--vermillion-deep); border-color:var(--vermillion-deep);}
   /* ---------- HERO: cifras como lista vertical con destino ---------- */
-  .hero .hero-stats{display:block; max-width:560px; margin-top:3rem; border-top:1px solid rgba(242,239,233,.2);}
-  .hero .hero-stats > div{position:relative; display:grid; grid-template-columns:8.5rem 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid rgba(242,239,233,.2); transition:background-color .35s cubic-bezier(0.23,1,0.32,1), transform .35s cubic-bezier(0.23,1,0.32,1);}
-  .hero .hero-stats > div:last-child{padding-right:2.4rem;}
-  .hero .hero-stats .num{font-size:1.5rem; line-height:1; width:max-content;}
-  .hero .hero-stats .lbl{margin:0; max-width:none; font-size:.82rem; line-height:1.5;}
-  .hero .hero-stats > div::before{content:""; position:absolute; left:0; top:.9rem; bottom:.9rem; width:2px; background:var(--gold); transform-origin:top; transform:scaleY(0); animation:statBar .9s cubic-bezier(0.23,1,0.32,1) both;}
-  .hero .hero-stats > div:nth-child(1)::before{animation-delay:1.5s;}
-  .hero .hero-stats > div:nth-child(2)::before{animation-delay:1.7s;}
-  .hero .hero-stats > div:nth-child(3)::before{animation-delay:1.9s;}
-  @media (hover:hover){.hero .hero-stats > div:hover{background:rgba(242,239,233,.07); transform:translateX(.3rem);}}
-  .hero .hero-stats > div[data-go]{cursor:pointer;}
-  .hero .hero-stats > div[data-go]::after{content:"\2193"; position:absolute; right:1rem; top:50%; transform:translate(-4px,-50%); opacity:0; font-family:'IBM Plex Mono', monospace; font-size:.95rem; color:var(--gold); transition:opacity .3s, transform .3s cubic-bezier(0.23,1,0.32,1);}
-  .hero .hero-stats > div[data-go]:hover::after,.hero .hero-stats > div[data-go]:focus-visible::after{opacity:1; transform:translate(0,-50%);}
-  .hero .hero-stats > div[data-go]:focus-visible{outline:2px solid var(--gold); outline-offset:2px;}
-  .hero .hero-stats > div[data-go]:active{transform:scale(0.985);}
+  .cifras .hero-stats{display:block; max-width:560px; margin-top:3rem; border-top:1px solid rgba(242,239,233,.2);}
+  .cifras .hero-stats > div{position:relative; display:grid; grid-template-columns:8.5rem 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid rgba(242,239,233,.2); transition:background-color .35s cubic-bezier(0.23,1,0.32,1), transform .35s cubic-bezier(0.23,1,0.32,1);}
+  .cifras .hero-stats > div:last-child{padding-right:2.4rem;}
+  .cifras .hero-stats .num{font-size:1.5rem; line-height:1; width:max-content;}
+  .cifras .hero-stats .lbl{margin:0; max-width:none; font-size:.82rem; line-height:1.5;}
+  .cifras .hero-stats > div::before{content:""; position:absolute; left:0; top:.9rem; bottom:.9rem; width:2px; background:var(--gold); transform-origin:top; transform:scaleY(0);}
+  @media (hover:hover){.cifras .hero-stats > div:hover{background:rgba(242,239,233,.07); transform:translateX(.3rem);}}
+  .cifras .hero-stats > div[data-go]{cursor:pointer;}
+  .cifras .hero-stats > div[data-go]::after{content:"\2193"; position:absolute; right:1rem; top:50%; transform:translate(-4px,-50%); opacity:0; font-family:'IBM Plex Mono', monospace; font-size:.95rem; color:var(--gold); transition:opacity .3s, transform .3s cubic-bezier(0.23,1,0.32,1);}
+  .cifras .hero-stats > div[data-go]:hover::after,.cifras .hero-stats > div[data-go]:focus-visible::after{opacity:1; transform:translate(0,-50%);}
+  .cifras .hero-stats > div[data-go]:focus-visible{outline:2px solid var(--gold); outline-offset:2px;}
+  .cifras .hero-stats > div[data-go]:active{transform:scale(0.985);}
   [id^="go-"]{scroll-margin-top:110px;}
   .go-flash{animation:goFlash 2s cubic-bezier(0.23,1,0.32,1) both;}
   @keyframes statBar{to{transform:scaleY(1);}}
   @keyframes goFlash{0%{background-color:rgba(158,43,37,.14); box-shadow:0 0 0 8px rgba(158,43,37,.14);} 100%{background-color:rgba(158,43,37,0); box-shadow:0 0 0 8px rgba(158,43,37,0);}}
   @media (prefers-reduced-motion:reduce){
-    .hero .hero-stats > div::before{animation:none; transform:scaleY(1);}
-    .hero .hero-stats > div{transition:none;}
+    .cifras .hero-stats > div::before{animation:none !important; transform:scaleY(1);}
+    .cifras .hero-stats > div{transition:none;}
     .go-flash{animation:none; outline:2px solid rgb(158,43,37); outline-offset:6px;}
   }
   @media (max-width:560px){
-    .hero .hero-stats > div{grid-template-columns:1fr; row-gap:.35rem;}
-    .hero .hero-stats .num{font-size:1.4rem;}
+    .cifras .hero-stats > div{grid-template-columns:1fr; row-gap:.35rem;}
+    .cifras .hero-stats .num{font-size:1.4rem;}
   }
 </style>
 <!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
-<style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(201,166,62,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Noto Serif SC', serif; --v-body:'Hanken Grotesk', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
+<style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(201,166,62,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Noto Serif SC', serif; --v-body:'Hanken Grotesk', sans-serif; --v-mono:'IBM Plex Mono', monospace;}
+.cifras{max-width:none; margin:0; background:#8A2620; color:var(--paper); padding:3rem 8vw 4.5rem;}
+.cifras .hero-stats{margin-top:0;}
+.cifras.in .hero-stats > div::before{animation:statBar .9s cubic-bezier(0.23,1,0.32,1) both;}
+.cifras.in .hero-stats > div:nth-child(1)::before{animation-delay:.1s;}
+.cifras.in .hero-stats > div:nth-child(2)::before{animation-delay:.25s;}
+.cifras.in .hero-stats > div:nth-child(3)::before{animation-delay:.4s;}
+.skip-link{position:absolute; left:1rem; top:-4rem; z-index:200; background:#1A1A1A; color:#F2EFE9; padding:.7rem 1.1rem; font:500 .85rem/1 sans-serif; text-decoration:none; transition:top .25s cubic-bezier(0.23,1,0.32,1);}
+.skip-link:focus{top:1rem;}
+/* ---------- AUDITORIA: tipografia y accesibilidad ---------- */
+.num,.acto-date,.v-yr,.v-k,.when,td,th{font-variant-numeric:tabular-nums;}
+h1,h2,h3,.acto-title,.title-cn{text-wrap:balance;}
+p,li,.lbl{text-wrap:pretty;}
+h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflow-wrap:break-word;}
+.acto-figure img{height:auto;}
+</style><!--/vis-head-->
 </head>
 <body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 <a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
 
 <header class="hero">
   <div class="hero-kanji">世界工厂</div>
   <div class="hero-content">
-    <span class="eyebrow">Kongzhi · China · Economía 06</span>
+    <span class="eyebrow">Kongzhi / China / Economía 06</span>
     <div class="hero-rule"></div>
     <h1 class="title-cn">世界工厂</h1>
-    <div class="title-pinyin">Shìjiè Gōngchǎng — La Fábrica del Mundo</div>
+    <div class="title-pinyin">Shìjiè Gōngchǎng: La Fábrica del Mundo</div>
     <p class="hero-dek">Once años bastaron para que China pasara de negociar su entrada a un club comercial a fabricar casi un tercio de todo lo que el planeta produce. Entre la firma de diciembre de 2001 y los Juegos Olímpicos de Beijing de 2008, 150 millones de migrantes rurales construyeron, literalmente, la cadena de suministro del mundo.</p>
-    <div class="hero-stats">
+    
+  </div>
+</header>
+<main id="contenido">
+<section class="cifras" aria-label="Cifras clave">
+<div class="hero-stats">
       <div data-go="go-1" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: adhesión formal a la OMC"><span class="num">11 dic 2001</span><span class="lbl">adhesión formal a la OMC</span></div>
       <div data-go="go-2" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: primer exportador mundial de mercancías"><span class="num">2010</span><span class="lbl">primer exportador mundial de mercancías</span></div>
       <div data-go="go-3" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: personas salen de la pobreza extrema"><span class="num">400M</span><span class="lbl">personas salen de la pobreza extrema</span></div>
     </div>
-  </div>
-</header>
+</section>
 
 <section id="actos">
   <div class="section-head">
@@ -239,7 +264,7 @@
           <div class="vis-card">
             <div class="v-stats" style="--n:3">
               <div class="v-stat"><span class="v-num" data-to="16.6" data-dec="1" data-pre="" data-suf="%">16.6%</span><span class="v-lbl">arancel general promedio en 2001</span></div>
-              <div class="v-stat"><span class="v-num">21 M+</span><span class="v-lbl">trabajadores urbanos despedidos tras 1997–98</span></div>
+              <div class="v-stat"><span class="v-num">21 M+</span><span class="v-lbl">trabajadores urbanos despedidos tras 1997-98</span></div>
               <div class="v-stat"><span class="v-num">Cuotas</span><span class="v-lbl">textiles estrictas en Europa y Norteamérica</span></div>
             </div>
           </div>
@@ -254,7 +279,7 @@
     <div><span class="acto-num">02</span><span class="acto-label">La grieta</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">Una firma que cambia las reglas con 140 países a la vez</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">oct 2000 – dic 2001</span>
+      <span class="acto-date">oct 2000 - dic 2001</span>
       <p class="acto-teaser">La adhesión a la OMC termina con la incertidumbre comercial anual y obliga a China a reescribir su marco legal según estándares internacionales.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="steps">
@@ -278,7 +303,7 @@
     <div><span class="acto-num">03</span><span class="acto-label">El giro</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">Hu-Wen acelera lo que Jiang-Zhu negoció</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">2001 – 2008</span>
+      <span class="acto-date">2001-2008</span>
       <p class="acto-teaser">Aranceles a la mitad, cuotas textiles abolidas, y 150 millones de campesinos migrando a clusters industriales costeros.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="bars">
@@ -292,9 +317,9 @@
           </div>
         </div><!--/vis-->
         <figure class="acto-figure">
-          <img src="../../assets/china/omc-potencia-manufacturera/hu-jintao.jpg" alt="Hu Jintao (derecha) y el premier Wen Jiabao aplaudiendo en el Gran Salón del Pueblo." loading="lazy" onerror="this.closest('figure').hidden=true">
+          <img width="1400" height="1022" src="../../assets/china/omc-potencia-manufacturera/hu-jintao.jpg" alt="Hu Jintao (derecha) y el premier Wen Jiabao aplaudiendo en el Gran Salón del Pueblo." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Hu Jintao (derecha) junto al premier Wen Jiabao: dirigieron la década en que China se convirtió en la fábrica del mundo.
-            <span class="credit">Fuente: Der Spiegel · licencia por verificar</span>
+            <span class="credit">Fuente: Der Spiegel, licencia por verificar</span>
           </figcaption>
         </figure>
         <div class="loss-list">
@@ -302,7 +327,7 @@
           <div class="loss-item"><h3>Fin de las cuotas textiles, 2005</h3><p>Se abolieron las restricciones cuantitativas al comercio exterior y se desmanteló el monopolio estatal sobre las licencias de importación y exportación, impulsando masivamente la competitividad de las confecciones chinas.</p></div>
           <div class="loss-item"><h3>Migración de 150 millones de <span class="gl" tabindex="0">nongmingong<span class="gl-def" role="note">Trabajadores migrantes rurales que se mueven a clusters industriales costeros.</span></span></h3><p id="go-3">La estrategia "<span class="gl" tabindex="0">Ir al Exterior<span class="gl-def" role="note">Estrategia &quot;Going Out&quot; para que las empresas chinas se internacionalicen.</span></span>" (Going Out) atrajo a más de 400 empresas de la lista Fortune 500 y movilizó a 150 millones de trabajadores rurales hacia clusters industriales costeros del delta del río Perla y del Yangzi.</p></div>
         </div>
-        <p class="quote">Durante la era Hu-Wen (2002-2012), el gobierno complementó el auge exportador con megaproyectos de infraestructura nacional —trenes de alta velocidad, presas, expansión de puertos— e incentivos a la innovación industrial en alta tecnología.</p>
+        <p class="quote">Durante la era Hu-Wen (2002-2012), el gobierno complementó el auge exportador con megaproyectos de infraestructura nacional (trenes de alta velocidad, presas, expansión de puertos) e incentivos a la innovación industrial en alta tecnología.</p>
       </div>
     </div>
   </div>
@@ -311,7 +336,7 @@
     <div><span class="acto-num">04</span><span class="acto-label">La consecuencia inmediata</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">De la tercera a la segunda economía del mundo en tres años</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">2001 – 2012</span>
+      <span class="acto-date">2001-2012</span>
       <p class="acto-teaser">Las exportaciones se multiplican por ocho, China adelanta a Alemania y luego a Japón, y acumula las mayores reservas de divisas del planeta.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="timeline">
@@ -334,9 +359,9 @@
           <p id="go-2" class="chart-note">La cuota de China en las exportaciones globales saltó del 3.8% en 2001 a más del 10% en 2010, el año en que se convirtió en el primer exportador mundial de mercancías.</p>
         </div>
         <figure class="acto-figure">
-          <img src="../../assets/china/omc-potencia-manufacturera/puerto-yangshan.jpg" alt="El Puerto de Yangshan, en Shanghái, uno de los puertos de contenedores más grandes del mundo." loading="lazy" onerror="this.closest('figure').hidden=true">
+          <img width="960" height="720" src="../../assets/china/omc-potencia-manufacturera/puerto-yangshan.jpg" alt="El Puerto de Yangshan, en Shanghái, uno de los puertos de contenedores más grandes del mundo." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>El Puerto de Yangshan, Shanghái: la infraestructura física detrás del salto exportador de la década post-OMC.
-            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+            <span class="credit">Fuente: Wikimedia Commons, dominio público</span>
           </figcaption>
         </figure>
         <p>La economía creció a una tasa media superior al 10% anual. En 2007, China superó a Alemania como la tercera economía del planeta, y en 2010 superó a Japón para convertirse en la segunda economía mundial. China se posicionó como líder mundial en la producción de acero, cemento, barcos, automóviles y textiles. Los continuos superávits comerciales permitieron acumular más de 3 billones de dólares en reservas internacionales, solvencia que le permitió responder a la Crisis Financiera Global de 2008 con un paquete de estímulo de 4 billones de yuanes en infraestructura.</p>
@@ -362,9 +387,9 @@
           </div>
         </div><!--/vis-->
         <figure class="acto-figure">
-          <img src="../../assets/china/omc-potencia-manufacturera/tren-alta-velocidad.jpg" alt="Un tren de alta velocidad CRH chino, parte de los megaproyectos de infraestructura de la era Hu-Wen." loading="lazy" onerror="this.closest('figure').hidden=true">
+          <img width="1280" height="960" src="../../assets/china/omc-potencia-manufacturera/tren-alta-velocidad.jpg" alt="Un tren de alta velocidad CRH chino, parte de los megaproyectos de infraestructura de la era Hu-Wen." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Un tren CRH de alta velocidad: uno de los megaproyectos de infraestructura con que la era Hu-Wen complementó el auge exportador.
-            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+            <span class="credit">Fuente: Wikimedia Commons, dominio público</span>
           </figcaption>
         </figure>
         <p><strong>El núcleo de las cadenas globales de valor.</strong> China genera cerca del 30% de la producción manufacturera mundial y es el principal socio comercial de más de 120 países, habiendo pasado de ser un ensamblador de bajo valor a generar el mayor valor agregado doméstico en la demanda final global.</p>
@@ -399,16 +424,17 @@
   <div class="sources">
     <span class="eyebrow">Fuentes</span>
     <p class="src-intro">Las fuentes principales de este cuaderno, de lo más sólido a lo más contextual. Curado por el equipo de Club Kongzhi.</p>
-    <ol class="src-list"><li><span class="st">Global economy&#x27;s growing resilience at odds with rate cut expectations</span><span class="sm">Bank of Ghana · <b>Institucional</b></span></li><li><span class="st">Impacts of China&#x27;s Accession to the World Trade Organization</span><span class="sm">Open Knowledge Repository (Banco Mundial) · <b>Institucional</b></span></li><li><span class="st">Mapping Two Decades of China&#x27;s Industrial Policies</span><span class="sm">FSI · <b>Académico</b></span></li><li><span class="st">The Four Export Clusters Producing 80% of China&#x27;s Exports</span><span class="sm">Andaman Partners · <b>Análisis</b></span></li><li><span class="st">Chinese Economic Reform - Timeline of Key Events</span><span class="sm">China Checkup · <b>Referencia</b></span></li><li><span class="st">Five-year plans of China</span><span class="sm">Wikipedia · <b>Referencia</b></span></li></ol>
+    <ol class="src-list"><li><span class="st">Global economy&#x27;s growing resilience at odds with rate cut expectations</span><span class="sm">Bank of Ghana / <b>Institucional</b></span></li><li><span class="st">Impacts of China&#x27;s Accession to the World Trade Organization</span><span class="sm">Open Knowledge Repository (Banco Mundial) / <b>Institucional</b></span></li><li><span class="st">Mapping Two Decades of China&#x27;s Industrial Policies</span><span class="sm">FSI / <b>Académico</b></span></li><li><span class="st">The Four Export Clusters Producing 80% of China&#x27;s Exports</span><span class="sm">Andaman Partners / <b>Análisis</b></span></li><li><span class="st">Chinese Economic Reform - Timeline of Key Events</span><span class="sm">China Checkup / <b>Referencia</b></span></li><li><span class="st">Five-year plans of China</span><span class="sm">Wikipedia / <b>Referencia</b></span></li></ol>
     <a class="src-all" href="../fuentes/index.html?c=omc-potencia-manufacturera">Ver las 8 fuentes de este cuaderno en el baúl →</a>
   </div>
-  <div class="nav-adjacent">
+  <div class="nav-adjacent" role="navigation" aria-label="Cuadernos relacionados">
     <a href="../economia-mercado-zee/index.html"><span class="dir">← Cuaderno anterior</span><span class="ttl">入世 Economía Socialista de Mercado</span></a>
     <a href="../xi-jinping-recentralizacion/index.html"><span class="dir">Siguiente cuaderno →</span><span class="ttl">核心 Xi Jinping y la Recentralización</span></a>
   </div>
 </section>
 
-<footer>Club Kongzhi UNMSM · <a href="../../index.html#departamento-de-investigacion" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Departamento de Investigación</a> · Biblioteca Nalanda</footer>
+</main>
+<footer>Club Kongzhi UNMSM / <a href="../../index.html#departamento-de-investigacion" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Departamento de Investigación</a> / Biblioteca Nalanda</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -505,7 +531,7 @@
 
     gsap.to('.hero-kanji', {
       yPercent: 12, ease: 'none',
-      scrollTrigger: { trigger: 'header.hero', start: 'top top', end: 'bottom top', scrub: 1.2 }
+      scrollTrigger: { trigger: 'header.hero', start: 'top top', end: 'bottom top', scrub: 0.6 }
     });
 
     var hPaths = document.querySelectorAll('#huiwenDivider path');
@@ -533,5 +559,6 @@
 
 <!--vis-js--><script src="../../assets/vis.js"></script><!--/vis-js-->
 <script src="../../assets/acto-anchor.js"></script>
+<script>(function(){var s=document.querySelector('.cifras');if(!s)return;if(typeof reduceMotion!=='undefined'&&reduceMotion||!('IntersectionObserver' in window)){s.classList.add('in');return;}var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){s.classList.add('in');io.disconnect();}},{threshold:.35});io.observe(s);})();</script>
 </body>
 </html>

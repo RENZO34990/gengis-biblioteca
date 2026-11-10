@@ -3,7 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>광주와 6월 항쟁 — Gwangju y la Lucha Democrática de Junio</title>
+<title>광주와 6월 항쟁: Gwangju y la Lucha Democrática de Junio</title>
+<meta name="description" content="Tras el asesinato de Park, un nuevo general tomó el poder y en mayo de 1980 mandó paracaidistas contra una ciudad entera.">
+<meta name="theme-color" content="#B5623B">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Biblioteca Nalanda">
+<meta property="og:locale" content="es_PE">
+<meta property="og:title" content="광주와 6월 항쟁: Gwangju y la Lucha Democrática de Junio">
+<meta property="og:description" content="Tras el asesinato de Park, un nuevo general tomó el poder y en mayo de 1980 mandó paracaidistas contra una ciudad entera.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23B5623B'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%23F2EFE9' font-family='Georgia,serif'%3EN%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -178,56 +186,73 @@
   .src-all{display:inline-block; margin-top:1.4rem; font-family:'IBM Plex Mono',monospace; font-size:.8rem; color:var(--terracota-deep); text-decoration:none; border-bottom:1px solid var(--terracota-deep); padding-bottom:1px;}
   .src-all:hover{color:var(--terracota); border-color:var(--terracota);}
   /* ---------- HERO: cifras como lista vertical con destino ---------- */
-  .hero .hero-stats{display:block; max-width:560px; margin-top:3rem; border-top:1px solid rgba(245,243,238,.2);}
-  .hero .hero-stats > div{position:relative; display:grid; grid-template-columns:11.4rem 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid rgba(245,243,238,.2); transition:background-color .35s cubic-bezier(0.23,1,0.32,1), transform .35s cubic-bezier(0.23,1,0.32,1);}
-  .hero .hero-stats > div:last-child{padding-right:2.4rem;}
-  .hero .hero-stats .num{font-size:1.5rem; line-height:1; width:max-content;}
-  .hero .hero-stats .lbl{margin:0; max-width:none; font-size:.82rem; line-height:1.5;}
-  .hero .hero-stats > div::before{content:""; position:absolute; left:0; top:.9rem; bottom:.9rem; width:2px; background:var(--terracota-light); transform-origin:top; transform:scaleY(0); animation:statBar .9s cubic-bezier(0.23,1,0.32,1) both;}
-  .hero .hero-stats > div:nth-child(1)::before{animation-delay:1.5s;}
-  .hero .hero-stats > div:nth-child(2)::before{animation-delay:1.7s;}
-  .hero .hero-stats > div:nth-child(3)::before{animation-delay:1.9s;}
-  @media (hover:hover){.hero .hero-stats > div:hover{background:rgba(245,243,238,.07); transform:translateX(.3rem);}}
-  .hero .hero-stats > div[data-go]{cursor:pointer;}
-  .hero .hero-stats > div[data-go]::after{content:"\2193"; position:absolute; right:1rem; top:50%; transform:translate(-4px,-50%); opacity:0; font-family:'IBM Plex Mono', monospace; font-size:.95rem; color:var(--terracota-light); transition:opacity .3s, transform .3s cubic-bezier(0.23,1,0.32,1);}
-  .hero .hero-stats > div[data-go]:hover::after,.hero .hero-stats > div[data-go]:focus-visible::after{opacity:1; transform:translate(0,-50%);}
-  .hero .hero-stats > div[data-go]:focus-visible{outline:2px solid var(--terracota-light); outline-offset:2px;}
-  .hero .hero-stats > div[data-go]:active{transform:scale(0.985);}
+  .cifras .hero-stats{display:block; max-width:560px; margin-top:3rem; border-top:1px solid rgba(245,243,238,.2);}
+  .cifras .hero-stats > div{position:relative; display:grid; grid-template-columns:11.4rem 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid rgba(245,243,238,.2); transition:background-color .35s cubic-bezier(0.23,1,0.32,1), transform .35s cubic-bezier(0.23,1,0.32,1);}
+  .cifras .hero-stats > div:last-child{padding-right:2.4rem;}
+  .cifras .hero-stats .num{font-size:1.5rem; line-height:1; width:max-content;}
+  .cifras .hero-stats .lbl{margin:0; max-width:none; font-size:.82rem; line-height:1.5;}
+  .cifras .hero-stats > div::before{content:""; position:absolute; left:0; top:.9rem; bottom:.9rem; width:2px; background:var(--terracota-light); transform-origin:top; transform:scaleY(0);}
+  @media (hover:hover){.cifras .hero-stats > div:hover{background:rgba(245,243,238,.07); transform:translateX(.3rem);}}
+  .cifras .hero-stats > div[data-go]{cursor:pointer;}
+  .cifras .hero-stats > div[data-go]::after{content:"\2193"; position:absolute; right:1rem; top:50%; transform:translate(-4px,-50%); opacity:0; font-family:'IBM Plex Mono', monospace; font-size:.95rem; color:var(--terracota-light); transition:opacity .3s, transform .3s cubic-bezier(0.23,1,0.32,1);}
+  .cifras .hero-stats > div[data-go]:hover::after,.cifras .hero-stats > div[data-go]:focus-visible::after{opacity:1; transform:translate(0,-50%);}
+  .cifras .hero-stats > div[data-go]:focus-visible{outline:2px solid var(--terracota-light); outline-offset:2px;}
+  .cifras .hero-stats > div[data-go]:active{transform:scale(0.985);}
   [id^="go-"]{scroll-margin-top:110px;}
   .go-flash{animation:goFlash 2s cubic-bezier(0.23,1,0.32,1) both;}
   @keyframes statBar{to{transform:scaleY(1);}}
   @keyframes goFlash{0%{background-color:rgba(181,98,59,.14); box-shadow:0 0 0 8px rgba(181,98,59,.14);} 100%{background-color:rgba(181,98,59,0); box-shadow:0 0 0 8px rgba(181,98,59,0);}}
   @media (prefers-reduced-motion:reduce){
-    .hero .hero-stats > div::before{animation:none; transform:scaleY(1);}
-    .hero .hero-stats > div{transition:none;}
+    .cifras .hero-stats > div::before{animation:none !important; transform:scaleY(1);}
+    .cifras .hero-stats > div{transition:none;}
     .go-flash{animation:none; outline:2px solid rgb(181,98,59); outline-offset:6px;}
   }
   @media (max-width:560px){
-    .hero .hero-stats > div{grid-template-columns:1fr; row-gap:.35rem;}
-    .hero .hero-stats .num{font-size:1.4rem;}
+    .cifras .hero-stats > div{grid-template-columns:1fr; row-gap:.35rem;}
+    .cifras .hero-stats .num{font-size:1.4rem;}
   }
 </style>
 <!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
-<style>:root{--v-accent:var(--terracota); --v-accent-deep:var(--terracota-deep); --v-accent2:var(--celadon-deep); --v-accent-soft:rgba(79,111,97,.2); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Gothic A1', sans-serif; --v-body:'Gothic A1', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
+<style>:root{--v-accent:var(--terracota); --v-accent-deep:var(--terracota-deep); --v-accent2:var(--celadon-deep); --v-accent-soft:rgba(79,111,97,.2); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Gothic A1', sans-serif; --v-body:'Gothic A1', sans-serif; --v-mono:'IBM Plex Mono', monospace;}
+.cifras{max-width:none; margin:0; background:#3E5A4E; color:var(--paper); padding:3rem 8vw 4.5rem;}
+.cifras .hero-stats{margin-top:0;}
+.cifras.in .hero-stats > div::before{animation:statBar .9s cubic-bezier(0.23,1,0.32,1) both;}
+.cifras.in .hero-stats > div:nth-child(1)::before{animation-delay:.1s;}
+.cifras.in .hero-stats > div:nth-child(2)::before{animation-delay:.25s;}
+.cifras.in .hero-stats > div:nth-child(3)::before{animation-delay:.4s;}
+.skip-link{position:absolute; left:1rem; top:-4rem; z-index:200; background:#1A1A1A; color:#F2EFE9; padding:.7rem 1.1rem; font:500 .85rem/1 sans-serif; text-decoration:none; transition:top .25s cubic-bezier(0.23,1,0.32,1);}
+.skip-link:focus{top:1rem;}
+/* ---------- AUDITORIA: tipografia y accesibilidad ---------- */
+.num,.acto-date,.v-yr,.v-k,.when,td,th{font-variant-numeric:tabular-nums;}
+h1,h2,h3,.acto-title,.title-cn{text-wrap:balance;}
+p,li,.lbl{text-wrap:pretty;}
+h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflow-wrap:break-word;}
+.acto-figure img{height:auto;}
+</style><!--/vis-head-->
 </head>
 <body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 <a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
 
 <header class="hero">
   <div class="hero-kanji">光州</div>
   <div class="hero-content">
-    <span class="eyebrow">Kongzhi · Corea · Política 09</span>
+    <span class="eyebrow">Kongzhi / Corea / Política 09</span>
     <div class="hero-rule"></div>
     <h1 class="title-kr">광주와 6월 항쟁</h1>
-    <div class="title-romaja">Gwangju-wa Yuwol Hangjaeng — el levantamiento de 1980, la Quinta República y la Lucha Democrática de Junio de 1987</div>
+    <div class="title-romaja">Gwangju-wa Yuwol Hangjaeng: el levantamiento de 1980, la Quinta República y la Lucha Democrática de Junio de 1987</div>
     <p class="hero-dek">Tras el asesinato de Park, un nuevo general tomó el poder y en mayo de 1980 mandó paracaidistas contra una ciudad entera. Siete años después, millones de personas salieron a la calle y el régimen, temiendo repetir Gwangju, no se atrevió a sacar al ejército. Esa derrota ordenó la política surcoreana desde entonces.</p>
-    <div class="hero-stats">
-      <div data-go="go-1" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: la masacre de Gwangju"><span class="num">18–27 mayo 1980</span><span class="lbl">la masacre de Gwangju</span></div>
+    
+  </div>
+</header>
+<main id="contenido">
+<section class="cifras" aria-label="Cifras clave">
+<div class="hero-stats">
+      <div data-go="go-1" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: la masacre de Gwangju"><span class="num">18-27 mayo 1980</span><span class="lbl">la masacre de Gwangju</span></div>
       <div data-go="go-2" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: ciudadanos en las calles en junio de 1987"><span class="num">+1,5 M</span><span class="lbl">ciudadanos en las calles en junio de 1987</span></div>
       <div data-go="go-3" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: el régimen capitula"><span class="num">29 jun 1987</span><span class="lbl">el régimen capitula</span></div>
     </div>
-  </div>
-</header>
+</section>
 
 <section id="actos">
   <div class="section-head">
@@ -240,7 +265,7 @@
     <div><span class="acto-num">01</span><span class="acto-label">El mundo antes</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">Una primavera breve y un golpe dentro del golpe</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">Oct 1979 – 1980</span>
+      <span class="acto-date">Oct 1979-1980</span>
       <p class="acto-teaser">Muere Park, hay esperanza democrática y el general Chun Doo-hwan toma el poder con el Estado intacto.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="flow">
@@ -266,7 +291,7 @@
     <div><span class="acto-num">02</span><span class="acto-label">La grieta</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">Gwangju: diez días de sangre y de autogobierno</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">17 – 27 mayo 1980</span>
+      <span class="acto-date">17-27 mayo 1980</span>
       <p class="acto-teaser">La ley marcial se extiende a todo el país, una ciudad se levanta y el ejército la somete a bayonetazos.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="press">
@@ -274,16 +299,16 @@
           <div class="vis-card">
             <div class="v-press">
               <div class="v-press-side v-press-l"><b>Paracaidistas</b><em>Disparos y bayonetas contra estudiantes y civiles</em><svg class="v-arrow" viewBox="0 0 54 24" aria-hidden="true"><path d="M2 12h44M36 3l12 9-12 9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-              <div class="v-press-core">光州<small>18–27 MAYO</small><svg class="v-crack" viewBox="0 0 96 96" aria-hidden="true"><path d="M48 0l-8 22 12 14-14 20 10 14-6 26" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--v-paper)"/></svg></div>
+              <div class="v-press-core">光州<small>18-27 MAYO</small><svg class="v-crack" viewBox="0 0 96 96" aria-hidden="true"><path d="M48 0l-8 22 12 14-14 20 10 14-6 26" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--v-paper)"/></svg></div>
               <div class="v-press-side v-press-r"><b>Autogobierno ciudadano</b><em>Comités que dirigieron la ciudad</em><svg class="v-arrow" viewBox="0 0 54 24" aria-hidden="true"><path d="M2 12h44M36 3l12 9-12 9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             </div>
             <div class="v-press-out">Ocultada como "motín comunista", la masacre se volvió el <b>hito moral</b> contra la dictadura.</div>
           </div>
         </div><!--/vis-->
         <figure class="acto-figure">
-          <img src="../../assets/corea/gwangju-junio-1987/gwangju-1980.jpg" alt="Estudiantes en Gwangju con una pancarta que exige el fin de la ley marcial, frente a una línea de policías antidisturbios, mayo de 1980." loading="lazy" onerror="this.closest('figure').hidden=true">
+          <img width="1200" height="744" src="../../assets/corea/gwangju-junio-1987/gwangju-1980.jpg" alt="Estudiantes en Gwangju con una pancarta que exige el fin de la ley marcial, frente a una línea de policías antidisturbios, mayo de 1980." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Gwangju, mayo de 1980: estudiantes de la Universidad Nacional de Chonnam, con una pancarta que exige levantar la ley marcial, frente a la policía antidisturbios. El régimen calificó el levantamiento de "motín comunista".
-            <span class="credit">Fuente: por verificar · autoría y licencia</span>
+            <span class="credit">Fuente: por verificar, autoría y licencia</span>
           </figcaption>
         </figure>
         <p id="go-1">El 17 de mayo de 1980 la ley marcial se extendió a todo el país y se arrestó a líderes opositores como Kim Dae-jung. Gwangju respondió con una protesta masiva. El régimen desplegó brigadas de paracaidistas que reprimieron a estudiantes y civiles con disparos y bayonetas.</p>
@@ -297,7 +322,7 @@
     <div><span class="acto-num">03</span><span class="acto-label">El giro</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">Junio de 1987: la calle gana sin que el ejército salga</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">Ene – jun 1987</span>
+      <span class="acto-date">Ene - jun 1987</span>
       <p class="acto-teaser">Una muerte por tortura, un congelamiento constitucional y un frente amplio de millones.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="timeline">
@@ -313,15 +338,15 @@
           </div>
         </div><!--/vis-->
         <figure class="acto-figure">
-          <img src="../../assets/corea/gwangju-junio-1987/junio-1987.jpg" alt="Manifestantes en las calles de Seúl durante la Lucha Democrática de Junio de 1987." loading="lazy" onerror="this.closest('figure').hidden=true">
+          <img width="960" height="729" src="../../assets/corea/gwangju-junio-1987/junio-1987.jpg" alt="Manifestantes en las calles de Seúl durante la Lucha Democrática de Junio de 1987." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Seúl, junio de 1987: estudiantes, obreros y clase media en la misma calle.
-            <span class="credit">Fuente: por verificar · autoría y licencia</span>
+            <span class="credit">Fuente: por verificar, autoría y licencia</span>
           </figcaption>
         </figure>
         <p>La muerte del estudiante Lee Han-yeol, alcanzado en la cabeza por una granada de gas lacrimógeno, intensificó la protesta. La Lucha Democrática de Junio fue una insurrección ciudadana pacífica a escala nacional.</p>
         <div class="loss-list">
           <div class="loss-item"><h3><span class="when">Ene 1987</span>La muerte de Park Jong-chul</h3><p>La Asociación de Sacerdotes Católicos por la Justicia (<span class="gl" tabindex="0">CPAJ<span class="gl-def" role="note">Asociación de Sacerdotes Católicos por la Justicia.</span></span>) revela que el estudiante murió bajo tortura y que el Estado lo encubrió.</p></div>
-          <div class="loss-item"><h3><span class="when">13 abr · 10 jun</span>El congelamiento y el sucesor</h3><p>Chun suspende todo debate de reforma constitucional y designa a su aliado Roh Tae-woo como sucesor presidencial.</p></div>
+          <div class="loss-item"><h3><span class="when">13 abr / 10 jun</span>El congelamiento y el sucesor</h3><p>Chun suspende todo debate de reforma constitucional y designa a su aliado Roh Tae-woo como sucesor presidencial.</p></div>
           <div class="loss-item"><h3><span class="when">Junio</span>El frente Guk-bon</h3><p>La Coalición Nacional para una Constitución Democrática reúne a partidos, sindicatos, religiosos y a más de 1,5 millones de ciudadanos de clase media.</p></div>
           <div class="loss-item"><h3><span class="when">29 jun</span>La capitulación</h3><p>Con los Juegos Olímpicos de Seúl 1988 cerca y presión internacional, el régimen descarta el ejército por temor a repetir Gwangju. Roh emite la <span class="gl" tabindex="0">Declaración del 29 de Junio<span class="gl-def" role="note">Anuncio de Roh Tae-woo que aceptó elecciones directas, libertades civiles y amnistía.</span></span>.</p></div>
         </div>
@@ -335,7 +360,7 @@
     <div><span class="acto-num">04</span><span class="acto-label">La consecuencia inmediata</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">Una Constitución nueva y una gran huelga</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">1987 – 1992</span>
+      <span class="acto-date">1987-1992</span>
       <p class="acto-teaser">Referéndum con 93% de apoyo, miles de sindicatos nuevos y una oposición dividida que le regala la elección a Roh.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="stats">
@@ -410,7 +435,7 @@
     <div><h3>Japón</h3><p>Consolidó su democracia de posguerra con la hegemonía prolongada del Partido Liberal Democrático, en un entorno de estabilidad institucional. Corea del Sur democratizó a través de una movilización civil contenciosa y de confrontación masiva contra la dictadura.</p></div>
   </div>
   <div class="connect-note">
-    Este cuaderno cierra el Acto III, "El milagro y su costo". Sigue a <a href="../park-yushin/index.html">Park Chung-hee y Yushin</a>, cuyo "presidencialismo imperial" explica lo que se disputó aquí, y a <a href="../industria-pesada-chaebols/index.html">la industria pesada y los chaebols</a>. Continúa en <a href="../democratizacion-apertura/index.html">la democratización y la apertura de 1987–1997</a>.
+    Este cuaderno cierra el Acto III, "El milagro y su costo". Sigue a <a href="../park-yushin/index.html">Park Chung-hee y Yushin</a>, cuyo "presidencialismo imperial" explica lo que se disputó aquí, y a <a href="../industria-pesada-chaebols/index.html">la industria pesada y los chaebols</a>. Continúa en <a href="../democratizacion-apertura/index.html">la democratización y la apertura de 1987-1997</a>.
   </div>
 </section>
 
@@ -418,16 +443,17 @@
   <div class="sources">
     <span class="eyebrow">Fuentes</span>
     <p class="src-intro">Fuentes afines a este cuaderno, asignadas por tema. Curado por el equipo de Club Kongzhi.</p>
-    <ol class="src-list"><li><span class="st">Counter-Narrative of Gwangju: South Korean film as a Medium of Resistance and Memory</span><span class="sm">UNITesi · <b>Académico</b></span></li><li><span class="st">South Korea&#x27;s Democracy Movement (1970-1993)</span><span class="sm"><b>Análisis</b></span></li><li><span class="st">June Democratic Struggle</span><span class="sm">Wikipedia · <b>Referencia</b></span></li></ol>
+    <ol class="src-list"><li><span class="st">Counter-Narrative of Gwangju: South Korean film as a Medium of Resistance and Memory</span><span class="sm">UNITesi / <b>Académico</b></span></li><li><span class="st">South Korea&#x27;s Democracy Movement (1970-1993)</span><span class="sm"><b>Análisis</b></span></li><li><span class="st">June Democratic Struggle</span><span class="sm">Wikipedia / <b>Referencia</b></span></li></ol>
     <a class="src-all" href="../fuentes/index.html?c=gwangju-junio-1987">Abrir el baúl de fuentes de Corea →</a>
   </div>
-  <div class="nav-adjacent">
+  <div class="nav-adjacent" role="navigation" aria-label="Cuadernos relacionados">
     <a href="../industria-pesada-chaebols/index.html"><span class="dir">← Cuaderno anterior</span><span class="ttl">중화학공업과 재벌 Industria pesada y chaebols</span></a>
     <a href="../democratizacion-apertura/index.html"><span class="dir">Siguiente cuaderno</span><span class="ttl">민주화와 개방 Democratización y apertura →</span></a>
   </div>
 </section>
 
-<footer>Club Kongzhi UNMSM · <a href="../../index.html#departamento-de-investigacion" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Departamento de Investigación</a> · Biblioteca Nalanda</footer>
+</main>
+<footer>Club Kongzhi UNMSM / <a href="../../index.html#departamento-de-investigacion" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Departamento de Investigación</a> / Biblioteca Nalanda</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -516,7 +542,7 @@
 
     gsap.to('.hero-kanji', {
       yPercent: 12, ease: 'none',
-      scrollTrigger: { trigger: 'header.hero', start: 'top top', end: 'bottom top', scrub: 1.2 }
+      scrollTrigger: { trigger: 'header.hero', start: 'top top', end: 'bottom top', scrub: 0.6 }
     });
 
     gsap.from('.divider-motif svg', {
@@ -541,5 +567,6 @@
 
 <!--vis-js--><script src="../../assets/vis.js"></script><!--/vis-js-->
 <script src="../../assets/acto-anchor.js"></script>
+<script>(function(){var s=document.querySelector('.cifras');if(!s)return;if(typeof reduceMotion!=='undefined'&&reduceMotion||!('IntersectionObserver' in window)){s.classList.add('in');return;}var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){s.classList.add('in');io.disconnect();}},{threshold:.35});io.observe(s);})();</script>
 </body>
 </html>

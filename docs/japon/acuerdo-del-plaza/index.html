@@ -3,7 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>バブル景気 — El Acuerdo del Plaza</title>
+<title>バブル景気: El Acuerdo del Plaza</title>
+<meta name="description" content="Cinco ministros de finanzas firmaron un pacto en un hotel de Nueva York para salvar a la manufactura estadounidense.">
+<meta name="theme-color" content="#A13D2C">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Biblioteca Nalanda">
+<meta property="og:locale" content="es_PE">
+<meta property="og:title" content="バブル景気: El Acuerdo del Plaza">
+<meta property="og:description" content="Cinco ministros de finanzas firmaron un pacto en un hotel de Nueva York para salvar a la manufactura estadounidense.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23A13D2C'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%23F2EFE9' font-family='Georgia,serif'%3EN%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Shippori+Mincho:wght@400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -187,56 +195,73 @@
   .src-all{display:inline-block; margin-top:1.4rem; font-family:'IBM Plex Mono',monospace; font-size:.8rem; color:var(--vermillion); text-decoration:none; border-bottom:1px solid var(--vermillion); padding-bottom:1px;}
   .src-all:hover{color:var(--vermillion-deep); border-color:var(--vermillion-deep);}
   /* ---------- HERO: cifras como lista vertical con destino ---------- */
-  .hero .hero-stats{display:block; max-width:560px; margin-top:3rem; border-top:1px solid var(--line);}
-  .hero .hero-stats > div{position:relative; display:grid; grid-template-columns:5.4rem 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid var(--line); transition:background-color .35s cubic-bezier(0.23,1,0.32,1), transform .35s cubic-bezier(0.23,1,0.32,1);}
-  .hero .hero-stats > div:last-child{padding-right:2.4rem;}
-  .hero .hero-stats .num{font-size:1.75rem; line-height:1; width:max-content;}
-  .hero .hero-stats .lbl{margin:0; max-width:none; font-size:.82rem; line-height:1.5;}
-  .hero .hero-stats > div::before{content:""; position:absolute; left:0; top:.9rem; bottom:.9rem; width:2px; background:var(--vermillion); transform-origin:top; transform:scaleY(0); animation:statBar .9s cubic-bezier(0.23,1,0.32,1) both;}
-  .hero .hero-stats > div:nth-child(1)::before{animation-delay:1.5s;}
-  .hero .hero-stats > div:nth-child(2)::before{animation-delay:1.7s;}
-  .hero .hero-stats > div:nth-child(3)::before{animation-delay:1.9s;}
-  @media (hover:hover){.hero .hero-stats > div:hover{background:rgba(161,61,44,.05); transform:translateX(.3rem);}}
-  .hero .hero-stats > div[data-go]{cursor:pointer;}
-  .hero .hero-stats > div[data-go]::after{content:"\2193"; position:absolute; right:1rem; top:50%; transform:translate(-4px,-50%); opacity:0; font-family:'IBM Plex Mono', monospace; font-size:.95rem; color:var(--vermillion); transition:opacity .3s, transform .3s cubic-bezier(0.23,1,0.32,1);}
-  .hero .hero-stats > div[data-go]:hover::after,.hero .hero-stats > div[data-go]:focus-visible::after{opacity:1; transform:translate(0,-50%);}
-  .hero .hero-stats > div[data-go]:focus-visible{outline:2px solid var(--vermillion); outline-offset:2px;}
-  .hero .hero-stats > div[data-go]:active{transform:scale(0.985);}
+  .cifras .hero-stats{display:block; max-width:560px; margin-top:3rem; border-top:1px solid var(--line);}
+  .cifras .hero-stats > div{position:relative; display:grid; grid-template-columns:5.4rem 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid var(--line); transition:background-color .35s cubic-bezier(0.23,1,0.32,1), transform .35s cubic-bezier(0.23,1,0.32,1);}
+  .cifras .hero-stats > div:last-child{padding-right:2.4rem;}
+  .cifras .hero-stats .num{font-size:1.75rem; line-height:1; width:max-content;}
+  .cifras .hero-stats .lbl{margin:0; max-width:none; font-size:.82rem; line-height:1.5;}
+  .cifras .hero-stats > div::before{content:""; position:absolute; left:0; top:.9rem; bottom:.9rem; width:2px; background:var(--vermillion); transform-origin:top; transform:scaleY(0);}
+  @media (hover:hover){.cifras .hero-stats > div:hover{background:rgba(161,61,44,.05); transform:translateX(.3rem);}}
+  .cifras .hero-stats > div[data-go]{cursor:pointer;}
+  .cifras .hero-stats > div[data-go]::after{content:"\2193"; position:absolute; right:1rem; top:50%; transform:translate(-4px,-50%); opacity:0; font-family:'IBM Plex Mono', monospace; font-size:.95rem; color:var(--vermillion); transition:opacity .3s, transform .3s cubic-bezier(0.23,1,0.32,1);}
+  .cifras .hero-stats > div[data-go]:hover::after,.cifras .hero-stats > div[data-go]:focus-visible::after{opacity:1; transform:translate(0,-50%);}
+  .cifras .hero-stats > div[data-go]:focus-visible{outline:2px solid var(--vermillion); outline-offset:2px;}
+  .cifras .hero-stats > div[data-go]:active{transform:scale(0.985);}
   [id^="go-"]{scroll-margin-top:110px;}
   .go-flash{animation:goFlash 2s cubic-bezier(0.23,1,0.32,1) both;}
   @keyframes statBar{to{transform:scaleY(1);}}
   @keyframes goFlash{0%{background-color:rgba(161,61,44,.14); box-shadow:0 0 0 8px rgba(161,61,44,.14);} 100%{background-color:rgba(161,61,44,0); box-shadow:0 0 0 8px rgba(161,61,44,0);}}
   @media (prefers-reduced-motion:reduce){
-    .hero .hero-stats > div::before{animation:none; transform:scaleY(1);}
-    .hero .hero-stats > div{transition:none;}
+    .cifras .hero-stats > div::before{animation:none !important; transform:scaleY(1);}
+    .cifras .hero-stats > div{transition:none;}
     .go-flash{animation:none; outline:2px solid rgb(161,61,44); outline-offset:6px;}
   }
   @media (max-width:560px){
-    .hero .hero-stats > div{grid-template-columns:4.2rem 1fr; column-gap:1.1rem;}
-    .hero .hero-stats .num{font-size:1.4rem;}
+    .cifras .hero-stats > div{grid-template-columns:4.2rem 1fr; column-gap:1.1rem;}
+    .cifras .hero-stats .num{font-size:1.4rem;}
   }
 </style>
 <!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
-<style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(168,134,60,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Shippori Mincho', serif; --v-body:'Zen Kaku Gothic New', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
+<style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(168,134,60,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Shippori Mincho', serif; --v-body:'Zen Kaku Gothic New', sans-serif; --v-mono:'IBM Plex Mono', monospace;}
+.cifras{max-width:none; margin:0; padding:3.5rem 8vw 3rem;}
+.cifras .hero-stats{margin-top:0;}
+.cifras.in .hero-stats > div::before{animation:statBar .9s cubic-bezier(0.23,1,0.32,1) both;}
+.cifras.in .hero-stats > div:nth-child(1)::before{animation-delay:.1s;}
+.cifras.in .hero-stats > div:nth-child(2)::before{animation-delay:.25s;}
+.cifras.in .hero-stats > div:nth-child(3)::before{animation-delay:.4s;}
+.skip-link{position:absolute; left:1rem; top:-4rem; z-index:200; background:#1A1A1A; color:#F2EFE9; padding:.7rem 1.1rem; font:500 .85rem/1 sans-serif; text-decoration:none; transition:top .25s cubic-bezier(0.23,1,0.32,1);}
+.skip-link:focus{top:1rem;}
+/* ---------- AUDITORIA: tipografia y accesibilidad ---------- */
+.num,.acto-date,.v-yr,.v-k,.when,td,th{font-variant-numeric:tabular-nums;}
+h1,h2,h3,.acto-title,.title-cn{text-wrap:balance;}
+p,li,.lbl{text-wrap:pretty;}
+h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflow-wrap:break-word;}
+.acto-figure img{height:auto;}
+</style><!--/vis-head-->
 </head>
 <body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 <a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
 
 <header class="hero">
   <div class="hero-kanji">バブル景気</div>
   <div class="hero-content">
-    <span class="eyebrow">Kongzhi · Japón · Economía 02</span>
+    <span class="eyebrow">Kongzhi / Japón / Economía 02</span>
     <div class="hero-rule"></div>
     <h1 class="title-jp">バブル景気</h1>
-    <div class="title-romaji">Baburu keiki — el Acuerdo del Plaza y la burbuja financiera, 1985-1991</div>
+    <div class="title-romaji">Baburu keiki: el Acuerdo del Plaza y la burbuja financiera, 1985-1991</div>
     <p class="hero-dek">Cinco ministros de finanzas firmaron un pacto en un hotel de Nueva York para salvar a la manufactura estadounidense. Seis años después, el metro cuadrado de Ginza valía más que el estado de California, y el Banco de Japón tenía en sus manos la decisión que inauguraría tres décadas de estancamiento.</p>
-    <div class="hero-stats">
+    
+  </div>
+</header>
+<main id="contenido">
+<section class="cifras" aria-label="Cifras clave">
+<div class="hero-stats">
       <div data-go="go-1" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: Acuerdo del Plaza, 22 de septiembre"><span class="num">1985</span><span class="lbl">Acuerdo del Plaza, 22 de septiembre</span></div>
       <div data-go="go-2" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: Nikkei toca máximo histórico: 38,915 pts"><span class="num">1989</span><span class="lbl">Nikkei toca máximo histórico: 38,915 pts</span></div>
       <div data-go="go-3" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: el BOJ sube tasas al 6%, estalla la burbuja"><span class="num">1990</span><span class="lbl">el BOJ sube tasas al 6%, estalla la burbuja</span></div>
     </div>
-  </div>
-</header>
+</section>
 
 <section id="actos">
   <div class="section-head">
@@ -249,7 +274,7 @@
     <div><span class="acto-num">01</span><span class="acto-label">El mundo antes</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">Un superávit que empezaba a asfixiar a Washington</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">1955 – 1985</span>
+      <span class="acto-date">1955-1985</span>
       <p class="acto-teaser">El "Milagro Económico" japonés construyó un superávit comercial crónico con EE. UU. que, hacia 1985, el Congreso estadounidense amenazaba con frenar a golpe de aranceles.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="press">
@@ -273,7 +298,7 @@
     <div><span class="acto-num">02</span><span class="acto-label">La grieta</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">El Acuerdo del Plaza, y la apreciación a velocidad destructiva</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">sep 1985 – 1987</span>
+      <span class="acto-date">sep 1985-1987</span>
       <p class="acto-teaser">Cinco potencias pactan devaluar el dólar frente al yen. La apreciación resultante es tan violenta que hunde a la industria exportadora en una recesión inmediata.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="flow">
@@ -292,7 +317,7 @@
         <figure class="acto-figure">
           <img src="../../assets/japon/acuerdo-del-plaza/hotel-plaza-1985.jpg" alt="El hotel Plaza en Nueva York, sede del acuerdo de septiembre de 1985." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>El hotel Plaza de Nueva York, donde el G5 firmó el 22 de septiembre de 1985 el acuerdo que duplicó el valor del yen en tres años.
-            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+            <span class="credit">Fuente: Wikimedia Commons, dominio público</span>
           </figcaption>
         </figure>
         <p id="go-1">Presionados por la amenaza de restricciones comerciales en EE. UU., los ministros de finanzas de EE. UU., Japón, Alemania Occidental, Francia y el Reino Unido firman el 22 de septiembre de 1985 un pacto en el Hotel Plaza de Nueva York: el dólar debía depreciarse frente al yen mediante intervenciones coordinadas en los mercados cambiarios.</p>
@@ -313,16 +338,16 @@
     <div><span class="acto-num">03</span><span class="acto-label">El giro</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">Tasas al mínimo histórico, y el crédito se va a la tierra</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">1986 – 1989</span>
-      <p class="acto-teaser">Para contrarrestar la recesión del yen alto, el Banco de Japón inunda la economía de liquidez barata — y esa liquidez, en vez de ir a la industria, se vuelca a comprar terrenos.</p>
+      <span class="acto-date">1986-1989</span>
+      <p class="acto-teaser">Para contrarrestar la recesión del yen alto, el Banco de Japón inunda la economía de liquidez barata, y esa liquidez, en vez de ir a la industria, se vuelca a comprar terrenos.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="steps">
           <p class="vis-one"><small>En una frase</small>El dinero barato salió de la industria y se fue a la tierra.</p>
           <div class="vis-card">
             <div class="v-steps" role="list">
               <div class="v-rail"><div class="v-fill"></div></div>
-              <div class="v-stop" role="listitem"><span class="v-yr">1986–87</span><h4>Cinco recortes de tasa</h4><p>El BOJ baja la tasa de descuento hasta 2.5% en febrero de 1987.</p></div>
-              <div class="v-stop" role="listitem"><span class="v-yr">1987–89</span><h4>Tasa congelada</h4><p>Se mantiene en el mínimo hasta mayo de 1989.</p></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">1986-87</span><h4>Cinco recortes de tasa</h4><p>El BOJ baja la tasa de descuento hasta 2.5% en febrero de 1987.</p></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">1987-89</span><h4>Tasa congelada</h4><p>Se mantiene en el mínimo hasta mayo de 1989.</p></div>
               <div class="v-stop" role="listitem"><span class="v-yr">Bancos</span><h4>Crédito a la tierra</h4><p>Pequeñas empresas y préstamos especulativos con terrenos como garantía.</p></div>
               <div class="v-stop" role="listitem"><span class="v-yr">Impuestos</span><h4>Distorsión fiscal</h4><p>Sucesiones de 75%, con la tierra valorada a la mitad: endeudarse para comprar evadía impuestos.</p></div>
             </div>
@@ -338,7 +363,7 @@
     <div><span class="acto-num">04</span><span class="acto-label">La consecuencia inmediata</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">La mayor burbuja de activos de la historia, y su estallido</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">1989 – 1991</span>
+      <span class="acto-date">1989-1991</span>
       <p class="acto-teaser">El Nikkei toca los 38,915 puntos en diciembre de 1989. Nueve meses después, el BOJ sube las tasas al 6% y la burbuja revienta en cadena.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="stats">
@@ -355,7 +380,7 @@
         <figure class="acto-figure">
           <img src="../../assets/japon/acuerdo-del-plaza/tokio-burbuja.jpg" alt="Distrito financiero de Marunouchi, Tokio, finales de los años 80." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Tokio en la cima de la burbuja: en 1989 los terrenos del Palacio Imperial valían, según se decía, más que toda California.
-            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+            <span class="credit">Fuente: Wikimedia Commons, dominio público</span>
           </figcaption>
         </figure>
         <p>Los precios de la tierra en Tokio suben un 122% en zonas comerciales en un solo año (1986); para 1989, el metro cuadrado en Ginza alcanza los 30 millones de yenes, y los 1.15 km² del Palacio Imperial llegan a valorarse más que todo el estado de California.</p>
@@ -385,14 +410,14 @@
             <div class="v-tline" style="--n:4">
               <div class="v-tline-rail"><div class="v-tline-fill"></div></div>
               <div class="v-tl"><span class="v-tl-yr">1990</span><p>El Nikkei pierde 35% de su valor.</p></div>
-              <div class="v-tl"><span class="v-tl-yr">1999–2001</span><p>ZIRP y QE: política no convencional décadas antes que Occidente.</p></div>
+              <div class="v-tl"><span class="v-tl-yr">1999-2001</span><p>ZIRP y QE: política no convencional décadas antes que Occidente.</p></div>
               <div class="v-tl"><span class="v-tl-yr">2001</span><p>Sumitomo y Mitsui forman SMBC.</p></div>
               <div class="v-tl"><span class="v-tl-yr">Hoy</span><p>Deuda pública de más de 250% del PIB, frente a 65% en 1989.</p></div>
             </div>
           </div>
         </div><!--/vis-->
         <p>El colapso de 1990-1991 da inicio a las "<span class="gl" tabindex="0">Décadas Perdidas<span class="gl-def" role="note">Largo periodo de crecimiento casi nulo y deflación que siguió al estallido.</span></span>": el crecimiento del PIB real se congela en un promedio de apenas 1.14% anual entre 1991 y 2003. Los bancos de la red keiretsu, atrapados en carteras de préstamos incobrables, recurren a refinanciamientos artificiales para ocultar pérdidas, institucionalizando el fenómeno de las "<span class="gl" tabindex="0">empresas zombi<span class="gl-def" role="note">Compañías insolventes que sobreviven porque los bancos refinancian sus deudas.</span></span>".</p>
-        <p class="quote">La crisis forzó mega-fusiones bancarias —Sumitomo y Mitsui se unieron en 2001 para formar <span class="gl" tabindex="0">SMBC<span class="gl-def" role="note">Sumitomo Mitsui Banking Corporation, fusión bancaria de 2001.</span></span>— y una deuda pública que pasó del 65% del PIB en 1989 a superar el 250% en la actualidad. Japón se convirtió, por necesidad, en el laboratorio mundial de la política monetaria no convencional: <span class="gl" tabindex="0">ZIRP<span class="gl-def" role="note">Política de tasa de interés cero.</span></span> (1999), QE (2001) y tasas negativas (2016), medidas que Occidente replicaría recién tras 2008.</p>
+        <p class="quote">La crisis forzó mega-fusiones bancarias (Sumitomo y Mitsui se unieron en 2001 para formar <span class="gl" tabindex="0">SMBC<span class="gl-def" role="note">Sumitomo Mitsui Banking Corporation, fusión bancaria de 2001.</span></span>) y una deuda pública que pasó del 65% del PIB en 1989 a superar el 250% en la actualidad. Japón se convirtió, por necesidad, en el laboratorio mundial de la política monetaria no convencional: <span class="gl" tabindex="0">ZIRP<span class="gl-def" role="note">Política de tasa de interés cero.</span></span> (1999), QE (2001) y tasas negativas (2016), medidas que Occidente replicaría recién tras 2008.</p>
       </div>
     </div>
   </div>
@@ -428,10 +453,10 @@
   <div class="sources">
     <span class="eyebrow">Fuentes</span>
     <p class="src-intro">Fuentes afines a este cuaderno, asignadas por tema. Curado por el equipo de Club Kongzhi.</p>
-    <ol class="src-list"><li><span class="st">Plaza Accord</span><span class="sm">Wikipedia · <b>Referencia</b></span></li><li><span class="st">Japanese asset price bubble</span><span class="sm">Wikipedia · <b>Referencia</b></span></li></ol>
+    <ol class="src-list"><li><span class="st">Plaza Accord</span><span class="sm">Wikipedia / <b>Referencia</b></span></li><li><span class="st">Japanese asset price bubble</span><span class="sm">Wikipedia / <b>Referencia</b></span></li></ol>
     <a class="src-all" href="../fuentes/index.html?c=acuerdo-del-plaza">Abrir el baúl de fuentes de Japón →</a>
   </div>
-  <div class="nav-adjacent">
+  <div class="nav-adjacent" role="navigation" aria-label="Cuadernos relacionados">
     <a href="../hegemonia-ldp/index.html">
       <span class="dir">‹ Anterior</span>
       <span class="ttl"><span class="ttl-arrow">←</span>1955: Hegemonía del LDP</span>
@@ -443,7 +468,8 @@
   </div>
 </section>
 
-<footer>Club Kongzhi UNMSM · <a href="../../index.html#departamento-de-investigacion" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Departamento de Investigación</a> · Biblioteca Nalanda</footer>
+</main>
+<footer>Club Kongzhi UNMSM / <a href="../../index.html#departamento-de-investigacion" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Departamento de Investigación</a> / Biblioteca Nalanda</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -540,7 +566,7 @@
 
     gsap.to('.hero-kanji', {
       yPercent: 12, ease: 'none',
-      scrollTrigger: { trigger: 'header.hero', start: 'top top', end: 'bottom top', scrub: 1.2 }
+      scrollTrigger: { trigger: 'header.hero', start: 'top top', end: 'bottom top', scrub: 0.6 }
     });
 
     document.querySelectorAll('.flat-grid').forEach(function(grid){
@@ -560,5 +586,6 @@
 
 <!--vis-js--><script src="../../assets/vis.js"></script><!--/vis-js-->
 <script src="../../assets/acto-anchor.js"></script>
+<script>(function(){var s=document.querySelector('.cifras');if(!s)return;if(typeof reduceMotion!=='undefined'&&reduceMotion||!('IntersectionObserver' in window)){s.classList.add('in');return;}var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){s.classList.add('in');io.disconnect();}},{threshold:.35});io.observe(s);})();</script>
 </body>
 </html>

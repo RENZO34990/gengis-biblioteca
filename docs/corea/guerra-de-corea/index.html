@@ -3,7 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>한국전쟁 — La Guerra de Corea</title>
+<title>한국전쟁: La Guerra de Corea</title>
+<meta name="description" content="En tres años la guerra destruyó casi la mitad del aparato fabril del sur, reventó el sistema monetario y fijó una frontera que sigue abierta.">
+<meta name="theme-color" content="#B5623B">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Biblioteca Nalanda">
+<meta property="og:locale" content="es_PE">
+<meta property="og:title" content="한국전쟁: La Guerra de Corea">
+<meta property="og:description" content="En tres años la guerra destruyó casi la mitad del aparato fabril del sur, reventó el sistema monetario y fijó una frontera que sigue abierta.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23B5623B'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%23F2EFE9' font-family='Georgia,serif'%3EN%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -177,56 +185,73 @@
   .src-all{display:inline-block; margin-top:1.4rem; font-family:'IBM Plex Mono',monospace; font-size:.8rem; color:var(--terracota-deep); text-decoration:none; border-bottom:1px solid var(--terracota-deep); padding-bottom:1px;}
   .src-all:hover{color:var(--terracota); border-color:var(--terracota);}
   /* ---------- HERO: cifras como lista vertical con destino ---------- */
-  .hero .hero-stats{display:block; max-width:560px; margin-top:3rem; border-top:1px solid rgba(245,243,238,.2);}
-  .hero .hero-stats > div{position:relative; display:grid; grid-template-columns:8.5rem 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid rgba(245,243,238,.2); transition:background-color .35s cubic-bezier(0.23,1,0.32,1), transform .35s cubic-bezier(0.23,1,0.32,1);}
-  .hero .hero-stats > div:last-child{padding-right:2.4rem;}
-  .hero .hero-stats .num{font-size:1.5rem; line-height:1; width:max-content;}
-  .hero .hero-stats .lbl{margin:0; max-width:none; font-size:.82rem; line-height:1.5;}
-  .hero .hero-stats > div::before{content:""; position:absolute; left:0; top:.9rem; bottom:.9rem; width:2px; background:var(--terracota-light); transform-origin:top; transform:scaleY(0); animation:statBar .9s cubic-bezier(0.23,1,0.32,1) both;}
-  .hero .hero-stats > div:nth-child(1)::before{animation-delay:1.5s;}
-  .hero .hero-stats > div:nth-child(2)::before{animation-delay:1.7s;}
-  .hero .hero-stats > div:nth-child(3)::before{animation-delay:1.9s;}
-  @media (hover:hover){.hero .hero-stats > div:hover{background:rgba(245,243,238,.07); transform:translateX(.3rem);}}
-  .hero .hero-stats > div[data-go]{cursor:pointer;}
-  .hero .hero-stats > div[data-go]::after{content:"\2193"; position:absolute; right:1rem; top:50%; transform:translate(-4px,-50%); opacity:0; font-family:'IBM Plex Mono', monospace; font-size:.95rem; color:var(--terracota-light); transition:opacity .3s, transform .3s cubic-bezier(0.23,1,0.32,1);}
-  .hero .hero-stats > div[data-go]:hover::after,.hero .hero-stats > div[data-go]:focus-visible::after{opacity:1; transform:translate(0,-50%);}
-  .hero .hero-stats > div[data-go]:focus-visible{outline:2px solid var(--terracota-light); outline-offset:2px;}
-  .hero .hero-stats > div[data-go]:active{transform:scale(0.985);}
+  .cifras .hero-stats{display:block; max-width:560px; margin-top:3rem; border-top:1px solid rgba(245,243,238,.2);}
+  .cifras .hero-stats > div{position:relative; display:grid; grid-template-columns:8.5rem 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid rgba(245,243,238,.2); transition:background-color .35s cubic-bezier(0.23,1,0.32,1), transform .35s cubic-bezier(0.23,1,0.32,1);}
+  .cifras .hero-stats > div:last-child{padding-right:2.4rem;}
+  .cifras .hero-stats .num{font-size:1.5rem; line-height:1; width:max-content;}
+  .cifras .hero-stats .lbl{margin:0; max-width:none; font-size:.82rem; line-height:1.5;}
+  .cifras .hero-stats > div::before{content:""; position:absolute; left:0; top:.9rem; bottom:.9rem; width:2px; background:var(--terracota-light); transform-origin:top; transform:scaleY(0);}
+  @media (hover:hover){.cifras .hero-stats > div:hover{background:rgba(245,243,238,.07); transform:translateX(.3rem);}}
+  .cifras .hero-stats > div[data-go]{cursor:pointer;}
+  .cifras .hero-stats > div[data-go]::after{content:"\2193"; position:absolute; right:1rem; top:50%; transform:translate(-4px,-50%); opacity:0; font-family:'IBM Plex Mono', monospace; font-size:.95rem; color:var(--terracota-light); transition:opacity .3s, transform .3s cubic-bezier(0.23,1,0.32,1);}
+  .cifras .hero-stats > div[data-go]:hover::after,.cifras .hero-stats > div[data-go]:focus-visible::after{opacity:1; transform:translate(0,-50%);}
+  .cifras .hero-stats > div[data-go]:focus-visible{outline:2px solid var(--terracota-light); outline-offset:2px;}
+  .cifras .hero-stats > div[data-go]:active{transform:scale(0.985);}
   [id^="go-"]{scroll-margin-top:110px;}
   .go-flash{animation:goFlash 2s cubic-bezier(0.23,1,0.32,1) both;}
   @keyframes statBar{to{transform:scaleY(1);}}
   @keyframes goFlash{0%{background-color:rgba(181,98,59,.14); box-shadow:0 0 0 8px rgba(181,98,59,.14);} 100%{background-color:rgba(181,98,59,0); box-shadow:0 0 0 8px rgba(181,98,59,0);}}
   @media (prefers-reduced-motion:reduce){
-    .hero .hero-stats > div::before{animation:none; transform:scaleY(1);}
-    .hero .hero-stats > div{transition:none;}
+    .cifras .hero-stats > div::before{animation:none !important; transform:scaleY(1);}
+    .cifras .hero-stats > div{transition:none;}
     .go-flash{animation:none; outline:2px solid rgb(181,98,59); outline-offset:6px;}
   }
   @media (max-width:560px){
-    .hero .hero-stats > div{grid-template-columns:1fr; row-gap:.35rem;}
-    .hero .hero-stats .num{font-size:1.4rem;}
+    .cifras .hero-stats > div{grid-template-columns:1fr; row-gap:.35rem;}
+    .cifras .hero-stats .num{font-size:1.4rem;}
   }
 </style>
 <!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
-<style>:root{--v-accent:var(--terracota); --v-accent-deep:var(--terracota-deep); --v-accent2:var(--celadon-deep); --v-accent-soft:rgba(79,111,97,.2); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Gothic A1', sans-serif; --v-body:'Gothic A1', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
+<style>:root{--v-accent:var(--terracota); --v-accent-deep:var(--terracota-deep); --v-accent2:var(--celadon-deep); --v-accent-soft:rgba(79,111,97,.2); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Gothic A1', sans-serif; --v-body:'Gothic A1', sans-serif; --v-mono:'IBM Plex Mono', monospace;}
+.cifras{max-width:none; margin:0; background:#3E5A4E; color:var(--paper); padding:3rem 8vw 4.5rem;}
+.cifras .hero-stats{margin-top:0;}
+.cifras.in .hero-stats > div::before{animation:statBar .9s cubic-bezier(0.23,1,0.32,1) both;}
+.cifras.in .hero-stats > div:nth-child(1)::before{animation-delay:.1s;}
+.cifras.in .hero-stats > div:nth-child(2)::before{animation-delay:.25s;}
+.cifras.in .hero-stats > div:nth-child(3)::before{animation-delay:.4s;}
+.skip-link{position:absolute; left:1rem; top:-4rem; z-index:200; background:#1A1A1A; color:#F2EFE9; padding:.7rem 1.1rem; font:500 .85rem/1 sans-serif; text-decoration:none; transition:top .25s cubic-bezier(0.23,1,0.32,1);}
+.skip-link:focus{top:1rem;}
+/* ---------- AUDITORIA: tipografia y accesibilidad ---------- */
+.num,.acto-date,.v-yr,.v-k,.when,td,th{font-variant-numeric:tabular-nums;}
+h1,h2,h3,.acto-title,.title-cn{text-wrap:balance;}
+p,li,.lbl{text-wrap:pretty;}
+h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflow-wrap:break-word;}
+.acto-figure img{height:auto;}
+</style><!--/vis-head-->
 </head>
 <body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 <a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
 
 <header class="hero">
   <div class="hero-kanji">戰爭</div>
   <div class="hero-content">
-    <span class="eyebrow">Kongzhi · Corea · Política / Economía 04</span>
+    <span class="eyebrow">Kongzhi / Corea / Política / Economía 04</span>
     <div class="hero-rule"></div>
     <h1 class="title-kr">한국전쟁</h1>
-    <div class="title-romaja">Hanguk Jeonjaeng — la Guerra de Corea, la economía de guerra y el Estado de seguridad nacional, 1950–1953</div>
+    <div class="title-romaja">Hanguk Jeonjaeng: la Guerra de Corea, la economía de guerra y el Estado de seguridad nacional, 1950-1953</div>
     <p class="hero-dek">En tres años la guerra destruyó casi la mitad del aparato fabril del sur, reventó el sistema monetario y fijó una frontera que sigue abierta. También fabricó un ejército de 650.000 hombres, una ley anticomunista que aún rige y una alianza con Estados Unidos de la que el Estado surcoreano dependió para sobrevivir.</p>
-    <div class="hero-stats">
+    
+  </div>
+</header>
+<main id="contenido">
+<section class="cifras" aria-label="Cifras clave">
+<div class="hero-stats">
       <div data-go="go-1" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: el Norte invade el Sur"><span class="num">25 jun 1950</span><span class="lbl">el Norte invade el Sur</span></div>
       <div data-go="go-2" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: dólares en daños directos"><span class="num">6.900 M</span><span class="lbl">dólares en daños directos</span></div>
       <div data-go="go-1" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: el armisticio sin tratado de paz"><span class="num">27 jul 1953</span><span class="lbl">el armisticio sin tratado de paz</span></div>
     </div>
-  </div>
-</header>
+</section>
 
 <section id="actos">
   <div class="section-head">
@@ -239,7 +264,7 @@
     <div><span class="acto-num">01</span><span class="acto-label">El mundo antes</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">Un Estado frágil y una economía sin insumos</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">1948 – junio 1950</span>
+      <span class="acto-date">1948 - junio 1950</span>
       <p class="acto-teaser">La República de Corea tenía dos años de vida, un ejército de 120.000 hombres mal equipados y dependía de ayuda extranjera hasta para comer.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="press">
@@ -247,7 +272,7 @@
           <div class="vis-card">
             <div class="v-press">
               <div class="v-press-side v-press-l"><b>Un Estado frágil</b><em>Legitimidad cuestionada, unos 120.000 soldados mal equipados</em><svg class="v-arrow" viewBox="0 0 54 24" aria-hidden="true"><path d="M2 12h44M36 3l12 9-12 9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-              <div class="v-press-core">南<small>1948–50</small><svg class="v-crack" viewBox="0 0 96 96" aria-hidden="true"><path d="M48 0l-8 22 12 14-14 20 10 14-6 26" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--v-paper)"/></svg></div>
+              <div class="v-press-core">南<small>1948-50</small><svg class="v-crack" viewBox="0 0 96 96" aria-hidden="true"><path d="M48 0l-8 22 12 14-14 20 10 14-6 26" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--v-paper)"/></svg></div>
               <div class="v-press-side v-press-r"><b>Una economía sin base</b><em>Sin energía ni industria básica: el Norte se las había quedado</em><svg class="v-arrow" viewBox="0 0 54 24" aria-hidden="true"><path d="M2 12h44M36 3l12 9-12 9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             </div>
             <div class="v-press-out">Resultado: dependencia de la <b>ayuda estadounidense</b> para comer y producir.</div>
@@ -264,7 +289,7 @@
     <div><span class="acto-num">02</span><span class="acto-label">La grieta</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">Tres años que arrasaron la península</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">1950 – 1953</span>
+      <span class="acto-date">1950-1953</span>
       <p class="acto-teaser">Seúl cae en tres días. Después vienen Incheon, la intervención china y un frente de batalla que no se mueve.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="stats">
@@ -278,9 +303,9 @@
           </div>
         </div><!--/vis-->
         <figure class="acto-figure">
-          <img src="../../assets/corea/guerra-de-corea/incheon-desembarco.jpg" alt="Tanque T-34 norcoreano destruido en un camino, con soldados de la ONU alrededor." loading="lazy" onerror="this.closest('figure').hidden=true">
+          <img width="960" height="571" src="../../assets/corea/guerra-de-corea/incheon-desembarco.jpg" alt="Tanque T-34 norcoreano destruido en un camino, con soldados de la ONU alrededor." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Un tanque T-34 norcoreano destruido durante la guerra: el avance que el desembarco de Incheon, en septiembre de 1950, terminó revirtiendo.
-            <span class="credit">Fuente: por verificar · autoría y licencia</span>
+            <span class="credit">Fuente: por verificar, autoría y licencia</span>
           </figcaption>
         </figure>
         <p id="go-1">El 25 de junio de 1950 el ejército norcoreano invadió el Sur. Ocupó Seúl en tres días y redujo al Estado surcoreano al perímetro defensivo de Busan. La intervención de las fuerzas de la ONU, lideradas por Estados Unidos, tras el desembarco de Incheon, y la entrada de tropas chinas en octubre de 1950 convirtieron el conflicto en el frente más sangriento de la Guerra Fría. El armisticio de <span class="gl" tabindex="0">Panmunjom<span class="gl-def" role="note">Lugar del armisticio del 27 de julio de 1953, sin tratado de paz.</span></span>, del 27 de julio de 1953, selló un alto el fuego permanente sin tratado de paz y fijó la partición en la Zona Desmilitarizada (<span class="gl" tabindex="0">DMZ<span class="gl-def" role="note">Zona Desmilitarizada que fija la partición de la península.</span></span>).</p>
@@ -294,7 +319,7 @@
     <div><span class="acto-num">03</span><span class="acto-label">El giro</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">Movilizar, imprimir dinero y vender las fábricas</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">1950 – 1953</span>
+      <span class="acto-date">1950-1953</span>
       <p class="acto-teaser">Un tributo en arroz, una subasta apresurada de 3.551 empresas japonesas y un Ejecutivo que se queda con todos los poderes.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="flow">
@@ -310,9 +335,9 @@
           </div>
         </div><!--/vis-->
         <figure class="acto-figure">
-          <img src="../../assets/corea/guerra-de-corea/busan-refugiados.jpg" alt="Niños coreanos refugiados recibiendo comida en un campamento durante la guerra." loading="lazy" onerror="this.closest('figure').hidden=true">
+          <img width="1400" height="1107" src="../../assets/corea/guerra-de-corea/busan-refugiados.jpg" alt="Niños coreanos refugiados recibiendo comida en un campamento durante la guerra." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Niños refugiados reciben comida en un campamento durante la guerra. Más de 640.000 desplazados del Norte llegaron a las ciudades del Sur y desarmaron el orden social tradicional.
-            <span class="credit">Fuente: por verificar · autoría y licencia</span>
+            <span class="credit">Fuente: por verificar, autoría y licencia</span>
           </figcaption>
         </figure>
         <p>Ante la catástrofe, el gobierno de Syngman Rhee tomó decisiones de emergencia que cambiaron el mapa de la propiedad y de las finanzas públicas. En lo político, aprovechó el estado de excepción para forzar en 1952 la primera enmienda constitucional (la elección presidencial directa), neutralizó a una Asamblea Nacional que buscaba reemplazarlo y concentró la autoridad en la Presidencia. Esto fue la llamada "<span class="gl" tabindex="0">Crisis Política de Busan<span class="gl-def" role="note">Maniobra de Rhee en 1952 para forzar la elección presidencial directa.</span></span>".</p>
@@ -332,7 +357,7 @@
     <div><span class="acto-num">04</span><span class="acto-label">La consecuencia inmediata</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">Una economía de ayuda y un Estado de seguridad nacional</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">1953 – 1958</span>
+      <span class="acto-date">1953-1958</span>
       <p class="acto-teaser">Crecimiento lento, nacimiento de los primeros chaebols, un banco estatal de desarrollo, una ley anticomunista y un ejército convertido en élite.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="bars">
@@ -346,7 +371,7 @@
           </div>
         </div><!--/vis-->
         <p>Entre 1954 y 1961 el PIB creció a una tasa media del 3,5% anual, algo más que el 2,8% de los años de guerra. En 1954 el PIB per cápita era de apenas 70 dólares, y Corea del Sur era uno de los países más pobres del mundo. Se protegió la producción de bienes de consumo no duraderos, las llamadas "tres blancas" (harina, azúcar y textiles de algodón), con aranceles y cuotas. Se creó el Banco de Desarrollo de Corea (<span class="gl" tabindex="0">KDB<span class="gl-def" role="note">Banco de Desarrollo de Corea, creado en 1954 para canalizar crédito de largo plazo.</span></span>, 1954) para canalizar fondos públicos y ayuda externa en créditos de largo plazo, y un Ministerio de Reconstrucción coordinó el auxilio internacional.</p>
-        <p>Con propiedades coloniales vendidas al 25–30% de su valor, planes de pago a 15 años, licencias de importación y divisas subsidiadas, empresarios cercanos al Partido Liberal de Rhee crecieron rápido. Samsung compró cervecerías y textiles y entró a la banca, y Hyundai ganó contratos de construcción del ejército estadounidense.</p>
+        <p>Con propiedades coloniales vendidas al 25-30% de su valor, planes de pago a 15 años, licencias de importación y divisas subsidiadas, empresarios cercanos al Partido Liberal de Rhee crecieron rápido. Samsung compró cervecerías y textiles y entró a la banca, y Hyundai ganó contratos de construcción del ejército estadounidense.</p>
         <p>En lo político, la Ley de Seguridad Nacional y las normas anticomunistas se volvieron el eje jurídico para sofocar el disenso. El ejército pasó a ser la vía de movilidad social más efectiva, y los oficiales entrenados por Estados Unidos adquirieron destrezas administrativas modernas que los posicionaron como la nueva élite. En 1953 se firmó con Washington el <span class="gl" tabindex="0">Tratado de Defensa Mutua<span class="gl-def" role="note">Acuerdo de 1953 con Washington que garantiza tropas estadounidenses permanentes.</span></span>, que garantizó la presencia permanente de tropas estadounidenses.</p>
         <p class="quote">La guerra barrió a los viejos terratenientes y creó, sobre sus ruinas, una alianza entre un Estado que financia y un puñado de empresarios privados.</p>
       </div>
@@ -403,9 +428,9 @@
     <h2>La misma guerra, tres economías</h2>
   </div>
   <div class="flat-grid cols-3">
-    <div><h3>Corea del Sur (1950–1953)</h3><p>Guerra devastadora en su propio territorio. La reconstrucción se financió con ayuda directa de Estados Unidos, privatización de bienes coloniales y una reforma agraria radical.</p></div>
+    <div><h3>Corea del Sur (1950-1953)</h3><p>Guerra devastadora en su propio territorio. La reconstrucción se financió con ayuda directa de Estados Unidos, privatización de bienes coloniales y una reforma agraria radical.</p></div>
     <div><h3>Taiwán (años 50)</h3><p>Reforma agraria pacífica ("Land-to-the-Tiller") sin destrucción bélica en la isla. La élite terrateniente se compensó con acciones de empresas públicas y pasó a ser inversionista industrial urbana.</p></div>
-    <div><h3>Japón (1950–1953)</h3><p>No fue escenario de combates y sí el principal beneficiario. El ejército estadounidense lo usó de centro logístico (Korean War Boom, "pedidos especiales"), lo que aceleró su recuperación.</p></div>
+    <div><h3>Japón (1950-1953)</h3><p>No fue escenario de combates y sí el principal beneficiario. El ejército estadounidense lo usó de centro logístico (Korean War Boom, "pedidos especiales"), lo que aceleró su recuperación.</p></div>
   </div>
   <div class="connect-note">
     Este cuaderno sigue a <a href="../liberacion-division/index.html">Liberación y división</a> y termina en el umbral de la <a href="../primera-republica/index.html">Primera República</a>, donde el Estado de la posguerra rinde cuentas ante su propia sociedad.
@@ -416,16 +441,17 @@
   <div class="sources">
     <span class="eyebrow">Fuentes</span>
     <p class="src-intro">Fuentes afines a este cuaderno, asignadas por tema. Curado por el equipo de Club Kongzhi.</p>
-    <ol class="src-list"><li><span class="st">Effects of the Korean War on Social Structures of the Republic of Korea</span><span class="sm">Columbia International Affairs Online · <b>Académico</b></span></li></ol>
+    <ol class="src-list"><li><span class="st">Effects of the Korean War on Social Structures of the Republic of Korea</span><span class="sm">Columbia International Affairs Online / <b>Académico</b></span></li></ol>
     <a class="src-all" href="../fuentes/index.html?c=guerra-de-corea">Abrir el baúl de fuentes de Corea →</a>
   </div>
-  <div class="nav-adjacent">
+  <div class="nav-adjacent" role="navigation" aria-label="Cuadernos relacionados">
     <a href="../liberacion-division/index.html"><span class="dir">← Cuaderno anterior</span><span class="ttl">해방과 분단 Liberación y división</span></a>
     <a href="../primera-republica/index.html"><span class="dir">Siguiente cuaderno</span><span class="ttl">제1공화국 Primera República →</span></a>
   </div>
 </section>
 
-<footer>Club Kongzhi UNMSM · <a href="../../index.html#departamento-de-investigacion" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Departamento de Investigación</a> · Biblioteca Nalanda</footer>
+</main>
+<footer>Club Kongzhi UNMSM / <a href="../../index.html#departamento-de-investigacion" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Departamento de Investigación</a> / Biblioteca Nalanda</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -514,7 +540,7 @@
 
     gsap.to('.hero-kanji', {
       yPercent: 12, ease: 'none',
-      scrollTrigger: { trigger: 'header.hero', start: 'top top', end: 'bottom top', scrub: 1.2 }
+      scrollTrigger: { trigger: 'header.hero', start: 'top top', end: 'bottom top', scrub: 0.6 }
     });
 
     gsap.from('.divider-motif svg', {
@@ -539,5 +565,6 @@
 
 <!--vis-js--><script src="../../assets/vis.js"></script><!--/vis-js-->
 <script src="../../assets/acto-anchor.js"></script>
+<script>(function(){var s=document.querySelector('.cifras');if(!s)return;if(typeof reduceMotion!=='undefined'&&reduceMotion||!('IntersectionObserver' in window)){s.classList.add('in');return;}var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){s.classList.add('in');io.disconnect();}},{threshold:.35});io.observe(s);})();</script>
 </body>
 </html>

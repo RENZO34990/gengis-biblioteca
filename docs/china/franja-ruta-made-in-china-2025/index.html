@@ -3,7 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>新质生产力 — Franja y Ruta, Made in China 2025</title>
+<title>新质生产力: Franja y Ruta, Made in China 2025</title>
+<meta name="description" content="Cuando el ladrillo dejó de poder cargar a la economía china, Pekín no recortó: reasignó.">
+<meta name="theme-color" content="#9E2B25">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Biblioteca Nalanda">
+<meta property="og:locale" content="es_PE">
+<meta property="og:title" content="新质生产力: Franja y Ruta, Made in China 2025">
+<meta property="og:description" content="Cuando el ladrillo dejó de poder cargar a la economía china, Pekín no recortó: reasignó.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%239E2B25'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%23F2EFE9' font-family='Georgia,serif'%3EN%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -169,56 +177,73 @@
   .src-all{display:inline-block; margin-top:1.4rem; font-family:'IBM Plex Mono',monospace; font-size:.8rem; color:var(--vermillion); text-decoration:none; border-bottom:1px solid var(--vermillion); padding-bottom:1px;}
   .src-all:hover{color:var(--vermillion-deep); border-color:var(--vermillion-deep);}
   /* ---------- HERO: cifras como lista vertical con destino ---------- */
-  .hero .hero-stats{display:block; max-width:560px; margin-top:3rem; border-top:1px solid rgba(242,239,233,.2);}
-  .hero .hero-stats > div{position:relative; display:grid; grid-template-columns:5.4rem 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid rgba(242,239,233,.2); transition:background-color .35s cubic-bezier(0.23,1,0.32,1), transform .35s cubic-bezier(0.23,1,0.32,1);}
-  .hero .hero-stats > div:last-child{padding-right:2.4rem;}
-  .hero .hero-stats .num{font-size:1.75rem; line-height:1; width:max-content;}
-  .hero .hero-stats .lbl{margin:0; max-width:none; font-size:.82rem; line-height:1.5;}
-  .hero .hero-stats > div::before{content:""; position:absolute; left:0; top:.9rem; bottom:.9rem; width:2px; background:var(--gold); transform-origin:top; transform:scaleY(0); animation:statBar .9s cubic-bezier(0.23,1,0.32,1) both;}
-  .hero .hero-stats > div:nth-child(1)::before{animation-delay:1.5s;}
-  .hero .hero-stats > div:nth-child(2)::before{animation-delay:1.7s;}
-  .hero .hero-stats > div:nth-child(3)::before{animation-delay:1.9s;}
-  @media (hover:hover){.hero .hero-stats > div:hover{background:rgba(242,239,233,.07); transform:translateX(.3rem);}}
-  .hero .hero-stats > div[data-go]{cursor:pointer;}
-  .hero .hero-stats > div[data-go]::after{content:"\2193"; position:absolute; right:1rem; top:50%; transform:translate(-4px,-50%); opacity:0; font-family:'IBM Plex Mono', monospace; font-size:.95rem; color:var(--gold); transition:opacity .3s, transform .3s cubic-bezier(0.23,1,0.32,1);}
-  .hero .hero-stats > div[data-go]:hover::after,.hero .hero-stats > div[data-go]:focus-visible::after{opacity:1; transform:translate(0,-50%);}
-  .hero .hero-stats > div[data-go]:focus-visible{outline:2px solid var(--gold); outline-offset:2px;}
-  .hero .hero-stats > div[data-go]:active{transform:scale(0.985);}
+  .cifras .hero-stats{display:block; max-width:560px; margin-top:3rem; border-top:1px solid rgba(242,239,233,.2);}
+  .cifras .hero-stats > div{position:relative; display:grid; grid-template-columns:5.4rem 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid rgba(242,239,233,.2); transition:background-color .35s cubic-bezier(0.23,1,0.32,1), transform .35s cubic-bezier(0.23,1,0.32,1);}
+  .cifras .hero-stats > div:last-child{padding-right:2.4rem;}
+  .cifras .hero-stats .num{font-size:1.75rem; line-height:1; width:max-content;}
+  .cifras .hero-stats .lbl{margin:0; max-width:none; font-size:.82rem; line-height:1.5;}
+  .cifras .hero-stats > div::before{content:""; position:absolute; left:0; top:.9rem; bottom:.9rem; width:2px; background:var(--gold); transform-origin:top; transform:scaleY(0);}
+  @media (hover:hover){.cifras .hero-stats > div:hover{background:rgba(242,239,233,.07); transform:translateX(.3rem);}}
+  .cifras .hero-stats > div[data-go]{cursor:pointer;}
+  .cifras .hero-stats > div[data-go]::after{content:"\2193"; position:absolute; right:1rem; top:50%; transform:translate(-4px,-50%); opacity:0; font-family:'IBM Plex Mono', monospace; font-size:.95rem; color:var(--gold); transition:opacity .3s, transform .3s cubic-bezier(0.23,1,0.32,1);}
+  .cifras .hero-stats > div[data-go]:hover::after,.cifras .hero-stats > div[data-go]:focus-visible::after{opacity:1; transform:translate(0,-50%);}
+  .cifras .hero-stats > div[data-go]:focus-visible{outline:2px solid var(--gold); outline-offset:2px;}
+  .cifras .hero-stats > div[data-go]:active{transform:scale(0.985);}
   [id^="go-"]{scroll-margin-top:110px;}
   .go-flash{animation:goFlash 2s cubic-bezier(0.23,1,0.32,1) both;}
   @keyframes statBar{to{transform:scaleY(1);}}
   @keyframes goFlash{0%{background-color:rgba(158,43,37,.14); box-shadow:0 0 0 8px rgba(158,43,37,.14);} 100%{background-color:rgba(158,43,37,0); box-shadow:0 0 0 8px rgba(158,43,37,0);}}
   @media (prefers-reduced-motion:reduce){
-    .hero .hero-stats > div::before{animation:none; transform:scaleY(1);}
-    .hero .hero-stats > div{transition:none;}
+    .cifras .hero-stats > div::before{animation:none !important; transform:scaleY(1);}
+    .cifras .hero-stats > div{transition:none;}
     .go-flash{animation:none; outline:2px solid rgb(158,43,37); outline-offset:6px;}
   }
   @media (max-width:560px){
-    .hero .hero-stats > div{grid-template-columns:4.2rem 1fr; column-gap:1.1rem;}
-    .hero .hero-stats .num{font-size:1.4rem;}
+    .cifras .hero-stats > div{grid-template-columns:4.2rem 1fr; column-gap:1.1rem;}
+    .cifras .hero-stats .num{font-size:1.4rem;}
   }
 </style>
 <!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
-<style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(201,166,62,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Noto Serif SC', serif; --v-body:'Hanken Grotesk', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
+<style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(201,166,62,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Noto Serif SC', serif; --v-body:'Hanken Grotesk', sans-serif; --v-mono:'IBM Plex Mono', monospace;}
+.cifras{max-width:none; margin:0; background:#8A2620; color:var(--paper); padding:3rem 8vw 4.5rem;}
+.cifras .hero-stats{margin-top:0;}
+.cifras.in .hero-stats > div::before{animation:statBar .9s cubic-bezier(0.23,1,0.32,1) both;}
+.cifras.in .hero-stats > div:nth-child(1)::before{animation-delay:.1s;}
+.cifras.in .hero-stats > div:nth-child(2)::before{animation-delay:.25s;}
+.cifras.in .hero-stats > div:nth-child(3)::before{animation-delay:.4s;}
+.skip-link{position:absolute; left:1rem; top:-4rem; z-index:200; background:#1A1A1A; color:#F2EFE9; padding:.7rem 1.1rem; font:500 .85rem/1 sans-serif; text-decoration:none; transition:top .25s cubic-bezier(0.23,1,0.32,1);}
+.skip-link:focus{top:1rem;}
+/* ---------- AUDITORIA: tipografia y accesibilidad ---------- */
+.num,.acto-date,.v-yr,.v-k,.when,td,th{font-variant-numeric:tabular-nums;}
+h1,h2,h3,.acto-title,.title-cn{text-wrap:balance;}
+p,li,.lbl{text-wrap:pretty;}
+h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflow-wrap:break-word;}
+.acto-figure img{height:auto;}
+</style><!--/vis-head-->
 </head>
 <body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 <a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
 
 <header class="hero">
   <div class="hero-kanji">新质</div>
   <div class="hero-content">
-    <span class="eyebrow">Kongzhi · China · Economía 07</span>
+    <span class="eyebrow">Kongzhi / China / Economía 07</span>
     <div class="hero-rule"></div>
     <h1 class="title-cn">新质生产力</h1>
-    <div class="title-pinyin">Xīn Zhì Shēngchǎnlì — Franja y Ruta, Made in China 2025</div>
-    <p class="hero-dek">Cuando el ladrillo dejó de poder cargar a la economía china, Pekín no recortó: reasignó. Trece años después de lanzar dos planes paralelos —uno para exportar infraestructura, otro para dejar de depender de Occidente en tecnología— China controla el 70% de las baterías de litio del mundo y el 80% de los paneles solares que se fabrican en el planeta.</p>
-    <div class="hero-stats">
+    <div class="title-pinyin">Xīn Zhì Shēngchǎnlì: Franja y Ruta, Made in China 2025</div>
+    <p class="hero-dek">Cuando el ladrillo dejó de poder cargar a la economía china, Pekín no recortó: reasignó. Trece años después de lanzar dos planes paralelos (uno para exportar infraestructura, otro para dejar de depender de Occidente en tecnología) China controla el 70% de las baterías de litio del mundo y el 80% de los paneles solares que se fabrican en el planeta.</p>
+    
+  </div>
+</header>
+<main id="contenido">
+<section class="cifras" aria-label="Cifras clave">
+<div class="hero-stats">
       <div data-go="go-1" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: lanzamiento de la Franja y la Ruta"><span class="num">2013</span><span class="lbl">lanzamiento de la Franja y la Ruta</span></div>
       <div data-go="go-2" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: de la producción mundial de baterías de litio"><span class="num">70%</span><span class="lbl">de la producción mundial de baterías de litio</span></div>
       <div data-go="go-3" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: vehículos exportados en 2023"><span class="num">4M+</span><span class="lbl">vehículos exportados en 2023</span></div>
     </div>
-  </div>
-</header>
+</section>
 
 <section id="actos">
   <div class="section-head">
@@ -254,7 +279,7 @@
     <div><span class="acto-num">02</span><span class="acto-label">La grieta</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">Dos planes paralelos: exportar infraestructura, importar menos tecnología</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">2013 – 2018</span>
+      <span class="acto-date">2013-2018</span>
       <p class="acto-teaser">La Franja y la Ruta sale a construir corredores globales mientras Made in China 2025 apunta a diez sectores estratégicos de alta tecnología.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="versus">
@@ -268,13 +293,13 @@
           </div>
         </div><!--/vis-->
         <figure class="acto-figure">
-          <img src="../../assets/china/franja-ruta-made-in-china-2025/mapa-franja-ruta.jpg" alt="Mapa de los países participantes en la Iniciativa de la Franja y la Ruta." loading="lazy" onerror="this.closest('figure').hidden=true">
+          <img width="960" height="488" src="../../assets/china/franja-ruta-made-in-china-2025/mapa-franja-ruta.jpg" alt="Mapa de los países participantes en la Iniciativa de la Franja y la Ruta." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>El mapa de la Franja y la Ruta: corredores logísticos lanzados en 2013 para exportar la sobrecapacidad industrial china hacia Asia, África y Europa.
-            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+            <span class="credit">Fuente: Wikimedia Commons, dominio público</span>
           </figcaption>
         </figure>
         <p>El proceso de ruptura con el viejo modelo se detonó entre 2013 y 2015, cuando la dirigencia del PCCh reconoció que continuar impulsando el crecimiento mediante la burbuja inmobiliaria y la deuda abocaba a China a caer en la "trampa del ingreso medio". La transformación se activó mediante dos grandes iniciativas: la Iniciativa de la Franja y la Ruta (BRI, 2013), para construir corredores logísticos globales y exportar la sobrecapacidad industrial, y la Estrategia Industrial "<span class="gl" tabindex="0">Made in China 2025<span class="gl-def" role="note">Estrategia industrial de mayo de 2015 para pasar del ensamblaje barato a la alta tecnología.</span></span>" (mayo de 2015), un plan para transformar a China de ensamblador de bajo valor en potencia manufacturera de alta tecnología en diez sectores estratégicos.</p>
-        <p class="quote">Esta grieta se profundizó drásticamente a partir de 2018 con el estallido de la guerra comercial y tecnológica con Estados Unidos —aranceles, sanciones a Huawei, controles de exportación de microchips—, seguida por el shock de la pandemia de COVID-19 y la crisis de liquidez del sector inmobiliario a partir de 2021.</p>
+        <p class="quote">Esta grieta se profundizó drásticamente a partir de 2018 con el estallido de la guerra comercial y tecnológica con Estados Unidos: aranceles, sanciones a Huawei, controles de exportación de microchips, seguida por el shock de la pandemia de COVID-19 y la crisis de liquidez del sector inmobiliario a partir de 2021.</p>
       </div>
     </div>
   </div>
@@ -283,7 +308,7 @@
     <div><span class="acto-num">03</span><span class="acto-label">El giro</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">El Estado reasigna el capital hacia el "Nuevos Tres"</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">2020 – 2026</span>
+      <span class="acto-date">2020-2026</span>
       <p class="acto-teaser">Doble Circulación, subsidios masivos a EV/baterías/solar, y las "Nuevas Fuerzas Productivas" como el nuevo motor de crecimiento.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="flow">
@@ -312,7 +337,7 @@
     <div><span class="acto-num">04</span><span class="acto-label">La consecuencia inmediata</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">70% de las baterías del mundo, hechas en China</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">2015 – 2026</span>
+      <span class="acto-date">2015-2026</span>
       <p class="acto-teaser">CATL y BYD capturan más de la mitad del mercado global de baterías; China supera a Japón como mayor exportador mundial de automóviles.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="stats">
@@ -331,12 +356,12 @@
             <div class="chart-col"><span class="chart-value">70%</span><div class="chart-bar" style="height:88%"></div><div class="chart-col-label">baterías de litio</div></div>
             <div class="chart-col"><span class="chart-value">80%</span><div class="chart-bar" style="height:100%"></div><div class="chart-col-label">módulos solares fotovoltaicos</div></div>
           </div>
-          <p class="chart-note">En 2023, China exportó más de 4 millones de vehículos —1.2 millones de EVs, por $34.1 mil millones— superando a Japón como el mayor exportador mundial de automóviles.</p>
+          <p class="chart-note">En 2023, China exportó más de 4 millones de vehículos (1.2 millones de EVs, por $34.1 mil millones) superando a Japón como el mayor exportador mundial de automóviles.</p>
         </div>
         <figure class="acto-figure">
-          <img src="../../assets/china/franja-ruta-made-in-china-2025/byd-ev.jpg" alt="Un vehículo eléctrico BYD Han, parte de la hegemonía exportadora automotriz china." loading="lazy" onerror="this.closest('figure').hidden=true">
+          <img width="1920" height="1280" src="../../assets/china/franja-ruta-made-in-china-2025/byd-ev.jpg" alt="Un vehículo eléctrico BYD Han, parte de la hegemonía exportadora automotriz china." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Un BYD Han EV: la marca que recibió $3.7 mil millones en subsidios estatales entre 2018 y 2022 y hoy captura, junto a CATL, más de la mitad del mercado global de baterías.
-            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+            <span class="credit">Fuente: Wikimedia Commons, dominio público</span>
           </figcaption>
         </figure>
         <p>El gasto nacional en Investigación y Desarrollo alcanzó los 3.6 billones de yuanes en 2024 (2.68% del PIB). Las naciones de la ASEAN y los países miembros de la BRI superaron a Estados Unidos y la Unión Europea como los principales socios comerciales de China. En semiconductores, China alcanzó metas de autoconsumo del 70% en obleas de silicio domésticas en 2026.</p>
@@ -356,16 +381,16 @@
           <div class="vis-card">
             <div class="v-tline" style="--n:3">
               <div class="v-tline-rail"><div class="v-tline-fill"></div></div>
-              <div class="v-tl"><span class="v-tl-yr">2013–2026</span><p>Se edifica la base industrial de alta tecnología.</p></div>
-              <div class="v-tl"><span class="v-tl-yr">2026–2030</span><p>El 15º Plan Quinquenal busca el pico de emisiones antes de 2030.</p></div>
+              <div class="v-tl"><span class="v-tl-yr">2013-2026</span><p>Se edifica la base industrial de alta tecnología.</p></div>
+              <div class="v-tl"><span class="v-tl-yr">2026-2030</span><p>El 15º Plan Quinquenal busca el pico de emisiones antes de 2030.</p></div>
               <div class="v-tl"><span class="v-tl-yr">Hoy</span><p>Acusaciones de sobrecapacidad: aranceles, barreras y sanciones.</p></div>
             </div>
           </div>
         </div><!--/vis-->
         <figure class="acto-figure">
-          <img src="../../assets/china/franja-ruta-made-in-china-2025/panel-solar.jpg" alt="Un campo de paneles solares fotovoltaicos, parte del dominio chino de más del 80% de la capacidad mundial instalada." loading="lazy" onerror="this.closest('figure').hidden=true">
+          <img width="1800" height="1350" src="../../assets/china/franja-ruta-made-in-china-2025/panel-solar.jpg" alt="Un campo de paneles solares fotovoltaicos, parte del dominio chino de más del 80% de la capacidad mundial instalada." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Un parque fotovoltaico: China controla más del 80% de la capacidad instalada mundial de módulos solares, fijando precios internacionales a escala inalcanzable para Occidente.
-            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+            <span class="credit">Fuente: Wikimedia Commons, dominio público</span>
           </figcaption>
         </figure>
         <p><strong>Dominio del ecosistema industrial verde global.</strong> China controla más del 80% de la capacidad instalada mundial de módulos solares fotovoltaicos, más del 70% de la cadena de baterías y lidera la fabricación de vehículos eléctricos a escala global.</p>
@@ -400,16 +425,17 @@
   <div class="sources">
     <span class="eyebrow">Fuentes</span>
     <p class="src-intro">Las fuentes principales de este cuaderno, de lo más sólido a lo más contextual. Curado por el equipo de Club Kongzhi.</p>
-    <ol class="src-list"><li><span class="st">Debt sustainability in Belt and Road Initiative recipient countries</span><span class="sm">Taylor &amp; Francis · <b>Académico</b></span></li><li><span class="st">China&#x27;s 15th Five-Year Plan</span><span class="sm">The International Institute for Strategic Studies · <b>Institucional</b></span></li><li><span class="st">Deepening the Reform of State-Owned Enterprises and Cultivating New Quality Productive Forces</span><span class="sm">Atlantis Press · <b>Académico</b></span></li><li><span class="st">Global economy&#x27;s growing resilience at odds with rate cut expectations</span><span class="sm">Bank of Ghana · <b>Institucional</b></span></li><li><span class="st">Impact of &quot;Made in China 2025&quot; industrial strategy on firms&#x27; green innovation: A quasi-natural experiment</span><span class="sm">EconStor · <b>Académico</b></span></li><li><span class="st">Reassessing the Role of State Ownership in China&#x27;s Economy</span><span class="sm">FSI · <b>Académico</b></span></li></ol>
+    <ol class="src-list"><li><span class="st">Debt sustainability in Belt and Road Initiative recipient countries</span><span class="sm">Taylor &amp; Francis / <b>Académico</b></span></li><li><span class="st">China&#x27;s 15th Five-Year Plan</span><span class="sm">The International Institute for Strategic Studies / <b>Institucional</b></span></li><li><span class="st">Deepening the Reform of State-Owned Enterprises and Cultivating New Quality Productive Forces</span><span class="sm">Atlantis Press / <b>Académico</b></span></li><li><span class="st">Global economy&#x27;s growing resilience at odds with rate cut expectations</span><span class="sm">Bank of Ghana / <b>Institucional</b></span></li><li><span class="st">Impact of &quot;Made in China 2025&quot; industrial strategy on firms&#x27; green innovation: A quasi-natural experiment</span><span class="sm">EconStor / <b>Académico</b></span></li><li><span class="st">Reassessing the Role of State Ownership in China&#x27;s Economy</span><span class="sm">FSI / <b>Académico</b></span></li></ol>
     <a class="src-all" href="../fuentes/index.html?c=franja-ruta-made-in-china-2025">Ver las 29 fuentes de este cuaderno en el baúl →</a>
   </div>
-  <div class="nav-adjacent">
+  <div class="nav-adjacent" role="navigation" aria-label="Cuadernos relacionados">
     <a href="../xi-jinping-recentralizacion/index.html"><span class="dir">← Cuaderno anterior</span><span class="ttl">核心 Xi Jinping y la Recentralización</span></a>
     <a href="../15-plan-quinquenal/index.html"><span class="dir">Siguiente cuaderno →</span><span class="ttl">十五五 El 15º Plan Quinquenal</span></a>
   </div>
 </section>
 
-<footer>Club Kongzhi UNMSM · <a href="../../index.html#departamento-de-investigacion" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Departamento de Investigación</a> · Biblioteca Nalanda</footer>
+</main>
+<footer>Club Kongzhi UNMSM / <a href="../../index.html#departamento-de-investigacion" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Departamento de Investigación</a> / Biblioteca Nalanda</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -506,7 +532,7 @@
 
     gsap.to('.hero-kanji', {
       yPercent: 12, ease: 'none',
-      scrollTrigger: { trigger: 'header.hero', start: 'top top', end: 'bottom top', scrub: 1.2 }
+      scrollTrigger: { trigger: 'header.hero', start: 'top top', end: 'bottom top', scrub: 0.6 }
     });
 
     var hPaths = document.querySelectorAll('#huiwenDivider path');
@@ -534,5 +560,6 @@
 
 <!--vis-js--><script src="../../assets/vis.js"></script><!--/vis-js-->
 <script src="../../assets/acto-anchor.js"></script>
+<script>(function(){var s=document.querySelector('.cifras');if(!s)return;if(typeof reduceMotion!=='undefined'&&reduceMotion||!('IntersectionObserver' in window)){s.classList.add('in');return;}var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){s.classList.add('in');io.disconnect();}},{threshold:.35});io.observe(s);})();</script>
 </body>
 </html>

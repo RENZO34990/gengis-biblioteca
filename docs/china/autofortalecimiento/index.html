@@ -3,7 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>自强运动 — El Movimiento de Autofortalecimiento</title>
+<title>自强运动: El Movimiento de Autofortalecimiento</title>
+<meta name="description" content="Durante tres décadas, la dinastía Qing intentó comprar tiempo con arsenales, vapores y telégrafos, convencida de que podía injertar la técnica occidental.">
+<meta name="theme-color" content="#9E2B25">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Biblioteca Nalanda">
+<meta property="og:locale" content="es_PE">
+<meta property="og:title" content="自强运动: El Movimiento de Autofortalecimiento">
+<meta property="og:description" content="Durante tres décadas, la dinastía Qing intentó comprar tiempo con arsenales, vapores y telégrafos, convencida de que podía injertar la técnica occidental.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%239E2B25'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%23F2EFE9' font-family='Georgia,serif'%3EN%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -170,56 +178,73 @@
   .src-all{display:inline-block; margin-top:1.4rem; font-family:'IBM Plex Mono',monospace; font-size:.8rem; color:var(--vermillion); text-decoration:none; border-bottom:1px solid var(--vermillion); padding-bottom:1px;}
   .src-all:hover{color:var(--vermillion-deep); border-color:var(--vermillion-deep);}
   /* ---------- HERO: cifras como lista vertical con destino ---------- */
-  .hero .hero-stats{display:block; max-width:560px; margin-top:3rem; border-top:1px solid rgba(242,239,233,.2);}
-  .hero .hero-stats > div{position:relative; display:grid; grid-template-columns:5.4rem 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid rgba(242,239,233,.2); transition:background-color .35s cubic-bezier(0.23,1,0.32,1), transform .35s cubic-bezier(0.23,1,0.32,1);}
-  .hero .hero-stats > div:last-child{padding-right:2.4rem;}
-  .hero .hero-stats .num{font-size:1.75rem; line-height:1; width:max-content;}
-  .hero .hero-stats .lbl{margin:0; max-width:none; font-size:.82rem; line-height:1.5;}
-  .hero .hero-stats > div::before{content:""; position:absolute; left:0; top:.9rem; bottom:.9rem; width:2px; background:var(--gold); transform-origin:top; transform:scaleY(0); animation:statBar .9s cubic-bezier(0.23,1,0.32,1) both;}
-  .hero .hero-stats > div:nth-child(1)::before{animation-delay:1.5s;}
-  .hero .hero-stats > div:nth-child(2)::before{animation-delay:1.7s;}
-  .hero .hero-stats > div:nth-child(3)::before{animation-delay:1.9s;}
-  @media (hover:hover){.hero .hero-stats > div:hover{background:rgba(242,239,233,.07); transform:translateX(.3rem);}}
-  .hero .hero-stats > div[data-go]{cursor:pointer;}
-  .hero .hero-stats > div[data-go]::after{content:"\2193"; position:absolute; right:1rem; top:50%; transform:translate(-4px,-50%); opacity:0; font-family:'IBM Plex Mono', monospace; font-size:.95rem; color:var(--gold); transition:opacity .3s, transform .3s cubic-bezier(0.23,1,0.32,1);}
-  .hero .hero-stats > div[data-go]:hover::after,.hero .hero-stats > div[data-go]:focus-visible::after{opacity:1; transform:translate(0,-50%);}
-  .hero .hero-stats > div[data-go]:focus-visible{outline:2px solid var(--gold); outline-offset:2px;}
-  .hero .hero-stats > div[data-go]:active{transform:scale(0.985);}
+  .cifras .hero-stats{display:block; max-width:560px; margin-top:3rem; border-top:1px solid rgba(242,239,233,.2);}
+  .cifras .hero-stats > div{position:relative; display:grid; grid-template-columns:5.4rem 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid rgba(242,239,233,.2); transition:background-color .35s cubic-bezier(0.23,1,0.32,1), transform .35s cubic-bezier(0.23,1,0.32,1);}
+  .cifras .hero-stats > div:last-child{padding-right:2.4rem;}
+  .cifras .hero-stats .num{font-size:1.75rem; line-height:1; width:max-content;}
+  .cifras .hero-stats .lbl{margin:0; max-width:none; font-size:.82rem; line-height:1.5;}
+  .cifras .hero-stats > div::before{content:""; position:absolute; left:0; top:.9rem; bottom:.9rem; width:2px; background:var(--gold); transform-origin:top; transform:scaleY(0);}
+  @media (hover:hover){.cifras .hero-stats > div:hover{background:rgba(242,239,233,.07); transform:translateX(.3rem);}}
+  .cifras .hero-stats > div[data-go]{cursor:pointer;}
+  .cifras .hero-stats > div[data-go]::after{content:"\2193"; position:absolute; right:1rem; top:50%; transform:translate(-4px,-50%); opacity:0; font-family:'IBM Plex Mono', monospace; font-size:.95rem; color:var(--gold); transition:opacity .3s, transform .3s cubic-bezier(0.23,1,0.32,1);}
+  .cifras .hero-stats > div[data-go]:hover::after,.cifras .hero-stats > div[data-go]:focus-visible::after{opacity:1; transform:translate(0,-50%);}
+  .cifras .hero-stats > div[data-go]:focus-visible{outline:2px solid var(--gold); outline-offset:2px;}
+  .cifras .hero-stats > div[data-go]:active{transform:scale(0.985);}
   [id^="go-"]{scroll-margin-top:110px;}
   .go-flash{animation:goFlash 2s cubic-bezier(0.23,1,0.32,1) both;}
   @keyframes statBar{to{transform:scaleY(1);}}
   @keyframes goFlash{0%{background-color:rgba(158,43,37,.14); box-shadow:0 0 0 8px rgba(158,43,37,.14);} 100%{background-color:rgba(158,43,37,0); box-shadow:0 0 0 8px rgba(158,43,37,0);}}
   @media (prefers-reduced-motion:reduce){
-    .hero .hero-stats > div::before{animation:none; transform:scaleY(1);}
-    .hero .hero-stats > div{transition:none;}
+    .cifras .hero-stats > div::before{animation:none !important; transform:scaleY(1);}
+    .cifras .hero-stats > div{transition:none;}
     .go-flash{animation:none; outline:2px solid rgb(158,43,37); outline-offset:6px;}
   }
   @media (max-width:560px){
-    .hero .hero-stats > div{grid-template-columns:4.2rem 1fr; column-gap:1.1rem;}
-    .hero .hero-stats .num{font-size:1.4rem;}
+    .cifras .hero-stats > div{grid-template-columns:4.2rem 1fr; column-gap:1.1rem;}
+    .cifras .hero-stats .num{font-size:1.4rem;}
   }
 </style>
 <!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
-<style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(201,166,62,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Noto Serif SC', serif; --v-body:'Hanken Grotesk', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
+<style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(201,166,62,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Noto Serif SC', serif; --v-body:'Hanken Grotesk', sans-serif; --v-mono:'IBM Plex Mono', monospace;}
+.cifras{max-width:none; margin:0; background:#8A2620; color:var(--paper); padding:3rem 8vw 4.5rem;}
+.cifras .hero-stats{margin-top:0;}
+.cifras.in .hero-stats > div::before{animation:statBar .9s cubic-bezier(0.23,1,0.32,1) both;}
+.cifras.in .hero-stats > div:nth-child(1)::before{animation-delay:.1s;}
+.cifras.in .hero-stats > div:nth-child(2)::before{animation-delay:.25s;}
+.cifras.in .hero-stats > div:nth-child(3)::before{animation-delay:.4s;}
+.skip-link{position:absolute; left:1rem; top:-4rem; z-index:200; background:#1A1A1A; color:#F2EFE9; padding:.7rem 1.1rem; font:500 .85rem/1 sans-serif; text-decoration:none; transition:top .25s cubic-bezier(0.23,1,0.32,1);}
+.skip-link:focus{top:1rem;}
+/* ---------- AUDITORIA: tipografia y accesibilidad ---------- */
+.num,.acto-date,.v-yr,.v-k,.when,td,th{font-variant-numeric:tabular-nums;}
+h1,h2,h3,.acto-title,.title-cn{text-wrap:balance;}
+p,li,.lbl{text-wrap:pretty;}
+h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflow-wrap:break-word;}
+.acto-figure img{height:auto;}
+</style><!--/vis-head-->
 </head>
 <body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 <a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
 
 <header class="hero">
   <div class="hero-kanji">自强</div>
   <div class="hero-content">
-    <span class="eyebrow">Kongzhi · China · Economía 02</span>
+    <span class="eyebrow">Kongzhi / China / Economía 02</span>
     <div class="hero-rule"></div>
     <h1 class="title-cn">洋务运动</h1>
-    <div class="title-pinyin">Yángwù Yùndòng — el Movimiento de Autofortalecimiento</div>
+    <div class="title-pinyin">Yángwù Yùndòng: el Movimiento de Autofortalecimiento</div>
     <p class="hero-dek">Durante tres décadas, la dinastía Qing intentó comprar tiempo con arsenales, vapores y telégrafos, convencida de que podía injertar la técnica occidental sobre un imperio agrario sin tocar sus instituciones. El experimento levantó la primera industria moderna de China y también demostró, de la forma más dolorosa posible, que los cañones sin reformas no alcanzan.</p>
-    <div class="hero-stats">
+    
+  </div>
+</header>
+<main id="contenido">
+<section class="cifras" aria-label="Cifras clave">
+<div class="hero-stats">
       <div data-go="go-1" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: se funda el Tsungli Yamen"><span class="num">1861</span><span class="lbl">se funda el Tsungli Yamen</span></div>
       <div data-go="go-inicio" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: años de industrialización limitada"><span class="num">34</span><span class="lbl">años de industrialización limitada</span></div>
       <div data-go="go-2" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: taeles pagados a Japón en 1895"><span class="num">200M</span><span class="lbl">taeles pagados a Japón en 1895</span></div>
     </div>
-  </div>
-</header>
+</section>
 
 <section id="actos">
   <div class="section-head">
@@ -232,28 +257,28 @@
     <div><span class="acto-num">01</span><span class="acto-label">El mundo antes</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">Un imperio exhausto busca un atajo técnico</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">1861 – 1872</span>
+      <span class="acto-date">1861-1872</span>
       <p class="acto-teaser">Tras la Segunda Guerra del Opio y la sangrienta Rebelión Taiping, la corte Qing aposta su supervivencia a la tecnología occidental, sin tocar el resto del sistema.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="flow">
           <p class="vis-one"><small>En una frase</small>Tras dos guerras y una rebelión, el imperio buscó copiar la técnica de Occidente para sobrevivir.</p>
           <div class="vis-card">
             <div class="v-flow">
-              <div class="v-node"><span class="v-k">1856–64</span><h4>Golpes seguidos</h4><p>Segunda Guerra del Opio y Rebelión Taiping dejan al imperio exhausto.</p></div>
+              <div class="v-node"><span class="v-k">1856-64</span><h4>Golpes seguidos</h4><p>Segunda Guerra del Opio y Rebelión Taiping dejan al imperio exhausto.</p></div>
               <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               <div class="v-node"><span class="v-k">1861</span><h4>Tsungli Yamen</h4><p>Nace la oficina para tratar con el extranjero.</p></div>
               <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <div class="v-node"><span class="v-k">1865–66</span><h4>Arsenales</h4><p>Arsenal de Kiangnan y Astillero de Foochow.</p></div>
+              <div class="v-node"><span class="v-k">1865-66</span><h4>Arsenales</h4><p>Arsenal de Kiangnan y Astillero de Foochow.</p></div>
             </div>
           </div>
         </div><!--/vis-->
-        <p>Tras el devastador impacto de la Segunda Guerra del Opio (1856–1860) y el sofocamiento de la sangrienta Rebelión Taiping (1850–1864), la dinastía Qing entró en un periodo de tregua política y recuperación conocido como la "Restauración T'ung-chih" (1862–1874). El imperio estaba militarmente exhausto, fiscalmente drenado y amenazado por el avance del imperialismo occidental.</p>
-        <p>Para asegurar la supervivencia dinástica y bajo el lema del erudito Wei Yuan —"aprender las técnicas superiores de los bárbaros para controlar a los bárbaros"—, altos funcionarios imperiales impulsaron el Movimiento de Autofortalecimiento (Yang-wu yundong). Liderado en la corte por el Príncipe Kung y Wen-hsiang, y en las provincias por gobernadores generales como Tseng Kuo-fan, Tso Tsung-t'ang y Li Hung-chang, el proyecto buscó dotar a China de capacidades tecnológicas modernas.</p>
-        <p id="go-1" class="quote">En su primera fase (1861–1872), la iniciativa se volcó exclusivamente a la modernización militar e institucional de emergencia: el <span class="gl" tabindex="0">Tsungli Yamen<span class="gl-def" role="note">Oficina creada en 1861 para manejar la diplomacia con las potencias extranjeras.</span></span> (1861) para la diplomacia extranjera, la escuela de lenguas T'ung-wen kuan (1862) y grandes complejos bélicos como el Arsenal de Kiangnan (1865) y el Astillero de Foochow (1866).</p>
+        <p>Tras el devastador impacto de la Segunda Guerra del Opio (1856-1860) y el sofocamiento de la sangrienta Rebelión Taiping (1850-1864), la dinastía Qing entró en un periodo de tregua política y recuperación conocido como la "Restauración T'ung-chih" (1862-1874). El imperio estaba militarmente exhausto, fiscalmente drenado y amenazado por el avance del imperialismo occidental.</p>
+        <p>Para asegurar la supervivencia dinástica y bajo el lema del erudito Wei Yuan: "aprender las técnicas superiores de los bárbaros para controlar a los bárbaros", altos funcionarios imperiales impulsaron el Movimiento de Autofortalecimiento (Yang-wu yundong). Liderado en la corte por el Príncipe Kung y Wen-hsiang, y en las provincias por gobernadores generales como Tseng Kuo-fan, Tso Tsung-t'ang y Li Hung-chang, el proyecto buscó dotar a China de capacidades tecnológicas modernas.</p>
+        <p id="go-1" class="quote">En su primera fase (1861-1872), la iniciativa se volcó exclusivamente a la modernización militar e institucional de emergencia: el <span class="gl" tabindex="0">Tsungli Yamen<span class="gl-def" role="note">Oficina creada en 1861 para manejar la diplomacia con las potencias extranjeras.</span></span> (1861) para la diplomacia extranjera, la escuela de lenguas T'ung-wen kuan (1862) y grandes complejos bélicos como el Arsenal de Kiangnan (1865) y el Astillero de Foochow (1866).</p>
         <figure class="acto-figure">
-          <img src="../../assets/china/autofortalecimiento/arsenal-jiangnan.jpg" alt="El Arsenal de Kiangnan (Jiangnan), fundado en 1865 cerca de Shanghái por Li Hung-chang." loading="lazy" onerror="this.closest('figure').hidden=true">
+          <img width="960" height="1232" src="../../assets/china/autofortalecimiento/arsenal-jiangnan.jpg" alt="El Arsenal de Kiangnan (Jiangnan), fundado en 1865 cerca de Shanghái por Li Hung-chang." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>El Arsenal de Kiangnan, 1865: el complejo bélico que simbolizó la primera fase del Autofortalecimiento.
-            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+            <span class="credit">Fuente: Wikimedia Commons, dominio público</span>
           </figcaption>
         </figure>
       </div>
@@ -264,7 +289,7 @@
     <div><span class="acto-num">02</span><span class="acto-label">La grieta</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">Industrializar sin cambiar el sistema que lo impide</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">1872 – 1894</span>
+      <span class="acto-date">1872-1894</span>
       <p class="acto-teaser">El salto hacia la industria civil tropieza con el mismo obstáculo que intentaba evitar: una autocracia agraria que no deja crecer al capital que necesita.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="rings">
@@ -283,12 +308,12 @@
         </div><!--/vis-->
         <p>El modelo inicial chocó rápido con una barrera financiera y estructural: sostener una infraestructura militar moderna resultaba prohibitivo para un Estado agrario con escasez de capital. En 1876, Li Hung-chang diagnosticó el problema al señalar que "la debilidad crónica de China proviene de la pobreza" y que el poder militar requería indispensablemente de una base de riqueza económica.</p>
         <figure class="acto-figure">
-          <img src="../../assets/china/autofortalecimiento/li-hongzhang.jpg" alt="Retrato de Li Hongzhang, 1871." loading="lazy" onerror="this.closest('figure').hidden=true">
+          <img width="1280" height="1053" src="../../assets/china/autofortalecimiento/li-hongzhang.jpg" alt="Retrato de Li Hongzhang, 1871." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Li Hung-chang (Li Hongzhang), 1871: el gobernador general que impulsó la industrialización civil <span class="gl" tabindex="0">kuan-tu shang-pan<span class="gl-def" role="note">Fórmula de &quot;supervisión oficial y gestión mercantil&quot;: el Estado vigila, los comerciantes administran.</span></span>.
-            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+            <span class="credit">Fuente: Wikimedia Commons, dominio público</span>
           </figcaption>
         </figure>
-        <p>Para expandir la industrialización hacia sectores civiles —minería, transporte a vapor, textiles, telégrafos— se creó el esquema de "supervisión oficial y gestión mercantil" (kuan-tu shang-pan). Bajo esta fórmula nacieron empresas pioneras como la China Merchants' Steam Navigation Company (1872), las Minas de Carbón de K'ai-p'ing (1877), la Fábrica de Telas de Algodón de Shanghái (1878) y la Administración Imperial de Telégrafos (1881).</p>
+        <p>Para expandir la industrialización hacia sectores civiles (minería, transporte a vapor, textiles, telégrafos) se creó el esquema de "supervisión oficial y gestión mercantil" (kuan-tu shang-pan). Bajo esta fórmula nacieron empresas pioneras como la China Merchants' Steam Navigation Company (1872), las Minas de Carbón de K'ai-p'ing (1877), la Fábrica de Telas de Algodón de Shanghái (1878) y la Administración Imperial de Telégrafos (1881).</p>
         <div class="loss-list">
           <div class="loss-item"><h3>Resistencia ideológica confuciana</h3><p>Círculos conservadores encabezados por Wo-jen atacaron el aprendizaje de ciencias occidentales por considerarlo una degradación moral del orden tradicional.</p></div>
           <div class="loss-item"><h3>Regionalismo y feudos personales</h3><p>Con Pekín debilitado, los proyectos industriales fueron promovidos por gobernadores provinciales que los gestionaban como bases de poder personal, compitiendo entre sí en vez de operar bajo un plan nacional.</p></div>
@@ -303,7 +328,7 @@
     <div><span class="acto-num">03</span><span class="acto-label">El giro</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">Una flota de arsenales pierde contra un vecino reformado</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">1894 – abr 1895</span>
+      <span class="acto-date">1894 - abr 1895</span>
       <p class="acto-teaser">Tres décadas de inversión militar se desmoronan en meses frente a Japón, que sí transformó sus instituciones.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="steps">
@@ -312,12 +337,12 @@
             <div class="v-steps" role="list">
               <div class="v-rail"><div class="v-fill"></div></div>
               <div class="v-stop" role="listitem"><span class="v-yr">1888</span><h4>Flota de Peiyang</h4><p>Tres décadas de inversión en arsenales.</p></div>
-              <div class="v-stop" role="listitem"><span class="v-yr">1894–95</span><h4>Guerra Sino-Japonesa</h4><p>La Flota de Nanyang se declara "neutral" y Peiyang pelea sola.</p></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">1894-95</span><h4>Guerra Sino-Japonesa</h4><p>La Flota de Nanyang se declara "neutral" y Peiyang pelea sola.</p></div>
               <div class="v-stop" role="listitem"><span class="v-yr">17 abr 1895</span><h4>Tratado de Shimonoseki</h4><p>Corea independiente; Taiwán, Pescadores y Liaotung a Japón.</p></div>
             </div>
           </div>
         </div><!--/vis-->
-        <p>La prueba de fuego que expuso de forma irreversible el colapso del modelo llegó con la Guerra Sino-Japonesa (1894–1895). A pesar de más de tres décadas de inversión en arsenales y de la Flota de Peiyang (1888), China sufrió una humillante derrota ante Japón, una nación asiática de menor tamaño que sí había transformado radicalmente sus estructuras políticas e institucionales mediante la Restauración Meiji.</p>
+        <p>La prueba de fuego que expuso de forma irreversible el colapso del modelo llegó con la Guerra Sino-Japonesa (1894-1895). A pesar de más de tres décadas de inversión en arsenales y de la Flota de Peiyang (1888), China sufrió una humillante derrota ante Japón, una nación asiática de menor tamaño que sí había transformado radicalmente sus estructuras políticas e institucionales mediante la Restauración Meiji.</p>
         <p>El conflicto desnudó la falta de cohesión nacional: la Flota de Nanyang declaró su "neutralidad" y se negó a acudir al rescate de la Flota de Peiyang, que luchó en solitario. Al mismo tiempo, la emperatriz Cixi desvió cerca de 30 millones de taeles del presupuesto naval hacia la reconstrucción recreativa del Palacio de Verano.</p>
         <p id="go-2" class="quote">El punto de no retorno se selló el 17 de abril de 1895 con el <span class="gl" tabindex="0">Tratado de Shimonoseki<span class="gl-def" role="note">Tratado de 1895 que cerró la guerra con Japón: Taiwán, Pescadores y Liaotung cedidos y 200 millones de taeles de indemnización.</span></span>, firmado por Li Hung-chang: China reconoció la independencia de Corea, cedió Taiwán, las islas Pescadores y la península de Liaotung a Japón, y pagó una indemnización de 200 millones de taeles.</p>
       </div>
@@ -328,7 +353,7 @@
     <div><span class="acto-num">04</span><span class="acto-label">La consecuencia inmediata</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">El reparto del melón</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">1895 – 1900</span>
+      <span class="acto-date">1895-1900</span>
       <p class="acto-teaser">La derrota invalida la idea de que el fortalecimiento técnico bastaba, y desata un reparto imperialista del territorio chino.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="flow">
@@ -372,7 +397,7 @@
           <div class="vis-card">
             <div class="v-tline" style="--n:3">
               <div class="v-tline-rail"><div class="v-tline-fill"></div></div>
-              <div class="v-tl"><span class="v-tl-yr">1861–95</span><p>Shanghái, Tianjin, Hankow y Guangzhou se vuelven metrópolis modernas.</p></div>
+              <div class="v-tl"><span class="v-tl-yr">1861-95</span><p>Shanghái, Tianjin, Hankow y Guangzhou se vuelven metrópolis modernas.</p></div>
               <div class="v-tl"><span class="v-tl-yr">Modelo kuan-tu shang-pan</span><p>El Estado supervisa, el mercado gestiona: antecedente de las actuales SOE.</p></div>
               <div class="v-tl"><span class="v-tl-yr">Hoy</span><p>"Made in China 2025" y la autonomía tecnológica, para no depender de nadie.</p></div>
             </div>
@@ -380,7 +405,7 @@
         </div><!--/vis-->
         <p><strong>Nace la clase empresarial urbana.</strong> Los polos industriales desarrollados entre 1861 y 1895 transformaron ciudades costeras y fluviales como Shanghái, Tianjin, Hankow y Guangzhou en metrópolis modernas, propiciando el surgimiento de la primera clase obrera urbana y de la clase empresarial/compradora en China.</p>
         <p><strong>El dilema histórico de las empresas estatales.</strong> El modelo kuan-tu shang-pan sentó el antecedente de la tensión entre el control político del Estado y la autonomía del mercado: un esquema que prefigura los dilemas de gobernanza de las actuales Empresas Estatales (<span class="gl" tabindex="0">SOE<span class="gl-def" role="note">Siglas en inglés de las empresas estatales (State-Owned Enterprises).</span></span>), donde Pekín mantiene la supervisión estratégica mientras busca preservar la eficiencia comercial.</p>
-        <p class="quote">El fracaso de depender del suministro y la asesoría extranjera en el siglo XIX fundamenta la determinación del Estado chino actual en la autonomía tecnológica —"Made in China 2025" y las "Nuevas Fuerzas Productivas de Calidad"— para evitar vulnerabilidades estratégicas frente a presiones externas.</p>
+        <p class="quote">El fracaso de depender del suministro y la asesoría extranjera en el siglo XIX fundamenta la determinación del Estado chino actual en la autonomía tecnológica ("Made in China 2025" y las "Nuevas Fuerzas Productivas de Calidad") para evitar vulnerabilidades estratégicas frente a presiones externas.</p>
       </div>
     </div>
   </div>
@@ -410,16 +435,17 @@
   <div class="sources">
     <span class="eyebrow">Fuentes</span>
     <p class="src-intro">Las fuentes consultadas para este cuaderno. Curado por el equipo de Club Kongzhi.</p>
-    <ol class="src-list"><li><span class="st">State-owned enterprises in China: A review of 40 years of research and practice</span><span class="sm">EconStor · <b>Académico</b></span></li><li><span class="st">The Rise of Modern China</span><span class="sm">Libro (PDF) · <b>Libro</b></span></li><li><span class="st">Book review: The rise of modern China</span><span class="sm"><b>Análisis</b></span></li><li><span class="st">The Generalissimo: Chiang Kai-shek and the Struggle for Modern China</span><span class="sm">Wikipedia · <b>Referencia</b></span></li></ol>
+    <ol class="src-list"><li><span class="st">State-owned enterprises in China: A review of 40 years of research and practice</span><span class="sm">EconStor / <b>Académico</b></span></li><li><span class="st">The Rise of Modern China</span><span class="sm">Libro (PDF) / <b>Libro</b></span></li><li><span class="st">Book review: The rise of modern China</span><span class="sm"><b>Análisis</b></span></li><li><span class="st">The Generalissimo: Chiang Kai-shek and the Struggle for Modern China</span><span class="sm">Wikipedia / <b>Referencia</b></span></li></ol>
     <a class="src-all" href="../fuentes/index.html?c=autofortalecimiento">Abrir el baúl de fuentes de China →</a>
   </div>
-  <div class="nav-adjacent">
+  <div class="nav-adjacent" role="navigation" aria-label="Cuadernos relacionados">
     <a href="../guerras-opio/index.html"><span class="dir">Cuaderno anterior</span><span class="ttl">← 鸦片战争 Guerras del Opio</span></a>
     <a href="../colapso-qing/index.html"><span class="dir">Siguiente cuaderno</span><span class="ttl">辛亥革命 Colapso Qing →</span></a>
   </div>
 </section>
 
-<footer>Club Kongzhi UNMSM · <a href="../../index.html#departamento-de-investigacion" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Departamento de Investigación</a> · Biblioteca Nalanda</footer>
+</main>
+<footer>Club Kongzhi UNMSM / <a href="../../index.html#departamento-de-investigacion" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Departamento de Investigación</a> / Biblioteca Nalanda</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -516,7 +542,7 @@
 
     gsap.to('.hero-kanji', {
       yPercent: 12, ease: 'none',
-      scrollTrigger: { trigger: 'header.hero', start: 'top top', end: 'bottom top', scrub: 1.2 }
+      scrollTrigger: { trigger: 'header.hero', start: 'top top', end: 'bottom top', scrub: 0.6 }
     });
 
     var hPaths = document.querySelectorAll('#huiwenDivider path');
@@ -544,5 +570,6 @@
 
 <!--vis-js--><script src="../../assets/vis.js"></script><!--/vis-js-->
 <script src="../../assets/acto-anchor.js"></script>
+<script>(function(){var s=document.querySelector('.cifras');if(!s)return;if(typeof reduceMotion!=='undefined'&&reduceMotion||!('IntersectionObserver' in window)){s.classList.add('in');return;}var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){s.classList.add('in');io.disconnect();}},{threshold:.35});io.observe(s);})();</script>
 </body>
 </html>

@@ -3,7 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>経済安全保障 — Reconfiguración Estratégica</title>
+<title>経済安全保障: Reconfiguración Estratégica</title>
+<meta name="description" content="En julio de 2019, Japón usó el control de tres componentes químicos como arma diplomática contra Corea del Sur.">
+<meta name="theme-color" content="#A13D2C">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Biblioteca Nalanda">
+<meta property="og:locale" content="es_PE">
+<meta property="og:title" content="経済安全保障: Reconfiguración Estratégica">
+<meta property="og:description" content="En julio de 2019, Japón usó el control de tres componentes químicos como arma diplomática contra Corea del Sur.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23A13D2C'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%23F2EFE9' font-family='Georgia,serif'%3EN%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Shippori+Mincho:wght@400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -178,56 +186,73 @@
   .src-all{display:inline-block; margin-top:1.4rem; font-family:'IBM Plex Mono',monospace; font-size:.8rem; color:var(--vermillion); text-decoration:none; border-bottom:1px solid var(--vermillion); padding-bottom:1px;}
   .src-all:hover{color:var(--vermillion-deep); border-color:var(--vermillion-deep);}
   /* ---------- HERO: cifras como lista vertical con destino ---------- */
-  .hero .hero-stats{display:block; max-width:560px; margin-top:3rem; border-top:1px solid var(--line);}
-  .hero .hero-stats > div{position:relative; display:grid; grid-template-columns:5.4rem 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid var(--line); transition:background-color .35s cubic-bezier(0.23,1,0.32,1), transform .35s cubic-bezier(0.23,1,0.32,1);}
-  .hero .hero-stats > div:last-child{padding-right:2.4rem;}
-  .hero .hero-stats .num{font-size:1.75rem; line-height:1; width:max-content;}
-  .hero .hero-stats .lbl{margin:0; max-width:none; font-size:.82rem; line-height:1.5;}
-  .hero .hero-stats > div::before{content:""; position:absolute; left:0; top:.9rem; bottom:.9rem; width:2px; background:var(--vermillion); transform-origin:top; transform:scaleY(0); animation:statBar .9s cubic-bezier(0.23,1,0.32,1) both;}
-  .hero .hero-stats > div:nth-child(1)::before{animation-delay:1.5s;}
-  .hero .hero-stats > div:nth-child(2)::before{animation-delay:1.7s;}
-  .hero .hero-stats > div:nth-child(3)::before{animation-delay:1.9s;}
-  @media (hover:hover){.hero .hero-stats > div:hover{background:rgba(161,61,44,.05); transform:translateX(.3rem);}}
-  .hero .hero-stats > div[data-go]{cursor:pointer;}
-  .hero .hero-stats > div[data-go]::after{content:"\2193"; position:absolute; right:1rem; top:50%; transform:translate(-4px,-50%); opacity:0; font-family:'IBM Plex Mono', monospace; font-size:.95rem; color:var(--vermillion); transition:opacity .3s, transform .3s cubic-bezier(0.23,1,0.32,1);}
-  .hero .hero-stats > div[data-go]:hover::after,.hero .hero-stats > div[data-go]:focus-visible::after{opacity:1; transform:translate(0,-50%);}
-  .hero .hero-stats > div[data-go]:focus-visible{outline:2px solid var(--vermillion); outline-offset:2px;}
-  .hero .hero-stats > div[data-go]:active{transform:scale(0.985);}
+  .cifras .hero-stats{display:block; max-width:560px; margin-top:3rem; border-top:1px solid var(--line);}
+  .cifras .hero-stats > div{position:relative; display:grid; grid-template-columns:5.4rem 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid var(--line); transition:background-color .35s cubic-bezier(0.23,1,0.32,1), transform .35s cubic-bezier(0.23,1,0.32,1);}
+  .cifras .hero-stats > div:last-child{padding-right:2.4rem;}
+  .cifras .hero-stats .num{font-size:1.75rem; line-height:1; width:max-content;}
+  .cifras .hero-stats .lbl{margin:0; max-width:none; font-size:.82rem; line-height:1.5;}
+  .cifras .hero-stats > div::before{content:""; position:absolute; left:0; top:.9rem; bottom:.9rem; width:2px; background:var(--vermillion); transform-origin:top; transform:scaleY(0);}
+  @media (hover:hover){.cifras .hero-stats > div:hover{background:rgba(161,61,44,.05); transform:translateX(.3rem);}}
+  .cifras .hero-stats > div[data-go]{cursor:pointer;}
+  .cifras .hero-stats > div[data-go]::after{content:"\2193"; position:absolute; right:1rem; top:50%; transform:translate(-4px,-50%); opacity:0; font-family:'IBM Plex Mono', monospace; font-size:.95rem; color:var(--vermillion); transition:opacity .3s, transform .3s cubic-bezier(0.23,1,0.32,1);}
+  .cifras .hero-stats > div[data-go]:hover::after,.cifras .hero-stats > div[data-go]:focus-visible::after{opacity:1; transform:translate(0,-50%);}
+  .cifras .hero-stats > div[data-go]:focus-visible{outline:2px solid var(--vermillion); outline-offset:2px;}
+  .cifras .hero-stats > div[data-go]:active{transform:scale(0.985);}
   [id^="go-"]{scroll-margin-top:110px;}
   .go-flash{animation:goFlash 2s cubic-bezier(0.23,1,0.32,1) both;}
   @keyframes statBar{to{transform:scaleY(1);}}
   @keyframes goFlash{0%{background-color:rgba(161,61,44,.14); box-shadow:0 0 0 8px rgba(161,61,44,.14);} 100%{background-color:rgba(161,61,44,0); box-shadow:0 0 0 8px rgba(161,61,44,0);}}
   @media (prefers-reduced-motion:reduce){
-    .hero .hero-stats > div::before{animation:none; transform:scaleY(1);}
-    .hero .hero-stats > div{transition:none;}
+    .cifras .hero-stats > div::before{animation:none !important; transform:scaleY(1);}
+    .cifras .hero-stats > div{transition:none;}
     .go-flash{animation:none; outline:2px solid rgb(161,61,44); outline-offset:6px;}
   }
   @media (max-width:560px){
-    .hero .hero-stats > div{grid-template-columns:4.2rem 1fr; column-gap:1.1rem;}
-    .hero .hero-stats .num{font-size:1.4rem;}
+    .cifras .hero-stats > div{grid-template-columns:4.2rem 1fr; column-gap:1.1rem;}
+    .cifras .hero-stats .num{font-size:1.4rem;}
   }
 </style>
 <!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
-<style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(168,134,60,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Shippori Mincho', serif; --v-body:'Zen Kaku Gothic New', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
+<style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(168,134,60,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Shippori Mincho', serif; --v-body:'Zen Kaku Gothic New', sans-serif; --v-mono:'IBM Plex Mono', monospace;}
+.cifras{max-width:none; margin:0; padding:3.5rem 8vw 3rem;}
+.cifras .hero-stats{margin-top:0;}
+.cifras.in .hero-stats > div::before{animation:statBar .9s cubic-bezier(0.23,1,0.32,1) both;}
+.cifras.in .hero-stats > div:nth-child(1)::before{animation-delay:.1s;}
+.cifras.in .hero-stats > div:nth-child(2)::before{animation-delay:.25s;}
+.cifras.in .hero-stats > div:nth-child(3)::before{animation-delay:.4s;}
+.skip-link{position:absolute; left:1rem; top:-4rem; z-index:200; background:#1A1A1A; color:#F2EFE9; padding:.7rem 1.1rem; font:500 .85rem/1 sans-serif; text-decoration:none; transition:top .25s cubic-bezier(0.23,1,0.32,1);}
+.skip-link:focus{top:1rem;}
+/* ---------- AUDITORIA: tipografia y accesibilidad ---------- */
+.num,.acto-date,.v-yr,.v-k,.when,td,th{font-variant-numeric:tabular-nums;}
+h1,h2,h3,.acto-title,.title-cn{text-wrap:balance;}
+p,li,.lbl{text-wrap:pretty;}
+h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflow-wrap:break-word;}
+.acto-figure img{height:auto;}
+</style><!--/vis-head-->
 </head>
 <body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 <a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
 
 <header class="hero">
   <div class="hero-kanji">経済安全保障</div>
   <div class="hero-content">
-    <span class="eyebrow">Kongzhi · Japón · Política / Economía 12</span>
+    <span class="eyebrow">Kongzhi / Japón / Política / Economía 12</span>
     <div class="hero-rule"></div>
     <h1 class="title-jp">経済安全保障</h1>
-    <div class="title-romaji">Keizai anzen hoshō — seguridad económica y política industrial tecnológica, 2012-2026</div>
+    <div class="title-romaji">Keizai anzen hoshō: seguridad económica y política industrial tecnológica, 2012-2026</div>
     <p class="hero-dek">En julio de 2019, Japón usó el control de tres componentes químicos como arma diplomática contra Corea del Sur. Fue la prueba de que la tecnología ya no era solo comercio: era seguridad nacional. Catorce años después, una primera ministra nacionalista con supermayoría parlamentaria se dispone a enmendar la constitución pacifista que Japón se dio a sí mismo en 1947.</p>
-    <div class="hero-stats">
+    
+  </div>
+</header>
+<main id="contenido">
+<section class="cifras" aria-label="Cifras clave">
+<div class="hero-stats">
       <div data-go="go-1" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: crisis de semiconductores con Corea del Sur"><span class="num">2019</span><span class="lbl">crisis de semiconductores con Corea del Sur</span></div>
       <div data-go="go-2" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: Takaichi, primera ministra: ruptura con Komeito"><span class="num">2025</span><span class="lbl">Takaichi, primera ministra: ruptura con Komeito</span></div>
       <div data-go="go-2" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: escaños de supermayoría LDP-JIP, feb 2026"><span class="num">316</span><span class="lbl">escaños de supermayoría LDP-JIP, feb 2026</span></div>
     </div>
-  </div>
-</header>
+</section>
 
 <section id="actos">
   <div class="section-head">
@@ -240,7 +265,7 @@
     <div><span class="acto-num">01</span><span class="acto-label">El mundo antes</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">Un Estado pasivo, y un modelo industrial agotado</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">2011 – 2012</span>
+      <span class="acto-date">2011-2012</span>
       <p class="acto-teaser">El colapso del gobierno del DPJ, el desastre de Fukushima y un METI que arrastraba décadas de fracasos dejan a Japón sin rumbo estratégico claro frente al ascenso de China.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="press">
@@ -248,13 +273,13 @@
           <div class="vis-card">
             <div class="v-press">
               <div class="v-press-side v-press-l"><b>Fukushima y la parálisis</b><em>Terremoto, tsunami y desastre nuclear de 2011</em><svg class="v-arrow" viewBox="0 0 54 24" aria-hidden="true"><path d="M2 12h44M36 3l12 9-12 9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-              <div class="v-press-core">日本<small>2011–12</small><svg class="v-crack" viewBox="0 0 96 96" aria-hidden="true"><path d="M48 0l-8 22 12 14-14 20 10 14-6 26" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--v-paper)"/></svg></div>
+              <div class="v-press-core">日本<small>2011-12</small><svg class="v-crack" viewBox="0 0 96 96" aria-hidden="true"><path d="M48 0l-8 22 12 14-14 20 10 14-6 26" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--v-paper)"/></svg></div>
               <div class="v-press-side v-press-r"><b>Modelo agotado</b><em>METI con fracasos de planificación; Art. 9 restrictivo</em><svg class="v-arrow" viewBox="0 0 54 24" aria-hidden="true"><path d="M2 12h44M36 3l12 9-12 9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             </div>
             <div class="v-press-out">El gobierno del PDJ (2009-2012) colapsó y volvió a apoyarse en la <b>burocracia tradicional</b>.</div>
           </div>
         </div><!--/vis-->
-        <p>A principios de la década de 2010, el sistema político y la arquitectura económica de Japón se encontraban en un punto de profunda parálisis. El país acababa de atravesar la "década perdida" y se encontraba conmocionado por el terremoto, tsunami y desastre nuclear de Fukushima de marzo de 2011. El breve gobierno del Partido Democrático de Japón (2009-2012) —que había prometido romper el <span class="gl" tabindex="0">Triángulo de Hierro<span class="gl-def" role="note">Alianza entre políticos, burocracia y grandes empresas.</span></span>— colapsó por su inexperiencia técnica, obligándolo a volver a apoyarse en la burocracia tradicional.</p>
+        <p>A principios de la década de 2010, el sistema político y la arquitectura económica de Japón se encontraban en un punto de profunda parálisis. El país acababa de atravesar la "década perdida" y se encontraba conmocionado por el terremoto, tsunami y desastre nuclear de Fukushima de marzo de 2011. El breve gobierno del Partido Democrático de Japón (2009-2012) (que había prometido romper el <span class="gl" tabindex="0">Triángulo de Hierro<span class="gl-def" role="note">Alianza entre políticos, burocracia y grandes empresas.</span></span>) colapsó por su inexperiencia técnica, obligándolo a volver a apoyarse en la burocracia tradicional.</p>
         <p>A nivel estratégico, la interpretación restrictiva del Artículo 9 limitaba drásticamente la capacidad de Japón de coordinar una defensa colectiva en un Indo-Pacífico cada vez más inestable. El Ministerio de Economía, Comercio e Industria (<span class="gl" tabindex="0">METI<span class="gl-def" role="note">Ministerio de Economía, Comercio e Industria.</span></span>) arrastraba un historial de costosos fracasos en su planificación centralizada de la era analógica: el viejo modelo de "estado desarrollista" se mostraba obsoleto ante la competencia tecnológica global.</p>
       </div>
     </div>
@@ -264,7 +289,7 @@
     <div><span class="acto-num">02</span><span class="acto-label">La grieta</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">La tecnología como arma diplomática</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">2019 – 2024</span>
+      <span class="acto-date">2019-2024</span>
       <p class="acto-teaser">Japón restringe exportaciones de semiconductores a Corea del Sur sin aviso previo. El mensaje llega a todas las élites: las cadenas de suministro tecnológico ya no son inmunes a la política.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="flow">
@@ -275,7 +300,7 @@
               <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               <div class="v-node"><span class="v-k">Disputa</span><h4>OMC</h4><p>Conflicto comercial bilateral.</p></div>
               <svg class="v-arr" viewBox="0 0 22 22" aria-hidden="true"><path d="M2 11h16M12 5l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <div class="v-node"><span class="v-k">2023–24</span><h4>Escándalo LDP</h4><p>Las facciones tradicionales se disuelven casi por completo.</p></div>
+              <div class="v-node"><span class="v-k">2023-24</span><h4>Escándalo LDP</h4><p>Las facciones tradicionales se disuelven casi por completo.</p></div>
             </div>
           </div>
         </div><!--/vis-->
@@ -289,7 +314,7 @@
     <div><span class="acto-num">03</span><span class="acto-label">El giro</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">La institucionalización de la seguridad económica, y Takaichi</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">2014 – 2026</span>
+      <span class="acto-date">2014-2026</span>
       <p class="acto-teaser">La reinterpretación del Artículo 9, un nuevo Ministerio de Seguridad Económica, y la primera mujer en la historia como primera ministra con supermayoría parlamentaria.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="steps">
@@ -297,8 +322,8 @@
           <div class="vis-card">
             <div class="v-steps" role="list">
               <div class="v-rail"><div class="v-fill"></div></div>
-              <div class="v-stop" role="listitem"><span class="v-yr">2014–15</span><h4>Leyes de seguridad</h4><p>Permiten la defensa colectiva bajo Abe.</p></div>
-              <div class="v-stop" role="listitem"><span class="v-yr">2021–25</span><h4>Seguridad económica</h4><p>Nuevo ministerio y Buró de Comercio y Seguridad Económica en METI.</p></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">2014-15</span><h4>Leyes de seguridad</h4><p>Permiten la defensa colectiva bajo Abe.</p></div>
+              <div class="v-stop" role="listitem"><span class="v-yr">2021-25</span><h4>Seguridad económica</h4><p>Nuevo ministerio y Buró de Comercio y Seguridad Económica en METI.</p></div>
               <div class="v-stop" role="listitem"><span class="v-yr">21 oct 2025</span><h4>Takaichi</h4><p>Primera mujer primera ministra.</p></div>
               <div class="v-stop" role="listitem"><span class="v-yr">Feb 2026</span><h4>Supermayoría</h4><p>316 escaños tras disolver la Dieta.</p></div>
             </div>
@@ -307,7 +332,7 @@
         <figure class="acto-figure">
           <img src="../../assets/japon/reconfiguracion-estrategica/kantei.jpg" alt="Edificio del Kantei, residencia oficial del primer ministro de Japón." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>El <span class="gl" tabindex="0">Kantei<span class="gl-def" role="note">Oficina del Primer Ministro, donde se concentra hoy el control.</span></span>, sede del gabinete, donde se centralizó la política de seguridad económica desde 2014.
-            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+            <span class="credit">Fuente: Wikimedia Commons, dominio público</span>
           </figcaption>
         </figure>
         <p>Bajo Shinzo Abe, el gabinete aprueba en 2014-2015 la reconfiguración legal de las leyes de seguridad para permitir el ejercicio de la defensa colectiva. Entre 2021 y 2025, el gobierno crea la cartera del Ministerio de Estado para la Seguridad Económica y reestructura METI para albergar el nuevo Buro de Comercio y Seguridad Económica, fusionando política industrial, seguridad nacional y control de exportaciones de alta tecnología.</p>
@@ -320,7 +345,7 @@
     <div><span class="acto-num">04</span><span class="acto-label">La consecuencia inmediata</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">17 sectores estratégicos, y un Kantei centralizado</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">2022 – 2026</span>
+      <span class="acto-date">2022-2026</span>
       <p class="acto-teaser">El Estado vuelve a elegir sectores ganadores: semiconductores, IA, fusión nuclear, defensa. Rapidus, JASM y Mitsubishi Electric reciben miles de millones en subsidios.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="stats">
@@ -334,9 +359,9 @@
           </div>
         </div><!--/vis-->
         <figure class="acto-figure">
-          <img src="../../assets/japon/reconfiguracion-estrategica/semiconductores-japon.jpg" alt="Planta de semiconductores TSMC–JASM en Kumamoto, Japón." loading="lazy" onerror="this.closest('figure').hidden=true">
-          <figcaption>La planta de semiconductores en Kumamoto (TSMC–<span class="gl" tabindex="0">JASM<span class="gl-def" role="note">Megafábrica de TSMC, Sony y Denso en Kumamoto.</span></span>): el tipo de proyecto que Japón subsidia para no depender de una sola cadena.
-            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+          <img src="../../assets/japon/reconfiguracion-estrategica/semiconductores-japon.jpg" alt="Planta de semiconductores TSMC-JASM en Kumamoto, Japón." loading="lazy" onerror="this.closest('figure').hidden=true">
+          <figcaption>La planta de semiconductores en Kumamoto (TSMC-<span class="gl" tabindex="0">JASM<span class="gl-def" role="note">Megafábrica de TSMC, Sony y Denso en Kumamoto.</span></span>): el tipo de proyecto que Japón subsidia para no depender de una sola cadena.
+            <span class="credit">Fuente: Wikimedia Commons, dominio público</span>
           </figcaption>
         </figure>
         <p>El Cuartel General de Estrategia de Crecimiento de Takaichi fija 17 industrias prioritarias para inversión masiva pública y privada: inteligencia artificial, semiconductores de próxima generación, energía nuclear y de fusión, computación cuántica, construcción naval y defensa. Para sectores de ciclo ultra-largo, el Estado establece planes de compras plurianuales y hojas de ruta de inversión a diez años; en diciembre de 2023, METI aprueba deducciones tributarias de hasta un 20% sobre producción y ventas en sectores estratégicos.</p>
@@ -400,19 +425,20 @@
   <div class="sources">
     <span class="eyebrow">Fuentes</span>
     <p class="src-intro">Fuentes afines a este cuaderno, asignadas por tema: de lo más sólido a lo más contextual. Curado por el equipo de Club Kongzhi.</p>
-    <ol class="src-list"><li><span class="st">Japan GX-ETS</span><span class="sm">International Carbon Action Partnership (ICAP) · <b>Institucional</b></span></li><li><span class="st">Policy Proposals</span><span class="sm">Keidanren · <b>Institucional</b></span></li><li><span class="st">The Challenges of the Japanese Government to Implement Society 5.0</span><span class="sm">Atlantis Press · <b>Académico</b></span></li><li><span class="st">[Japan] METI White paper on international economy and trade 2026</span><span class="sm">JEPIC (resumen del Libro Blanco de METI) · <b>Análisis</b></span></li><li><span class="st">Artificial Intelligence (AI) May Not Solve Japan&#x27;s labor shortages: an unprecedented automation of knowledge-based jobs</span><span class="sm"><b>Análisis</b></span></li><li><span class="st">Executive Summary: Economic and Fiscal Projections for Medium to Long Term Analysis (January 2026)</span><span class="sm"><b>Oficial</b></span></li></ol>
+    <ol class="src-list"><li><span class="st">Japan GX-ETS</span><span class="sm">International Carbon Action Partnership (ICAP) / <b>Institucional</b></span></li><li><span class="st">Policy Proposals</span><span class="sm">Keidanren / <b>Institucional</b></span></li><li><span class="st">The Challenges of the Japanese Government to Implement Society 5.0</span><span class="sm">Atlantis Press / <b>Académico</b></span></li><li><span class="st">[Japan] METI White paper on international economy and trade 2026</span><span class="sm">JEPIC (resumen del Libro Blanco de METI) / <b>Análisis</b></span></li><li><span class="st">Artificial Intelligence (AI) May Not Solve Japan&#x27;s labor shortages: an unprecedented automation of knowledge-based jobs</span><span class="sm"><b>Análisis</b></span></li><li><span class="st">Executive Summary: Economic and Fiscal Projections for Medium to Long Term Analysis (January 2026)</span><span class="sm"><b>Oficial</b></span></li></ol>
     <a class="src-all" href="../fuentes/index.html?c=reconfiguracion-estrategica">Ver las 17 fuentes de este cuaderno en el baúl →</a>
   </div>
-  <div class="nav-adjacent">
+  <div class="nav-adjacent" role="navigation" aria-label="Cuadernos relacionados">
     <a href="../abenomics/index.html">
       <span class="dir">‹ Anterior</span>
       <span class="ttl"><span class="ttl-arrow">←</span>2012: Abenomics</span>
     </a>
-    <div class="empty">Fin de la serie Japón — Vol. I</div>
+    <div class="empty">Fin de la serie Japón. Vol. I</div>
   </div>
 </section>
 
-<footer>Club Kongzhi UNMSM · <a href="../../index.html#departamento-de-investigacion" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Departamento de Investigación</a> · Biblioteca Nalanda</footer>
+</main>
+<footer>Club Kongzhi UNMSM / <a href="../../index.html#departamento-de-investigacion" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Departamento de Investigación</a> / Biblioteca Nalanda</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -501,7 +527,7 @@
 
     gsap.to('.hero-kanji', {
       yPercent: 12, ease: 'none',
-      scrollTrigger: { trigger: 'header.hero', start: 'top top', end: 'bottom top', scrub: 1.2 }
+      scrollTrigger: { trigger: 'header.hero', start: 'top top', end: 'bottom top', scrub: 0.6 }
     });
 
     document.querySelectorAll('.flat-grid').forEach(function(grid){
@@ -521,5 +547,6 @@
 
 <!--vis-js--><script src="../../assets/vis.js"></script><!--/vis-js-->
 <script src="../../assets/acto-anchor.js"></script>
+<script>(function(){var s=document.querySelector('.cifras');if(!s)return;if(typeof reduceMotion!=='undefined'&&reduceMotion||!('IntersectionObserver' in window)){s.classList.add('in');return;}var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){s.classList.add('in');io.disconnect();}},{threshold:.35});io.observe(s);})();</script>
 </body>
 </html>

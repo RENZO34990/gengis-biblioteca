@@ -3,7 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>55年体制 — La Hegemonía del LDP</title>
+<title>55年体制: La Hegemonía del LDP</title>
+<meta name="description" content="Un solo partido gobernó Japón durante 38 años seguidos, y no fue exactamente porque ganara elecciones limpias contra una oposición fuerte.">
+<meta name="theme-color" content="#A13D2C">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Biblioteca Nalanda">
+<meta property="og:locale" content="es_PE">
+<meta property="og:title" content="55年体制: La Hegemonía del LDP">
+<meta property="og:description" content="Un solo partido gobernó Japón durante 38 años seguidos, y no fue exactamente porque ganara elecciones limpias contra una oposición fuerte.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23A13D2C'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%23F2EFE9' font-family='Georgia,serif'%3EN%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Shippori+Mincho:wght@400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -179,56 +187,73 @@
   .src-all{display:inline-block; margin-top:1.4rem; font-family:'IBM Plex Mono',monospace; font-size:.8rem; color:var(--vermillion); text-decoration:none; border-bottom:1px solid var(--vermillion); padding-bottom:1px;}
   .src-all:hover{color:var(--vermillion-deep); border-color:var(--vermillion-deep);}
   /* ---------- HERO: cifras como lista vertical con destino ---------- */
-  .hero .hero-stats{display:block; max-width:560px; margin-top:3rem; border-top:1px solid var(--line);}
-  .hero .hero-stats > div{position:relative; display:grid; grid-template-columns:5.4rem 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid var(--line); transition:background-color .35s cubic-bezier(0.23,1,0.32,1), transform .35s cubic-bezier(0.23,1,0.32,1);}
-  .hero .hero-stats > div:last-child{padding-right:2.4rem;}
-  .hero .hero-stats .num{font-size:1.75rem; line-height:1; width:max-content;}
-  .hero .hero-stats .lbl{margin:0; max-width:none; font-size:.82rem; line-height:1.5;}
-  .hero .hero-stats > div::before{content:""; position:absolute; left:0; top:.9rem; bottom:.9rem; width:2px; background:var(--vermillion); transform-origin:top; transform:scaleY(0); animation:statBar .9s cubic-bezier(0.23,1,0.32,1) both;}
-  .hero .hero-stats > div:nth-child(1)::before{animation-delay:1.5s;}
-  .hero .hero-stats > div:nth-child(2)::before{animation-delay:1.7s;}
-  .hero .hero-stats > div:nth-child(3)::before{animation-delay:1.9s;}
-  @media (hover:hover){.hero .hero-stats > div:hover{background:rgba(161,61,44,.05); transform:translateX(.3rem);}}
-  .hero .hero-stats > div[data-go]{cursor:pointer;}
-  .hero .hero-stats > div[data-go]::after{content:"\2193"; position:absolute; right:1rem; top:50%; transform:translate(-4px,-50%); opacity:0; font-family:'IBM Plex Mono', monospace; font-size:.95rem; color:var(--vermillion); transition:opacity .3s, transform .3s cubic-bezier(0.23,1,0.32,1);}
-  .hero .hero-stats > div[data-go]:hover::after,.hero .hero-stats > div[data-go]:focus-visible::after{opacity:1; transform:translate(0,-50%);}
-  .hero .hero-stats > div[data-go]:focus-visible{outline:2px solid var(--vermillion); outline-offset:2px;}
-  .hero .hero-stats > div[data-go]:active{transform:scale(0.985);}
+  .cifras .hero-stats{display:block; max-width:560px; margin-top:3rem; border-top:1px solid var(--line);}
+  .cifras .hero-stats > div{position:relative; display:grid; grid-template-columns:5.4rem 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid var(--line); transition:background-color .35s cubic-bezier(0.23,1,0.32,1), transform .35s cubic-bezier(0.23,1,0.32,1);}
+  .cifras .hero-stats > div:last-child{padding-right:2.4rem;}
+  .cifras .hero-stats .num{font-size:1.75rem; line-height:1; width:max-content;}
+  .cifras .hero-stats .lbl{margin:0; max-width:none; font-size:.82rem; line-height:1.5;}
+  .cifras .hero-stats > div::before{content:""; position:absolute; left:0; top:.9rem; bottom:.9rem; width:2px; background:var(--vermillion); transform-origin:top; transform:scaleY(0);}
+  @media (hover:hover){.cifras .hero-stats > div:hover{background:rgba(161,61,44,.05); transform:translateX(.3rem);}}
+  .cifras .hero-stats > div[data-go]{cursor:pointer;}
+  .cifras .hero-stats > div[data-go]::after{content:"\2193"; position:absolute; right:1rem; top:50%; transform:translate(-4px,-50%); opacity:0; font-family:'IBM Plex Mono', monospace; font-size:.95rem; color:var(--vermillion); transition:opacity .3s, transform .3s cubic-bezier(0.23,1,0.32,1);}
+  .cifras .hero-stats > div[data-go]:hover::after,.cifras .hero-stats > div[data-go]:focus-visible::after{opacity:1; transform:translate(0,-50%);}
+  .cifras .hero-stats > div[data-go]:focus-visible{outline:2px solid var(--vermillion); outline-offset:2px;}
+  .cifras .hero-stats > div[data-go]:active{transform:scale(0.985);}
   [id^="go-"]{scroll-margin-top:110px;}
   .go-flash{animation:goFlash 2s cubic-bezier(0.23,1,0.32,1) both;}
   @keyframes statBar{to{transform:scaleY(1);}}
   @keyframes goFlash{0%{background-color:rgba(161,61,44,.14); box-shadow:0 0 0 8px rgba(161,61,44,.14);} 100%{background-color:rgba(161,61,44,0); box-shadow:0 0 0 8px rgba(161,61,44,0);}}
   @media (prefers-reduced-motion:reduce){
-    .hero .hero-stats > div::before{animation:none; transform:scaleY(1);}
-    .hero .hero-stats > div{transition:none;}
+    .cifras .hero-stats > div::before{animation:none !important; transform:scaleY(1);}
+    .cifras .hero-stats > div{transition:none;}
     .go-flash{animation:none; outline:2px solid rgb(161,61,44); outline-offset:6px;}
   }
   @media (max-width:560px){
-    .hero .hero-stats > div{grid-template-columns:4.2rem 1fr; column-gap:1.1rem;}
-    .hero .hero-stats .num{font-size:1.4rem;}
+    .cifras .hero-stats > div{grid-template-columns:4.2rem 1fr; column-gap:1.1rem;}
+    .cifras .hero-stats .num{font-size:1.4rem;}
   }
 </style>
 <!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
-<style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(168,134,60,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Shippori Mincho', serif; --v-body:'Zen Kaku Gothic New', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
+<style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(168,134,60,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Shippori Mincho', serif; --v-body:'Zen Kaku Gothic New', sans-serif; --v-mono:'IBM Plex Mono', monospace;}
+.cifras{max-width:none; margin:0; padding:3.5rem 8vw 3rem;}
+.cifras .hero-stats{margin-top:0;}
+.cifras.in .hero-stats > div::before{animation:statBar .9s cubic-bezier(0.23,1,0.32,1) both;}
+.cifras.in .hero-stats > div:nth-child(1)::before{animation-delay:.1s;}
+.cifras.in .hero-stats > div:nth-child(2)::before{animation-delay:.25s;}
+.cifras.in .hero-stats > div:nth-child(3)::before{animation-delay:.4s;}
+.skip-link{position:absolute; left:1rem; top:-4rem; z-index:200; background:#1A1A1A; color:#F2EFE9; padding:.7rem 1.1rem; font:500 .85rem/1 sans-serif; text-decoration:none; transition:top .25s cubic-bezier(0.23,1,0.32,1);}
+.skip-link:focus{top:1rem;}
+/* ---------- AUDITORIA: tipografia y accesibilidad ---------- */
+.num,.acto-date,.v-yr,.v-k,.when,td,th{font-variant-numeric:tabular-nums;}
+h1,h2,h3,.acto-title,.title-cn{text-wrap:balance;}
+p,li,.lbl{text-wrap:pretty;}
+h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflow-wrap:break-word;}
+.acto-figure img{height:auto;}
+</style><!--/vis-head-->
 </head>
 <body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 <a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
 
 <header class="hero">
   <div class="hero-kanji">55年体制</div>
   <div class="hero-content">
-    <span class="eyebrow">Kongzhi · Japón · Política 11</span>
+    <span class="eyebrow">Kongzhi / Japón / Política 11</span>
     <div class="hero-rule"></div>
     <h1 class="title-jp">55年体制</h1>
-    <div class="title-romaji">Gojūgonen taisei — el "Sistema de 1955": hegemonía del LDP y burocracia de posguerra, 1955-1993</div>
+    <div class="title-romaji">Gojūgonen taisei: el "Sistema de 1955": hegemonía del LDP y burocracia de posguerra, 1955-1993</div>
     <p class="hero-dek">Un solo partido gobernó Japón durante 38 años seguidos, y no fue exactamente porque ganara elecciones limpias contra una oposición fuerte. Fue porque políticos, burócratas de élite y los grandes conglomerados empresariales construyeron un triángulo de intereses tan sólido que ni los escándalos financieros más grandes de la posguerra lograron romperlo a tiempo.</p>
-    <div class="hero-stats">
+    
+  </div>
+</header>
+<main id="contenido">
+<section class="cifras" aria-label="Cifras clave">
+<div class="hero-stats">
       <div data-go="go-1" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: fusión conservadora, nace el LDP"><span class="num">1955</span><span class="lbl">fusión conservadora, nace el LDP</span></div>
       <div data-go="go-2" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: crisis Anpo, protestas contra el tratado"><span class="num">1960</span><span class="lbl">crisis Anpo, protestas contra el tratado</span></div>
       <div data-go="go-inicio" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: colapso del Sistema de 1955"><span class="num">1993</span><span class="lbl">colapso del Sistema de 1955</span></div>
     </div>
-  </div>
-</header>
+</section>
 
 <section id="actos">
   <div class="section-head">
@@ -241,7 +266,7 @@
     <div><span class="acto-num">01</span><span class="acto-label">El mundo antes</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">Una derecha fragmentada, frente a una izquierda en ascenso</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">1945 – 1955</span>
+      <span class="acto-date">1945-1955</span>
       <p class="acto-teaser">La década posterior a la rendición deja a Japón polarizado entre un bloque socialista en alza y una derecha conservadora dividida e incapaz de gobernar con estabilidad.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="versus">
@@ -254,8 +279,8 @@
             </div>
           </div>
         </div><!--/vis-->
-        <p>La década posterior al fin de la Segunda Guerra Mundial y la ocupación aliada está marcada por una profunda inestabilidad y un agudo enfrentamiento ideológico. Las fuerzas progresistas, aglutinadas en torno a un Partido Socialista de Japón (JSP) que gana terreno rápidamente, se oponen con firmeza al rearme militar y defienden a ultranza el pacifismo constitucional. El bloque conservador, en cambio, está dividido en partidos rivales — el Partido Liberal y el Partido Democrático de Japón — una fragmentación que debilita la capacidad del gobierno para estabilizar la reconstrucción industrial.</p>
-        <p>Tanto la comunidad empresarial de posguerra, que necesita estabilidad y subsidios para reconstruir, como el propio gobierno de Estados Unidos —a través de la CIA, que financia de forma encubierta a la derecha japonesa— urgen a crear un frente único conservador capaz de asfixiar políticamente a socialistas y comunistas.</p>
+        <p>La década posterior al fin de la Segunda Guerra Mundial y la ocupación aliada está marcada por una profunda inestabilidad y un agudo enfrentamiento ideológico. Las fuerzas progresistas, aglutinadas en torno a un Partido Socialista de Japón (JSP) que gana terreno rápidamente, se oponen con firmeza al rearme militar y defienden a ultranza el pacifismo constitucional. El bloque conservador, en cambio, está dividido en partidos rivales, el Partido Liberal y el Partido Democrático de Japón, una fragmentación que debilita la capacidad del gobierno para estabilizar la reconstrucción industrial.</p>
+        <p>Tanto la comunidad empresarial de posguerra, que necesita estabilidad y subsidios para reconstruir, como el propio gobierno de Estados Unidos (a través de la CIA, que financia de forma encubierta a la derecha japonesa) urgen a crear un frente único conservador capaz de asfixiar políticamente a socialistas y comunistas.</p>
       </div>
     </div>
   </div>
@@ -287,7 +312,7 @@
     <div><span class="acto-num">03</span><span class="acto-label">El giro</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">El Triángulo de Hierro: políticos, burócratas y conglomerados</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">1955 – 1960</span>
+      <span class="acto-date">1955-1960</span>
       <p class="acto-teaser">El giro no es una victoria electoral: es la institucionalización de una alianza fáctica entre el LDP, la burocracia ministerial y los grandes conglomerados económicos.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="flow">
@@ -304,13 +329,13 @@
           </div>
         </div><!--/vis-->
         <figure class="acto-figure">
-          <img src="../../assets/japon/hegemonia-ldp/kishi-nobusuke.jpg" alt="Retrato de Nobusuke Kishi, primer ministro de Japón entre 1957 y 1960" loading="lazy" onerror="this.closest('figure').hidden=true">
+          <img width="355" height="426" src="../../assets/japon/hegemonia-ldp/kishi-nobusuke.jpg" alt="Retrato de Nobusuke Kishi, primer ministro de Japón entre 1957 y 1960" loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Nobusuke Kishi, ex funcionario del Ministerio de Comercio e Industria convertido en primer ministro: la figura que mejor encarna la fusión entre burocracia técnica y poder político del Sistema de 1955.
-            <span class="credit">Fuente: Wikimedia Commons · dominio público — verificar enlace antes de publicar</span>
+            <span class="credit">Fuente: Wikimedia Commons, dominio público, verificar enlace antes de publicar</span>
           </figcaption>
         </figure>
-        <p>El giro fundamental es la estructuración del "<span class="gl" tabindex="0">Triángulo de Hierro<span class="gl-def" role="note">Alianza entre políticos del LDP, burócratas y grandes empresas (Sei-Kan-Zai).</span></span>" (Sei-Kan-Zai), una alianza de beneficio mutuo entre los políticos del LDP, la burocracia ministerial y los grandes conglomerados económicos. El LDP decide dejar la dirección técnica del milagro económico de posguerra en manos de una burocracia de élite sumamente meritocrática —reclutada fundamentalmente de la Universidad de Tokio— que ejerce el control de los mercados mediante la "guía administrativa" (gyōsei shidō).</p>
-        <p>A cambio de dar vía libre a las políticas de los ministerios, los políticos del LDP garantizan su reelección canalizando fondos públicos y obras de infraestructura —financiadas a través del <span class="gl" tabindex="0">FILP<span class="gl-def" role="note">Programa de inversión fiscal alimentado por los ahorros postales.</span></span>, alimentado por el sistema de ahorros postales— hacia sus distritos locales. El sistema se consolida mediante el <strong><span class="gl" tabindex="0">amakudari<span class="gl-def" role="note">&quot;Descenso del cielo&quot;: burócratas que se retiran a cargos en las empresas que regulaban.</span></span></strong> ("descenso del cielo"): los burócratas del MOF o el MITI son recompensados tras su jubilación con puestos ejecutivos en las empresas que antes regulaban, mientras <span class="gl" tabindex="0">Keidanren<span class="gl-def" role="note">Federación patronal que financia al LDP.</span></span>, la federación patronal, centraliza masivos aportes financieros al LDP para blindar el statu quo.</p>
+        <p>El giro fundamental es la estructuración del "<span class="gl" tabindex="0">Triángulo de Hierro<span class="gl-def" role="note">Alianza entre políticos del LDP, burócratas y grandes empresas (Sei-Kan-Zai).</span></span>" (Sei-Kan-Zai), una alianza de beneficio mutuo entre los políticos del LDP, la burocracia ministerial y los grandes conglomerados económicos. El LDP decide dejar la dirección técnica del milagro económico de posguerra en manos de una burocracia de élite sumamente meritocrática (reclutada fundamentalmente de la Universidad de Tokio) que ejerce el control de los mercados mediante la "guía administrativa" (gyōsei shidō).</p>
+        <p>A cambio de dar vía libre a las políticas de los ministerios, los políticos del LDP garantizan su reelección canalizando fondos públicos y obras de infraestructura (financiadas a través del <span class="gl" tabindex="0">FILP<span class="gl-def" role="note">Programa de inversión fiscal alimentado por los ahorros postales.</span></span>, alimentado por el sistema de ahorros postales) hacia sus distritos locales. El sistema se consolida mediante el <strong><span class="gl" tabindex="0">amakudari<span class="gl-def" role="note">&quot;Descenso del cielo&quot;: burócratas que se retiran a cargos en las empresas que regulaban.</span></span></strong> ("descenso del cielo"): los burócratas del MOF o el MITI son recompensados tras su jubilación con puestos ejecutivos en las empresas que antes regulaban, mientras <span class="gl" tabindex="0">Keidanren<span class="gl-def" role="note">Federación patronal que financia al LDP.</span></span>, la federación patronal, centraliza masivos aportes financieros al LDP para blindar el statu quo.</p>
       </div>
     </div>
   </div>
@@ -319,7 +344,7 @@
     <div><span class="acto-num">04</span><span class="acto-label">La consecuencia inmediata</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">Un parlamento subordinado, y el precio de la estabilidad</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">1955 – 1960</span>
+      <span class="acto-date">1955-1960</span>
       <p class="acto-teaser">La Dieta queda convertida en órgano de ratificación, las koenkai disparan el costo de la política local, y la crisis Anpo de 1960 es la primera gran grieta visible del sistema.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="press">
@@ -327,14 +352,14 @@
           <div class="vis-card">
             <div class="v-press">
               <div class="v-press-side v-press-l"><b>Facciones (habatsu)</b><em>Eligen al primer ministro a puerta cerrada</em><svg class="v-arrow" viewBox="0 0 54 24" aria-hidden="true"><path d="M2 12h44M36 3l12 9-12 9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-              <div class="v-press-core">LDP<small>1955–60</small><svg class="v-crack" viewBox="0 0 96 96" aria-hidden="true"><path d="M48 0l-8 22 12 14-14 20 10 14-6 26" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--v-paper)"/></svg></div>
+              <div class="v-press-core">LDP<small>1955-60</small><svg class="v-crack" viewBox="0 0 96 96" aria-hidden="true"><path d="M48 0l-8 22 12 14-14 20 10 14-6 26" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--v-paper)"/></svg></div>
               <div class="v-press-side v-press-r"><b>Dinero encubierto de la CIA</b><em>Millones de yenes durante toda esta fase</em><svg class="v-arrow" viewBox="0 0 54 24" aria-hidden="true"><path d="M2 12h44M36 3l12 9-12 9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             </div>
             <div class="v-press-out">En 1960 las protestas por el <b>Anpo</b> rodean la Dieta bajo el gabinete de Kishi.</div>
           </div>
         </div><!--/vis-->
         <p>La Dieta de Japón queda convertida en un órgano de ratificación formal de las decisiones del LDP y los ministerios; el JSP pierde la capacidad real de influir en leyes y presupuestos. La elección del primer ministro deja de responder a debates programáticos: pasa a definirse a puerta cerrada por negociaciones entre los líderes de las facciones (habatsu) mayoritarias del LDP, que operan como verdaderos partidos dentro del partido, con oficinas de financiamiento propias y reuniones semanales para evitar deserciones.</p>
-        <p id="go-2">El sistema electoral de voto único no transferible en distritos multimedios (SNTV/MMD) obliga a que varios candidatos del propio LDP compitan entre sí en el mismo distrito. Para ganar, no dependen de la marca del partido sino de sus <strong>koenkai</strong> (redes personales de apoyo) y de su capacidad de asegurar beneficios locales, disparando el costo de las campañas. El gobierno de Estados Unidos, vía la CIA, inyecta de forma encubierta millones de yenes a las arcas del LDP durante toda esta fase para asegurar su mayoría frente a la izquierda — y el LDP prioriza de manera absoluta el Tratado de Seguridad con Washington (<span class="gl" tabindex="0">Anpo<span class="gl-def" role="note">Tratado de Seguridad con Estados Unidos, cuya renovación provocó las protestas de 1960.</span></span>), consolidado dramáticamente tras las violentas protestas civiles de 1960 que rodean la Dieta durante la renovación del tratado bajo el gabinete de Kishi.</p>
+        <p id="go-2">El sistema electoral de voto único no transferible en distritos multimedios (SNTV/MMD) obliga a que varios candidatos del propio LDP compitan entre sí en el mismo distrito. Para ganar, no dependen de la marca del partido sino de sus <strong>koenkai</strong> (redes personales de apoyo) y de su capacidad de asegurar beneficios locales, disparando el costo de las campañas. El gobierno de Estados Unidos, vía la CIA, inyecta de forma encubierta millones de yenes a las arcas del LDP durante toda esta fase para asegurar su mayoría frente a la izquierda, y el LDP prioriza de manera absoluta el Tratado de Seguridad con Washington (<span class="gl" tabindex="0">Anpo<span class="gl-def" role="note">Tratado de Seguridad con Estados Unidos, cuya renovación provocó las protestas de 1960.</span></span>), consolidado dramáticamente tras las violentas protestas civiles de 1960 que rodean la Dieta durante la renovación del tratado bajo el gabinete de Kishi.</p>
       </div>
     </div>
   </div>
@@ -355,8 +380,8 @@
             <div class="v-sw off"><span class="v-sw-mark">派</span><span><b>Facciones del LDP</b><em>Casi todas disueltas en 2023-24 por el escándalo de fondos</em></span><span class="to-end"><span class="v-sw-state"><span class="st-on">Sigue vigente</span><span class="st-off">Superado</span></span><span class="v-sw-track"></span></span></div>
           </div>
         </div><!--/vis-->
-        <p>El Sistema de 1955 habitúa al electorado japonés a identificar la gobernabilidad con el LDP: a pesar de escándalos financieros profundos, la alternancia partidista sigue siendo percibida por amplios sectores como factor de incertidumbre económica. Aunque el amakudari fue formalmente prohibido por ley en 2007, el peso del conocimiento especializado de la burocracia de Kasumigaseki sobre la toma de decisiones sigue siendo inmenso — incluso durante el gobierno de alternancia del Partido Democrático de Japón (2009-2012), los políticos fueron incapaces de romper el control técnico de los burócratas.</p>
-        <p class="quote">Los recientes escándalos de fondos ilícitos o "cajas negras" de recaudación (slush funds), que en 2023-2024 forzaron al partido a disolver formalmente la mayoría de sus facciones históricas —como la facción Abe o la facción Kishida—, son un recordatorio directo del sistema de financiamiento fáctico nacido bajo el Sistema de 1955.</p>
+        <p>El Sistema de 1955 habitúa al electorado japonés a identificar la gobernabilidad con el LDP: a pesar de escándalos financieros profundos, la alternancia partidista sigue siendo percibida por amplios sectores como factor de incertidumbre económica. Aunque el amakudari fue formalmente prohibido por ley en 2007, el peso del conocimiento especializado de la burocracia de Kasumigaseki sobre la toma de decisiones sigue siendo inmenso, incluso durante el gobierno de alternancia del Partido Democrático de Japón (2009-2012), los políticos fueron incapaces de romper el control técnico de los burócratas.</p>
+        <p class="quote">Los recientes escándalos de fondos ilícitos o "cajas negras" de recaudación (slush funds), que en 2023-2024 forzaron al partido a disolver formalmente la mayoría de sus facciones históricas, como la facción Abe o la facción Kishida, son un recordatorio directo del sistema de financiamiento fáctico nacido bajo el Sistema de 1955.</p>
       </div>
     </div>
   </div>
@@ -393,10 +418,10 @@
   <div class="sources">
     <span class="eyebrow">Fuentes</span>
     <p class="src-intro">Fuentes afines a este cuaderno, asignadas por tema: de lo más sólido a lo más contextual. Curado por el equipo de Club Kongzhi.</p>
-    <ol class="src-list"><li><span class="st">Political Scandal in Japan and the LDP Slush Fund Controversy</span><span class="sm">Cambridge University Press &amp; Assessment · <b>Académico</b></span></li><li><span class="st">Scandal, Ritual and Media in Postwar Japan</span><span class="sm"><b>Académico</b></span></li><li><span class="st">The Rise and Fall of Japan&#x27;s Liberal Democratic Party</span><span class="sm">University of California San Diego · <b>Académico</b></span></li><li><span class="st">Factional Dynamics in Japan&#x27;s LDP Since Political Reform</span><span class="sm"><b>Académico</b></span></li><li><span class="st">The changing nature of the &quot;Iron Triangle&quot; phenomenon</span><span class="sm">Lund University Publications · <b>Académico</b></span></li><li><span class="st">249 companies each donated over 100 million yen to Japan&#x27;s Liberal Democratic Party over 46 years</span><span class="sm">Tokyo Investigative Newsroom Tansa · <b>Prensa</b></span></li></ol>
+    <ol class="src-list"><li><span class="st">Political Scandal in Japan and the LDP Slush Fund Controversy</span><span class="sm">Cambridge University Press &amp; Assessment / <b>Académico</b></span></li><li><span class="st">Scandal, Ritual and Media in Postwar Japan</span><span class="sm"><b>Académico</b></span></li><li><span class="st">The Rise and Fall of Japan&#x27;s Liberal Democratic Party</span><span class="sm">University of California San Diego / <b>Académico</b></span></li><li><span class="st">Factional Dynamics in Japan&#x27;s LDP Since Political Reform</span><span class="sm"><b>Académico</b></span></li><li><span class="st">The changing nature of the &quot;Iron Triangle&quot; phenomenon</span><span class="sm">Lund University Publications / <b>Académico</b></span></li><li><span class="st">249 companies each donated over 100 million yen to Japan&#x27;s Liberal Democratic Party over 46 years</span><span class="sm">Tokyo Investigative Newsroom Tansa / <b>Prensa</b></span></li></ol>
     <a class="src-all" href="../fuentes/index.html?c=hegemonia-ldp">Ver las 10 fuentes de este cuaderno en el baúl →</a>
   </div>
-  <div class="nav-adjacent">
+  <div class="nav-adjacent" role="navigation" aria-label="Cuadernos relacionados">
     <a href="../estado-desarrollista/index.html">
       <span class="dir">‹ Anterior</span>
       <span class="ttl"><span class="ttl-arrow">←</span>1955-1973: El Estado Desarrollista</span>
@@ -408,7 +433,8 @@
   </div>
 </section>
 
-<footer>Club Kongzhi UNMSM · <a href="../../index.html#departamento-de-investigacion" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Departamento de Investigación</a> · Biblioteca Nalanda</footer>
+</main>
+<footer>Club Kongzhi UNMSM / <a href="../../index.html#departamento-de-investigacion" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Departamento de Investigación</a> / Biblioteca Nalanda</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -497,7 +523,7 @@
 
     gsap.to('.hero-kanji', {
       yPercent: 12, ease: 'none',
-      scrollTrigger: { trigger: 'header.hero', start: 'top top', end: 'bottom top', scrub: 1.2 }
+      scrollTrigger: { trigger: 'header.hero', start: 'top top', end: 'bottom top', scrub: 0.6 }
     });
 
     document.querySelectorAll('.flat-grid').forEach(function(grid){
@@ -517,5 +543,6 @@
 
 <!--vis-js--><script src="../../assets/vis.js"></script><!--/vis-js-->
 <script src="../../assets/acto-anchor.js"></script>
+<script>(function(){var s=document.querySelector('.cifras');if(!s)return;if(typeof reduceMotion!=='undefined'&&reduceMotion||!('IntersectionObserver' in window)){s.classList.add('in');return;}var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){s.classList.add('in');io.disconnect();}},{threshold:.35});io.observe(s);})();</script>
 </body>
 </html>

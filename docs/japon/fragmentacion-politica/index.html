@@ -3,7 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>政界再編 — Fragmentación Política</title>
+<title>政界再編: Fragmentación Política</title>
+<meta name="description" content="En 1993, un solo político escindido rompió 38 años de dominio ininterrumpido. La reforma que siguió prometía un bipartidismo a la británica.">
+<meta name="theme-color" content="#A13D2C">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Biblioteca Nalanda">
+<meta property="og:locale" content="es_PE">
+<meta property="og:title" content="政界再編: Fragmentación Política">
+<meta property="og:description" content="En 1993, un solo político escindido rompió 38 años de dominio ininterrumpido. La reforma que siguió prometía un bipartidismo a la británica.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23A13D2C'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%23F2EFE9' font-family='Georgia,serif'%3EN%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Shippori+Mincho:wght@400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -178,56 +186,73 @@
   .src-all{display:inline-block; margin-top:1.4rem; font-family:'IBM Plex Mono',monospace; font-size:.8rem; color:var(--vermillion); text-decoration:none; border-bottom:1px solid var(--vermillion); padding-bottom:1px;}
   .src-all:hover{color:var(--vermillion-deep); border-color:var(--vermillion-deep);}
   /* ---------- HERO: cifras como lista vertical con destino ---------- */
-  .hero .hero-stats{display:block; max-width:560px; margin-top:3rem; border-top:1px solid var(--line);}
-  .hero .hero-stats > div{position:relative; display:grid; grid-template-columns:5.4rem 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid var(--line); transition:background-color .35s cubic-bezier(0.23,1,0.32,1), transform .35s cubic-bezier(0.23,1,0.32,1);}
-  .hero .hero-stats > div:last-child{padding-right:2.4rem;}
-  .hero .hero-stats .num{font-size:1.75rem; line-height:1; width:max-content;}
-  .hero .hero-stats .lbl{margin:0; max-width:none; font-size:.82rem; line-height:1.5;}
-  .hero .hero-stats > div::before{content:""; position:absolute; left:0; top:.9rem; bottom:.9rem; width:2px; background:var(--vermillion); transform-origin:top; transform:scaleY(0); animation:statBar .9s cubic-bezier(0.23,1,0.32,1) both;}
-  .hero .hero-stats > div:nth-child(1)::before{animation-delay:1.5s;}
-  .hero .hero-stats > div:nth-child(2)::before{animation-delay:1.7s;}
-  .hero .hero-stats > div:nth-child(3)::before{animation-delay:1.9s;}
-  @media (hover:hover){.hero .hero-stats > div:hover{background:rgba(161,61,44,.05); transform:translateX(.3rem);}}
-  .hero .hero-stats > div[data-go]{cursor:pointer;}
-  .hero .hero-stats > div[data-go]::after{content:"\2193"; position:absolute; right:1rem; top:50%; transform:translate(-4px,-50%); opacity:0; font-family:'IBM Plex Mono', monospace; font-size:.95rem; color:var(--vermillion); transition:opacity .3s, transform .3s cubic-bezier(0.23,1,0.32,1);}
-  .hero .hero-stats > div[data-go]:hover::after,.hero .hero-stats > div[data-go]:focus-visible::after{opacity:1; transform:translate(0,-50%);}
-  .hero .hero-stats > div[data-go]:focus-visible{outline:2px solid var(--vermillion); outline-offset:2px;}
-  .hero .hero-stats > div[data-go]:active{transform:scale(0.985);}
+  .cifras .hero-stats{display:block; max-width:560px; margin-top:3rem; border-top:1px solid var(--line);}
+  .cifras .hero-stats > div{position:relative; display:grid; grid-template-columns:5.4rem 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid var(--line); transition:background-color .35s cubic-bezier(0.23,1,0.32,1), transform .35s cubic-bezier(0.23,1,0.32,1);}
+  .cifras .hero-stats > div:last-child{padding-right:2.4rem;}
+  .cifras .hero-stats .num{font-size:1.75rem; line-height:1; width:max-content;}
+  .cifras .hero-stats .lbl{margin:0; max-width:none; font-size:.82rem; line-height:1.5;}
+  .cifras .hero-stats > div::before{content:""; position:absolute; left:0; top:.9rem; bottom:.9rem; width:2px; background:var(--vermillion); transform-origin:top; transform:scaleY(0);}
+  @media (hover:hover){.cifras .hero-stats > div:hover{background:rgba(161,61,44,.05); transform:translateX(.3rem);}}
+  .cifras .hero-stats > div[data-go]{cursor:pointer;}
+  .cifras .hero-stats > div[data-go]::after{content:"\2193"; position:absolute; right:1rem; top:50%; transform:translate(-4px,-50%); opacity:0; font-family:'IBM Plex Mono', monospace; font-size:.95rem; color:var(--vermillion); transition:opacity .3s, transform .3s cubic-bezier(0.23,1,0.32,1);}
+  .cifras .hero-stats > div[data-go]:hover::after,.cifras .hero-stats > div[data-go]:focus-visible::after{opacity:1; transform:translate(0,-50%);}
+  .cifras .hero-stats > div[data-go]:focus-visible{outline:2px solid var(--vermillion); outline-offset:2px;}
+  .cifras .hero-stats > div[data-go]:active{transform:scale(0.985);}
   [id^="go-"]{scroll-margin-top:110px;}
   .go-flash{animation:goFlash 2s cubic-bezier(0.23,1,0.32,1) both;}
   @keyframes statBar{to{transform:scaleY(1);}}
   @keyframes goFlash{0%{background-color:rgba(161,61,44,.14); box-shadow:0 0 0 8px rgba(161,61,44,.14);} 100%{background-color:rgba(161,61,44,0); box-shadow:0 0 0 8px rgba(161,61,44,0);}}
   @media (prefers-reduced-motion:reduce){
-    .hero .hero-stats > div::before{animation:none; transform:scaleY(1);}
-    .hero .hero-stats > div{transition:none;}
+    .cifras .hero-stats > div::before{animation:none !important; transform:scaleY(1);}
+    .cifras .hero-stats > div{transition:none;}
     .go-flash{animation:none; outline:2px solid rgb(161,61,44); outline-offset:6px;}
   }
   @media (max-width:560px){
-    .hero .hero-stats > div{grid-template-columns:4.2rem 1fr; column-gap:1.1rem;}
-    .hero .hero-stats .num{font-size:1.4rem;}
+    .cifras .hero-stats > div{grid-template-columns:4.2rem 1fr; column-gap:1.1rem;}
+    .cifras .hero-stats .num{font-size:1.4rem;}
   }
 </style>
 <!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
-<style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(168,134,60,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Shippori Mincho', serif; --v-body:'Zen Kaku Gothic New', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
+<style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(168,134,60,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Shippori Mincho', serif; --v-body:'Zen Kaku Gothic New', sans-serif; --v-mono:'IBM Plex Mono', monospace;}
+.cifras{max-width:none; margin:0; padding:3.5rem 8vw 3rem;}
+.cifras .hero-stats{margin-top:0;}
+.cifras.in .hero-stats > div::before{animation:statBar .9s cubic-bezier(0.23,1,0.32,1) both;}
+.cifras.in .hero-stats > div:nth-child(1)::before{animation-delay:.1s;}
+.cifras.in .hero-stats > div:nth-child(2)::before{animation-delay:.25s;}
+.cifras.in .hero-stats > div:nth-child(3)::before{animation-delay:.4s;}
+.skip-link{position:absolute; left:1rem; top:-4rem; z-index:200; background:#1A1A1A; color:#F2EFE9; padding:.7rem 1.1rem; font:500 .85rem/1 sans-serif; text-decoration:none; transition:top .25s cubic-bezier(0.23,1,0.32,1);}
+.skip-link:focus{top:1rem;}
+/* ---------- AUDITORIA: tipografia y accesibilidad ---------- */
+.num,.acto-date,.v-yr,.v-k,.when,td,th{font-variant-numeric:tabular-nums;}
+h1,h2,h3,.acto-title,.title-cn{text-wrap:balance;}
+p,li,.lbl{text-wrap:pretty;}
+h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflow-wrap:break-word;}
+.acto-figure img{height:auto;}
+</style><!--/vis-head-->
 </head>
 <body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 <a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
 
 <header class="hero">
   <div class="hero-kanji">政界再編</div>
   <div class="hero-content">
-    <span class="eyebrow">Kongzhi · Japón · Política 14</span>
+    <span class="eyebrow">Kongzhi / Japón / Política 14</span>
     <div class="hero-rule"></div>
     <h1 class="title-jp">政界再編</h1>
-    <div class="title-romaji">Seikai saihen — reformas electorales y fragmentación del sistema de partidos, 1993-2012</div>
+    <div class="title-romaji">Seikai saihen: reformas electorales y fragmentación del sistema de partidos, 1993-2012</div>
     <p class="hero-dek">En 1993, un solo político escindido rompió 38 años de dominio ininterrumpido. La reforma que siguió prometía un bipartidismo a la británica. Lo que produjo, dos décadas después, fue algo distinto: un LDP más resiliente que nunca, una oposición permanentemente fragmentada, y una nueva generación de políticos hereditarios heredando distritos como quien hereda un negocio familiar.</p>
-    <div class="hero-stats">
+    
+  </div>
+</header>
+<main id="contenido">
+<section class="cifras" aria-label="Cifras clave">
+<div class="hero-stats">
       <div data-go="go-1" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: Ozawa rompe el LDP, cae el Sistema de 1955"><span class="num">1993</span><span class="lbl">Ozawa rompe el LDP, cae el Sistema de 1955</span></div>
       <div data-go="go-2" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: reforma electoral: distritos mixtos SMD/PR"><span class="num">1994</span><span class="lbl">reforma electoral: distritos mixtos SMD/PR</span></div>
       <div data-go="go-3" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: el DPJ gana 308 de 480 escaños"><span class="num">2009</span><span class="lbl">el DPJ gana 308 de 480 escaños</span></div>
     </div>
-  </div>
-</header>
+</section>
 
 <section id="actos">
   <div class="section-head">
@@ -240,7 +265,7 @@
     <div><span class="acto-num">01</span><span class="acto-label">El mundo antes</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">Un sistema electoral que obliga a competir contra el propio partido</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">1955 – 1993</span>
+      <span class="acto-date">1955-1993</span>
       <p class="acto-teaser">El voto único no transferible en distritos multimedios fuerza al LDP a postular varios candidatos propios por distrito: la semilla de un clientelismo cada vez más caro y corrupto.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="press">
@@ -248,7 +273,7 @@
           <div class="vis-card">
             <div class="v-press">
               <div class="v-press-side v-press-l"><b>Un solo voto</b><em>El ciudadano elige entre varios candidatos del mismo partido</em><svg class="v-arrow" viewBox="0 0 54 24" aria-hidden="true"><path d="M2 12h44M36 3l12 9-12 9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-              <div class="v-press-core">SNTV<small>1955–93</small><svg class="v-crack" viewBox="0 0 96 96" aria-hidden="true"><path d="M48 0l-8 22 12 14-14 20 10 14-6 26" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--v-paper)"/></svg></div>
+              <div class="v-press-core">SNTV<small>1955-93</small><svg class="v-crack" viewBox="0 0 96 96" aria-hidden="true"><path d="M48 0l-8 22 12 14-14 20 10 14-6 26" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--v-paper)"/></svg></div>
               <div class="v-press-side v-press-r"><b>Facciones (habatsu)</b><em>Financian campañas y reparten cargos a puerta cerrada</em><svg class="v-arrow" viewBox="0 0 54 24" aria-hidden="true"><path d="M2 12h44M36 3l12 9-12 9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             </div>
             <div class="v-press-out">Resultado: <b>campañas personalistas</b> y escándalos como Recruit (1988) y Sagawa Kyūbin (1992).</div>
@@ -282,7 +307,7 @@
         <figure class="acto-figure">
           <img src="../../assets/japon/fragmentacion-politica/ozawa-1993.jpg" alt="Ozawa Ichirō en 1993, año en que rompió con el LDP." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Ozawa Ichirō, el arquitecto de la ruptura de 1993 que terminó con 38 años de gobierno del LDP.
-            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+            <span class="credit">Fuente: Wikimedia Commons, dominio público</span>
           </figcaption>
         </figure>
         <p>Tras el fracaso del gabinete del LDP en aprobar reformas políticas que subsanaran la indignación popular por los escándalos de corrupción, un grupo de legisladores reformistas liderado por Ozawa Ichirō y Hata Tsutomu decide escindirse del partido oficialista y fundar el Partido de la Renovación (<span class="gl" tabindex="0">Shinseitō<span class="gl-def" role="note">Partido de la Renovación, fundado en 1993 por Ozawa y Hata tras escindirse del LDP.</span></span>) con 44 partidarios.</p>
@@ -311,10 +336,10 @@
         <figure class="acto-figure">
           <img src="../../assets/japon/fragmentacion-politica/dieta-nacional.jpg" alt="Edificio de la Dieta Nacional de Japón, Tokio." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>La Dieta Nacional, donde el 29 de enero de 1994 se aprobó la reforma electoral que cambió las reglas de la competencia.
-            <span class="credit">Fuente: Wikimedia Commons · dominio público</span>
+            <span class="credit">Fuente: Wikimedia Commons, dominio público</span>
           </figcaption>
         </figure>
-        <p id="go-2">El gabinete de coalición de Hosokawa asume la reforma del sistema político como su principal razón de ser. Tras intensas negociaciones, el 29 de enero de 1994 se aprueba la ley de reforma electoral: reemplaza por completo el sistema SNTV/MMD por uno mixto en la Cámara de Representantes, dividido en 300 escaños de distritos uninominales (SMD, elegidos por mayoría simple) y 200 escaños —luego reducidos a 180— de representación proporcional regional (PR).</p>
+        <p id="go-2">El gabinete de coalición de Hosokawa asume la reforma del sistema político como su principal razón de ser. Tras intensas negociaciones, el 29 de enero de 1994 se aprueba la ley de reforma electoral: reemplaza por completo el sistema SNTV/MMD por uno mixto en la Cámara de Representantes, dividido en 300 escaños de distritos uninominales (SMD, elegidos por mayoría simple) y 200 escaños (luego reducidos a 180) de representación proporcional regional (PR).</p>
         <p>El propósito explícito es forzar la consolidación de un sistema bipartidista que permita la alternancia en el poder, abaratar las campañas electorales y transicionar la competencia de una lucha personalista de prebendas locales a campañas nacionales centradas en las marcas partidarias.</p>
       </div>
     </div>
@@ -324,7 +349,7 @@
     <div><span class="acto-num">04</span><span class="acto-label">La consecuencia inmediata</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">El LDP regresa en 10 meses, y Koizumi aprende a usar las nuevas reglas</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">1994 – 2009</span>
+      <span class="acto-date">1994-2009</span>
       <p class="acto-teaser">El LDP vuelve al poder mediante coaliciones pragmáticas; Koizumi centraliza el mando enviando "candidatos asesinos" contra sus propios disidentes; el DPJ gana en 2009 con 308 de 480 escaños.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="stats">
@@ -338,8 +363,8 @@
           </div>
         </div><!--/vis-->
         <p>El LDP demuestra una asombrosa resiliencia táctica y regresa al poder a los diez meses (1994) mediante una coalición con su histórico archienemigo, el Partido Socialista de Japón, y el Partido Sakigake. Las primeras elecciones bajo el nuevo sistema, en 1996, demuestran que el LDP ya no puede gobernar en solitario: la necesidad de alianzas estables da origen a la coalición con el partido budista <span class="gl" tabindex="0">Komeito<span class="gl-def" role="note">Partido budista que se alió con el LDP desde 1999.</span></span> en 1999.</p>
-        <p>Al eliminar la competencia intrapartidista —solo se permite un candidato por partido y distrito—, el poder de nominación se concentra en la dirigencia nacional. El primer ministro <strong>Jun'ichirō Koizumi</strong> (2001-2006) explota de manera radical este incentivo: ignora los procesos deliberativos internos, centraliza las decisiones en la Oficina del Gabinete y, en 2005, niega la nominación oficial a todos los legisladores que votaron contra la privatización del servicio postal, enviando candidatos "asesinos" a sus propios distritos.</p>
-        <p>El sistema uninominal fuerza, a la vez, la consolidación de la oposición en un bloque unificado: en 2009 el Partido Democrático de Japón (DPJ) logra una victoria aplastante —308 de 480 escaños— y obliga al LDP a la oposición por segunda vez, consumando de manera temporal la alternancia bipartidista.</p>
+        <p>Al eliminar la competencia intrapartidista: solo se permite un candidato por partido y distrito, el poder de nominación se concentra en la dirigencia nacional. El primer ministro <strong>Jun'ichirō Koizumi</strong> (2001-2006) explota de manera radical este incentivo: ignora los procesos deliberativos internos, centraliza las decisiones en la Oficina del Gabinete y, en 2005, niega la nominación oficial a todos los legisladores que votaron contra la privatización del servicio postal, enviando candidatos "asesinos" a sus propios distritos.</p>
+        <p>El sistema uninominal fuerza, a la vez, la consolidación de la oposición en un bloque unificado: en 2009 el Partido Democrático de Japón (DPJ) logra una victoria aplastante (308 de 480 escaños) y obliga al LDP a la oposición por segunda vez, consumando de manera temporal la alternancia bipartidista.</p>
       </div>
     </div>
   </div>
@@ -363,7 +388,7 @@
             </div>
           </div>
         </div><!--/vis-->
-        <p>El accidentado paso del DPJ por el gobierno (2009-2012) —marcado por luchas internas y el deficiente manejo del terremoto y desastre nuclear de Fukushima de 2011— desilusiona profundamente a los votantes. Su derrota en 2012 ante el LDP de Shinzō Abe pone fin de manera definitiva al ideal bipartidista: la oposición queda permanentemente fragmentada en partidos pequeños, facilitando que el LDP retenga el gobierno mediante coaliciones adaptativas.</p>
+        <p>El accidentado paso del DPJ por el gobierno (2009-2012) (marcado por luchas internas y el deficiente manejo del terremoto y desastre nuclear de Fukushima de 2011) desilusiona profundamente a los votantes. Su derrota en 2012 ante el LDP de Shinzō Abe pone fin de manera definitiva al ideal bipartidista: la oposición queda permanentemente fragmentada en partidos pequeños, facilitando que el LDP retenga el gobierno mediante coaliciones adaptativas.</p>
         <p>Lejos de mermar como esperaba la reforma de 1994, los <span class="gl" tabindex="0">políticos hereditarios<span class="gl-def" role="note">Candidatos que heredan la maquinaria electoral de un familiar.</span></span> aumentan de manera significativa en los distritos uninominales: ante la alta competencia por un escaño único, los partidos prefieren postular a familiares directos capaces de heredar intacta la maquinaria electoral, el nombre y los recursos de sus antecesores.</p>
         <p class="quote">Los vacíos de la ley de 1994 permitieron que las facciones siguieran recaudando de forma informal mediante venta de boletos para eventos, hasta estallar en el escándalo de fondos ilícitos de 2023-2024: la presión forzó al primer ministro Fumio Kishida a disolver casi todas las facciones históricas del LDP, dejando solo una en pie.</p>
       </div>
@@ -394,7 +419,7 @@
     <div><h3>Trayectorias divergentes</h3><p>En Corea, los partidos son personalistas y efímeros, creándose y disolviéndose en torno a figuras presidenciales de turno. En Japón, la reforma de 1994 consolidó la resiliencia del LDP y la burocracia de Kasumigaseki, permitiendo que las instituciones sobrevivieran a dos alternancias (1993 y 2009) sin fragmentarse de forma permanente.</p></div>
   </div>
   <div class="connect-note">
-    Este capítulo se conecta con <a href="../hegemonia-ldp/index.html">la Hegemonía del LDP</a>: la reforma de 1994 fue, literalmente, el intento de desmontar el Triángulo de Hierro que ese capítulo describe — y su éxito solo fue parcial.
+    Este capítulo se conecta con <a href="../hegemonia-ldp/index.html">la Hegemonía del LDP</a>: la reforma de 1994 fue, literalmente, el intento de desmontar el Triángulo de Hierro que ese capítulo describe, y su éxito solo fue parcial.
   </div>
 </section>
 
@@ -402,10 +427,10 @@
   <div class="sources">
     <span class="eyebrow">Fuentes</span>
     <p class="src-intro">Fuentes afines a este cuaderno, asignadas por tema: de lo más sólido a lo más contextual. Curado por el equipo de Club Kongzhi.</p>
-    <ol class="src-list"><li><span class="st">A Case Study of the &quot;Iron Triangle&quot; in the Postal Industry and Postal Reforms in Japan</span><span class="sm">Lund University · <b>Académico</b></span></li><li><span class="st">Changes of &quot;Zoku-giin&quot; in the LDP: The Impact of Prime Minister Koizumi&#x27;s Leadership</span><span class="sm">Canadian Political Science Association · <b>Académico</b></span></li><li><span class="st">The Pendulum Swings: Experiences from the LDP on Democratizing Party Leadership Selection</span><span class="sm">Japanese Journal of Political Science, Cambridge University Press · <b>Académico</b></span></li><li><span class="st">The Rise of Political Opposition in Japan</span><span class="sm">Council on Foreign Relations · <b>Institucional</b></span></li><li><span class="st">Factional Dynamics in Japan&#x27;s LDP Since Political Reform</span><span class="sm"><b>Académico</b></span></li><li><span class="st">The changing nature of the &quot;Iron Triangle&quot; phenomenon</span><span class="sm">Lund University Publications · <b>Académico</b></span></li></ol>
+    <ol class="src-list"><li><span class="st">A Case Study of the &quot;Iron Triangle&quot; in the Postal Industry and Postal Reforms in Japan</span><span class="sm">Lund University / <b>Académico</b></span></li><li><span class="st">Changes of &quot;Zoku-giin&quot; in the LDP: The Impact of Prime Minister Koizumi&#x27;s Leadership</span><span class="sm">Canadian Political Science Association / <b>Académico</b></span></li><li><span class="st">The Pendulum Swings: Experiences from the LDP on Democratizing Party Leadership Selection</span><span class="sm">Japanese Journal of Political Science, Cambridge University Press / <b>Académico</b></span></li><li><span class="st">The Rise of Political Opposition in Japan</span><span class="sm">Council on Foreign Relations / <b>Institucional</b></span></li><li><span class="st">Factional Dynamics in Japan&#x27;s LDP Since Political Reform</span><span class="sm"><b>Académico</b></span></li><li><span class="st">The changing nature of the &quot;Iron Triangle&quot; phenomenon</span><span class="sm">Lund University Publications / <b>Académico</b></span></li></ol>
     <a class="src-all" href="../fuentes/index.html?c=fragmentacion-politica">Ver las 12 fuentes de este cuaderno en el baúl →</a>
   </div>
-  <div class="nav-adjacent">
+  <div class="nav-adjacent" role="navigation" aria-label="Cuadernos relacionados">
     <a href="../deflacion-decadas-perdidas/index.html">
       <span class="dir">‹ Anterior</span>
       <span class="ttl"><span class="ttl-arrow">←</span>1991: Deflación y Décadas Perdidas</span>
@@ -417,7 +442,8 @@
   </div>
 </section>
 
-<footer>Club Kongzhi UNMSM · <a href="../../index.html#departamento-de-investigacion" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Departamento de Investigación</a> · Biblioteca Nalanda</footer>
+</main>
+<footer>Club Kongzhi UNMSM / <a href="../../index.html#departamento-de-investigacion" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Departamento de Investigación</a> / Biblioteca Nalanda</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -506,7 +532,7 @@
 
     gsap.to('.hero-kanji', {
       yPercent: 12, ease: 'none',
-      scrollTrigger: { trigger: 'header.hero', start: 'top top', end: 'bottom top', scrub: 1.2 }
+      scrollTrigger: { trigger: 'header.hero', start: 'top top', end: 'bottom top', scrub: 0.6 }
     });
 
     document.querySelectorAll('.flat-grid').forEach(function(grid){
@@ -526,5 +552,6 @@
 
 <!--vis-js--><script src="../../assets/vis.js"></script><!--/vis-js-->
 <script src="../../assets/acto-anchor.js"></script>
+<script>(function(){var s=document.querySelector('.cifras');if(!s)return;if(typeof reduceMotion!=='undefined'&&reduceMotion||!('IntersectionObserver' in window)){s.classList.add('in');return;}var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){s.classList.add('in');io.disconnect();}},{threshold:.35});io.observe(s);})();</script>
 </body>
 </html>

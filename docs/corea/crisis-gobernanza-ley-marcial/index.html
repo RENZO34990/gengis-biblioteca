@@ -3,7 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>계엄과 거버넌스 위기 — Polarización, ley marcial y presidencialismo imperial</title>
+<title>계엄과 거버넌스 위기: Polarización, ley marcial y presidencialismo imperial</title>
+<meta name="description" content="Una noche de diciembre de 2024 un presidente declaró la ley marcial.">
+<meta name="theme-color" content="#B5623B">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Biblioteca Nalanda">
+<meta property="og:locale" content="es_PE">
+<meta property="og:title" content="계엄과 거버넌스 위기: Polarización, ley marcial y presidencialismo imperial">
+<meta property="og:description" content="Una noche de diciembre de 2024 un presidente declaró la ley marcial.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23B5623B'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%23F2EFE9' font-family='Georgia,serif'%3EN%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -178,56 +186,73 @@
   .src-all{display:inline-block; margin-top:1.4rem; font-family:'IBM Plex Mono',monospace; font-size:.8rem; color:var(--terracota-deep); text-decoration:none; border-bottom:1px solid var(--terracota-deep); padding-bottom:1px;}
   .src-all:hover{color:var(--terracota); border-color:var(--terracota);}
   /* ---------- HERO: cifras como lista vertical con destino ---------- */
-  .hero .hero-stats{display:block; max-width:560px; margin-top:3rem; border-top:1px solid rgba(245,243,238,.2);}
-  .hero .hero-stats > div{position:relative; display:grid; grid-template-columns:7.8rem 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid rgba(245,243,238,.2); transition:background-color .35s cubic-bezier(0.23,1,0.32,1), transform .35s cubic-bezier(0.23,1,0.32,1);}
-  .hero .hero-stats > div:last-child{padding-right:2.4rem;}
-  .hero .hero-stats .num{font-size:1.5rem; line-height:1; width:max-content;}
-  .hero .hero-stats .lbl{margin:0; max-width:none; font-size:.82rem; line-height:1.5;}
-  .hero .hero-stats > div::before{content:""; position:absolute; left:0; top:.9rem; bottom:.9rem; width:2px; background:var(--terracota-light); transform-origin:top; transform:scaleY(0); animation:statBar .9s cubic-bezier(0.23,1,0.32,1) both;}
-  .hero .hero-stats > div:nth-child(1)::before{animation-delay:1.5s;}
-  .hero .hero-stats > div:nth-child(2)::before{animation-delay:1.7s;}
-  .hero .hero-stats > div:nth-child(3)::before{animation-delay:1.9s;}
-  @media (hover:hover){.hero .hero-stats > div:hover{background:rgba(245,243,238,.07); transform:translateX(.3rem);}}
-  .hero .hero-stats > div[data-go]{cursor:pointer;}
-  .hero .hero-stats > div[data-go]::after{content:"\2193"; position:absolute; right:1rem; top:50%; transform:translate(-4px,-50%); opacity:0; font-family:'IBM Plex Mono', monospace; font-size:.95rem; color:var(--terracota-light); transition:opacity .3s, transform .3s cubic-bezier(0.23,1,0.32,1);}
-  .hero .hero-stats > div[data-go]:hover::after,.hero .hero-stats > div[data-go]:focus-visible::after{opacity:1; transform:translate(0,-50%);}
-  .hero .hero-stats > div[data-go]:focus-visible{outline:2px solid var(--terracota-light); outline-offset:2px;}
-  .hero .hero-stats > div[data-go]:active{transform:scale(0.985);}
+  .cifras .hero-stats{display:block; max-width:560px; margin-top:3rem; border-top:1px solid rgba(245,243,238,.2);}
+  .cifras .hero-stats > div{position:relative; display:grid; grid-template-columns:7.8rem 1fr; align-items:center; column-gap:1.6rem; margin:0; padding:1.05rem 2.4rem 1.05rem 1.1rem; border-right:none; border-bottom:1px solid rgba(245,243,238,.2); transition:background-color .35s cubic-bezier(0.23,1,0.32,1), transform .35s cubic-bezier(0.23,1,0.32,1);}
+  .cifras .hero-stats > div:last-child{padding-right:2.4rem;}
+  .cifras .hero-stats .num{font-size:1.5rem; line-height:1; width:max-content;}
+  .cifras .hero-stats .lbl{margin:0; max-width:none; font-size:.82rem; line-height:1.5;}
+  .cifras .hero-stats > div::before{content:""; position:absolute; left:0; top:.9rem; bottom:.9rem; width:2px; background:var(--terracota-light); transform-origin:top; transform:scaleY(0);}
+  @media (hover:hover){.cifras .hero-stats > div:hover{background:rgba(245,243,238,.07); transform:translateX(.3rem);}}
+  .cifras .hero-stats > div[data-go]{cursor:pointer;}
+  .cifras .hero-stats > div[data-go]::after{content:"\2193"; position:absolute; right:1rem; top:50%; transform:translate(-4px,-50%); opacity:0; font-family:'IBM Plex Mono', monospace; font-size:.95rem; color:var(--terracota-light); transition:opacity .3s, transform .3s cubic-bezier(0.23,1,0.32,1);}
+  .cifras .hero-stats > div[data-go]:hover::after,.cifras .hero-stats > div[data-go]:focus-visible::after{opacity:1; transform:translate(0,-50%);}
+  .cifras .hero-stats > div[data-go]:focus-visible{outline:2px solid var(--terracota-light); outline-offset:2px;}
+  .cifras .hero-stats > div[data-go]:active{transform:scale(0.985);}
   [id^="go-"]{scroll-margin-top:110px;}
   .go-flash{animation:goFlash 2s cubic-bezier(0.23,1,0.32,1) both;}
   @keyframes statBar{to{transform:scaleY(1);}}
   @keyframes goFlash{0%{background-color:rgba(181,98,59,.14); box-shadow:0 0 0 8px rgba(181,98,59,.14);} 100%{background-color:rgba(181,98,59,0); box-shadow:0 0 0 8px rgba(181,98,59,0);}}
   @media (prefers-reduced-motion:reduce){
-    .hero .hero-stats > div::before{animation:none; transform:scaleY(1);}
-    .hero .hero-stats > div{transition:none;}
+    .cifras .hero-stats > div::before{animation:none !important; transform:scaleY(1);}
+    .cifras .hero-stats > div{transition:none;}
     .go-flash{animation:none; outline:2px solid rgb(181,98,59); outline-offset:6px;}
   }
   @media (max-width:560px){
-    .hero .hero-stats > div{grid-template-columns:1fr; row-gap:.35rem;}
-    .hero .hero-stats .num{font-size:1.4rem;}
+    .cifras .hero-stats > div{grid-template-columns:1fr; row-gap:.35rem;}
+    .cifras .hero-stats .num{font-size:1.4rem;}
   }
 </style>
 <!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
-<style>:root{--v-accent:var(--terracota); --v-accent-deep:var(--terracota-deep); --v-accent2:var(--celadon-deep); --v-accent-soft:rgba(79,111,97,.2); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Gothic A1', sans-serif; --v-body:'Gothic A1', sans-serif; --v-mono:'IBM Plex Mono', monospace;}</style><!--/vis-head-->
+<style>:root{--v-accent:var(--terracota); --v-accent-deep:var(--terracota-deep); --v-accent2:var(--celadon-deep); --v-accent-soft:rgba(79,111,97,.2); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Gothic A1', sans-serif; --v-body:'Gothic A1', sans-serif; --v-mono:'IBM Plex Mono', monospace;}
+.cifras{max-width:none; margin:0; background:#3E5A4E; color:var(--paper); padding:3rem 8vw 4.5rem;}
+.cifras .hero-stats{margin-top:0;}
+.cifras.in .hero-stats > div::before{animation:statBar .9s cubic-bezier(0.23,1,0.32,1) both;}
+.cifras.in .hero-stats > div:nth-child(1)::before{animation-delay:.1s;}
+.cifras.in .hero-stats > div:nth-child(2)::before{animation-delay:.25s;}
+.cifras.in .hero-stats > div:nth-child(3)::before{animation-delay:.4s;}
+.skip-link{position:absolute; left:1rem; top:-4rem; z-index:200; background:#1A1A1A; color:#F2EFE9; padding:.7rem 1.1rem; font:500 .85rem/1 sans-serif; text-decoration:none; transition:top .25s cubic-bezier(0.23,1,0.32,1);}
+.skip-link:focus{top:1rem;}
+/* ---------- AUDITORIA: tipografia y accesibilidad ---------- */
+.num,.acto-date,.v-yr,.v-k,.when,td,th{font-variant-numeric:tabular-nums;}
+h1,h2,h3,.acto-title,.title-cn{text-wrap:balance;}
+p,li,.lbl{text-wrap:pretty;}
+h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflow-wrap:break-word;}
+.acto-figure img{height:auto;}
+</style><!--/vis-head-->
 </head>
 <body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 <a class="top-return" href="../../index.html"><span class="tr-arrow">←</span> Nalanda</a>
 
 <header class="hero">
   <div class="hero-kanji">戒嚴</div>
   <div class="hero-content">
-    <span class="eyebrow">Kongzhi · Corea · Política 14</span>
+    <span class="eyebrow">Kongzhi / Corea / Política 14</span>
     <div class="hero-rule"></div>
     <h1 class="title-kr">계엄과 거버넌스 위기</h1>
-    <div class="title-romaja">Gyeeom-gwa Georeonenseu Wigi — la polarización, la ley marcial de 2024 y la reforma del presidencialismo imperial, 2010s–2026</div>
+    <div class="title-romaja">Gyeeom-gwa Georeonenseu Wigi: la polarización, la ley marcial de 2024 y la reforma del presidencialismo imperial, 2010s-2026</div>
     <p class="hero-dek">Una noche de diciembre de 2024 un presidente declaró la ley marcial. Seis horas después tuvo que levantarla, porque 190 legisladores, oficialistas incluidos, habían cruzado cercas y comandos militares para votar en su contra. La democracia que nació en junio de 1987 pasó su prueba más dura, y dejó abierta la reforma de la Constitución.</p>
-    <div class="hero-stats">
-      <div data-go="go-1" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: la declaración de la ley marcial"><span class="num">3 dic 2024</span><span class="lbl">la declaración de la ley marcial</span></div>
-      <div data-go="go-2" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: el voto que la anuló, seis horas después"><span class="num">190–0</span><span class="lbl">el voto que la anuló, seis horas después</span></div>
-      <div data-go="go-3" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: el Tribunal Constitucional confirma la destitución"><span class="num">4 abr 2025</span><span class="lbl">el Tribunal Constitucional confirma la destitución</span></div>
-    </div>
+    
   </div>
 </header>
+<main id="contenido">
+<section class="cifras" aria-label="Cifras clave">
+<div class="hero-stats">
+      <div data-go="go-1" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: la declaración de la ley marcial"><span class="num">3 dic 2024</span><span class="lbl">la declaración de la ley marcial</span></div>
+      <div data-go="go-2" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: el voto que la anuló, seis horas después"><span class="num">190-0</span><span class="lbl">el voto que la anuló, seis horas después</span></div>
+      <div data-go="go-3" role="link" tabindex="0" aria-label="Ir al pasaje donde se explica: el Tribunal Constitucional confirma la destitución"><span class="num">4 abr 2025</span><span class="lbl">el Tribunal Constitucional confirma la destitución</span></div>
+    </div>
+</section>
 
 <section id="actos">
   <div class="section-head">
@@ -240,7 +265,7 @@
     <div><span class="acto-num">01</span><span class="acto-label">El mundo antes</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">Una democracia que dejó de reconocerse</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">2010s – 2022</span>
+      <span class="acto-date">2010s - 2022</span>
       <p class="acto-teaser">Un presidente muy fuerte, fiscales usados para la revancha y más de 90% de la población viendo conflicto agudo.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="stats">
@@ -265,7 +290,7 @@
     <div><span class="acto-num">02</span><span class="acto-label">La grieta</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">Vetos, mociones de censura y un presupuesto paralizado</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">2022 – 2024</span>
+      <span class="acto-date">2022-2024</span>
       <p class="acto-teaser">Un presidente sin mayoría contra un Parlamento opositor, y 29 mociones contra 33 vetos.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="versus">
@@ -305,9 +330,9 @@
           </div>
         </div><!--/vis-->
         <figure class="acto-figure">
-          <img src="../../assets/corea/crisis-gobernanza-ley-marcial/asamblea-nacional-2024.jpg" alt="Policías reunidos de noche junto a una puerta con celosía tradicional, durante la crisis de la ley marcial de diciembre de 2024." loading="lazy" onerror="this.closest('figure').hidden=true">
+          <img width="1400" height="933" src="../../assets/corea/crisis-gobernanza-ley-marcial/asamblea-nacional-2024.jpg" alt="Policías reunidos de noche junto a una puerta con celosía tradicional, durante la crisis de la ley marcial de diciembre de 2024." loading="lazy" onerror="this.closest('figure').hidden=true">
           <figcaption>Seúl, diciembre de 2024: policías congregados en una puerta de la Asamblea Nacional tras la declaración de la ley marcial.
-            <span class="credit">Fuente: por verificar · autoría y licencia</span>
+            <span class="credit">Fuente: por verificar, autoría y licencia</span>
           </figcaption>
         </figure>
         <p id="go-1">El momento de quiebre ocurrió en la noche del 3 de diciembre de 2024, cuando el presidente Yoon declaró la ley marcial en lo que fue un autogolpe de Estado.</p>
@@ -315,7 +340,7 @@
           <div class="loss-item"><h3><span class="when">3 dic 2024</span>El decreto</h3><p>Yoon acusó en televisión a la mayoría parlamentaria de "dictadura legislativa" y de "fuerzas antiestatales aliadas con el comunismo norcoreano", y ordenó suspender la Asamblea, prohibir partidos, controlar los medios y arrestar a líderes opositores y de su propio partido, entre ellos Lee Jae-myung y Han Dong-hoon.</p></div>
           <div class="loss-item"><h3><span class="when">4 dic</span>La anulación</h3><p id="go-2">Legisladores opositores y oficialistas entraron al recinto, escalando cercas y evadiendo comandos militares, y votaron 190 a 0 para anular la ley marcial. Yoon levantó el decreto seis horas después de emitirlo.</p></div>
           <div class="loss-item"><h3><span class="when">14 dic</span>La destitución</h3><p>La Asamblea aprobó el impeachment.</p></div>
-          <div class="loss-item"><h3><span class="when">Ene – abr 2025</span>Arresto y fallo</h3><p>Yoon fue arrestado e imputado por insurrección. El 4 de abril el Tribunal Constitucional ratificó por unanimidad su destitución definitiva.</p></div>
+          <div class="loss-item"><h3><span class="when">Ene - abr 2025</span>Arresto y fallo</h3><p>Yoon fue arrestado e imputado por insurrección. El 4 de abril el Tribunal Constitucional ratificó por unanimidad su destitución definitiva.</p></div>
           <div class="loss-item"><h3><span class="when">Feb 2026</span>La condena</h3><p>Yoon fue condenado a cadena perpetua por liderar la rebelión militar.</p></div>
         </div>
         <p class="quote">El autogolpe duró seis horas porque el Parlamento no se dejó disolver.</p>
@@ -327,7 +352,7 @@
     <div><span class="acto-num">04</span><span class="acto-label">La consecuencia inmediata</span></div>
     <div>
       <div class="acto-head"><span class="acto-title">Una elección anticipada y una enmienda contra la ley marcial</span><span class="acto-toggle">＋</span></div>
-      <span class="acto-date">2025 – 2026</span>
+      <span class="acto-date">2025-2026</span>
       <p class="acto-teaser">Lee Jae-myung gana en junio, se condena al gabinete y se reforma la ley marcial.</p>
       <div class="acto-body">
         <!--vis--><div class="vis" data-vis="flow">
@@ -413,16 +438,17 @@
   <div class="sources">
     <span class="eyebrow">Fuentes</span>
     <p class="src-intro">Fuentes afines a este cuaderno, asignadas por tema: de lo más sólido a lo más contextual. Curado por el equipo de Club Kongzhi.</p>
-    <ol class="src-list"><li><span class="st">Essentialist Democracy and Political Polarization: Korea&#x27;s Experience from a Comparative Perspective</span><span class="sm"><b>Académico</b></span></li><li><span class="st">Exploring Worldwide Democratic Innovations: A case study of South Korea</span><span class="sm">European Partnership for Democracy · <b>Institucional</b></span></li><li><span class="st">How Polarization Undermines Democracy in South Korea</span><span class="sm">Council on Foreign Relations · <b>Institucional</b></span></li><li><span class="st">Reforming South Korea&#x27;s &quot;Imperial Presidency&quot;</span><span class="sm">Institute for Security &amp; Development Policy · <b>Institucional</b></span></li><li><span class="st">South Korea Reins In Its Powerful Prosecutors</span><span class="sm">U.S.-Asia Law Institute · <b>Institucional</b></span></li><li><span class="st">The 2022 South Korean Presidential Election and the Gender Divide among the Youth</span><span class="sm">Pacific Affairs, UBC · <b>Académico</b></span></li></ol>
+    <ol class="src-list"><li><span class="st">Essentialist Democracy and Political Polarization: Korea&#x27;s Experience from a Comparative Perspective</span><span class="sm"><b>Académico</b></span></li><li><span class="st">Exploring Worldwide Democratic Innovations: A case study of South Korea</span><span class="sm">European Partnership for Democracy / <b>Institucional</b></span></li><li><span class="st">How Polarization Undermines Democracy in South Korea</span><span class="sm">Council on Foreign Relations / <b>Institucional</b></span></li><li><span class="st">Reforming South Korea&#x27;s &quot;Imperial Presidency&quot;</span><span class="sm">Institute for Security &amp; Development Policy / <b>Institucional</b></span></li><li><span class="st">South Korea Reins In Its Powerful Prosecutors</span><span class="sm">U.S.-Asia Law Institute / <b>Institucional</b></span></li><li><span class="st">The 2022 South Korean Presidential Election and the Gender Divide among the Youth</span><span class="sm">Pacific Affairs, UBC / <b>Académico</b></span></li></ol>
     <a class="src-all" href="../fuentes/index.html?c=crisis-gobernanza-ley-marcial">Ver las 20 fuentes de este cuaderno en el baúl →</a>
   </div>
-  <div class="nav-adjacent">
+  <div class="nav-adjacent" role="navigation" aria-label="Cuadernos relacionados">
     <a href="../semiconductores-ia/index.html"><span class="dir">← Cuaderno anterior</span><span class="ttl">반도체와 AI Semiconductores e IA</span></a>
     <a href="../demografia-sostenibilidad-fiscal/index.html"><span class="dir">Siguiente cuaderno</span><span class="ttl">인구와 재정 Demografía y sostenibilidad fiscal →</span></a>
   </div>
 </section>
 
-<footer>Club Kongzhi UNMSM · <a href="../../index.html#departamento-de-investigacion" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Departamento de Investigación</a> · Biblioteca Nalanda</footer>
+</main>
+<footer>Club Kongzhi UNMSM / <a href="../../index.html#departamento-de-investigacion" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Departamento de Investigación</a> / Biblioteca Nalanda</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -511,7 +537,7 @@
 
     gsap.to('.hero-kanji', {
       yPercent: 12, ease: 'none',
-      scrollTrigger: { trigger: 'header.hero', start: 'top top', end: 'bottom top', scrub: 1.2 }
+      scrollTrigger: { trigger: 'header.hero', start: 'top top', end: 'bottom top', scrub: 0.6 }
     });
 
     gsap.from('.divider-motif svg', {
@@ -536,5 +562,6 @@
 
 <!--vis-js--><script src="../../assets/vis.js"></script><!--/vis-js-->
 <script src="../../assets/acto-anchor.js"></script>
+<script>(function(){var s=document.querySelector('.cifras');if(!s)return;if(typeof reduceMotion!=='undefined'&&reduceMotion||!('IntersectionObserver' in window)){s.classList.add('in');return;}var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){s.classList.add('in');io.disconnect();}},{threshold:.35});io.observe(s);})();</script>
 </body>
 </html>

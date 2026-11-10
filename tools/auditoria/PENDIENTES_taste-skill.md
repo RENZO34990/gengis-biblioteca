@@ -1,5 +1,9 @@
 # Pendientes de diseño: lo obtenido de taste-skill (nov 2026)
 
+## ESTADO (9 nov 2026)
+Aplicado con `tools/auditoria/aplicar_pendientes.py` (idempotente): sección 2 completa salvo Lighthouse; guion largo, semirraya y punto medio reemplazados; lista de cifras sacada del hero a su propia sección (`.cifras`). Siguen pendientes los puntos de la sección 3 que no se decidieron: modo oscuro, numeración de eyebrows, cuadrícula de 3 columnas, fuentes autoalojadas, og:image.
+
+
 Fuente: fork RENZO34990/taste-skill (design-taste-frontend, high-end-visual-design, redesign-existing-projects). Auditoría estática de 4 páginas y búsquedas en las 52 páginas. Nada de esto está aplicado todavía. Los Design DNA de China, Japón y Corea siguen cerrados.
 
 ## 1. Ya cumplido (no hacer nada)
