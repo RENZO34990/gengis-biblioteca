@@ -1,10 +1,8 @@
 # Pendientes de diseño: lo obtenido de taste-skill (nov 2026)
 
-## ESTADO (9 nov 2026)
-Aplicado con `tools/auditoria/aplicar_pendientes.py` (idempotente): sección 2 completa salvo Lighthouse; guion largo, semirraya y punto medio reemplazados; lista de cifras sacada del hero a su propia sección (`.cifras`). Siguen pendientes los puntos de la sección 3 que no se decidieron: modo oscuro, numeración de eyebrows, cuadrícula de 3 columnas, fuentes autoalojadas, og:image.
-
-
-Fuente: fork RENZO34990/taste-skill (design-taste-frontend, high-end-visual-design, redesign-existing-projects). Auditoría estática de 4 páginas y búsquedas en las 52 páginas. Nada de esto está aplicado todavía. Los Design DNA de China, Japón y Corea siguen cerrados.
+## ESTADO (10 nov 2026)
+Aplicado: toda la sección 2; guion largo, semirraya y punto medio; cifras en su propia sección; `.flat-grid` como filas; eyebrows recortados; fuentes autoalojadas (`tools/auditoria/autoalojar_fuentes.py`, 6,3 MB en `docs/assets/fonts`); og:image por página (`tools/auditoria/generar_og.py`, 52 imágenes en `docs/assets/og`).
+Pendiente: modo oscuro (Renzo lo dejó para el final). Por confirmar: la URL real de GitHub Pages que usa `og:image` (se asumió https://renzo34990.github.io/gengis-biblioteca/). Lighthouse sin correr (el entorno no tiene red).
 
 ## 1. Ya cumplido (no hacer nada)
 - Sin `window.addEventListener('scroll')` en ninguna página.
