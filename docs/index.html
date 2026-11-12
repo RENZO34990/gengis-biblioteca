@@ -121,6 +121,62 @@
     font-size:clamp(1rem,1.5vw,1.15rem); font-weight:300; line-height:1.92;
   }
 
+
+  /* ---------- PASADO: tiempo, tinta, polvo, memoria ---------- */
+  .dust{position:fixed; inset:0; width:100%; height:100%; z-index:1; pointer-events:none;}
+  .age{position:fixed; inset:0; z-index:1; pointer-events:none;
+    background:
+      radial-gradient(circle at 9% 18%, rgba(140,96,40,.07) 0 5px, transparent 46px),
+      radial-gradient(circle at 87% 34%, rgba(140,96,40,.06) 0 4px, transparent 38px),
+      radial-gradient(circle at 23% 79%, rgba(140,96,40,.06) 0 6px, transparent 52px),
+      radial-gradient(circle at 74% 88%, rgba(140,96,40,.07) 0 4px, transparent 34px),
+      radial-gradient(circle at 51% 7%, rgba(140,96,40,.05) 0 3px, transparent 30px);
+    box-shadow:inset 0 0 12vw rgba(120,84,34,.17), inset 0 0 2px 1px rgba(120,84,34,.12);}
+  .beam{position:fixed; top:-30vh; right:-18vw; width:70vw; height:170vh; z-index:0; pointer-events:none;
+    background:linear-gradient(105deg, transparent 34%, rgba(214,176,92,.13) 48%, rgba(214,176,92,.04) 56%, transparent 66%);
+    transform-origin:100% 0; animation:beam 16s ease-in-out infinite alternate;}
+  @keyframes beam{from{transform:rotate(-3deg); opacity:.7}to{transform:rotate(4deg); opacity:1}}
+  .ink-wash.w1{animation:wash 22s ease-in-out infinite alternate;}
+  .ink-wash.w2{animation:wash 28s ease-in-out -9s infinite alternate-reverse;}
+  @keyframes wash{from{transform:translate(0,0) scale(1)}to{transform:translate(-4vw,3vh) scale(1.18)}}
+
+  header h1{position:relative;}
+  header h1::after{content:attr(data-t); position:absolute; inset:0; padding-left:.14em; color:transparent;
+    -webkit-text-stroke:1px rgba(168,134,60,.55); transform:translate(.05em,.035em); opacity:0; pointer-events:none;
+    animation:echo 11s ease-in-out 3.2s infinite;}
+  @keyframes echo{0%,100%{opacity:0; transform:translate(.02em,.015em)}45%,60%{opacity:.85; transform:translate(.07em,.05em)}}
+
+  .memory{position:absolute; top:0; bottom:0; left:50%; width:100vw; margin-left:-50vw; overflow:hidden; pointer-events:none; z-index:-1;}
+  .memory svg{position:absolute; top:-6%; height:118%; width:auto; fill:var(--ink); opacity:0; animation:recuerdo 27s ease-in-out infinite;}
+  .memory .m1{right:2vw}
+  .memory .m2{left:3vw; animation-delay:9s}
+  .memory .m3{right:14vw; animation-delay:18s}
+  @keyframes recuerdo{0%{opacity:0; transform:translateY(14px) scale(1)}10%,28%{opacity:.055}38%,100%{opacity:0; transform:translateY(-10px) scale(1.04)}}
+
+  .seal{display:block; width:74px; height:74px; margin:2.6rem auto 0; transform:rotate(-5deg); mix-blend-mode:multiply; filter:drop-shadow(0 0 1.5px rgba(158,43,37,.55));}
+
+  .eras{position:relative; z-index:2; overflow:hidden; margin:0 0 1.2rem; padding:.95rem 0; border-top:1px solid rgba(168,134,60,.5); border-bottom:1px solid rgba(168,134,60,.5);
+    box-shadow:0 3px 0 -2px rgba(168,134,60,.28) inset, 0 -3px 0 -2px rgba(168,134,60,.28) inset;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent); mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);}
+  .eras .trk{display:flex; width:max-content; animation:eras 150s linear infinite;}
+  .eras span{display:inline-flex; align-items:center; white-space:nowrap; font-family:'Cormorant Garamond','Crimson Pro',serif; font-style:italic; font-weight:500; font-size:1.28rem; letter-spacing:.2em; text-transform:uppercase; color:#8A6B24; padding-right:2.4rem;}
+  .eras span::after{content:""; width:5px; height:5px; margin-left:2.4rem; background:var(--china-imperial); transform:rotate(45deg); opacity:.75;}
+  .eras span.c{font-family:'IBM Plex Mono',monospace; font-style:normal; font-size:.72rem; letter-spacing:.18em; color:var(--china-imperial);}
+  @keyframes eras{to{transform:translateX(-50%)}}
+
+  .thread{position:fixed; left:clamp(10px,2.2vw,32px); top:14vh; bottom:14vh; width:1px; background:rgba(168,134,60,.3); z-index:3; pointer-events:none;}
+  .thread i{display:block; width:100%; height:100%; background:var(--china-imperial); transform-origin:top; transform:scaleY(0);}
+  .thread::after{content:""; position:absolute; left:-2px; width:5px; height:5px; border-radius:50%; background:var(--china-imperial); top:calc(var(--p,0) * 100%); transform:translateY(-50%); opacity:.9;}
+  @media(max-width:860px){.thread{display:none}}
+
+  html.pasado .region-head::after{transform:scaleX(0); transform-origin:left; transition:transform 1.8s var(--ease-out);}
+  html.pasado .region-head.drawn::after{transform:none;}
+  @media (prefers-reduced-motion:reduce){
+    .beam,.ink-wash.w1,.ink-wash.w2,header h1::after,.eras .trk{animation:none !important;}
+    header h1::after{display:none}
+    .memory .m1{opacity:.06}
+  }
+
   /* ---------- MAIN ---------- */
   main{position:relative; z-index:2; max-width:1180px; margin:0 auto; padding:2rem 8vw 6rem;}
 
@@ -345,6 +401,10 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
 <div class="paper-grain" style="filter:url(#grainFilter);"></div>
 <div class="ink-wash w1"></div>
 <div class="ink-wash w2"></div>
+<div class="beam" aria-hidden="true"></div>
+<canvas class="dust" id="dust" aria-hidden="true"></canvas>
+<div class="age" aria-hidden="true"></div>
+<div class="thread" id="thread" aria-hidden="true"><i></i></div>
 
 <nav class="spine-nav" id="spineNav" aria-label="Nalanda">
   <span class="spine-word">Nalanda</span>
@@ -352,13 +412,17 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
 </nav>
 
 <header>
+  <div class="memory" aria-hidden="true"><svg class="m1" viewBox="0 0 1000 1000" aria-hidden="true"><path d="M304 934Q304 937 294 944Q284 951 268 956Q252 961 234 961H221V484L309 523H681L724 475L817 546Q812 552 801 558Q790 563 774 566V934Q774 937 762 943Q751 949 735 954Q719 958 704 958H691V887H304ZM799 129 808 136Q817 144 832 156Q846 167 862 180Q878 193 891 206Q888 222 864 222H697V396H813L864 331L874 338Q884 346 898 358Q913 369 930 382Q946 396 959 409Q958 417 951 421Q944 425 933 425H55L46 396H302V222H121L112 192H302V39L419 50Q418 60 410 68Q401 75 382 78V192H617V39L734 50Q733 61 724 68Q716 75 697 78V192H748ZM691 858V717H304V858ZM691 687V552H304V687ZM382 396H617V222H382Z"/></svg><svg class="m2" viewBox="0 0 1000 1000" aria-hidden="true"><path d="M270 570Q311 649 379 704Q389 713 401 721Q427 679 441 629Q457 574 461 511H227V567Q227 571 216 578Q206 584 191 589Q176 594 159 594H146V183L234 220H462V44L579 55Q577 65 570 72Q562 80 543 83V220H772L814 174L905 244Q900 250 889 256Q878 261 863 264V560Q863 564 851 570Q839 576 824 580Q808 585 794 585H782V511H542Q537 581 519 642Q500 706 459 758Q495 778 536 794Q626 829 734 848Q842 866 962 873V884Q935 890 917 910Q899 930 892 960Q774 946 674 919Q575 892 495 848Q456 827 422 801Q369 852 287 890Q191 935 46 962L41 945Q162 912 244 866Q325 821 373 762Q373 761 374 760Q364 749 354 738Q294 673 255 580ZM543 249V468Q543 475 543 482H782V249ZM462 249H227V482H462Q462 475 462 468Z"/></svg><svg class="m3" viewBox="0 0 1000 1000" aria-hidden="true"><path d="M482 117H797L838 72L927 140Q922 146 912 152Q901 158 885 161V486Q885 490 874 496Q862 501 847 506Q832 511 819 511H806V463H570V837Q570 851 579 857Q588 863 620 863H736Q774 863 802 862Q830 861 842 860Q853 859 858 856Q863 853 867 845Q873 831 883 790Q893 749 904 698H916L919 851Q939 858 946 866Q952 873 952 885Q952 903 935 914Q918 925 870 930Q822 935 731 935H607Q561 935 536 928Q510 921 501 904Q492 886 492 854V397L583 435H806V146H491ZM91 584 169 619H304L344 575L430 641Q426 646 415 652Q404 657 390 660V916Q390 919 379 925Q368 931 354 936Q339 941 326 941H314V889H165V937Q165 940 156 946Q146 952 132 956Q117 961 101 961H91ZM314 860V647H165V860ZM33 238H345L391 178L406 190Q421 202 441 218Q461 235 477 251Q474 267 451 267H40ZM83 110H290L336 51L350 62Q364 74 384 91Q404 108 420 122Q416 138 393 138H91ZM83 366H298L342 311L355 322Q368 333 386 348Q405 364 420 378Q416 394 394 394H91ZM83 494H298L342 439L355 450Q368 461 386 476Q405 492 420 507Q416 522 394 522H91Z"/></svg></div>
   <a class="back-triveni back-top" href="https://renzo34990.github.io/pr-landing/">&larr; Triveni</a>
   <div class="header-inner">
     <div class="hero-rule"></div>
-    <h1><span class="accent">Nalanda</span></h1>
+    <h1 data-t="NALANDA"><span class="accent">Nalanda</span></h1>
     <p class="dek">Nos sumergimos en los dominios de China, Japón y Corea del Sur para rescatar algo más que simples cifras. El club ha destilado años de estudio para transformar la investigación pura en un relato de poder y legado. Hemos dejado atrás la frialdad de las enciclopedias. Lo que vas a encontrar en estas páginas es la crónica de civilizaciones que hoy dictan el ritmo del mundo mientras cargan con el peso de milenios de historia.</p>
+    <svg class="seal" id="seal" viewBox="0 0 100 100" role="img" aria-label="Sello de Nalanda"><defs><filter id="rough" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4"/></filter></defs><g filter="url(#rough)"><rect x="3" y="3" width="94" height="94" rx="4" fill="#A52E27"/><rect x="8" y="8" width="84" height="84" rx="2" fill="none" stroke="#F6F1E6" stroke-opacity=".55" stroke-width="1.6"/><g fill="#F6F1E6"><path transform="translate(49 11) scale(.040)" d="M49 120H399L463 52L569 148Q557 163 524 169Q522 324 520 438Q518 553 514 634Q509 716 502 770Q495 825 484 858Q472 891 455 911Q430 941 395 954Q360 968 320 968Q320 937 318 916Q315 895 305 883Q296 870 276 860Q256 849 228 842L229 828Q244 829 262 830Q281 832 298 833Q316 834 326 834Q338 834 346 831Q354 828 361 820Q376 806 385 758Q394 711 399 627Q400 612 401 596H281Q269 645 253 691Q223 772 170 842Q117 913 32 973L20 958Q91 874 128 779Q162 692 177 596H54L45 568H181Q192 474 194 371H60L51 343H195Q196 249 196 148H58ZM598 62 724 121H811L872 61L990 168Q984 176 974 179Q963 182 944 183Q930 207 912 238Q893 270 872 304Q851 337 829 368Q807 400 786 425Q847 460 884 504Q922 549 940 596Q958 643 958 685Q958 735 942 772Q927 809 891 830Q855 850 794 851Q794 834 792 814Q791 795 788 778Q784 761 779 754Q774 745 760 738Q747 731 729 727V715H799Q813 715 822 710Q833 703 840 689Q846 675 846 651Q846 596 826 538Q807 480 760 428Q768 399 777 360Q786 320 795 276Q804 233 811 192Q815 169 818 150H711V935Q711 939 700 948Q689 956 668 964Q648 971 619 971H598ZM402 568Q405 502 407 417Q407 395 407 371H308Q304 449 295 520Q291 545 287 568ZM408 343Q409 255 411 148H314Q313 242 310 329Q310 336 310 343Z"/><path transform="translate(49 52) scale(.040)" d="M286 194 344 235V47L445 92H501L545 45L638 116Q634 120 625 125Q616 130 603 133V370Q603 374 590 380Q577 385 559 390Q541 395 526 395H511V342H441V929Q441 935 430 944Q419 953 402 960Q384 967 361 967H344V791Q340 796 336 800Q321 814 300 814Q279 813 258 792Q258 760 249 726Q240 691 227 659Q224 653 222 648Q216 679 208 707Q187 786 146 850Q105 915 36 966L25 951Q77 879 102 790Q127 700 134 590Q142 479 141 344Q140 208 140 42L281 55Q280 67 271 74Q262 81 245 84Q244 216 244 328Q244 337 244 346Q246 338 249 330Q261 291 271 254Q281 217 286 194ZM869 34 976 118Q971 124 960 130Q950 136 934 139V849Q934 885 926 910Q917 935 888 950Q860 965 802 971Q801 947 798 930Q794 913 785 902Q775 891 760 882Q744 874 713 869V855L726 856Q738 857 754 858Q771 859 786 860Q802 861 809 861Q821 861 825 856Q829 851 829 841V342H754V361Q754 366 742 372Q730 379 712 384Q694 390 673 390H660V52L758 92H819ZM456 459H596V385L696 395Q694 412 669 416V459H720L757 413L769 422Q780 432 796 446Q812 459 825 471Q822 487 800 487H669V538H723L753 507L817 556Q810 567 787 572V715Q786 720 770 728Q753 735 739 735H730V707H669V730Q718 735 745 749Q774 765 784 784Q793 802 788 818Q782 833 766 838Q751 844 731 833Q725 815 712 798Q698 780 683 763Q676 756 669 750V923Q669 926 653 936Q637 946 610 946H598V792Q589 801 580 809Q525 859 455 896L444 880Q492 840 527 788Q553 749 571 707H539V727Q539 731 524 738Q510 744 492 744H484V510L544 538H596V487H464ZM344 702V294Q335 304 325 316Q305 338 282 361Q262 382 243 399Q242 471 237 534Q234 571 229 605Q275 626 302 650Q331 677 344 702ZM78 245 92 244Q116 298 126 348Q136 397 131 436Q126 474 103 497Q84 515 64 514Q45 514 34 500Q22 487 24 466Q26 444 48 421Q58 409 66 382Q74 356 78 320Q82 284 78 245ZM539 679H609V566H539ZM829 313V230H754V313ZM829 201V120H754V201ZM511 313V230H441V313ZM511 201V120H441V201ZM690 573 730 592V566H658V679H730V616Q725 617 719 616Q712 627 702 641Q693 655 682 670L668 664Q674 644 681 616Q688 589 690 573ZM557 578Q587 599 596 618Q605 637 601 650Q597 662 586 664Q574 667 563 656Q562 638 556 618Q550 597 543 583Z"/><path transform="translate(9 11) scale(.040)" d="M72 56 193 102H264L325 44L437 149Q427 162 392 162L361 216Q343 246 322 278Q302 309 280 339Q259 369 239 393Q297 426 332 468Q368 509 384 554Q400 599 400 640Q401 713 366 755Q331 797 244 799Q244 783 242 764Q241 746 238 730Q235 715 231 708Q225 699 213 692Q201 685 183 682V670H247Q255 670 260 668Q265 667 270 664Q281 658 286 644Q292 630 292 607Q292 556 274 500Q257 445 214 395Q222 367 231 329Q240 291 248 250Q257 208 264 169Q268 149 271 131H181V934Q181 938 170 946Q159 955 140 962Q120 970 92 970H72ZM958 488Q954 494 946 494Q938 493 926 489Q887 507 828 526Q768 546 702 563Q648 578 598 588V801Q598 815 606 821Q615 827 641 827H741Q769 827 792 826Q814 826 825 825Q836 824 842 821Q849 818 854 811Q863 798 876 763Q888 728 902 683H912L916 816Q942 826 950 836Q959 847 959 863Q959 888 940 904Q920 919 870 926Q821 934 730 934H620Q566 934 536 925Q505 916 494 893Q482 870 482 829V337L631 351Q630 361 622 368Q614 375 598 377V564Q632 545 668 519Q719 484 764 447Q809 410 837 380ZM467 154Q476 185 481 213H821L882 152L988 253Q982 260 974 262Q966 264 949 265Q932 279 907 296Q882 313 856 330Q830 346 809 358L799 352Q804 333 810 308Q817 282 823 256Q824 249 826 242H483Q484 267 480 289Q469 346 440 370Q428 382 409 384Q390 387 373 380Q356 373 348 355Q338 331 349 310Q360 289 381 277Q396 266 412 246Q428 227 440 202Q451 178 452 154ZM590 36Q655 48 690 70Q726 91 738 116Q750 141 744 163Q739 185 721 199Q703 213 679 212Q655 211 630 189Q631 150 616 110Q602 69 581 42Z"/><path transform="translate(9 52) scale(.040)" d="M60 531H603V404L759 418Q758 428 750 434Q742 441 725 444V531H754L822 441L835 451Q847 461 866 476Q886 492 907 510Q928 528 945 543Q941 559 917 559H725V830Q725 871 714 900Q703 929 667 946Q631 964 558 970Q555 942 548 922Q542 902 527 889Q513 875 490 866Q466 856 420 848V835L441 836Q462 838 491 840Q520 841 546 842Q571 844 581 844Q593 844 598 840Q603 835 603 825V559H68ZM35 361H434V209H139L131 181H434V31L588 43Q587 53 580 60Q574 66 555 69V181H702L769 98L782 107Q794 116 812 130Q831 145 852 162Q873 179 891 193Q887 209 862 209H555V361H774L843 275L856 284Q869 294 888 310Q908 325 930 342Q952 358 970 374Q966 390 941 390H43ZM221 581Q299 594 344 620Q390 645 410 676Q430 706 429 734Q428 761 412 780Q396 798 370 800Q344 803 315 782Q308 747 292 712Q276 677 256 644Q235 612 213 587Z"/></g></g></svg>
   </div>
 </header>
+
+<div class="eras" aria-hidden="true"><div class="trk"><span class="c">China</span><span>Han</span><span>Tang</span><span>Song</span><span>Ming</span><span>Qing</span><span class="c">Japón</span><span>Heian</span><span>Kamakura</span><span>Edo</span><span>Meiji</span><span>Showa</span><span class="c">Corea</span><span>Silla</span><span>Goryeo</span><span>Joseon</span><span class="c">China</span><span>Han</span><span>Tang</span><span>Song</span><span>Ming</span><span>Qing</span><span class="c">Japón</span><span>Heian</span><span>Kamakura</span><span>Edo</span><span>Meiji</span><span>Showa</span><span class="c">Corea</span><span>Silla</span><span>Goryeo</span><span>Joseon</span></div></div>
 
 <main id="contenido">
 
@@ -1070,10 +1134,12 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
     var heroTl = gsap.timeline({ defaults: { ease: 'power1.out' } });
     heroTl.from('.hero-rule', { scaleX: 0, transformOrigin: 'left center', duration: 1 });
     if(!opts.skipTitleReveal){
-      heroTl.from('header h1', { opacity: 0, y: 16, duration: 1 }, '-=0.7');
+      heroTl.from('header h1', { opacity: 0, filter: 'blur(14px)', letterSpacing: '0.36em', duration: 2.4, ease: 'power2.out', clearProps: 'filter,letterSpacing' }, '-=0.7');
     }
     heroTl
       .from('header p.dek', { opacity: 0, y: 14, duration: 0.9 }, '-=0.6')
+      .from('#seal', { scale: 1.9, opacity: 0, rotation: 9, transformOrigin: '50% 50%', duration: 0.24, ease: 'power4.in' }, '+=0.15')
+      .to('#seal', { scale: 0.96, duration: 0.09, yoyo: true, repeat: 1, ease: 'power1.out' })
       .from('.ink-wash', { opacity: 0, scale: 0.85, duration: 2, ease: 'power1.inOut' }, '-=1.4');
 
     document.querySelectorAll('.region-block').forEach(function(region){
@@ -1085,8 +1151,9 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
         opacity: 0, y: 16, duration: 0.7, ease: 'power1.out',
         scrollTrigger: { trigger: region, start: 'top 85%', toggleActions: 'play none none reverse' }
       });
+      ScrollTrigger.create({ trigger: region, start: 'top 85%', onEnter: function(){ region.querySelector('.region-head').classList.add('drawn'); } });
       gsap.from(region.querySelectorAll('.card'), {
-        opacity: 0, y: 20, duration: 0.6, stagger: 0.08, ease: 'power1.out',
+        opacity: 0, y: 14, filter: 'blur(7px) sepia(1) brightness(1.08)', duration: 1.2, stagger: 0.09, ease: 'power2.out', clearProps: 'filter',
         scrollTrigger: { trigger: region.querySelector('.acto-list, .card-grid'), start: 'top 88%', toggleActions: 'play none none reverse' }
       });
     });
@@ -1094,6 +1161,19 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
     gsap.from('.collection-grid > div', {
       opacity: 0, y: 20, duration: 0.7, stagger: 0.1, ease: 'power1.out',
       scrollTrigger: { trigger: '.collection', start: 'top 88%', toggleActions: 'play none none reverse' }
+    });
+
+    // Hilo rojo del tiempo: crece con la lectura
+    var thr = document.querySelector('#thread i'), thrEl = document.getElementById('thread');
+    if(thr){
+      ScrollTrigger.create({ trigger: document.body, start: 'top top', end: 'bottom bottom', scrub: 0.4,
+        onUpdate: function(self){ thr.style.transform = 'scaleY(' + self.progress + ')'; thrEl.style.setProperty('--p', self.progress); } });
+    }
+    // Trazo de los motivos
+    document.querySelectorAll('.region-motif path').forEach(function(pa){
+      var L = pa.getTotalLength ? pa.getTotalLength() : 0; if(!L) return;
+      pa.style.strokeDasharray = L; pa.style.strokeDashoffset = L;
+      ScrollTrigger.create({ trigger: pa.closest('.region-block'), start: 'top 85%', onEnter: function(){ gsap.to(pa, { strokeDashoffset: 0, duration: 2.2, ease: 'power2.inOut' }); } });
     });
 
     // Nav columna vertebral: aparece cuando el título del hero sale de vista
@@ -1184,5 +1264,35 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
   })();
 </script>
 
+<script>
+// Polvo en la luz (solo con movimiento permitido)
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce) return;
+  document.documentElement.classList.add('pasado');
+  var cv = document.getElementById('dust'); if(!cv) return;
+  var ctx = cv.getContext('2d'), W = 0, H = 0, P = [], on = true, raf = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
+  function size(){ W = window.innerWidth; H = window.innerHeight; cv.width = W*dpr; cv.height = H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0); }
+  function mk(init){ return { x: Math.random()*W, y: init ? Math.random()*H : H+8, r: .6+Math.random()*1.9, vy: -(.08+Math.random()*.22), vx: .04+Math.random()*.14, ph: Math.random()*6.28, sp: .004+Math.random()*.01, a: .25+Math.random()*.5 }; }
+  function fill(){ var n = W < 700 ? 26 : 56; P = []; for(var i=0;i<n;i++) P.push(mk(true)); }
+  function tick(t){
+    if(!on){ raf = 0; return; }
+    ctx.clearRect(0,0,W,H);
+    for(var i=0;i<P.length;i++){
+      var p = P[i]; p.ph += p.sp; p.y += p.vy; p.x += p.vx + Math.sin(p.ph*3)*.12;
+      if(p.y < -8 || p.x > W+8){ P[i] = mk(false); continue; }
+      var tw = .55 + .45*Math.sin(p.ph*4), al = p.a*tw;
+      var g = ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*3.2);
+      g.addColorStop(0,'rgba(196,150,62,'+al+')'); g.addColorStop(1,'rgba(196,150,62,0)');
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(p.x,p.y,p.r*3.2,0,6.283); ctx.fill();
+    }
+    raf = requestAnimationFrame(tick);
+  }
+  size(); fill();
+  window.addEventListener('resize', function(){ size(); fill(); });
+  document.addEventListener('visibilitychange', function(){ on = !document.hidden; if(on && !raf) raf = requestAnimationFrame(tick); });
+  raf = requestAnimationFrame(tick);
+})();
+</script>
 </body>
 </html>
