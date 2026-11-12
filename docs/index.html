@@ -97,6 +97,10 @@
     transition:opacity .4s ease;
   }
   .spine-nav.visible{opacity:1; pointer-events:auto;}
+  .back-triveni{font-family:'IBM Plex Mono', monospace; font-style:normal; font-size:.76rem; letter-spacing:.08em; text-transform:uppercase; color:var(--stone); text-decoration:none; padding:.9rem 0; transition:color .25s ease;}
+  .back-triveni:active{transform:scale(.97);}
+  @media (hover:hover){.back-triveni:hover{color:var(--editorial-black);}}
+  .back-top{position:absolute; top:1.4rem; left:8vw; z-index:3;}
   .spine-nav .spine-vol{
     font-family:'IBM Plex Mono', monospace; font-style:normal; font-size:.76rem;
     color:var(--stone); text-transform:uppercase; letter-spacing:.08em;
@@ -354,12 +358,13 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
 <div class="ink-wash w1"></div>
 <div class="ink-wash w2"></div>
 
-<nav class="spine-nav" id="spineNav">
+<nav class="spine-nav" id="spineNav" aria-label="Nalanda">
   <span class="spine-word">Nalanda</span>
-  <span class="spine-vol">Vol. I</span>
+  <span style="display:flex;align-items:center;gap:1.6rem"><a class="back-triveni" href="https://renzo34990.github.io/pr-landing/">&larr; Triveni</a><span class="spine-vol">Vol. I</span></span>
 </nav>
 
 <header>
+  <a class="back-triveni back-top" href="https://renzo34990.github.io/pr-landing/">&larr; Triveni</a>
   <div class="header-inner">
     <div class="hero-rule"></div>
     <h1><span class="accent">Nalanda</span></h1>
