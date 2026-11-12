@@ -365,6 +365,24 @@
   .dept-card.pending .in{color:var(--stone);}
   .dept-contact{margin-top:2rem; font-family:'Atkinson Hyperlegible', sans-serif; font-size:.9rem; color:var(--kz-text-secondary);}
   .dept-contact a{color:var(--kz-teal);}
+  .club-n{display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr); gap:3rem 4rem; align-items:center;}
+  .club-n h2{margin-bottom:1.2rem;}
+  .club-epic{font-family:'Crimson Pro', serif; font-style:italic; font-weight:400; color:var(--china-imperial); font-size:clamp(1.5rem,2.8vw,2.1rem); line-height:1.22; max-width:22ch; margin:0 0 1.2rem;}
+  .club-n .lead{margin-bottom:1.6rem;}
+  .club-link{display:inline-block; font-family:'IBM Plex Mono', monospace; font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; color:var(--kz-navy); text-decoration:none; padding:.8rem 0; border-bottom:1px solid var(--gold); transition:color .25s ease;}
+  .club-link:active{transform:scale(.97);}
+  @media (hover:hover){.club-link:hover{color:var(--china-imperial);}}
+  .club-figs{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem;}
+  .club-figs li{display:flex; flex-direction:column; align-items:center; text-align:center; gap:.2rem; padding:1.3rem .6rem 1.1rem; background:#fff; border:1px solid var(--line); border-top:3px solid var(--tone);}
+  .club-figs .avatar{width:76px; height:76px; margin-bottom:.5rem; overflow:visible;}
+  .club-figs .ring-a{fill:color-mix(in srgb,var(--tone) 10%,transparent); stroke:var(--tone); stroke-width:1;}
+  .club-figs .glyph-a{fill:none; stroke:var(--tone); stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round;}
+  .club-figs strong{font-family:'Crimson Pro', serif; font-weight:500; font-size:1.02rem; color:var(--kz-navy); line-height:1.2;}
+  .club-figs em{font-style:normal; font-size:.8rem; color:var(--kz-text-secondary); line-height:1.35;}
+  .club-figs .soc{margin-top:.5rem; font-family:'IBM Plex Mono', monospace; font-size:.68rem; letter-spacing:.04em; text-transform:uppercase; color:var(--tone); line-height:1.5;}
+  @media(max-width:900px){.club-n{grid-template-columns:1fr;}}
+  @media(max-width:560px){.club-figs{grid-template-columns:1fr;}}
+
 .skip-link{position:absolute; left:1rem; top:-4rem; z-index:200; background:#1A1A1A; color:#F2EFE9; padding:.7rem 1.1rem; font:500 .85rem/1 sans-serif; text-decoration:none; transition:top .25s cubic-bezier(0.23,1,0.32,1);}
 .skip-link:focus{top:1rem;}
 /* ---------- AUDITORIA: tipografia y accesibilidad ---------- */
@@ -1059,22 +1077,20 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
   </div>
 
   <section class="dept" id="departamento-de-investigacion" aria-labelledby="dept-title">
-    <div class="dept-in">
-      <span class="eyebrow">Club Kongzhi UNMSM</span>
-      <h2 id="dept-title">Departamento de Investigación</h2>
-      <p class="lead">Quienes investigan, verifican y escriben los cuadernos de Nalanda. Si quieres corregirnos, proponer un tema, colaborar o invitarnos a conversar, escríbenos por LinkedIn.</p>
-
-      <h3>Equipo del Departamento</h3>
-      <div class="dept-grid">
-        <span class="dept-card pending"><strong>Renzo</strong><em>Director de Investigación</em><span class="in">LinkedIn / por añadir</span></span>
+    <div class="dept-in club-n">
+      <div class="club-copy">
+        <span class="eyebrow">Club Kongzhi UNMSM</span>
+        <h2 id="dept-title">El Club</h2>
+        <p class="club-epic">Somos el puente entre Asia y el mundo universitario peruano.</p>
+        <p class="lead">Donde otros ven un continente lejano, el Club Kongzhi ve el siguiente capítulo de nuestra región. Lo estudia con rigor, lo cuenta con claridad y lo trae de vuelta a las aulas de San Marcos: de Lima a Pekín, de Tokio a Seúl, de la historia que pasó a las decisiones que vienen.</p>
+        <a class="club-link" href="https://renzo34990.github.io/pr-landing/departamento/" target="_blank" rel="noopener">Departamento de Investigación <span aria-hidden="true">→</span></a>
+        <p class="dept-contact">También estamos en <a href="https://www.instagram.com/clubkongzhi/" target="_blank" rel="noopener">Instagram</a>.</p>
       </div>
-
-      <h3>Miembros del Club Kongzhi</h3>
-      <div class="dept-grid">
-        <span class="dept-card pending"><strong>Próximamente</strong><em>Perfiles de miembros del club</em></span>
-      </div>
-
-      <p class="dept-contact">También estamos en <a href="https://www.instagram.com/clubkongzhi/" target="_blank" rel="noopener">Instagram</a>.</p>
+      <ul class="club-figs" aria-label="Principales contribuyentes">
+<li class="fig" style="--tone:var(--china-gold)"><svg class="avatar" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30.5" class="ring-a"/><g class="glyph-a"><circle cx="32" cy="23" r="8.5"/><path d="M14 57c0-12.5 8-20 18-20s18 7.5 18 20"/><circle cx="47" cy="43" r="5.5"/><path d="M51 47l6 6"/></g></svg><strong>Renzo</strong><em>Director de Investigación</em><span class="soc">LinkedIn · por añadir</span></li>
+<li class="fig" style="--tone:var(--japan-vermillion)"><svg class="avatar" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30.5" class="ring-a"/><g class="glyph-a"><circle cx="32" cy="23" r="8.5"/><path d="M14 57c0-12.5 8-20 18-20s18 7.5 18 20"/><path d="M22 49c4-2 7-2 10 0 3-2 6-2 10 0v7c-4-2-7-2-10 0-3-2-6-2-10 0z"/></g></svg><strong>Nombre por añadir</strong><em>Investigador</em><span class="soc">LinkedIn o Instagram · por añadir</span></li>
+<li class="fig" style="--tone:var(--korea-celadon-deep)"><svg class="avatar" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30.5" class="ring-a"/><g class="glyph-a"><circle cx="32" cy="23" r="8.5"/><path d="M14 57c0-12.5 8-20 18-20s18 7.5 18 20"/><path d="M24 55v-6M32 55v-10M40 55v-8"/></g></svg><strong>Nombre por añadir</strong><em>Investigador</em><span class="soc">LinkedIn o Instagram · por añadir</span></li>
+      </ul>
     </div>
   </section>
 
