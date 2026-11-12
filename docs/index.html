@@ -315,14 +315,18 @@
   .collection{margin-top:3.6rem; padding-top:3.6rem; border-top:1px solid var(--line);}
   .collection .eyebrow{display:block; margin-bottom:1.6rem;}
   .collection-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:0; border:1px solid var(--line);}
-  .collection-grid > div{padding:1.8rem; border-right:1px solid var(--line);}
-  .collection-grid > div:last-child{border-right:none;}
+  .collection-grid > div, .collection-grid > a{padding:1.8rem; border-right:1px solid var(--line); display:block; color:inherit; text-decoration:none; transition:background .3s ease;}
+  .collection-grid > :last-child{border-right:none;}
+  .collection-grid > div[aria-current]{background:rgba(158,43,37,.045);}
+  .collection-grid .go{display:block; margin-top:.9rem; font-family:'IBM Plex Mono', monospace; font-size:.74rem; letter-spacing:.04em; text-transform:uppercase; color:var(--china-imperial);}
+  .collection-grid > a:active{transform:scale(.99);}
+  @media (hover:hover){.collection-grid > a:hover{background:rgba(168,134,60,.08);}}
   .collection-grid .vol{font-family:'IBM Plex Mono', monospace; font-size:.8rem; color:var(--stone); margin-bottom:.6rem;}
   .collection-grid h5{font-family:'Source Serif 4', serif; font-weight:500; font-size:1.05rem; margin:0 0 .5rem; color:var(--editorial-black);}
   .collection-grid.active h5{color:var(--china-imperial);}
   .collection-grid p{margin:0; font-size:.85rem; color:var(--warm-gray); font-weight:300; line-height:1.6;}
   .collection-grid .status{font-family:'IBM Plex Mono', monospace; font-size:.74rem; text-transform:uppercase; color:var(--stone); margin-top:.9rem; display:block;}
-  .collection-grid > div:first-child .status{color:var(--china-imperial);}
+  .collection-grid > :first-child .status{color:var(--china-imperial);}
 
   footer{position:relative; z-index:2; text-align:center; padding:3.4rem 6vw 3.8rem; border-top:1px solid var(--line);}
   .publisher-seal{
@@ -338,8 +342,8 @@
 
   @media(max-width:720px){
     .collection-grid{grid-template-columns:1fr;}
-    .collection-grid > div{border-right:none; border-bottom:1px solid var(--line);}
-    .collection-grid > div:last-child{border-bottom:none;}
+    .collection-grid > div, .collection-grid > a{border-right:none; border-bottom:1px solid var(--line);}
+    .collection-grid > :last-child{border-bottom:none;}
     .region-head .count{display:none;}
     .region-src{margin-left:auto;}
     .region-motif{display:none;}
@@ -1055,18 +1059,19 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
   <div class="collection">
     <span class="eyebrow">La colección editorial</span>
     <div class="collection-grid">
-      <div>
+      <div aria-current="page">
         <span class="vol">VOL. I</span>
         <h5>Nalanda</h5>
         <p>Historia, política y economía de China, Japón y Corea del Sur, contadas como relato de poder y legado.</p>
         <span class="status">● En publicación</span>
       </div>
-      <div>
+      <a href="https://renzo34990.github.io/forja-guerra/">
         <span class="vol">VOL. II</span>
         <h5>Forja</h5>
         <p>Las guerras que formaron Asia: los conflictos que redibujaron fronteras, dinastías e identidades nacionales en la región.</p>
         <span class="status">○ En desarrollo</span>
-      </div>
+        <span class="go">Ver el prototipo <span aria-hidden="true">→</span></span>
+      </a>
       <div>
         <span class="vol">VOL. III</span>
         <h5>Alma</h5>
@@ -1174,7 +1179,7 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
       });
     });
 
-    gsap.from('.collection-grid > div', {
+    gsap.from('.collection-grid > *', {
       opacity: 0, y: 20, duration: 0.7, stagger: 0.1, ease: 'power1.out',
       scrollTrigger: { trigger: '.collection', start: 'top 88%', toggleActions: 'play none none reverse' }
     });
