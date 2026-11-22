@@ -31,7 +31,7 @@
     --paper:#EEE7D6;
     --ink:#242019;
     --editorial-black:#161310;
-    --stone:#8A8272;
+    --stone:#6E675A;
     --warm-gray:#655E4F;
     --gold:#A8863C;
     --line: rgba(36,32,25,0.14);
@@ -399,8 +399,8 @@
   .collection-grid > a:active{transform:scale(.99);}
   @media (hover:hover){.collection-grid > a:hover{background:rgba(168,134,60,.08);}}
   .collection-grid .vol{font-family:'IBM Plex Mono', monospace; font-size:.8rem; color:var(--stone); margin-bottom:.6rem;}
-  .collection-grid h5{font-family:'Source Serif 4', serif; font-weight:500; font-size:1.05rem; margin:0 0 .5rem; color:var(--editorial-black);}
-  .collection-grid.active h5{color:var(--china-imperial);}
+  .collection-grid h3{font-family:'Source Serif 4', serif; font-weight:500; font-size:1.05rem; margin:0 0 .5rem; color:var(--editorial-black);}
+  .collection-grid.active h3{color:var(--china-imperial);}
   .collection-grid p{margin:0; font-size:.85rem; color:var(--warm-gray); font-weight:300; line-height:1.6;}
   .collection-grid .status{font-family:'IBM Plex Mono', monospace; font-size:.74rem; text-transform:uppercase; color:var(--stone); margin-top:.9rem; display:block;}
   .collection-grid > :first-child .status{color:var(--china-imperial);}
@@ -472,6 +472,42 @@ h1,h2,h3,.acto-title,.title-cn{text-wrap:balance;}
 p,li,.lbl{text-wrap:pretty;}
 h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflow-wrap:break-word;}
 .acto-figure img{height:auto;}
+
+  /* ---------- CARACTER: cada pais es un campo, el color fluye y la sala tiene luz de lampara ---------- */
+  body{background:var(--bgn, var(--ivory));}
+  .thread i{background:var(--tc, var(--china-imperial));}
+  .thread::after{background:var(--tc, var(--china-imperial));}
+  .nl-sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}
+  .region-head h2{font-size:clamp(1.8rem, 3.8vw, 2.8rem); letter-spacing:.005em; line-height:1.1;}
+  .region-head h2 .wd{display:inline-block; white-space:nowrap;}
+  .region-head h2 .lt{display:inline-block; transition:color .5s ease;}
+  .region-glyph{position:absolute; right:-1vw; top:-5rem; height:clamp(150px, 21vw, 260px); width:auto; fill:var(--region-accent, var(--gold)); opacity:0; pointer-events:none; z-index:0; transform:translateY(var(--gy, 0px)); transition:opacity 2.4s ease;}
+  .region-block.seen .region-glyph{opacity:.06;}
+  @media (max-width:720px){ .region-glyph{height:150px; right:-6vw; top:-3.4rem;} .region-block.seen .region-glyph{opacity:.05;} }
+  .acto::before{content:""; position:absolute; left:0; right:0; top:-1px; height:1px; background:var(--region-accent, var(--gold)); transform:scaleX(0); transform-origin:left; transition:transform .7s var(--ease-out); pointer-events:none;}
+  @media (hover:hover){ .acto:hover::before{transform:scaleX(1);} }
+  .acto.open::before{transform:scaleX(1);}
+  .lamp{position:fixed; inset:0; z-index:4; pointer-events:none; opacity:0; transition:opacity 1.2s ease; mix-blend-mode:multiply;
+    background:
+      radial-gradient(circle 190px at var(--lx,50%) var(--ly,40%), rgba(255,204,118,.16), rgba(255,204,118,0) 100%),
+      radial-gradient(circle 480px at var(--lx,50%) var(--ly,40%), rgba(96,70,32,0) 0, rgba(96,70,32,0) 32%, rgba(96,70,32,.065) 100%);}
+  .lamp.on{opacity:1;}
+  @media (hover:none), (pointer:coarse), (prefers-reduced-motion:reduce){ .lamp{display:none;} }
+  @media (prefers-reduced-motion:no-preference){
+    .js .region-head h2.lt-on .lt{opacity:0;}
+    .region-block.seen h2.lt-on .lt{animation-duration:1.1s; animation-fill-mode:both; animation-delay:calc(var(--i,0) * .1s); animation-timing-function:cubic-bezier(.22,1,.36,1);}
+    .region-block.japon.seen h2.lt-on .lt{animation-name:ltInk; animation-duration:1.5s;}
+    .region-block.china.seen h2.lt-on .lt{animation-name:ltSeal; animation-duration:.8s; animation-delay:calc(var(--i,0) * .13s); animation-timing-function:cubic-bezier(.2,.9,.3,1);}
+    .region-block.corea.seen h2.lt-on .lt{animation-name:ltWave; animation-duration:1.3s; animation-delay:calc(var(--i,0) * .08s);}
+  }
+  @keyframes ltInk{from{opacity:0; filter:blur(11px); transform:scale(1.22)} 60%{opacity:.9; filter:blur(2px)} to{opacity:1; filter:blur(0); transform:none}}
+  @keyframes ltSeal{from{opacity:0; transform:scale(1.7) rotate(-5deg)} 60%{opacity:1; transform:scale(.96) rotate(.6deg); text-shadow:0 0 .6em rgba(158,43,37,.45)} to{opacity:1; transform:none; text-shadow:0 0 0 rgba(158,43,37,0)}}
+  @keyframes ltWave{from{opacity:0; transform:translateY(.6em)} 55%{opacity:1; transform:translateY(-.09em)} to{opacity:1; transform:none}}
+  @media (hover:hover){ .region-head h2:hover .lt{color:var(--region-accent, var(--gold)); transition-delay:calc(var(--i,0) * 35ms);} }
+  @media (max-width:600px){ .acto-title{flex:1 1 100%;} }
+  .eyebrow{color:#7E6325;}
+  .dept-contact a{color:#17706D;}
+  .club-figs .soc{color:color-mix(in srgb, var(--tone) 55%, #000);}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -503,6 +539,7 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
 <div class="beam" aria-hidden="true"></div>
 <canvas class="dust" id="dust" aria-hidden="true"></canvas>
 <div class="age" aria-hidden="true"></div>
+<div class="lamp" id="lamp" aria-hidden="true"></div>
 <div class="thread" id="thread" aria-hidden="true"><i></i></div>
 
 <nav class="spine-nav" id="spineNav" aria-label="Nalanda">
@@ -524,6 +561,7 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
 <main id="contenido">
 
   <div class="region-block japon">
+    <svg class="region-glyph" viewBox="0 0 2000 1000" aria-hidden="true" focusable="false"><path d="M742 510V832H259V510ZM742 480H259V171H742ZM206 141V947H216C241 947 259 933 259 925V861H742V943H750C769 943 796 927 797 920V183C817 178 833 170 840 162L765 103L732 141H266L206 112ZM1472 44V279H1051L1060 309H1421C1345 481 1206 653 1038 767L1050 782C1236 676 1383 521 1472 344V715H1246L1254 744H1472V956H1482C1503 956 1526 942 1526 933V744H1731C1745 744 1754 739 1757 728C1725 699 1675 658 1675 658L1629 715H1526V309C1610 514 1755 682 1907 775C1917 747 1940 731 1964 729L1966 719C1810 646 1642 485 1549 309H1923C1937 309 1948 304 1950 293C1917 261 1863 220 1863 220L1816 279H1526V83C1552 79 1560 68 1563 54Z"/></svg>
     <div class="region-motif" aria-hidden="true">
       <svg viewBox="0 0 130 64" xmlns="http://www.w3.org/2000/svg">
         <g fill="none" stroke="var(--japan-indigo)" stroke-width="1">
@@ -721,6 +759,7 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
   </div>
 
   <div class="region-block china">
+    <svg class="region-glyph" viewBox="0 0 2000 1000" aria-hidden="true" focusable="false"><path d="M829 545H524V282H829ZM560 55 469 44V252H170L110 222V669H119C142 669 163 656 163 650V575H469V956H480C501 956 524 942 524 933V575H829V658H837C856 658 883 645 884 639V292C904 288 921 281 928 273L853 215L819 252H524V82C549 78 557 69 560 55ZM163 545V282H469V545ZM1591 516 1579 524C1613 557 1654 612 1664 653C1714 691 1756 584 1591 516ZM1270 460 1278 490H1468V711H1208L1216 740H1781C1795 740 1804 735 1807 724C1778 697 1732 660 1732 660L1691 711H1521V490H1727C1741 490 1750 485 1753 474C1725 447 1681 412 1681 412L1642 460H1521V282H1756C1769 282 1778 277 1781 266C1753 239 1705 202 1705 202L1665 252H1230L1238 282H1468V460ZM1103 103V955H1113C1138 955 1157 941 1157 933V886H1842V950H1850C1870 950 1896 933 1897 927V143C1916 139 1934 131 1941 123L1866 64L1832 103H1163L1103 72ZM1842 856H1157V132H1842Z"/></svg>
     <div class="region-motif" aria-hidden="true">
       <svg viewBox="0 0 130 64" xmlns="http://www.w3.org/2000/svg">
         <path d="M10 44 Q5 28 22 28 Q24 14 40 17 Q48 6 62 14 Q78 9 81 24 Q97 24 95 38 Q99 52 84 52 L22 52 Q7 52 10 44Z" fill="none" stroke="var(--china-imperial)" stroke-width="1"/>
@@ -929,6 +968,7 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
   </div>
 
   <div class="region-block corea">
+    <svg class="region-glyph" viewBox="0 0 1932 1000" aria-hidden="true" focusable="false"><path d="M490 237C444 240 162 245 119 244C97 244 58 242 31 236L25 248C24 250 25 253 28 256C48 272 80 289 106 298C124 291 160 284 179 283C217 280 470 276 510 276C533 276 580 277 600 280C607 275 620 262 620 247C620 241 615 237 609 235C591 229 549 223 520 222ZM536 489C536 390 444 325 332 325C218 325 126 390 127 489C127 588 218 654 332 654C444 654 536 589 536 489ZM476 489C476 566 411 610 332 610C253 610 188 566 188 489C188 412 253 367 332 367C411 367 476 412 476 489ZM176 99C175 102 175 104 177 107C194 128 218 149 238 159C243 163 247 163 254 162C299 159 375 157 429 156C434 156 438 155 441 150C445 144 446 128 443 119C442 114 438 111 431 111C360 110 272 108 183 92ZM931 453C936 453 943 452 948 449C954 446 960 434 960 417C960 411 954 404 947 402C928 398 888 396 859 397L827 416L753 419V122L755 71C755 62 752 55 744 52C717 42 657 29 623 28C616 28 614 29 613 33L606 55C642 66 674 83 692 104V590C692 635 692 714 696 755H732C745 707 753 635 753 567V456ZM367 837V790L368 748C368 737 363 732 354 730C331 725 278 721 247 721C241 721 238 723 237 727L233 747C260 753 287 762 303 775V881C303 935 325 956 387 956L813 954C818 954 821 953 824 950C829 945 834 935 834 918C834 912 829 907 822 906C804 902 760 899 731 899L701 915C643 918 457 919 392 918C374 918 367 911 367 893ZM1754 419 1660 422C1690 340 1717 230 1725 152L1737 122C1740 117 1740 114 1735 110C1728 104 1708 93 1697 87C1692 85 1686 85 1682 87L1650 103C1586 106 1278 112 1229 111C1201 111 1162 107 1133 101L1126 114C1125 117 1126 120 1130 123C1153 140 1184 157 1214 167C1236 159 1277 151 1299 150C1345 148 1575 144 1651 145C1649 220 1638 336 1620 423C1441 426 1151 430 1107 429C1077 428 1032 424 1000 418L993 432C992 435 993 438 996 440C1020 459 1055 478 1091 488C1114 480 1163 471 1188 469C1210 468 1311 466 1423 464V549C1423 579 1424 626 1426 661L1222 663C1195 663 1157 660 1128 654L1122 667C1121 670 1122 673 1125 675C1148 692 1179 709 1209 718C1229 710 1273 703 1295 702C1340 699 1566 697 1644 698V867C1644 903 1646 963 1649 997H1688C1698 959 1705 893 1705 852L1707 705L1719 676C1721 671 1721 668 1717 665C1711 660 1693 648 1683 643C1679 641 1672 641 1669 643L1643 656L1472 660C1480 621 1484 569 1484 534V463L1777 461C1807 461 1863 463 1890 466C1899 462 1910 448 1910 433C1910 425 1905 420 1897 418C1875 410 1824 405 1789 404Z"/></svg>
     <div class="region-motif" aria-hidden="true">
       <svg viewBox="0 0 130 64" xmlns="http://www.w3.org/2000/svg">
         <g stroke="var(--korea-celadon)" stroke-width="1" fill="none">
@@ -1151,20 +1191,20 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
     <div class="collection-grid">
       <div aria-current="page">
         <span class="vol">VOL. I</span>
-        <h5>Nalanda</h5>
+        <h3>Nalanda</h3>
         <p>Historia, política y economía de China, Japón y Corea del Sur, contadas como relato de poder y legado.</p>
         <span class="status">● En publicación</span>
       </div>
       <a href="https://renzo34990.github.io/forja-guerra/">
         <span class="vol">VOL. II</span>
-        <h5>Forja</h5>
+        <h3>Forja</h3>
         <p>Las guerras que formaron Asia: los conflictos que redibujaron fronteras, dinastías e identidades nacionales en la región.</p>
         <span class="status">○ En desarrollo</span>
         <span class="go">Ver el prototipo <span aria-hidden="true">→</span></span>
       </a>
       <a href="https://renzo34990.github.io/alma-asia/">
         <span class="vol">VOL. III</span>
-        <h5>Alma</h5>
+        <h3>Alma</h3>
         <p>El alma de Asia: filosofía, religión y tradición cultural detrás de las civilizaciones que estudiamos.</p>
         <span class="status">○ En desarrollo</span>
         <span class="go">Ver el prototipo <span aria-hidden="true">→</span></span>
@@ -1402,6 +1442,79 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
   window.addEventListener('resize', function(){ size(); fill(); });
   document.addEventListener('visibilitychange', function(){ on = !document.hidden; if(on && !raf) raf = requestAnimationFrame(tick); });
   raf = requestAnimationFrame(tick);
+})();
+</script>
+
+<script>
+// Caracter del portal: nombre de cada pais, color que fluye con la lectura, glifos y luz de lampara
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var root = document.documentElement;
+  var blocks = [].slice.call(document.querySelectorAll('.region-block'));
+  if(!blocks.length) return;
+  // 1) letras del nombre de cada pais
+  var n = 0;
+  blocks.forEach(function(b){
+    var h2 = b.querySelector('.region-head h2'); if(!h2) return;
+    var txt = h2.textContent.trim(); n = 0;
+    var words = txt.split(' ').map(function(w){
+      return '<span class="wd">' + w.split('').map(function(c){ return '<span class="lt" style="--i:' + (n++) + '">' + c + '</span>'; }).join('') + '</span>';
+    }).join(' ');
+    h2.innerHTML = '<span class="nl-sr">' + txt + '</span><span aria-hidden="true">' + words + '</span>';
+    h2.classList.add('lt-on');
+  });
+  // 2) aparicion de cada campo
+  function see(b){ b.classList.add('seen'); }
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ see(e.target.closest('.region-block')); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px -12% 0px', threshold: .2 });
+    blocks.forEach(function(b){ var hd = b.querySelector('.region-head'); if(hd) io.observe(hd); });
+  } else { blocks.forEach(see); }
+  // 3) el color de la sala fluye entre paises (sin limites visibles)
+  var HERO = { bg: [246,241,230], tc: [158,43,37] };
+  var STOP = { japon: { bg: [240,239,232], tc: [62,78,114] }, china: { bg: [247,237,224], tc: [158,43,37] }, corea: { bg: [235,240,230], tc: [79,110,96] } };
+  function kind(b){ return b.classList.contains('japon') ? 'japon' : b.classList.contains('china') ? 'china' : 'corea'; }
+  function mix(a, b, t){ return [a[0]+(b[0]-a[0])*t, a[1]+(b[1]-a[1])*t, a[2]+(b[2]-a[2])*t]; }
+  function rgb(c){ return 'rgb(' + Math.round(c[0]) + ',' + Math.round(c[1]) + ',' + Math.round(c[2]) + ')'; }
+  var pts = [], raf = 0;
+  function measure(){
+    var sy = window.pageYOffset;
+    pts = [{ y: 0, c: HERO }];
+    blocks.forEach(function(b){ var r = b.getBoundingClientRect(); pts.push({ y: sy + r.top + r.height * .42, c: STOP[kind(b)], b: b, top: sy + r.top, h: r.height }); });
+  }
+  function update(){
+    raf = 0;
+    var y = window.pageYOffset + window.innerHeight * .5, i = 0;
+    while(i < pts.length - 1 && y > pts[i+1].y) i++;
+    var A = pts[i], B = pts[Math.min(i+1, pts.length-1)], t = B.y > A.y ? Math.max(0, Math.min(1, (y - A.y) / (B.y - A.y))) : 0;
+    t = t * t * (3 - 2 * t);
+    root.style.setProperty('--bgn', rgb(mix(A.c.bg, B.c.bg, t)));
+    root.style.setProperty('--tc', rgb(mix(A.c.tc, B.c.tc, t)));
+    if(!reduce){
+      var vc = window.pageYOffset + window.innerHeight * .5;
+      for(var k = 1; k < pts.length; k++){
+        var p = pts[k], mid = p.top + p.h * .3, d = (vc - mid) * -.05;
+        p.b.style.setProperty('--gy', Math.max(-60, Math.min(60, d)).toFixed(1) + 'px');
+      }
+    }
+  }
+  function req(){ if(!raf) raf = requestAnimationFrame(update); }
+  measure(); update();
+  window.addEventListener('scroll', req, { passive: true });
+  window.addEventListener('resize', function(){ measure(); req(); });
+  window.addEventListener('load', function(){ measure(); req(); });
+  if('ResizeObserver' in window){ new ResizeObserver(function(){ measure(); req(); }).observe(document.body); }
+  // 4) luz de lampara que sigue al cursor
+  var lamp = document.getElementById('lamp');
+  if(lamp && !reduce && window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+    var tx = window.innerWidth * .5, ty = window.innerHeight * .4, cx = tx, cy = ty, lraf = 0;
+    function lt(){
+      cx += (tx - cx) * .12; cy += (ty - cy) * .12;
+      lamp.style.setProperty('--lx', cx.toFixed(1) + 'px'); lamp.style.setProperty('--ly', cy.toFixed(1) + 'px');
+      lraf = (Math.abs(tx - cx) + Math.abs(ty - cy) > .5) ? requestAnimationFrame(lt) : 0;
+    }
+    window.addEventListener('pointermove', function(e){ tx = e.clientX; ty = e.clientY; lamp.classList.add('on'); if(!lraf) lraf = requestAnimationFrame(lt); }, { passive: true });
+    document.addEventListener('mouseleave', function(){ lamp.classList.remove('on'); });
+  }
 })();
 </script>
 </body>
