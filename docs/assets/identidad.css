@@ -1,0 +1,75 @@
+/* Identidad por pais para los cuadernos de Nalanda (Japon, China, Corea).
+   Se activa con <html data-pais="jp|cn|kr">. Efectos solo con movimiento permitido. */
+html[data-pais]{
+  --id-ease:cubic-bezier(.22,1,.36,1);
+}
+html[data-pais="jp"]{--id-anim:idInk; --id-dur:1.5s; --id-step:.1s; --id-orn:url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%20150%209%27%20preserveAspectRatio=%27none%27%3E%3Cpath%20d=%27M0%205Q6%200.5%2022%201.8L90%203.2Q128%203.6%20150%204.6Q128%206.2%2090%206.4L26%208.2Q8%208.8%200%205Z%27%20fill=%27%23A13D2C%27/%3E%3C/svg%3E");}
+html[data-pais="cn"]{--id-anim:idSeal; --id-dur:.8s; --id-step:.14s; --id-orn:url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2720%27%20height=%2712%27%20viewBox=%270%200%2020%2012%27%3E%3Cpath%20d=%27M0%2011V2H13V8H6V5H10M13%2011H20%27%20fill=%27none%27%20stroke=%27%239E2B25%27%20stroke-width=%271.4%27%20stroke-linecap=%27square%27%20stroke-linejoin=%27miter%27/%3E%3C/svg%3E");}
+html[data-pais="kr"]{--id-anim:idWave; --id-dur:1.3s; --id-step:.07s; --id-orn:url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2796%27%20height=%2722%27%20viewBox=%270%200%2096%2022%27%3E%3Ccircle%20cx=%2711%27%20cy=%2711%27%20r=%278%27%20fill=%27none%27%20stroke=%27%23B5623B%27%20stroke-width=%271.6%27/%3E%3Cpath%20d=%27M32%2011H60M78%202V20%27%20fill=%27none%27%20stroke=%27%23B5623B%27%20stroke-width=%271.6%27%20stroke-linecap=%27round%27/%3E%3C/svg%3E");}
+.id-sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}
+.id-l{display:inline-block;}
+.id-wd{display:inline-block; white-space:nowrap;}
+.id-wd.id-long{display:inline; white-space:normal;}
+
+/* ornamento de seccion propio de cada pais */
+html[data-pais] .section-head::after{content:""; display:block; width:120px; height:12px; margin-top:1.1rem; background:var(--id-orn) left center/auto 12px repeat-x; transform-origin:left; }
+html[data-pais="jp"] .section-head::after{background-size:contain; background-repeat:no-repeat; height:9px; width:150px;}
+html[data-pais="kr"] .section-head::after{width:96px; height:22px; background-size:96px 22px; background-repeat:no-repeat;}
+html[data-pais="cn"] .section-head::after{width:140px;}
+/* regla del hero: mismo motivo */
+html[data-pais="jp"] .hero-rule{width:150px; height:9px; background:url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%20150%209%27%20preserveAspectRatio=%27none%27%3E%3Cpath%20d=%27M0%205Q6%200.5%2022%201.8L90%203.2Q128%203.6%20150%204.6Q128%206.2%2090%206.4L26%208.2Q8%208.8%200%205Z%27%20fill=%27%23A13D2C%27/%3E%3C/svg%3E") left center/contain no-repeat; margin-bottom:1.6rem;}
+html[data-pais="cn"] .hero-rule{width:140px; height:12px; background:url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2720%27%20height=%2712%27%20viewBox=%270%200%2020%2012%27%3E%3Cpath%20d=%27M0%2011V2H13V8H6V5H10M13%2011H20%27%20fill=%27none%27%20stroke=%27%23C9A63E%27%20stroke-width=%271.4%27%20stroke-linecap=%27square%27%20stroke-linejoin=%27miter%27/%3E%3C/svg%3E") left center/auto 12px repeat-x; margin-bottom:1.6rem;}
+html[data-pais="kr"] .hero-rule{width:96px; height:22px; background:url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2796%27%20height=%2722%27%20viewBox=%270%200%2096%2022%27%3E%3Ccircle%20cx=%2711%27%20cy=%2711%27%20r=%278%27%20fill=%27none%27%20stroke=%27%23F0B898%27%20stroke-width=%271.6%27/%3E%3Cpath%20d=%27M32%2011H60M78%202V20%27%20fill=%27none%27%20stroke=%27%23F0B898%27%20stroke-width=%271.6%27%20stroke-linecap=%27round%27/%3E%3C/svg%3E") left center/96px 22px no-repeat; margin-bottom:1.4rem;}
+
+/* ---------- JAPON: sol naciente, tinta y petalos ---------- */
+html[data-pais="jp"] header.hero::before{content:""; position:absolute; right:11%; top:14%; width:min(46vmin,440px); aspect-ratio:1; border-radius:50%; z-index:0; pointer-events:none;
+  background:radial-gradient(circle at 42% 38%, rgba(190,62,44,.17), rgba(161,61,44,.085) 52%, rgba(161,61,44,0) 72%);}
+html[data-pais="jp"] .acto.active .acto-num{position:relative;}
+html[data-pais="jp"] .acto.active .acto-num::after{content:""; position:absolute; left:-.42em; top:-.2em; width:1.85em; height:1.85em; border-radius:50%; border:2px solid rgba(161,61,44,.5); border-right-color:transparent; border-bottom-color:rgba(161,61,44,.2); transform:rotate(-30deg); pointer-events:none;}
+
+/* ---------- CHINA: laca, marco dorado, sello y meandro ---------- */
+html[data-pais="cn"] header.hero::before{content:""; position:absolute; inset:clamp(14px,2.4vw,30px); z-index:1; pointer-events:none; opacity:.8;
+  background:
+   linear-gradient(#C9A63E,#C9A63E) 0 0/46px 1.5px no-repeat, linear-gradient(#C9A63E,#C9A63E) 0 0/1.5px 46px no-repeat,
+   linear-gradient(#C9A63E,#C9A63E) 100% 0/46px 1.5px no-repeat, linear-gradient(#C9A63E,#C9A63E) 100% 0/1.5px 46px no-repeat,
+   linear-gradient(#C9A63E,#C9A63E) 0 100%/46px 1.5px no-repeat, linear-gradient(#C9A63E,#C9A63E) 0 100%/1.5px 46px no-repeat,
+   linear-gradient(#C9A63E,#C9A63E) 100% 100%/46px 1.5px no-repeat, linear-gradient(#C9A63E,#C9A63E) 100% 100%/1.5px 46px no-repeat;}
+html[data-pais="cn"] header.hero::after{content:""; position:absolute; left:0; right:0; bottom:0; height:12px; z-index:1; pointer-events:none; opacity:.4; background:url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2720%27%20height=%2712%27%20viewBox=%270%200%2020%2012%27%3E%3Cpath%20d=%27M0%2011V2H13V8H6V5H10M13%2011H20%27%20fill=%27none%27%20stroke=%27%23C9A63E%27%20stroke-width=%271.4%27%20stroke-linecap=%27square%27%20stroke-linejoin=%27miter%27/%3E%3C/svg%3E") left bottom/20px 12px repeat-x;}
+html[data-pais="cn"] .acto.active .acto-num{position:relative;}
+html[data-pais="cn"] .acto.active .acto-num::after{content:""; position:absolute; inset:-.28em -.34em; border:2px solid rgba(158,43,37,.7); transform:rotate(-2.5deg); pointer-events:none;}
+
+/* ---------- COREA: celadon craquelado, ondas y cheonjiin ---------- */
+html[data-pais="kr"] header.hero::before{content:""; position:absolute; inset:0; z-index:0; pointer-events:none; opacity:.15; background:url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%20600%20420%27%3E%3Cpath%20d=%27M-9%20-16L5%2010L24%2039M74%20-19L108%20-12L135%20-6M74%20-19L78%2012L85%2050M135%20-6L162%201L178%200M135%20-6L129%2021L115%2043M178%200L211%20-3L243%20-3M178%200L178%2035L190%2074M243%20-3L280%20-5L312%20-19M243%20-3L252%2036L250%2064M312%20-19L323%2014L340%2054M396%2015L418%203L448%20-13M448%20-13L493%206L540%2020M448%20-13L441%2019L444%2047M540%2020L544%2038L542%2057M604%20-5L601%2028L591%2064M24%2039L60%2044L85%2050M24%2039L16%2078L-2%20111M85%2050L96%2042L115%2043M115%2043L149%2062L190%2074M190%2074L219%2070L250%2064M190%2074L190%20111L201%20137M250%2064L296%2064L340%2054M250%2064L269%2091L278%20110M340%2054L368%2045L402%2040M340%2054L350%2075L358%20103M402%2040L419%2048L444%2047M402%2040L399%2087L396%20132M444%2047L452%2083L449%20119M542%2057L567%2055L591%2064M542%2057L522%2086L510%20128M591%2064L598%2093L613%20123M-2%20111L40%20118L82%20129M-2%20111L9%20145L19%20172M82%20129L102%20123L120%20123M82%20129L82%20157L77%20184M120%20123L164%20135L201%20137M120%20123L130%20151L137%20178M201%20137L242%20123L278%20110M201%20137L209%20174L217%20200M278%20110L322%20112L358%20103M278%20110L273%20154L265%20187M358%20103L372%20113L396%20132M358%20103L329%20143L311%20189M396%20132L424%20129L449%20119M449%20119L482%20126L510%20128M449%20119L471%20150L483%20170M510%20128L567%20124L613%20123M510%20128L525%20162L528%20188M613%20123L594%20151L576%20178M19%20172L44%20176L77%20184M19%20172L-5%20198L-17%20223M77%20184L101%20179L137%20178M77%20184L61%20213L44%20252M137%20178L132%20199L115%20228M217%20200L236%20197L265%20187M217%20200L201%20228L194%20257M265%20187L252%20208L245%20238M311%20189L326%20218L336%20257M407%20202L447%20185L483%20170M407%20202L417%20231L416%20257M483%20170L500%20183L528%20188M483%20170L474%20203L455%20236M528%20188L552%20188L576%20178M528%20188L522%20223L526%20258M576%20178L595%20197L623%20224M-17%20223L10%20235L44%20252M-17%20223L-13%20253L-16%20288M44%20252L76%20239L115%20228M44%20252L46%20270L53%20299M115%20228L155%20239L194%20257M115%20228L131%20254L138%20289M194%20257L219%20247L245%20238M194%20257L183%20277L175%20296M245%20238L296%20246L336%20257M245%20238L255%20272L260%20303M336%20257L374%20252L416%20257M336%20257L341%20286L356%20309M416%20257L432%20241L455%20236M416%20257L413%20283L401%20305M455%20236L488%20244L526%20258M455%20236L461%20257L476%20280M526%20258L580%20246L623%20224M526%20258L537%20291L554%20313M623%20224L619%20263L619%20314M-16%20288L18%20294L53%20299M-16%20288L-11%20316L-5%20355M53%20299L91%20293L138%20289M53%20299L44%20330L47%20366M138%20289L157%20293L175%20296M138%20289L126%20317L111%20340M175%20296L178%20326L185%20345M260%20303L311%20308L356%20309M260%20303L263%20326L259%20340M356%20309L381%20311L401%20305M356%20309L332%20326L308%20344M401%20305L442%20296L476%20280M401%20305L395%20332L380%20354M476%20280L511%20291L554%20313M476%20280L457%20324L443%20377M554%20313L587%20315L619%20314M554%20313L549%20328L539%20344M619%20314L607%20336L587%20353M-5%20355L21%20363L47%20366M-5%20355L-3%20376L-7%20403M47%20366L76%20356L111%20340M47%20366L68%20410L84%20442M111%20340L147%20342L185%20345M111%20340L125%20381L132%20419M185%20345L217%20338L259%20340M185%20345L185%20371L179%20402M259%20340L277%20337L308%20344M259%20340L261%20377L259%20409M308%20344L341%20349L380%20354M308%20344L329%20370L350%20405M380%20354L384%20402L376%20441M443%20377L490%20364L539%20344M539%20344L561%20345L587%20353M587%20353L595%20393L601%20442M-7%20403L44%20418L84%20442M84%20442L108%20436L132%20419M132%20419L152%20415L179%20402M179%20402L213%20400L259%20409M259%20409L304%20405L350%20405M350%20405L361%20420L376%20441M376%20441L416%20425L468%20404M468%20404L497%20406L536%20398M536%20398L573%20418L601%20442%27%20fill=%27none%27%20stroke=%27%23E9F2EC%27%20stroke-width=%271%27%20stroke-linecap=%27round%27%20stroke-linejoin=%27round%27/%3E%3C/svg%3E") center/540px auto repeat;
+  -webkit-mask-image:radial-gradient(ellipse 70% 80% at 78% 30%, #000 0, transparent 75%); mask-image:radial-gradient(ellipse 70% 80% at 78% 30%, #000 0, transparent 75%);}
+html[data-pais="kr"] .acto.active .acto-num{position:relative;}
+html[data-pais="kr"] .acto.active .acto-num::before,
+html[data-pais="kr"] .acto.active .acto-num::after{content:""; position:absolute; left:50%; top:50%; width:2.4em; height:2.4em; margin:-1.2em 0 0 -1.2em; border-radius:50%; border:1.5px solid rgba(79,111,97,.55); pointer-events:none;}
+
+@media (prefers-reduced-motion:no-preference){
+  html[data-pais] .id-on .id-l{opacity:0;}
+  html[data-pais].id-go header.hero h1.id-on .id-l,
+  html[data-pais] .section-head.id-in h2.id-on .id-l{animation:var(--id-anim) var(--id-dur) var(--id-ease) calc(var(--i,0) * var(--id-step)) both;}
+  html[data-pais] .section-head::after{transform:scaleX(0); transition:transform 1s var(--id-ease) .25s;}
+  html[data-pais] .section-head.id-in::after{transform:none;}
+  html[data-pais] .hero-kanji{animation:idKanji 2.6s ease-out .15s both;}
+  html[data-pais] .hero-rule{transform-origin:left; animation:idRule 1.1s var(--id-ease) .5s both;}
+  html[data-pais="jp"] header.hero::before{animation:idSun 3.4s var(--id-ease) .1s both, idBreath 9s ease-in-out 3.6s infinite alternate;}
+  html[data-pais="cn"] header.hero::before{animation:idFrame 1.6s var(--id-ease) .3s both;}
+  html[data-pais="kr"] header.hero::before{animation:idGlaze 16s ease-in-out infinite alternate;}
+  html[data-pais="jp"] .acto.active .acto-num::after{animation:idEnso .95s var(--id-ease) both;}
+  html[data-pais="cn"] .acto.active .acto-num::after{animation:idStamp .5s cubic-bezier(.2,.9,.3,1.2) both;}
+  html[data-pais="kr"] .acto.active .acto-num::before{animation:idRing 1.5s ease-out both;}
+  html[data-pais="kr"] .acto.active .acto-num::after{animation:idRing 1.5s ease-out .35s both;}
+}
+@keyframes idInk{from{opacity:0; filter:blur(12px); transform:scale(1.25)} 60%{opacity:.9; filter:blur(2px)} to{opacity:1; filter:blur(0); transform:none}}
+@keyframes idSeal{from{opacity:0; transform:scale(1.8) rotate(-6deg)} 62%{opacity:1; transform:scale(.96) rotate(.6deg)} to{opacity:1; transform:none}}
+@keyframes idWave{from{opacity:0; transform:translateY(.6em)} 55%{opacity:1; transform:translateY(-.09em)} to{opacity:1; transform:none}}
+@keyframes idKanji{from{opacity:0; filter:blur(16px)} to{opacity:1; filter:blur(0)}}
+@keyframes idRule{from{transform:scaleX(0)} to{transform:none}}
+@keyframes idSun{from{transform:translateY(34%) scale(.86); opacity:0} to{transform:none; opacity:1}}
+@keyframes idBreath{from{opacity:.82} to{opacity:1}}
+@keyframes idFrame{from{opacity:0; transform:scale(1.035)} to{opacity:.8; transform:none}}
+@keyframes idGlaze{from{opacity:.09} to{opacity:.2}}
+@keyframes idEnso{from{opacity:0; transform:rotate(-230deg) scale(.7)} to{opacity:1; transform:rotate(-30deg) scale(1)}}
+@keyframes idStamp{from{opacity:0; transform:rotate(-2.5deg) scale(1.7)} to{opacity:1; transform:rotate(-2.5deg) scale(1)}}
+@keyframes idRing{from{opacity:.7; transform:scale(.35)} to{opacity:0; transform:scale(2)}}

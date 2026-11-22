@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-pais="cn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -208,7 +208,7 @@
     .cifras .hero-stats .num{font-size:1.4rem;}
   }
 </style>
-<!--vis-head--><link rel="stylesheet" href="../../assets/vis.css">
+<!--vis-head--><link rel="stylesheet" href="../../assets/vis.css"><!--id-head--><link rel="stylesheet" href="../../assets/identidad.css"><!--/id-head-->
 <style>:root{--v-accent:var(--vermillion); --v-accent-deep:var(--vermillion-deep); --v-accent2:var(--gold); --v-accent-soft:rgba(201,166,62,.22); --v-soft:var(--paper-warm); --v-paper:var(--paper); --v-line:var(--line); --v-ink:var(--ink); --v-ink-soft:var(--ink-soft); --v-head:'Noto Serif SC', serif; --v-body:'Hanken Grotesk', sans-serif; --v-mono:'IBM Plex Mono', monospace;}
 .cifras{max-width:none; margin:0; background:#8A2620; color:var(--paper); padding:3rem 8vw 4.5rem;}
 .cifras .hero-stats{margin-top:0;}
@@ -574,7 +574,7 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
   window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
 </script>
 
-<!--vis-js--><script src="../../assets/vis.js"></script><!--/vis-js-->
+<!--vis-js--><script src="../../assets/vis.js"></script><!--/vis-js--><!--id-js--><script src="../../assets/identidad.js" defer></script><!--/id-js-->
 <script src="../../assets/acto-anchor.js"></script>
 <script>(function(){var s=document.querySelector('.cifras');if(!s)return;if(typeof reduceMotion!=='undefined'&&reduceMotion||!('IntersectionObserver' in window)){s.classList.add('in');return;}var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){s.classList.add('in');io.disconnect();}},{threshold:.35});io.observe(s);})();</script>
 </body>
