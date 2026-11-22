@@ -318,6 +318,54 @@
   @keyframes objspin{to{stroke-dashoffset:-3.2}}
   @media (max-width:600px){ .obj{width:54px; height:30px;} }
 
+  /* ---------- efecto tematico al abrir cada acto (sutil, ligado a su objeto) ---------- */
+  .acto-cards{position:relative;}
+  @media (prefers-reduced-motion:no-preference){
+    .acto.open .acto-cards > .card:nth-child(1){--i:0;}
+    .acto.open .acto-cards > .card:nth-child(2){--i:1;}
+    .acto.open .acto-cards > .card:nth-child(3){--i:2;}
+    .acto.open .acto-cards > .card:nth-child(4){--i:3;}
+    .acto.open .acto-cards > .card:nth-child(5){--i:4;}
+    .acto.open .acto-cards > .card:nth-child(6){--i:5;}
+    .acto.open .acto-cards > .card:nth-child(7){--i:6;}
+    .acto.open .acto-cards > .card:nth-child(8){--i:7;}
+    #acto-jp-1-wrap.open .acto-cards > .card{animation:fxSail 1.1s cubic-bezier(.22,1,.36,1) calc(var(--i,0) * .09s) backwards;}
+    #acto-jp-2-wrap.open .acto-cards > .card{animation:fxSteam 1s cubic-bezier(.22,1,.36,1) calc(var(--i,0) * .1s) backwards;}
+    #acto-jp-3-wrap.open .acto-cards > .card{animation:fxStack .8s cubic-bezier(.3,.9,.4,1) calc(var(--i,0) * .14s) backwards;}
+    #acto-jp-4-wrap.open .acto-cards > .card{animation:fxFog 1.4s ease-out calc(var(--i,0) * .12s) backwards;}
+    #acto-jp-5-wrap.open .acto-cards > .card{animation:fxScan 1s cubic-bezier(.65,0,.35,1) calc(var(--i,0) * .1s) backwards;}
+    #acto-cn-1-wrap.open .acto-cards > .card{animation:fxTier .95s cubic-bezier(.22,1,.36,1) calc(var(--i,0) * .12s) backwards;}
+    #acto-cn-2-wrap.open .acto-cards > .card{animation:fxEra 1.1s cubic-bezier(.65,0,.35,1) calc(var(--i,0) * .12s) backwards;}
+    #acto-cn-3-wrap.open .acto-cards > .card{animation:fxStamp .55s cubic-bezier(.2,.9,.3,1) calc(var(--i,0) * .11s) backwards;}
+    #acto-cn-4-wrap.open .acto-cards > .card{animation:fxBuild .9s steps(6,end) calc(var(--i,0) * .12s) backwards;}
+    #acto-cn-5-wrap.open .acto-cards > .card{animation:fxRise 1s cubic-bezier(.16,1,.3,1) calc(var(--i,0) * .1s) backwards;}
+    #acto-kr-1-wrap.open .acto-cards > .card{animation:fxArch 1s cubic-bezier(.22,1,.36,1) calc(var(--i,0) * .1s) backwards;}
+    #acto-kr-2-wrap.open .acto-cards > .card{animation:fxBroken 1s cubic-bezier(.22,1,.36,1) calc(var(--i,0) * .1s) backwards;}
+    #acto-kr-3-wrap.open .acto-cards > .card{animation:fxTraffic .8s cubic-bezier(.2,.8,.2,1) calc(var(--i,0) * .08s) backwards;}
+    #acto-kr-4-wrap.open .acto-cards > .card{animation:fxTremor .9s ease-out calc(var(--i,0) * .1s) backwards;}
+    #acto-kr-5-wrap.open .acto-cards > .card{animation:fxLights 1.1s ease-out calc(var(--i,0) * .16s) backwards;}
+    #acto-jp-2-wrap.open .acto-cards::after,#acto-jp-4-wrap.open .acto-cards::after{content:""; position:absolute; inset:0; pointer-events:none; z-index:3;}
+    #acto-jp-2-wrap.open .acto-cards::after{background:linear-gradient(to top, var(--ivory) 5%, transparent 75%); animation:fxSteamVeil 1.7s ease-out both;}
+    #acto-jp-4-wrap.open .acto-cards::after{left:-20%; right:-20%; background:linear-gradient(100deg, transparent, var(--ivory) 28%, var(--ivory) 72%, transparent); animation:fxFogVeil 2.2s ease-out both;}
+  }
+  @keyframes fxSail{from{opacity:0; transform:translateX(-44px) rotate(-.7deg)} 55%{opacity:1; transform:translateX(6px) rotate(.45deg)} 80%{transform:translateX(-2px) rotate(-.2deg)} to{opacity:1; transform:none}}
+  @keyframes fxSteam{from{opacity:0; filter:blur(9px); transform:translateY(12px)} to{opacity:1; filter:blur(0); transform:none}}
+  @keyframes fxSteamVeil{from{opacity:1; transform:translateY(0)} to{opacity:0; transform:translateY(-70px)}}
+  @keyframes fxStack{from{opacity:0; transform:translateY(-42px)} 55%{opacity:1; transform:translateY(4px)} 78%{transform:translateY(-2px)} to{opacity:1; transform:none}}
+  @keyframes fxFog{from{opacity:0; filter:blur(6px); transform:translateX(16px)} to{opacity:1; filter:blur(0); transform:none}}
+  @keyframes fxFogVeil{from{opacity:.95; transform:translateX(-6%)} to{opacity:0; transform:translateX(12%)}}
+  @keyframes fxScan{from{clip-path:inset(0 100% 0 0); opacity:.2} to{clip-path:inset(0 0 0 0); opacity:1}}
+  @keyframes fxTier{from{clip-path:inset(100% 0 0 0); transform:translateY(22px)} to{clip-path:inset(0 0 0 0); transform:none}}
+  @keyframes fxEra{from{clip-path:inset(0 100% 0 0); filter:sepia(.9) saturate(.5) contrast(.95)} 60%{filter:sepia(.45) saturate(.8)} to{clip-path:inset(0 0 0 0); filter:none}}
+  @keyframes fxStamp{from{opacity:0; transform:scale(1.07)} 70%{opacity:1; transform:scale(.988)} to{opacity:1; transform:none}}
+  @keyframes fxBuild{from{clip-path:inset(100% 0 0 0)} to{clip-path:inset(0 0 0 0)}}
+  @keyframes fxRise{from{clip-path:inset(100% 0 0 0); transform:translateY(64px) scaleY(.94); transform-origin:50% 100%; filter:brightness(1.3)} to{clip-path:inset(0 0 0 0); transform:none; transform-origin:50% 100%; filter:none}}
+  @keyframes fxArch{from{clip-path:ellipse(0% 0% at 50% 100%)} to{clip-path:ellipse(150% 150% at 50% 100%)}}
+  @keyframes fxBroken{from{opacity:0; transform:translate(-10px,-14px) rotate(-1.8deg)} 45%{opacity:1; transform:translate(3px,5px) rotate(.9deg)} 75%{transform:translate(-1px,-1px) rotate(-.3deg)} to{opacity:1; transform:none}}
+  @keyframes fxTraffic{from{opacity:0; transform:translateX(-110px)} to{opacity:1; transform:none}}
+  @keyframes fxTremor{0%{opacity:0; transform:translateY(12px)} 35%{opacity:1; transform:none} 48%{transform:translateX(-3px)} 61%{transform:translateX(3px)} 74%{transform:translateX(-2px)} 87%{transform:translateX(1px)} 100%{opacity:1; transform:none}}
+  @keyframes fxLights{0%{opacity:0; box-shadow:0 0 0 rgba(122,158,142,0)} 40%{opacity:1; box-shadow:0 0 26px rgba(122,158,142,.55)} 100%{opacity:1; box-shadow:0 0 0 rgba(122,158,142,0)}}
+
   .acto-panel{display:grid; grid-template-rows:1fr;}
   .acto-cards{min-height:0; overflow:hidden; padding:.6rem 12px 1.8rem 4px; margin:0 -12px 0 -4px;}
   .js .acto:not(.open) .acto-cards{padding-top:0; padding-bottom:0;}
