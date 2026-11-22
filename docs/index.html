@@ -452,8 +452,8 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
   .acto.open::before{transform:scaleX(1);}
   .lamp{position:fixed; inset:0; z-index:4; pointer-events:none; opacity:0; transition:opacity 1.2s ease; mix-blend-mode:multiply;
     background:
-      radial-gradient(circle 190px at var(--lx,50%) var(--ly,40%), rgba(255,204,118,.16), rgba(255,204,118,0) 100%),
-      radial-gradient(circle 480px at var(--lx,50%) var(--ly,40%), rgba(96,70,32,0) 0, rgba(96,70,32,0) 32%, rgba(96,70,32,.065) 100%);}
+      radial-gradient(circle 190px at var(--lx,50%) var(--ly,40%), rgba(var(--lampg,255,204,118),.14), rgba(var(--lampg,255,204,118),0) 100%),
+      radial-gradient(circle 480px at var(--lx,50%) var(--ly,40%), rgba(var(--lampc,96,70,32),0) 0, rgba(var(--lampc,96,70,32),0) 32%, rgba(var(--lampc,96,70,32),.075) 100%);}
   .lamp.on{opacity:1;}
   @media (hover:none), (pointer:coarse), (prefers-reduced-motion:reduce){ .lamp{display:none;} }
   @media (prefers-reduced-motion:no-preference){
@@ -480,6 +480,21 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
     .region-block.china.seen .region-index{animation:cnStamp .55s cubic-bezier(.2,.9,.3,1.2) .15s both;}
   }
   @keyframes cnStamp{from{opacity:0; border-color:rgba(158,43,37,.7); transform:rotate(-2.5deg) scale(2)} to{opacity:1; border-color:rgba(158,43,37,.7); transform:rotate(-2.5deg) scale(1)}}
+  /* Japon y Corea: numero con su marca y trazo tematico bajo el encabezado (como el sello y la greca de China) */
+  .region-block.japon .region-head::after{height:9px; bottom:-4px; background:url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%20150%209%27%20preserveAspectRatio=%27none%27%3E%3Cpath%20d=%27M0%205Q6%200.5%2022%201.8L90%203.2Q128%203.6%20150%204.6Q128%206.2%2090%206.4L26%208.2Q8%208.8%200%205Z%27%20fill=%27%233E4E72%27/%3E%3C/svg%3E") left center/150px 9px no-repeat; opacity:.7;}
+  .region-block.corea .region-head::after{height:22px; bottom:-11px; background:url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2796%27%20height=%2722%27%20viewBox=%270%200%2096%2022%27%3E%3Ccircle%20cx=%2711%27%20cy=%2711%27%20r=%278%27%20fill=%27none%27%20stroke=%27%234F6F61%27%20stroke-width=%271.6%27/%3E%3Cpath%20d=%27M32%2011H60M78%202V20%27%20fill=%27none%27%20stroke=%27%234F6F61%27%20stroke-width=%271.6%27%20stroke-linecap=%27round%27/%3E%3C/svg%3E") left center/96px 22px no-repeat; opacity:.75;}
+  .region-block.japon .region-index, .region-block.corea .region-index{position:relative; font-style:normal; font-weight:600;}
+  .region-block.japon .region-index{padding:.25em .5em;}
+  .region-block.japon .region-index::after{content:""; position:absolute; inset:-.2em -.1em; border-radius:50%; border:2px solid var(--region-accent); border-right-color:transparent; border-bottom-color:rgba(62,78,114,.25); transform:rotate(-30deg); opacity:0;}
+  .region-block.japon.seen .region-index::after{opacity:.75;}
+  .region-block.corea .region-index{display:inline-grid; place-items:center; width:2.25em; height:2.25em; border-radius:50%; border:1.5px solid rgba(79,111,97,0);}
+  .region-block.corea.seen .region-index{border-color:rgba(79,111,97,.65);}
+  @media (prefers-reduced-motion:no-preference){
+    .region-block.japon.seen .region-index::after{animation:jpEnso .95s cubic-bezier(.22,1,.36,1) .15s both;}
+    .region-block.corea.seen .region-index{animation:krRing .9s cubic-bezier(.22,1,.36,1) .15s both;}
+  }
+  @keyframes jpEnso{from{opacity:0; transform:rotate(-230deg) scale(.7)} to{opacity:.75; transform:rotate(-30deg) scale(1)}}
+  @keyframes krRing{from{opacity:0; transform:scale(1.7)} to{opacity:1; transform:none}}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -1427,8 +1442,8 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
     blocks.forEach(function(b){ var hd = b.querySelector('.region-head'); if(hd) io.observe(hd); });
   } else { blocks.forEach(see); }
   // 3) el color de la sala fluye entre paises (sin limites visibles)
-  var HERO = { bg: [246,241,230], tc: [158,43,37] };
-  var STOP = { japon: { bg: [240,239,232], tc: [62,78,114] }, china: { bg: [247,237,224], tc: [158,43,37] }, corea: { bg: [235,240,230], tc: [79,110,96] } };
+  var HERO = { bg: [246,241,230], tc: [158,43,37], lc: [96,70,32], lg: [255,204,118] };
+  var STOP = { japon: { bg: [240,239,232], tc: [62,78,114], lc: [40,52,84], lg: [255,236,214] }, china: { bg: [247,237,224], tc: [158,43,37], lc: [120,36,30], lg: [255,206,128] }, corea: { bg: [235,240,230], tc: [79,110,96], lc: [36,64,52], lg: [218,240,228] } };
   function kind(b){ return b.classList.contains('japon') ? 'japon' : b.classList.contains('china') ? 'china' : 'corea'; }
   function mix(a, b, t){ return [a[0]+(b[0]-a[0])*t, a[1]+(b[1]-a[1])*t, a[2]+(b[2]-a[2])*t]; }
   function rgb(c){ return 'rgb(' + Math.round(c[0]) + ',' + Math.round(c[1]) + ',' + Math.round(c[2]) + ')'; }
@@ -1446,6 +1461,8 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
     t = t * t * (3 - 2 * t);
     root.style.setProperty('--bgn', rgb(mix(A.c.bg, B.c.bg, t)));
     root.style.setProperty('--tc', rgb(mix(A.c.tc, B.c.tc, t)));
+    root.style.setProperty('--lampc', rgb(mix(A.c.lc, B.c.lc, t)).slice(4, -1));
+    root.style.setProperty('--lampg', rgb(mix(A.c.lg, B.c.lg, t)).slice(4, -1));
     if(!reduce){
       var vc = window.pageYOffset + window.innerHeight * .5;
       for(var k = 1; k < pts.length; k++){

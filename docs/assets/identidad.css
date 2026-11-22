@@ -73,3 +73,13 @@ html[data-pais="kr"] .acto.active .acto-num::after{content:""; position:absolute
 @keyframes idEnso{from{opacity:0; transform:rotate(-230deg) scale(.7)} to{opacity:1; transform:rotate(-30deg) scale(1)}}
 @keyframes idStamp{from{opacity:0; transform:rotate(-2.5deg) scale(1.7)} to{opacity:1; transform:rotate(-2.5deg) scale(1)}}
 @keyframes idRing{from{opacity:.7; transform:scale(.35)} to{opacity:0; transform:scale(2)}}
+
+/* sombra sutil que sigue al cursor, con el tono de cada pais */
+html[data-pais="jp"]{--lampc:40,52,84; --lampg:255,236,214;}
+html[data-pais="cn"]{--lampc:120,36,30; --lampg:255,206,128;}
+html[data-pais="kr"]{--lampc:36,64,52; --lampg:218,240,228;}
+.id-lamp{position:fixed; inset:0; z-index:5; pointer-events:none; opacity:0; transition:opacity 1.2s ease; mix-blend-mode:multiply;
+  background:
+   radial-gradient(circle 190px at var(--lx,50%) var(--ly,40%), rgba(var(--lampg),.14), rgba(var(--lampg),0) 100%),
+   radial-gradient(circle 480px at var(--lx,50%) var(--ly,40%), rgba(var(--lampc),0) 0, rgba(var(--lampc),0) 32%, rgba(var(--lampc),.075) 100%);}
+.id-lamp.on{opacity:1;}
