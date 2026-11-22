@@ -59,7 +59,7 @@
   }
 
   /* ---------- Textura: grano de papel real (SVG turbulence) ---------- */
-  .paper-grain{position:fixed; inset:0; z-index:1; pointer-events:none; opacity:.05; mix-blend-mode:multiply;}
+  .paper-grain{position:fixed; inset:0; z-index:1; pointer-events:none; opacity:.04; background-size:128px 128px;}
   .ink-wash{position:fixed; z-index:0; pointer-events:none;}
   .ink-wash.w1{top:-10%; right:-6%; width:40vw; height:40vw; background:radial-gradient(ellipse, rgba(158,43,37,0.045), transparent 68%); filter:blur(2px);}
   .ink-wash.w2{bottom:0%; left:-8%; width:36vw; height:36vw; background:radial-gradient(ellipse, rgba(62,78,114,0.04), transparent 68%); filter:blur(2px);}
@@ -444,16 +444,16 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
   .region-head h2{font-size:clamp(1.8rem, 3.8vw, 2.8rem); letter-spacing:.005em; line-height:1.1;}
   .region-head h2 .wd{display:inline-block; white-space:nowrap;}
   .region-head h2 .lt{display:inline-block; transition:color .5s ease;}
-  .region-glyph{position:absolute; right:-1vw; top:-5rem; height:clamp(150px, 21vw, 260px); width:auto; fill:var(--region-accent, var(--gold)); opacity:0; pointer-events:none; z-index:0; transform:translateY(var(--gy, 0px)); transition:opacity 2.4s ease;}
+  .region-glyph{position:absolute; right:-1vw; top:-5rem; height:clamp(150px, 21vw, 260px); width:auto; fill:var(--region-accent, var(--gold)); opacity:0; pointer-events:none; z-index:0; will-change:transform; transition:opacity 2.4s ease;}
   .region-block.seen .region-glyph{opacity:.06;}
   @media (max-width:720px){ .region-glyph{height:150px; right:-6vw; top:-3.4rem;} .region-block.seen .region-glyph{opacity:.05;} }
   .acto::before{content:""; position:absolute; left:0; right:0; top:-1px; height:1px; background:var(--region-accent, var(--gold)); transform:scaleX(0); transform-origin:left; transition:transform .7s var(--ease-out); pointer-events:none;}
   @media (hover:hover){ .acto:hover::before{transform:scaleX(1);} }
   .acto.open::before{transform:scaleX(1);}
-  .lamp{position:fixed; inset:0; z-index:4; pointer-events:none; opacity:0; transition:opacity 1.2s ease; mix-blend-mode:multiply;
+  .lamp{position:fixed; inset:0; z-index:4; pointer-events:none; opacity:0; transition:opacity 1.2s ease;
     background:
-      radial-gradient(circle 190px at var(--lx,50%) var(--ly,40%), rgba(var(--lampg,255,204,118),.14), rgba(var(--lampg,255,204,118),0) 100%),
-      radial-gradient(circle 480px at var(--lx,50%) var(--ly,40%), rgba(var(--lampc,96,70,32),0) 0, rgba(var(--lampc,96,70,32),0) 32%, rgba(var(--lampc,96,70,32),.075) 100%);}
+      radial-gradient(circle 190px at var(--lx,50%) var(--ly,40%), rgba(var(--lampg,255,204,118),.12), rgba(var(--lampg,255,204,118),0) 100%),
+      radial-gradient(circle 480px at var(--lx,50%) var(--ly,40%), rgba(var(--lampc,96,70,32),0) 0, rgba(var(--lampc,96,70,32),0) 32%, rgba(var(--lampc,96,70,32),.08) 100%);}
   .lamp.on{opacity:1;}
   @media (hover:none), (pointer:coarse), (prefers-reduced-motion:reduce){ .lamp{display:none;} }
   @media (prefers-reduced-motion:no-preference){
@@ -520,7 +520,7 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
     <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0.16  0 0 0 0 0.14  0 0 0 0 0.11  0 0 0 0.9 0"/>
   </filter>
 </svg>
-<div class="paper-grain" style="filter:url(#grainFilter);"></div>
+<div class="paper-grain" id="paperGrain"></div>
 <div class="ink-wash w1"></div>
 <div class="ink-wash w2"></div>
 <div class="beam" aria-hidden="true"></div>
@@ -1393,12 +1393,14 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
   if(reduce) return;
   document.documentElement.classList.add('pasado');
   var cv = document.getElementById('dust'); if(!cv) return;
-  var ctx = cv.getContext('2d'), W = 0, H = 0, P = [], on = true, raf = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
+  var ctx = cv.getContext('2d'), W = 0, H = 0, P = [], on = true, raf = 0, dpr = 1, lastT = 0;
   function size(){ W = window.innerWidth; H = window.innerHeight; cv.width = W*dpr; cv.height = H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0); }
   function mk(init){ return { x: Math.random()*W, y: init ? Math.random()*H : H+8, r: .6+Math.random()*1.9, vy: -(.08+Math.random()*.22), vx: .04+Math.random()*.14, ph: Math.random()*6.28, sp: .004+Math.random()*.01, a: .12+Math.random()*.26 }; }
   function fill(){ var n = W < 700 ? 14 : 30; P = []; for(var i=0;i<n;i++) P.push(mk(true)); }
   function tick(t){
     if(!on){ raf = 0; return; }
+    if(t - lastT < 30){ raf = requestAnimationFrame(tick); return; }
+    lastT = t;
     ctx.clearRect(0,0,W,H);
     for(var i=0;i<P.length;i++){
       var p = P[i]; p.ph += p.sp; p.y += p.vy; p.x += p.vx + Math.sin(p.ph*3)*.12;
@@ -1441,42 +1443,52 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
     var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ see(e.target.closest('.region-block')); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px -12% 0px', threshold: .2 });
     blocks.forEach(function(b){ var hd = b.querySelector('.region-head'); if(hd) io.observe(hd); });
   } else { blocks.forEach(see); }
-  // 3) el color de la sala fluye entre paises (sin limites visibles)
+  // 3) el color de la sala fluye entre paises (sin limites visibles). Solo se escribe cuando cambia y sin tocar la raiz.
   var HERO = { bg: [246,241,230], tc: [158,43,37], lc: [96,70,32], lg: [255,204,118] };
   var STOP = { japon: { bg: [240,239,232], tc: [62,78,114], lc: [40,52,84], lg: [255,236,214] }, china: { bg: [247,237,224], tc: [158,43,37], lc: [120,36,30], lg: [255,206,128] }, corea: { bg: [235,240,230], tc: [79,110,96], lc: [36,64,52], lg: [218,240,228] } };
   function kind(b){ return b.classList.contains('japon') ? 'japon' : b.classList.contains('china') ? 'china' : 'corea'; }
   function mix(a, b, t){ return [a[0]+(b[0]-a[0])*t, a[1]+(b[1]-a[1])*t, a[2]+(b[2]-a[2])*t]; }
-  function rgb(c){ return 'rgb(' + Math.round(c[0]) + ',' + Math.round(c[1]) + ',' + Math.round(c[2]) + ')'; }
-  var pts = [], raf = 0;
+  function triple(c){ return Math.round(c[0]) + ',' + Math.round(c[1]) + ',' + Math.round(c[2]); }
+  var pts = [], raf = 0, lastKey = '', lastY = -1, thread = document.querySelector('.thread'), lampEl = document.getElementById('lamp'), glyphs = [];
   function measure(){
     var sy = window.pageYOffset;
     pts = [{ y: 0, c: HERO }];
-    blocks.forEach(function(b){ var r = b.getBoundingClientRect(); pts.push({ y: sy + r.top + r.height * .42, c: STOP[kind(b)], b: b, top: sy + r.top, h: r.height }); });
+    blocks.forEach(function(b){ var r = b.getBoundingClientRect(); pts.push({ y: sy + r.top + r.height * .42, c: STOP[kind(b)], b: b, g: b.querySelector('.region-glyph'), top: sy + r.top, h: r.height }); });
+    lastKey = '';
   }
   function update(){
     raf = 0;
-    var y = window.pageYOffset + window.innerHeight * .5, i = 0;
+    var py = window.pageYOffset;
+    if(Math.abs(py - lastY) < .5) return;
+    lastY = py;
+    var y = py + window.innerHeight * .5, i = 0;
     while(i < pts.length - 1 && y > pts[i+1].y) i++;
     var A = pts[i], B = pts[Math.min(i+1, pts.length-1)], t = B.y > A.y ? Math.max(0, Math.min(1, (y - A.y) / (B.y - A.y))) : 0;
     t = t * t * (3 - 2 * t);
-    root.style.setProperty('--bgn', rgb(mix(A.c.bg, B.c.bg, t)));
-    root.style.setProperty('--tc', rgb(mix(A.c.tc, B.c.tc, t)));
-    root.style.setProperty('--lampc', rgb(mix(A.c.lc, B.c.lc, t)).slice(4, -1));
-    root.style.setProperty('--lampg', rgb(mix(A.c.lg, B.c.lg, t)).slice(4, -1));
+    var bg = triple(mix(A.c.bg, B.c.bg, t));
+    if(bg !== lastKey){
+      lastKey = bg;
+      document.body.style.backgroundColor = 'rgb(' + bg + ')';
+      var tc = 'rgb(' + triple(mix(A.c.tc, B.c.tc, t)) + ')';
+      if(thread) thread.style.setProperty('--tc', tc);
+      if(lampEl){ lampEl.style.setProperty('--lampc', triple(mix(A.c.lc, B.c.lc, t))); lampEl.style.setProperty('--lampg', triple(mix(A.c.lg, B.c.lg, t))); }
+    }
     if(!reduce){
-      var vc = window.pageYOffset + window.innerHeight * .5;
       for(var k = 1; k < pts.length; k++){
-        var p = pts[k], mid = p.top + p.h * .3, d = (vc - mid) * -.05;
-        p.b.style.setProperty('--gy', Math.max(-60, Math.min(60, d)).toFixed(1) + 'px');
+        var p = pts[k]; if(!p.g) continue;
+        var vis = p.top - py < window.innerHeight + 200 && p.top + p.h - py > -200; if(!vis) continue;
+        var d = (py + window.innerHeight * .5 - (p.top + p.h * .3)) * -.05;
+        p.g.style.transform = 'translateY(' + Math.max(-60, Math.min(60, d)).toFixed(0) + 'px)';
       }
     }
   }
   function req(){ if(!raf) raf = requestAnimationFrame(update); }
+  var mt = 0; function remeasure(){ clearTimeout(mt); mt = setTimeout(function(){ measure(); lastY = -1; req(); }, 200); }
   measure(); update();
   window.addEventListener('scroll', req, { passive: true });
-  window.addEventListener('resize', function(){ measure(); req(); });
-  window.addEventListener('load', function(){ measure(); req(); });
-  if('ResizeObserver' in window){ new ResizeObserver(function(){ measure(); req(); }).observe(document.body); }
+  window.addEventListener('resize', remeasure);
+  window.addEventListener('load', remeasure);
+  if('ResizeObserver' in window){ new ResizeObserver(remeasure).observe(document.body); }
   // 4) luz de lampara que sigue al cursor
   var lamp = document.getElementById('lamp');
   if(lamp && !reduce && window.matchMedia('(hover:hover) and (pointer:fine)').matches){
@@ -1489,6 +1501,20 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
     window.addEventListener('pointermove', function(e){ tx = e.clientX; ty = e.clientY; lamp.classList.add('on'); if(!lraf) lraf = requestAnimationFrame(lt); }, { passive: true });
     document.addEventListener('mouseleave', function(){ lamp.classList.remove('on'); });
   }
+})();
+</script>
+<script>
+// Grano de papel: se dibuja una sola vez (antes era un filtro SVG mezclado en cada cuadro)
+(function(){
+  var el = document.getElementById('paperGrain'); if(!el) return;
+  var c = document.createElement('canvas'); c.width = c.height = 128;
+  var x = c.getContext('2d'), d = x.createImageData(128, 128), i, a;
+  for(i = 0; i < d.data.length; i += 4){
+    a = Math.max(0, Math.min(1, .45 + (Math.random() - .5) * .85));
+    d.data[i] = 41; d.data[i+1] = 36; d.data[i+2] = 28; d.data[i+3] = Math.round(a * 230);
+  }
+  x.putImageData(d, 0, 0);
+  el.style.backgroundImage = 'url(' + c.toDataURL('image/png') + ')';
 })();
 </script>
 <script src="assets/identidad.js" defer></script>
