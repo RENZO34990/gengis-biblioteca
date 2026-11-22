@@ -280,6 +280,44 @@
   .acto-divider:hover .acto-blurb, .acto-divider:focus-visible .acto-blurb, .acto.open .acto-blurb{opacity:1; transform:translateY(0);}
   @media (hover:none){ .acto-years{opacity:1; transform:none; pointer-events:auto;} }
 
+  /* ---------- Paso del tiempo: un objeto por pais que cambia con cada acto ---------- */
+  .obj{flex:none; align-self:center; width:66px; height:37px; color:var(--region-accent, var(--gold)); opacity:.5; transition:opacity .45s ease; overflow:hidden;}
+  .acto-divider:hover .obj, .acto-divider:focus-visible .obj, .acto.open .obj{opacity:1;}
+  .obj .wv{stroke-width:1; opacity:.7;}
+  .obj .smk{stroke-dasharray:2 3; stroke-width:1.2;}
+  .obj .fog{stroke-dasharray:3 3; stroke-width:1; opacity:.55;}
+  .obj .crk{stroke-width:1.1; stroke-dasharray:2 1.5; opacity:.9;}
+  .obj .rot{stroke-width:3.4; stroke-dasharray:1.6 1.6; stroke-linecap:butt;}
+  .obj .crane{transform-box:view-box; transform-origin:54px 8px;}
+  .obj .sh{transform-box:fill-box; transform-origin:50% 100%;}
+  .js .acto.open .obj .d{stroke-dasharray:1; animation:objdraw 1.5s var(--ease-out) both;}
+  .js .acto.open .obj .d.fl{animation:objdraw 1.5s var(--ease-out) both, objfill 1.5s ease both;}
+  @keyframes objdraw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+  @keyframes objfill{0%,55%{fill-opacity:0}100%{fill-opacity:1}}
+  @media (prefers-reduced-motion:no-preference){
+    .obj .wv,.obj .sh,.obj .smk,.obj .fog,.obj .crane,.obj .car,.obj .lt,.obj .rot{animation-play-state:paused;}
+    .acto.open .obj .wv,.acto.open .obj .sh,.acto.open .obj .smk,.acto.open .obj .fog,.acto.open .obj .crane,.acto.open .obj .car,.acto.open .obj .lt,.acto.open .obj .rot,
+    .acto-divider:hover .obj .wv,.acto-divider:hover .obj .sh,.acto-divider:hover .obj .smk,.acto-divider:hover .obj .fog,.acto-divider:hover .obj .crane,.acto-divider:hover .obj .car,.acto-divider:hover .obj .lt,.acto-divider:hover .obj .rot{animation-play-state:running;}
+    .obj .wv{animation:objwave 1.8s linear infinite;}
+    .obj .sh{animation:objbob 3.6s ease-in-out infinite;}
+    .obj .smk{animation:objsmoke 2.4s linear infinite;}
+    .obj .fog{animation:objfog 5s linear infinite;}
+    .obj .crane{animation:objswing 4.5s ease-in-out infinite;}
+    .obj .car{animation:objcar 4s linear infinite;}
+    .obj .car.c2{animation-delay:-2s;}
+    .obj .lt{animation:objlight 1.6s ease-in-out infinite;}
+    .obj .rot{animation:objspin .9s linear infinite;}
+  }
+  @keyframes objwave{to{transform:translateX(8px)}}
+  @keyframes objbob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-1px) rotate(.8deg)}}
+  @keyframes objsmoke{from{stroke-dashoffset:0;opacity:1}to{stroke-dashoffset:-10;opacity:.25}}
+  @keyframes objfog{to{stroke-dashoffset:-12}}
+  @keyframes objswing{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+  @keyframes objcar{from{transform:translateX(0)}to{transform:translateX(56px)}}
+  @keyframes objlight{0%,100%{opacity:.25}50%{opacity:1}}
+  @keyframes objspin{to{stroke-dashoffset:-3.2}}
+  @media (max-width:600px){ .obj{width:54px; height:30px;} }
+
   .acto-panel{display:grid; grid-template-rows:1fr;}
   .acto-cards{min-height:0; overflow:hidden; padding:.6rem 12px 1.8rem 4px; margin:0 -12px 0 -4px;}
   .js .acto:not(.open) .acto-cards{padding-top:0; padding-bottom:0;}
@@ -458,6 +496,7 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
     <div class="acto-list">
       <div class="acto" id="acto-jp-1-wrap">
         <button type="button" class="acto-divider" id="acto-jp-1-btn" aria-expanded="false" aria-controls="acto-jp-1">
+          <svg class="obj o-jp1" viewBox="0 0 72 40" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path class="wv" d="M-8 36q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0"/><g class="sh"><path class="d fl" pathLength="1" d="M8 27h54l-6 7H15z" fill="currentColor"/><path class="d" pathLength="1" d="M24 27V6M36 27V4M48 27V7M62 27l7-4"/><path class="d" pathLength="1" d="M18 8h12v10H18zM30 6h12v10H30zM42 9h12v9H42z"/></g></g></svg>
           <span class="acto-num">I</span>
           <span class="acto-title">Del orden feudal a la modernización</span>
           <span class="acto-years">1603-1873</span>
@@ -499,6 +538,7 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
       </div>
       <div class="acto" id="acto-jp-2-wrap">
         <button type="button" class="acto-divider" id="acto-jp-2-btn" aria-expanded="false" aria-controls="acto-jp-2">
+          <svg class="obj o-jp2" viewBox="0 0 72 40" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path class="wv" d="M-8 36q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0"/><g class="sh"><path class="d fl" pathLength="1" d="M8 28h52l-5 6H14z" fill="currentColor"/><path class="d" pathLength="1" d="M24 28v-7h18v7"/><path class="d" pathLength="1" d="M33 21v-8h6v8z"/><path class="d" pathLength="1" d="M16 28V13M16 14l7 8H16"/><path class="smk" d="M36 11c-3-2 3-4 0-7"/></g></g></svg>
           <span class="acto-num">II</span>
           <span class="acto-title">La construcción de una potencia industrial</span>
           <span class="acto-years">1870s-1930s</span>
@@ -533,6 +573,7 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
       </div>
       <div class="acto" id="acto-jp-3-wrap">
         <button type="button" class="acto-divider" id="acto-jp-3-btn" aria-expanded="false" aria-controls="acto-jp-3">
+          <svg class="obj o-jp3" viewBox="0 0 72 40" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path class="wv" d="M-8 36q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0"/><g class="sh"><path class="d fl" pathLength="1" d="M6 31h58l-4 5H11z" fill="currentColor"/><path class="d" pathLength="1" d="M12 25h8v6h-8zM20 25h8v6h-8zM28 25h8v6h-8zM36 25h8v6h-8zM20 19h8v6h-8zM28 19h8v6h-8z"/><path class="d" pathLength="1" d="M47 31V14h9v17M47 19h9"/></g></g></svg>
           <span class="acto-num">III</span>
           <span class="acto-title">De la derrota a la potencia económica</span>
           <span class="acto-years">1945-1993</span>
@@ -567,6 +608,7 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
       </div>
       <div class="acto" id="acto-jp-4-wrap">
         <button type="button" class="acto-divider" id="acto-jp-4-btn" aria-expanded="false" aria-controls="acto-jp-4">
+          <svg class="obj o-jp4" viewBox="0 0 72 40" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path class="fog" d="M6 9h30M20 14h36M10 19h24M40 22h22"/><g transform="rotate(-6 36 33)"><g class="sh"><path class="d fl" pathLength="1" d="M6 31h58l-4 5H11z" fill="currentColor"/><path class="d" pathLength="1" d="M12 25h8v6h-8zM20 25h8v6h-8z"/><path class="d" pathLength="1" d="M47 31V14h9v17M47 19h9"/></g></g><path class="wv" d="M-8 36q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0"/></g></svg>
           <span class="acto-num">IV</span>
           <span class="acto-title">La crisis del modelo japonés</span>
           <span class="acto-years">1985-2012</span>
@@ -601,6 +643,7 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
       </div>
       <div class="acto" id="acto-jp-5-wrap">
         <button type="button" class="acto-divider" id="acto-jp-5-btn" aria-expanded="false" aria-controls="acto-jp-5">
+          <svg class="obj o-jp5" viewBox="0 0 72 40" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path class="wv" d="M-8 36q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0"/><g class="sh"><path class="d fl" pathLength="1" d="M5 32h54l8-3-4 7H12z" fill="currentColor"/><path class="d" pathLength="1" d="M12 26h7v6h-7zM19 26h7v6h-7zM26 26h7v6h-7zM33 26h7v6h-7z"/><path class="d" pathLength="1" d="M48 32V12h8v20M48 18h8"/><path class="rot" d="M17 25V6M29 25V6"/></g></g></svg>
           <span class="acto-num">V</span>
           <span class="acto-title">Japón ante el siglo XXI</span>
           <span class="acto-years">2012-2026</span>
@@ -647,6 +690,7 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
     <div class="acto-list">
       <div class="acto" id="acto-cn-1-wrap">
         <button type="button" class="acto-divider" id="acto-cn-1-btn" aria-expanded="false" aria-controls="acto-cn-1">
+          <svg class="obj o-cn1" viewBox="0 0 72 40" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path class="d" pathLength="1" d="M4 36h64"/><path class="d" pathLength="1" d="M18.0 35.0l3 1h30.0l3 -1"/><path class="d" pathLength="1" d="M23.5 36.0v-3.8h25.0v3.8"/><path class="d" pathLength="1" d="M20.0 28.8l3 1h26.0l3 -1"/><path class="d" pathLength="1" d="M25.5 29.8v-3.8h21.0v3.8"/><path class="d" pathLength="1" d="M22.0 22.6l3 1h22.0l3 -1"/><path class="d" pathLength="1" d="M27.5 23.6v-3.8h17.0v3.8"/><path class="d" pathLength="1" d="M24.0 16.4l3 1h18.0l3 -1"/><path class="d" pathLength="1" d="M29.5 17.4v-3.8h13.0v3.8"/><path class="d" pathLength="1" d="M26.0 10.2l3 1h14.0l3 -1"/><path class="d" pathLength="1" d="M31.5 11.2v-3.8h9.0v3.8"/><path class="d" pathLength="1" d="M36 7.4V2.4"/><circle class="d fl" cx="36" cy="1.4" r="1" fill="currentColor"/><path class="crk" d="M33 17l3 4-3 4"/></g></svg>
           <span class="acto-num">I</span>
           <span class="acto-title">El colapso del orden imperial</span>
           <span class="acto-years">1750s-1911</span>
@@ -688,6 +732,7 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
       </div>
       <div class="acto" id="acto-cn-2-wrap">
         <button type="button" class="acto-divider" id="acto-cn-2-btn" aria-expanded="false" aria-controls="acto-cn-2">
+          <svg class="obj o-cn2" viewBox="0 0 72 40" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path class="d" pathLength="1" d="M4 36h64"/><path class="d" pathLength="1" d="M8.0 35.0l3 1h22.0l3 -1"/><path class="d" pathLength="1" d="M13.5 36.0v-3.6h17.0v3.6"/><path class="d" pathLength="1" d="M10.0 29.0l3 1h18.0l3 -1"/><path class="d" pathLength="1" d="M15.5 30.0v-3.6h13.0v3.6"/><path class="d" pathLength="1" d="M12.0 23.0l3 1h14.0l3 -1"/><path class="d" pathLength="1" d="M17.5 24.0v-3.6h9.0v3.6"/><path class="d" pathLength="1" d="M44 36V16h4v-4h8v4h4v20M48 22h8M48 27h8M48 32h8M52 12V5"/><path class="crk" d="M17 24l3 3-2 3"/></g></svg>
           <span class="acto-num">II</span>
           <span class="acto-title">La búsqueda de un nuevo Estado</span>
           <span class="acto-years">1912-1957</span>
@@ -722,6 +767,7 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
       </div>
       <div class="acto" id="acto-cn-3-wrap">
         <button type="button" class="acto-divider" id="acto-cn-3-btn" aria-expanded="false" aria-controls="acto-cn-3">
+          <svg class="obj o-cn3" viewBox="0 0 72 40" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path class="d" pathLength="1" d="M4 36h64"/><path class="d" pathLength="1" d="M6 36V24l6-5v5l6-5v5l6-5v5l6-5v5h14v7M6 36h54"/><path class="d" pathLength="1" d="M46 24V9h5v15"/><path class="smk" d="M48 7c-3-2 3-4 0-6"/><path class="d" pathLength="1" d="M58 36V22M58 22V12l9 3-9 3"/></g></svg>
           <span class="acto-num">III</span>
           <span class="acto-title">La radicalización del proyecto socialista</span>
           <span class="acto-years">1958-1978</span>
@@ -756,6 +802,7 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
       </div>
       <div class="acto" id="acto-cn-4-wrap">
         <button type="button" class="acto-divider" id="acto-cn-4-btn" aria-expanded="false" aria-controls="acto-cn-4">
+          <svg class="obj o-cn4" viewBox="0 0 72 40" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path class="d" pathLength="1" d="M4 36h64"/><path class="d" pathLength="1" d="M6 36V22h10v14M6 27h10M6 32h10"/><path class="d" pathLength="1" d="M19 36V12h10v24M19 18h10M19 24h10M19 30h10M19 12v-4M29 12v-4"/><path class="d" pathLength="1" d="M33 36V24h9v12M33 30h9"/><path class="d" pathLength="1" d="M54 36V8"/><g class="crane"><path class="d" pathLength="1" d="M42 8h27M42 8l5-5M69 8l-5-5M64 8v9M62 17h4"/></g></g></svg>
           <span class="acto-num">IV</span>
           <span class="acto-title">La reinvención económica</span>
           <span class="acto-years">1978-2001</span>
@@ -790,6 +837,7 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
       </div>
       <div class="acto" id="acto-cn-5-wrap">
         <button type="button" class="acto-divider" id="acto-cn-5-btn" aria-expanded="false" aria-controls="acto-cn-5">
+          <svg class="obj o-cn5" viewBox="0 0 72 40" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path class="d" pathLength="1" d="M4 36h64"/><path class="d" pathLength="1" d="M31 36c0-10 2-22 5-34 3 12 5 24 5 34z"/><path class="d" pathLength="1" d="M33 31c4-1 6-3 7-6M34 24c3-1 5-3 6-6M35 17c2-1 3-2 4-4M36 2v-2"/><path class="d" pathLength="1" d="M13 36V13M13 13V7"/><circle class="d" cx="13" cy="29" r="3"/><circle class="d" cx="13" cy="20" r="2.4"/><path class="d" pathLength="1" d="M50 36V17h4v-6h4v6h4v19M50 24h12M50 30h12"/></g></svg>
           <span class="acto-num">V</span>
           <span class="acto-title">China como potencia global</span>
           <span class="acto-years">2001-2030</span>
@@ -854,6 +902,7 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
     <div class="acto-list">
             <div class="acto" id="acto-kr-1-wrap">
         <button type="button" class="acto-divider" id="acto-kr-1-btn" aria-expanded="false" aria-controls="acto-kr-1">
+          <svg class="obj o-kr1" viewBox="0 0 72 40" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path class="wv" d="M-8 36q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0"/><path class="d" pathLength="1" d="M3 20h66"/><path class="d" pathLength="1" d="M6 35v-5a9 9 0 0 1 18 0v5"/><path class="d" pathLength="1" d="M27 35v-5a9 9 0 0 1 18 0v5"/><path class="d" pathLength="1" d="M48 35v-5a9 9 0 0 1 18 0v5"/><path class="d" pathLength="1" d="M8 20v-4M18 20v-4M29 20v-4M40 20v-4M50 20v-4M60 20v-4"/></g></svg>
           <span class="acto-num">I</span>
           <span class="acto-title">Del ocaso de Joseon a la división</span>
           <span class="acto-years">1876-1948</span>
@@ -888,6 +937,7 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
       </div>
       <div class="acto" id="acto-kr-2-wrap">
         <button type="button" class="acto-divider" id="acto-kr-2-btn" aria-expanded="false" aria-controls="acto-kr-2">
+          <svg class="obj o-kr2" viewBox="0 0 72 40" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path class="wv" d="M-8 36q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0"/><path class="d" pathLength="1" d="M2 24h29M47 24h23"/><path class="d" pathLength="1" d="M6.0 24.0L10.2 19.9L14.3 16.3L18.5 13.4L22.7 11.2L26.8 9.5L31.0 8.4"/><path class="d" pathLength="1" d="M46.0 9.8L50.0 11.5L54.0 13.8L58.0 16.6L62.0 20.0L66.0 24.0"/><path class="d" pathLength="1" d="M14 24V16.6M22 24V11.5M30 24V8.6M54 24V13.8M62 24V20.0"/><g transform="rotate(20 31 24)"><path class="d" pathLength="1" d="M31 24h16M35 24v-4M39 24v-6M43 24v-4"/></g><path class="d" pathLength="1" d="M6 24v11M66 24v11"/></g></svg>
           <span class="acto-num">II</span>
           <span class="acto-title">Guerra, reconstrucción y dictadura</span>
           <span class="acto-years">1950-1979</span>
@@ -922,6 +972,7 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
       </div>
       <div class="acto" id="acto-kr-3-wrap">
         <button type="button" class="acto-divider" id="acto-kr-3-btn" aria-expanded="false" aria-controls="acto-kr-3">
+          <svg class="obj o-kr3" viewBox="0 0 72 40" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path class="wv" d="M-8 36q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0"/><path class="d" pathLength="1" d="M2 24h68"/><path class="d" pathLength="1" d="M6.0 24.0L10.0 20.0L14.0 16.6L18.0 13.8L22.0 11.5L26.0 9.8L30.0 8.6L34.0 8.1L38.0 8.1L42.0 8.6L46.0 9.8L50.0 11.5L54.0 13.8L58.0 16.6L62.0 20.0L66.0 24.0"/><path class="d" pathLength="1" d="M14 24V16.6M22 24V11.5M30 24V8.6M38 24V8.1M46 24V9.8M54 24V13.8M62 24V20.0"/><path class="d" pathLength="1" d="M6 24v11M66 24v11M36 24v11"/><rect class="car" x="2" y="21" width="6" height="3" rx="1" fill="currentColor" stroke="none"/><rect class="car c2" x="2" y="21" width="6" height="3" rx="1" fill="currentColor" stroke="none"/></g></svg>
           <span class="acto-num">III</span>
           <span class="acto-title">El milagro y su costo</span>
           <span class="acto-years">1962-1987</span>
@@ -956,6 +1007,7 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
       </div>
       <div class="acto" id="acto-kr-4-wrap">
         <button type="button" class="acto-divider" id="acto-kr-4-btn" aria-expanded="false" aria-controls="acto-kr-4">
+          <svg class="obj o-kr4" viewBox="0 0 72 40" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path class="wv" d="M-8 36q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0"/><path class="d" pathLength="1" d="M2 24h28M42 24h28"/><path class="d" pathLength="1" d="M6.0 24.0L10.0 20.0L14.0 16.6L18.0 13.8L22.0 11.5L26.0 9.8L30.0 8.6L34.0 8.1L38.0 8.1L42.0 8.6L46.0 9.8L50.0 11.5L54.0 13.8L58.0 16.6L62.0 20.0L66.0 24.0"/><path class="d" pathLength="1" d="M14 24V16.6M22 24V11.5M54 24V13.8M62 24V20.0"/><g transform="translate(0 2.5) rotate(3 36 24)"><path class="d" pathLength="1" d="M30 24h12"/><path class="d" pathLength="1" d="M30 24V8.6M38 24V8.1"/></g><path class="d" pathLength="1" d="M6 24v11M66 24v11M36 26v9"/><path class="crk" d="M34 8l3 4-3 4"/></g></svg>
           <span class="acto-num">IV</span>
           <span class="acto-title">Democracia, crisis y apertura</span>
           <span class="acto-years">1987-2008</span>
@@ -990,6 +1042,7 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
       </div>
       <div class="acto" id="acto-kr-5-wrap">
         <button type="button" class="acto-divider" id="acto-kr-5-btn" aria-expanded="false" aria-controls="acto-kr-5">
+          <svg class="obj o-kr5" viewBox="0 0 72 40" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path class="wv" d="M-8 36q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0q2 -2 4 0t4 0"/><path class="d" pathLength="1" d="M2 26h68"/><path class="d" pathLength="1" d="M20 4v22M52 4v22"/><path class="d" pathLength="1" d="M20 6L4 26M20 6L9 26M20 6L14 26M20 6L26 26M20 6L32 26M20 6L38 26M52 6L38 26M52 6L44 26M52 6L48 26M52 6L58 26M52 6L64 26M52 6L70 26"/><circle class="lt" style="animation-delay:0.00s" cx="6" cy="23.5" r=".9" fill="currentColor" stroke="none"/><circle class="lt" style="animation-delay:0.18s" cx="14" cy="23.5" r=".9" fill="currentColor" stroke="none"/><circle class="lt" style="animation-delay:0.36s" cx="22" cy="23.5" r=".9" fill="currentColor" stroke="none"/><circle class="lt" style="animation-delay:0.54s" cx="30" cy="23.5" r=".9" fill="currentColor" stroke="none"/><circle class="lt" style="animation-delay:0.72s" cx="38" cy="23.5" r=".9" fill="currentColor" stroke="none"/><circle class="lt" style="animation-delay:0.90s" cx="46" cy="23.5" r=".9" fill="currentColor" stroke="none"/><circle class="lt" style="animation-delay:1.08s" cx="54" cy="23.5" r=".9" fill="currentColor" stroke="none"/><circle class="lt" style="animation-delay:1.26s" cx="62" cy="23.5" r=".9" fill="currentColor" stroke="none"/></g></svg>
           <span class="acto-num">V</span>
           <span class="acto-title">Potencia tecnológica y gobernanza contemporánea</span>
           <span class="acto-years">2000s-2026</span>
