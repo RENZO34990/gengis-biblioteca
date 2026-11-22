@@ -471,6 +471,15 @@ h1,h2,h3,.acto-title,.title-pinyin,.title-romaji,.title-romaja,p,li,.lbl{overflo
   .dept-contact a{color:#17706D;}
   .club-figs .soc{color:color-mix(in srgb, var(--tone) 55%, #000);}
   .region-block.corea .region-head{--region-accent:var(--korea-celadon-deep);}
+  /* China: sello sobre el numero de la region y greca dorada bajo el encabezado */
+  .region-block.china .region-head::after{height:12px; bottom:-6px; background:url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2720%27%20height=%2712%27%20viewBox=%270%200%2020%2012%27%3E%3Cpath%20d=%27M0%2011V2H13V8H6V5H10M13%2011H20%27%20fill=%27none%27%20stroke=%27%23C9A63E%27%20stroke-width=%271.4%27%20stroke-linecap=%27square%27%20stroke-linejoin=%27miter%27/%3E%3C/svg%3E") left center/20px 12px repeat-x; opacity:.55;}
+  .region-block.china .region-index{position:relative; padding:.2em .45em; margin-right:.15rem; font-style:normal; font-weight:600; border:2px solid rgba(158,43,37,.0); transform:rotate(-2.5deg);}
+  .region-block.china.seen .region-index{border-color:rgba(158,43,37,.7);}
+  @media (prefers-reduced-motion:no-preference){
+    .region-block.china .region-index{border-color:rgba(158,43,37,0);}
+    .region-block.china.seen .region-index{animation:cnStamp .55s cubic-bezier(.2,.9,.3,1.2) .15s both;}
+  }
+  @keyframes cnStamp{from{opacity:0; border-color:rgba(158,43,37,.7); transform:rotate(-2.5deg) scale(2)} to{opacity:1; border-color:rgba(158,43,37,.7); transform:rotate(-2.5deg) scale(1)}}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
